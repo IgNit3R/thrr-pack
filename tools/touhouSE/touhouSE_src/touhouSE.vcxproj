@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5E22A619-5C89-447A-8186-86E01021FC5F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>touhouSE</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/Zm200 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="container_sink.h" />
+    <ClInclude Include="dat_utility.h" />
+    <ClInclude Include="DxArchive.h" />
+    <ClInclude Include="image_base.h" />
+    <ClInclude Include="image_convertor_base.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="msg.h" />
+    <ClInclude Include="mt.h" />
+    <ClInclude Include="nfa0_v21.h" />
+    <ClInclude Include="npa.h" />
+    <ClInclude Include="numeric_limits.h" />
+    <ClInclude Include="pattern.h" />
+    <ClInclude Include="png.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="th075.h" />
+    <ClInclude Include="th105.h" />
+    <ClInclude Include="th11.h" />
+    <ClInclude Include="th11_utility.h" />
+    <ClInclude Include="th12.h" />
+    <ClInclude Include="th125_utility.h" />
+    <ClInclude Include="th13.h" />
+    <ClInclude Include="th135.h" />
+    <ClInclude Include="th135_utility.h" />
+    <ClInclude Include="th145pak.h" />
+    <ClInclude Include="th145_file_list.h" />
+    <ClInclude Include="th155_file_list.h" />
+    <ClInclude Include="thmj.h" />
+    <ClInclude Include="th_base.h" />
+    <ClInclude Include="tnb.h" />
+    <ClInclude Include="utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\cnut_converter\cnut.cpp" />
+    <ClCompile Include="cnut_converter.cpp" />
+    <ClCompile Include="DxArchive.cpp" />
+    <ClCompile Include="dx_archive_v4.cpp" />
+    <ClCompile Include="dx_archive_v6.cpp" />
+    <ClCompile Include="nfa0_v2x.cpp" />
+    <ClCompile Include="png_convertor.cpp" />
+    <ClCompile Include="steinsgate0.cpp" />
+    <ClCompile Include="th10_anm.cpp" />
+    <ClCompile Include="dat_utility.cpp" />
+    <ClCompile Include="dds.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="msg.cpp" />
+    <ClCompile Include="msg_convertor.cpp" />
+    <ClCompile Include="mt.cpp" />
+    <ClCompile Include="nfa0_v1.cpp" />
+    <ClCompile Include="nfa0_v2.cpp" />
+    <ClCompile Include="nfa0_v21.cpp" />
+    <ClCompile Include="npa.cpp" />
+    <ClCompile Include="npa_v1.cpp" />
+    <ClCompile Include="png.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="tga.cpp" />
+    <ClCompile Include="th075.cpp" />
+    <ClCompile Include="th10.cpp" />
+    <ClCompile Include="th105.cpp" />
+    <ClCompile Include="th11.cpp" />
+    <ClCompile Include="th11_anm.cpp" />
+    <ClCompile Include="th11_utility.cpp" />
+    <ClCompile Include="th12.cpp" />
+    <ClCompile Include="th125_utility.cpp" />
+    <ClCompile Include="th13.cpp" />
+    <ClCompile Include="th135.cpp" />
+    <ClCompile Include="th135_act.cpp" />
+    <ClCompile Include="th135_csv.cpp" />
+    <ClCompile Include="th135_dir_list.cpp" />
+    <ClCompile Include="th135_image.cpp" />
+    <ClCompile Include="th135_palette.cpp" />
+    <ClCompile Include="th135_utility.cpp" />
+    <ClCompile Include="th135_wav.cpp" />
+    <ClCompile Include="th14.cpp" />
+    <ClCompile Include="th145.cpp" />
+    <ClCompile Include="th145pak.cpp" />
+    <ClCompile Include="th145_cm.cpp" />
+    <ClCompile Include="th145_dir_list.cpp" />
+    <ClCompile Include="th145_file_list.cpp" />
+    <ClCompile Include="th145_trial.cpp" />
+    <ClCompile Include="th155.cpp" />
+    <ClCompile Include="th155_eft.cpp" />
+    <ClCompile Include="th155_file_list.cpp" />
+    <ClCompile Include="th155_msh.cpp" />
+    <ClCompile Include="th155_nhtex.cpp" />
+    <ClCompile Include="thmj.cpp" />
+    <ClCompile Include="tnb.cpp" />
+    <ClCompile Include="utility.cpp" />
+    <ClCompile Include="wolf.cpp" />
+    <ClCompile Include="xp3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
