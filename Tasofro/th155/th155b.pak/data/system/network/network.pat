@@ -1,0 +1,1 @@
+{"take":[{"frame":[{"point":[]}],"id":0,"is_child":false,"layer":[{"blend":0,"element":[{"argb":4294967295,"cx":0,"cy":0,"height":64,"left":800,"name":"network_font.png","rx":0,"ry":0,"rz":0,"sx":100,"sy":100,"top":416,"width":224}],"filter":1,"flags":0,"shader":0,"type":0}],"name":"title"}],"version":17}
