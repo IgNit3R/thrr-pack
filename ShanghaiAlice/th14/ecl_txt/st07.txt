@@ -1,0 +1,1286 @@
+anim { "enemy.anm"; "st07enm.anm"; "st07enm2.anm"; "st07enm3.anm"; }
+ecli { "default.ecl"; "st07mbs.ecl"; "st07bs.ecl"; }
+
+void MainBossSpell();
+
+void MainMBossSpell();
+
+void DebugSkipFunc()
+{
+    ins_901();
+    return;
+}
+
+void ECir00()
+{
+    var A;
+    ins_302(2);
+    ins_303(0, 59);
+    %A = _f(1);
+    unless ([-9906] != 0) goto ECir00_240 @ 0;
+    %A = _f(-1);
+ECir00_240:
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_510(1);
+    ins_507(1, 1);
+    ins_507(2, 3);
+    ins_502(15);
+    ins_329(0, 0.5f, 0.5f);
+    ins_330(0, 120, 23, 1.0f, 1.0f);
+    ins_327(0, 0);
+    ins_328(0, 60, 0, 255);
+    ins_325(0, 60, 30, 102);
+    ins_402(_f(-192) * %A, 0.0f);
+    ins_426(120, _f(256) * %A, -30.0f, _f(160) * %A, 128.0f, 0.0f, 0.0f);
+    ins_23(120);
+    ins_503(15);
+    ins_325(0, 255, 255, 255);
+    ins_426(120, 0.0f, 0.0f, _f(-220) * %A, 192.0f, _f(-200) * %A, -228.0f);
+    @ECir00_at() async;
+    goto ECir00_1068 @ 0;
+ECir00_1048:
+    ins_23(1000);
+ECir00_1068:
+    if 1 goto ECir00_1048 @ 0;
+    ins_1();
+}
+
+void ECir00_at()
+{
+    var A, B, C;
+    ins_600(0);
+    ins_602(0, 20, 3);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 5.0f, 5.0f);
+    ins_700(0, 0.0f, 128.0f, 0.0f, 14.0f);
+    ins_608(0, 18, -1);
+    $B = 1;
+    goto ECir00_at_780 @ 0;
+ECir00_at_268:
+    %A = [-9989.0f];
+    $C = 12;
+    goto ECir00_at_496 @ 0;
+ECir00_at_372:
+    ins_604(0, %A, 0.0f);
+    ins_702(0);
+    %A = %A + 0.523599f;
+ECir00_at_496:
+    if $C-- goto ECir00_at_372 @ 0;
+    ins_600(1);
+    ins_607(1, 3);
+    ins_602(1, 4, 8);
+    ins_606(1, 32, 1);
+    ins_604(1, [-9989.0f], 0.05235988f);
+    ins_605(1, 2.0f, 2.0f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_601(1);
+    ins_23(60);
+ECir00_at_780:
+    if $B-- goto ECir00_at_268 @ 0;
+    return;
+}
+
+void ECir00b()
+{
+    goto ECir00b_80 @ 0;
+ECir00b_60:
+    ins_23(1000);
+ECir00b_80:
+    if 1 goto ECir00b_60 @ 0;
+    ins_1();
+}
+
+void ECir01()
+{
+    var A;
+    ins_302(2);
+    ins_303(0, 59);
+    %A = _f(1);
+    unless ([-9906] != 0) goto ECir01_240 @ 0;
+    %A = _f(-1);
+ECir01_240:
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_510(1);
+    ins_507(1, 1);
+    ins_507(2, 3);
+    ins_502(15);
+    ins_329(0, 0.5f, 0.5f);
+    ins_330(0, 120, 23, 1.0f, 1.0f);
+    ins_327(0, 0);
+    ins_328(0, 60, 0, 255);
+    ins_325(0, 60, 30, 102);
+    ins_402(_f(-192) * %A, 0.0f);
+    ins_426(120, _f(256) * %A, -30.0f, _f(160) * %A, 128.0f, 0.0f, 0.0f);
+    ins_23(120);
+    ins_503(15);
+    ins_325(0, 255, 255, 255);
+    ins_426(120, 0.0f, 0.0f, _f(-220) * %A, 192.0f, _f(-200) * %A, -228.0f);
+    @ECir01_at(%A) async;
+    goto ECir01_1076 @ 0;
+ECir01_1056:
+    ins_23(1000);
+ECir01_1076:
+    if 1 goto ECir01_1056 @ 0;
+    ins_1();
+}
+
+void ECir01_at(var A)
+{
+    var B, C, D;
+    ins_600(0);
+    ins_602(0, 20, 3);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 5.0f, 5.0f);
+    ins_700(0, 0.0f, 128.0f, 0.0f, 14.0f);
+    ins_608(0, 18, -1);
+    $C = 1;
+    goto ECir01_at_864 @ 0;
+ECir01_at_268:
+    %B = ([-9989.0f] - 0.7853982f) + (0.17453292f * [-9987.0f]);
+    $D = 32;
+    goto ECir01_at_800 @ 0;
+ECir01_at_480:
+    ins_604(0, %B, 0.0f);
+    ins_702(0);
+    ins_604(0, %B - 3.1415927f, 0.0f);
+    ins_702(0);
+    %B = %B + ((%A * 6.2831855f) / _f(18));
+    ins_23(10);
+ECir01_at_800:
+    if $D-- goto ECir01_at_480 @ 0;
+    ins_23(60);
+ECir01_at_864:
+    if $C-- goto ECir01_at_268 @ 0;
+    return;
+}
+
+void GirlA01()
+{
+    ins_302(2);
+    ins_306(0, 0);
+    ins_510(2);
+    ins_507(2, 1);
+    @GirlA01_at();
+    ins_1();
+}
+
+void GirlA01_at()
+{
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    @GirlA01_at2() async;
+    ins_404(1.5707964f, 4.0f);
+    ins_405(120, 1, -0.19634955f, 3.0f);
+    ins_23(120);
+    ins_405(60, 4, 0.19634955f, 4.0f);
+    goto GirlA01_at_268 @ 0;
+GirlA01_at_248:
+    ins_23(1000);
+GirlA01_at_268:
+    if 1 goto GirlA01_at_248 @ 0;
+    return;
+}
+
+void GirlA01_at2()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 0);
+    ins_602(0, 8, 6);
+    ins_606(0, 1, 2);
+    ins_604(0, 0.0f, 0.05235988f);
+    ins_605(0, 5.0f, 4.0f);
+    ins_609(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    $A = 100;
+    goto GirlA01_at2_392 @ 0;
+GirlA01_at2_352:
+    ins_601(0);
+    ins_23(10);
+GirlA01_at2_392:
+    if $A-- goto GirlA01_at2_352 @ 0;
+    return;
+}
+
+void GirlA01b()
+{
+    ins_302(2);
+    ins_306(0, 0);
+    ins_510(2);
+    ins_507(2, 1);
+    @GirlA01_at();
+    ins_1();
+}
+
+void GirlA02()
+{
+    ins_302(2);
+    ins_306(0, 10);
+    ins_510(2);
+    ins_507(1, 2);
+    ins_507(2, 1);
+    @GirlA02_at();
+    ins_1();
+}
+
+void GirlA02_at()
+{
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    @GirlA02_at2() async;
+    ins_404(1.5707964f, 2.0f);
+    ins_405(120, 1, -0.19634955f, 3.0f);
+    ins_23(120);
+    ins_405(60, 4, 0.19634955f, 4.0f);
+    goto GirlA02_at_268 @ 0;
+GirlA02_at_248:
+    ins_23(1000);
+GirlA02_at_268:
+    if 1 goto GirlA02_at_248 @ 0;
+    return;
+}
+
+void GirlA02_at2()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 2);
+    ins_602(0, 8, 10);
+    ins_606(0, 5, 1);
+    ins_604(0, 0.0f, 0.05235988f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_609(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    $A = 100;
+    goto GirlA02_at2_392 @ 0;
+GirlA02_at2_352:
+    ins_601(0);
+    ins_23(10);
+GirlA02_at2_392:
+    if $A-- goto GirlA02_at2_352 @ 0;
+    return;
+}
+
+void GirlA02b()
+{
+    ins_302(2);
+    ins_306(0, 0);
+    ins_510(2);
+    ins_507(2, 1);
+    @GirlA01_at();
+    ins_1();
+}
+
+void GirlB01()
+{
+    ins_302(2);
+    ins_306(0, 25);
+    ins_303(1, 96);
+    ins_510(1);
+    ins_507(1, 3);
+    ins_507(2, 5);
+    @GirlB01_at();
+    ins_1();
+}
+
+void GirlB01_at()
+{
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_404(1.5707964f, 3.0f);
+    ins_405(80, 1, 1.7671459f, 0.0f);
+    ins_23(60);
+    @GirlB01_at2() async;
+    ins_23(120);
+    ins_405(60, 0, 2.9452431f, 1.0f);
+    goto GirlB01_at_288 @ 0;
+GirlB01_at_268:
+    ins_23(1000);
+GirlB01_at_288:
+    if 1 goto GirlB01_at_268 @ 0;
+    return;
+}
+
+void GirlB01_at2()
+{
+    var A, B, C;
+    ins_600(0);
+    ins_607(0, 0);
+    ins_602(0, 6, 2);
+    ins_606(0, 3, 1);
+    ins_604(0, 0.0f, 0.44879895f);
+    ins_605(0, 3.0f, 1.0f);
+    ins_609(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    %A = 1.0f;
+    ins_535($B, 1, 32, 32, 32);
+    goto GirlB01_at2_632 @ 0;
+GirlB01_at2_340:
+    %A = 1.5f;
+    $C = 4;
+    goto GirlB01_at2_568 @ 0;
+GirlB01_at2_444:
+    ins_604(0, [-9998.0f] / _f(64), 0.17453292f);
+    ins_601(0);
+    ins_23(5);
+GirlB01_at2_568:
+    if $C-- goto GirlB01_at2_444 @ 0;
+    ins_23(40);
+GirlB01_at2_632:
+    if $B-- goto GirlB01_at2_340 @ 0;
+    return;
+}
+
+void GirlB01b()
+{
+    ins_302(2);
+    ins_510(2);
+    @GirlB01_at();
+    ins_1();
+}
+
+void GirlC01()
+{
+    ins_302(2);
+    ins_306(0, 35);
+    ins_303(1, 99);
+    ins_510(1);
+    ins_507(1, 5);
+    ins_507(2, 10);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_404(1.5707964f, 1.5f);
+    ins_405(80, 1, [-9989.0f], 0.1f);
+    ins_23(60);
+    @GirlC01_at() async;
+    ins_23(200);
+    ins_405(80, 1, 1.5707964f, 1.0f);
+    goto GirlC01_424 @ 0;
+GirlC01_404:
+    ins_23(1000);
+GirlC01_424:
+    if 1 goto GirlC01_404 @ 0;
+    ins_1();
+}
+
+void GirlC01_at()
+{
+    var A, B, C, D, E;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 5, 2);
+    ins_606(0, 1, 1);
+    ins_604(0, 0.0f, 0.5235988f);
+    ins_605(0, 1.5f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    %C = [-9998.0f];
+    $D = 180;
+    goto GirlC01_at_1064 @ 0;
+GirlC01_at_428:
+    ins_81(%A, %B, %C, [-9999.0f] * 64.0f);
+    ins_628(0, %A + [-9997.0f], %B + [-9996.0f]);
+    ins_604(0, [-9998.0f], 0.0f);
+    $E = 5;
+    goto GirlC01_at_852 @ 0;
+GirlC01_at_748:
+    ins_626(0, [-9998.0f], [-9999.0f] * 8.0f);
+    ins_601(0);
+GirlC01_at_852:
+    if $E-- goto GirlC01_at_748 @ 0;
+    %C = %C + ((1.5707964f * [-9999.0f]) + 0.7853982f);
+    ins_23(2);
+GirlC01_at_1064:
+    if $D-- goto GirlC01_at_428 @ 0;
+    return;
+}
+
+void GirlC02()
+{
+    ins_302(2);
+    ins_306(0, 35);
+    ins_303(1, 99);
+    ins_510(1);
+    ins_507(1, 5);
+    ins_507(2, 10);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_404(0.0f, 1.5f);
+    ins_405(80, 1, -0.3926991f, 0.1f);
+    ins_23(60);
+    @GirlC02_at() async;
+    ins_23(200);
+    ins_405(80, 1, -0.7853982f, 1.0f);
+    goto GirlC02_424 @ 0;
+GirlC02_404:
+    ins_23(1000);
+GirlC02_424:
+    if 1 goto GirlC02_404 @ 0;
+    ins_1();
+}
+
+void GirlC02_at()
+{
+    var A, B, C, D, E, F, G;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 5, 13);
+    ins_606(0, 6, 1);
+    ins_604(0, 0.0f, 0.5235988f);
+    ins_605(0, 4.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    %C = [-9998.0f];
+    $E = 180;
+    goto GirlC02_at_1144 @ 0;
+GirlC02_at_384:
+    $D = 5;
+    $F = 5;
+    goto GirlC02_at_1080 @ 0;
+GirlC02_at_488:
+    ins_606(0, $D, 1);
+    $D = 11 - $D;
+    ins_81(%A, %B, [-9998.0f], [-9999.0f] * 16.0f);
+    ins_628(0, %A + [-9997.0f], %B + [-9996.0f]);
+    ins_604(0, [-9989.0f], 0.5235988f);
+    $G = 10;
+    goto GirlC02_at_1016 @ 0;
+GirlC02_at_912:
+    ins_626(0, [-9998.0f], [-9999.0f] * 8.0f);
+    ins_601(0);
+GirlC02_at_1016:
+    if $G-- goto GirlC02_at_912 @ 0;
+    ins_23(15);
+GirlC02_at_1080:
+    if $F-- goto GirlC02_at_488 @ 0;
+    ins_23(40);
+GirlC02_at_1144:
+    if $E-- goto GirlC02_at_384 @ 0;
+    return;
+}
+
+void GirlD01()
+{
+    ins_302(2);
+    ins_306(0, 40);
+    ins_303(1, 99);
+    ins_510(1);
+    ins_507(1, 4);
+    ins_507(2, 8);
+    ins_500(32.0f, 32.0f);
+    ins_501(24.0f, 24.0f);
+    ins_404(1.5707964f, 2.7f);
+    ins_445(60, 1, 0.0f);
+    @GirlD01_at() async;
+    ins_23(120);
+    ins_445(80, 1, 1.0f);
+    ins_23(60);
+    goto GirlD01_416 @ 0;
+GirlD01_396:
+    ins_23(1000);
+GirlD01_416:
+    if 1 goto GirlD01_396 @ 0;
+    ins_1();
+}
+
+void GirlD01_at()
+{
+    var A, B;
+    ins_23(60);
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 10, 6);
+    ins_606(0, 45, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 4.0f, 0.2f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(60, 0, 2097152, 0, -999999, 0.5f, -999999.0f);
+    %A = 1.570796f;
+    $B = 1;
+    goto GirlD01_at_628 @ 0;
+GirlD01_at_404:
+    ins_604(0, [-9998.0f], %A);
+    ins_601(0);
+    %A = %A - 0.261799f;
+!E
+    40;
+!N
+    20;
+!H
+    13;
+!LO
+    10;
+!*
+    ins_23([-1]);
+GirlD01_at_628:
+    if $B-- goto GirlD01_at_404 @ 0;
+    return;
+}
+
+void LogoEnemy()
+{
+    ins_23(1420);
+    ins_554();
+    return;
+}
+
+void MainBoss()
+{
+    ins_519();
+    ins_301("Boss", 144.0f, -16.0f, 40, 1000, 1);
+    ins_519();
+    ins_524(6);
+    ins_520();
+    ins_524(7);
++60: //60
+    ins_518(1);
+    ins_519();
+    return;
+    return;
+}
+
+void MainBossDebug()
+{
++1: //1
+    ins_630(1);
+    ins_524(5);
++10: //11
+    ins_518(0);
+    @MainBoss();
+    return;
+}
+
+void MainBossDebug2()
+{
++1: //1
+    ins_630(1);
+    ins_524(5);
++10: //11
+    ins_518(-1);
+    @MainBoss();
+    return;
+}
+
+void MainFront()
+{
+    @MainSub00();
+    ins_23(230);
+    @MainSub01();
+    ins_23(460);
+    @MainSub02();
+    ins_23(300);
+    @MainSub03();
+    ins_23(400);
+    return;
+}
+
+void MainLatter()
+{
+    ins_520();
+    @MainSub05();
+    ins_23(60);
+    @MainSub06();
+    ins_23(320);
+    @MainSub08();
+    ins_23(300);
+    @MainSub07();
+    ins_23(400);
+    return;
+}
+
+void MainMBoss()
+{
+    ins_524(4);
+    ins_301("MBoss", 112.0f, -32.0f, 40, 1000, 1);
++60: //60
+    ins_518(2);
+    ins_519();
+    return;
+}
+
+void MainMBossDebug()
+{
+    @MainMBoss();
+    goto MainMBossDebug_112 @ 0;
+MainMBossDebug_92:
+    ins_23(1000);
+MainMBossDebug_112:
+    if 1 goto MainMBossDebug_92 @ 0;
+    return;
+}
+
+void MainMsgDebug()
+{
++1: //1
+    ins_630(1);
+    ins_524(6);
++10: //11
+    ins_518(0);
+    ins_519();
++1: //12
+    ins_519();
++60: //72
+    ins_518(1);
+    ins_519();
+    goto MainMsgDebug_204 @ 4072;
+MainMsgDebug_188:
++4000: //4072
+    ins_0();
+MainMsgDebug_204:
+    if 1 goto MainMsgDebug_188 @ 72;
+    return;
+}
+
+void MainSub00()
+{
+    var A, B;
+    ins_23(80);
+    @MainSub00b() async;
+    $A = 16;
+    goto MainSub00_220 @ 0;
+MainSub00_152:
+    ins_300("GirlA01", -160.0f, -32.0f, 110, 1000, 1);
+    ins_23(15);
+MainSub00_220:
+    if $A-- goto MainSub00_152 @ 0;
+    ins_23(80);
+    $B = 16;
+    goto MainSub00_416 @ 0;
+MainSub00_348:
+    ins_304("GirlA01", 160.0f, -32.0f, 110, 1000, 1);
+    ins_23(15);
+MainSub00_416:
+    if $B-- goto MainSub00_348 @ 0;
+    return;
+}
+
+void MainSub00b()
+{
+    ins_23(20);
+    ins_300("GirlB01", 160.0f, -32.0f, 400, 1000, 1);
+    ins_23(230);
+    ins_23(80);
+    ins_304("GirlB01", -160.0f, -32.0f, 400, 1000, 1);
+    return;
+}
+
+void MainSub01()
+{
+    ins_300("GirlB01", 0.0f, -32.0f, 400, 1000, 1);
+    ins_300("GirlB01", -160.0f, -32.0f, 400, 1000, 1);
+    ins_304("GirlB01", 160.0f, -32.0f, 400, 1000, 1);
+    ins_23(50);
+    ins_300("GirlB01", -32.0f, -32.0f, 400, 1000, 1);
+    ins_300("GirlB01", 32.0f, -32.0f, 400, 1000, 1);
+    ins_23(50);
+    ins_304("GirlB01", -64.0f, -32.0f, 400, 1000, 1);
+    ins_304("GirlB01", 64.0f, -32.0f, 400, 1000, 1);
+    ins_23(50);
+    ins_300("GirlB01", -128.0f, -32.0f, 400, 1000, 1);
+    ins_304("GirlB01", 128.0f, -32.0f, 400, 1000, 1);
+    ins_23(50);
+    ins_300("GirlB01", 0.0f, -32.0f, 400, 1000, 1);
+    ins_304("GirlB01", -160.0f, -32.0f, 400, 1000, 1);
+    ins_300("GirlB01", 160.0f, -32.0f, 400, 1000, 1);
+    return;
+}
+
+void MainSub02()
+{
+    [-9985] = 2;
+    [-9979.0f] = -1.570796f;
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(150);
+    @MainSub02b();
+    ins_23(150);
+    @MainSub02b() async;
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_300("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(120);
+    return;
+}
+
+void MainSub02b()
+{
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    ins_23(40);
+    ins_304("ECir00", 0.0f, 0.0f, 120, 1000, 1);
+    return;
+}
+
+void MainSub03()
+{
+    ins_300("GirlC01", 0.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", -128.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", 128.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", 0.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", -144.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", 144.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", 128.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", 32.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", -32.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", -128.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", -160.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", 160.0f, -32.0f, 800, 1000, 1);
+    return;
+}
+
+void MainSub03b()
+{
+    var A, B;
+    $A = 16;
+    goto MainSub03b_168 @ 0;
+MainSub03b_100:
+    ins_300("GirlA01", -160.0f, -32.0f, 110, 1000, 1);
+    ins_23(15);
+MainSub03b_168:
+    if $A-- goto MainSub03b_100 @ 0;
+    ins_23(80);
+    $B = 16;
+    goto MainSub03b_364 @ 0;
+MainSub03b_296:
+    ins_304("GirlA01", 160.0f, -32.0f, 110, 1000, 1);
+    ins_23(15);
+MainSub03b_364:
+    if $B-- goto MainSub03b_296 @ 0;
+    return;
+}
+
+void MainSub04()
+{
+    var A, B, C, D;
+    [-9985] = 2;
+    [-9979.0f] = -1.570796f;
+    ins_23(200);
+    $A = 8;
+    goto MainSub04_336 @ 0;
+MainSub04_200:
+    ins_309("GirlC01", -90.0f, -32.0f, 360, 1000, 1);
+    ins_23(100);
+    ins_309("GirlC01", 90.0f, -32.0f, 360, 1000, 1);
+    ins_23(100);
+MainSub04_336:
+    if $A-- goto MainSub04_200 @ 0;
+    $B = 6;
+    goto MainSub04_580 @ 0;
+MainSub04_444:
+    ins_311("ECir01", 0.0f, 0.0f, 160, 1000, 1);
+    ins_23(90);
+    ins_309("ECir01", 0.0f, 0.0f, 160, 1000, 1);
+    ins_23(90);
+MainSub04_580:
+    if $B-- goto MainSub04_444 @ 0;
+    $C = 2;
+    goto MainSub04_824 @ 0;
+MainSub04_688:
+    ins_309("GirlC01", -90.0f, -32.0f, 360, 1000, 1);
+    ins_23(100);
+    ins_309("GirlC01", 90.0f, -32.0f, 360, 1000, 1);
+    ins_23(100);
+MainSub04_824:
+    if $C-- goto MainSub04_688 @ 0;
+    $D = 4;
+    goto MainSub04_1068 @ 0;
+MainSub04_932:
+    ins_311("ECir01", 0.0f, 0.0f, 160, 1000, 1);
+    ins_23(90);
+    ins_309("ECir01", 0.0f, 0.0f, 160, 1000, 1);
+    ins_23(90);
+MainSub04_1068:
+    if $D-- goto MainSub04_932 @ 0;
+    ins_23(60);
+    return;
+}
+
+void MainSub05()
+{
+    var A;
+    $A = 4;
+    goto MainSub05_216 @ 0;
+MainSub05_100:
+    ins_300("GirlC02", -224.0f, 128.0f, 300, 1000, 1);
+    ins_304("GirlC02", 224.0f, 128.0f, 300, 1000, 1);
+    ins_23(150);
+MainSub05_216:
+    if $A-- goto MainSub05_100 @ 0;
+    ins_300("GirlC02", -224.0f, 128.0f, 300, 1000, 1);
+    ins_304("GirlC02", 224.0f, 128.0f, 300, 1000, 1);
+    return;
+}
+
+void MainSub05b()
+{
+    var A;
+    @MainSub05c() async;
+    $A = 7;
+    goto MainSub05b_388 @ 0;
+MainSub05b_132:
+    ins_309("Phantom03", _f(-192) - ([-9999.0f] * _f(32)), _f(96) + ([-9999.0f] * _f(64)), 100, 1000, 1);
+    ins_23(80);
+MainSub05b_388:
+    if $A-- goto MainSub05b_132 @ 0;
+    return;
+}
+
+void MainSub05c()
+{
+    var A, B, C, D;
+    %A = _f(160);
+    %B = _f(64);
+    $C = 60;
+    $D = 7;
+    goto MainSub05c_476 @ 0;
+MainSub05c_220:
+    ins_311("Phantom03", _f(192) + ([-9999.0f] * _f(32)), _f(96) + ([-9999.0f] * _f(64)), 100, 1000, 1);
+    ins_23(80);
+MainSub05c_476:
+    if $D-- goto MainSub05c_220 @ 0;
+    return;
+}
+
+void MainSub06()
+{
+    var A, B, C, D;
+    [-9981.0f] = _f(-160);
+    [-9985] = 2;
+    [-9979.0f] = -1.570796f;
+    ins_23(80);
+    $A = 10;
+    goto MainSub06_496 @ 0;
+MainSub06_240:
+    [-9981.0f] = [-9981.0f] + _f(32);
+    [-9980.0f] = ([-9987.0f] * _f(32)) - _f(96);
+    ins_304("ECir01", 0.0f, 0.0f, 130, 1000, 1);
+    ins_23(10);
+MainSub06_496:
+    if $A-- goto MainSub06_240 @ 0;
+    ins_23(160);
+    $B = 10;
+    goto MainSub06_880 @ 0;
+MainSub06_624:
+    [-9981.0f] = [-9981.0f] + _f(32);
+    [-9980.0f] = ([-9987.0f] * _f(32)) - _f(96);
+    ins_300("ECir01", 0.0f, 0.0f, 130, 1000, 1);
+    ins_23(10);
+MainSub06_880:
+    if $B-- goto MainSub06_624 @ 0;
+    ins_23(140);
+    $C = 10;
+    goto MainSub06_1264 @ 0;
+MainSub06_1008:
+    [-9981.0f] = [-9981.0f] + _f(32);
+    [-9980.0f] = ([-9987.0f] * _f(32)) - _f(96);
+    ins_304("ECir01", 0.0f, 0.0f, 130, 1000, 1);
+    ins_23(10);
+MainSub06_1264:
+    if $C-- goto MainSub06_1008 @ 0;
+    ins_23(120);
+    $D = 10;
+    goto MainSub06_1648 @ 0;
+MainSub06_1392:
+    [-9981.0f] = [-9981.0f] + _f(32);
+    [-9980.0f] = ([-9987.0f] * _f(32)) - _f(96);
+    ins_300("ECir01", 0.0f, 0.0f, 130, 1000, 1);
+    ins_23(10);
+MainSub06_1648:
+    if $D-- goto MainSub06_1392 @ 0;
+    return;
+}
+
+void MainSub07()
+{
+    var A, B, C, D;
+    $A = 4;
+    goto MainSub07_472 @ 0;
+MainSub07_100:
+    $B = 8;
+    goto MainSub07_232 @ 0;
+MainSub07_164:
+    ins_300("GirlA01", -140.0f, -32.0f, 90, 1000, 1);
+    ins_23(15);
+MainSub07_232:
+    if $B-- goto MainSub07_164 @ 0;
+    $C = 8;
+    goto MainSub07_408 @ 0;
+MainSub07_340:
+    ins_304("GirlA01", 140.0f, -32.0f, 90, 1000, 1);
+    ins_23(15);
+MainSub07_408:
+    if $C-- goto MainSub07_340 @ 0;
+    ins_23(50);
+MainSub07_472:
+    if $A-- goto MainSub07_100 @ 0;
+    ins_23(50);
+    $D = 16;
+    goto MainSub07_716 @ 0;
+MainSub07_600:
+    ins_300("GirlA02", -140.0f, -32.0f, 90, 1000, 1);
+    ins_304("GirlA02", 140.0f, -32.0f, 90, 1000, 1);
+    ins_23(15);
+MainSub07_716:
+    if $D-- goto MainSub07_600 @ 0;
+    return;
+}
+
+void MainSub07b()
+{
+    var A;
+    ins_23(20);
+    $A = 4;
+    goto MainSub07b_276 @ 0;
+MainSub07b_120:
+    ins_300("GirlB01", 160.0f, -32.0f, 300, 1000, 1);
+    ins_23(120);
+    ins_304("GirlB01", -160.0f, -32.0f, 300, 1000, 1);
+    ins_23(120);
+    ins_23(50);
+MainSub07b_276:
+    if $A-- goto MainSub07b_120 @ 0;
+    return;
+}
+
+void MainSub08()
+{
+    ins_300("GirlC01", 0.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", -128.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", 128.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", 32.0f, -32.0f, 800, 1000, 1);
+    ins_300("GirlC01", -32.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", -128.0f, -32.0f, 800, 1000, 1);
+    ins_23(160);
+    ins_300("GirlC01", 0.0f, -32.0f, 800, 1000, 1);
+    return;
+}
+
+void MapleEnemy()
+{
+    ins_502(32);
+    goto MapleEnemy_124 @ 0;
+MapleEnemy_80:
+    ins_308(1, 105);
+    ins_23(5);
+MapleEnemy_124:
+    if 1 goto MapleEnemy_80 @ 0;
+    ins_1();
+}
+
+void Phantom01()
+{
+    ins_302(2);
+    ins_303(0, 80);
+    ins_500(28.0f, 28.0f);
+    ins_501(16.0f, 16.0f);
+    ins_510(1);
+    ins_507(1, 1);
+    ins_507(2, 2);
+    @Phantom01_at() async;
+    ins_404(2.9452431f, 3.0f);
+    ins_410([-9998.0f], 0.017453292f, -1.1780972f, 0.0f);
+    ins_411(80, 0, -999999.0f, 32.0f, 0.0f);
+    ins_23(60);
+    ins_441(120, 7, 0.05235988f);
+    ins_23(60);
+    goto Phantom01_436 @ 0;
+Phantom01_416:
+    ins_23(1000);
+Phantom01_436:
+    if 1 goto Phantom01_416 @ 0;
+    ins_1();
+}
+
+void Phantom01_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 0);
+    ins_602(0, 8, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 3.5f, 1.0f);
+    ins_608(0, 21, -1);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_23(10);
+    $A = 30;
+    goto Phantom01_at_388 @ 0;
+Phantom01_at_348:
+    ins_23(20);
+    ins_601(0);
+Phantom01_at_388:
+    if $A-- goto Phantom01_at_348 @ 0;
+    return;
+}
+
+void Phantom01_at2()
+{
+    unless ([-9944.0f] >= _f(64)) goto Phantom01_at2_568 @ 0;
+    ins_600(0);
+    ins_607(0, 2);
+    ins_602(0, 13, 4);
+!E
+    1;
+!N
+    1;
+!H
+    2;
+!LO
+    3;
+!*
+    ins_606(0, 5, [-1]);
+    ins_604(0, 0.0f, 0.0f);
+!E
+    1.5f;
+!N
+    1.5f;
+!H
+    1.9f;
+!LO
+    2.5f;
+!*
+    ins_605(0, [-1.0f], 1.5f);
+    ins_608(0, 21, -1);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_601(0);
+Phantom01_at2_568:
+    return;
+}
+
+void Phantom02()
+{
+    ins_302(2);
+    ins_303(0, 88);
+    ins_500(28.0f, 28.0f);
+    ins_501(16.0f, 16.0f);
+    ins_510(2);
+    ins_507(1, 2);
+    ins_507(2, 1);
+    @Phantom02_at() async;
+    ins_410([-9998.0f], 0.034906585f, 0.0f, 0.0f);
+    ins_411(80, 0, -999999.0f, 32.0f, 0.0f);
+    ins_23(80);
+    ins_23(80);
+    ins_404([-9989.0f], 0.0f);
+    ins_445(120, 0, 1.0f);
+    ins_23(60);
+    goto Phantom02_456 @ 0;
+Phantom02_436:
+    ins_23(1000);
+Phantom02_456:
+    if 1 goto Phantom02_436 @ 0;
+    ins_1();
+}
+
+void Phantom02_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 18, 6);
+    ins_606(0, 8, 1);
+    ins_604(0, [-9998.0f], 0.0f);
+    ins_605(0, 4.0f, 1.0f);
+    ins_608(0, 38, -1);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_23(20);
+    $A = 3;
+    goto Phantom02_at_388 @ 0;
+Phantom02_at_348:
+    ins_601(0);
+    ins_23(40);
+Phantom02_at_388:
+    if $A-- goto Phantom02_at_348 @ 0;
+    return;
+}
+
+void Phantom03()
+{
+    ins_302(2);
+    ins_306(0, 5);
+    ins_500(28.0f, 28.0f);
+    ins_501(16.0f, 16.0f);
+    ins_510(1);
+    ins_507(2, 1);
+    ins_404(0.7853982f, 4.0f);
+    ins_405(30, 0, 0.0f, 0.0f);
+    ins_23(30);
+    ins_404(-0.19634955f, 0.0f);
+    ins_445(240, 1, 2.0f);
+    ins_410([-9998.0f], 0.017453292f, -0.19634955f, 0.0f);
+    ins_411(80, 0, -999999.0f, 16.0f, 0.0f);
+    @Phantom03_at() async;
+    ins_23(60);
+    goto Phantom03_468 @ 0;
+Phantom03_448:
+    ins_23(1000);
+Phantom03_468:
+    if 1 goto Phantom03_448 @ 0;
+    ins_1();
+}
+
+void Phantom03_at()
+{
+    var A, B;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 10, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, [-9989.0f], 0.0f);
+    ins_605(0, 2.5f, 1.0f);
+    ins_608(0, 38, -1);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    $B = 10;
+    goto Phantom03_at_668 @ 0;
+Phantom03_at_328:
+    ins_609(0, 1, 1, 2097152, 120, -999999, [-9999.0f] * 0.3f, -999999.0f);
+    ins_609(0, 2, 1, 4, 120, -999999, 0.02f, 1.5707964f);
+    ins_604(0, [-9971.0f] + ([-9987.0f] * 0.34906584f), 0.34906584f);
+    ins_605(0, 2.5f, 0.0f);
+    ins_601(0);
+    ins_23(30);
+Phantom03_at_668:
+    if $B-- goto Phantom03_at_328 @ 0;
+    return;
+}
+
+void Phantom04()
+{
+    ins_302(2);
+    ins_303(0, 83);
+    ins_502(2);
+    ins_500(28.0f, 28.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1002(1);
+    ins_1001(60);
+    ins_510(2);
+    ins_507(1, 1);
+    ins_502(12);
+    ins_404([-9981.0f], 1.5f);
+    ins_422([-9998.0f], 0.08726646f, 32.0f, 0.0f, [-9981.0f], 0.0f);
+    @Phantom04_at() async;
+    ins_23(60);
+    ins_23(240);
+    ins_503(12);
+    goto Phantom04_456 @ 0;
+Phantom04_436:
+    ins_23(1000);
+Phantom04_456:
+    if 1 goto Phantom04_436 @ 0;
+    ins_1();
+}
+
+void Phantom04_at()
+{
+    ins_600(0);
+    ins_607(0, 5);
+    ins_602(0, 7, 6);
+    ins_625(0, 4, 4, 8, 8, 1, 1, 2, 3);
+    ins_604(0, 0.0f, 0.0f);
+    ins_624(0, 1.0f, 1.0f, 2.0f, 3.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+    ins_608(0, 21, -1);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_23(40 + ([-10000] % 100));
+    unless (([-9959] == 0) && (([-10000] % 3) != 0)) goto Phantom04_at_628 @ 0;
+    return;
+Phantom04_at_628:
+    ins_601(0);
+    return;
+}
+
+void main()
+{
+    var A, B;
+    ins_502(32);
+    ins_524(0);
+    ins_321("MapleEnemy", 0, 0, 100, 1000, 0);
+    unless ([-9907] >= 0) goto main_544 @ 0;
+    unless (([-9907] >= 108) && ([-9907] <= 109)) goto main_420 @ 0;
+    @MainMBossSpell();
+    goto main_456 @ 0;
+main_420:
+    @MainBossSpell();
+main_456:
+    goto main_500 @ 0;
+main_480:
+    ins_23(1000);
+main_500:
+    if 1 goto main_480 @ 0;
+main_544:
+    ins_22(1, "MainMBossDebug");
+    ins_22(2, "MainBossDebug");
+    ins_22(3, "MainBossDebug2");
+    ins_22(4, "MainMsgDebug");
+    ins_22(5, "MainLatter");
+    ins_22(6, "DebugSkipFunc");
+    @LogoEnemy() async;
++60: //60
+    ins_0();
+    @MainFront();
+    ins_902();
+    @MainMBoss();
+    ins_23(180);
+    ins_23(700);
+    @MainSub04();
+    @MainLatter();
+    ins_902();
+    ins_524(5);
+    ins_518(0);
+    ins_524(6);
+    @MainBoss();
+    goto main_1164 @ 60;
+main_1144:
+    ins_23(1000);
+main_1164:
+    if 1 goto main_1144 @ 60;
+    ins_1();
+}

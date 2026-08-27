@@ -1,0 +1,90 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncA();
+
+void AttackFuncA()
+{
+    var A, B, C;
+    ins_302([-9982]);
+    @ClipFuncA();
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    $B = -1;
+    $C = 1000;
+    goto AttackFuncA_472 @ 90;
+AttackFuncA_312:
+    $B = $B + 1;
+    @AttackFuncA_at();
+    ins_412(30, 4, 2.0f);
+    ins_23(40);
+AttackFuncA_472:
+    if $C-- goto AttackFuncA_312 @ 90;
+    goto AttackFuncA_560 @ 90;
+AttackFuncA_540:
+    ins_23(1000);
+AttackFuncA_560:
+    if 1 goto AttackFuncA_540 @ 90;
+    return;
+}
+
+void AttackFuncA_at()
+{
+    var A, B;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 21, 1);
+    ins_606(0, 3, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 1.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 2097152, 120, -999999, 5.0f, -999999.0f);
+    ins_627(0, 48.0f);
+    %A = [-9998.0f];
+    $B = [-9985];
+    goto AttackFuncA_at_704 @ 0;
+AttackFuncA_at_452:
+    unless ([-9900] == 1) goto AttackFuncA_at_560 @ 0;
+    ins_606(0, 7, 1);
+AttackFuncA_at_560:
+    ins_604(0, %A, 0.0f);
+    ins_601(0);
+    %A = %A + [-9981.0f];
+    ins_23(1);
+AttackFuncA_at_704:
+    if $B-- goto AttackFuncA_at_452 @ 0;
+    [-9981.0f] = [-9981.0f] * _f(-1);
+    return;
+}
+
+void BossA()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 3);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_30("%d", _SS [-9954]);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncA();
+    goto BossA_680 @ 0;
+BossA_660:
+    ins_23(1000);
+BossA_680:
+    if 1 goto BossA_660 @ 0;
+    ins_1();
+}

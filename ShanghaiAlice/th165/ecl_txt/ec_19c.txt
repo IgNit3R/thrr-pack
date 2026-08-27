@@ -1,0 +1,180 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncC();
+
+void AttackC_at1(var A)
+{
+    var B, C, D, E;
+    %B = _f(-192);
+    $C = 10000;
+    goto AttackC_at1_1188 @ 0;
+AttackC_at1_140:
+    ins_516(51);
+    %B = _f(192);
+    [-9985] = ([-10000] % 5) + 2;
+    $D = 9;
+    goto AttackC_at1_600 @ 0;
+AttackC_at1_376:
+    ins_301("TaikoA01", %B, 0.0f, 500, 10, 0);
+    %B = %B - _f(48);
+    [-9985] = [-9985] - 1;
+    ins_23(5);
+AttackC_at1_600:
+    if $D-- goto AttackC_at1_376 @ 0;
+    ins_23(80);
+    ins_516(51);
+    %B = _f(-192);
+    [-9985] = ([-10000] % 5) + 2;
+    $E = 9;
+    goto AttackC_at1_1124 @ 0;
+AttackC_at1_900:
+    ins_301("TaikoA01", %B, 0.0f, 500, 10, 0);
+    %B = %B + _f(48);
+    [-9985] = [-9985] - 1;
+    ins_23(5);
+AttackC_at1_1124:
+    if $E-- goto AttackC_at1_900 @ 0;
+    ins_23(200);
+AttackC_at1_1188:
+    if $C-- goto AttackC_at1_140 @ 0;
+    return;
+}
+
+void AttackFuncC()
+{
+    var A, B, C, D, E;
+    @ClipFuncC();
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    %C = 0.0f;
+    %D = 0.017453f;
+    @AttackC_at1(%D) async;
+    $B = -1;
+    $E = 1000;
+    goto AttackFuncC_632 @ 90;
+AttackFuncC_412:
+    $B = $B + 1;
+    ins_23(100);
+    ins_412(60, 4, 0.4f);
+    ins_23(60);
+    %D = %D * _f(-1);
+AttackFuncC_632:
+    if $E-- goto AttackFuncC_412 @ 90;
+    goto AttackFuncC_720 @ 90;
+AttackFuncC_700:
+    ins_23(1000);
+AttackFuncC_720:
+    if 1 goto AttackFuncC_700 @ 90;
+    return;
+}
+
+void BossC()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 0);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncC();
+    goto BossC_648 @ 0;
+BossC_628:
+    ins_23(1000);
+BossC_648:
+    if 1 goto BossC_628 @ 0;
+    ins_1();
+}
+
+void TaikoA01()
+{
+    ins_302([-9982]);
+    [-9982] = 9999;
+    unless ([-9900] == 1) goto TaikoA01_368 @ 0;
+    unless (([-9985] < 3) && ([-9985] > -3)) goto TaikoA01_368 @ 0;
+    [-9985] = 0;
+TaikoA01_368:
+    unless ([-9895] == 1) goto TaikoA01_640 @ 0;
+    unless (([-9985] < 2) && ([-9985] > -2)) goto TaikoA01_640 @ 0;
+    [-9985] = 0;
+TaikoA01_640:
+    unless ([-9985] == 0) goto TaikoA01_768 @ 0;
+    ins_303(0, 8);
+    goto TaikoA01_792 @ 0;
+TaikoA01_768:
+    ins_303(0, 7);
+TaikoA01_792:
+    ins_336(0, 10);
+    ins_501(32.0f, 40.0f);
+    ins_500(32.0f, 48.0f);
+    ins_544(1);
+    ins_1012(8);
+    ins_1011(100);
+    ins_502(4864);
+    ins_556("TaikoDead2");
+    ins_514(0, 0, -1, "TaikoDead");
+    ins_404(1.5707964f + ([-9987.0f] * 0.08726646f), 1.0f);
+    ins_405(120, 0, 1.5707964f, 3.0f);
+    unless ([-9985] == 0) goto TaikoA01_1404 @ 0;
+    goto TaikoA01_1292 @ 0;
+TaikoA01_1272:
+    ins_23(1);
+TaikoA01_1292:
+    if ([-9996.0f] <= _f(400)) goto TaikoA01_1272 @ 0;
+    @TaikoDead();
+TaikoA01_1404:
+    goto TaikoA01_1448 @ 0;
+TaikoA01_1428:
+    ins_23(1000);
+TaikoA01_1448:
+    if 1 goto TaikoA01_1428 @ 0;
+    ins_1();
+}
+
+void TaikoDead()
+{
+    var A, B;
+    ins_502(32);
+    ins_600(0);
+    ins_607(0, 10);
+    ins_602(0, 8, 2);
+    ins_606(0, 11, 5);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 1.0f, 0.7f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    %A = 1.0f;
+    ins_604(0, [-9998.0f], 0.034906585f);
+    $B = 5;
+    goto TaikoDead_620 @ 0;
+TaikoDead_476:
+    ins_609(0, 3, 0, 2097152, 120, -999999, %A, -999999.0f);
+    %A = %A + 0.6f;
+    ins_601(0);
+TaikoDead_620:
+    if $B-- goto TaikoDead_476 @ 0;
+    @TaikoDead2();
+    return;
+}
+
+void TaikoDead2()
+{
+    ins_307(1, 40);
+    ins_516(3);
+    ins_1();
+    return;
+}

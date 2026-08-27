@@ -1,0 +1,435 @@
+
+void BossItemPhase(var A, var B, var C);
+
+void BossItemCard();
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    ins_524(4);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_302(1);
+    ins_303(1, 106);
+    ins_303(2, 119);
+    ins_502(76);
+    ins_500(48.0f, 48.0f);
+    ins_501(40.0f, 40.0f);
+    ins_511(12000);
+    ins_527(0, 12000.0f, -8355585);
+    ins_514(1, 0, 1680, "MBossDead");
+    ins_521(1, "MBossEscape");
+    ins_629(128.0f, 12521279);
+    ins_400(320.0f, 224.0f);
+    ins_425(120, -800.0f, -400.0f, 0.0f, 128.0f, 0.0f, 100.0f);
+    ins_23(120);
+    ins_504(0.0f, 128.0f, 280.0f, 48.0f);
+    unless ([-9907] >= 0) goto MBoss_1020 @ 0;
+    unless (([-9907] >= 10) && ([-9907] <= 13)) goto MBoss_1020 @ 0;
+    ins_511(1900);
+    @MBossCard1();
+MBoss_1020:
+    @MBoss1();
+    goto MBoss_1092 @ 0;
+MBoss_1072:
+    ins_23(1000);
+MBoss_1092:
+    if 1 goto MBoss_1072 @ 0;
+    ins_1();
+}
+
+void MBoss1()
+{
+    var A, B;
+    ins_514(0, 1900, 1680, "MBossCard1");
+    ins_527(0, 1900.0f, -24448);
+    [-9985] = 2;
+    @MBoss1_at2() async;
+    goto MBoss1_744 @ 0;
+MBoss1_204:
+    @EffChargePoint3(0.7853982f, 0.5235988f, 8, 17, 15, 17);
+    ins_23(60);
+    ins_302(3);
+    ins_313(0);
+    ins_23(30);
+    [-9981.0f] = 0.392699f;
+    ins_536(%A, 0.7853982f, 0.7853982f, 0.5235988f, 0.3926991f);
+    ins_535($B, 8, 8, 12, 16);
+    goto MBoss1_632 @ 0;
+MBoss1_504:
+    ins_300("MBoss1At", 0.0f, 0.0f, 10, 10, 0);
+    [-9981.0f] = [-9981.0f] + %A;
+MBoss1_632:
+    if $B-- goto MBoss1_504 @ 0;
+    ins_23(60);
+    ins_412(120, 4, 0.75f);
+    ins_23(120);
+MBoss1_744:
+    if 1 goto MBoss1_204 @ 0;
+    return;
+}
+
+void MBoss1At()
+{
+    var A, B;
+    ins_502(288);
+    ins_404([-9981.0f], 32.0f);
+    ins_23(1);
+    ins_404([-9981.0f], 1.0f);
+    @MBoss1_at() async;
+    $B = 10;
+    goto MBoss1At_344 @ 0;
+MBoss1At_220:
+    ins_23(60);
+    %A = [-9998.0f] / _f(450);
+    ins_441(120, 7, %A);
+MBoss1At_344:
+    if $B-- goto MBoss1At_220 @ 0;
+    ins_1();
+    ins_1();
+}
+
+void MBoss1_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 8, 2);
+    ins_606(0, 1, 1);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 0.01f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+    $A = 700;
+    goto MBoss1_at_456 @ 0;
+MBoss1_at_388:
+    ins_604(0, [-9971.0f], 0.0f);
+    ins_601(0);
+    ins_23(4);
+MBoss1_at_456:
+    if $A-- goto MBoss1_at_388 @ 0;
+    return;
+}
+
+void MBoss1_at2()
+{
+    var A, B, C;
+    ins_23(200);
+    $C = 1000;
+    goto MBoss1_at2_300 @ 0;
+MBoss1_at2_120:
+    ins_93(%A, %B, 96.0f, 144.0f);
+    %B = %B * 0.3f;
+    ins_300("MPhantom01", %A, %B, 200, 10, 0);
+    ins_23(100);
+MBoss1_at2_300:
+    if $C-- goto MBoss1_at2_120 @ 0;
+    return;
+}
+
+void MBossCard1()
+{
+    @BossItemCard();
+    ins_513();
+    ins_21();
+    ins_525();
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_303(3, -1);
+    ins_303(4, -1);
+    ins_514(0, 0, 1920, "MBossDead");
+    ins_521(0, "MBossEscape");
+    ins_537(10, 1920, 500000, "飛符「フライングヘッド」");
+    ins_401(60, 4, 0.0f, 144.0f);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_23(60);
+    ins_307(1, 72);
++60: //60
+    ins_0();
+    @EffChargePoint3(0.7853982f, 0.5235988f, 8, 17, 15, 17);
+    ins_23(90);
+    ins_302(3);
+    ins_316(0, 1);
+    ins_23(30);
+    ins_300("MCard01Head", 0.0f, -24.0f, 5000, 10, 0);
+    ins_516(52);
+    [-9985] = 2;
+    goto MBossCard1_1452 @ 60;
+MBossCard1_1068:
+    ins_23(10);
+    unless ([-9908] <= 1) goto MBossCard1_1452 @ 60;
+    ins_516(27);
+    ins_316(0, 2);
+    @EffChargePoint3(0.7853982f, 0.5235988f, 8, 17, 15, 17);
+    ins_23(90);
+    ins_302(3);
+    ins_316(0, 1);
+    ins_23(30);
+    ins_300("MCard01Head", 0.0f, -24.0f, 5000, 10, 0);
+    ins_516(52);
+MBossCard1_1452:
+    if 1 goto MBossCard1_1068 @ 60;
+    return;
+}
+
+void MBossCard1At()
+{
+    var A, B;
+    ins_502(288);
+    ins_404([-9981.0f], 1.0f);
+    ins_445(60, 0, 2.4f);
+    @MBossCard1_at() async;
+    $B = 10;
+    goto MBossCard1At_332 @ 0;
+MBossCard1At_208:
+    ins_23(60);
+    %A = [-9998.0f] / _f(300);
+    ins_441(120, 7, %A);
+MBossCard1At_332:
+    if $B-- goto MBossCard1At_208 @ 0;
+    ins_1();
+    ins_1();
+}
+
+void MBossCard1_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 20, 1);
+    ins_606(0, 1, 1);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 0.01f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 160, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+    $A = 700;
+    goto MBossCard1_at_500 @ 0;
+MBossCard1_at_432:
+    ins_604(0, [-9971.0f], 0.0f);
+    ins_601(0);
+    ins_23(2);
+MBossCard1_at_500:
+    if $A-- goto MBossCard1_at_432 @ 0;
+    return;
+}
+
+void MBossCard1_at2(var A)
+{
+    var B;
+    ins_600(1);
+    ins_607(1, 2);
+    ins_602(1, 12, 6);
+    ins_606(1, $A, 1);
+    ins_604(1, 1.5707964f, 0.032724924f);
+    ins_605(1, 3.0f, 1.0f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(1, 0, 2097152, 40, -999999, 0.0f, -999999.0f);
+!E
+    100;
+!N
+    100;
+!H
+    100;
+!LO
+    50;
+!*
+    ins_611(1, 0, -2147483648, [-1], -999999, -999999.0f, -999999.0f);
+!E
+    1;
+!N
+    1;
+!H
+    1;
+!LO
+    2.5f;
+!*
+    ins_611(1, 0, 2097152, 60, -999999, [-1.0f], -999999.0f);
+    ins_535($B, 3, 3, 3, 5);
+    goto MBossCard1_at2_708 @ 0;
+MBossCard1_at2_588:
+    ins_601(1);
+!E
+    30;
+!N
+    30;
+!H
+    30;
+!LO
+    20;
+!*
+    ins_23([-1]);
+MBossCard1_at2_708:
+    if $B-- goto MBossCard1_at2_588 @ 0;
+    return;
+}
+
+void MBossCard1_shadow()
+{
+    goto MBossCard1_shadow_104 @ 0;
+MBossCard1_shadow_60:
+    ins_307(3, 19);
+    ins_23(1);
+MBossCard1_shadow_104:
+    if 1 goto MBossCard1_shadow_60 @ 0;
+    return;
+}
+
+void MBossDead()
+{
+    ins_523();
+    ins_525();
+    ins_505();
+    unless ([-9986] == 0) goto MBossDead_240 @ 0;
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_296 @ 0;
+MBossDead_240:
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_296:
+    @BossItemPhase(15, 15, 48.0f);
+    ins_511(100000);
+    ins_512(-1);
+    ins_517(30, 12, 0);
+    ins_307(0, 27);
+    ins_307(1, 64);
+    ins_516(5);
+    ins_524(0);
+    ins_502(19);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_23(120);
+    ins_401(60, 4, -224.0f, 64.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void MBossEscape()
+{
+    ins_514(0, -1, 0, "");
+    ins_514(1, -1, 0, "");
+    ins_523();
+    ins_505();
+    ins_525();
+    unless ([-9986] == 0) goto MBossEscape_280 @ 0;
+    ins_615(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    ins_616(640.0f);
+MBossEscape_300:
+    ins_511(100000);
+    ins_524(0);
+    ins_512(-1);
+    ins_502(16);
+    ins_401(60, 4, -224.0f, 64.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void MCard01Head()
+{
+    var A;
+    ins_302(3);
+    ins_306(0, 14);
+    ins_500(14.0f, 14.0f);
+    ins_501(12.0f, 12.0f);
+    ins_512(2);
+    ins_502(268);
+    @MBossCard1_shadow() async;
+    ins_408([-9998.0f], 0.02617994f, 0.0f, 0.2f);
+    ins_410([-9998.0f], 0.009817477f, 0.0f, 0.6f);
+    ins_23(120);
+    ins_408(-999999.0f, -999999.0f, -999999.0f, 0.0f);
+    ins_410(-999999.0f, -999999.0f, -999999.0f, 0.0f);
+    ins_535($A, 10, 20, 30, 40);
+    goto MCard01Head_732 @ 0;
+MCard01Head_416:
+    [-9981.0f] = 1.570796f;
+    ins_300("MBossCard1At", 0.0f, 0.0f, 10, 10, 0);
+    @MBossCard1_at2($A) async;
+    unless ($A < 64) goto MCard01Head_712 @ 0;
+    $A = $A + 1;
+MCard01Head_712:
+    ins_23(160);
+MCard01Head_732:
+    if 1 goto MCard01Head_416 @ 0;
+    goto MCard01Head_820 @ 0;
+MCard01Head_800:
+    ins_23(1000);
+MCard01Head_820:
+    if 1 goto MCard01Head_800 @ 0;
+    ins_1();
+}
+
+void MPhantom01()
+{
+    ins_302(2);
+    ins_303(0, 87);
+    ins_500(28.0f, 28.0f);
+    ins_501(16.0f, 16.0f);
+    ins_502(12);
+    ins_510(1);
+!NHL
+    @MPhantom1_at() async;
+!*
+    ins_404([-9989.0f], 0.0f);
+    ins_445(120, 3, 0.2f);
+    ins_422([-9998.0f], 0.017453292f, 64.0f, 0.0f, 0.0f, 0.0f);
+    ins_23(60);
+    ins_503(12);
+    goto MPhantom01_380 @ 0;
+MPhantom01_360:
+    ins_23(1000);
+MPhantom01_380:
+    if 1 goto MPhantom01_360 @ 0;
+    ins_1();
+}
+
+void MPhantom1_at()
+{
+    var A, B;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 10, 6);
+    ins_625(0, 1, 1, 1, 1, 1, 1, 4, 8);
+    ins_604(0, 0.0f, 0.0f);
+    ins_624(0, 1.0f, 1.8f, 3.0f, 4.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+    ins_608(0, 21, -1);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_23(120);
+    $A = 60;
+    goto MPhantom1_at_592 @ 0;
+MPhantom1_at_396:
+    ins_604(0, [-9989.0f], 0.0f);
+    $B = 4;
+    goto MPhantom1_at_528 @ 0;
+MPhantom1_at_488:
+    ins_601(0);
+    ins_23(5);
+MPhantom1_at_528:
+    if $B-- goto MPhantom1_at_488 @ 0;
+    ins_23(60);
+MPhantom1_at_592:
+    if $A-- goto MPhantom1_at_396 @ 0;
+    return;
+}

@@ -1,0 +1,245 @@
+anim { "enemy.anm"; "enm14.anm"; }
+ecli { "default.ecl"; }
+
+void MainLoop();
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void AttackFunc()
+{
+    var A;
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto AttackFunc_208 @ 0;
+    ins_615(640.0f);
+    goto AttackFunc_228 @ 0;
+AttackFunc_208:
+    ins_616(640.0f);
+AttackFunc_228:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_522(0, 4800, 0, "uŒŽ‚ª‘Â‚¿‚Ä‚­‚éIv");
+    ins_401(60, 4, 0.0f, 192.0f);
+    ins_504(0.0f, 192.0f, 240.0f, 64.0f);
+    ins_306(0, 7);
+    ins_303(0, 5);
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 100000;
+    goto AttackFunc_944 @ 90;
+AttackFunc_820:
+    ins_301("BossCard7_Moon", [-9965.0f], -96.0f, 1000, 1000, 0);
+    ins_23(220);
+    ins_412(30, 4, 2.0f);
+    ins_23(40);
+AttackFunc_944:
+    if $A-- goto AttackFunc_820 @ 90;
+    goto AttackFunc_1032 @ 90;
+AttackFunc_1012:
+    ins_23(1000);
+AttackFunc_1032:
+    if 1 goto AttackFunc_1012 @ 90;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(0.0f, 192.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_1002(3.0f);
+    ins_1009(3000);
+    ins_1010(1.0f);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_511(12000);
+    ins_513();
+    ins_514(0, 0, 4800, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_680 @ 0;
+Boss_660:
+    ins_23(1000);
+Boss_680:
+    if 1 goto Boss_660 @ 0;
+    ins_1();
+}
+
+void BossCard7_Moon()
+{
+    ins_569(-1);
+    ins_1012(2);
+    ins_302(3);
+    ins_303(0, 21);
+    ins_500(108.0f, 108.0f);
+    ins_501(96.0f, 96.0f);
+    ins_549(0);
+    ins_502(41756);
+    ins_544(1);
+    ins_515(10000);
+    ins_516(52);
+    ins_404(1.5707964f, 0.0f);
+    ins_445(120, 0, 3.0f);
+    @BossCard7_Moon_at2() async 1;
+    @BossCard7_Moon_at3() async 2;
+    goto BossCard7_Moon_556 @ 0;
+BossCard7_Moon_432:
+    unless ([-9996.0f] > _f(448)) goto BossCard7_Moon_536 @ 0;
+    goto BossCard7_Moon_600 @ 0;
+BossCard7_Moon_536:
+    ins_23(1);
+BossCard7_Moon_556:
+    if 1 goto BossCard7_Moon_432 @ 0;
+BossCard7_Moon_600:
+    ins_17(1);
+    ins_17(2);
+    ins_404([-9989.0f], 0.0f);
+    ins_445(1, 0, 0.0f);
+    ins_516(51);
+    ins_517(60, 2, 0);
+    @BossCard7_Moon_at() async;
+    ins_502(3);
+    ins_330(0, 60, 0, 0.0f, 0.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void BossCard7_Moon_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 4, 4);
+    ins_606(0, 1, 48);
+    ins_604(0, 3.883222f, 3.883222f);
+    ins_605(0, 2.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 32.0f);
+    ins_601(0);
+    $A = 30;
+    goto BossCard7_Moon_at_456 @ 0;
+BossCard7_Moon_at_388:
+    ins_604(0, [-9998.0f], 3.883222f);
+    ins_601(0);
+    ins_23(5);
+BossCard7_Moon_at_456:
+    if $A-- goto BossCard7_Moon_at_388 @ 0;
+    return;
+}
+
+void BossCard7_Moon_at2()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 8, 6);
+    ins_606(0, 5, 1);
+    ins_604(0, 1.5707964f, 0.17453292f);
+    ins_605(0, 1.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 64.0f);
+    $A = 12000;
+    goto BossCard7_Moon_at2_532 @ 0;
+BossCard7_Moon_at2_324:
+    ins_609(0, 1, 0, 4, 240, -999999, 0.07f + ([-9999.0f] * 0.03f), -1.5707964f);
+    ins_604(0, [-9998.0f], 3.883222f);
+    ins_601(0);
+    ins_23(1);
+BossCard7_Moon_at2_532:
+    if $A-- goto BossCard7_Moon_at2_324 @ 0;
+    return;
+}
+
+void BossCard7_Moon_at3()
+{
+    var A;
+    ins_600(1);
+    ins_607(1, 1);
+    ins_602(1, 4, 2);
+    ins_606(1, 5, 1);
+    ins_604(1, 1.5707964f, 0.17453292f);
+    ins_605(1, 1.0f, 1.0f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(1, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(1, 64.0f);
+    $A = 12000;
+    goto BossCard7_Moon_at3_576 @ 0;
+BossCard7_Moon_at3_368:
+    ins_609(1, 2, 0, 4, 240, -999999, 0.07f + ([-9987.0f] * 0.01f), -1.5707964f);
+    ins_604(1, [-9998.0f], 3.883222f);
+    ins_601(1);
+    ins_23(1);
+BossCard7_Moon_at3_576:
+    if $A-- goto BossCard7_Moon_at3_368 @ 0;
+    return;
+}
+
+void BossCard7_at()
+{
+    var A, B, C, D;
+    ins_23(60);
+    ins_600(1);
+    ins_607(1, 0);
+    ins_602(1, 16, 6);
+    ins_606(1, 1, 1);
+    ins_604(1, 0.0f, 0.0f);
+    ins_605(1, 1.5f, 0.2f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(1, 24.0f);
+    $B = 10;
+    goto BossCard7_at_1144 @ 0;
+BossCard7_at_344:
+    %A = (0.12217305f * 9.5f) + ([-9987.0f] * 0.17453292f);
+    $C = 20;
+    goto BossCard7_at_700 @ 0;
+BossCard7_at_556:
+    ins_604(1, %A, 0.0f);
+    ins_601(1);
+    %A = %A - 0.122173f;
+    ins_23(1);
+BossCard7_at_700:
+    if $C-- goto BossCard7_at_556 @ 0;
+    %A = (-0.12217305f * 9.5f) + ([-9987.0f] * 0.17453292f);
+    $D = 20;
+    goto BossCard7_at_1100 @ 0;
+BossCard7_at_956:
+    ins_604(1, %A, 0.0f);
+    ins_601(1);
+    %A = %A + 0.122173f;
+    ins_23(1);
+BossCard7_at_1100:
+    if $D-- goto BossCard7_at_956 @ 0;
+BossCard7_at_1144:
+    if $B-- goto BossCard7_at_344 @ 0;
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(2);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    @MainLoop();
+    ins_1();
+}

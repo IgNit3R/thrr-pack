@@ -1,0 +1,145 @@
+anim { "enemy.anm"; "boss01t.anm"; }
+ecli { "default.ecl"; "wave01t.ecl"; "wave02t.ecl"; "wave03t.ecl"; "boss01t.ecl"; }
+
+void WaveSync();
+
+void LogoEnemy()
+{
+    ins_23(584);
+    ins_554();
+    return;
+}
+
+void MapleEnemy()
+{
+    ins_502(32);
+    ins_1();
+}
+
+void WorldWave01()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(29, 1);
+    ins_1012(0);
+    $A = [-9931];
+    ins_30("WaveENID :%d", _SS $A);
+    goto WorldWave01_352 @ 0;
+WorldWave01_204:
+    ins_555($B, $A);
+    unless ($B == 0) goto WorldWave01_332 @ 0;
+    goto WorldWave01_396 @ 0;
+WorldWave01_332:
+    ins_23(1);
+WorldWave01_352:
+    if (1) goto WorldWave01_204 @ 0;
+WorldWave01_396:
+    return;
+}
+
+void WorldWave02()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(30, 1);
+    ins_1012(0);
+    @WaveSync();
+    return;
+}
+
+void WorldWave03()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(31, 1);
+    ins_1012(0);
+    @WaveSync();
+    return;
+}
+
+void WorldWaveB00()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(1, 1);
+    ins_1021(1, 3);
+    ins_1022(2);
+    ins_1012(258);
+    @WaveSync();
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(1);
+    ins_524(0);
+    ins_1009();
+    ins_1013(0, 60, 150, 200, 250, 300, 350, 400, 450);
+    ins_1013(8, 500, 2500, 3000, 3500, 4000, 4500, 5000, 5500);
+    ins_1013(16, 1800, 1800, 1800, 2700, 3000, 3300, 3600, 3600);
+    ins_1013(17, 1800, 2100, 2400, 2700, 3000, 3300, 3600, 3600);
+    ins_1013(18, 1800, 2100, 2400, 2700, 3000, 3300, 3600, 3600);
+    ins_1004(1);
+    ins_23(120);
+    ins_518(0);
+    ins_519();
+    ins_23(30);
+    unless ([-9891]) goto main_536 @ 0;
+    goto main_1140 @ 0;
+main_536:
+    goto main_1440 @ 0;
+main_560:
+    @WorldWave01();
+    ins_518(1);
+    ins_519();
+    ins_1002();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_764 @ 0;
+    goto main_1140 @ 0;
+main_764:
+    ins_23(120);
+    @WorldWave02();
+    ins_1002();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_952 @ 0;
+    goto main_1140 @ 0;
+main_952:
+    ins_23(120);
+    @WorldWave03();
+    ins_1002();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_1140 @ 0;
+    goto main_1140 @ 0;
+main_1140:
+    ins_23(120);
+    @WorldWaveB00();
+    ins_23(180);
+    unless ([-9896]) goto main_1300 @ 0;
+    ins_1019();
+    goto main_1352 @ 0;
+main_1300:
+    ins_518(3);
+    ins_519();
+    ins_1017();
+main_1352:
+    goto main_1396 @ 0;
+main_1376:
+    ins_23(1000);
+main_1396:
+    if (1) goto main_1376 @ 0;
+main_1440:
+    if (1) goto main_560 @ 0;
+    goto main_1528 @ 0;
+main_1508:
+    ins_23(1000);
+main_1528:
+    if (1) goto main_1508 @ 0;
+    ins_1();
+}

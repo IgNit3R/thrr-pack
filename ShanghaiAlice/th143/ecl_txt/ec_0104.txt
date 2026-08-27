@@ -1,0 +1,138 @@
+anim { "enemy.anm"; "enm02.anm"; }
+ecli { "default.ecl"; }
+
+void AttackFunc()
+{
+    var A, B, C;
+    ins_513();
+    ins_21();
+    ins_525();
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_522(0, 3000, 0, "潮符「湖のタイダルウェイブ」");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_504(0.0f, 128.0f, 240.0f, 64.0f);
+    ins_316(0, 0);
++60: //60
+    ins_0();
+    $A = 14;
+    $B = 0;
+    $C = 14;
+    @Attack_at2() async;
+    goto AttackFunc_808 @ 60;
+AttackFunc_760:
+    ins_23(300);
+    ins_412(60, 4, 2.0f);
+AttackFunc_808:
+    if 1 goto AttackFunc_760 @ 60;
+    goto AttackFunc_896 @ 60;
+AttackFunc_876:
+    ins_23(1000);
+AttackFunc_896:
+    if 1 goto AttackFunc_876 @ 60;
+    return;
+}
+
+void Attack_at(var A, var B)
+{
+    var C, D;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 12, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 1.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, $A, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 512, 4, 15, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(0, 5, 0, 8, 60, -999999, -0.01f, 0.0f);
+    %C = _f(-192 - 16) + ([-9999.0f] * _f(8));
+    $D = $B + 2;
+    goto Attack_at_1132 @ 0;
+Attack_at_664:
+    ins_609(0, 4, 0, 8, 60, -999999, 0.01f + ([-9999.0f] * 0.02f), [-9998.0f] / _f(600));
+    ins_603(0, 0.0f, [-9987.0f] * _f(6));
+    %C = %C + (384.0f / _f($B));
+    ins_628(0, %C, -16.0f);
+    ins_604(0, 1.5707964f, 0.0f);
+    ins_601(0);
+Attack_at_1132:
+    if $D-- goto Attack_at_664 @ 0;
+    return;
+}
+
+void Attack_at2()
+{
+    goto Attack_at2_504 @ 0;
+Attack_at2_60:
+    @Attack_at(100, 32);
+    ins_23(60);
+    @Attack_at(150, 40);
+    ins_23(60);
+    @Attack_at(200, 48);
+    ins_23(60);
+    @Attack_at(250, 53);
+    ins_23(60);
+    @Attack_at(300, 57);
+    ins_23(60);
+    @Attack_at(350, 64);
+    ins_23(60);
+    ins_1004();
+    ins_23(500);
+Attack_at2_504:
+    if 1 goto Attack_at2_60 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 128.0f);
+    ins_23(40);
+    ins_511(1500);
+    ins_513();
+    ins_514(0, 0, 3000, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

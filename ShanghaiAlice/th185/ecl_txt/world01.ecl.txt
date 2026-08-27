@@ -1,0 +1,186 @@
+anim { "enemy.anm"; "boss01.anm"; "boss02.anm"; "boss03.anm"; "boss04.anm"; }
+ecli { "default.ecl"; "wave01.ecl"; "wave02.ecl"; "wave03.ecl"; "wave04.ecl"; "wave05.ecl"; "wave06.ecl"; "wave07.ecl"; "wave08.ecl"; "wave09.ecl"; "wave10.ecl"; "wave11.ecl"; "wave12.ecl"; "boss01.ecl"; "boss02.ecl"; "boss03.ecl"; "boss04.ecl"; }
+
+void LogoEnemy()
+{
+    ins_23(584);
+    ins_554();
+    return;
+}
+
+void MapleEnemy()
+{
+    ins_502(32);
+    ins_1();
+}
+
+void WorldWave01()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(32, 7);
+    ins_1011(33, 7);
+    ins_1011(35, 7);
+    ins_1011(36, 7);
+    ins_1011(37, 7);
+    ins_1011(38, 7);
+    ins_1011(41, 3);
+    ins_1011(42, 3);
+    ins_1011(34, 2);
+    ins_1011(39, 2);
+    ins_1011(40, 2);
+    ins_1011(43, 1);
+    ins_1012(0);
+    $A = [-9931];
+    ins_30("WaveENID :%d", _SS $A);
+    goto WorldWave01_616 @ 0;
+WorldWave01_468:
+    ins_555($B, $A);
+    unless ($B == 0) goto WorldWave01_596 @ 0;
+    goto WorldWave01_660 @ 0;
+WorldWave01_596:
+    ins_23(1);
+WorldWave01_616:
+    if (1) goto WorldWave01_468 @ 0;
+WorldWave01_660:
+    return;
+}
+
+void WorldWave01b()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(32, 1);
+    ins_1011(33, 1);
+    ins_1011(35, 1);
+    ins_1011(36, 1);
+    ins_1011(37, 1);
+    ins_1011(38, 1);
+    ins_1011(41, 1);
+    ins_1011(42, 1);
+    ins_1011(34, 5);
+    ins_1011(39, 5);
+    ins_1011(40, 5);
+    ins_1011(43, 2);
+    ins_1012(0);
+    $A = [-9931];
+    ins_30("WaveENID :%d", _SS $A);
+    goto WorldWave01b_616 @ 0;
+WorldWave01b_468:
+    ins_555($B, $A);
+    unless ($B == 0) goto WorldWave01b_596 @ 0;
+    goto WorldWave01b_660 @ 0;
+WorldWave01b_596:
+    ins_23(1);
+WorldWave01b_616:
+    if (1) goto WorldWave01b_468 @ 0;
+WorldWave01b_660:
+    return;
+}
+
+void WorldWaveB00()
+{
+    var A, B;
+    ins_1010();
+    ins_1011(2, 1);
+    ins_1011(3, 1);
+    ins_1011(4, 1);
+    unless ([-9890]) goto WorldWaveB00_192 @ 0;
+    ins_1011(5, 1);
+WorldWaveB00_192:
+    ins_1021(2, 3);
+    ins_1021(3, 4);
+    ins_1021(4, 5);
+    ins_1021(5, 6);
+    ins_1025();
+    ins_1022(1);
+    ins_1012(258);
+    $A = [-9931];
+    ins_30("WaveENID :%d", _SS $A);
+    goto WorldWaveB00_600 @ 0;
+WorldWaveB00_452:
+    ins_555($B, $A);
+    unless ($B == 0) goto WorldWaveB00_580 @ 0;
+    goto WorldWaveB00_644 @ 0;
+WorldWaveB00_580:
+    ins_23(1);
+WorldWaveB00_600:
+    if (1) goto WorldWaveB00_452 @ 0;
+WorldWaveB00_644:
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(1);
+    ins_524(0);
+    ins_1009();
+    ins_1013(0, 100, 115, 130, 145, 160, 175, 190, 205);
+    ins_1013(1, 110, 130, 150, 170, 190, 210, 230, 250);
+    ins_1013(4, 300, 400, 500, 600, 700, 800, 900, 1000);
+    ins_1013(5, 500, 650, 800, 950, 1100, 1250, 1400, 1550);
+    ins_1013(8, 2000, 2300, 2600, 2900, 3200, 3500, 3800, 4100);
+    ins_1013(9, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(12, 2500, 2900, 3300, 3700, 4100, 4500, 4900, 5300);
+    ins_1013(13, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(16, 1800, 1920, 2040, 2160, 2280, 2400, 2520, 2640);
+    ins_1004(1);
+    unless ([-9891]) goto main_668 @ 0;
+    goto main_1308 @ 0;
+main_668:
+    goto main_1572 @ 0;
+main_692:
+    ins_23(120);
+    @WorldWave01();
+    ins_1002();
+    ins_1008();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_896 @ 0;
+    goto main_1308 @ 0;
+main_896:
+    ins_23(120);
+    @WorldWave01();
+    ins_1002();
+    ins_1008();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_1100 @ 0;
+    goto main_1308 @ 0;
+main_1100:
+    ins_23(120);
+    @WorldWave01b();
+    ins_1002();
+    ins_1008();
+    ins_1003();
+    ins_23(10);
+    ins_1005();
+    unless ([-9891]) goto main_1308 @ 0;
+    goto main_1308 @ 0;
+main_1308:
+    ins_23(120);
+    @WorldWaveB00();
+    ins_23(180);
+    unless ([-9896]) goto main_1468 @ 0;
+    ins_1019();
+    goto main_1484 @ 0;
+main_1468:
+    ins_1017();
+main_1484:
+    goto main_1528 @ 0;
+main_1508:
+    ins_23(1000);
+main_1528:
+    if (1) goto main_1508 @ 0;
+main_1572:
+    if (1) goto main_692 @ 0;
+    goto main_1660 @ 0;
+main_1640:
+    ins_23(1000);
+main_1660:
+    if (1) goto main_1640 @ 0;
+    ins_1();
+}

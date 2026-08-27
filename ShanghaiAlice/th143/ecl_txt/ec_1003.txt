@@ -1,0 +1,150 @@
+anim { "enemy.anm"; "enm27.anm"; }
+ecli { "default.ecl"; }
+
+void AttackFunc()
+{
+    var A, B, C, D, E, F, G, H;
+    %A = 0.034907f;
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_522(0, 7200, 0, "「全妖怪の緋想天」");
+    ins_23(2);
+    ins_23(90);
+    $E = -1;
+    goto AttackFunc_940 @ 0;
+AttackFunc_264:
+    $E = $E + 1;
+    ins_313(0);
+    ins_307(1, 64);
+    ins_516(54);
+    ins_23(40);
+    ins_316(0, 1);
+    ins_516(49);
+    [-9981.0f] = [-9989.0f];
+    $H = 240;
+    goto AttackFunc_816 @ 0;
+AttackFunc_572:
+    ins_89(%D, [-9981.0f], [-9989.0f]);
+    [-9981.0f] = [-9981.0f] + (%D * 0.01f);
+    ins_81(%B, %C, [-9981.0f], 48.0f);
+    ins_300("Boss1Hisou", %B, %C, 1, 1, 0);
+    ins_23(1);
+AttackFunc_816:
+    if $H-- goto AttackFunc_572 @ 0;
+    ins_1004();
+    ins_302(3);
+    ins_306(0, 4);
+    ins_23(240);
+AttackFunc_940:
+    if 1 goto AttackFunc_264 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 4);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 128.0f);
+    ins_23(40);
+    ins_511(3000);
+    ins_513();
+    ins_514(0, 0, 7200, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void Boss1Hisou()
+{
+    ins_502(2817);
+    ins_302(3);
+    ins_303(0, 13);
+    ins_404([-9981.0f] + ([-9987.0f] * 0.349066f), 0.0f);
+    ins_405(60, 0, -999999.0f, 10.0f);
+    ins_319(0, [-9981.0f]);
+    ins_323(0, 265);
+    ins_556("Boss1_at1b");
+    ins_500(42.0f, 48.0f);
+    ins_501(96.0f, 48.0f);
+    @Boss1_anim() async;
+    goto Boss1Hisou_812 @ 0;
+Boss1Hisou_432:
+    unless (((([-9996.0f] >= _f(448)) || ([-9996.0f] <= _f(0))) || ([-9997.0f] < _f(-192))) || ([-9997.0f] > _f(192))) goto Boss1Hisou_792 @ 0;
+    @Boss1_at1(3) async;
+    goto Boss1Hisou_856 @ 0;
+Boss1Hisou_792:
+    ins_23(1);
+Boss1Hisou_812:
+    if 1 goto Boss1Hisou_432 @ 0;
+Boss1Hisou_856:
+    goto Boss1Hisou_900 @ 0;
+Boss1Hisou_880:
+    ins_23(1000);
+Boss1Hisou_900:
+    if 1 goto Boss1Hisou_880 @ 0;
+    ins_1();
+}
+
+void Boss1_anim()
+{
+    goto Boss1_anim_104 @ 0;
+Boss1_anim_60:
+    ins_319(0, [-9971.0f]);
+    ins_23(1);
+Boss1_anim_104:
+    if 1 goto Boss1_anim_60 @ 0;
+    return;
+}
+
+void Boss1_at1(var A)
+{
+    var B, C, D, E, F;
+    ins_600(2);
+    ins_607(2, 3);
+    ins_602(2, 24, 0);
+    ins_606(2, $A, 1);
+    ins_604(2, 0.0f, 0.0f);
+    ins_605(2, 1.0f, 1.0f);
+    ins_609(2, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(2, 1, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    ins_604(2, [-9998.0f], 0.0f);
+    ins_605(2, ([-9999.0f] * 1.5f) + 0.5f, 0.0f);
+    ins_608(2, 18, -1);
+    ins_601(2);
+    return;
+}
+
+void Boss1_at1b()
+{
+    @Boss1_at1(5);
+    ins_1();
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

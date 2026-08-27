@@ -1,0 +1,164 @@
+anim { "enemy.anm"; "enm21.anm"; }
+ecli { "default.ecl"; }
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void Attack01()
+{
+    var A, B;
+    %A = [-9998.0f];
+    ins_23(120);
+    $B = 100000;
+    goto Attack01_788 @ 0;
+Attack01_160:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 18, 2);
+    ins_606(0, 3, 1);
+    ins_604(0, 0.0f, 0.032724924f);
+    ins_605(0, 2.0f, 2.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 256, 100, 0, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+    ins_627(0, -400.0f);
+    ins_626(0, [-9998.0f], [-9987.0f] * _f(32));
+    ins_604(0, %A, 0.0f);
+    %A = %A + 0.087266f;
+    ins_601(0);
+    ins_23(5);
+Attack01_788:
+    if $B-- goto Attack01_160 @ 0;
+    return;
+}
+
+void AttackFunc()
+{
+    var A, B, C, D, E;
+    %A = 0.034907f;
+    ins_504(0.0f, 192.0f, 128.0f, 128.0f);
+    ins_522(0, 4800, 0, "彼岸剣「地獄極楽滅多斬り」");
+    ins_23(90);
+    @Attack01() async;
+    goto AttackFunc_1812 @ 0;
+AttackFunc_244:
+    ins_302(3);
+    ins_316(0, 1);
+    @EffChargePoint3(1.5707964f, 2.0943952f, 8, 16, 24, 20);
+    @EffChargePoint3(1.5707964f, -2.0943952f, 11, 19, 27, 21);
+    ins_516(30);
+    ins_23(120);
+    ins_302(3);
+    ins_316(0, 3);
+    $D = 10;
+    goto AttackFunc_880 @ 0;
+AttackFunc_604:
+    [-9981.0f] = _f(224);
+    [-9980.0f] = [-9996.0f] + ([-9987.0f] * _f(128));
+    ins_300("SlashEt", -256.0f, [-9987.0f] * _f(128), 10, 10, 0);
+    ins_23(6);
+AttackFunc_880:
+    if $D-- goto AttackFunc_604 @ 0;
+    ins_23(20);
+    ins_1004();
+    ins_23(100);
+    ins_412(60, 4, 2.0f);
+    ins_23(120);
+    ins_302(3);
+    ins_316(0, 2);
+    @EffChargePoint3(1.5707964f, 2.0943952f, 8, 16, 24, 20);
+    @EffChargePoint3(1.5707964f, -2.0943952f, 11, 19, 27, 21);
+    ins_516(30);
+    ins_23(120);
+    ins_302(3);
+    ins_316(0, 0);
+    $E = 10;
+    goto AttackFunc_1664 @ 0;
+AttackFunc_1388:
+    [-9981.0f] = [-9997.0f] + ([-9987.0f] * _f(128));
+    [-9980.0f] = _f(480);
+    ins_300("SlashEt", [-9987.0f] * _f(128), -32.0f, 10, 10, 0);
+    ins_23(6);
+AttackFunc_1664:
+    if $E-- goto AttackFunc_1388 @ 0;
+    ins_23(20);
+    ins_1004();
+    ins_23(100);
+    ins_412(60, 4, 2.0f);
+    ins_23(120);
+AttackFunc_1812:
+    if 1 goto AttackFunc_244 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 3);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 192.0f);
+    ins_23(40);
+    ins_511(2800);
+    ins_513();
+    ins_514(0, 0, 4800, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void SlashEt()
+{
+    var A, B;
+    ins_502(4367);
+    ins_302(3);
+    ins_303(0, 14);
+    ins_401(20, 1, [-9981.0f], [-9980.0f]);
+    ins_516(44);
+    ins_23(1);
+    %A = [-9958.0f] - 1.5707964f;
+    ins_319(0, %A);
+    ins_329(0, 1.0f, 2.0f);
+    ins_23(20);
+    ins_564(%A);
+    ins_503(2);
+    ins_501(1024.0f, 16.0f);
+    $B = 60;
+    goto SlashEt_468 @ 0;
+SlashEt_448:
+    ins_23(1);
+SlashEt_468:
+    if $B-- goto SlashEt_448 @ 0;
+    ins_317(0, 1);
+    ins_23(10);
+    ins_1();
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

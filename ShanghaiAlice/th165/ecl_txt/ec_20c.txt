@@ -1,0 +1,96 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncC();
+
+void AttackC_at()
+{
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 5, 6);
+    ins_606(0, 300, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 1.0f, 0.2f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 256, 600, 0, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 4, 60, -999999, 0.033333335f, -999999.0f);
+    ins_627(0, 24.0f);
+    ins_604(0, 1.5707964f, 0.0f);
+    ins_601(0);
+    return;
+}
+
+void AttackC_at2()
+{
+    var A, B;
+    ins_600(1);
+    ins_607(1, 1);
+    ins_602(1, 8, 6);
+    ins_606(1, 1, 1);
+    ins_604(1, 0.0f, 3.883222f);
+    ins_605(1, 2.0f, 0.2f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(1, 24.0f);
+    %A = [-9998.0f];
+    $B = 50000;
+    goto AttackC_at2_588 @ 0;
+AttackC_at2_364:
+    unless ([-9900] == 1) goto AttackC_at2_568 @ 0;
+    ins_604(1, %A, 3.883222f);
+    ins_601(1);
+    %A = %A + 3.883222f;
+AttackC_at2_568:
+    ins_23(1);
+AttackC_at2_588:
+    if $B-- goto AttackC_at2_364 @ 0;
+    return;
+}
+
+void AttackFuncC()
+{
+    @ClipFuncC();
+    ins_307(1, 75);
+    ins_516(54);
+    ins_23(60);
+    ins_307(1, 86);
+    ins_516(6);
+    @AttackC_at2() async;
+    goto AttackFuncC_332 @ 0;
+AttackFuncC_232:
+    @AttackC_at();
+    ins_23([-9985]);
+    ins_412(60, 4, 0.6f);
+    ins_23(60);
+AttackFuncC_332:
+    if 1 goto AttackFuncC_232 @ 0;
+    return;
+}
+
+void BossC()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 0);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncC();
+    goto BossC_648 @ 0;
+BossC_628:
+    ins_23(1000);
+BossC_648:
+    if 1 goto BossC_628 @ 0;
+    ins_1();
+}

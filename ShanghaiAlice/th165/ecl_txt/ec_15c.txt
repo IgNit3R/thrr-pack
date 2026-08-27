@@ -1,0 +1,118 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncC();
+
+void AttackFuncC()
+{
+    var A, B, C;
+    ins_302([-9982]);
+    @ClipFuncC();
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    $B = -1;
+    $C = 1000;
+    goto AttackFuncC_484 @ 90;
+AttackFuncC_312:
+    $B = $B + 1;
+    @AttackFuncC_at(-1.0f);
+    ins_401(30, 4, [-9981.0f], [-9980.0f]);
+    ins_23(100);
+AttackFuncC_484:
+    if $C-- goto AttackFuncC_312 @ 90;
+    goto AttackFuncC_572 @ 90;
+AttackFuncC_552:
+    ins_23(1000);
+AttackFuncC_572:
+    if 1 goto AttackFuncC_552 @ 90;
+    return;
+}
+
+void AttackFuncC_at(var A)
+{
+    var B, C;
+    %B = _f(64);
+    @AttackFuncC_at2() async 0;
+    $C = 4;
+    goto AttackFuncC_at_436 @ 0;
+AttackFuncC_at_180:
+    ins_401(30, 4, -192.0f, %B);
+    ins_23(30);
+    %B = %B + _f(40);
+    ins_401(30, 4, 192.0f, %B);
+    ins_23(30);
+    %B = %B + _f(40);
+AttackFuncC_at_436:
+    if $C-- goto AttackFuncC_at_180 @ 0;
+    ins_17(0);
+    return;
+}
+
+void AttackFuncC_at2()
+{
+    var A, B, C, D;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 16, 13);
+    ins_606(0, 1, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 0.2f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 80, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 2097152, 120, -999999, 3.0f, -999999.0f);
+    %A = _f(64);
+    $B = -1;
+    $C = 10000;
+    goto AttackFuncC_at2_1144 @ 0;
+AttackFuncC_at2_468:
+    $B = $B + 1;
+    ins_627(0, [-9987.0f] * _f(8));
+    ins_604(0, [-9998.0f], 0.0f);
+    ins_601(0);
+    ins_23(1);
+    unless (($B % 2) == 0) goto AttackFuncC_at2_828 @ 0;
+    ins_23(1);
+AttackFuncC_at2_828:
+    unless ([-9900] == 1) goto AttackFuncC_at2_1144 @ 0;
+    $D = 1;
+    goto AttackFuncC_at2_1100 @ 0;
+AttackFuncC_at2_972:
+    ins_627(0, [-9987.0f] * _f(8));
+    ins_604(0, [-9998.0f], 0.0f);
+    ins_601(0);
+AttackFuncC_at2_1100:
+    if $D-- goto AttackFuncC_at2_972 @ 0;
+AttackFuncC_at2_1144:
+    if $C-- goto AttackFuncC_at2_468 @ 0;
+    return;
+}
+
+void BossC()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 3);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncC();
+    goto BossC_648 @ 0;
+BossC_628:
+    ins_23(1000);
+BossC_648:
+    if 1 goto BossC_628 @ 0;
+    ins_1();
+}

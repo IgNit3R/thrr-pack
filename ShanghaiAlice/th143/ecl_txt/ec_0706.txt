@@ -1,0 +1,119 @@
+anim { "enemy.anm"; "enm20.anm"; }
+ecli { "default.ecl"; }
+
+void Attack01()
+{
+    var A, B, C, D;
+    %A = [-9998.0f];
+    %B = _f(60);
+    $C = 20;
+    goto Attack01_756 @ 0;
+Attack01_180:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 21, 3);
+    ins_606(0, 2, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 0.3f, 6.5f);
+    ins_609(0, 0, 0, 2097152, 60, -999999, 1.0f + ([-9987.0f] * 0.2f), -999.0f);
+    ins_627(0, -%B);
+    ins_604(0, %A, 0.0f);
+    %A = %A + 3.883222f;
+    ins_601(0);
+    %B = %B + 2.5f;
+    ins_23(1);
+Attack01_756:
+    if $C-- goto Attack01_180 @ 0;
+    $D = 20;
+    goto Attack01_1404 @ 0;
+Attack01_864:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 21, 3);
+    ins_606(0, 2, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 0.3f, 6.5f);
+    ins_609(0, 0, 0, 2097152, 60, -999999, 1.0f + ([-9987.0f] * 0.2f), -999.0f);
+    ins_627(0, %B);
+    ins_604(0, %A, 0.0f);
+    %A = %A + 3.883222f;
+    ins_601(0);
+    %B = %B - _f(2);
+    ins_23(1);
+Attack01_1404:
+    if $D-- goto Attack01_864 @ 0;
+    return;
+}
+
+void AttackFunc()
+{
+    var A;
+    %A = 0.034907f;
+    ins_504(0.0f, 224.0f, 384.0f, 448.0f);
+    ins_522(0, 4200, 0, "時符「チェンジリングマジック」");
+    ins_23(120);
+    goto AttackFunc_552 @ 0;
+AttackFunc_216:
+    @Attack01() async;
+    ins_502(8192);
+    ins_547(0.0f);
+    ins_516(30);
+    ins_23(90);
+    ins_503(8192);
+    ins_547(1.0f);
+    ins_502(3);
+    ins_637(6);
+    ins_23(1);
+    ins_503(3);
+    ins_23(6);
+    ins_1004();
+    ins_23(114);
+    ins_412(60, 4, 3.0f);
+    ins_23(120);
+AttackFunc_552:
+    if 1 goto AttackFunc_216 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 3);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 128.0f);
+    ins_23(40);
+    ins_511(1700);
+    ins_513();
+    ins_514(0, 0, 4200, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

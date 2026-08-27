@@ -1,0 +1,242 @@
+
+void BossItemPhase(var A, var B, var C, var D);
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    [-9926] = 0;
+    ins_302(1);
+    ins_303(1, 105);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(76);
+    ins_500(48.0f, 48.0f);
+    ins_501(40.0f, 40.0f);
+    ins_511(7000);
+    ins_527(0, 7000.0f, -8355585);
+    ins_514(1, 0, 1200, "MBossDead");
+    ins_521(1, "MBossEscape");
+    ins_629(128.0f, 8421631);
+    ins_400(-192.0f, -64.0f);
+    ins_401(100, 4, 0.0f, 128.0f);
+    ins_23(40);
+    @EffChargePoint3(1.5707964f, -0.5235988f, 8, 2, 8, 10);
+    ins_504(0.0f, 128.0f, 280.0f, 256.0f);
+    @MBoss1();
+    goto MBoss_876 @ 0;
+MBoss_856:
+    ins_23(1000);
+MBoss_876:
+    if (1) goto MBoss_856 @ 0;
+    ins_1();
+}
+
+void MBoss1()
+{
+    ins_506();
+    ins_573(2, 15);
+    ins_574(600);
+    ins_23(80);
+    goto MBoss1_480 @ 0;
+MBoss1_140:
+    @MBoss1_at(1.5707964f, 1.0471976f, 0.022689281f);
+!E
+    110;
+!N
+    110;
+!H
+    80;
+!LO
+    60;
+!*
+    ins_23([-1]);
+    @MBoss1_at([-9989.0f], -1.0471976f, -0.022689281f);
+    ins_412(60, 4, 0.7f);
+!E
+    110;
+!N
+    110;
+!H
+    80;
+!LO
+    60;
+!*
+    ins_23([-1]);
+MBoss1_480:
+    if (1) goto MBoss1_140 @ 0;
+    return;
+}
+
+void MBoss1_at(var A, var B, var C)
+{
+    var D, E;
+    %D = 0.5f;
+    ins_535($E, 4, 7, 9, 9);
+    goto MBoss1_at_792 @ 0;
+MBoss1_at_136:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 8, 14);
+!E
+    16;
+!N
+    16;
+!H
+    20;
+!LO
+    24;
+!*
+    ins_606(0, [-1], 1);
+    ins_604(0, %A, 0.6981317f);
+!E
+    2.5f;
+!N
+    2.5f;
+!H
+    3.5f;
+!LO
+    4.5f;
+!*
+    ins_605(0, [-1.0f], 1.0f);
+    ins_611(0, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_612(0, 0, 16, 30, 1, 0, 0, %B, 0.0f, -9999994.0f, -9999994.0f);
+    ins_611(0, 0, 8, 100, -9999994, %D / _f(100), %C);
+    ins_302(3);
+    ins_313(0);
+    ins_601(0);
+    %D = %D + 0.35f;
+MBoss1_at_792:
+    if ($E--) goto MBoss1_at_136 @ 0;
+    return;
+}
+
+void MBoss1_at2()
+{
+    var A, B, C;
+!E
+    300;
+!N
+    300;
+!H
+    100;
+!LO
+    50;
+!*
+    ins_23([-1]);
+    ins_600(1);
+    ins_607(1, 3);
+    ins_602(1, 20, 3);
+!E
+    1;
+!N
+    3;
+!H
+    6;
+!LO
+    9;
+!*
+    ins_606(1, 1, [-1]);
+    ins_604(1, 0.0f, 0.034906585f);
+!E
+    1.0f;
+!N
+    1.0f;
+!H
+    3.0f;
+!LO
+    3.5f;
+!*
+    ins_605(1, [-1.0f], 0.8f);
+    ins_611(1, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    $C = 600;
+    goto MBoss1_at2_800 @ 0;
+MBoss1_at2_560:
+    ins_604(1, [-9989.0f] + ([-9998.0f] / 32.0f), 0.0f);
+    ins_601(1);
+!E
+    160;
+!N
+    160;
+!H
+    60;
+!LO
+    30;
+!*
+    ins_23([-1]);
+MBoss1_at2_800:
+    if ($C--) goto MBoss1_at2_560 @ 0;
+    return;
+}
+
+void MBossDead()
+{
+    ins_523();
+    ins_509();
+    @BossItemPhase(10, 10, 17, 48.0f);
+    ins_509();
+    ins_525();
+    unless ([-9959] <= 1) goto MBossDead_484 @ 0;
+    unless ([-9986] == 0) goto MBossDead_404 @ 0;
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_460 @ 0;
+MBossDead_404:
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_460:
+    goto MBossDead_628 @ 0;
+MBossDead_484:
+    unless ([-9986] == 0) goto MBossDead_608 @ 0;
+    ins_615(640.0f);
+    goto MBossDead_628 @ 0;
+MBossDead_608:
+    ins_616(640.0f);
+MBossDead_628:
+    ins_307(1, 65);
+    ins_505();
+    ins_511(100000);
+    ins_570();
+    ins_502(3);
+    ins_517(30, 12, 0);
+    ins_307(0, 28);
+    ins_516(5);
+    ins_23(60);
+    ins_524(2);
+    ins_23(60);
+    ins_512(-1);
+    ins_502(16);
+    ins_401(60, 4, 192.0f, -32.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void MBossEscape()
+{
+    ins_514(0, -1, 0, "");
+    ins_514(1, -1, 0, "");
+    ins_523();
+    ins_505();
+    ins_525();
+    unless ([-9986] == 0) goto MBossEscape_280 @ 0;
+    ins_615(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    ins_616(640.0f);
+MBossEscape_300:
+    ins_511(100000);
+    ins_524(2);
+    ins_502(16);
+    ins_401(60, 4, 0.0f, -32.0f);
+    ins_23(10);
+    ins_512(-1);
+    ins_23(50);
+    ins_1();
+    ins_1();
+}

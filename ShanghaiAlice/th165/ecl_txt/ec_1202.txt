@@ -1,0 +1,170 @@
+anim { "enemy.anm"; "enm14.anm"; }
+ecli { "default.ecl"; }
+
+void MainLoop();
+
+void AttackFunc()
+{
+    var A, B, C;
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto AttackFunc_208 @ 0;
+    ins_615(640.0f);
+    goto AttackFunc_228 @ 0;
+AttackFunc_208:
+    ins_616(640.0f);
+AttackFunc_228:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_522(0, 4800, 0, "àŸäEÅuç¶Ç›Ç™Ç‹ÇµÇ¢ínçñÇÃâJÅv");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_504(0.0f, 128.0f, 240.0f, 64.0f);
+    ins_307(1, 75);
+    ins_516(54);
+    ins_23(60);
+    ins_504(0.0f, 128.0f, 280.0f, 48.0f);
+    ins_307(1, 86);
+    ins_516(6);
+    $A = 2;
+    $B = -1;
+    $C = 1000;
+    goto AttackFunc_1100 @ 0;
+AttackFunc_920:
+    $B = $B + 1;
+    @BossCard6_at();
+    ins_23(90);
+    ins_412(30, 4, 2.0f);
+    ins_23(40);
+AttackFunc_1100:
+    if $C-- goto AttackFunc_920 @ 0;
+    goto AttackFunc_1188 @ 0;
+AttackFunc_1168:
+    ins_23(1000);
+AttackFunc_1188:
+    if 1 goto AttackFunc_1168 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_511(19000);
+    ins_512(0);
+    ins_515(120);
+    ins_400(-192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_1002(4.0f);
+    ins_1009(3200);
+    ins_1010(1.0f);
+    ins_23(70);
+    ins_401(80, 4, 0.0f, 128.0f);
+    ins_23(90);
+    ins_511(19000);
+    ins_513();
+    ins_514(0, 0, 4800, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_560 @ 0;
+Boss_540:
+    ins_23(1000);
+Boss_560:
+    if 1 goto Boss_540 @ 0;
+    ins_1();
+}
+
+void BossCard6_at()
+{
+    var A, B, C, D, E;
+    ins_600(1);
+    ins_607(1, 1);
+    ins_602(1, 27, 0);
+    ins_606(1, 1, 1);
+    ins_604(1, 0.0f, 0.0f);
+    ins_605(1, 1.5f, 0.2f);
+    ins_611(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(1, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    ins_611(1, 1, 64, 1, 1, -999999.0f, -999999.0f);
+    ins_610(1, 3, 0, 134217728, 0, 8, 2, 1, 1.5707964f, 4.0f, 32.0f, 64.0f);
+    ins_610(1, 4, 0, 16384, 18, 38, 8, 0, 0.0f, 16.0f, 0.0f, 0.0f);
+    %B = _f(180);
+    $C = 10000;
+    goto BossCard6_at_2120 @ 0;
+BossCard6_at_556:
+    ins_91(0, %B, 150, 9, 180.0f, 0.0f);
+    $D = 50;
+    goto BossCard6_at_1284 @ 0;
+BossCard6_at_660:
+    ins_605(1, 1.6f + ([-9987.0f] * 0.2f), 0.0f);
+    %A = %B + ([-9987.0f] * _f(16));
+    ins_604(1, -1.5707964f + ([-9987.0f] * 0.017453292f), 0.0f);
+    ins_628(1, %A, 448.0f);
+    ins_601(1);
+    ins_604(1, -1.5707964f + ([-9987.0f] * 0.017453292f), 0.0f);
+    ins_628(1, -%A, 448.0f);
+    ins_601(1);
+    ins_23(4);
+BossCard6_at_1284:
+    if $D-- goto BossCard6_at_660 @ 0;
+    ins_91(0, %B, 150, 9, 0.0f, 180.0f);
+    $E = 50;
+    goto BossCard6_at_2056 @ 0;
+BossCard6_at_1432:
+    ins_605(1, 1.6f + ([-9987.0f] * 0.2f), 0.0f);
+    %A = %B + ([-9987.0f] * _f(16));
+    ins_604(1, -1.5707964f + ([-9987.0f] * 0.05235988f), 0.0f);
+    ins_628(1, %A, 448.0f);
+    ins_601(1);
+    ins_604(1, -1.5707964f + ([-9987.0f] * 0.05235988f), 0.0f);
+    ins_628(1, -%A, 448.0f);
+    ins_601(1);
+    ins_23(4);
+BossCard6_at_2056:
+    if $E-- goto BossCard6_at_1432 @ 0;
+    ins_23(40);
+BossCard6_at_2120:
+    if $C-- goto BossCard6_at_556 @ 0;
+    return;
+}
+
+void BossCard6_at2()
+{
+    var A, B;
+    %A = _f(120);
+    ins_91(1, %A, 3600, 9, 180.0f, 40.0f);
+    goto BossCard6_at2_420 @ 0;
+BossCard6_at2_140:
+    ins_600(0);
+    ins_607(0, 2);
+    ins_602(0, 16, 6);
+    ins_606(0, 32, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 1.5f, 0.2f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_601(0);
+    $B = _S(%A);
+    ins_23($B);
+BossCard6_at2_420:
+    if 1 goto BossCard6_at2_140 @ 0;
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(2);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    @MainLoop();
+    ins_1();
+}

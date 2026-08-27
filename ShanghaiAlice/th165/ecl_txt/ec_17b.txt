@@ -1,0 +1,113 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncB();
+
+void AttackFuncB()
+{
+    var A, B, C;
+    ins_302([-9982]);
+    @ClipFuncB();
++20: //20
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    $C = 10000;
+    goto AttackFuncB_332 @ 20;
+AttackFuncB_248:
+    @AttackFuncB_at();
+    ins_412(60, 0, 1.0f);
+    ins_23(60);
+AttackFuncB_332:
+    if $C-- goto AttackFuncB_248 @ 20;
+    goto AttackFuncB_420 @ 20;
+AttackFuncB_400:
+    ins_23(1000);
+AttackFuncB_420:
+    if 1 goto AttackFuncB_400 @ 20;
+    return;
+}
+
+void AttackFuncB_at()
+{
+    var A, B, C, D;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 5, 2);
+    ins_606(0, 2, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 2.5f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 32768, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 32.0f);
+    unless ([-9900] == 1) goto AttackFuncB_at_412 @ 0;
+    ins_605(0, 3.5f, 1.0f);
+AttackFuncB_at_412:
+    ins_614(1, 0);
+    ins_614(2, 0);
+    ins_614(3, 0);
+    ins_614(4, 0);
+    ins_614(5, 0);
+    ins_614(6, 0);
+    ins_602(1, 4, 14);
+    ins_602(2, 4, 13);
+    ins_602(3, 4, 10);
+    ins_602(4, 4, 8);
+    ins_602(5, 4, 6);
+    ins_602(6, 4, 4);
+    %A = [-9998.0f];
+    unless ([-9900] == 1) goto AttackFuncB_at_888 @ 0;
+    90;
+    goto AttackFuncB_at_908 @ 0;
+AttackFuncB_at_888:
+    30;
+AttackFuncB_at_908:
+    ins_43($B);
+    $C = $B;
+    goto AttackFuncB_at_1612 @ 0;
+AttackFuncB_at_992:
+    $B = -1;
+    $D = 7;
+    goto AttackFuncB_at_1468 @ 0;
+AttackFuncB_at_1096:
+    $B = $B + 1;
+    ins_604($B, %A, 0.0f);
+    %A = %A - (3.883222f + ([-9987.0f] * 0.017453292f));
+    ins_601($B);
+    unless ([-9900] != 1) goto AttackFuncB_at_1468 @ 0;
+    ins_23(1);
+AttackFuncB_at_1468:
+    if $D-- goto AttackFuncB_at_1096 @ 0;
+    unless ([-9900] == 1) goto AttackFuncB_at_1612 @ 0;
+    ins_23(4);
+AttackFuncB_at_1612:
+    if $C-- goto AttackFuncB_at_992 @ 0;
+    return;
+}
+
+void BossB()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 0);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncB();
+    goto BossB_648 @ 0;
+BossB_628:
+    ins_23(1000);
+BossB_648:
+    if 1 goto BossB_628 @ 0;
+    ins_1();
+}

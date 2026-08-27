@@ -1,0 +1,190 @@
+
+void BossItem(var A, var B, var C);
+
+void BossItemPhase(var A, var B, var C, var D);
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    [-9926] = 0;
+    ins_302(1);
+    ins_303(1, 105);
+    ins_302(4);
+    ins_306(0, 0);
+    ins_502(76);
+    ins_500(48.0f, 48.0f);
+    ins_501(40.0f, 40.0f);
+    ins_511(17000);
+    ins_527(0, 17000.0f, -8355585);
+    ins_514(1, 0, 1500, "MBossDead");
+    ins_521(1, "MBossEscape");
+    ins_629(128.0f, 8425471);
+    ins_400(-192.0f, -64.0f);
+    ins_401(100, 4, 0.0f, 128.0f);
+    ins_23(40);
+    ins_504(0.0f, 128.0f, 280.0f, 256.0f);
+    ins_519();
+    @MBoss1();
+    goto MBoss_808 @ 0;
+MBoss_788:
+    ins_23(1000);
+MBoss_808:
+    if 1 goto MBoss_788 @ 0;
+    ins_1();
+}
+
+void MBoss1()
+{
+    @EffChargePoint3(1.5707964f, 0.5235988f, 8, 5, 5, 7);
+    ins_23(80);
+    [-9985] = 60;
+    [-9984] = 1;
+    goto MBoss1_564 @ 0;
+MBoss1_244:
+    ins_412(200, 0, 0.3f);
+    @MBoss1_at(6, [-9989.0f] - 1.5707964f, _f(1));
+    ins_23(30);
+    ins_412(200, 0, 0.3f);
+    @MBoss1_at(6, [-9989.0f] + 1.5707964f, _f(-1));
+    ins_23(30);
+MBoss1_564:
+    if 1 goto MBoss1_244 @ 0;
+    return;
+}
+
+void MBoss1_at(var A, var B, var C)
+{
+    var D, E, F, G, H, I, J;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 31, $A);
+!E
+    7;
+!N
+    10;
+!H
+    12;
+!LO
+    14;
+!*
+    ins_606(0, [-1], 1);
+    ins_604(0, 0.0f, 0.17453292f);
+    ins_605(0, 1.4f, 0.5f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 35, -999999, -999999.0f, -999999.0f);
+    ins_302(4);
+    ins_313(0);
+    %D = 3.883222f;
+    %E = %B;
+    ins_536(%F, 1.2f, 1.2f, 1.6f, 1.8f);
+    %G = _f(0);
+    $I = -1;
+    $J = 70;
+    goto MBoss1_at_1424 @ 0;
+MBoss1_at_660:
+    $I = $I + 1;
+    %G = %G + _f(1);
+    ins_609(0, 2, 0, -2147483648, 0, -999999, -999999.0f, -999999.0f);
+    ins_626(0, %E, -160.0f);
+    ins_627(0, 160.0f);
+!E
+    0.279253f;
+!N
+    0.244346f;
+!H
+    0.20944f;
+!LO
+    0.20944f;
+!*
+    ins_604(0, %E, [-1.0f]);
+    ins_605(0, %F, 0.0f);
+    %E = %E + ((3.1415927f / 20.0f) * %C);
+    unless (([-9959] != 0) || (($I % 2) == 0)) goto MBoss1_at_1404 @ 0;
+    ins_601(0);
+MBoss1_at_1404:
+    ins_23(5);
+MBoss1_at_1424:
+    if $J-- goto MBoss1_at_660 @ 0;
+    return;
+}
+
+void MBossDead()
+{
+    ins_523();
+    ins_303(1, -1);
+    unless ([-9900] != 0) goto MBossDead_248 @ 0;
+    @BossItemPhase(30, 20, 28, 48.0f);
+    goto MBossDead_316 @ 0;
+MBossDead_248:
+    @BossItemPhase(30, 20, 0, 48.0f);
+MBossDead_316:
+    @BossItem(3, 0, 0);
+    ins_510(19);
+    ins_509();
+    ins_510(20);
+    ins_509();
+    ins_510(30);
+    ins_509();
+    ins_525();
+    unless ([-9959] <= 1) goto MBossDead_812 @ 0;
+    unless ([-9986] == 0) goto MBossDead_732 @ 0;
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_788 @ 0;
+MBossDead_732:
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_788:
+    goto MBossDead_956 @ 0;
+MBossDead_812:
+    unless ([-9986] == 0) goto MBossDead_936 @ 0;
+    ins_615(640.0f);
+    goto MBossDead_956 @ 0;
+MBossDead_936:
+    ins_616(640.0f);
+MBossDead_956:
+    ins_307(1, 65);
+    ins_505();
+    ins_511(100000);
+    ins_570();
+    ins_502(3);
+    ins_517(30, 12, 0);
+    ins_517(30, 12, 0);
+    ins_307(1, 32);
+    ins_307(1, 64);
+    ins_516(5);
+    ins_512(-1);
+    ins_1();
+    ins_1();
+}
+
+void MBossEscape()
+{
+    ins_514(0, -1, 0, "");
+    ins_514(1, -1, 0, "");
+    ins_523();
+    ins_505();
+    ins_525();
+    ins_303(1, -1);
+    unless ([-9986] == 0) goto MBossEscape_304 @ 0;
+    ins_615(640.0f);
+    goto MBossEscape_324 @ 0;
+MBossEscape_304:
+    ins_616(640.0f);
+MBossEscape_324:
+    ins_511(100000);
+    ins_524(2);
+    ins_502(16);
+    ins_401(60, 4, 0.0f, -64.0f);
+    ins_23(10);
+    ins_512(-1);
+    ins_23(50);
+    ins_1();
+    ins_1();
+}

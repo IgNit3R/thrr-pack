@@ -1,0 +1,98 @@
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void ClipFuncD();
+
+void AttackFuncD()
+{
+    var A, B, C, D, E;
+    ins_302([-9982]);
+    @ClipFuncD();
+    ins_1012(5);
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    $C = [-9897];
+    %D = 0.383972f;
+    [-9981.0f] = _f(64);
+    $B = -1;
+    $E = 1000;
+    goto AttackFuncD_1672 @ 90;
+AttackFuncD_452:
+    $B = $B + 1;
+    unless ([-9900] == 1) goto AttackFuncD_648 @ 90;
+    $C = 50;
+AttackFuncD_648:
+    ins_516(27);
+    unless (($B % 4) == 0) goto AttackFuncD_916 @ 90;
+    ins_401($C, 4, -176.0f, [-9964.0f]);
+    ins_23($C + 40);
+    goto AttackFuncD_1636 @ 90;
+AttackFuncD_916:
+    unless (($B % 4) == 1) goto AttackFuncD_1164 @ 90;
+    ins_401($C, 4, [-9965.0f], 432.0f);
+    ins_23($C + 40);
+    goto AttackFuncD_1636 @ 90;
+AttackFuncD_1164:
+    unless (($B % 4) == 2) goto AttackFuncD_1412 @ 90;
+    ins_401($C, 4, [-9965.0f], 16.0f);
+    ins_23($C + 40);
+    goto AttackFuncD_1636 @ 90;
+AttackFuncD_1412:
+    unless (($B % 4) == 3) goto AttackFuncD_1636 @ 90;
+    ins_401($C, 4, 176.0f, [-9964.0f]);
+    ins_23($C + 40);
+AttackFuncD_1636:
+    @AttackFuncD_at();
+AttackFuncD_1672:
+    if $E-- goto AttackFuncD_452 @ 90;
+    goto AttackFuncD_1760 @ 90;
+AttackFuncD_1740:
+    ins_23(1000);
+AttackFuncD_1760:
+    if 1 goto AttackFuncD_1740 @ 90;
+    return;
+}
+
+void AttackFuncD_at()
+{
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 11, 14);
+    ins_606(0, [-9985], [-9984]);
+    ins_604(0, [-9998.0f], 0.0f);
+    ins_605(0, 2.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 32.0f);
+    ins_601(0);
+    return;
+}
+
+void BossD()
+{
+    ins_512([-9983]);
+    ins_515(120);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302([-9982]);
+    ins_306(0, 0);
+    ins_543();
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_513();
+    ins_514(0, 0, [-9898] * 60, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFuncD();
+    goto BossD_648 @ 0;
+BossD_628:
+    ins_23(1000);
+BossD_648:
+    if 1 goto BossD_628 @ 0;
+    ins_1();
+}

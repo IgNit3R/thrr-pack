@@ -1,0 +1,145 @@
+anim { "enemy.anm"; "enm19.anm"; }
+ecli { "default.ecl"; }
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void AttackFunc()
+{
+    var A, B, C, D, E, F, G, H;
+    %A = 0.034907f;
+    ins_504(0.0f, 192.0f, 280.0f, 128.0f);
+    ins_522(0, 4800, 0, "恋符「マシンガンスパーク」");
+    ins_307(1, 62);
+    ins_516(54);
+    ins_313(0);
+    [-9980.0f] = _f(1);
+    $E = 20;
+    goto AttackFunc_1076 @ 0;
+AttackFunc_336:
+    $G = 3;
+    $H = 3;
+    goto AttackFunc_948 @ 0;
+AttackFunc_440:
+    [-9981.0f] = [-9989.0f];
+    @EffChargePoint3([-9981.0f], 0.5235988f, $G, 16, 16, 16);
+    @EffChargePoint3([-9981.0f], -0.5235988f, $G + 3, 23, 23, 23);
+    $G = $G + 6;
+    ins_23(70);
+    ins_404([-9981.0f], -3.0f);
+    ins_405(60, 4, [-9981.0f], 0.0f);
+    ins_516(49);
+    ins_517(60, 1, 1);
+    @Spark01(60, [-9981.0f]);
+AttackFunc_948:
+    if $H-- goto AttackFunc_440 @ 0;
+    ins_412(60, 4, 3.0f);
+    ins_23(20);
+    ins_1004();
+    ins_23(100);
+AttackFunc_1076:
+    if 1 goto AttackFunc_336 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 4);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 192.0f);
+    ins_23(40);
+    ins_511(2000);
+    ins_513();
+    ins_514(0, 0, 4800, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void Boss1Spark()
+{
+    ins_502(2817);
+    ins_302(3);
+    ins_303(0, 16);
+    ins_404([-9981.0f] + ([-9987.0f] * 0.087266f), 0.0f);
+    ins_405(90, 0, -999999.0f, 32.0f);
+    ins_323(0, 274);
+    ins_501(96.0f, 48.0f);
+    ins_23(2);
+    ins_564([-9958.0f] + 1.5707964f);
+    ins_319(0, [-9958.0f]);
+    goto Boss1Spark_780 @ 0;
+Boss1Spark_440:
+    unless (((([-9996.0f] >= _f(448)) || ([-9996.0f] <= _f(0))) || ([-9997.0f] < _f(-192))) || ([-9997.0f] > _f(192))) goto Boss1Spark_760 @ 0;
+    goto Boss1Spark_824 @ 0;
+Boss1Spark_760:
+    ins_23(1);
+Boss1Spark_780:
+    if 1 goto Boss1Spark_440 @ 0;
+Boss1Spark_824:
+    ins_600(1);
+    ins_607(1, 3);
+    ins_602(1, 16, 6);
+    ins_606(1, 3, 1);
+    ins_604(1, 0.0f, 0.0f);
+    ins_605(1, 2.0f + ([-9999.0f] * 1.5f), 6.5f);
+    ins_609(1, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(1, 1, 0, 4, 1200, -999999, 0.033333335f, 1.5707964f);
+    ins_604(1, [-9998.0f], 0.0f);
+    ins_601(1);
+    goto Boss1Spark_1724 @ 0;
+Boss1Spark_1240:
+    unless (((([-9996.0f] >= (_f(448) + _f(256))) || ([-9996.0f] <= (_f(0) - _f(256)))) || ([-9997.0f] < (_f(-192) - _f(256)))) || ([-9997.0f] > (_f(192) + _f(256)))) goto Boss1Spark_1704 @ 0;
+    goto Boss1Spark_1768 @ 0;
+Boss1Spark_1704:
+    ins_23(1);
+Boss1Spark_1724:
+    if 1 goto Boss1Spark_1240 @ 0;
+Boss1Spark_1768:
+    ins_1();
+    ins_1();
+}
+
+void Spark01(var A, var B)
+{
+    var C, D, E, F, G;
+    $G = $A;
+    goto Spark01_388 @ 0;
+Spark01_100:
+    [-9981.0f] = %B;
+    ins_81(%C, %D, [-9998.0f], 16.0f);
+    ins_81(%E, %F, [-9981.0f], 64.0f);
+    ins_300("Boss1Spark", %C + %E, %D + %F, 1, 1, 0);
+    ins_23(1);
+Spark01_388:
+    if $G-- goto Spark01_100 @ 0;
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

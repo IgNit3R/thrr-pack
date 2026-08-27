@@ -1,0 +1,209 @@
+anim { "enemy.anm"; "enm01b.anm"; }
+ecli { "default.ecl"; }
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void AttackFunc()
+{
+    var A;
+    ins_504(0.0f, 128.0f, 240.0f, 64.0f);
+    $A = 1000;
+    goto AttackFunc_272 @ 0;
+AttackFunc_132:
+    ins_313(0);
+    @AttackFunc01() async;
+    @AttackFunc00();
+    ins_412(40, 4, 1.0f);
+    ins_23(42);
+AttackFunc_272:
+    if $A-- goto AttackFunc_132 @ 0;
+    return;
+}
+
+void AttackFunc00()
+{
+    var A, B, C;
+    %A = 0.034907f;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 11, 2);
+    ins_606(0, 6, 1);
+    ins_604(0, 0.0f, 0.032724924f);
+    ins_605(0, 1.5f, 2.0f);
+    ins_609(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 16.0f);
+    %B = 0.0f;
+    $C = 10;
+    goto AttackFunc00_600 @ 0;
+AttackFunc00_456:
+    ins_604(0, %B, 0.0f);
+    %B = %B + 0.261799f;
+    ins_601(0);
+    ins_23(20);
+AttackFunc00_600:
+    if $C-- goto AttackFunc00_456 @ 0;
+    return;
+}
+
+void AttackFunc01()
+{
+    var A, B, C;
+    %A = 0.034907f;
+    ins_600(1);
+    ins_607(1, 3);
+    ins_602(1, 11, 4);
+    ins_606(1, 6, 1);
+    ins_604(1, 0.0f, 0.032724924f);
+    ins_605(1, 1.5f, 2.0f);
+    ins_609(1, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(1, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    ins_627(0, 32.0f);
+    ins_23(10);
+    %B = 0.0f;
+    $C = 10;
+    goto AttackFunc01_620 @ 0;
+AttackFunc01_476:
+    ins_604(1, %B, 0.0f);
+    %B = %B - 0.349066f;
+    ins_601(1);
+    ins_23(20);
+AttackFunc01_620:
+    if $C-- goto AttackFunc01_476 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(0.0f, 128.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_1002(2.0f);
+    ins_1009(3500);
+    ins_23(52);
+    ins_23(50);
+    ins_302(3);
+    ins_306(0, 4);
+    ins_503(3);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_511(7000);
+    ins_303(0, 4);
+    ins_306(0, 4);
+    unless ([-9902] == 0) goto Boss_668 @ 0;
+    ins_518(0);
+    ins_519();
+Boss_668:
+    ins_513();
+    ins_514(0, 0, 4800, "BossDeadPhoto2");
+    ins_521(0, "BossEscape");
+    ins_540(0);
+    @AttackFunc() async;
+    goto Boss_864 @ 0;
+Boss_844:
+    ins_23(1000);
+Boss_864:
+    if 1 goto Boss_844 @ 0;
+    ins_1();
+}
+
+void BossDeadPhoto2()
+{
+    var A, B;
+    ins_547(0.8f);
+    ins_1003(1);
+    ins_502(156);
+    ins_516(5);
+    ins_307(1, 63);
+    ins_404([-9998.0f], 0.2f);
+    ins_300("Ecl_EtBreak2", 0.0f, 0.0f, 9999, 0, 0);
+    ins_525();
+    ins_545();
+    $A = [-9903];
+    [-9903] = 0;
+    ins_505();
+    $B = 70;
+    goto BossDeadPhoto2_612 @ 0;
+BossDeadPhoto2_412:
+    unless ([-9903] != 0) goto BossDeadPhoto2_592 @ 0;
+    $A = $A + 1;
+    goto BossDeadPhoto2_656 @ 0;
+BossDeadPhoto2_592:
+    ins_23(1);
+BossDeadPhoto2_612:
+    if $B-- goto BossDeadPhoto2_412 @ 0;
+BossDeadPhoto2_656:
+    ins_547(1.0f);
+    unless ($A == 0) goto BossDeadPhoto2_788 @ 0;
+    @BossEscape2();
+BossDeadPhoto2_788:
+    ins_1003(0);
+    ins_613();
+    ins_523();
+    ins_1008(0);
+    ins_517(30, 12, 0);
+    ins_307(1, 64);
+    ins_516(5);
+    ins_404(0.0f, 0.0f);
+    ins_318();
+    ins_512(-1);
+    ins_502(32);
+    ins_23(50);
+    ins_547(1.0f);
+    ins_23(16);
+    ins_1004();
+    ins_23(4);
+    ins_1007(120);
+    ins_1006(2.0f);
+    ins_23(120);
+    ins_1000();
+    ins_1();
+    ins_1();
+}
+
+void BossEscape2()
+{
+    ins_547(1.0f);
+    ins_1008(0);
+    ins_523();
+    ins_505();
+    ins_525();
+    unless ([-9986] == 0) goto BossEscape2_248 @ 0;
+    ins_615(640.0f);
+    goto BossEscape2_268 @ 0;
+BossEscape2_248:
+    ins_616(640.0f);
+BossEscape2_268:
+    ins_511(100000);
+    ins_512(-1);
+    ins_502(16);
+    ins_401(60, 4, -224.0f, -16.0f);
+    ins_23(60);
+    ins_518(1);
+    ins_519();
+    ins_1001();
+    ins_1();
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(2);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_168 @ 0;
+main_148:
+    ins_23(4);
+main_168:
+    if 1 goto main_148 @ 0;
+    goto main_256 @ 0;
+main_236:
+    ins_23(1000);
+main_256:
+    if 1 goto main_236 @ 0;
+    ins_1();
+}

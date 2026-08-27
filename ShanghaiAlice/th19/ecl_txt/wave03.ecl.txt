@@ -1,0 +1,106 @@
+anim { "enemy.anm"; }
+
+void Wave03()
+{
+    ins_502(32);
+    ins_1023(100);
+    ins_23(10);
+    ins_502(32);
+    @Wave03Loop();
+    ins_23(20);
+    ins_1();
+}
+
+void Wave03Loop()
+{
+    var A;
+    ins_1015($A, 1);
+    ins_23(10);
+    @Wave03Loop00();
+    goto Wave03Loop_160 @ 0;
+Wave03Loop_140:
+    ins_23(10);
+Wave03Loop_160:
+    if ([-9889] > 0) goto Wave03Loop_140 @ 0;
+    return;
+}
+
+void Wave03Loop00()
+{
+    var A, B, C, D, E;
+    %C = _f(-100) - ([-9999.0f] * _f(30));
+    ins_1015($A, 0);
+    ins_1015($B, 1);
+    $D = 4;
+    goto Wave03Loop00_336 @ 0;
+Wave03Loop00_260:
+    ins_300("Wave03_GirlA01", %C, -32.0f, $A, 1000, 0);
+    ins_23(12);
+Wave03Loop00_336:
+    if ($D--) goto Wave03Loop00_260 @ 0;
+    ins_304("Wave03_GirlB01", %C + _f(240), -32.0f, $B, 1000, 0);
+    $E = 14;
+    goto Wave03Loop00_632 @ 0;
+Wave03Loop00_556:
+    ins_300("Wave03_GirlA01", %C, -32.0f, $A, 1000, 0);
+    ins_23(12);
+Wave03Loop00_632:
+    if ($E--) goto Wave03Loop00_556 @ 0;
+    return;
+}
+
+void Wave03_GirlA01()
+{
+    ins_302(2);
+    ins_306(0, 15);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1028(30.0f);
+    ins_1031(30);
+    ins_1029(6);
+    ins_1030(10);
+    ins_1032(20);
+    ins_1033(10);
+    ins_1039(1);
+    ins_404(1.5707964f, 4.0f);
+    ins_23(60);
+    ins_445(40, 1, 1.0f);
+    ins_441(40, 1, 0.0f + ([-9987.0f] * 0.17453292f));
+    ins_23(40);
+    ins_445(40, 1, 1.5f);
+    ins_441(40, 1, -1.5707964f + ([-9987.0f] * 0.5235988f));
+    goto Wave03_GirlA01_672 @ 0;
+Wave03_GirlA01_652:
+    ins_23(1000);
+Wave03_GirlA01_672:
+    if (1) goto Wave03_GirlA01_652 @ 0;
+    ins_1();
+}
+
+void Wave03_GirlB01()
+{
+    ins_302(2);
+    ins_306(0, 30);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1028(50.0f);
+    ins_1031(50);
+    ins_1029(6);
+    ins_1030(10);
+    ins_1032(20);
+    ins_1033(10);
+    ins_1039(1);
+    ins_404(1.1780972f, 5.0f);
+    ins_23(44);
+    ins_445(40, 1, 1.0f);
+    ins_441(40, 1, 0.0f + ([-9987.0f] * 0.17453292f));
+    ins_23(40);
+    ins_445(40, 1, 0.8f);
+    ins_441(40, 1, -1.5707964f + ([-9987.0f] * 0.5235988f));
+    goto Wave03_GirlB01_672 @ 0;
+Wave03_GirlB01_652:
+    ins_23(1000);
+Wave03_GirlB01_672:
+    if (1) goto Wave03_GirlB01_652 @ 0;
+    ins_1();
+}

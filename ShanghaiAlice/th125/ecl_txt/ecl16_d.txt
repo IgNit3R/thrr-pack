@@ -1,0 +1,355 @@
+anim { "enemy.anm"; "enm16.anm"; }
+
+void Appear()
+{
+    ins_402(32);
+    ins_257("Boss", 224.0f, 160.0f, 40, 1000, 1);
+    @BossName(0) async;
+    goto Appear_188 @ 0;
+Appear_168:
+    ins_83(1000);
+Appear_188:
+    if 1 goto Appear_168 @ 0;
+    ins_1();
+}
+
+void Boss()
+{
+    ins_412(0);
+    ins_258(2);
+    ins_262(0, 14);
+    ins_402(76);
+    ins_400(36.0f, 48.0f);
+    ins_401(36.0f, 48.0f);
+    ins_415(60);
+    ins_411(10000);
+    ins_458(9600);
+    ins_301(60, 4, 0.0f, 192.0f);
++60: //60
+    ins_0();
+    ins_258(0);
+    ins_259(1, 97);
+    ins_259(2, 188);
+    ins_258(2);
+    ins_526(160.0f, 6316287);
+    ins_460(2.0f);
+    ins_461(3.0f);
+    ins_422(0, 0, 0, "酔歩「キャットランダムウォーク」");
+    @Boss1();
+    goto Boss_568 @ 60;
+Boss_548:
+    ins_83(1000);
+Boss_568:
+    if 1 goto Boss_548 @ 60;
+    ins_1();
+}
+
+void Boss1()
+{
+    var A, B, C, D, E, F, G;
+    ins_258(2);
+    ins_416(68);
+    %C = 3.141593f;
+    [-9926] = 0;
+    %E = _f(192);
+    %F = _f(64);
+    ins_443();
+    $G = -1;
+    goto Boss1_1296 @ 0;
+Boss1_316:
+    $G = $G + 1;
+    ins_459(15);
+    ins_83(30);
+    [-9984] = 0;
+    ins_83(30);
+    @Boss1_at($G) async;
+    unless (%E > (_f(448) + _f(32))) goto Boss1_748 @ 0;
+    %F = %F * _f(-1);
+    goto Boss1_904 @ 0;
+Boss1_748:
+    unless (%E < _f(32)) goto Boss1_904 @ 0;
+    %F = %F * _f(-1);
+Boss1_904:
+    unless (($G % 2) == 0) goto Boss1_1132 @ 0;
+    ins_301(60, 5, [-9999.0f] * _f(192), %E);
+    goto Boss1_1220 @ 0;
+Boss1_1132:
+    ins_301(60, 5, [-9999.0f] * _f(-192), %E);
+Boss1_1220:
+    %E = %E + %F;
+Boss1_1296:
+    if 1 goto Boss1_316 @ 0;
+    return;
+}
+
+void Boss1_at(var A)
+{
+    var B, C, D, E;
+    %B = 3.141593f;
+    %C = _f(0);
+    unless (($A % 2) == 0) goto Boss1_at_596 @ 0;
+    ins_500(0);
+    ins_507(0, 2);
+    ins_502(0, 12, 6);
+    ins_506(0, 12 + ([-9929] * 2), 8);
+    ins_504(0, 0.0f, 0.016028535f);
+    ins_505(0, 3.4f + (_f([-9929]) * 0.15f), 0.6f);
+    goto Boss1_at_936 @ 0;
+Boss1_at_596:
+    ins_500(0);
+    ins_507(0, 2);
+    ins_502(0, 12, 2);
+    ins_506(0, 12 + ([-9929] * 2), 8);
+    ins_504(0, 0.0f, -0.016028535f);
+    ins_505(0, 3.4f + (_f([-9929]) * 0.15f), 0.6f);
+Boss1_at_936:
+    ins_524(0, 16.0f);
+    ins_509(0, 0, 1, 2, 2, -999999, -999999.0f, -999999.0f);
+    ins_509(0, 1, 0, 1024, 120, 1, -999999.0f, -999999.0f);
+    ins_501(0);
+    return;
+}
+
+void BossDead()
+{
+    ins_402(140);
+    ins_263(0, 81);
+    ins_416(5);
+    ins_263(0, 143);
+    ins_304([-9998.0f], 0.4f);
+    unless ([-9986] == 0) goto BossDead_308 @ 0;
+    ins_256("Ecl_EtBreak2", 0.0f, 0.0f, 9999, 0, 0);
+    goto BossDead_364 @ 0;
+BossDead_308:
+    ins_256("Ecl_EtBreak2_ni", 0.0f, 0.0f, 9999, 0, 0);
+BossDead_364:
+    ins_425();
+    ins_510();
+    ins_423();
+    ins_447(1.0f);
+    ins_417(30, 12, 0);
+    ins_263(0, 81);
+    ins_263(0, 144);
+    ins_416(5);
+    ins_412(-1);
+    ins_1();
+    ins_1();
+}
+
+void BossEscape()
+{
+    ins_414(0, -1, -1, "");
+    ins_414(1, -1, -1, "");
+    ins_413();
+    ins_423();
+    ins_405();
+    ins_21();
+    ins_529(0);
+    ins_258(2);
+    ins_262(0, 3);
+    ins_411(100000);
+    ins_412(-1);
+    ins_402(4124);
+    ins_301(60, 4, 0.0f, -32.0f);
++60: //60
+    ins_457();
+    ins_1();
+    ins_1();
+}
+
+void BossGirl()
+{
+    ins_402(4096);
+    @BossGirlFunc();
+    ins_1();
+}
+
+void BossGirlDead()
+{
+    ins_263(0, 83);
+    ins_416(3);
+    ins_402(4096);
+    [-9926] = [-9926] - 1;
+    ins_21();
+    ins_301(1, 0, [-9997.0f], [-9996.0f]);
+    ins_276();
+    ins_259(0, 113);
+    ins_402(4099);
+    ins_259(1, -1);
+    ins_304(([-9989.0f] - 3.1415927f) + ([-9998.0f] / 1.4f), ([-9999.0f] * 3.0f) + 2.0f);
+    ins_305(30, 0, -999999.0f, 0.0f);
+    ins_83(30);
+    goto BossGirlDead_780 @ 0;
+BossGirlDead_628:
+    unless ([-9942] == 1) goto BossGirlDead_760 @ 0;
+    ins_403(4096);
+    @BossGirl();
+BossGirlDead_760:
+    ins_83(1);
+BossGirlDead_780:
+    if 1 goto BossGirlDead_628 @ 0;
+    goto BossGirlDead_868 @ 0;
+BossGirlDead_848:
+    ins_83(1000);
+BossGirlDead_868:
+    if 1 goto BossGirlDead_848 @ 0;
+    return;
+}
+
+void BossGirlDead2()
+{
+    ins_402(4096);
+    ins_263(0, 343);
+    [-9926] = [-9926] - 1;
+    ins_21();
+    ins_301(1, 0, [-9997.0f], [-9996.0f]);
+    ins_305(10, 0, -999999.0f, 0.0f);
+    ins_276();
+    ins_259(0, 113);
+    ins_402(4099);
+    ins_259(1, -1);
+    ins_83(10);
+    goto BossGirlDead2_516 @ 0;
+BossGirlDead2_364:
+    unless ([-9942] == 1) goto BossGirlDead2_496 @ 0;
+    ins_403(4096);
+    @BossGirl();
+BossGirlDead2_496:
+    ins_83(1);
+BossGirlDead2_516:
+    if 1 goto BossGirlDead2_364 @ 0;
+    goto BossGirlDead2_604 @ 0;
+BossGirlDead2_584:
+    ins_83(1000);
+BossGirlDead2_604:
+    if 1 goto BossGirlDead2_584 @ 0;
+    return;
+}
+
+void BossGirlFunc()
+{
+    var A, B, C;
+    ins_529(3);
+    [-9926] = [-9926] + 1;
+    [-9985] = 113;
+    ins_258(1);
+    ins_402(3);
+    ins_259(2, 119);
+    ins_463("BossGirlDead");
+    ins_282(0, 343);
+    ins_416(56);
+    ins_83(60);
+    ins_262(0, 20);
+    ins_259(1, 48);
+    ins_403(4099);
+    ins_400(24.0f, 24.0f);
+    ins_401(24.0f, 24.0f);
+    $C = 0;
+    ins_304([-9989.0f], 0.0f);
+    [-9981.0f] = 0.0f;
+    ins_305(60, 0, [-9998.0f], 0.8f);
+    [-9981.0f] = 0.0f;
+    goto BossGirlFunc_672 @ 0;
+BossGirlFunc_652:
+    ins_83(400);
+BossGirlFunc_672:
+    if 1 goto BossGirlFunc_652 @ 0;
+    return;
+}
+
+void BossGirl_at()
+{
+    var A;
+    ins_500(0);
+    ins_507(0, 2);
+    ins_502(0, 8, 15);
+    ins_506(0, 1, 1);
+    ins_504(0, 0.0f, 0.032724924f);
+    ins_505(0, 3.4f, 1.0f);
+    ins_509(0, 0, 1, 2, 2, -999999, -999999.0f, -999999.0f);
+    ins_524(0, 32.0f);
+    $A = 40;
+    goto BossGirl_at_524 @ 0;
+BossGirl_at_328:
+    ins_83($A);
+    ins_501(0);
+    unless ($A >= 12) goto BossGirl_at_524 @ 0;
+    $A = $A - 4;
+BossGirl_at_524:
+    if 1 goto BossGirl_at_328 @ 0;
+    return;
+}
+
+void BossGirl_at2()
+{
+    ins_500(1);
+    ins_507(1, 3);
+    ins_502(1, 1, 6);
+    ins_506(1, 1, 1);
+    ins_504(1, 0.0f, 0.032724924f);
+    ins_505(1, 0.4f, 1.0f);
+    ins_509(1, 0, 1, 2, 2, -999999, -999999.0f, -999999.0f);
+    ins_83(120);
+    goto BossGirl_at2_564 @ 0;
+BossGirl_at2_284:
+    ins_504(1, [-9998.0f], 0.0f);
+    ins_505(1, ([-9999.0f] * 0.6f) + 0.4f, 0.0f);
+    ins_501(1);
+    ins_83(40 - ([-9929] * 5));
+BossGirl_at2_564:
+    if 1 goto BossGirl_at2_284 @ 0;
+    return;
+}
+
+void BossName(var A)
+{
+    ins_263(2, 19 + $A);
+    ins_416(67);
+    ins_83(30);
+    ins_416(57);
+    ins_416(40);
+    return;
+}
+
+void Boss_at()
+{
+    var A;
+    ins_500(0);
+    ins_507(0, 2);
+    ins_502(0, 30, 0);
+    ins_506(0, 20, 1);
+    ins_504(0, 0.0f, 0.032724924f);
+    ins_505(0, 3.4f, 1.0f);
+    ins_509(0, 0, 1, 2, 2, -999999, -999999.0f, -999999.0f);
+    $A = 40;
+    goto Boss_at_436 @ 0;
+Boss_at_304:
+    ins_83(60 - ([-9929] * 5));
+    ins_501(0);
+Boss_at_436:
+    if 1 goto Boss_at_304 @ 0;
+    return;
+}
+
+void MapleEnemy()
+{
+    ins_402(32);
+MapleEnemy_56:
+    ins_264(0, 201);
++3: //3
+    goto MapleEnemy_56 @ 0;
+    ins_1();
+}
+
+void Move()
+{
+    goto Move_164 @ 0;
+Move_60:
+    ins_301(200, 9, 120.0f, 128.0f);
+    ins_83(200);
+    ins_301(200, 9, -120.0f, 128.0f);
+    ins_83(200);
+Move_164:
+    if 1 goto Move_60 @ 0;
+    return;
+}

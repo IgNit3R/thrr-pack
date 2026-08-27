@@ -1,0 +1,141 @@
+anim { "enemy.anm"; "enm04.anm"; }
+ecli { "default.ecl"; }
+
+void AttackFunc()
+{
+    var A, B, C;
+    ins_513();
+    ins_523();
+    ins_516(27);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_522(0, 3000, 0, "叫喚「プライマルスクリーム」");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_316(0, 0);
++60: //60
+    ins_0();
+    $A = 14;
+    $B = 0;
+    $C = 14;
+    goto AttackFunc_1268 @ 60;
+AttackFunc_488:
+    [-9981.0f] = _f(-192);
+    [-9980.0f] = _f(192);
+    [-9979.0f] = _f(-640);
+    [-9978.0f] = _f(640);
+    ins_632(1);
+    ins_516(30);
+    ins_302(3);
+    ins_303(3, 7);
+    ins_303(4, 7);
+    ins_328(3, 280, 0, 192);
+    ins_329(3, 200.0f, 800.0f);
+    ins_330(3, 280, 0, 72.0f, 800.0f);
+    ins_328(4, 280, 0, 192);
+    ins_329(4, -200.0f, 800.0f);
+    ins_330(4, 280, 0, -72.0f, 800.0f);
+    ins_91(0, [-9981.0f], 280, 0, -192.0f, -64.0f);
+    ins_91(1, [-9980.0f], 280, 0, 192.0f, 64.0f);
+    ins_23(180);
+    ins_1004();
+    ins_23(100);
+    ins_328(3, 60, 0, 0);
+    ins_328(4, 60, 0, 0);
+    [-9981.0f] = _f(-999);
+    [-9980.0f] = _f(999);
+    ins_632(0);
+    ins_23(240);
+AttackFunc_1268:
+    if 1 goto AttackFunc_488 @ 60;
+    goto AttackFunc_1356 @ 60;
+AttackFunc_1336:
+    ins_23(1000);
+AttackFunc_1356:
+    if 1 goto AttackFunc_1336 @ 60;
+    return;
+}
+
+void AttackFunc0()
+{
+    var A;
+    ins_568(1);
+    ins_504(0.0f, 128.0f, 64.0f, 64.0f);
+    @Attack_at() async;
+    $A = 3;
+    goto AttackFunc0_232 @ 0;
+AttackFunc0_184:
+    ins_23(120);
+    ins_412(60, 4, 1.0f);
+AttackFunc0_232:
+    if $A-- goto AttackFunc0_184 @ 0;
+    @AttackFunc();
+    return;
+}
+
+void Attack_at()
+{
+    var A, B;
+    %A = _f(0);
+    $B = 10000;
+    goto Attack_at_616 @ 0;
+Attack_at_140:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 7, 13);
+    ins_606(0, 2, 1);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 2.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_604(0, %A, 0.0f);
+    ins_627(0, 16.0f);
+    %A = %A + (0.034906585f + (([-9987.0f] * 0.017453292f) * 0.2f));
+    ins_601(0);
+    ins_23(2);
+Attack_at_616:
+    if $B-- goto Attack_at_140 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 128.0f);
+    ins_23(40);
+    ins_511(1700);
+    ins_513();
+    ins_514(0, 0, 3000, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc0();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

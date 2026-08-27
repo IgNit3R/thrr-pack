@@ -1,0 +1,163 @@
+anim { "enemy.anm"; }
+
+void Wave06()
+{
+    ins_502(32);
+    ins_1023(100);
+    ins_23(10);
+    ins_502(32);
+    @Wave06Loop();
+    ins_23(20);
+    ins_1();
+}
+
+void Wave06Loop()
+{
+    var A;
+    ins_1015($A, 1);
+    ins_23(10);
+    @Wave06Loop00();
+    goto Wave06Loop_160 @ 0;
+Wave06Loop_140:
+    ins_23(10);
+Wave06Loop_160:
+    if ([-9889] > 0) goto Wave06Loop_140 @ 0;
+    return;
+}
+
+void Wave06Loop00()
+{
+    var A, B, C, D;
+    %C = _f(-100) - ([-9999.0f] * _f(30));
+    ins_1015($A, 0);
+    ins_1015($B, 1);
+    @Wave06Loop01() async;
+    @Wave06Loop02() async;
+    [-9981.0f] = 3.141593f;
+    $D = 10;
+    goto Wave06Loop00_524 @ 0;
+Wave06Loop00_372:
+    ins_300("Wave06_GirlA01", -160.0f, 320.0f, $A, 1000, 0);
+    %C = %C + _f(20);
+    ins_23(10);
+Wave06Loop00_524:
+    if ($D--) goto Wave06Loop00_372 @ 0;
+    return;
+}
+
+void Wave06Loop01()
+{
+    var A, B;
+    ins_23(20);
+    ins_1015($B, 1);
+    ins_300("Wave06_GirlB01", 160.0f, 220.0f, $B, 1000, 0);
+    return;
+}
+
+void Wave06Loop02()
+{
+    var A, B, C, D;
+    %C = _f(-100) - ([-9999.0f] * _f(30));
+    ins_1015($A, 0);
+    ins_1015($B, 1);
+    ins_23(60);
+    [-9981.0f] = 3.141593f;
+    $D = 10;
+    goto Wave06Loop02_472 @ 0;
+Wave06Loop02_320:
+    ins_300("Wave06_GirlA01b", -160.0f, 120.0f, $A, 1000, 0);
+    %C = %C + _f(20);
+    ins_23(10);
+Wave06Loop02_472:
+    if ($D--) goto Wave06Loop02_320 @ 0;
+    return;
+}
+
+void Wave06_GirlA01()
+{
+    ins_302(2);
+    ins_306(0, 10);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1028(30.0f);
+    ins_1031(30);
+    ins_1029(6);
+    ins_1030(10);
+    ins_1032(20);
+    ins_1033(10);
+    ins_1039(1);
+    ins_1028(30.0f);
+    ins_1031(20);
+    ins_1029(4);
+    ins_502(12);
+    ins_404(-1.1780972f, 3.0f);
+    ins_405(160, 0, 0.7853982f, 1.0f);
+    ins_23(60);
+    ins_503(12);
+    goto Wave06_GirlA01_488 @ 0;
+Wave06_GirlA01_468:
+    ins_23(1000);
+Wave06_GirlA01_488:
+    if (1) goto Wave06_GirlA01_468 @ 0;
+    ins_1();
+}
+
+void Wave06_GirlA01b()
+{
+    ins_302(2);
+    ins_306(0, 10);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1028(30.0f);
+    ins_1031(30);
+    ins_1029(6);
+    ins_1030(10);
+    ins_1032(20);
+    ins_1033(10);
+    ins_1039(1);
+    ins_1028(30.0f);
+    ins_1031(20);
+    ins_1029(4);
+    ins_502(12);
+    ins_404(0.3926991f, 3.0f);
+    ins_405(160, 0, 0.0f, 1.0f);
+    ins_23(60);
+    ins_503(12);
+    goto Wave06_GirlA01b_488 @ 0;
+Wave06_GirlA01b_468:
+    ins_23(1000);
+Wave06_GirlA01b_488:
+    if (1) goto Wave06_GirlA01b_468 @ 0;
+    ins_1();
+}
+
+void Wave06_GirlB01()
+{
+    ins_302(2);
+    ins_306(0, 40);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_1028(50.0f);
+    ins_1031(50);
+    ins_1029(6);
+    ins_1030(10);
+    ins_1032(20);
+    ins_1033(10);
+    ins_1039(1);
+    ins_1028(80.0f);
+    ins_1031(60);
+    ins_1029(6);
+    ins_502(12);
+    ins_404(3.1415927f, 1.6f);
+    ins_23(60);
+    ins_503(12);
+    ins_23(160);
+    ins_427();
+    ins_404([-9958.0f], 2.0f);
+    goto Wave06_GirlB01_516 @ 0;
+Wave06_GirlB01_496:
+    ins_23(1000);
+Wave06_GirlB01_516:
+    if (1) goto Wave06_GirlB01_496 @ 0;
+    ins_1();
+}

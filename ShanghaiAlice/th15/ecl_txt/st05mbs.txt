@@ -1,0 +1,102 @@
+
+void BossItemPhase(var A, var B, var C);
+
+void MBoss()
+{
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    ins_569(-1);
+    ins_512(0);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(18);
+    ins_500(48.0f, 48.0f);
+    ins_501(48.0f, 48.0f);
+    ins_515(60);
+    ins_511(13200);
+    ins_401(60, 4, -128.0f, 112.0f);
+    ins_23(60);
+    ins_518(2);
+    ins_23(10);
+    ins_519();
+    ins_23(2);
+    ins_516(41);
+    ins_401(20, 4, 128.0f, 112.0f);
+    ins_519();
+    ins_23(2);
+    ins_516(41);
+    ins_401(20, 4, 0.0f, 100.0f);
+    ins_23(22);
+    ins_302(3);
+    ins_313(0);
+    ins_337(1, 73, 6.0f, -38.0f, 0.0f);
+    ins_516(54);
+    ins_23(100);
+    ins_337(1, 88, 6.0f, -38.0f, 0.0f);
+    ins_516(6);
+    ins_519();
+    ins_401(40, 1, 224.0f, 96.0f);
+    ins_23(40);
+    ins_1();
+    ins_1();
+}
+
+void MBossDead()
+{
+    ins_523();
+    ins_525();
+    ins_505();
+    unless ([-9986] == 0) goto MBossDead_240 @ 0;
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_296 @ 0;
+MBossDead_240:
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_296:
+    ins_506();
+    ins_510(3);
+    ins_509();
+    @BossItemPhase(20, 18, 64.0f);
+    ins_511(100000);
+    ins_512(-1);
+    ins_517(30, 12, 0);
+    ins_307(0, 28);
+    ins_307(1, 65);
+    ins_516(5);
+    ins_524(0);
+    ins_502(19);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_23(120);
+    ins_401(60, 4, 224.0f, 64.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void MBossEscape()
+{
+    ins_514(0, -1, 0, "");
+    ins_514(1, -1, 0, "");
+    ins_523();
+    ins_505();
+    ins_525();
+    unless ([-9986] == 0) goto MBossEscape_280 @ 0;
+    ins_615(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    ins_616(640.0f);
+MBossEscape_300:
+    ins_511(100000);
+    ins_524(0);
+    ins_512(-1);
+    ins_502(16);
+    ins_401(60, 4, 224.0f, 64.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}

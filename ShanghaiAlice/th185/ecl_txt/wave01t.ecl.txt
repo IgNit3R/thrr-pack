@@ -1,0 +1,180 @@
+anim { "enemy.anm"; }
+
+void Wave01t()
+{
+    ins_502(32);
+    ins_30("Wave01t Start");
+    ins_1006("FairyWave Tutorial Wave 1");
+    ins_502(32);
+    ins_1023(200);
+    ins_23(60);
+    @Wave01tLoop() async 1;
+    ins_1015([-9985], 16);
+    ins_1018([-9985]);
+    ins_23([-9985]);
+    ins_17(1);
+    ins_525();
+    ins_616(640.0f);
+    ins_1();
+}
+
+void Wave01tLoop()
+{
+    goto Wave01tLoop_172 @ 0;
+Wave01tLoop_60:
+    @Wave01tSub01();
+    ins_23(240);
+    @Wave01tSub02();
+    ins_23(240);
+Wave01tLoop_172:
+    if (1) goto Wave01tLoop_60 @ 0;
+    return;
+}
+
+void Wave01tSub01()
+{
+    var A, B;
+    ins_1015($A, 0);
+    $B = 12;
+    goto Wave01tSub01_512 @ 0;
+Wave01tSub01_124:
+    ins_304("Wave01t_GirlA01", _f((120 + 32) + ([-10000] % 32)), -32.0f, $A, 1000, 20);
+    ins_300("Wave01t_GirlA01", _f((-120 - 32) + ([-10000] % 32)), -32.0f, $A, 1000, 20);
+    ins_23(30);
+Wave01tSub01_512:
+    if ($B--) goto Wave01tSub01_124 @ 0;
+    return;
+}
+
+void Wave01tSub02()
+{
+    var A, B;
+    ins_1015($A, 0);
+    $B = 12;
+    goto Wave01tSub02_440 @ 0;
+Wave01tSub02_124:
+    ins_304("Wave01t_GirlA02", 224.0f, _f(64 + ([-10000] % 32)), $A, 1000, 20);
+    ins_300("Wave01t_GirlA02", -224.0f, _f(64 + ([-10000] % 32)), $A, 1000, 20);
+    ins_23(30);
+Wave01tSub02_440:
+    if ($B--) goto Wave01tSub02_124 @ 0;
+    return;
+}
+
+void Wave01t_GirlA01()
+{
+    ins_302(2);
+    ins_306(0, 0);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_404(1.5707964f, 1.5f);
+    ins_23(30);
+    ins_441(120, 1, 0.21816616f);
+    ins_445(300, 1, 1.5f);
+    @Wave01t_GirlA_at();
+    goto Wave01t_GirlA01_312 @ 0;
+Wave01t_GirlA01_292:
+    ins_23(1000);
+Wave01t_GirlA01_312:
+    if (1) goto Wave01t_GirlA01_292 @ 0;
+    ins_1();
+}
+
+void Wave01t_GirlA02()
+{
+    ins_302(2);
+    ins_306(0, 0);
+    ins_500(24.0f, 24.0f);
+    ins_501(16.0f, 16.0f);
+    ins_404(0.0f, 1.5f);
+    ins_23(30);
+    ins_441(120, 1, 0.7853982f);
+    ins_445(300, 1, 1.5f);
+    @Wave01t_GirlA_at();
+    goto Wave01t_GirlA02_312 @ 0;
+Wave01t_GirlA02_292:
+    ins_23(1000);
+Wave01t_GirlA02_312:
+    if (1) goto Wave01t_GirlA02_292 @ 0;
+    ins_1();
+}
+
+void Wave01t_GirlA_at()
+{
+    var A;
+    ins_23(10 + ([-10000] % 20));
+    ins_600(0);
+    ins_607(0, 0);
+    ins_602(0, 5, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, 0.0f, 0.7853982f);
+!0
+    1.0f;
+!1
+    2.0f;
+!2
+    2.3f;
+!3
+    2.6f;
+!4
+    3.0f;
+!5
+    3.4f;
+!6
+    4.0f;
+!7
+    4.5f;
+!*
+    ins_605(0, [-1.0f], 1.0f);
+    ins_611(0, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_535($A, 1, 2, 3, 4, 4, 4, 4, 4);
+    goto Wave01t_GirlA_at_900 @ 0;
+Wave01t_GirlA_at_584:
+    unless (([-10000] % 2) == 0) goto Wave01t_GirlA_at_720 @ 0;
+    ins_601(0);
+Wave01t_GirlA_at_720:
+!0
+    120;
+!1
+    120;
+!2
+    100;
+!3
+    80;
+!4
+    80;
+!5
+    80;
+!6
+    80;
+!7
+    80;
+!*
+    ins_23([-1]);
+Wave01t_GirlA_at_900:
+    if ($A--) goto Wave01t_GirlA_at_584 @ 0;
+    return;
+}
+
+void Wave01ttest()
+{
+    ins_502(32);
+    ins_1013(0, 100, 115, 130, 145, 160, 175, 190, 205);
+    ins_1013(1, 110, 130, 150, 170, 190, 210, 230, 250);
+    ins_1013(4, 300, 400, 500, 600, 700, 800, 900, 1000);
+    ins_1013(5, 500, 650, 800, 950, 1100, 1250, 1400, 1550);
+    ins_1013(8, 2000, 2300, 2600, 2900, 3200, 3500, 3800, 4100);
+    ins_1013(9, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(12, 2500, 2900, 3300, 3700, 4100, 4500, 4900, 5300);
+    ins_1013(13, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(16, 1800, 1920, 2040, 2160, 2280, 2400, 2520, 2640);
+    ins_23(1);
+    ins_300("Wave01t", 0.0f, 0.0f, 100, 100, 0);
+    goto Wave01ttest_636 @ 0;
+Wave01ttest_616:
+    ins_23(1000);
+Wave01ttest_636:
+    if (1) goto Wave01ttest_616 @ 0;
+    ins_1003();
+    ins_1();
+}

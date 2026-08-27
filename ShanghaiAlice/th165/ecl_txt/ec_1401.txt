@@ -1,0 +1,124 @@
+anim { "enemy.anm"; "enm16.anm"; }
+ecli { "default.ecl"; }
+
+void MainLoop();
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void AttackFunc()
+{
+    var A, B, C;
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto AttackFunc_208 @ 0;
+    ins_615(640.0f);
+    goto AttackFunc_228 @ 0;
+AttackFunc_208:
+    ins_616(640.0f);
+AttackFunc_228:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_522(0, 4800, 0, "秘儀「マターラスッカ」");
+    ins_302(3);
+    ins_316(0, 0);
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    ins_504(0.0f, 224.0f, 240.0f, 64.0f);
+    [-9981.0f] = 1.3f;
+    $A = 2;
+    $B = -1;
+    $C = 1000;
+    goto AttackFunc_996 @ 90;
+AttackFunc_864:
+    $B = $B + 1;
+    @BossCard6_at();
+    ins_23(40);
+AttackFunc_996:
+    if $C-- goto AttackFunc_864 @ 90;
+    goto AttackFunc_1084 @ 90;
+AttackFunc_1064:
+    ins_23(1000);
+AttackFunc_1084:
+    if 1 goto AttackFunc_1064 @ 90;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(0.0f, 224.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 2);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 7);
+    ins_502(3);
+    ins_1002(8.0f);
+    ins_1009(3200);
+    ins_1010(1.0f);
+    ins_23(100);
+    ins_503(3);
+    ins_502(64);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_511(30000);
+    ins_513();
+    ins_514(0, 0, 4800, "BossDeadPhoto");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_680 @ 0;
+Boss_660:
+    ins_23(1000);
+Boss_680:
+    if 1 goto Boss_660 @ 0;
+    ins_1();
+}
+
+void BossCard6_at()
+{
+    var A, B, C;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 10, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, 0.0f, 0.0f);
+    ins_605(0, 3.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 256, 200, 0, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 140, -999999, -999999.0f, -999999.0f);
+    ins_627(0, -320.0f);
+    ins_603(0, 0.0f, -24.0f);
+    %A = 1.570796f;
+    %B = -1.570796f;
+    $C = 10000;
+    goto BossCard6_at_904 @ 0;
+BossCard6_at_520:
+    ins_604(0, %A, 0.0f);
+    ins_605(0, 2.0f + ([-9987.0f] * 0.1f), 0.0f);
+    ins_610(0, 3, 0, 16, 1, 1, 0, 0, [-9987.0f] * 1.0471976f, 2.5f, -999999.0f, -999999.0f);
+    ins_601(0);
+    %A = %A + 0.056112f;
+    ins_23(1);
+BossCard6_at_904:
+    if $C-- goto BossCard6_at_520 @ 0;
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_23(2);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    @MainLoop();
+    ins_1();
+}

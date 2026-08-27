@@ -1,0 +1,181 @@
+anim { "enemy.anm"; "enm33.anm"; }
+ecli { "default.ecl"; }
+
+void AttackFunc()
+{
+    var A, B, C, D;
+    %A = 0.034907f;
+    ins_522(0, 5400, 0, "古舟「エンシェントシップ」");
+    ins_23(80);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_23(20);
+    ins_505();
+    [-9985] = 2;
+    ins_552(2);
+    ins_301("BossCasd1Ship", 224.0f, [-9996.0f] - _f(60), 200000, 10, 0);
+    ins_436(30, 4, 0.0f, -32.0f);
+    ins_23(30);
+    ins_436(30, 1, 0.0f, 32.0f);
+    ins_23(30);
+    ins_318();
+    ins_516(21);
+    ins_500(112.0f, 112.0f);
+    $D = 0;
+    @BossCard1_at() async;
+    goto AttackFunc_1192 @ 0;
+AttackFunc_672:
+    ins_303(0, 5);
+    [-9985] = 0;
+    ins_401(150, 9, -256.0f, ((-[-9999.0f]) * _f(64)) + [-9964.0f]);
+    ins_23(60);
+    ins_1004();
+    ins_23(90);
+    ins_303(0, 7);
+    [-9985] = 1;
+    ins_401(150, 9, 256.0f, ((-[-9999.0f]) * _f(64)) + [-9964.0f]);
+    ins_23(60);
+    ins_1004();
+    ins_23(90);
+AttackFunc_1192:
+    if 1 goto AttackFunc_672 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(-192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(76);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 192.0f);
+    ins_23(40);
+    ins_511(2100);
+    ins_513();
+    ins_514(0, 0, 5400, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void BossCard1Ship_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 8, 6);
+    ins_606(0, 1, 1);
+    ins_604(0, 1.5707964f, 0.032724924f);
+    ins_605(0, 0.0f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 400, -999999, -999999.0f, -999999.0f);
+    ins_608(0, -1, -1);
+    $A = 60000;
+    goto BossCard1Ship_at_1108 @ 0;
+BossCard1Ship_at_416:
+    unless ([-9943] == 0) goto BossCard1Ship_at_780 @ 0;
+    ins_603(0, _f(-70) + ([-9987.0f] * _f(8)), _f(32) + ([-9987.0f] * _f(8)));
+    ins_609(0, 3, 0, 4, 120, -999999, 0.016666668f, -999999.0f);
+    goto BossCard1Ship_at_1040 @ 0;
+BossCard1Ship_at_780:
+    ins_603(0, _f(70) + ([-9987.0f] * _f(8)), _f(32) + ([-9987.0f] * _f(8)));
+    ins_609(0, 3, 0, 4, 120, -999999, 0.016666668f, -999999.0f);
+BossCard1Ship_at_1040:
+    ins_604(0, [-9998.0f], 0.5235988f);
+    ins_601(0);
+    ins_23(1);
+BossCard1Ship_at_1108:
+    if $A-- goto BossCard1Ship_at_416 @ 0;
+    return;
+}
+
+void BossCard1_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 30, 6);
+    ins_606(0, 3, 1);
+    ins_604(0, 0.0f, 0.31415927f);
+    ins_605(0, 2.2f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_609(0, 1, 0, 4, 120, -999999, 0.016666668f, -999999.0f);
+    ins_23(240);
+    $A = 6000;
+    goto BossCard1_at_456 @ 0;
+BossCard1_at_368:
+    ins_604(0, [-9989.0f], 0.06981317f);
+    ins_601(0);
+    ins_23(10);
+    ins_23(60);
+BossCard1_at_456:
+    if $A-- goto BossCard1_at_368 @ 0;
+    return;
+}
+
+void BossCasd1Ship()
+{
+    ins_552(0);
+    ins_302(3);
+    ins_303(0, 9);
+    ins_502(12);
+    ins_500(0.0f, 0.0f);
+    ins_501(64.0f, 64.0f);
+    ins_515(60);
+    ins_516(70);
+    ins_401(60, 4, [-9963.0f], [-9962.0f] + _f(32));
+    ins_23(60);
+    @BossCard1Ship_at() async;
+    ins_516(70);
+    [-9985] = 0;
+    goto BossCasd1Ship_1028 @ 0;
+BossCasd1Ship_440:
+    ins_401(1, 0, [-9963.0f], [-9962.0f] + _f(32));
+    unless (([-9943] == 0) && ([-9985] == 1)) goto BossCasd1Ship_768 @ 0;
+    ins_329(0, 1.0f, 1.0f);
+    [-9985] = 0;
+    ins_516(70);
+BossCasd1Ship_768:
+    unless (([-9943] == 1) && ([-9985] == 0)) goto BossCasd1Ship_1008 @ 0;
+    ins_329(0, -1.0f, 1.0f);
+    [-9985] = 1;
+    ins_516(70);
+BossCasd1Ship_1008:
+    ins_23(1);
+BossCasd1Ship_1028:
+    if 1 goto BossCasd1Ship_440 @ 0;
+    goto BossCasd1Ship_1116 @ 0;
+BossCasd1Ship_1096:
+    ins_23(1000);
+BossCasd1Ship_1116:
+    if 1 goto BossCasd1Ship_1096 @ 0;
+    ins_1();
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

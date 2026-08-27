@@ -1,0 +1,825 @@
+
+void BossItemPhase(var A, var B, var C);
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    ins_300("MBossB", 0.0f, 0.0f, 100, 100, 0);
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    ins_512(0);
+    ins_302(4);
+    ins_306(0, 0);
+    ins_502(18);
+    ins_500(48.0f, 48.0f);
+    ins_501(48.0f, 48.0f);
+    ins_515(20);
+    ins_400(-192.0f, -48.0f);
+    ins_401(60, 4, -64.0f, 128.0f);
+    unless ([-9907] == 108) goto MBoss_656 @ 0;
+    ins_401(60, 4, -32.0f, 128.0f);
+    goto MBoss_768 @ 0;
+MBoss_656:
+    unless ([-9907] == 109) goto MBoss_768 @ 0;
+    ins_401(60, 4, -128.0f, 160.0f);
+MBoss_768:
+    [-9947] = 1;
+    ins_23(70);
+    ins_511(11000);
+    ins_519();
+    ins_503(18);
+    @EffChargePoint3(0.0f, -0.5235988f, 12, 7, 13, 7);
+    ins_23(30);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_302(1);
+    ins_303(1, 106);
+    ins_303(2, 115);
+    ins_302(4);
+    ins_629(128.0f, 1040319);
+    unless ([-9907] >= 0) goto MBoss_1548 @ 0;
+    unless ([-9907] == 108) goto MBoss_1392 @ 0;
+    ins_511(2400);
+    @MBossCard2();
+    goto MBoss_1548 @ 0;
+    goto MBoss_1472 @ 0;
+MBoss_1392:
+    unless ([-9907] == 109) goto MBoss_1548 @ 0;
+MBoss_1472:
+    ins_511(2400);
+    @MBossCard3();
+    goto MBoss_1548 @ 0;
+MBoss_1548:
+    [-9982] = 0;
+    @MBoss1();
+    goto MBoss_1660 @ 0;
+MBoss_1640:
+    ins_23(1000);
+MBoss_1660:
+    if 1 goto MBoss_1640 @ 0;
+    ins_1();
+}
+
+void MBoss1()
+{
+    ins_513();
+    ins_540(2);
+    ins_514(0, 0, 3000, "MBossSuspend");
+    [-9981.0f] = 0.017453f;
+    [-9985] = 2;
+    [-9925] = 0;
+    goto MBoss1_556 @ 0;
+MBoss1_264:
+    ins_307(1, 72);
+    ins_516(54);
+    ins_23(60);
+    ins_302(3);
+    @MBoss1_at2();
+    @MBoss1_at4() async;
+    ins_23(80);
+    ins_412(60, 4, 0.4f);
+    ins_23(70);
+    @EffChargePoint2(1.5707964f, 0.5235988f, 8, 31, 37);
+MBoss1_556:
+    if 1 goto MBoss1_264 @ 0;
+    return;
+}
+
+void MBoss1B()
+{
+    ins_513();
+    ins_514(0, 0, 3000, "MBossSuspend");
+    ins_307(1, 72);
+    ins_516(54);
+    ins_302(5);
+    @MBoss1B_at() async;
+    [-9981.0f] = 0.017453f;
+    [-9985] = 2;
+    goto MBoss1B_388 @ 0;
+MBoss1B_300:
+    ins_23(60);
+    ins_23(80);
+    ins_412(60, 4, 0.4f);
+    ins_23(70);
+MBoss1B_388:
+    if 1 goto MBoss1B_300 @ 0;
+    return;
+}
+
+void MBoss1B_at()
+{
+    var A;
+    $A = 120;
+    goto MBoss1B_at_1048 @ 0;
+MBoss1B_at_100:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 39, 0);
+    ins_606(0, 24, 1);
+    ins_604(0, [-9998.0f], 0.032724924f);
+    ins_605(0, 0.4f, 1.0f);
+    ins_627(0, 32.0f);
+    ins_603(0, _f(12) + ([-9987.0f] * _f(32)), _f(-12) + ([-9987.0f] * _f(32)));
+    ins_608(0, 39, 39);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 8, 40, -999999, 0.017f, 0.006f * [-9987.0f]);
+    ins_611(0, 0, 8, 40, -999999, 0.017f, 0.006f * [-9987.0f]);
+    ins_611(0, 0, 8, 40, -999999, -0.015f, 0.006f * [-9987.0f]);
+    ins_611(0, 0, 8, 40, -999999, 0.0f, 0.006f * [-9987.0f]);
+    ins_611(0, 0, 65536, 4, -999999, -999999.0f, -999999.0f);
+    ins_601(0);
+    ins_23(40);
+MBoss1B_at_1048:
+    if $A-- goto MBoss1B_at_100 @ 0;
+    return;
+}
+
+void MBoss1_at()
+{
+    var A;
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 38, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, [-9981.0f], 0.032724924f);
+    ins_605(0, 0.1f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_608(0, 39, 39);
+    $A = 120;
+    goto MBoss1_at_732 @ 0;
+MBoss1_at_328:
+    ins_609(0, 1, 0, -2147483648, 80 + ([-10000] % 120), -999999, -999999.0f, -999999.0f);
+    ins_609(0, 2, 0, 2097152, 80, -999999, 2.0f, [-9981.0f] + ([-9987.0f] * 0.34906584f));
+    ins_626(0, 1.5707964f, [-9987.0f] * _f(56));
+    ins_601(0);
+    ins_23(1);
+MBoss1_at_732:
+    if $A-- goto MBoss1_at_328 @ 0;
+    return;
+}
+
+void MBoss1_at2()
+{
+    ins_600(0);
+    ins_602(0, 0, 14);
+    ins_604(0, -3.0543263f, -3.0543263f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_700(0, -1.0f, -1.0f, -1.0f, 14.0f);
+    ins_701(0, 120, -1, -1, -1, 0);
+    ins_608(0, 18, -1);
+    ins_609(0, 0, 1, 8, 60, 0, -0.06333333f, -0.001454441f);
+    ins_609(0, 1, 1, 8, 30, 60, 0.1f, -0.0814487f);
+    ins_609(0, 2, 1, 8, 120, 90, 0.13333334f, -0.01f);
+    ins_711(0);
+    ins_23(2);
+    ins_600(0);
+    ins_602(0, 0, 14);
+    ins_604(0, -2.8797932f, -2.8797932f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_700(0, -1.0f, -1.0f, -1.0f, 14.0f);
+    ins_701(0, 120, -1, -1, -1, 0);
+    ins_608(0, 18, -1);
+    ins_609(0, 0, 1, 8, 60, 0, -0.06333333f, -0.004363323f);
+    ins_609(0, 1, 1, 8, 30, 60, 0.1f, -0.0814487f);
+    ins_609(0, 2, 1, 8, 120, 90, 0.13333334f, -0.01f);
+    ins_711(0);
+    ins_23(2);
+    ins_600(0);
+    ins_602(0, 0, 14);
+    ins_604(0, -2.7052603f, -2.7052603f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_700(0, -1.0f, -1.0f, -1.0f, 14.0f);
+    ins_701(0, 120, -1, -1, -1, 0);
+    ins_608(0, 18, -1);
+    ins_609(0, 0, 1, 8, 60, 0, -0.06333333f, -0.0072722053f);
+    ins_609(0, 1, 1, 8, 30, 60, 0.1f, -0.0814487f);
+    ins_609(0, 2, 1, 8, 120, 90, 0.13333334f, -0.01f);
+    ins_711(0);
+    ins_23(2);
+    ins_600(0);
+    ins_602(0, 0, 14);
+    ins_604(0, -2.5307274f, -2.5307274f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_700(0, -1.0f, -1.0f, -1.0f, 14.0f);
+    ins_701(0, 120, -1, -1, -1, 0);
+    ins_608(0, 18, -1);
+    ins_609(0, 0, 1, 8, 60, 0, -0.06333333f, -0.010181087f);
+    ins_609(0, 1, 1, 8, 30, 60, 0.1f, -0.0814487f);
+    ins_609(0, 2, 1, 8, 120, 90, 0.13333334f, -0.01f);
+    ins_711(0);
+    ins_23(2);
+    ins_600(0);
+    ins_602(0, 0, 14);
+    ins_604(0, -2.3561945f, -2.3561945f);
+    ins_605(0, 4.0f, 4.0f);
+    ins_700(0, -1.0f, -1.0f, -1.0f, 14.0f);
+    ins_701(0, 120, -1, -1, -1, 0);
+    ins_608(0, 18, -1);
+    ins_609(0, 0, 1, 8, 60, 0, -0.06333333f, -0.01308997f);
+    ins_609(0, 1, 1, 8, 30, 60, 0.1f, -0.0814487f);
+    ins_609(0, 2, 1, 8, 120, 90, 0.13333334f, -0.01f);
+    ins_711(0);
+    ins_23(2);
+    return;
+}
+
+void MBoss1_at3()
+{
+    ins_502(288);
+    ins_404(0.6981317f, 3.0f);
+    ins_445(120, 7, 0.13333334f);
+    ins_441(120, 7, -0.01f);
+    @MBoss1_at() async;
+    ins_23(120);
+    ins_1();
+}
+
+void MBoss1_at4()
+{
+    ins_23(120);
+    [-9981.0f] = [-9989.0f];
+    ins_300("MBoss1_at3", -128.0f, 0.0f, 10, 0, 0);
+    return;
+}
+
+void MBoss2()
+{
+    ins_302(1);
+    ins_303(1, 106);
+    ins_302(4);
+    ins_306(0, 0);
+    ins_503(19);
+    ins_540(1);
+    ins_511(2400);
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto MBoss2_356 @ 0;
+    ins_615(640.0f);
+    goto MBoss2_376 @ 0;
+MBoss2_356:
+    ins_616(640.0f);
+MBoss2_376:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_401(60, 4, -32.0f, 128.0f);
+    ins_540(0);
+    ins_515(120);
+    ins_516(27);
+    ins_23(120);
+    ins_504(0.0f, 128.0f, 280.0f, 96.0f);
+    @MBossCard2();
+    return;
+}
+
+void MBoss2B()
+{
+    ins_302(1);
+    ins_303(1, 106);
+    ins_302(5);
+    ins_306(0, 0);
+    ins_503(19);
+    ins_568(0);
+    ins_511(2400);
+    ins_515(120);
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto MBoss2B_376 @ 0;
+    ins_615(640.0f);
+    goto MBoss2B_396 @ 0;
+MBoss2B_376:
+    ins_616(640.0f);
+MBoss2B_396:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_401(60, 4, 32.0f, 128.0f);
+    ins_23(120);
+    ins_504(0.0f, 128.0f, 280.0f, 96.0f);
+    @MBossCard2B();
+    return;
+}
+
+void MBoss3()
+{
+    ins_302(1);
+    ins_303(1, 106);
+    ins_302(4);
+    ins_306(0, 0);
+    ins_503(19);
+    ins_540(1);
+    ins_511(3000);
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto MBoss3_356 @ 0;
+    ins_615(640.0f);
+    goto MBoss3_376 @ 0;
+MBoss3_356:
+    ins_616(640.0f);
+MBoss3_376:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_401(60, 4, -128.0f, 160.0f);
+    ins_540(0);
+    ins_515(120);
+    ins_516(27);
+    ins_23(120);
+    ins_504(0.0f, 128.0f, 280.0f, 96.0f);
+    @MBossCard3();
+    return;
+}
+
+void MBoss3B()
+{
+    ins_302(1);
+    ins_303(1, 106);
+    ins_302(5);
+    ins_306(0, 0);
+    ins_503(19);
+    ins_568(0);
+    ins_511(3000);
+    ins_515(120);
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto MBoss3B_376 @ 0;
+    ins_615(640.0f);
+    goto MBoss3B_396 @ 0;
+MBoss3B_376:
+    ins_616(640.0f);
+MBoss3B_396:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_401(60, 4, 128.0f, 160.0f);
+    ins_23(120);
+    ins_504(0.0f, 128.0f, 280.0f, 96.0f);
+    @MBossCard3B();
+    return;
+}
+
+void MBossB()
+{
+    ins_512(0);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_525();
+    ins_513();
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    ins_512(1);
+    ins_302(5);
+    ins_306(0, 0);
+    ins_502(18);
+    ins_500(48.0f, 48.0f);
+    ins_501(48.0f, 48.0f);
+    ins_515(20);
+    ins_400(192.0f, -48.0f);
+    ins_401(60, 4, 64.0f, 128.0f);
+    unless ([-9907] == 108) goto MBossB_608 @ 0;
+    ins_401(60, 4, 32.0f, 128.0f);
+    goto MBossB_720 @ 0;
+MBossB_608:
+    unless ([-9907] == 109) goto MBossB_720 @ 0;
+    ins_401(60, 4, 128.0f, 160.0f);
+MBossB_720:
+    [-9947] = 1;
+    ins_23(70);
+    ins_511(11000);
+    ins_519();
+    ins_503(18);
+    @EffChargePoint3(3.1415927f, 0.5235988f, 12, 6, 12, 6);
+    ins_23(30);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_302(1);
+    ins_303(1, 106);
+    ins_303(2, 111);
+    ins_302(5);
+    ins_629(128.0f, 1040319);
+    [-9926] = 0;
+    unless ([-9907] >= 0) goto MBossB_1592 @ 0;
+    unless ([-9907] == 108) goto MBossB_1404 @ 0;
+    ins_511(2400);
+    ins_23(1);
+    @MBossCard2B();
+    goto MBossB_1592 @ 0;
+    goto MBossB_1484 @ 0;
+MBossB_1404:
+    unless ([-9907] == 109) goto MBossB_1592 @ 0;
+MBossB_1484:
+    ins_511(2400);
+    ins_401(60, 4, 128.0f, 160.0f);
+    @MBossCard3B();
+    goto MBossB_1592 @ 0;
+MBossB_1592:
+    [-9982] = 10000;
+    @MBoss1B();
+    goto MBossB_1704 @ 0;
+MBossB_1684:
+    ins_23(1000);
+MBossB_1704:
+    if 1 goto MBossB_1684 @ 0;
+    ins_1();
+}
+
+void MBossCard2()
+{
+    ins_513();
+    ins_21();
+    ins_525();
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_514(0, 0, 2400, "MBossSuspend2");
+    ins_522(108, 2400, 500000, "弦楽「嵐のアンサンブル」");
+    [-9926] = 0;
+    ins_23(60);
+    @EffChargePoint3(0.7853982f, -2.0943952f, 8, 7, 7, 7);
+    ins_302(4);
++90: //90
+    ins_0();
+    @MBossCard2_at() async;
+    goto MBossCard2_784 @ 90;
+MBossCard2_764:
+    ins_23(1000);
+MBossCard2_784:
+    if 1 goto MBossCard2_764 @ 90;
+    return;
+}
+
+void MBossCard2B()
+{
+    ins_514(0, 0, 2400, "MBossSuspend2");
+    ins_568(1);
+    ins_23(60);
+    @EffChargePoint3(0.7853982f, -2.0943952f, 8, 6, 6, 6);
+    ins_302(5);
++90: //90
+    ins_0();
+    @MBossCard2B_at() async;
+    goto MBossCard2B_324 @ 90;
+MBossCard2B_304:
+    ins_23(1000);
+MBossCard2B_324:
+    if 1 goto MBossCard2B_304 @ 90;
+    return;
+}
+
+void MBossCard2B_at()
+{
+    var A, B;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 39, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, -1.5707964f, 0.049087387f);
+    ins_605(0, 1.4f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 8, 200, -999999, 0.015f, -0.011635528f);
+    %A = [-9998.0f];
+    $B = 50000;
+    goto MBossCard2B_at_600 @ 0;
+MBossCard2B_at_384:
+    ins_604(0, %A, 0.048706863f);
+    %A = %A + (3.883222f + ([-9987.0f] * 0.05235988f));
+    ins_601(0);
+    ins_23(2);
+MBossCard2B_at_600:
+    if $B-- goto MBossCard2B_at_384 @ 0;
+    return;
+}
+
+void MBossCard2_at()
+{
+    var A, B;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 38, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, -1.5707964f, 0.049087387f);
+    ins_605(0, 1.4f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 8, 200, -999999, 0.015f, 0.011635528f);
+    %A = [-9998.0f];
+    $B = 50000;
+    goto MBossCard2_at_600 @ 0;
+MBossCard2_at_384:
+    ins_604(0, %A, 0.048706863f);
+    %A = %A - (3.883222f + ([-9987.0f] * 0.05235988f));
+    ins_601(0);
+    ins_23(2);
+MBossCard2_at_600:
+    if $B-- goto MBossCard2_at_384 @ 0;
+    return;
+}
+
+void MBossCard3()
+{
+    var A;
+    ins_513();
+    ins_21();
+    ins_525();
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_514(0, 0, 2400, "MBossSuspend3");
+    ins_522(109, 2400, 500000, "弦楽「浄瑠璃世界」");
+    [-9926] = 0;
+    ins_23(60);
+    @EffChargePoint3(0.7853982f, -2.0943952f, 8, 7, 7, 7);
+    ins_302(4);
++90: //90
+    ins_0();
+    $A = 10000;
+    goto MBossCard3_1012 @ 90;
+MBossCard3_760:
+    @MBossCard3_at(38, ((-[-9999.0f]) * 0.05235988f) - 0.10471976f);
+    ins_23(60);
+    @MBossCard3B_at(38, 0.011635528f);
+    ins_23(60);
+MBossCard3_1012:
+    if $A-- goto MBossCard3_760 @ 90;
+    goto MBossCard3_1100 @ 90;
+MBossCard3_1080:
+    ins_23(1000);
+MBossCard3_1100:
+    if 1 goto MBossCard3_1080 @ 90;
+    return;
+}
+
+void MBossCard3B()
+{
+    var A;
+    ins_514(0, 0, 2400, "MBossSuspend3");
+    ins_568(1);
+    ins_23(60);
+    @EffChargePoint3(0.7853982f, -2.0943952f, 8, 6, 6, 6);
+    ins_302(5);
++90: //90
+    ins_0();
+    $A = 10000;
+    goto MBossCard3B_544 @ 90;
+MBossCard3B_308:
+    @MBossCard3B_at(39, -0.011635528f);
+    ins_23(60);
+    @MBossCard3_at(39, ([-9999.0f] * 0.05235988f) + 0.10471976f);
+    ins_23(60);
+MBossCard3B_544:
+    if $A-- goto MBossCard3B_308 @ 90;
+    goto MBossCard3B_632 @ 90;
+MBossCard3B_612:
+    ins_23(1000);
+MBossCard3B_632:
+    if 1 goto MBossCard3B_612 @ 90;
+    return;
+}
+
+void MBossCard3B_at(var A, var B)
+{
+    var C, D;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, $A, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, -1.5707964f, 0.049087387f);
+    ins_605(0, 1.4f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 8, 200, -999999, 0.012f, %B);
+    %C = [-9998.0f];
+    $D = 200;
+    goto MBossCard3B_at_600 @ 0;
+MBossCard3B_at_384:
+    ins_604(0, %C, 0.048706863f);
+    %C = %C + (3.883222f + ([-9987.0f] * 0.05235988f));
+    ins_601(0);
+    ins_23(3);
+MBossCard3B_at_600:
+    if $D-- goto MBossCard3B_at_384 @ 0;
+    return;
+}
+
+void MBossCard3_at(var A, var B)
+{
+    var C, D;
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, $A, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, -1.5707964f, 0.049087387f);
+    ins_605(0, 1.4f, 1.0f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 64, 1, 13, -999999.0f, -999999.0f);
+    ins_611(0, 1, 8, 120, -999999, 0.01f, 0.0f);
+    %C = [-9998.0f];
+    $D = 300;
+    goto MBossCard3_at_572 @ 0;
+MBossCard3_at_428:
+    ins_604(0, %C, 0.048706863f);
+    %C = %C + %B;
+    ins_601(0);
+    ins_23(2);
+MBossCard3_at_572:
+    if $D-- goto MBossCard3_at_428 @ 0;
+    return;
+}
+
+void MBossDead()
+{
+    ins_502(32);
+    ins_523();
+    ins_525();
+    unless ([-9959] <= 1) goto MBossDead_404 @ 0;
+    unless ([-9986] == 0) goto MBossDead_324 @ 0;
+    ins_300("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_380 @ 0;
+MBossDead_324:
+    ins_300("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_380:
+    goto MBossDead_548 @ 0;
+MBossDead_404:
+    unless ([-9986] == 0) goto MBossDead_528 @ 0;
+    ins_615(640.0f);
+    goto MBossDead_548 @ 0;
+MBossDead_528:
+    ins_616(640.0f);
+MBossDead_548:
+    ins_307(1, 64);
+    @BossItemPhase(20, 10, 64.0f);
+    ins_512(-1);
+    ins_557(60, 0, -11534256, 600.0f, 1800.0f);
+    ins_517(30, 12, 0);
+    ins_307(0, 27);
+    ins_516(5);
+    ins_524(0);
+    ins_1();
+    ins_1();
+}
+
+void MBossEscape()
+{
+    ins_514(0, -1, 0, "");
+    ins_514(1, -1, 0, "");
+    ins_523();
+    ins_505();
+    ins_525();
+    unless ([-9986] == 0) goto MBossEscape_280 @ 0;
+    ins_615(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    ins_616(640.0f);
+MBossEscape_300:
+    ins_511(100000);
+    ins_524(0);
+    ins_512(-1);
+    ins_502(16);
+    ins_401(60, 4, -224.0f, 64.0f);
+    ins_23(60);
+    ins_1();
+    ins_1();
+}
+
+void MBossSuspend()
+{
+    @BossItemPhase(20, 20, _f(64));
+    ins_502(31);
+    ins_307(1, 39);
+    ins_516(3);
+    ins_516(27);
+    ins_511(10000);
+    ins_505();
+    ins_303(1, -1);
+    ins_615(128.0f);
+    [-9926] = [-9926] + 1;
+    ins_401(120, 1, 0.0f, -64.0f);
+    goto MBossSuspend_412 @ 0;
+MBossSuspend_392:
+    ins_23(1);
+MBossSuspend_412:
+    if ([-9926] < 2) goto MBossSuspend_392 @ 0;
+    unless ([-9982] == 0) goto MBossSuspend_624 @ 0;
+    @MBoss2();
+    goto MBossSuspend_652 @ 0;
+MBossSuspend_624:
+    @MBoss2B();
+MBossSuspend_652:
+    goto MBossSuspend_696 @ 0;
+MBossSuspend_676:
+    ins_23(1000);
+MBossSuspend_696:
+    if 1 goto MBossSuspend_676 @ 0;
+    return;
+}
+
+void MBossSuspend2()
+{
+    @BossItemPhase(15, 15, _f(64));
+    ins_502(31);
+    ins_307(1, 39);
+    ins_516(3);
+    ins_516(27);
+    ins_511(10000);
+    ins_505();
+    ins_303(1, -1);
+    [-9926] = [-9926] + 1;
+    ins_802(0);
+    ins_401(120, 1, 0.0f, -64.0f);
+    goto MBossSuspend2_412 @ 0;
+MBossSuspend2_392:
+    ins_23(1);
+MBossSuspend2_412:
+    if ([-9926] < 2) goto MBossSuspend2_392 @ 0;
+    unless ([-9982] == 0) goto MBossSuspend2_624 @ 0;
+    @MBoss3();
+    goto MBossSuspend2_652 @ 0;
+MBossSuspend2_624:
+    @MBoss3B();
+MBossSuspend2_652:
+    goto MBossSuspend2_696 @ 0;
+MBossSuspend2_676:
+    ins_23(1000);
+MBossSuspend2_696:
+    if 1 goto MBossSuspend2_676 @ 0;
+    return;
+}
+
+void MBossSuspend3()
+{
+    @BossItemPhase(15, 15, _f(64));
+    ins_502(31);
+    ins_307(1, 39);
+    ins_516(3);
+    ins_516(27);
+    ins_511(10000);
+    ins_505();
+    ins_303(1, -1);
+    [-9926] = [-9926] + 1;
+    ins_802(0);
+    ins_401(120, 1, 0.0f, -64.0f);
+    goto MBossSuspend3_412 @ 0;
+MBossSuspend3_392:
+    ins_23(1);
+MBossSuspend3_412:
+    if ([-9926] < 2) goto MBossSuspend3_392 @ 0;
+    @MBossDead();
+    goto MBossSuspend3_568 @ 0;
+MBossSuspend3_548:
+    ins_23(1000);
+MBossSuspend3_568:
+    if 1 goto MBossSuspend3_548 @ 0;
+    return;
+}

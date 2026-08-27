@@ -1,0 +1,170 @@
+anim { "enemy.anm"; "enm33.anm"; }
+ecli { "default.ecl"; }
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void AttackFunc()
+{
+    var A;
+    %A = 0.034907f;
+    ins_504(0.0f, 192.0f, 280.0f, 64.0f);
+    ins_522(0, 5400, 0, "îMó¥ÅuâŒâãó¥ñ¨Åv");
+    ins_23(90);
+    ins_516(30);
+    @EffChargePoint3(1.5707964f, 2.0943952f, 8, 18, 26, 20);
+    @EffChargePoint3(1.5707964f, -2.0943952f, 11, 19, 27, 21);
+    ins_302(3);
+    ins_313(0);
+    ins_23(60);
+    ins_301("Dragon", 128.0f, 448.0f, 10, 10, 0);
+    ins_301("Dragon", -128.0f, 448.0f, 10, 10, 0);
+    ins_23(160);
+    goto AttackFunc_692 @ 0;
+AttackFunc_568:
+    ins_412(60, 4, 4.0f);
+    ins_23(60);
+    ins_302(3);
+    ins_313(0);
+    ins_23(120);
+    ins_1004();
+AttackFunc_692:
+    if 1 goto AttackFunc_568 @ 0;
+    return;
+}
+
+void Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_400(192.0f, -64.0f);
+    ins_302(3);
+    ins_306(0, 0);
+    ins_502(64);
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_23(70);
+    ins_401(40, 4, 0.0f, 192.0f);
+    ins_23(40);
+    ins_511(2200);
+    ins_513();
+    ins_514(0, 0, 5400, "BossDead");
+    ins_521(0, "BossEscape");
+    @AttackFunc();
+    goto Boss_476 @ 0;
+Boss_456:
+    ins_23(1000);
+Boss_476:
+    if 1 goto Boss_456 @ 0;
+    ins_1();
+}
+
+void Dragon()
+{
+    var A, B;
+    ins_502(303);
+    ins_404(-1.5707964f, 3.5f);
+    @DragonAt() async;
+    @DragonAt2() async;
+    ins_23(10);
+    goto Dragon_504 @ 0;
+Dragon_188:
+    ins_87(%A, [-9997.0f], [-9996.0f], [-9963.0f], [-9962.0f]);
+    ins_89(%B, [-9958.0f], %A);
+    %B = %B * (1.0f + (0.05f * [-9987.0f]));
+    ins_441(60, 7, %B / 60.0f);
+    ins_23(60);
+Dragon_504:
+    if 1 goto Dragon_188 @ 0;
+    goto Dragon_592 @ 0;
+Dragon_572:
+    ins_23(1000);
+Dragon_592:
+    if 1 goto Dragon_572 @ 0;
+    ins_1();
+}
+
+void DragonAt()
+{
+    var A;
+    $A = 10000;
+    goto DragonAt_656 @ 0;
+DragonAt_100:
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 24, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, [-9958.0f], 0.0f);
+    ins_605(0, 0.0f, 6.5f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 256, 400, 0, -999999.0f, -999999.0f);
+    ins_611(0, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 2097152, 200, -999999, 5.0f, -999999.0f);
+    ins_626(0, [-9958.0f] - 1.5707964f, [-9987.0f] * 10.0f);
+    ins_601(0);
+    ins_23(3);
+DragonAt_656:
+    if $A-- goto DragonAt_100 @ 0;
+    return;
+}
+
+void DragonAt2()
+{
+    var A, B;
+    ins_23(300);
+    $B = 10000;
+    goto DragonAt2_1272 @ 0;
+DragonAt2_120:
+    ins_600(0);
+    ins_607(0, 2);
+    ins_602(0, 32, 0);
+    ins_606(0, 1, 1);
+    ins_604(0, [-9958.0f], 0.0f);
+    ins_605(0, 1.0f, 6.5f);
+    ins_611(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 33554432, 4, -999999, -999999.0f, -999999.0f);
+    ins_611(0, 0, 2097152, 60, -999999, 4.0f, -999999.0f);
+    %A = _f(0);
+    ins_604(0, %A, 0.0f);
+    ins_602(0, 32, 1);
+    ins_601(0);
+    %A = %A + 1.256637f;
+    ins_604(0, %A, 0.0f);
+    ins_602(0, 32, 2);
+    ins_601(0);
+    %A = %A + 1.256637f;
+    ins_604(0, %A, 0.0f);
+    ins_602(0, 32, 2);
+    ins_601(0);
+    %A = %A + 1.256637f;
+    ins_604(0, %A, 0.0f);
+    ins_602(0, 32, 3);
+    ins_601(0);
+    %A = %A + 1.256637f;
+    ins_604(0, %A, 0.0f);
+    ins_602(0, 32, 3);
+    ins_601(0);
+    %A = %A + 1.256637f;
+    ins_23(80);
+DragonAt2_1272:
+    if $B-- goto DragonAt2_120 @ 0;
+    return;
+}
+
+void main()
+{
+    ins_502(32);
+    ins_301("Boss", -64.0f, -64.0f, 4000, 5000, 2);
+    goto main_148 @ 0;
+main_128:
+    ins_23(4);
+main_148:
+    if 1 goto main_128 @ 0;
+    goto main_236 @ 0;
+main_216:
+    ins_23(1000);
+main_236:
+    if 1 goto main_216 @ 0;
+    ins_1();
+}

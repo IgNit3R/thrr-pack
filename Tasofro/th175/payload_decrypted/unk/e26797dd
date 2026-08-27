@@ -1,0 +1,27 @@
+cbuffer ConstantBuffer : register(b1)
+{
+	matrix projection;
+}
+
+struct VS_OUTPUT
+{
+	float4 position : SV_POSITION;
+	float4 color : COLOR;
+	float2 texcord : TEXCOORD0;
+};
+
+VS_OUTPUT main(float4 _position : POSITION, float4 _color : COLOR, float2 _texcord : TEXCOORD)
+{
+	VS_OUTPUT output = (VS_OUTPUT)0;
+
+//	output.position = mul(_position, projection);
+	output.position = _position;
+	output.color = _color;
+	output.texcord = _texcord;
+
+	// GL->VK conventions
+	output.position.y = -output.position.y;
+	output.position.z = (output.position.z + output.position.w) / 2.0;
+
+	return output;
+}
