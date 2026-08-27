@@ -1,0 +1,555 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\lib\event_control.nut: 
+sourcename: "data\script\lib\event_control.nut"
+name: "main"
+nliterals: 6
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 7
+ndefaultparams: 0
+ninstructions: 19
+nfunctions: 5
+Literals: [
+    0: "next"
+    1: "stage_start"
+    2: "set_enemy_name"
+    3: "goto_next_stage"
+    4: "goto_select_stage"
+    5: "restert_battle"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 18
+    1: name: "this", pos: 0, start_op: 0, end_op: 18
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 4, op: 3
+    2: line: 33, op: 6
+    3: line: 36, op: 9
+    4: line: 40, op: 12
+    5: line: 45, op: 15
+    6: line: 55, op: 18
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "next")
+    1:  loadnulls(s3, 1)
+    2:  newslot(s255, s0, s2, s3)
+    3:  load(s2, "stage_start")
+    4:  closure(s3, 0)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "set_enemy_name")
+    7:  closure(s3, 1)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "goto_next_stage")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "goto_select_stage")
+    13:  closure(s3, 3)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "restert_battle")
+    16:  closure(s3, 4)
+    17:  newslot(s2, s0, s2, s3)
+    18:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\lib\event_control.nut"
+        name: "stage_start"
+        nliterals: 14
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 44
+        nfunctions: 2
+        Literals: [
+            0: "scene"
+            1: "rootenv"
+            2: "obj"
+            3: "stage"
+            4: "contents"
+            5: "fader"
+            6: "state"
+            7: "bgm"
+            8: "play"
+            9: "print"
+            10: "this2 "
+            11: "player"
+            12: "push_thread"
+            13: "fadein"
+          ]
+        Parameters: [
+            0: "this"
+            1: "bgm_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "stage", pos: 3, start_op: 8, end_op: 42
+            1: name: "obj", pos: 2, start_op: 4, end_op: 42
+            2: name: "bgm_", pos: 1, start_op: 0, end_op: 43
+            3: name: "this", pos: 0, start_op: 0, end_op: 43
+          ]
+        Line Informations: [
+            0: line: 4, op: 0
+            1: line: 6, op: 0
+            2: line: 7, op: 4
+            3: line: 8, op: 8
+            4: line: 11, op: 16
+            5: line: 13, op: 21
+            6: line: 14, op: 25
+            7: line: 22, op: 30
+            8: line: 23, op: 35
+            9: line: 32, op: 43
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  getk(s2, "scene", s2)
+            2:  getk(s2, "rootenv", s2)
+            3:  getk(s2, "obj", s2)
+            4:  loadroot(s3)
+            5:  getk(s3, "scene", s3)
+            6:  getk(s3, "rootenv", s3)
+            7:  getk(s3, "stage", s3)
+            8:  loadroot(s4)
+            9:  getk(s4, "scene", s4)
+            10:  getk(s4, "contents", s4)
+            11:  getk(s4, "fader", s4)
+            12:  getk(s4, "state", s4)
+            13:  loadint(s5, 0)
+            14:  ne(s4, 5, s4, 0)
+            15:  jz(s4, 14)
+            16:  loadroot(s4)
+            17:  getk(s4, "bgm", s4)
+            18:  prepcallk(s4, "play", s4, s5)
+            19:  move(s6, s1)
+            20:  call(255, s4, s5, 2)
+            21:  prepcallk(s4, "print", s0, s5)
+            22:  load(s6, "this2 ")
+            23:  add(s6, s0, s6)
+            24:  call(255, s4, s5, 2)
+            25:  getk(s4, "player", s2)
+            26:  load(s5, "state")
+            27:  closure(s6, 0)
+            28:  set(s255, s4, s5, s6)
+            29:  jmp(-, 13)
+            30:  loadroot(s4)
+            31:  getk(s4, "scene", s4)
+            32:  prepcallk(s4, "push_thread", s4, s5)
+            33:  load(s6, "fader")
+            34:  call(255, s4, s5, 2)
+            35:  loadroot(s4)
+            36:  getk(s4, "scene", s4)
+            37:  getk(s4, "contents", s4)
+            38:  getk(s4, "fader", s4)
+            39:  prepcallk(s4, "fadein", s4, s5)
+            40:  loadint(s6, 60)
+            41:  closure(s7, 1)
+            42:  call(255, s4, s5, 3)
+            43:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\lib\event_control.nut"
+                name: null
+                nliterals: 4
+                nparameters: 1
+                noutervals: 1
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 17
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "player"
+                    2: "enable_move"
+                    3: "enemy"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [
+                    0: type: otLOCAL, object: 2, name: "obj"
+                  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 16
+                  ]
+                Line Informations: [
+                    0: line: 14, op: 0
+                    1: line: 15, op: 0
+                    2: line: 16, op: 2
+                    3: line: 17, op: 8
+                    4: line: 18, op: 12
+                    5: line: 20, op: 16
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getouter(s1, 0)
+                    3:  getk(s1, "player", s1)
+                    4:  getk(s1, "count", s1)
+                    5:  loadint(s2, 75)
+                    6:  eq(s1, 2, s1, 0)
+                    7:  jz(s1, 8)
+                    8:  getouter(s1, 0)
+                    9:  getk(s1, "player", s1)
+                    10:  prepcallk(s1, "enable_move", s1, s2)
+                    11:  call(255, s1, s2, 1)
+                    12:  getouter(s1, 0)
+                    13:  getk(s1, "enemy", s1)
+                    14:  prepcallk(s1, "enable_move", s1, s2)
+                    15:  call(255, s1, s2, 1)
+                    16:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: "data\script\lib\event_control.nut"
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 2
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 14
+                nfunctions: 0
+                Literals: [
+                    0: "bgm"
+                    1: "play"
+                    2: "player"
+                    3: "enable_move"
+                    4: "enemy"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [
+                    0: type: otLOCAL, object: 1, name: "bgm_"
+                    1: type: otLOCAL, object: 2, name: "obj"
+                  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 13
+                  ]
+                Line Informations: [
+                    0: line: 23, op: 0
+                    1: line: 27, op: 0
+                    2: line: 28, op: 5
+                    3: line: 29, op: 9
+                    4: line: 30, op: 13
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  loadroot(s1)
+                    1:  getk(s1, "bgm", s1)
+                    2:  prepcallk(s1, "play", s1, s2)
+                    3:  getouter(s3, 0)
+                    4:  call(255, s1, s2, 2)
+                    5:  getouter(s1, 1)
+                    6:  getk(s1, "player", s1)
+                    7:  prepcallk(s1, "enable_move", s1, s2)
+                    8:  call(255, s1, s2, 1)
+                    9:  getouter(s1, 1)
+                    10:  getk(s1, "enemy", s1)
+                    11:  prepcallk(s1, "enable_move", s1, s2)
+                    12:  call(255, s1, s2, 1)
+                    13:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\lib\event_control.nut"
+        name: "set_enemy_name"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 9
+        nfunctions: 0
+        Literals: [
+            0: "object_pool"
+            1: "rootenv"
+            2: "Spawn_Effect"
+            3: "boss_name"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 8
+          ]
+        Line Informations: [
+            0: line: 33, op: 0
+            1: line: 34, op: 0
+            2: line: 35, op: 8
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s1)
+            1:  getk(s1, "object_pool", s1)
+            2:  getk(s1, "rootenv", s1)
+            3:  prepcallk(s1, "Spawn_Effect", s1, s2)
+            4:  loadint(s3, 0)
+            5:  loadint(s4, 0)
+            6:  load(s5, "boss_name")
+            7:  call(255, s1, s2, 4)
+            8:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\lib\event_control.nut"
+        name: "goto_next_stage"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "print"
+            1: "
+goto_next_stage----------------------------"
+            2: "scene"
+            3: "contents"
+            4: "story_event"
+            5: "begin_next_event"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 36, op: 0
+            1: line: 37, op: 0
+            2: line: 38, op: 3
+            3: line: 39, op: 9
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "print", s0, s2)
+            1:  load(s3, "
+goto_next_stage----------------------------")
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  getk(s1, "scene", s1)
+            5:  getk(s1, "contents", s1)
+            6:  getk(s1, "story_event", s1)
+            7:  prepcallk(s1, "begin_next_event", s1, s2)
+            8:  call(255, s1, s2, 1)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\lib\event_control.nut"
+        name: "goto_select_stage"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "print"
+            1: "
+goto_select_stage----------------------------"
+            2: "scene"
+            3: "contents"
+            4: "story_event"
+            5: "begin_select_event"
+            6: "event_id"
+          ]
+        Parameters: [
+            0: "this"
+            1: "event_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "event_", pos: 1, start_op: 0, end_op: 16
+            1: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 40, op: 0
+            1: line: 41, op: 0
+            2: line: 42, op: 3
+            3: line: 43, op: 10
+            4: line: 44, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "print", s0, s3)
+            1:  load(s4, "
+goto_select_stage----------------------------")
+            2:  call(255, s2, s3, 2)
+            3:  loadroot(s2)
+            4:  getk(s2, "scene", s2)
+            5:  getk(s2, "contents", s2)
+            6:  getk(s2, "story_event", s2)
+            7:  prepcallk(s2, "begin_select_event", s2, s3)
+            8:  move(s4, s1)
+            9:  call(255, s2, s3, 2)
+            10:  loadroot(s2)
+            11:  getk(s2, "scene", s2)
+            12:  getk(s2, "contents", s2)
+            13:  getk(s2, "story_event", s2)
+            14:  load(s3, "event_id")
+            15:  newslot(s255, s2, s3, s1)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\lib\event_control.nut"
+        name: "restert_battle"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 57
+        nfunctions: 0
+        Literals: [
+            0: "print"
+            1: "
+ restert_battle----------------------------"
+            2: "player"
+            3: "scene"
+            4: "rootenv"
+            5: "obj"
+            6: "enable_move"
+            7: "enemy"
+            8: "enable_demo"
+            9: "active_demo"
+            10: "com_talk_end"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 56
+          ]
+        Line Informations: [
+            0: line: 45, op: 0
+            1: line: 46, op: 0
+            2: line: 47, op: 3
+            3: line: 48, op: 10
+            4: line: 49, op: 17
+            5: line: 50, op: 24
+            6: line: 51, op: 32
+            7: line: 52, op: 40
+            8: line: 53, op: 48
+            9: line: 55, op: 56
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "print", s0, s2)
+            1:  load(s3, "
+ restert_battle----------------------------")
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "player")
+            4:  loadroot(s2)
+            5:  getk(s2, "scene", s2)
+            6:  getk(s2, "rootenv", s2)
+            7:  getk(s2, "obj", s2)
+            8:  exists(s1, s2, s1)
+            9:  jz(s1, 46)
+            10:  loadroot(s1)
+            11:  getk(s1, "scene", s1)
+            12:  getk(s1, "rootenv", s1)
+            13:  getk(s1, "obj", s1)
+            14:  getk(s1, "player", s1)
+            15:  prepcallk(s1, "enable_move", s1, s2)
+            16:  call(255, s1, s2, 1)
+            17:  loadroot(s1)
+            18:  getk(s1, "scene", s1)
+            19:  getk(s1, "rootenv", s1)
+            20:  getk(s1, "obj", s1)
+            21:  getk(s1, "enemy", s1)
+            22:  prepcallk(s1, "enable_move", s1, s2)
+            23:  call(255, s1, s2, 1)
+            24:  loadroot(s1)
+            25:  getk(s1, "scene", s1)
+            26:  getk(s1, "rootenv", s1)
+            27:  getk(s1, "obj", s1)
+            28:  getk(s1, "enemy", s1)
+            29:  load(s2, "enable_demo")
+            30:  loadbool(s3, 0)
+            31:  set(s255, s1, s2, s3)
+            32:  loadroot(s1)
+            33:  getk(s1, "scene", s1)
+            34:  getk(s1, "rootenv", s1)
+            35:  getk(s1, "obj", s1)
+            36:  getk(s1, "player", s1)
+            37:  load(s2, "active_demo")
+            38:  loadbool(s3, 0)
+            39:  set(s255, s1, s2, s3)
+            40:  loadroot(s1)
+            41:  getk(s1, "scene", s1)
+            42:  getk(s1, "rootenv", s1)
+            43:  getk(s1, "obj", s1)
+            44:  getk(s1, "enemy", s1)
+            45:  load(s2, "active_demo")
+            46:  loadbool(s3, 0)
+            47:  set(s255, s1, s2, s3)
+            48:  loadroot(s1)
+            49:  getk(s1, "scene", s1)
+            50:  getk(s1, "rootenv", s1)
+            51:  getk(s1, "obj", s1)
+            52:  getk(s1, "enemy", s1)
+            53:  prepcallk(s1, "com_talk_end", s1, s2)
+            54:  loadnulls(s3, 1)
+            55:  call(255, s1, s2, 2)
+            56:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,170 @@
+#========================================================================
+#	Stage:6
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,mamizou,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,mamizou_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,mamizou,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_驚2,0,0
+,ImageDef,mamizou,マミゾウ_嬉2,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,mamizou_label,"data/system/char_def/name/name_09mamizou.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall(),	#ステージロゴ表示
+,Sleep,120
+
+,Function,GameStory_2P_InSpecial(),
+,Sleep,120
+
+,Show,reimu,30,-64,0
+,Show,mamizou,30,-64,0
+
+,SetFocus,mamizou
+あっはっは\,a05x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_余1,20,0
+儂じゃよ　儂,c05x2,20,0
+,Show,mamizou_label,20,0,-64
+,WaitInput
+,ClearBalloon,mamizou
+,Hide,mamizou_label,20,0,64
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_汗1,0,0
+何だ　さっきの神子は\nあんたの化けた姿だったのか,c15x3
+,WaitInput
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普2,0,0
+どうりで\,a05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普1,0,0
+爺むさいと思ったわ\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,mamizou
+,ImageDef,mamizou,マミゾウ_嬉1,0,0
+光栄なこって,a05x2,20,0
+,WaitInput
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普2,20,0
+どうじゃ\,c05x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普1,20,0
+儂と一戦交えないか？\,a11x2,20,0
+,ClearBalloon,mamizou
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_怒2,0,0
+いやよ,a05x2,20,0
+,WaitInput
+,ClearBalloon,reimu
+
+あんたと戦っても\n得るものが無いもの\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,mamizou
+,ImageDef,mamizou,マミゾウ_普3,0,0
+これでもか？,a05x2,20,0
+,WaitInput
+,ClearBalloon,mamizou
+
+# -------------------------------
+# ここで会話絵を消して
+# 背景演出
+
+,Hide,mamizou,30,-64,0,&
+,Hide,reimu,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobIn();"
+,Sleep,150
+,Show,reimu,30,-64,0	,#霊夢フェイス表示開始
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_驚1,0,0
+ぐ,c05x2,20,0
+,WaitInput
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_怒2,0,0
+応援する観客が居るんなら\n逃げるわけに行かないわね\,a15x3
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_汗1,0,0
+狸とは言え\,c05x2
+,ClearBalloon,reimu
+
+,Show,mamizou,30,-64,0
+,SetFocus,mamizou
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+そうじゃろう\nそうじゃろう,a11x2,20,-30
+,WaitInput
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普1,20,0
+さあ今度こそ\nほんとに始めるぞい\,a11x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_決1,20,0
+壮大な狸囃子の始まりじゃ\,b11x2,20,0
+,ClearBalloon,mamizou
+
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,reimu,30,-64,0,&
+,Hide,mamizou,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(110);",# 戦闘BGM再生開始
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

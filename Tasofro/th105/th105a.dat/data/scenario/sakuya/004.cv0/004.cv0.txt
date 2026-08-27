@@ -1,0 +1,282 @@
+## =======================================================================
+#Stage:5
+#Title:龍宮の警告
+#Place:嵐
+#Weather:台風
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:sakuya,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#専用ステージ初期設定
+Action:iku,139
+
+#カメラ固定
+Action:sakuya,4
+
+#フォーカス瞬間移動
+Action:sakuya,11
+
+#自キャラ画面左待機
+Action:sakuya,5
+
+#背景暗雲設置
+Action:iku,134
+
+#向き固定解除
+Action:sakuya,152
+
+#天候解除
+Action:iku,153
+
+Label:Start
+
+#フェードイン　黒
+Action:sakuya,161
+Bgm:data/bgm/ta02.ogg
+
+Sleep:60
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle005.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage5.bmp,1,256,352
+Sleep:300
+
+#雲中背景解除
+Action:iku,135
+Sleep:120
+
+#画面上から登場
+Action:sakuya,6
+
+#登場終了検知
+Action:sakuya,7
+
+Sleep:60
+
+Face:sakuya,惑
+あの亡霊の言う事を真に受けていたら
+ついに雲の中まで来てしまったわ\
+
+Face:sakuya,怒
+ここまで来て何にもなかったら
+どうしてくれましょう\
+
+Face:sakuya,
+Hide:1
+Sleep:60
+
+#衣玖黒塗りで画面上から登場
+Action:iku,130
+
+Sleep:90
+
+Face:iku,
+おや？
+天狗ではない\
+
+河童でもない
+幽霊でもない\
+#落雷+衣玖の姿が浮かび上がる
+Action:iku,131
+Face:iku,
+人間だなんて……@
+Sleep:60
+山の上まで人間が来るなんて珍しいですわ\
+#Sleep:90
+
+Face:sakuya,汗
+まあねぇ
+私だって来たくはなかったわ\
+
+Face:iku,普
+これより上は山では無くなり、天界が存在します\
+
+Face:sakuya,普
+天界？\
+
+Face:iku,惑
+本来普通の人間が立ち入ってはならない場所です\
+
+Face:iku,普
+天女も気付いていない今のうちに
+戻った方が良いですよ\
+
+Face:sakuya,驚
+山の上にそんな場所があったなんて……\
+
+Face:sakuya,嬉
+行き先のない登山を始めて、初めての収穫ですわ\
+
+Face:iku,惑
+戻る気は無いのですか？\
+
+Face:sakuya,嬉
+そうね、残念ながら今の私は行け行けモードなの@
+
+Face:sakuya,普
+って、貴方は誰？\
+
+Hide:1
+Sleep:60
+
+#イベント　衣玖浮遊状態終了
+Action:iku,132
+
+Sleep:160
+
+# 名前のテロップ
+#Name:美しき緋の衣　永江衣玖
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Bgm:data/bgm/st04.ogg
+
+Face:iku,普
+……私はただ忠告をするだけの龍宮の使い@
+<ruby ながえ>永江</ruby><ruby いく>衣玖</ruby>です\
+
+Face:sakuya,普
+番人か何かかしら？　天界の\
+
+Face:iku,普
+私達、龍宮の使いは天界とは特に関係はありません@
+ただある事を警告する為だけに雷雲を泳ぐのです\
+
+Face:iku,余
+ですが、私は老婆心で言った忠告を無視される事が
+ちょいと嫌いでしてね……\
+
+Face:sakuya,普
+そう、でも今の私は\
+
+Face:sakuya,決
+押せ押せモードだから\
+
+Face:iku,普
+龍宮の使いの忠告は
+近い未来の悲劇を回避する一つの妙計\
+
+Face:iku,決
+残念ながら
+貴方は優秀な選択肢を一つ失いました\
+
+
+#戦闘開始処理
+Action:sakuya,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,惑
+大人しく戻って準備した方が良いですよ\
+
+Face:iku,惑
+残念ながら、幻想郷はもうすぐ壊滅的な
+大地震に見舞われるのですから\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:iku,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+#Weather:天候クリア
+# 無天候へ
+Action:iku,133
+
+Face:sakuya,嬉
+さあ、いざ天界へ行こう\
+
+Face:iku,負
+天界に住む者は地上の生き物に対して
+甘くありません\
+
+Face:iku,負
+生き物とすら思っていないのかも知れません\
+
+Face:sakuya,惑
+むむむ
+ちょっとだけ心して掛かりましょう\
+
+Face:iku,負
+ところで、何故天界に？\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:sakuya,普
+そういえば、最初は体から出る緋色の霧を追っていた
+だけだったような……\
+
+Face:sakuya,嬉
+いつの間にか天界まで行く羽目に
+なってしまいましたね\
+
+Face:sakuya,決
+では、時が味方しているうちに失礼\
+
+Hide:1
+Sleep:30
+#画面上部へ移動
+Action:sakuya,151
+
+Sleep:90
+
+
+Face:iku,負
+……緋色の霧？　体から出る？\
+
+Face:iku,負
+緋色の雲もその所為？@
+という事はこれから起こるであろう地震は……\
+
+Face:iku,負
+むむむ、もしかして全てあのお方のお戯れなの？\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+#フェードアウト　白
+Action:sakuya,162
+Sleep:60
+
+Stage:5,0
+
+End:
+
+
+
+
+
+## =======================================================================

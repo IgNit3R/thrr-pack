@@ -1,0 +1,87 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/koishi.csv"
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+
+#フェイス画像
+,DefineObject,koishi,-360,0,false
+,DefineObject,reimu,-360,0,true
+
+#肩書き
+,DefineObject,koishi_label,50,360,false
+,DefineObject,reimu_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,koishi_label,"data/system/char_def/name/name_07koishi.png",0,0,0,0
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage5 「化かし甲斐の無い妖怪」
+# 場所：狸の野原
+
+#0１２３４５６７８９０１２３４
+
+,ImageDef,koishi,こいし_普2,0,0
+,Show,koishi,30,-64,0
+,SetFocus,koishi
+次の対戦相手は\n誰が良いかなー\,a11x2,0,0
+
+,ClearBalloon,koishi
+,Function,GameStory_2P_In(),
+,Sleep,120
+
+# 霊夢が現る
+,ImageDef,reimu,霊夢_普1,0,0
+,Show,reimu,30,-64,0
+,SetFocus,reimu
+ふぉっふぉっふぉ\,a11x2,0,0
+儂はどうじゃ？,a11x2,0,0
+
+,Show,reimu_label,20,0,-64
+,WaitInput
+,ClearBalloon,reimu
+,Hide,reimu_label,20,0,64
+# 名前テロップ
+# 八百万の代弁者　　　　博麗霊夢
+
+,ImageDef,koishi,こいし_嬉1,0,0
+,SetFocus,koishi
+いいねいいね\n次々と相手がいるって\,a11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,reimu,霊夢_決1,0,0
+,SetFocus,reimu
+お手合わせ願えるかの\,a11x2,0,0
+
+,ClearBalloon,reimu
+,ImageDef,koishi,こいし_怒1,0,0
+,SetFocus,koishi
+ふぉっふぉっふぉ\nも・ち・ろ・ん　じゃ\,c11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,reimu,霊夢_汗1,0,0
+,SetFocus,reimu
+モ　モノマネじゃと!?\,a11x2,0,0
+
+,ClearBalloon,reimu
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,koishi,30,-64,0,&
+,Hide,reimu,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(109);",# 戦闘BGM再生開始
+
+
+,Function,"RoundStory_Ready();"
+
+,End

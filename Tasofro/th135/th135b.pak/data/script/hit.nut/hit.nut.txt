@@ -1,0 +1,4353 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\script\hit.nut: 
+sourcename: ""
+name: "main"
+nliterals: 10
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 42
+nfunctions: 10
+Literals: [
+    0: "OnHit_PlayerActor"
+    1: "OnHit_NormalActor"
+    2: "OnHit_ShotActor"
+    3: "OnHit_CommonHitCheck"
+    4: "SetHitState"
+    5: "GuardCheck"
+    6: "HitPlayer"
+    7: "HitActor"
+    8: "ShotCounter"
+    9: "OnMove"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 41
+    1: name: "this", pos: 0, start_op: 0, end_op: 41
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 9, op: 4
+    2: line: 17, op: 8
+    3: line: 23, op: 12
+    4: line: 67, op: 16
+    5: line: 93, op: 20
+    6: line: 163, op: 24
+    7: line: 630, op: 28
+    8: line: 701, op: 32
+    9: line: 766, op: 36
+    10: line: 907, op: 40
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "OnHit_PlayerActor")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 9)
+    5:  load(s2, "OnHit_NormalActor")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 17)
+    9:  load(s2, "OnHit_ShotActor")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 23)
+    13:  load(s2, "OnHit_CommonHitCheck")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 67)
+    17:  load(s2, "SetHitState")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 93)
+    21:  load(s2, "GuardCheck")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 163)
+    25:  load(s2, "HitPlayer")
+    26:  closure(s3, 6)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 630)
+    29:  load(s2, "HitActor")
+    30:  closure(s3, 7)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 701)
+    33:  load(s2, "ShotCounter")
+    34:  closure(s3, 8)
+    35:  newslot(s2, s0, s2, s3)
+    36:  line(-, 766)
+    37:  load(s2, "OnMove")
+    38:  closure(s3, 9)
+    39:  newslot(s2, s0, s2, s3)
+    40:  line(-, 907)
+    41:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "OnHit_PlayerActor"
+        nliterals: 2
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "OnHit_CommonHitCheck"
+            1: "HitPlayer"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "info", pos: 3, start_op: 0, end_op: 13
+            1: name: "def", pos: 2, start_op: 0, end_op: 13
+            2: name: "atk", pos: 1, start_op: 0, end_op: 13
+            3: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 5, op: 1
+            1: line: 6, op: 7
+            2: line: 7, op: 12
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 5)
+            1:  prepcallk(s4, "OnHit_CommonHitCheck", s0, s5)
+            2:  dmove(s6, s1, s7, s2)
+            3:  call(4, s4, s5, 3)
+            4:  not(s4, s4)
+            5:  jz(s4, 1)
+            6:  return(255, 0)
+            7:  line(-, 6)
+            8:  prepcallk(s4, "HitPlayer", s0, s5)
+            9:  dmove(s6, s1, s7, s2)
+            10:  move(s8, s3)
+            11:  call(255, s4, s5, 4)
+            12:  line(-, 7)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "OnHit_NormalActor"
+        nliterals: 2
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "OnHit_CommonHitCheck"
+            1: "HitActor"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "info", pos: 3, start_op: 0, end_op: 13
+            1: name: "def", pos: 2, start_op: 0, end_op: 13
+            2: name: "atk", pos: 1, start_op: 0, end_op: 13
+            3: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 12, op: 1
+            1: line: 13, op: 7
+            2: line: 14, op: 12
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 12)
+            1:  prepcallk(s4, "OnHit_CommonHitCheck", s0, s5)
+            2:  dmove(s6, s1, s7, s2)
+            3:  call(4, s4, s5, 3)
+            4:  not(s4, s4)
+            5:  jz(s4, 1)
+            6:  return(255, 0)
+            7:  line(-, 13)
+            8:  prepcallk(s4, "HitActor", s0, s5)
+            9:  dmove(s6, s1, s7, s2)
+            10:  move(s8, s3)
+            11:  call(255, s4, s5, 4)
+            12:  line(-, 14)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "OnHit_ShotActor"
+        nliterals: 2
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "OnHit_CommonHitCheck"
+            1: "ShotCounter"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "info", pos: 3, start_op: 0, end_op: 13
+            1: name: "def", pos: 2, start_op: 0, end_op: 13
+            2: name: "atk", pos: 1, start_op: 0, end_op: 13
+            3: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 19, op: 1
+            1: line: 20, op: 7
+            2: line: 21, op: 12
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 19)
+            1:  prepcallk(s4, "OnHit_CommonHitCheck", s0, s5)
+            2:  dmove(s6, s1, s7, s2)
+            3:  call(4, s4, s5, 3)
+            4:  not(s4, s4)
+            5:  jz(s4, 1)
+            6:  return(255, 0)
+            7:  line(-, 20)
+            8:  prepcallk(s4, "ShotCounter", s0, s5)
+            9:  dmove(s6, s1, s7, s2)
+            10:  move(s8, s3)
+            11:  call(255, s4, s5, 4)
+            12:  line(-, 21)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "OnHit_CommonHitCheck"
+        nliterals: 24
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 7
+        nlineinfos: 22
+        ndefaultparams: 0
+        ninstructions: 205
+        nfunctions: 0
+        Literals: [
+            0: "game"
+            1: "enableHit"
+            2: "battleState"
+            3: "p"
+            4: "hitTarget"
+            5: "tempAtkData"
+            6: "flagAttack"
+            7: "flagState"
+            8: "invinObject"
+            9: "invin"
+            10: "invinV"
+            11: "invinH"
+            12: "invinGrab"
+            13: "baria"
+            14: "bariaLevel"
+            15: "bariaBreak"
+            16: "attackTarget"
+            17: "name"
+            18: "len"
+            19: "append"
+            20: "hitGroup"
+            21: "actor"
+            22: "damageTarget"
+            23: "owner"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 5, start_op: 155, end_op: 163
+            1: name: "@INDEX@", pos: 4, start_op: 154, end_op: 163
+            2: name: "a", pos: 5, start_op: 178, end_op: 194
+            3: name: "@INDEX@", pos: 4, start_op: 177, end_op: 194
+            4: name: "def", pos: 2, start_op: 0, end_op: 204
+            5: name: "atk", pos: 1, start_op: 0, end_op: 204
+            6: name: "this", pos: 0, start_op: 0, end_op: 204
+          ]
+        Line Informations: [
+            0: line: 24, op: 1
+            1: line: 34, op: 15
+            2: line: 36, op: 28
+            3: line: 37, op: 47
+            4: line: 38, op: 67
+            5: line: 39, op: 84
+            6: line: 40, op: 101
+            7: line: 41, op: 118
+            8: line: 42, op: 122
+            9: line: 44, op: 130
+            10: line: 45, op: 136
+            11: line: 47, op: 144
+            12: line: 48, op: 151
+            13: line: 49, op: 157
+            14: line: 54, op: 164
+            15: line: 55, op: 170
+            16: line: 56, op: 174
+            17: line: 57, op: 180
+            18: line: 59, op: 185
+            19: line: 63, op: 195
+            20: line: 64, op: 200
+            21: line: 65, op: 203
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 24)
+            1:  loadroot(s3)
+            2:  getk(s3, "game", s3)
+            3:  getk(s3, "enableHit", s3)
+            4:  not(s3, s3)
+            5:  or(s3, 6, s3)
+            6:  loadroot(s4)
+            7:  getk(s4, "game", s4)
+            8:  getk(s4, "battleState", s4)
+            9:  loadint(s5, 3)
+            10:  ne(s4, 5, s4, 0)
+            11:  move(s3, s4)
+            12:  jz(s3, 2)
+            13:  loadbool(s3, 0)
+            14:  return(1, 3)
+            15:  line(-, 34)
+            16:  getk(s3, "p", s1)
+            17:  getk(s3, "hitTarget", s3)
+            18:  loadnulls(s4, 1)
+            19:  eq(s3, 4, s3, 0)
+            20:  or(s3, 5, s3)
+            21:  getk(s4, "p", s2)
+            22:  getk(s4, "hitTarget", s4)
+            23:  loadnulls(s5, 1)
+            24:  eq(s4, 5, s4, 0)
+            25:  move(s3, s4)
+            26:  jz(s3, 1)
+            27:  return(255, 0)
+            28:  line(-, 36)
+            29:  getk(s3, "tempAtkData", s1)
+            30:  getk(s3, "flagAttack", s3)
+            31:  loadint(s4, 8388608)
+            32:  loadint(s5, 16777216)
+            33:  bitw(s4, s5, s4, BW_OR)
+            34:  bitw(s3, s4, s3, BW_AND)
+            35:  and(s3, 9, s3)
+            36:  getk(s4, "tempAtkData", s2)
+            37:  getk(s4, "flagState", s4)
+            38:  loadint(s5, 65536)
+            39:  bitw(s4, s5, s4, BW_AND)
+            40:  or(s4, 3, s4)
+            41:  getk(s5, "p", s2)
+            42:  getk(s5, "invinObject", s5)
+            43:  move(s4, s5)
+            44:  move(s3, s4)
+            45:  jz(s3, 1)
+            46:  return(255, 0)
+            47:  line(-, 37)
+            48:  getk(s3, "tempAtkData", s1)
+            49:  getk(s3, "flagAttack", s3)
+            50:  loadint(s4, 8388608)
+            51:  loadint(s5, 16777216)
+            52:  bitw(s4, s5, s4, BW_OR)
+            53:  bitw(s3, s4, s3, BW_AND)
+            54:  not(s3, s3)
+            55:  and(s3, 9, s3)
+            56:  getk(s4, "tempAtkData", s2)
+            57:  getk(s4, "flagState", s4)
+            58:  loadint(s5, 32768)
+            59:  bitw(s4, s5, s4, BW_AND)
+            60:  or(s4, 3, s4)
+            61:  getk(s5, "p", s2)
+            62:  getk(s5, "invin", s5)
+            63:  move(s4, s5)
+            64:  move(s3, s4)
+            65:  jz(s3, 1)
+            66:  return(255, 0)
+            67:  line(-, 38)
+            68:  getk(s3, "tempAtkData", s1)
+            69:  getk(s3, "flagAttack", s3)
+            70:  loadint(s4, 32)
+            71:  bitw(s3, s4, s3, BW_AND)
+            72:  and(s3, 9, s3)
+            73:  getk(s4, "tempAtkData", s2)
+            74:  getk(s4, "flagState", s4)
+            75:  loadint(s5, 131072)
+            76:  bitw(s4, s5, s4, BW_AND)
+            77:  or(s4, 3, s4)
+            78:  getk(s5, "p", s2)
+            79:  getk(s5, "invinV", s5)
+            80:  move(s4, s5)
+            81:  move(s3, s4)
+            82:  jz(s3, 1)
+            83:  return(255, 0)
+            84:  line(-, 39)
+            85:  getk(s3, "tempAtkData", s1)
+            86:  getk(s3, "flagAttack", s3)
+            87:  loadint(s4, 64)
+            88:  bitw(s3, s4, s3, BW_AND)
+            89:  and(s3, 9, s3)
+            90:  getk(s4, "tempAtkData", s2)
+            91:  getk(s4, "flagState", s4)
+            92:  loadint(s5, 262144)
+            93:  bitw(s4, s5, s4, BW_AND)
+            94:  or(s4, 3, s4)
+            95:  getk(s5, "p", s2)
+            96:  getk(s5, "invinH", s5)
+            97:  move(s4, s5)
+            98:  move(s3, s4)
+            99:  jz(s3, 1)
+            100:  return(255, 0)
+            101:  line(-, 40)
+            102:  getk(s3, "tempAtkData", s1)
+            103:  getk(s3, "flagAttack", s3)
+            104:  loadint(s4, 16)
+            105:  bitw(s3, s4, s3, BW_AND)
+            106:  and(s3, 9, s3)
+            107:  getk(s4, "tempAtkData", s2)
+            108:  getk(s4, "flagState", s4)
+            109:  loadint(s5, 8192)
+            110:  bitw(s4, s5, s4, BW_AND)
+            111:  or(s4, 3, s4)
+            112:  getk(s5, "p", s2)
+            113:  getk(s5, "invinGrab", s5)
+            114:  move(s4, s5)
+            115:  move(s3, s4)
+            116:  jz(s3, 1)
+            117:  return(255, 0)
+            118:  line(-, 41)
+            119:  getk(s3, "p", s2)
+            120:  getk(s3, "baria", s3)
+            121:  jz(s3, 8)
+            122:  line(-, 42)
+            123:  getk(s3, "p", s2)
+            124:  getk(s3, "bariaLevel", s3)
+            125:  getk(s4, "tempAtkData", s1)
+            126:  getk(s4, "bariaBreak", s4)
+            127:  jcmp(s4, 2, s3, CMP_GE)
+            128:  loadbool(s3, 0)
+            129:  return(1, 3)
+            130:  line(-, 44)
+            131:  getk(s3, "p", s1)
+            132:  getk(s3, "attackTarget", s3)
+            133:  loadnulls(s4, 1)
+            134:  ne(s3, 4, s3, 0)
+            135:  jz(s3, 8)
+            136:  line(-, 45)
+            137:  getk(s3, "p", s1)
+            138:  getk(s3, "attackTarget", s3)
+            139:  getk(s4, "name", s2)
+            140:  ne(s3, 4, s3, 0)
+            141:  jz(s3, 2)
+            142:  loadbool(s3, 0)
+            143:  return(1, 3)
+            144:  line(-, 47)
+            145:  getk(s3, "p", s1)
+            146:  getk(s3, "hitTarget", s3)
+            147:  prepcallk(s3, "len", s3, s4)
+            148:  call(3, s3, s4, 1)
+            149:  loadint(s4, 0)
+            150:  jcmp(s4, 13, s3, CMP_G)
+            151:  line(-, 48)
+            152:  getk(s3, "p", s1)
+            153:  getk(s3, "hitTarget", s3)
+            154:  loadnulls(s4, 3)
+            155:  foreach(s3, 8, s4)
+            156:  postforeach(s3, 8)
+            157:  line(-, 49)
+            158:  getk(s7, "name", s2)
+            159:  eq(s7, 7, s5, 0)
+            160:  jz(s7, 2)
+            161:  loadbool(s7, 0)
+            162:  return(1, 7)
+            163:  jmp(-, -9)
+            164:  line(-, 54)
+            165:  getk(s3, "p", s1)
+            166:  getk(s3, "hitTarget", s3)
+            167:  prepcallk(s3, "append", s3, s4)
+            168:  getk(s5, "name", s2)
+            169:  call(255, s3, s4, 2)
+            170:  line(-, 55)
+            171:  getk(s3, "p", s1)
+            172:  getk(s3, "hitGroup", s3)
+            173:  jz(s3, 21)
+            174:  line(-, 56)
+            175:  getk(s3, "p", s1)
+            176:  getk(s3, "hitGroup", s3)
+            177:  loadnulls(s4, 3)
+            178:  foreach(s3, 16, s4)
+            179:  postforeach(s3, 16)
+            180:  line(-, 57)
+            181:  loadroot(s7)
+            182:  getk(s7, "actor", s7)
+            183:  exists(s7, s7, s5)
+            184:  jz(s7, 9)
+            185:  line(-, 59)
+            186:  loadroot(s7)
+            187:  getk(s7, "actor", s7)
+            188:  get(s7, s7, s5)
+            189:  getk(s7, "p", s7)
+            190:  dload(s8, "hitTarget", s9, "p")
+            191:  get(s9, s1, s9)
+            192:  getk(s9, "hitTarget", s9)
+            193:  set(s255, s7, s8, s9)
+            194:  jmp(-, -17)
+            195:  line(-, 63)
+            196:  getk(s3, "p", s2)
+            197:  dload(s4, "damageTarget", s5, "owner")
+            198:  get(s5, s1, s5)
+            199:  set(s255, s3, s4, s5)
+            200:  line(-, 64)
+            201:  loadbool(s3, 1)
+            202:  return(1, 3)
+            203:  line(-, 65)
+            204:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 11
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "SetHitState"
+        nliterals: 18
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 122
+        nfunctions: 0
+        Literals: [
+            0: "tempAtkData"
+            1: "flagAttack"
+            2: "direction"
+            3: "x"
+            4: "actor"
+            5: "owner"
+            6: "actorType"
+            7: "knockFlag"
+            8: "damage"
+            9: "atkRank"
+            10: "atkType"
+            11: "hitVecX"
+            12: "hitVecY"
+            13: "grazeKnock"
+            14: "stopVecX"
+            15: "stopVecY"
+            16: "recover"
+            17: "forceKnock"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+            2: "atk_"
+            3: "def_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "def_", pos: 3, start_op: 0, end_op: 121
+            1: name: "atk_", pos: 2, start_op: 0, end_op: 121
+            2: name: "t", pos: 1, start_op: 0, end_op: 121
+            3: name: "this", pos: 0, start_op: 0, end_op: 121
+          ]
+        Line Informations: [
+            0: line: 69, op: 1
+            1: line: 71, op: 13
+            2: line: 72, op: 22
+            3: line: 76, op: 35
+            4: line: 78, op: 47
+            5: line: 79, op: 55
+            6: line: 81, op: 59
+            7: line: 82, op: 63
+            8: line: 83, op: 68
+            9: line: 84, op: 73
+            10: line: 85, op: 80
+            11: line: 86, op: 87
+            12: line: 87, op: 94
+            13: line: 88, op: 101
+            14: line: 89, op: 108
+            15: line: 90, op: 113
+            16: line: 91, op: 120
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 69)
+            1:  getk(s4, "tempAtkData", s2)
+            2:  getk(s4, "flagAttack", s4)
+            3:  loadint(s5, 4194304)
+            4:  bitw(s4, s5, s4, BW_AND)
+            5:  jz(s4, 6)
+            6:  dload(s4, "direction", s5, "tempAtkData")
+            7:  get(s5, s2, s5)
+            8:  getk(s5, "direction", s5)
+            9:  neg(s5, s5)
+            10:  newslot(s255, s1, s4, s5)
+            11:  jmp(-, 23)
+            12:  line(-, 71)
+            13:  getk(s4, "x", s2)
+            14:  getk(s5, "x", s3)
+            15:  eq(s4, 5, s4, 0)
+            16:  jz(s4, 5)
+            17:  dload(s4, "direction", s5, "tempAtkData")
+            18:  get(s5, s3, s5)
+            19:  getk(s5, "direction", s5)
+            20:  newslot(s255, s1, s4, s5)
+            21:  jmp(-, 13)
+            22:  line(-, 72)
+            23:  load(s4, "direction")
+            24:  loadroot(s5)
+            25:  getk(s5, "actor", s5)
+            26:  getk(s6, "owner", s2)
+            27:  get(s5, s5, s6)
+            28:  getk(s5, "x", s5)
+            29:  getk(s6, "x", s3)
+            30:  jcmp(s6, 2, s5, CMP_G)
+            31:  loadfloat(s5, 1)
+            32:  jmp(-, 1)
+            33:  loadfloat(s5, -1)
+            34:  newslot(s255, s1, s4, s5)
+            35:  line(-, 76)
+            36:  getk(s4, "actorType", s2)
+            37:  loadint(s5, 1)
+            38:  loadint(s6, 4)
+            39:  bitw(s5, s6, s5, BW_OR)
+            40:  bitw(s4, s5, s4, BW_AND)
+            41:  jz(s4, 4)
+            42:  load(s4, "knockFlag")
+            43:  loadint(s5, 1)
+            44:  newslot(s255, s1, s4, s5)
+            45:  jmp(-, 13)
+            46:  line(-, 78)
+            47:  getk(s4, "actorType", s2)
+            48:  loadint(s5, 2)
+            49:  bitw(s4, s5, s4, BW_AND)
+            50:  jz(s4, 4)
+            51:  load(s4, "knockFlag")
+            52:  loadint(s5, 2)
+            53:  newslot(s255, s1, s4, s5)
+            54:  jmp(-, 4)
+            55:  line(-, 79)
+            56:  load(s4, "knockFlag")
+            57:  loadint(s5, 0)
+            58:  newslot(s255, s1, s4, s5)
+            59:  line(-, 81)
+            60:  load(s4, "damage")
+            61:  loadint(s5, 0)
+            62:  newslot(s255, s1, s4, s5)
+            63:  line(-, 82)
+            64:  dload(s4, "atkRank", s5, "tempAtkData")
+            65:  get(s5, s2, s5)
+            66:  getk(s5, "atkRank", s5)
+            67:  newslot(s255, s1, s4, s5)
+            68:  line(-, 83)
+            69:  dload(s4, "atkType", s5, "tempAtkData")
+            70:  get(s5, s2, s5)
+            71:  getk(s5, "atkType", s5)
+            72:  newslot(s255, s1, s4, s5)
+            73:  line(-, 84)
+            74:  dload(s4, "hitVecX", s5, "tempAtkData")
+            75:  get(s5, s2, s5)
+            76:  getk(s5, "hitVecX", s5)
+            77:  loadfloat(s6, 0.01)
+            78:  mul(s5, s6, s5)
+            79:  newslot(s255, s1, s4, s5)
+            80:  line(-, 85)
+            81:  dload(s4, "hitVecY", s5, "tempAtkData")
+            82:  get(s5, s2, s5)
+            83:  getk(s5, "hitVecY", s5)
+            84:  loadfloat(s6, 0.01)
+            85:  mul(s5, s6, s5)
+            86:  newslot(s255, s1, s4, s5)
+            87:  line(-, 86)
+            88:  dload(s4, "grazeKnock", s5, "tempAtkData")
+            89:  get(s5, s2, s5)
+            90:  getk(s5, "grazeKnock", s5)
+            91:  loadfloat(s6, 0.01)
+            92:  mul(s5, s6, s5)
+            93:  newslot(s255, s1, s4, s5)
+            94:  line(-, 87)
+            95:  dload(s4, "stopVecX", s5, "tempAtkData")
+            96:  get(s5, s2, s5)
+            97:  getk(s5, "stopVecX", s5)
+            98:  loadfloat(s6, 0.01)
+            99:  mul(s5, s6, s5)
+            100:  newslot(s255, s1, s4, s5)
+            101:  line(-, 88)
+            102:  dload(s4, "stopVecY", s5, "tempAtkData")
+            103:  get(s5, s2, s5)
+            104:  getk(s5, "stopVecY", s5)
+            105:  loadfloat(s6, 0.01)
+            106:  mul(s5, s6, s5)
+            107:  newslot(s255, s1, s4, s5)
+            108:  line(-, 89)
+            109:  dload(s4, "recover", s5, "tempAtkData")
+            110:  get(s5, s2, s5)
+            111:  getk(s5, "recover", s5)
+            112:  newslot(s255, s1, s4, s5)
+            113:  line(-, 90)
+            114:  dload(s4, "forceKnock", s5, "tempAtkData")
+            115:  get(s5, s2, s5)
+            116:  getk(s5, "flagAttack", s5)
+            117:  loadint(s6, 2097152)
+            118:  bitw(s5, s6, s5, BW_AND)
+            119:  newslot(s255, s1, s4, s5)
+            120:  line(-, 91)
+            121:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "GuardCheck"
+        nliterals: 18
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 29
+        ndefaultparams: 0
+        ninstructions: 184
+        nfunctions: 0
+        Literals: [
+            0: "tempAtkData"
+            1: "flagState"
+            2: "p"
+            3: "disableGuard"
+            4: "flagAttack"
+            5: "IsGuard"
+            6: "autoGuard"
+            7: "cpuState"
+            8: "group"
+            9: "rand"
+            10: "cpu_guard"
+            11: "actor"
+            12: "owner"
+            13: "x"
+            14: "direction"
+            15: "input"
+            16: "autoGuardCount"
+            17: "guardLost"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "key_", pos: 3, start_op: 42, end_op: 181
+            1: name: "def", pos: 2, start_op: 0, end_op: 183
+            2: name: "atk", pos: 1, start_op: 0, end_op: 183
+            3: name: "this", pos: 0, start_op: 0, end_op: 183
+          ]
+        Line Informations: [
+            0: line: 94, op: 1
+            1: line: 96, op: 6
+            2: line: 98, op: 9
+            3: line: 99, op: 26
+            4: line: 101, op: 37
+            5: line: 104, op: 40
+            6: line: 106, op: 42
+            7: line: 108, op: 50
+            8: line: 109, op: 53
+            9: line: 112, op: 57
+            10: line: 113, op: 69
+            11: line: 117, op: 80
+            12: line: 118, op: 87
+            13: line: 119, op: 91
+            14: line: 121, op: 99
+            15: line: 124, op: 108
+            16: line: 125, op: 114
+            17: line: 127, op: 122
+            18: line: 129, op: 129
+            19: line: 130, op: 134
+            20: line: 132, op: 140
+            21: line: 133, op: 146
+            22: line: 138, op: 148
+            23: line: 140, op: 151
+            24: line: 144, op: 154
+            25: line: 145, op: 172
+            26: line: 147, op: 176
+            27: line: 155, op: 179
+            28: line: 156, op: 182
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 94)
+            1:  not(s3, s1)
+            2:  or(s3, 2, s3)
+            3:  not(s4, s2)
+            4:  move(s3, s4)
+            5:  jz(s3, 3)
+            6:  line(-, 96)
+            7:  loadint(s3, 0)
+            8:  return(1, 3)
+            9:  line(-, 98)
+            10:  getk(s3, "tempAtkData", s2)
+            11:  getk(s3, "flagState", s3)
+            12:  loadint(s4, 16)
+            13:  loadint(s5, 2048)
+            14:  bitw(s4, s5, s4, BW_OR)
+            15:  bitw(s3, s4, s3, BW_AND)
+            16:  not(s3, s3)
+            17:  or(s3, 5, s3)
+            18:  getk(s4, "p", s2)
+            19:  getk(s4, "disableGuard", s4)
+            20:  loadint(s5, 0)
+            21:  cmp(s4, s5, s4, CMP_G)
+            22:  move(s3, s4)
+            23:  jz(s3, 2)
+            24:  loadint(s3, 0)
+            25:  return(1, 3)
+            26:  line(-, 99)
+            27:  getk(s3, "tempAtkData", s1)
+            28:  getk(s3, "flagAttack", s3)
+            29:  loadint(s4, 2)
+            30:  loadint(s5, 4)
+            31:  add(s4, s5, s4)
+            32:  loadint(s5, 8)
+            33:  add(s4, s5, s4)
+            34:  bitw(s3, s4, s3, BW_AND)
+            35:  not(s3, s3)
+            36:  jz(s3, 3)
+            37:  line(-, 101)
+            38:  loadint(s3, 0)
+            39:  return(1, 3)
+            40:  line(-, 104)
+            41:  loadbool(s3, 0)
+            42:  line(-, 106)
+            43:  prepcallk(s4, "IsGuard", s2, s5)
+            44:  call(4, s4, s5, 1)
+            45:  loadint(s5, 0)
+            46:  jcmp(s5, 2, s4, CMP_G)
+            47:  loadbool(s3, 1)
+            48:  jmp(-, 99)
+            49:  line(-, 108)
+            50:  getk(s4, "p", s2)
+            51:  getk(s4, "autoGuard", s4)
+            52:  jz(s4, 3)
+            53:  line(-, 109)
+            54:  loadbool(s3, 1)
+            55:  jmp(-, 92)
+            56:  line(-, 112)
+            57:  getk(s4, "cpuState", s2)
+            58:  and(s4, 9, s4)
+            59:  getk(s5, "group", s2)
+            60:  loadint(s6, 1)
+            61:  eq(s5, 6, s5, 0)
+            62:  or(s5, 4, s5)
+            63:  getk(s6, "group", s2)
+            64:  loadint(s7, 2)
+            65:  eq(s6, 7, s6, 0)
+            66:  move(s5, s6)
+            67:  move(s4, s5)
+            68:  jz(s4, 10)
+            69:  line(-, 113)
+            70:  prepcallk(s4, "rand", s0, s5)
+            71:  call(4, s4, s5, 1)
+            72:  loadint(s5, 100)
+            73:  mod(s4, s5, s4)
+            74:  getk(s5, "p", s2)
+            75:  getk(s5, "cpu_guard", s5)
+            76:  jcmp(s5, 1, s4, CMP_LE)
+            77:  loadbool(s3, 1)
+            78:  jmp(-, 69)
+            79:  line(-, 117)
+            80:  getk(s4, "actor", s0)
+            81:  getk(s5, "owner", s1)
+            82:  get(s4, s4, s5)
+            83:  getk(s4, "x", s4)
+            84:  getk(s5, "x", s2)
+            85:  eq(s4, 5, s4, 0)
+            86:  jz(s4, 20)
+            87:  line(-, 118)
+            88:  getk(s4, "direction", s2)
+            89:  loadfloat(s5, 0)
+            90:  jcmp(s5, 8, s4, CMP_G)
+            91:  line(-, 119)
+            92:  getk(s4, "p", s2)
+            93:  getk(s4, "input", s4)
+            94:  getk(s4, "x", s4)
+            95:  loadfloat(s5, 0)
+            96:  jcmp(s5, 1, s4, CMP_L)
+            97:  loadbool(s3, 1)
+            98:  jmp(-, 7)
+            99:  line(-, 121)
+            100:  getk(s4, "p", s2)
+            101:  getk(s4, "input", s4)
+            102:  getk(s4, "x", s4)
+            103:  loadfloat(s5, 0)
+            104:  jcmp(s5, 1, s4, CMP_G)
+            105:  loadbool(s3, 1)
+            106:  jmp(-, 22)
+            107:  line(-, 124)
+            108:  getk(s4, "actor", s0)
+            109:  getk(s5, "owner", s1)
+            110:  get(s4, s4, s5)
+            111:  getk(s4, "x", s4)
+            112:  getk(s5, "x", s2)
+            113:  jcmp(s5, 8, s4, CMP_G)
+            114:  line(-, 125)
+            115:  getk(s4, "p", s2)
+            116:  getk(s4, "input", s4)
+            117:  getk(s4, "x", s4)
+            118:  loadfloat(s5, 0)
+            119:  jcmp(s5, 1, s4, CMP_L)
+            120:  loadbool(s3, 1)
+            121:  jmp(-, 7)
+            122:  line(-, 127)
+            123:  getk(s4, "p", s2)
+            124:  getk(s4, "input", s4)
+            125:  getk(s4, "x", s4)
+            126:  loadfloat(s5, 0)
+            127:  jcmp(s5, 1, s4, CMP_G)
+            128:  loadbool(s3, 1)
+            129:  line(-, 129)
+            130:  getk(s4, "p", s2)
+            131:  getk(s4, "autoGuardCount", s4)
+            132:  loadint(s5, 0)
+            133:  jcmp(s5, 6, s4, CMP_G)
+            134:  line(-, 130)
+            135:  getk(s4, "p", s2)
+            136:  getk(s4, "input", s4)
+            137:  getk(s4, "x", s4)
+            138:  jz(s4, 1)
+            139:  loadbool(s3, 1)
+            140:  line(-, 132)
+            141:  getk(s4, "tempAtkData", s2)
+            142:  getk(s4, "flagState", s4)
+            143:  loadint(s5, 2048)
+            144:  bitw(s4, s5, s4, BW_AND)
+            145:  jz(s4, 2)
+            146:  line(-, 133)
+            147:  loadbool(s3, 1)
+            148:  line(-, 138)
+            149:  not(s4, s3)
+            150:  jz(s4, 3)
+            151:  line(-, 140)
+            152:  loadint(s4, 0)
+            153:  return(1, 4)
+            154:  line(-, 144)
+            155:  getk(s4, "tempAtkData", s1)
+            156:  getk(s4, "guardLost", s4)
+            157:  loadint(s5, 100)
+            158:  cmp(s4, s5, s4, CMP_GE)
+            159:  or(s4, 11, s4)
+            160:  getk(s5, "tempAtkData", s1)
+            161:  getk(s5, "flagAttack", s5)
+            162:  loadint(s6, 16777216)
+            163:  bitw(s5, s6, s5, BW_AND)
+            164:  or(s5, 5, s5)
+            165:  getk(s6, "tempAtkData", s2)
+            166:  getk(s6, "flagState", s6)
+            167:  loadint(s7, 4)
+            168:  bitw(s6, s7, s6, BW_AND)
+            169:  move(s5, s6)
+            170:  move(s4, s5)
+            171:  jz(s4, 4)
+            172:  line(-, 145)
+            173:  loadint(s4, 4)
+            174:  return(1, 4)
+            175:  jmp(-, 3)
+            176:  line(-, 147)
+            177:  loadint(s4, 1)
+            178:  return(1, 4)
+            179:  line(-, 155)
+            180:  loadint(s4, 4)
+            181:  return(1, 4)
+            182:  line(-, 156)
+            183:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "HitPlayer"
+        nliterals: 120
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 40
+        nlineinfos: 211
+        ndefaultparams: 0
+        ninstructions: 1616
+        nfunctions: 1
+        Literals: [
+            0: "Vector3"
+            1: "x"
+            2: "y"
+            3: "tempAtkData"
+            4: "flagState"
+            5: "flagAttack"
+            6: "p"
+            7: "hitResult"
+            8: "hitGroup"
+            9: "actor"
+            10: "graze"
+            11: "PlaySE_Actor"
+            12: "SetEffect"
+            13: "direction"
+            14: "effect"
+            15: "EF_Graze"
+            16: "sp"
+            17: "EF_GrazeBullet"
+            18: "layerSwitch"
+            19: "owner"
+            20: "ConnectRenderSlot"
+            21: "manbow"
+            22: "renderer"
+            23: "slot"
+            24: "hitCount"
+            25: "actorType"
+            26: "GuardCheck"
+            27: "hitStopTime"
+            28: "guardStopE"
+            29: "guardStopP"
+            30: "guardDamage"
+            31: "SetGutRate"
+            32: "call"
+            33: "guardRate"
+            34: "SetDamage"
+            35: "SP_ADD"
+            36: "addSP"
+            37: "guardLost"
+            38: "guardRecover"
+            39: "popularHigh"
+            40: "popularLow"
+            41: "Guard_ADD"
+            42: "tointeger"
+            43: "Mana_ADD"
+            44: "SetHitState"
+            45: "guard"
+            46: "guardCrashAction"
+            47: "GuardCrash_Param"
+            48: "EF_GuardCrash"
+            49: "u"
+            50: "PlayerGuardAction_Point"
+            51: "EF_Guard"
+            52: "autoBaria"
+            53: "input"
+            54: "b0"
+            55: "b1"
+            56: "b2"
+            57: "b3"
+            58: "b4"
+            59: "b5"
+            60: "pushGuardAction"
+            61: "abs"
+            62: "motion"
+            63: "justGuardAction"
+            64: "enableJustGuard"
+            65: "EF_ApGuard"
+            66: "guardAction"
+            67: "EF_GuardMiss"
+            68: "guardMissAction"
+            69: "guardEvent"
+            70: "atkType"
+            71: "group"
+            72: "addKnock"
+            73: "armor"
+            74: "endure"
+            75: "endureMax"
+            76: "comboNum"
+            77: "config_data"
+            78: "practice"
+            79: "counter"
+            80: "rand"
+            81: "team"
+            82: "load_data"
+            83: "game_mode"
+            84: "counterDamage"
+            85: "hitStopE"
+            86: "hitStopP"
+            87: "EF_Counter"
+            88: "hitSE"
+            89: "hitEffect"
+            90: "EF_HitSmashA"
+            91: "EF_HitSmashB"
+            92: "EF_HitSmashC"
+            93: "EF_HitSmashUpper"
+            94: "EF_HitSmashFront"
+            95: "EF_HitSmashUnder"
+            96: "SetComboDamage"
+            97: "damagePoint"
+            98: "minRate"
+            99: "SetRecoverFrame"
+            100: "recover"
+            101: "SetComboRate"
+            102: "firstRate"
+            103: "comboRate"
+            104: "life"
+            105: "bariaLevel"
+            106: "bariaBreak"
+            107: "stan"
+            108: "stanMax"
+            109: "addStan"
+            110: "rot"
+            111: "name"
+            112: "EF_StanStar"
+            113: "stanCount"
+            114: "baria"
+            115: "comboResetCount"
+            116: "hitAction"
+            117: "damage"
+            118: "hitEvent"
+            119: "armorEvent"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "@ITERATOR@", pos: 8, start_op: 7, end_op: 19
+            1: name: "a", pos: 7, start_op: 7, end_op: 19
+            2: name: "@INDEX@", pos: 6, start_op: 6, end_op: 19
+            3: name: "a", pos: 10, start_op: 92, end_op: 108
+            4: name: "@INDEX@", pos: 9, start_op: 91, end_op: 108
+            5: name: "a", pos: 10, start_op: 138, end_op: 154
+            6: name: "@INDEX@", pos: 9, start_op: 137, end_op: 154
+            7: name: "grazeFunc_", pos: 9, start_op: 200, end_op: 255
+            8: name: "a", pos: 11, start_op: 292, end_op: 306
+            9: name: "@INDEX@", pos: 10, start_op: 291, end_op: 306
+            10: name: "a", pos: 12, start_op: 342, end_op: 358
+            11: name: "@INDEX@", pos: 11, start_op: 341, end_op: 358
+            12: name: "gf_", pos: 10, start_op: 385, end_op: 392
+            13: name: "lostRate_", pos: 10, start_op: 413, end_op: 458
+            14: name: "ax_", pos: 11, start_op: 611, end_op: 678
+            15: name: "ax_", pos: 11, start_op: 728, end_op: 885
+            16: name: "t", pos: 10, start_op: 461, end_op: 896
+            17: name: "a", pos: 12, start_op: 938, end_op: 954
+            18: name: "@INDEX@", pos: 11, start_op: 937, end_op: 954
+            19: name: "a", pos: 18, start_op: 1506, end_op: 1522
+            20: name: "@INDEX@", pos: 17, start_op: 1505, end_op: 1522
+            21: name: "t", pos: 16, start_op: 1544, end_op: 1556
+            22: name: "a", pos: 18, start_op: 1583, end_op: 1599
+            23: name: "@INDEX@", pos: 17, start_op: 1582, end_op: 1599
+            24: name: "dam_", pos: 15, start_op: 1252, end_op: 1613
+            25: name: "HF_", pos: 14, start_op: 1160, end_op: 1613
+            26: name: "t", pos: 13, start_op: 966, end_op: 1613
+            27: name: "rate_", pos: 12, start_op: 964, end_op: 1613
+            28: name: "KnockCheck_", pos: 11, start_op: 962, end_op: 1613
+            29: name: "Knock_", pos: 10, start_op: 960, end_op: 1613
+            30: name: "gCheck_", pos: 9, start_op: 314, end_op: 1613
+            31: name: "g_", pos: 8, start_op: 183, end_op: 1613
+            32: name: "oc_", pos: 7, start_op: 33, end_op: 1613
+            33: name: "c_", pos: 6, start_op: 31, end_op: 1613
+            34: name: "hitPoint_", pos: 5, start_op: 5, end_op: 1613
+            35: name: "i_", pos: 4, start_op: 2, end_op: 1613
+            36: name: "info", pos: 3, start_op: 0, end_op: 1615
+            37: name: "def", pos: 2, start_op: 0, end_op: 1615
+            38: name: "atk", pos: 1, start_op: 0, end_op: 1615
+            39: name: "this", pos: 0, start_op: 0, end_op: 1615
+          ]
+        Line Informations: [
+            0: line: 165, op: 1
+            1: line: 166, op: 2
+            2: line: 167, op: 5
+            3: line: 168, op: 9
+            4: line: 169, op: 11
+            5: line: 170, op: 15
+            6: line: 172, op: 20
+            7: line: 173, op: 23
+            8: line: 174, op: 26
+            9: line: 205, op: 29
+            10: line: 206, op: 31
+            11: line: 207, op: 33
+            12: line: 208, op: 51
+            13: line: 210, op: 74
+            14: line: 211, op: 76
+            15: line: 212, op: 84
+            16: line: 213, op: 88
+            17: line: 214, op: 94
+            18: line: 215, op: 99
+            19: line: 219, op: 109
+            20: line: 221, op: 117
+            21: line: 224, op: 121
+            22: line: 225, op: 122
+            23: line: 226, op: 130
+            24: line: 227, op: 134
+            25: line: 228, op: 140
+            26: line: 229, op: 145
+            27: line: 233, op: 155
+            28: line: 235, op: 163
+            29: line: 240, op: 165
+            30: line: 241, op: 183
+            31: line: 243, op: 196
+            32: line: 244, op: 198
+            33: line: 269, op: 200
+            34: line: 270, op: 205
+            35: line: 271, op: 209
+            36: line: 272, op: 213
+            37: line: 273, op: 223
+            38: line: 275, op: 225
+            39: line: 276, op: 236
+            40: line: 277, op: 240
+            41: line: 278, op: 244
+            42: line: 279, op: 254
+            43: line: 284, op: 256
+            44: line: 285, op: 259
+            45: line: 286, op: 263
+            46: line: 287, op: 271
+            47: line: 290, op: 284
+            48: line: 291, op: 288
+            49: line: 292, op: 294
+            50: line: 293, op: 299
+            51: line: 297, op: 308
+            52: line: 299, op: 312
+            53: line: 300, op: 314
+            54: line: 301, op: 319
+            55: line: 304, op: 324
+            56: line: 306, op: 326
+            57: line: 307, op: 334
+            58: line: 308, op: 338
+            59: line: 309, op: 344
+            60: line: 310, op: 349
+            61: line: 316, op: 359
+            62: line: 317, op: 364
+            63: line: 320, op: 369
+            64: line: 321, op: 373
+            65: line: 322, op: 385
+            66: line: 326, op: 393
+            67: line: 327, op: 402
+            68: line: 328, op: 406
+            69: line: 329, op: 411
+            70: line: 330, op: 413
+            71: line: 331, op: 424
+            72: line: 332, op: 435
+            73: line: 333, op: 452
+            74: line: 336, op: 459
+            75: line: 337, op: 461
+            76: line: 338, op: 466
+            77: line: 342, op: 478
+            78: line: 344, op: 489
+            79: line: 345, op: 493
+            80: line: 346, op: 498
+            81: line: 347, op: 504
+            82: line: 351, op: 516
+            83: line: 352, op: 521
+            84: line: 353, op: 527
+            85: line: 356, op: 539
+            86: line: 358, op: 589
+            87: line: 359, op: 598
+            88: line: 362, op: 606
+            89: line: 363, op: 611
+            90: line: 364, op: 638
+            91: line: 365, op: 643
+            92: line: 366, op: 653
+            93: line: 369, op: 661
+            94: line: 370, op: 670
+            95: line: 375, op: 679
+            96: line: 378, op: 685
+            97: line: 380, op: 696
+            98: line: 381, op: 700
+            99: line: 382, op: 705
+            100: line: 383, op: 711
+            101: line: 387, op: 723
+            102: line: 388, op: 728
+            103: line: 389, op: 734
+            104: line: 390, op: 740
+            105: line: 393, op: 752
+            106: line: 395, op: 802
+            107: line: 396, op: 811
+            108: line: 399, op: 819
+            109: line: 400, op: 845
+            110: line: 401, op: 850
+            111: line: 402, op: 860
+            112: line: 405, op: 868
+            113: line: 406, op: 877
+            114: line: 411, op: 886
+            115: line: 414, op: 888
+            116: line: 418, op: 899
+            117: line: 419, op: 904
+            118: line: 420, op: 922
+            119: line: 421, op: 930
+            120: line: 422, op: 934
+            121: line: 423, op: 940
+            122: line: 424, op: 945
+            123: line: 428, op: 955
+            124: line: 431, op: 957
+            125: line: 432, op: 960
+            126: line: 433, op: 962
+            127: line: 434, op: 964
+            128: line: 437, op: 970
+            129: line: 438, op: 978
+            130: line: 439, op: 991
+            131: line: 440, op: 995
+            132: line: 444, op: 1002
+            133: line: 446, op: 1014
+            134: line: 450, op: 1058
+            135: line: 454, op: 1062
+            136: line: 455, op: 1074
+            137: line: 456, op: 1080
+            138: line: 459, op: 1088
+            139: line: 460, op: 1092
+            140: line: 461, op: 1100
+            141: line: 462, op: 1108
+            142: line: 465, op: 1120
+            143: line: 466, op: 1124
+            144: line: 467, op: 1132
+            145: line: 468, op: 1140
+            146: line: 474, op: 1150
+            147: line: 477, op: 1158
+            148: line: 479, op: 1160
+            149: line: 481, op: 1165
+            150: line: 482, op: 1170
+            151: line: 484, op: 1176
+            152: line: 485, op: 1181
+            153: line: 487, op: 1187
+            154: line: 488, op: 1192
+            155: line: 490, op: 1198
+            156: line: 491, op: 1203
+            157: line: 493, op: 1209
+            158: line: 494, op: 1214
+            159: line: 496, op: 1220
+            160: line: 497, op: 1225
+            161: line: 499, op: 1227
+            162: line: 500, op: 1229
+            163: line: 547, op: 1241
+            164: line: 551, op: 1252
+            165: line: 552, op: 1267
+            166: line: 554, op: 1275
+            167: line: 556, op: 1281
+            168: line: 557, op: 1286
+            169: line: 559, op: 1296
+            170: line: 563, op: 1305
+            171: line: 564, op: 1318
+            172: line: 565, op: 1329
+            173: line: 566, op: 1346
+            174: line: 567, op: 1353
+            175: line: 568, op: 1367
+            176: line: 569, op: 1373
+            177: line: 570, op: 1387
+            178: line: 571, op: 1393
+            179: line: 574, op: 1407
+            180: line: 575, op: 1413
+            181: line: 576, op: 1419
+            182: line: 577, op: 1421
+            183: line: 578, op: 1427
+            184: line: 579, op: 1437
+            185: line: 582, op: 1442
+            186: line: 584, op: 1448
+            187: line: 585, op: 1460
+            188: line: 588, op: 1470
+            189: line: 589, op: 1472
+            190: line: 590, op: 1490
+            191: line: 591, op: 1498
+            192: line: 592, op: 1502
+            193: line: 593, op: 1508
+            194: line: 594, op: 1513
+            195: line: 599, op: 1523
+            196: line: 600, op: 1528
+            197: line: 601, op: 1533
+            198: line: 602, op: 1538
+            199: line: 603, op: 1542
+            200: line: 604, op: 1544
+            201: line: 605, op: 1551
+            202: line: 607, op: 1557
+            203: line: 611, op: 1568
+            204: line: 612, op: 1575
+            205: line: 613, op: 1579
+            206: line: 614, op: 1585
+            207: line: 615, op: 1590
+            208: line: 619, op: 1600
+            209: line: 620, op: 1605
+            210: line: 628, op: 1614
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 165)
+            1:  loadint(s4, 0)
+            2:  line(-, 166)
+            3:  prepcallk(s5, "Vector3", s0, s6)
+            4:  call(5, s5, s6, 1)
+            5:  line(-, 167)
+            6:  loadnulls(s6, 3)
+            7:  foreach(s3, 12, s6)
+            8:  postforeach(s3, 12)
+            9:  line(-, 168)
+            10:  pincl(s9, s4, 0, 1)
+            11:  line(-, 169)
+            12:  dload(s9, "x", s10, "x")
+            13:  get(s10, s7, s10)
+            14:  comparith(s9, 327690, s9, 43)
+            15:  line(-, 170)
+            16:  dload(s9, "y", s10, "y")
+            17:  get(s10, s7, s10)
+            18:  comparith(s9, 327690, s9, 43)
+            19:  jmp(-, -13)
+            20:  line(-, 172)
+            21:  loadint(s6, 2)
+            22:  jcmp(s6, 6, s4, CMP_GE)
+            23:  line(-, 173)
+            24:  load(s6, "x")
+            25:  comparith(s6, 327684, s6, 47)
+            26:  line(-, 174)
+            27:  load(s6, "y")
+            28:  comparith(s6, 327684, s6, 47)
+            29:  line(-, 205)
+            30:  loadbool(s6, 0)
+            31:  line(-, 206)
+            32:  loadbool(s7, 0)
+            33:  line(-, 207)
+            34:  getk(s8, "tempAtkData", s2)
+            35:  getk(s8, "flagState", s8)
+            36:  loadint(s9, 524288)
+            37:  bitw(s8, s9, s8, BW_AND)
+            38:  and(s8, 11, s8)
+            39:  getk(s9, "tempAtkData", s1)
+            40:  getk(s9, "flagAttack", s9)
+            41:  loadint(s10, 8388608)
+            42:  bitw(s9, s10, s9, BW_AND)
+            43:  getk(s10, "tempAtkData", s1)
+            44:  getk(s10, "flagAttack", s10)
+            45:  loadint(s11, 16777216)
+            46:  bitw(s10, s11, s10, BW_AND)
+            47:  bitw(s9, s10, s9, BW_OR)
+            48:  not(s9, s9)
+            49:  move(s8, s9)
+            50:  move(s6, s8)
+            51:  line(-, 208)
+            52:  getk(s8, "tempAtkData", s1)
+            53:  getk(s8, "flagAttack", s8)
+            54:  loadint(s9, 16384)
+            55:  bitw(s8, s9, s8, BW_AND)
+            56:  and(s8, 16, s8)
+            57:  getk(s9, "tempAtkData", s2)
+            58:  getk(s9, "flagState", s9)
+            59:  loadint(s10, 4194304)
+            60:  bitw(s9, s10, s9, BW_AND)
+            61:  and(s9, 10, s9)
+            62:  getk(s10, "tempAtkData", s1)
+            63:  getk(s10, "flagAttack", s10)
+            64:  loadint(s11, 8388608)
+            65:  bitw(s10, s11, s10, BW_AND)
+            66:  getk(s11, "tempAtkData", s1)
+            67:  getk(s11, "flagAttack", s11)
+            68:  loadint(s12, 16777216)
+            69:  bitw(s11, s12, s11, BW_AND)
+            70:  bitw(s10, s11, s10, BW_OR)
+            71:  move(s9, s10)
+            72:  move(s8, s9)
+            73:  move(s7, s8)
+            74:  line(-, 210)
+            75:  jz(s6, 44)
+            76:  line(-, 211)
+            77:  getk(s8, "p", s1)
+            78:  dload(s9, "hitResult", s10, "p")
+            79:  get(s10, s1, s10)
+            80:  getk(s10, "hitResult", s10)
+            81:  loadint(s11, 16)
+            82:  bitw(s10, s11, s10, BW_OR)
+            83:  set(s255, s8, s9, s10)
+            84:  line(-, 212)
+            85:  getk(s8, "p", s1)
+            86:  getk(s8, "hitGroup", s8)
+            87:  jz(s8, 21)
+            88:  line(-, 213)
+            89:  getk(s8, "p", s1)
+            90:  getk(s8, "hitGroup", s8)
+            91:  loadnulls(s9, 3)
+            92:  foreach(s8, 16, s9)
+            93:  postforeach(s8, 16)
+            94:  line(-, 214)
+            95:  loadroot(s12)
+            96:  getk(s12, "actor", s12)
+            97:  exists(s12, s12, s10)
+            98:  jz(s12, 9)
+            99:  line(-, 215)
+            100:  loadroot(s12)
+            101:  getk(s12, "actor", s12)
+            102:  get(s12, s12, s10)
+            103:  getk(s12, "p", s12)
+            104:  dload(s13, "hitResult", s14, "p")
+            105:  get(s14, s1, s14)
+            106:  getk(s14, "hitResult", s14)
+            107:  set(s255, s12, s13, s14)
+            108:  jmp(-, -17)
+            109:  line(-, 219)
+            110:  getk(s8, "p", s2)
+            111:  dload(s9, "hitResult", s10, "p")
+            112:  get(s10, s2, s10)
+            113:  getk(s10, "hitResult", s10)
+            114:  loadint(s11, 16)
+            115:  bitw(s10, s11, s10, BW_OR)
+            116:  set(s255, s8, s9, s10)
+            117:  line(-, 221)
+            118:  return(255, 0)
+            119:  jmp(-, 45)
+            120:  line(-, 224)
+            121:  jz(s7, 43)
+            122:  line(-, 225)
+            123:  getk(s8, "p", s1)
+            124:  dload(s9, "hitResult", s10, "p")
+            125:  get(s10, s1, s10)
+            126:  getk(s10, "hitResult", s10)
+            127:  loadint(s11, 256)
+            128:  bitw(s10, s11, s10, BW_OR)
+            129:  set(s255, s8, s9, s10)
+            130:  line(-, 226)
+            131:  getk(s8, "p", s1)
+            132:  getk(s8, "hitGroup", s8)
+            133:  jz(s8, 21)
+            134:  line(-, 227)
+            135:  getk(s8, "p", s1)
+            136:  getk(s8, "hitGroup", s8)
+            137:  loadnulls(s9, 3)
+            138:  foreach(s8, 16, s9)
+            139:  postforeach(s8, 16)
+            140:  line(-, 228)
+            141:  loadroot(s12)
+            142:  getk(s12, "actor", s12)
+            143:  exists(s12, s12, s10)
+            144:  jz(s12, 9)
+            145:  line(-, 229)
+            146:  loadroot(s12)
+            147:  getk(s12, "actor", s12)
+            148:  get(s12, s12, s10)
+            149:  getk(s12, "p", s12)
+            150:  dload(s13, "hitResult", s14, "p")
+            151:  get(s14, s1, s14)
+            152:  getk(s14, "hitResult", s14)
+            153:  set(s255, s12, s13, s14)
+            154:  jmp(-, -17)
+            155:  line(-, 233)
+            156:  getk(s8, "p", s2)
+            157:  dload(s9, "hitResult", s10, "p")
+            158:  get(s10, s2, s10)
+            159:  getk(s10, "hitResult", s10)
+            160:  loadint(s11, 256)
+            161:  bitw(s10, s11, s10, BW_OR)
+            162:  set(s255, s8, s9, s10)
+            163:  line(-, 235)
+            164:  return(255, 0)
+            165:  line(-, 240)
+            166:  getk(s8, "tempAtkData", s2)
+            167:  getk(s8, "flagState", s8)
+            168:  loadint(s9, 4096)
+            169:  bitw(s8, s9, s8, BW_AND)
+            170:  or(s8, 5, s8)
+            171:  getk(s9, "p", s2)
+            172:  getk(s9, "graze", s9)
+            173:  loadint(s10, 0)
+            174:  cmp(s9, s10, s9, CMP_G)
+            175:  move(s8, s9)
+            176:  and(s8, 6, s8)
+            177:  getk(s9, "tempAtkData", s1)
+            178:  getk(s9, "flagAttack", s9)
+            179:  loadint(s10, 65536)
+            180:  bitw(s9, s10, s9, BW_AND)
+            181:  not(s9, s9)
+            182:  move(s8, s9)
+            183:  line(-, 241)
+            184:  getk(s9, "tempAtkData", s2)
+            185:  getk(s9, "flagState", s9)
+            186:  loadint(s10, 33554432)
+            187:  bitw(s9, s10, s9, BW_AND)
+            188:  and(s9, 5, s9)
+            189:  getk(s10, "tempAtkData", s1)
+            190:  getk(s10, "flagAttack", s10)
+            191:  loadint(s11, 8388608)
+            192:  bitw(s10, s11, s10, BW_AND)
+            193:  move(s9, s10)
+            194:  jz(s9, 1)
+            195:  loadbool(s8, 1)
+            196:  line(-, 243)
+            197:  jz(s8, 58)
+            198:  line(-, 244)
+            199:  closure(s9, 0)
+            200:  line(-, 269)
+            201:  getk(s10, "flagAttack", s1)
+            202:  loadint(s11, 16777216)
+            203:  bitw(s10, s11, s10, BW_AND)
+            204:  jz(s10, 20)
+            205:  line(-, 270)
+            206:  dmove(s10, s0, s11, s1)
+            207:  move(s12, s2)
+            208:  call(255, s9, s10, 3)
+            209:  line(-, 271)
+            210:  prepcallk(s10, "PlaySE_Actor", s0, s11)
+            211:  loadint(s12, 803)
+            212:  call(255, s10, s11, 2)
+            213:  line(-, 272)
+            214:  prepcallk(s10, "SetEffect", s0, s11)
+            215:  getk(s12, "x", s5)
+            216:  getk(s13, "y", s5)
+            217:  getk(s14, "direction", s1)
+            218:  loadroot(s15)
+            219:  getk(s15, "effect", s15)
+            220:  getk(s15, "EF_Graze", s15)
+            221:  loadnulls(s16, 1)
+            222:  call(255, s10, s11, 6)
+            223:  line(-, 273)
+            224:  return(255, 0)
+            225:  line(-, 275)
+            226:  getk(s10, "flagAttack", s1)
+            227:  loadint(s11, 8388608)
+            228:  bitw(s10, s11, s10, BW_AND)
+            229:  and(s10, 5, s10)
+            230:  getk(s11, "p", s2)
+            231:  getk(s11, "sp", s11)
+            232:  loadint(s12, 10)
+            233:  cmp(s11, s12, s11, CMP_GE)
+            234:  move(s10, s11)
+            235:  jz(s10, 20)
+            236:  line(-, 276)
+            237:  dmove(s10, s0, s11, s1)
+            238:  move(s12, s2)
+            239:  call(255, s9, s10, 3)
+            240:  line(-, 277)
+            241:  prepcallk(s10, "PlaySE_Actor", s0, s11)
+            242:  loadint(s12, 804)
+            243:  call(255, s10, s11, 2)
+            244:  line(-, 278)
+            245:  prepcallk(s10, "SetEffect", s0, s11)
+            246:  getk(s12, "x", s5)
+            247:  getk(s13, "y", s5)
+            248:  getk(s14, "direction", s1)
+            249:  loadroot(s15)
+            250:  getk(s15, "effect", s15)
+            251:  getk(s15, "EF_GrazeBullet", s15)
+            252:  loadnulls(s16, 1)
+            253:  call(255, s10, s11, 6)
+            254:  line(-, 279)
+            255:  return(255, 0)
+            256:  line(-, 284)
+            257:  getk(s9, "layerSwitch", s2)
+            258:  jz(s9, 25)
+            259:  line(-, 285)
+            260:  load(s9, "layerSwitch")
+            261:  loadbool(s10, 0)
+            262:  set(s255, s2, s9, s10)
+            263:  line(-, 286)
+            264:  loadroot(s9)
+            265:  getk(s9, "actor", s9)
+            266:  getk(s10, "owner", s1)
+            267:  get(s9, s9, s10)
+            268:  load(s10, "layerSwitch")
+            269:  loadbool(s11, 1)
+            270:  set(s255, s9, s10, s11)
+            271:  line(-, 287)
+            272:  loadroot(s9)
+            273:  getk(s9, "actor", s9)
+            274:  getk(s10, "owner", s1)
+            275:  get(s9, s9, s10)
+            276:  prepcallk(s9, "ConnectRenderSlot", s9, s10)
+            277:  loadroot(s11)
+            278:  getk(s11, "manbow", s11)
+            279:  getk(s11, "renderer", s11)
+            280:  getk(s11, "slot", s11)
+            281:  getk(s11, "actor", s11)
+            282:  loadint(s12, 190)
+            283:  call(255, s9, s10, 3)
+            284:  line(-, 290)
+            285:  getk(s9, "p", s1)
+            286:  getk(s9, "hitGroup", s9)
+            287:  jz(s9, 20)
+            288:  line(-, 291)
+            289:  getk(s9, "p", s1)
+            290:  getk(s9, "hitGroup", s9)
+            291:  loadnulls(s10, 3)
+            292:  foreach(s9, 14, s10)
+            293:  postforeach(s9, 14)
+            294:  line(-, 292)
+            295:  loadroot(s13)
+            296:  getk(s13, "actor", s13)
+            297:  exists(s13, s13, s11)
+            298:  jz(s13, 7)
+            299:  line(-, 293)
+            300:  loadroot(s13)
+            301:  getk(s13, "actor", s13)
+            302:  get(s13, s13, s11)
+            303:  getk(s13, "p", s13)
+            304:  load(s14, "hitCount")
+            305:  pinc(s13, s13, s14, 1)
+            306:  jmp(-, -15)
+            307:  jmp(-, 4)
+            308:  line(-, 297)
+            309:  getk(s9, "p", s1)
+            310:  load(s10, "hitCount")
+            311:  pinc(s9, s9, s10, 1)
+            312:  line(-, 299)
+            313:  loadnulls(s9, 1)
+            314:  line(-, 300)
+            315:  getk(s10, "actorType", s2)
+            316:  loadint(s11, 1)
+            317:  eq(s10, 11, s10, 0)
+            318:  jz(s10, 5)
+            319:  line(-, 301)
+            320:  prepcallk(s10, "GuardCheck", s0, s11)
+            321:  dmove(s12, s1, s13, s2)
+            322:  call(10, s10, s11, 3)
+            323:  move(s9, s10)
+            324:  line(-, 304)
+            325:  jz(s9, 572)
+            326:  line(-, 306)
+            327:  getk(s10, "p", s1)
+            328:  dload(s11, "hitResult", s12, "p")
+            329:  get(s12, s1, s12)
+            330:  getk(s12, "hitResult", s12)
+            331:  loadint(s13, 8)
+            332:  bitw(s12, s13, s12, BW_OR)
+            333:  set(s255, s10, s11, s12)
+            334:  line(-, 307)
+            335:  getk(s10, "p", s1)
+            336:  getk(s10, "hitGroup", s10)
+            337:  jz(s10, 21)
+            338:  line(-, 308)
+            339:  getk(s10, "p", s1)
+            340:  getk(s10, "hitGroup", s10)
+            341:  loadnulls(s11, 3)
+            342:  foreach(s10, 16, s11)
+            343:  postforeach(s10, 16)
+            344:  line(-, 309)
+            345:  loadroot(s14)
+            346:  getk(s14, "actor", s14)
+            347:  exists(s14, s14, s12)
+            348:  jz(s14, 9)
+            349:  line(-, 310)
+            350:  loadroot(s14)
+            351:  getk(s14, "actor", s14)
+            352:  get(s14, s14, s12)
+            353:  getk(s14, "p", s14)
+            354:  dload(s15, "hitResult", s16, "p")
+            355:  get(s16, s1, s16)
+            356:  getk(s16, "hitResult", s16)
+            357:  set(s255, s14, s15, s16)
+            358:  jmp(-, -17)
+            359:  line(-, 316)
+            360:  getk(s10, "p", s2)
+            361:  dload(s11, "hitStopTime", s12, "guardStopE")
+            362:  get(s12, s1, s12)
+            363:  set(s255, s10, s11, s12)
+            364:  line(-, 317)
+            365:  getk(s10, "p", s1)
+            366:  dload(s11, "hitStopTime", s12, "guardStopP")
+            367:  get(s12, s1, s12)
+            368:  set(s255, s10, s11, s12)
+            369:  line(-, 320)
+            370:  getk(s10, "guardDamage", s1)
+            371:  loadint(s11, 0)
+            372:  jcmp(s11, 20, s10, CMP_G)
+            373:  line(-, 321)
+            374:  getk(s10, "SetGutRate", s0)
+            375:  prepcallk(s10, "call", s10, s11)
+            376:  move(s12, s2)
+            377:  call(10, s10, s11, 2)
+            378:  loadroot(s11)
+            379:  getk(s11, "actor", s11)
+            380:  getk(s12, "owner", s2)
+            381:  get(s11, s11, s12)
+            382:  getk(s11, "p", s11)
+            383:  getk(s11, "guardRate", s11)
+            384:  mul(s10, s11, s10)
+            385:  line(-, 322)
+            386:  getk(s11, "SetDamage", s0)
+            387:  prepcallk(s11, "call", s11, s12)
+            388:  move(s13, s2)
+            389:  getk(s14, "guardDamage", s1)
+            390:  mul(s14, s10, s14)
+            391:  loadbool(s15, 1)
+            392:  call(255, s11, s12, 4)
+            393:  line(-, 326)
+            394:  getk(s10, "SP_ADD", s0)
+            395:  prepcallk(s10, "call", s10, s11)
+            396:  loadroot(s12)
+            397:  getk(s12, "actor", s12)
+            398:  getk(s13, "owner", s1)
+            399:  get(s12, s12, s13)
+            400:  getk(s13, "addSP", s1)
+            401:  call(255, s10, s11, 3)
+            402:  line(-, 327)
+            403:  getk(s10, "guardLost", s1)
+            404:  loadint(s11, 0)
+            405:  jcmp(s11, 53, s10, CMP_G)
+            406:  line(-, 328)
+            407:  getk(s10, "p", s2)
+            408:  load(s11, "guardRecover")
+            409:  loadint(s12, 0)
+            410:  set(s255, s10, s11, s12)
+            411:  line(-, 329)
+            412:  loadfloat(s10, 1)
+            413:  line(-, 330)
+            414:  loadroot(s11)
+            415:  getk(s11, "actor", s11)
+            416:  getk(s12, "owner", s1)
+            417:  get(s11, s11, s12)
+            418:  getk(s11, "p", s11)
+            419:  getk(s11, "popularHigh", s11)
+            420:  loadint(s12, 0)
+            421:  jcmp(s12, 2, s11, CMP_G)
+            422:  loadfloat(s11, 0.5)
+            423:  add(s10, s11, s10)
+            424:  line(-, 331)
+            425:  loadroot(s11)
+            426:  getk(s11, "actor", s11)
+            427:  getk(s12, "owner", s2)
+            428:  get(s11, s11, s12)
+            429:  getk(s11, "p", s11)
+            430:  getk(s11, "popularLow", s11)
+            431:  loadint(s12, 0)
+            432:  jcmp(s12, 2, s11, CMP_G)
+            433:  loadfloat(s11, 0.5)
+            434:  add(s10, s11, s10)
+            435:  line(-, 332)
+            436:  getk(s11, "Guard_ADD", s0)
+            437:  prepcallk(s11, "call", s11, s12)
+            438:  move(s13, s2)
+            439:  getk(s14, "guardLost", s1)
+            440:  neg(s14, s14)
+            441:  mul(s14, s10, s14)
+            442:  loadroot(s15)
+            443:  getk(s15, "actor", s15)
+            444:  getk(s16, "owner", s2)
+            445:  get(s15, s15, s16)
+            446:  getk(s15, "p", s15)
+            447:  getk(s15, "guardRate", s15)
+            448:  mul(s14, s15, s14)
+            449:  prepcallk(s14, "tointeger", s14, s15)
+            450:  call(14, s14, s15, 1)
+            451:  call(255, s11, s12, 3)
+            452:  line(-, 333)
+            453:  getk(s11, "Mana_ADD", s0)
+            454:  prepcallk(s11, "call", s11, s12)
+            455:  move(s13, s2)
+            456:  loadint(s14, 0)
+            457:  loadint(s15, 60)
+            458:  call(255, s11, s12, 4)
+            459:  line(-, 336)
+            460:  newobj(s10, 0, 0, 0)
+            461:  line(-, 337)
+            462:  prepcallk(s11, "SetHitState", s0, s12)
+            463:  dmove(s13, s10, s14, s1)
+            464:  move(s15, s2)
+            465:  call(255, s11, s12, 4)
+            466:  line(-, 338)
+            467:  loadint(s11, 1)
+            468:  eq(s11, 11, s9, 0)
+            469:  jz(s11, 1)
+            470:  jmp(-, 3)
+            471:  loadint(s11, 2)
+            472:  eq(s11, 11, s9, 0)
+            473:  jz(s11, 1)
+            474:  jmp(-, 3)
+            475:  loadint(s11, 3)
+            476:  eq(s11, 11, s9, 0)
+            477:  jz(s11, 204)
+            478:  line(-, 342)
+            479:  getk(s11, "p", s2)
+            480:  getk(s11, "guard", s11)
+            481:  loadint(s12, 0)
+            482:  cmp(s11, s12, s11, CMP_LE)
+            483:  and(s11, 4, s11)
+            484:  getk(s12, "guardLost", s1)
+            485:  loadint(s13, 100)
+            486:  cmp(s12, s13, s12, CMP_GE)
+            487:  move(s11, s12)
+            488:  jz(s11, 26)
+            489:  line(-, 344)
+            490:  getk(s11, "p", s2)
+            491:  getk(s11, "guardCrashAction", s11)
+            492:  jz(s11, 21)
+            493:  line(-, 345)
+            494:  getk(s11, "GuardCrash_Param", s0)
+            495:  prepcallk(s11, "call", s11, s12)
+            496:  move(s13, s2)
+            497:  call(255, s11, s12, 2)
+            498:  line(-, 346)
+            499:  getk(s11, "p", s2)
+            500:  getk(s11, "guardCrashAction", s11)
+            501:  prepcallk(s11, "call", s11, s12)
+            502:  dmove(s13, s2, s14, s10)
+            503:  call(255, s11, s12, 3)
+            504:  line(-, 347)
+            505:  prepcallk(s11, "SetEffect", s0, s12)
+            506:  getk(s13, "x", s5)
+            507:  getk(s14, "y", s5)
+            508:  getk(s15, "direction", s10)
+            509:  loadroot(s16)
+            510:  getk(s16, "effect", s16)
+            511:  getk(s16, "EF_GuardCrash", s16)
+            512:  loadnulls(s17, 1)
+            513:  call(255, s11, s12, 6)
+            514:  jmp(-, 164)
+            515:  line(-, 351)
+            516:  getk(s11, "tempAtkData", s2)
+            517:  getk(s11, "flagState", s11)
+            518:  loadint(s12, 2048)
+            519:  bitw(s11, s12, s11, BW_AND)
+            520:  jz(s11, 17)
+            521:  line(-, 352)
+            522:  getk(s11, "u", s2)
+            523:  getk(s11, "PlayerGuardAction_Point", s11)
+            524:  prepcallk(s11, "call", s11, s12)
+            525:  dmove(s13, s2, s14, s10)
+            526:  call(255, s11, s12, 3)
+            527:  line(-, 353)
+            528:  prepcallk(s11, "SetEffect", s0, s12)
+            529:  getk(s13, "x", s5)
+            530:  getk(s14, "y", s5)
+            531:  getk(s15, "direction", s10)
+            532:  loadroot(s16)
+            533:  getk(s16, "effect", s16)
+            534:  getk(s16, "EF_Guard", s16)
+            535:  loadnulls(s17, 1)
+            536:  call(255, s11, s12, 6)
+            537:  jmp(-, 141)
+            538:  line(-, 356)
+            539:  getk(s11, "p", s2)
+            540:  getk(s11, "autoBaria", s11)
+            541:  or(s11, 41, s11)
+            542:  getk(s12, "p", s2)
+            543:  getk(s12, "input", s12)
+            544:  getk(s12, "b0", s12)
+            545:  loadint(s13, 0)
+            546:  cmp(s12, s13, s12, CMP_G)
+            547:  or(s12, 34, s12)
+            548:  getk(s13, "p", s2)
+            549:  getk(s13, "input", s13)
+            550:  getk(s13, "b1", s13)
+            551:  loadint(s14, 0)
+            552:  cmp(s13, s14, s13, CMP_G)
+            553:  or(s13, 27, s13)
+            554:  getk(s14, "p", s2)
+            555:  getk(s14, "input", s14)
+            556:  getk(s14, "b2", s14)
+            557:  loadint(s15, 0)
+            558:  cmp(s14, s15, s14, CMP_G)
+            559:  or(s14, 20, s14)
+            560:  getk(s15, "p", s2)
+            561:  getk(s15, "input", s15)
+            562:  getk(s15, "b3", s15)
+            563:  loadint(s16, 0)
+            564:  cmp(s15, s16, s15, CMP_G)
+            565:  or(s15, 13, s15)
+            566:  getk(s16, "p", s2)
+            567:  getk(s16, "input", s16)
+            568:  getk(s16, "b4", s16)
+            569:  loadint(s17, 0)
+            570:  cmp(s16, s17, s16, CMP_G)
+            571:  or(s16, 6, s16)
+            572:  getk(s17, "p", s2)
+            573:  getk(s17, "input", s17)
+            574:  getk(s17, "b5", s17)
+            575:  loadint(s18, 0)
+            576:  cmp(s17, s18, s17, CMP_G)
+            577:  move(s16, s17)
+            578:  move(s15, s16)
+            579:  move(s14, s15)
+            580:  move(s13, s14)
+            581:  move(s12, s13)
+            582:  move(s11, s12)
+            583:  and(s11, 3, s11)
+            584:  getk(s12, "p", s2)
+            585:  getk(s12, "pushGuardAction", s12)
+            586:  move(s11, s12)
+            587:  jz(s11, 17)
+            588:  line(-, 358)
+            589:  prepcallk(s11, "SetEffect", s0, s12)
+            590:  getk(s13, "x", s5)
+            591:  getk(s14, "y", s5)
+            592:  getk(s15, "direction", s10)
+            593:  loadroot(s16)
+            594:  getk(s16, "effect", s16)
+            595:  getk(s16, "EF_Guard", s16)
+            596:  loadnulls(s17, 1)
+            597:  call(255, s11, s12, 6)
+            598:  line(-, 359)
+            599:  getk(s11, "p", s2)
+            600:  getk(s11, "pushGuardAction", s11)
+            601:  prepcallk(s11, "call", s11, s12)
+            602:  dmove(s13, s2, s14, s10)
+            603:  call(255, s11, s12, 3)
+            604:  jmp(-, 74)
+            605:  line(-, 362)
+            606:  prepcallk(s11, "abs", s0, s12)
+            607:  getk(s13, "p", s2)
+            608:  getk(s13, "input", s13)
+            609:  getk(s13, "x", s13)
+            610:  call(11, s11, s12, 2)
+            611:  line(-, 363)
+            612:  getk(s12, "motion", s2)
+            613:  loadint(s13, 110)
+            614:  cmp(s12, s13, s12, CMP_GE)
+            615:  and(s12, 4, s12)
+            616:  getk(s13, "motion", s2)
+            617:  loadint(s14, 122)
+            618:  cmp(s13, s14, s13, CMP_LE)
+            619:  move(s12, s13)
+            620:  not(s12, s12)
+            621:  and(s12, 15, s12)
+            622:  loadint(s13, 0)
+            623:  cmp(s13, s13, s11, CMP_G)
+            624:  and(s13, 11, s13)
+            625:  loadint(s14, 10)
+            626:  cmp(s14, s14, s11, CMP_LE)
+            627:  and(s14, 7, s14)
+            628:  getk(s15, "p", s2)
+            629:  getk(s15, "justGuardAction", s15)
+            630:  and(s15, 3, s15)
+            631:  getk(s16, "p", s2)
+            632:  getk(s16, "enableJustGuard", s16)
+            633:  move(s15, s16)
+            634:  move(s14, s15)
+            635:  move(s13, s14)
+            636:  move(s12, s13)
+            637:  jz(s12, 22)
+            638:  line(-, 364)
+            639:  getk(s12, "p", s2)
+            640:  load(s13, "enableJustGuard")
+            641:  loadbool(s14, 0)
+            642:  set(s255, s12, s13, s14)
+            643:  line(-, 365)
+            644:  prepcallk(s12, "SetEffect", s0, s13)
+            645:  getk(s14, "x", s5)
+            646:  getk(s15, "y", s5)
+            647:  getk(s16, "direction", s10)
+            648:  loadroot(s17)
+            649:  getk(s17, "effect", s17)
+            650:  getk(s17, "EF_ApGuard", s17)
+            651:  loadnulls(s18, 1)
+            652:  call(255, s12, s13, 6)
+            653:  line(-, 366)
+            654:  getk(s12, "p", s2)
+            655:  getk(s12, "justGuardAction", s12)
+            656:  prepcallk(s12, "call", s12, s13)
+            657:  dmove(s14, s2, s15, s10)
+            658:  call(255, s12, s13, 3)
+            659:  jmp(-, 19)
+            660:  line(-, 369)
+            661:  prepcallk(s12, "SetEffect", s0, s13)
+            662:  getk(s14, "x", s5)
+            663:  getk(s15, "y", s5)
+            664:  getk(s16, "direction", s10)
+            665:  loadroot(s17)
+            666:  getk(s17, "effect", s17)
+            667:  getk(s17, "EF_Guard", s17)
+            668:  loadnulls(s18, 1)
+            669:  call(255, s12, s13, 6)
+            670:  line(-, 370)
+            671:  getk(s12, "p", s2)
+            672:  getk(s12, "guardAction", s12)
+            673:  jz(s12, 5)
+            674:  getk(s12, "p", s2)
+            675:  getk(s12, "guardAction", s12)
+            676:  prepcallk(s12, "call", s12, s13)
+            677:  dmove(s14, s2, s15, s10)
+            678:  call(255, s12, s13, 3)
+            679:  line(-, 375)
+            680:  jmp(-, 207)
+            681:  jmp(-, 3)
+            682:  loadint(s11, 4)
+            683:  eq(s11, 11, s9, 0)
+            684:  jz(s11, 203)
+            685:  line(-, 378)
+            686:  getk(s11, "p", s2)
+            687:  getk(s11, "guard", s11)
+            688:  loadint(s12, 0)
+            689:  cmp(s11, s12, s11, CMP_LE)
+            690:  and(s11, 4, s11)
+            691:  getk(s12, "guardLost", s1)
+            692:  loadint(s13, 100)
+            693:  cmp(s12, s13, s12, CMP_GE)
+            694:  move(s11, s12)
+            695:  jz(s11, 26)
+            696:  line(-, 380)
+            697:  getk(s11, "p", s2)
+            698:  getk(s11, "guardCrashAction", s11)
+            699:  jz(s11, 21)
+            700:  line(-, 381)
+            701:  getk(s11, "GuardCrash_Param", s0)
+            702:  prepcallk(s11, "call", s11, s12)
+            703:  move(s13, s2)
+            704:  call(255, s11, s12, 2)
+            705:  line(-, 382)
+            706:  getk(s11, "p", s2)
+            707:  getk(s11, "guardCrashAction", s11)
+            708:  prepcallk(s11, "call", s11, s12)
+            709:  dmove(s13, s2, s14, s10)
+            710:  call(255, s11, s12, 3)
+            711:  line(-, 383)
+            712:  prepcallk(s11, "SetEffect", s0, s12)
+            713:  getk(s13, "x", s5)
+            714:  getk(s14, "y", s5)
+            715:  getk(s15, "direction", s10)
+            716:  loadroot(s16)
+            717:  getk(s16, "effect", s16)
+            718:  getk(s16, "EF_GuardCrash", s16)
+            719:  loadnulls(s17, 1)
+            720:  call(255, s11, s12, 6)
+            721:  jmp(-, 164)
+            722:  line(-, 387)
+            723:  prepcallk(s11, "abs", s0, s12)
+            724:  getk(s13, "p", s2)
+            725:  getk(s13, "input", s13)
+            726:  getk(s13, "x", s13)
+            727:  call(11, s11, s12, 2)
+            728:  line(-, 388)
+            729:  getk(s12, "tempAtkData", s2)
+            730:  getk(s12, "flagState", s12)
+            731:  loadint(s13, 2048)
+            732:  bitw(s12, s13, s12, BW_AND)
+            733:  jz(s12, 17)
+            734:  line(-, 389)
+            735:  getk(s12, "u", s2)
+            736:  getk(s12, "PlayerGuardAction_Point", s12)
+            737:  prepcallk(s12, "call", s12, s13)
+            738:  dmove(s14, s2, s15, s10)
+            739:  call(255, s12, s13, 3)
+            740:  line(-, 390)
+            741:  prepcallk(s12, "SetEffect", s0, s13)
+            742:  getk(s14, "x", s5)
+            743:  getk(s15, "y", s5)
+            744:  getk(s16, "direction", s10)
+            745:  loadroot(s17)
+            746:  getk(s17, "effect", s17)
+            747:  getk(s17, "EF_Guard", s17)
+            748:  loadnulls(s18, 1)
+            749:  call(255, s12, s13, 6)
+            750:  jmp(-, 135)
+            751:  line(-, 393)
+            752:  getk(s12, "p", s2)
+            753:  getk(s12, "autoBaria", s12)
+            754:  or(s12, 41, s12)
+            755:  getk(s13, "p", s2)
+            756:  getk(s13, "input", s13)
+            757:  getk(s13, "b0", s13)
+            758:  loadint(s14, 0)
+            759:  cmp(s13, s14, s13, CMP_G)
+            760:  or(s13, 34, s13)
+            761:  getk(s14, "p", s2)
+            762:  getk(s14, "input", s14)
+            763:  getk(s14, "b1", s14)
+            764:  loadint(s15, 0)
+            765:  cmp(s14, s15, s14, CMP_G)
+            766:  or(s14, 27, s14)
+            767:  getk(s15, "p", s2)
+            768:  getk(s15, "input", s15)
+            769:  getk(s15, "b2", s15)
+            770:  loadint(s16, 0)
+            771:  cmp(s15, s16, s15, CMP_G)
+            772:  or(s15, 20, s15)
+            773:  getk(s16, "p", s2)
+            774:  getk(s16, "input", s16)
+            775:  getk(s16, "b3", s16)
+            776:  loadint(s17, 0)
+            777:  cmp(s16, s17, s16, CMP_G)
+            778:  or(s16, 13, s16)
+            779:  getk(s17, "p", s2)
+            780:  getk(s17, "input", s17)
+            781:  getk(s17, "b4", s17)
+            782:  loadint(s18, 0)
+            783:  cmp(s17, s18, s17, CMP_G)
+            784:  or(s17, 6, s17)
+            785:  getk(s18, "p", s2)
+            786:  getk(s18, "input", s18)
+            787:  getk(s18, "b5", s18)
+            788:  loadint(s19, 0)
+            789:  cmp(s18, s19, s18, CMP_G)
+            790:  move(s17, s18)
+            791:  move(s16, s17)
+            792:  move(s15, s16)
+            793:  move(s14, s15)
+            794:  move(s13, s14)
+            795:  move(s12, s13)
+            796:  and(s12, 3, s12)
+            797:  getk(s13, "p", s2)
+            798:  getk(s13, "pushGuardAction", s13)
+            799:  move(s12, s13)
+            800:  jz(s12, 17)
+            801:  line(-, 395)
+            802:  prepcallk(s12, "SetEffect", s0, s13)
+            803:  getk(s14, "x", s5)
+            804:  getk(s15, "y", s5)
+            805:  getk(s16, "direction", s10)
+            806:  loadroot(s17)
+            807:  getk(s17, "effect", s17)
+            808:  getk(s17, "EF_Guard", s17)
+            809:  loadnulls(s18, 1)
+            810:  call(255, s12, s13, 6)
+            811:  line(-, 396)
+            812:  getk(s12, "p", s2)
+            813:  getk(s12, "pushGuardAction", s12)
+            814:  prepcallk(s12, "call", s12, s13)
+            815:  dmove(s14, s2, s15, s10)
+            816:  call(255, s12, s13, 3)
+            817:  jmp(-, 68)
+            818:  line(-, 399)
+            819:  getk(s12, "motion", s2)
+            820:  loadint(s13, 110)
+            821:  cmp(s12, s13, s12, CMP_GE)
+            822:  and(s12, 4, s12)
+            823:  getk(s13, "motion", s2)
+            824:  loadint(s14, 122)
+            825:  cmp(s13, s14, s13, CMP_LE)
+            826:  move(s12, s13)
+            827:  not(s12, s12)
+            828:  and(s12, 15, s12)
+            829:  loadint(s13, 0)
+            830:  cmp(s13, s13, s11, CMP_G)
+            831:  and(s13, 11, s13)
+            832:  loadint(s14, 10)
+            833:  cmp(s14, s14, s11, CMP_LE)
+            834:  and(s14, 7, s14)
+            835:  getk(s15, "p", s2)
+            836:  getk(s15, "justGuardAction", s15)
+            837:  and(s15, 3, s15)
+            838:  getk(s16, "p", s2)
+            839:  getk(s16, "enableJustGuard", s16)
+            840:  move(s15, s16)
+            841:  move(s14, s15)
+            842:  move(s13, s14)
+            843:  move(s12, s13)
+            844:  jz(s12, 22)
+            845:  line(-, 400)
+            846:  getk(s12, "p", s2)
+            847:  load(s13, "enableJustGuard")
+            848:  loadbool(s14, 0)
+            849:  set(s255, s12, s13, s14)
+            850:  line(-, 401)
+            851:  prepcallk(s12, "SetEffect", s0, s13)
+            852:  getk(s14, "x", s5)
+            853:  getk(s15, "y", s5)
+            854:  getk(s16, "direction", s10)
+            855:  loadroot(s17)
+            856:  getk(s17, "effect", s17)
+            857:  getk(s17, "EF_ApGuard", s17)
+            858:  loadnulls(s18, 1)
+            859:  call(255, s12, s13, 6)
+            860:  line(-, 402)
+            861:  getk(s12, "p", s2)
+            862:  getk(s12, "justGuardAction", s12)
+            863:  prepcallk(s12, "call", s12, s13)
+            864:  dmove(s14, s2, s15, s10)
+            865:  call(255, s12, s13, 3)
+            866:  jmp(-, 19)
+            867:  line(-, 405)
+            868:  prepcallk(s12, "SetEffect", s0, s13)
+            869:  getk(s14, "x", s5)
+            870:  getk(s15, "y", s5)
+            871:  getk(s16, "direction", s10)
+            872:  loadroot(s17)
+            873:  getk(s17, "effect", s17)
+            874:  getk(s17, "EF_GuardMiss", s17)
+            875:  loadnulls(s18, 1)
+            876:  call(255, s12, s13, 6)
+            877:  line(-, 406)
+            878:  getk(s12, "p", s2)
+            879:  getk(s12, "guardMissAction", s12)
+            880:  jz(s12, 5)
+            881:  getk(s12, "p", s2)
+            882:  getk(s12, "guardMissAction", s12)
+            883:  prepcallk(s12, "call", s12, s13)
+            884:  dmove(s14, s2, s15, s10)
+            885:  call(255, s12, s13, 3)
+            886:  line(-, 411)
+            887:  jmp(-, 0)
+            888:  line(-, 414)
+            889:  getk(s11, "p", s1)
+            890:  getk(s11, "guardEvent", s11)
+            891:  jz(s11, 5)
+            892:  getk(s11, "p", s1)
+            893:  getk(s11, "guardEvent", s11)
+            894:  prepcallk(s11, "call", s11, s12)
+            895:  move(s13, s1)
+            896:  call(255, s11, s12, 2)
+            897:  jmp(-, 716)
+            898:  line(-, 418)
+            899:  getk(s10, "tempAtkData", s1)
+            900:  getk(s10, "atkType", s10)
+            901:  loadint(s11, 0)
+            902:  eq(s10, 11, s10, 0)
+            903:  jz(s10, 53)
+            904:  line(-, 419)
+            905:  getk(s10, "group", s2)
+            906:  loadint(s11, 1)
+            907:  eq(s10, 11, s10, 0)
+            908:  or(s10, 4, s10)
+            909:  getk(s11, "group", s2)
+            910:  loadint(s12, 2)
+            911:  eq(s11, 12, s11, 0)
+            912:  move(s10, s11)
+            913:  jz(s10, 8)
+            914:  getk(s10, "p", s1)
+            915:  dload(s11, "hitResult", s12, "p")
+            916:  get(s12, s1, s12)
+            917:  getk(s12, "hitResult", s12)
+            918:  loadint(s13, 1)
+            919:  bitw(s12, s13, s12, BW_OR)
+            920:  set(s255, s10, s11, s12)
+            921:  jmp(-, 8)
+            922:  line(-, 420)
+            923:  getk(s10, "p", s1)
+            924:  dload(s11, "hitResult", s12, "p")
+            925:  get(s12, s1, s12)
+            926:  getk(s12, "hitResult", s12)
+            927:  loadint(s13, 2)
+            928:  bitw(s12, s13, s12, BW_OR)
+            929:  set(s255, s10, s11, s12)
+            930:  line(-, 421)
+            931:  getk(s10, "p", s1)
+            932:  getk(s10, "hitGroup", s10)
+            933:  jz(s10, 21)
+            934:  line(-, 422)
+            935:  getk(s10, "p", s1)
+            936:  getk(s10, "hitGroup", s10)
+            937:  loadnulls(s11, 3)
+            938:  foreach(s10, 16, s11)
+            939:  postforeach(s10, 16)
+            940:  line(-, 423)
+            941:  loadroot(s14)
+            942:  getk(s14, "actor", s14)
+            943:  exists(s14, s14, s12)
+            944:  jz(s14, 9)
+            945:  line(-, 424)
+            946:  loadroot(s14)
+            947:  getk(s14, "actor", s14)
+            948:  get(s14, s14, s12)
+            949:  getk(s14, "p", s14)
+            950:  dload(s15, "hitResult", s16, "p")
+            951:  get(s16, s1, s16)
+            952:  getk(s16, "hitResult", s16)
+            953:  set(s255, s14, s15, s16)
+            954:  jmp(-, -17)
+            955:  line(-, 428)
+            956:  return(255, 0)
+            957:  line(-, 431)
+            958:  getk(s10, "tempAtkData", s1)
+            959:  getk(s10, "addKnock", s10)
+            960:  line(-, 432)
+            961:  loadbool(s11, 0)
+            962:  line(-, 433)
+            963:  loadfloat(s12, 1)
+            964:  line(-, 434)
+            965:  newobj(s13, 0, 0, 0)
+            966:  prepcallk(s14, "SetHitState", s0, s15)
+            967:  dmove(s16, s13, s17, s1)
+            968:  move(s18, s2)
+            969:  call(255, s14, s15, 4)
+            970:  line(-, 437)
+            971:  getk(s14, "tempAtkData", s2)
+            972:  getk(s14, "flagState", s14)
+            973:  loadint(s15, 1048576)
+            974:  bitw(s14, s15, s14, BW_AND)
+            975:  jz(s14, 2)
+            976:  loadint(s14, 2)
+            977:  div(s10, s14, s10)
+            978:  line(-, 438)
+            979:  getk(s14, "tempAtkData", s2)
+            980:  getk(s14, "flagState", s14)
+            981:  loadint(s15, 2097152)
+            982:  bitw(s14, s15, s14, BW_AND)
+            983:  or(s14, 5, s14)
+            984:  getk(s15, "p", s2)
+            985:  getk(s15, "armor", s15)
+            986:  loadint(s16, 0)
+            987:  cmp(s15, s16, s15, CMP_G)
+            988:  move(s14, s15)
+            989:  jz(s14, 1)
+            990:  loadint(s10, 0)
+            991:  line(-, 439)
+            992:  getk(s14, "p", s2)
+            993:  load(s15, "endure")
+            994:  comparith(s14, 917514, s15, 43)
+            995:  line(-, 440)
+            996:  getk(s14, "p", s2)
+            997:  getk(s14, "endure", s14)
+            998:  getk(s15, "p", s2)
+            999:  getk(s15, "endureMax", s15)
+            1000:  jcmp(s15, 1, s14, CMP_GE)
+            1001:  loadbool(s11, 1)
+            1002:  line(-, 444)
+            1003:  getk(s14, "tempAtkData", s1)
+            1004:  getk(s14, "flagAttack", s14)
+            1005:  loadint(s15, 128)
+            1006:  bitw(s14, s15, s14, BW_AND)
+            1007:  and(s14, 5, s14)
+            1008:  getk(s15, "p", s2)
+            1009:  getk(s15, "comboNum", s15)
+            1010:  loadint(s16, 0)
+            1011:  cmp(s15, s16, s15, CMP_LE)
+            1012:  move(s14, s15)
+            1013:  jz(s14, 48)
+            1014:  line(-, 446)
+            1015:  getk(s14, "tempAtkData", s2)
+            1016:  getk(s14, "flagState", s14)
+            1017:  loadint(s15, 256)
+            1018:  bitw(s14, s15, s14, BW_AND)
+            1019:  or(s14, 36, s14)
+            1020:  loadroot(s15)
+            1021:  getk(s15, "config_data", s15)
+            1022:  getk(s15, "practice", s15)
+            1023:  getk(s15, "counter", s15)
+            1024:  loadint(s16, 0)
+            1025:  eq(s15, 16, s15, 0)
+            1026:  or(s15, 15, s15)
+            1027:  loadroot(s16)
+            1028:  getk(s16, "config_data", s16)
+            1029:  getk(s16, "practice", s16)
+            1030:  getk(s16, "counter", s16)
+            1031:  loadint(s17, 2)
+            1032:  eq(s16, 17, s16, 0)
+            1033:  and(s16, 7, s16)
+            1034:  prepcallk(s17, "rand", s0, s18)
+            1035:  call(17, s17, s18, 1)
+            1036:  loadint(s18, 100)
+            1037:  mod(s17, s18, s17)
+            1038:  loadint(s18, 50)
+            1039:  cmp(s17, s18, s17, CMP_L)
+            1040:  move(s16, s17)
+            1041:  move(s15, s16)
+            1042:  and(s15, 12, s15)
+            1043:  getk(s16, "p", s2)
+            1044:  getk(s16, "team", s16)
+            1045:  loadint(s17, 2)
+            1046:  eq(s16, 17, s16, 0)
+            1047:  and(s16, 6, s16)
+            1048:  loadroot(s17)
+            1049:  getk(s17, "load_data", s17)
+            1050:  getk(s17, "game_mode", s17)
+            1051:  loadint(s18, 40)
+            1052:  eq(s17, 18, s17, 0)
+            1053:  move(s16, s17)
+            1054:  move(s15, s16)
+            1055:  move(s14, s15)
+            1056:  jz(s14, 5)
+            1057:  line(-, 450)
+            1058:  getk(s14, "p", s2)
+            1059:  load(s15, "counterDamage")
+            1060:  loadfloat(s16, 0.2)
+            1061:  comparith(s14, 917520, s15, 43)
+            1062:  line(-, 454)
+            1063:  getk(s14, "p", s2)
+            1064:  getk(s14, "counterDamage", s14)
+            1065:  loadfloat(s15, 1)
+            1066:  cmp(s14, s15, s14, CMP_LE)
+            1067:  or(s14, 5, s14)
+            1068:  getk(s15, "p", s2)
+            1069:  getk(s15, "comboNum", s15)
+            1070:  loadint(s16, 1)
+            1071:  cmp(s15, s16, s15, CMP_GE)
+            1072:  move(s14, s15)
+            1073:  jz(s14, 13)
+            1074:  line(-, 455)
+            1075:  getk(s14, "p", s2)
+            1076:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1077:  get(s16, s1, s16)
+            1078:  getk(s16, "hitStopE", s16)
+            1079:  set(s255, s14, s15, s16)
+            1080:  line(-, 456)
+            1081:  getk(s14, "p", s1)
+            1082:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1083:  get(s16, s1, s16)
+            1084:  getk(s16, "hitStopP", s16)
+            1085:  set(s255, s14, s15, s16)
+            1086:  jmp(-, 63)
+            1087:  line(-, 459)
+            1088:  getk(s14, "p", s2)
+            1089:  getk(s14, "counterDamage", s14)
+            1090:  loadfloat(s15, 1.1)
+            1091:  jcmp(s15, 27, s14, CMP_LE)
+            1092:  line(-, 460)
+            1093:  getk(s14, "p", s2)
+            1094:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1095:  get(s16, s1, s16)
+            1096:  getk(s16, "hitStopE", s16)
+            1097:  loadint(s17, 5)
+            1098:  add(s16, s17, s16)
+            1099:  set(s255, s14, s15, s16)
+            1100:  line(-, 461)
+            1101:  getk(s14, "p", s1)
+            1102:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1103:  get(s16, s1, s16)
+            1104:  getk(s16, "hitStopP", s16)
+            1105:  loadint(s17, 5)
+            1106:  add(s16, s17, s16)
+            1107:  set(s255, s14, s15, s16)
+            1108:  line(-, 462)
+            1109:  prepcallk(s14, "SetEffect", s0, s15)
+            1110:  getk(s16, "x", s5)
+            1111:  getk(s17, "y", s5)
+            1112:  getk(s18, "direction", s13)
+            1113:  loadroot(s19)
+            1114:  getk(s19, "effect", s19)
+            1115:  getk(s19, "EF_Counter", s19)
+            1116:  loadnulls(s20, 1)
+            1117:  call(255, s14, s15, 6)
+            1118:  jmp(-, 31)
+            1119:  line(-, 465)
+            1120:  getk(s14, "p", s2)
+            1121:  getk(s14, "counterDamage", s14)
+            1122:  loadfloat(s15, 1.2)
+            1123:  jcmp(s15, 26, s14, CMP_LE)
+            1124:  line(-, 466)
+            1125:  getk(s14, "p", s2)
+            1126:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1127:  get(s16, s1, s16)
+            1128:  getk(s16, "hitStopE", s16)
+            1129:  loadint(s17, 15)
+            1130:  add(s16, s17, s16)
+            1131:  set(s255, s14, s15, s16)
+            1132:  line(-, 467)
+            1133:  getk(s14, "p", s1)
+            1134:  dload(s15, "hitStopTime", s16, "tempAtkData")
+            1135:  get(s16, s1, s16)
+            1136:  getk(s16, "hitStopP", s16)
+            1137:  loadint(s17, 15)
+            1138:  add(s16, s17, s16)
+            1139:  set(s255, s14, s15, s16)
+            1140:  line(-, 468)
+            1141:  prepcallk(s14, "SetEffect", s0, s15)
+            1142:  getk(s16, "x", s5)
+            1143:  getk(s17, "y", s5)
+            1144:  getk(s18, "direction", s13)
+            1145:  loadroot(s19)
+            1146:  getk(s19, "effect", s19)
+            1147:  getk(s19, "EF_Counter", s19)
+            1148:  loadnulls(s20, 1)
+            1149:  call(255, s14, s15, 6)
+            1150:  line(-, 474)
+            1151:  getk(s14, "tempAtkData", s1)
+            1152:  getk(s14, "hitSE", s14)
+            1153:  jz(s14, 4)
+            1154:  prepcallk(s14, "PlaySE_Actor", s0, s15)
+            1155:  getk(s16, "tempAtkData", s1)
+            1156:  getk(s16, "hitSE", s16)
+            1157:  call(255, s14, s15, 2)
+            1158:  line(-, 477)
+            1159:  loadnulls(s14, 1)
+            1160:  line(-, 479)
+            1161:  getk(s15, "hitEffect", s1)
+            1162:  loadint(s16, 0)
+            1163:  eq(s16, 16, s15, 0)
+            1164:  jz(s16, 8)
+            1165:  line(-, 481)
+            1166:  loadroot(s16)
+            1167:  getk(s16, "effect", s16)
+            1168:  getk(s16, "EF_HitSmashA", s16)
+            1169:  move(s14, s16)
+            1170:  line(-, 482)
+            1171:  jmp(-, 55)
+            1172:  jmp(-, 3)
+            1173:  loadint(s16, 1)
+            1174:  eq(s16, 16, s15, 0)
+            1175:  jz(s16, 8)
+            1176:  line(-, 484)
+            1177:  loadroot(s16)
+            1178:  getk(s16, "effect", s16)
+            1179:  getk(s16, "EF_HitSmashB", s16)
+            1180:  move(s14, s16)
+            1181:  line(-, 485)
+            1182:  jmp(-, 44)
+            1183:  jmp(-, 3)
+            1184:  loadint(s16, 2)
+            1185:  eq(s16, 16, s15, 0)
+            1186:  jz(s16, 8)
+            1187:  line(-, 487)
+            1188:  loadroot(s16)
+            1189:  getk(s16, "effect", s16)
+            1190:  getk(s16, "EF_HitSmashC", s16)
+            1191:  move(s14, s16)
+            1192:  line(-, 488)
+            1193:  jmp(-, 33)
+            1194:  jmp(-, 3)
+            1195:  loadint(s16, 3)
+            1196:  eq(s16, 16, s15, 0)
+            1197:  jz(s16, 8)
+            1198:  line(-, 490)
+            1199:  loadroot(s16)
+            1200:  getk(s16, "effect", s16)
+            1201:  getk(s16, "EF_HitSmashUpper", s16)
+            1202:  move(s14, s16)
+            1203:  line(-, 491)
+            1204:  jmp(-, 22)
+            1205:  jmp(-, 3)
+            1206:  loadint(s16, 4)
+            1207:  eq(s16, 16, s15, 0)
+            1208:  jz(s16, 8)
+            1209:  line(-, 493)
+            1210:  loadroot(s16)
+            1211:  getk(s16, "effect", s16)
+            1212:  getk(s16, "EF_HitSmashFront", s16)
+            1213:  move(s14, s16)
+            1214:  line(-, 494)
+            1215:  jmp(-, 11)
+            1216:  jmp(-, 3)
+            1217:  loadint(s16, 5)
+            1218:  eq(s16, 16, s15, 0)
+            1219:  jz(s16, 7)
+            1220:  line(-, 496)
+            1221:  loadroot(s16)
+            1222:  getk(s16, "effect", s16)
+            1223:  getk(s16, "EF_HitSmashUnder", s16)
+            1224:  move(s14, s16)
+            1225:  line(-, 497)
+            1226:  jmp(-, 0)
+            1227:  line(-, 499)
+            1228:  jz(s14, 12)
+            1229:  line(-, 500)
+            1230:  prepcallk(s15, "SetEffect", s0, s16)
+            1231:  loadint(s17, 0)
+            1232:  get(s17, s3, s17)
+            1233:  getk(s17, "x", s17)
+            1234:  loadint(s18, 0)
+            1235:  get(s18, s3, s18)
+            1236:  getk(s18, "y", s18)
+            1237:  getk(s19, "direction", s13)
+            1238:  move(s20, s14)
+            1239:  loadnulls(s21, 1)
+            1240:  call(255, s15, s16, 6)
+            1241:  line(-, 547)
+            1242:  getk(s15, "SetComboDamage", s0)
+            1243:  prepcallk(s15, "call", s15, s16)
+            1244:  dmove(s17, s2, s18, s1)
+            1245:  getk(s19, "tempAtkData", s1)
+            1246:  getk(s19, "damagePoint", s19)
+            1247:  getk(s20, "tempAtkData", s1)
+            1248:  getk(s20, "minRate", s20)
+            1249:  loadfloat(s21, 0.001)
+            1250:  mul(s20, s21, s20)
+            1251:  call(15, s15, s16, 5)
+            1252:  line(-, 551)
+            1253:  getk(s16, "tempAtkData", s1)
+            1254:  getk(s16, "flagAttack", s16)
+            1255:  loadint(s17, 2097152)
+            1256:  bitw(s16, s17, s16, BW_AND)
+            1257:  jz(s16, 9)
+            1258:  getk(s16, "u", s2)
+            1259:  getk(s16, "SetRecoverFrame", s16)
+            1260:  prepcallk(s16, "call", s16, s17)
+            1261:  move(s18, s2)
+            1262:  getk(s19, "tempAtkData", s1)
+            1263:  getk(s19, "recover", s19)
+            1264:  neg(s19, s19)
+            1265:  call(255, s16, s17, 3)
+            1266:  jmp(-, 8)
+            1267:  line(-, 552)
+            1268:  getk(s16, "u", s2)
+            1269:  getk(s16, "SetRecoverFrame", s16)
+            1270:  prepcallk(s16, "call", s16, s17)
+            1271:  move(s18, s2)
+            1272:  getk(s19, "tempAtkData", s1)
+            1273:  getk(s19, "recover", s19)
+            1274:  call(255, s16, s17, 3)
+            1275:  line(-, 554)
+            1276:  getk(s16, "p", s2)
+            1277:  getk(s16, "comboNum", s16)
+            1278:  loadint(s17, 0)
+            1279:  eq(s16, 17, s16, 0)
+            1280:  jz(s16, 15)
+            1281:  line(-, 556)
+            1282:  getk(s16, "p", s2)
+            1283:  load(s17, "minRate")
+            1284:  loadfloat(s18, 1)
+            1285:  set(s255, s16, s17, s18)
+            1286:  line(-, 557)
+            1287:  getk(s16, "SetComboRate", s0)
+            1288:  prepcallk(s16, "call", s16, s17)
+            1289:  move(s18, s2)
+            1290:  getk(s19, "tempAtkData", s1)
+            1291:  getk(s19, "firstRate", s19)
+            1292:  loadfloat(s20, 0.001)
+            1293:  mul(s19, s20, s19)
+            1294:  call(255, s16, s17, 3)
+            1295:  jmp(-, 9)
+            1296:  line(-, 559)
+            1297:  getk(s16, "SetComboRate", s0)
+            1298:  prepcallk(s16, "call", s16, s17)
+            1299:  move(s18, s2)
+            1300:  getk(s19, "tempAtkData", s1)
+            1301:  getk(s19, "comboRate", s19)
+            1302:  loadfloat(s20, 0.001)
+            1303:  mul(s19, s20, s19)
+            1304:  call(255, s16, s17, 3)
+            1305:  line(-, 563)
+            1306:  getk(s16, "tempAtkData", s2)
+            1307:  getk(s16, "flagState", s16)
+            1308:  loadint(s17, 2097152)
+            1309:  bitw(s16, s17, s16, BW_AND)
+            1310:  and(s16, 5, s16)
+            1311:  getk(s17, "p", s2)
+            1312:  getk(s17, "life", s17)
+            1313:  loadint(s18, 0)
+            1314:  cmp(s17, s18, s17, CMP_G)
+            1315:  move(s16, s17)
+            1316:  not(s16, s16)
+            1317:  jz(s16, 124)
+            1318:  line(-, 564)
+            1319:  getk(s16, "tempAtkData", s2)
+            1320:  getk(s16, "bariaLevel", s16)
+            1321:  getk(s17, "tempAtkData", s1)
+            1322:  getk(s17, "bariaBreak", s17)
+            1323:  jcmp(s17, 5, s16, CMP_L)
+            1324:  getk(s16, "p", s2)
+            1325:  dload(s17, "bariaLevel", s18, "tempAtkData")
+            1326:  get(s18, s1, s18)
+            1327:  getk(s18, "bariaBreak", s18)
+            1328:  set(s255, s16, s17, s18)
+            1329:  line(-, 565)
+            1330:  getk(s16, "p", s2)
+            1331:  getk(s16, "stan", s16)
+            1332:  getk(s17, "p", s2)
+            1333:  getk(s17, "stanMax", s17)
+            1334:  cmp(s16, s17, s16, CMP_L)
+            1335:  and(s16, 9, s16)
+            1336:  getk(s17, "p", s2)
+            1337:  getk(s17, "stan", s17)
+            1338:  getk(s18, "tempAtkData", s1)
+            1339:  getk(s18, "addStan", s18)
+            1340:  add(s17, s18, s17)
+            1341:  getk(s18, "p", s2)
+            1342:  getk(s18, "stanMax", s18)
+            1343:  cmp(s17, s18, s17, CMP_GE)
+            1344:  move(s16, s17)
+            1345:  jz(s16, 61)
+            1346:  line(-, 566)
+            1347:  load(s16, "rot")
+            1348:  loadfloat(s17, 0)
+            1349:  newslot(s255, s13, s16, s17)
+            1350:  dload(s16, "name", s17, "name")
+            1351:  get(s17, s2, s17)
+            1352:  newslot(s255, s13, s16, s17)
+            1353:  line(-, 567)
+            1354:  prepcallk(s16, "SetEffect", s0, s17)
+            1355:  loadint(s18, 0)
+            1356:  get(s18, s3, s18)
+            1357:  getk(s18, "x", s18)
+            1358:  loadint(s19, 0)
+            1359:  get(s19, s3, s19)
+            1360:  getk(s19, "y", s19)
+            1361:  getk(s20, "direction", s13)
+            1362:  loadroot(s21)
+            1363:  getk(s21, "effect", s21)
+            1364:  getk(s21, "EF_StanStar", s21)
+            1365:  move(s22, s13)
+            1366:  call(255, s16, s17, 6)
+            1367:  line(-, 568)
+            1368:  load(s16, "rot")
+            1369:  loadint(s17, 120)
+            1370:  loadfloat(s18, 0.0174533)
+            1371:  mul(s17, s18, s17)
+            1372:  set(s255, s13, s16, s17)
+            1373:  line(-, 569)
+            1374:  prepcallk(s16, "SetEffect", s0, s17)
+            1375:  loadint(s18, 0)
+            1376:  get(s18, s3, s18)
+            1377:  getk(s18, "x", s18)
+            1378:  loadint(s19, 0)
+            1379:  get(s19, s3, s19)
+            1380:  getk(s19, "y", s19)
+            1381:  getk(s20, "direction", s13)
+            1382:  loadroot(s21)
+            1383:  getk(s21, "effect", s21)
+            1384:  getk(s21, "EF_StanStar", s21)
+            1385:  move(s22, s13)
+            1386:  call(255, s16, s17, 6)
+            1387:  line(-, 570)
+            1388:  load(s16, "rot")
+            1389:  loadint(s17, 240)
+            1390:  loadfloat(s18, 0.0174533)
+            1391:  mul(s17, s18, s17)
+            1392:  set(s255, s13, s16, s17)
+            1393:  line(-, 571)
+            1394:  prepcallk(s16, "SetEffect", s0, s17)
+            1395:  loadint(s18, 0)
+            1396:  get(s18, s3, s18)
+            1397:  getk(s18, "x", s18)
+            1398:  loadint(s19, 0)
+            1399:  get(s19, s3, s19)
+            1400:  getk(s19, "y", s19)
+            1401:  getk(s20, "direction", s13)
+            1402:  loadroot(s21)
+            1403:  getk(s21, "effect", s21)
+            1404:  getk(s21, "EF_StanStar", s21)
+            1405:  move(s22, s13)
+            1406:  call(255, s16, s17, 6)
+            1407:  line(-, 574)
+            1408:  getk(s16, "p", s2)
+            1409:  dload(s17, "stan", s18, "tempAtkData")
+            1410:  get(s18, s1, s18)
+            1411:  getk(s18, "addStan", s18)
+            1412:  comparith(s16, 1048594, s17, 43)
+            1413:  line(-, 575)
+            1414:  getk(s16, "p", s2)
+            1415:  getk(s16, "stan", s16)
+            1416:  getk(s17, "p", s2)
+            1417:  getk(s17, "stanMax", s17)
+            1418:  jcmp(s17, 23, s16, CMP_GE)
+            1419:  line(-, 576)
+            1420:  loadbool(s11, 1)
+            1421:  line(-, 577)
+            1422:  getk(s16, "p", s2)
+            1423:  dload(s17, "stan", s18, "p")
+            1424:  get(s18, s2, s18)
+            1425:  getk(s18, "stanMax", s18)
+            1426:  set(s255, s16, s17, s18)
+            1427:  line(-, 578)
+            1428:  getk(s16, "p", s2)
+            1429:  getk(s16, "bariaLevel", s16)
+            1430:  loadint(s17, 0)
+            1431:  jcmp(s17, 5, s16, CMP_LE)
+            1432:  getk(s16, "p", s2)
+            1433:  load(s17, "stanCount")
+            1434:  loadint(s18, 90)
+            1435:  set(s255, s16, s17, s18)
+            1436:  jmp(-, 5)
+            1437:  line(-, 579)
+            1438:  getk(s16, "p", s2)
+            1439:  load(s17, "stanCount")
+            1440:  loadint(s18, 120)
+            1441:  set(s255, s16, s17, s18)
+            1442:  line(-, 582)
+            1443:  getk(s16, "p", s2)
+            1444:  getk(s16, "life", s16)
+            1445:  loadint(s17, 0)
+            1446:  jcmp(s17, 1, s16, CMP_LE)
+            1447:  loadbool(s11, 1)
+            1448:  line(-, 584)
+            1449:  getk(s16, "SP_ADD", s0)
+            1450:  prepcallk(s16, "call", s16, s17)
+            1451:  loadroot(s18)
+            1452:  getk(s18, "actor", s18)
+            1453:  getk(s19, "owner", s1)
+            1454:  get(s18, s18, s19)
+            1455:  getk(s19, "tempAtkData", s1)
+            1456:  getk(s19, "addSP", s19)
+            1457:  loadint(s20, 3)
+            1458:  mul(s19, s20, s19)
+            1459:  call(255, s16, s17, 3)
+            1460:  line(-, 585)
+            1461:  getk(s16, "SP_ADD", s0)
+            1462:  prepcallk(s16, "call", s16, s17)
+            1463:  loadroot(s18)
+            1464:  getk(s18, "actor", s18)
+            1465:  getk(s19, "owner", s2)
+            1466:  get(s18, s18, s19)
+            1467:  loadfloat(s19, 1)
+            1468:  mul(s19, s19, s15)
+            1469:  call(255, s16, s17, 3)
+            1470:  line(-, 588)
+            1471:  jz(s11, 95)
+            1472:  line(-, 589)
+            1473:  getk(s16, "group", s2)
+            1474:  loadint(s17, 1)
+            1475:  eq(s16, 17, s16, 0)
+            1476:  or(s16, 4, s16)
+            1477:  getk(s17, "group", s2)
+            1478:  loadint(s18, 2)
+            1479:  eq(s17, 18, s17, 0)
+            1480:  move(s16, s17)
+            1481:  jz(s16, 8)
+            1482:  getk(s16, "p", s1)
+            1483:  dload(s17, "hitResult", s18, "p")
+            1484:  get(s18, s1, s18)
+            1485:  getk(s18, "hitResult", s18)
+            1486:  loadint(s19, 1)
+            1487:  bitw(s18, s19, s18, BW_OR)
+            1488:  set(s255, s16, s17, s18)
+            1489:  jmp(-, 8)
+            1490:  line(-, 590)
+            1491:  getk(s16, "p", s1)
+            1492:  dload(s17, "hitResult", s18, "p")
+            1493:  get(s18, s1, s18)
+            1494:  getk(s18, "hitResult", s18)
+            1495:  loadint(s19, 2)
+            1496:  bitw(s18, s19, s18, BW_OR)
+            1497:  set(s255, s16, s17, s18)
+            1498:  line(-, 591)
+            1499:  getk(s16, "p", s1)
+            1500:  getk(s16, "hitGroup", s16)
+            1501:  jz(s16, 21)
+            1502:  line(-, 592)
+            1503:  getk(s16, "p", s1)
+            1504:  getk(s16, "hitGroup", s16)
+            1505:  loadnulls(s17, 3)
+            1506:  foreach(s16, 16, s17)
+            1507:  postforeach(s16, 16)
+            1508:  line(-, 593)
+            1509:  loadroot(s20)
+            1510:  getk(s20, "actor", s20)
+            1511:  exists(s20, s20, s18)
+            1512:  jz(s20, 9)
+            1513:  line(-, 594)
+            1514:  loadroot(s20)
+            1515:  getk(s20, "actor", s20)
+            1516:  get(s20, s20, s18)
+            1517:  getk(s20, "p", s20)
+            1518:  dload(s21, "hitResult", s22, "p")
+            1519:  get(s22, s1, s22)
+            1520:  getk(s22, "hitResult", s22)
+            1521:  set(s255, s20, s21, s22)
+            1522:  jmp(-, -17)
+            1523:  line(-, 599)
+            1524:  getk(s16, "p", s2)
+            1525:  load(s17, "baria")
+            1526:  loadbool(s18, 0)
+            1527:  set(s255, s16, s17, s18)
+            1528:  line(-, 600)
+            1529:  getk(s16, "p", s2)
+            1530:  load(s17, "comboResetCount")
+            1531:  loadint(s18, 0)
+            1532:  set(s255, s16, s17, s18)
+            1533:  line(-, 601)
+            1534:  getk(s16, "p", s2)
+            1535:  load(s17, "endure")
+            1536:  loadint(s18, 0)
+            1537:  set(s255, s16, s17, s18)
+            1538:  line(-, 602)
+            1539:  getk(s16, "p", s2)
+            1540:  getk(s16, "hitAction", s16)
+            1541:  jz(s16, 15)
+            1542:  line(-, 603)
+            1543:  newobj(s16, 0, 0, 0)
+            1544:  line(-, 604)
+            1545:  prepcallk(s17, "SetHitState", s0, s18)
+            1546:  dmove(s19, s16, s20, s1)
+            1547:  move(s21, s2)
+            1548:  call(255, s17, s18, 4)
+            1549:  load(s17, "damage")
+            1550:  set(s255, s16, s17, s15)
+            1551:  line(-, 605)
+            1552:  getk(s17, "p", s2)
+            1553:  getk(s17, "hitAction", s17)
+            1554:  prepcallk(s17, "call", s17, s18)
+            1555:  dmove(s19, s2, s20, s16)
+            1556:  call(255, s17, s18, 3)
+            1557:  line(-, 607)
+            1558:  getk(s16, "p", s1)
+            1559:  getk(s16, "hitEvent", s16)
+            1560:  jz(s16, 5)
+            1561:  getk(s16, "p", s1)
+            1562:  getk(s16, "hitEvent", s16)
+            1563:  prepcallk(s16, "call", s16, s17)
+            1564:  move(s18, s1)
+            1565:  call(255, s16, s17, 2)
+            1566:  jmp(-, 47)
+            1567:  line(-, 611)
+            1568:  getk(s16, "p", s1)
+            1569:  dload(s17, "hitResult", s18, "p")
+            1570:  get(s18, s1, s18)
+            1571:  getk(s18, "hitResult", s18)
+            1572:  loadint(s19, 4)
+            1573:  bitw(s18, s19, s18, BW_OR)
+            1574:  set(s255, s16, s17, s18)
+            1575:  line(-, 612)
+            1576:  getk(s16, "p", s1)
+            1577:  getk(s16, "hitGroup", s16)
+            1578:  jz(s16, 21)
+            1579:  line(-, 613)
+            1580:  getk(s16, "p", s1)
+            1581:  getk(s16, "hitGroup", s16)
+            1582:  loadnulls(s17, 3)
+            1583:  foreach(s16, 16, s17)
+            1584:  postforeach(s16, 16)
+            1585:  line(-, 614)
+            1586:  loadroot(s20)
+            1587:  getk(s20, "actor", s20)
+            1588:  exists(s20, s20, s18)
+            1589:  jz(s20, 9)
+            1590:  line(-, 615)
+            1591:  loadroot(s20)
+            1592:  getk(s20, "actor", s20)
+            1593:  get(s20, s20, s18)
+            1594:  getk(s20, "p", s20)
+            1595:  dload(s21, "hitResult", s22, "p")
+            1596:  get(s22, s1, s22)
+            1597:  getk(s22, "hitResult", s22)
+            1598:  set(s255, s20, s21, s22)
+            1599:  jmp(-, -17)
+            1600:  line(-, 619)
+            1601:  getk(s16, "p", s2)
+            1602:  load(s17, "comboResetCount")
+            1603:  loadint(s18, 30)
+            1604:  set(s255, s16, s17, s18)
+            1605:  line(-, 620)
+            1606:  getk(s16, "p", s1)
+            1607:  getk(s16, "armorEvent", s16)
+            1608:  jz(s16, 5)
+            1609:  getk(s16, "p", s1)
+            1610:  getk(s16, "armorEvent", s16)
+            1611:  prepcallk(s16, "call", s16, s17)
+            1612:  move(s18, s1)
+            1613:  call(255, s16, s17, 2)
+            1614:  line(-, 628)
+            1615:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 12
+                nparameters: 3
+                noutervals: 0
+                nlocalvarinfos: 7
+                nlineinfos: 14
+                ndefaultparams: 0
+                ninstructions: 85
+                nfunctions: 0
+                Literals: [
+                    0: "p"
+                    1: "hitGroup"
+                    2: "actor"
+                    3: "grazeCount"
+                    4: "hitResult"
+                    5: "grazeEvent"
+                    6: "call"
+                    7: "vfGraze"
+                    8: "x"
+                    9: "tempAtkData"
+                    10: "grazeKnock"
+                    11: "direction"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "atk"
+                    2: "def"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "a", pos: 5, start_op: 8, end_op: 22
+                    1: name: "@INDEX@", pos: 4, start_op: 7, end_op: 22
+                    2: name: "a", pos: 5, start_op: 44, end_op: 60
+                    3: name: "@INDEX@", pos: 4, start_op: 43, end_op: 60
+                    4: name: "def", pos: 2, start_op: 0, end_op: 84
+                    5: name: "atk", pos: 1, start_op: 0, end_op: 84
+                    6: name: "this", pos: 0, start_op: 0, end_op: 84
+                  ]
+                Line Informations: [
+                    0: line: 245, op: 1
+                    1: line: 246, op: 4
+                    2: line: 247, op: 10
+                    3: line: 248, op: 15
+                    4: line: 252, op: 24
+                    5: line: 256, op: 28
+                    6: line: 257, op: 36
+                    7: line: 258, op: 40
+                    8: line: 259, op: 46
+                    9: line: 260, op: 51
+                    10: line: 264, op: 61
+                    11: line: 265, op: 65
+                    12: line: 267, op: 71
+                    13: line: 268, op: 83
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 245)
+                    1:  getk(s3, "p", s1)
+                    2:  getk(s3, "hitGroup", s3)
+                    3:  jz(s3, 20)
+                    4:  line(-, 246)
+                    5:  getk(s3, "p", s1)
+                    6:  getk(s3, "hitGroup", s3)
+                    7:  loadnulls(s4, 3)
+                    8:  foreach(s3, 14, s4)
+                    9:  postforeach(s3, 14)
+                    10:  line(-, 247)
+                    11:  loadroot(s7)
+                    12:  getk(s7, "actor", s7)
+                    13:  exists(s7, s7, s5)
+                    14:  jz(s7, 7)
+                    15:  line(-, 248)
+                    16:  loadroot(s7)
+                    17:  getk(s7, "actor", s7)
+                    18:  get(s7, s7, s5)
+                    19:  getk(s7, "p", s7)
+                    20:  load(s8, "grazeCount")
+                    21:  pinc(s7, s7, s8, 1)
+                    22:  jmp(-, -15)
+                    23:  jmp(-, 4)
+                    24:  line(-, 252)
+                    25:  getk(s3, "p", s1)
+                    26:  load(s4, "grazeCount")
+                    27:  pinc(s3, s3, s4, 1)
+                    28:  line(-, 256)
+                    29:  getk(s3, "p", s1)
+                    30:  dload(s4, "hitResult", s5, "p")
+                    31:  get(s5, s1, s5)
+                    32:  getk(s5, "hitResult", s5)
+                    33:  loadint(s6, 32)
+                    34:  bitw(s5, s6, s5, BW_OR)
+                    35:  set(s255, s3, s4, s5)
+                    36:  line(-, 257)
+                    37:  getk(s3, "p", s1)
+                    38:  getk(s3, "hitGroup", s3)
+                    39:  jz(s3, 21)
+                    40:  line(-, 258)
+                    41:  getk(s3, "p", s1)
+                    42:  getk(s3, "hitGroup", s3)
+                    43:  loadnulls(s4, 3)
+                    44:  foreach(s3, 16, s4)
+                    45:  postforeach(s3, 16)
+                    46:  line(-, 259)
+                    47:  loadroot(s7)
+                    48:  getk(s7, "actor", s7)
+                    49:  exists(s7, s7, s5)
+                    50:  jz(s7, 9)
+                    51:  line(-, 260)
+                    52:  loadroot(s7)
+                    53:  getk(s7, "actor", s7)
+                    54:  get(s7, s7, s5)
+                    55:  getk(s7, "p", s7)
+                    56:  dload(s8, "hitResult", s9, "p")
+                    57:  get(s9, s1, s9)
+                    58:  getk(s9, "hitResult", s9)
+                    59:  set(s255, s7, s8, s9)
+                    60:  jmp(-, -17)
+                    61:  line(-, 264)
+                    62:  getk(s3, "p", s1)
+                    63:  getk(s3, "grazeEvent", s3)
+                    64:  jz(s3, 6)
+                    65:  line(-, 265)
+                    66:  getk(s3, "p", s1)
+                    67:  getk(s3, "grazeEvent", s3)
+                    68:  prepcallk(s3, "call", s3, s4)
+                    69:  move(s5, s1)
+                    70:  call(255, s3, s4, 2)
+                    71:  line(-, 267)
+                    72:  getk(s3, "vfGraze", s2)
+                    73:  dload(s4, "x", s5, "tempAtkData")
+                    74:  get(s5, s1, s5)
+                    75:  getk(s5, "grazeKnock", s5)
+                    76:  loadfloat(s6, 0.01)
+                    77:  mul(s5, s6, s5)
+                    78:  getk(s6, "tempAtkData", s1)
+                    79:  getk(s6, "direction", s6)
+                    80:  neg(s6, s6)
+                    81:  mul(s5, s6, s5)
+                    82:  set(s255, s3, s4, s5)
+                    83:  line(-, 268)
+                    84:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 11
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 24
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "HitActor"
+        nliterals: 26
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 12
+        nlineinfos: 29
+        ndefaultparams: 0
+        ninstructions: 149
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "hitGroup"
+            2: "actor"
+            3: "hitCount"
+            4: "addKnock"
+            5: "tempAtkData"
+            6: "hitStopP"
+            7: "hitStopTime"
+            8: "hitSE"
+            9: "PlaySE_Actor"
+            10: "SetHitState"
+            11: "hitEffect"
+            12: "effect"
+            13: "EF_HitSmashA"
+            14: "EF_HitSmashB"
+            15: "EF_HitSmashC"
+            16: "EF_HitSmashUpper"
+            17: "EF_HitSmashFront"
+            18: "EF_HitSmashUnder"
+            19: "SetEffect"
+            20: "x"
+            21: "y"
+            22: "direction"
+            23: "SetComboDamage"
+            24: "call"
+            25: "damagePoint"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 6, start_op: 8, end_op: 22
+            1: name: "@INDEX@", pos: 5, start_op: 7, end_op: 22
+            2: name: "dam_", pos: 9, start_op: 147, end_op: 146
+            3: name: "HF_", pos: 8, start_op: 59, end_op: 146
+            4: name: "t", pos: 7, start_op: 53, end_op: 146
+            5: name: "rate_", pos: 6, start_op: 34, end_op: 146
+            6: name: "KnockCheck_", pos: 5, start_op: 32, end_op: 146
+            7: name: "Knock_", pos: 4, start_op: 30, end_op: 146
+            8: name: "info", pos: 3, start_op: 0, end_op: 148
+            9: name: "def", pos: 2, start_op: 0, end_op: 148
+            10: name: "atk", pos: 1, start_op: 0, end_op: 148
+            11: name: "this", pos: 0, start_op: 0, end_op: 148
+          ]
+        Line Informations: [
+            0: line: 644, op: 1
+            1: line: 645, op: 4
+            2: line: 646, op: 10
+            3: line: 647, op: 15
+            4: line: 651, op: 24
+            5: line: 654, op: 28
+            6: line: 655, op: 30
+            7: line: 656, op: 32
+            8: line: 660, op: 34
+            9: line: 664, op: 43
+            10: line: 667, op: 51
+            11: line: 669, op: 57
+            12: line: 671, op: 59
+            13: line: 673, op: 64
+            14: line: 674, op: 69
+            15: line: 676, op: 75
+            16: line: 677, op: 80
+            17: line: 679, op: 86
+            18: line: 680, op: 91
+            19: line: 682, op: 97
+            20: line: 683, op: 102
+            21: line: 685, op: 108
+            22: line: 686, op: 113
+            23: line: 688, op: 119
+            24: line: 689, op: 124
+            25: line: 691, op: 126
+            26: line: 692, op: 128
+            27: line: 697, op: 140
+            28: line: 699, op: 147
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 644)
+            1:  getk(s4, "p", s1)
+            2:  getk(s4, "hitGroup", s4)
+            3:  jz(s4, 20)
+            4:  line(-, 645)
+            5:  getk(s4, "p", s1)
+            6:  getk(s4, "hitGroup", s4)
+            7:  loadnulls(s5, 3)
+            8:  foreach(s4, 14, s5)
+            9:  postforeach(s4, 14)
+            10:  line(-, 646)
+            11:  loadroot(s8)
+            12:  getk(s8, "actor", s8)
+            13:  exists(s8, s8, s6)
+            14:  jz(s8, 7)
+            15:  line(-, 647)
+            16:  loadroot(s8)
+            17:  getk(s8, "actor", s8)
+            18:  get(s8, s8, s6)
+            19:  getk(s8, "p", s8)
+            20:  load(s9, "hitCount")
+            21:  pinc(s8, s8, s9, 1)
+            22:  jmp(-, -15)
+            23:  jmp(-, 4)
+            24:  line(-, 651)
+            25:  getk(s4, "p", s1)
+            26:  load(s5, "hitCount")
+            27:  pinc(s4, s4, s5, 1)
+            28:  line(-, 654)
+            29:  getk(s4, "addKnock", s1)
+            30:  line(-, 655)
+            31:  loadbool(s5, 0)
+            32:  line(-, 656)
+            33:  loadfloat(s6, 1)
+            34:  line(-, 660)
+            35:  getk(s7, "tempAtkData", s1)
+            36:  getk(s7, "hitStopP", s7)
+            37:  loadint(s8, 0)
+            38:  jcmp(s8, 4, s7, CMP_G)
+            39:  getk(s7, "p", s1)
+            40:  load(s8, "hitStopTime")
+            41:  loadint(s9, 2)
+            42:  set(s255, s7, s8, s9)
+            43:  line(-, 664)
+            44:  getk(s7, "tempAtkData", s1)
+            45:  getk(s7, "hitSE", s7)
+            46:  jz(s7, 4)
+            47:  prepcallk(s7, "PlaySE_Actor", s0, s8)
+            48:  getk(s9, "tempAtkData", s1)
+            49:  getk(s9, "hitSE", s9)
+            50:  call(255, s7, s8, 2)
+            51:  line(-, 667)
+            52:  newobj(s7, 0, 0, 0)
+            53:  prepcallk(s8, "SetHitState", s0, s9)
+            54:  dmove(s10, s7, s11, s1)
+            55:  move(s12, s2)
+            56:  call(255, s8, s9, 4)
+            57:  line(-, 669)
+            58:  loadnulls(s8, 1)
+            59:  line(-, 671)
+            60:  getk(s9, "hitEffect", s1)
+            61:  loadint(s10, 0)
+            62:  eq(s10, 10, s9, 0)
+            63:  jz(s10, 8)
+            64:  line(-, 673)
+            65:  loadroot(s10)
+            66:  getk(s10, "effect", s10)
+            67:  getk(s10, "EF_HitSmashA", s10)
+            68:  move(s8, s10)
+            69:  line(-, 674)
+            70:  jmp(-, 55)
+            71:  jmp(-, 3)
+            72:  loadint(s10, 1)
+            73:  eq(s10, 10, s9, 0)
+            74:  jz(s10, 8)
+            75:  line(-, 676)
+            76:  loadroot(s10)
+            77:  getk(s10, "effect", s10)
+            78:  getk(s10, "EF_HitSmashB", s10)
+            79:  move(s8, s10)
+            80:  line(-, 677)
+            81:  jmp(-, 44)
+            82:  jmp(-, 3)
+            83:  loadint(s10, 2)
+            84:  eq(s10, 10, s9, 0)
+            85:  jz(s10, 8)
+            86:  line(-, 679)
+            87:  loadroot(s10)
+            88:  getk(s10, "effect", s10)
+            89:  getk(s10, "EF_HitSmashC", s10)
+            90:  move(s8, s10)
+            91:  line(-, 680)
+            92:  jmp(-, 33)
+            93:  jmp(-, 3)
+            94:  loadint(s10, 3)
+            95:  eq(s10, 10, s9, 0)
+            96:  jz(s10, 8)
+            97:  line(-, 682)
+            98:  loadroot(s10)
+            99:  getk(s10, "effect", s10)
+            100:  getk(s10, "EF_HitSmashUpper", s10)
+            101:  move(s8, s10)
+            102:  line(-, 683)
+            103:  jmp(-, 22)
+            104:  jmp(-, 3)
+            105:  loadint(s10, 4)
+            106:  eq(s10, 10, s9, 0)
+            107:  jz(s10, 8)
+            108:  line(-, 685)
+            109:  loadroot(s10)
+            110:  getk(s10, "effect", s10)
+            111:  getk(s10, "EF_HitSmashFront", s10)
+            112:  move(s8, s10)
+            113:  line(-, 686)
+            114:  jmp(-, 11)
+            115:  jmp(-, 3)
+            116:  loadint(s10, 5)
+            117:  eq(s10, 10, s9, 0)
+            118:  jz(s10, 7)
+            119:  line(-, 688)
+            120:  loadroot(s10)
+            121:  getk(s10, "effect", s10)
+            122:  getk(s10, "EF_HitSmashUnder", s10)
+            123:  move(s8, s10)
+            124:  line(-, 689)
+            125:  jmp(-, 0)
+            126:  line(-, 691)
+            127:  jz(s8, 12)
+            128:  line(-, 692)
+            129:  prepcallk(s9, "SetEffect", s0, s10)
+            130:  loadint(s11, 0)
+            131:  get(s11, s3, s11)
+            132:  getk(s11, "x", s11)
+            133:  loadint(s12, 0)
+            134:  get(s12, s3, s12)
+            135:  getk(s12, "y", s12)
+            136:  getk(s13, "direction", s7)
+            137:  move(s14, s8)
+            138:  loadnulls(s15, 1)
+            139:  call(255, s9, s10, 6)
+            140:  line(-, 697)
+            141:  getk(s9, "SetComboDamage", s0)
+            142:  prepcallk(s9, "call", s9, s10)
+            143:  dmove(s11, s2, s12, s1)
+            144:  getk(s13, "tempAtkData", s1)
+            145:  getk(s13, "damagePoint", s13)
+            146:  call(9, s9, s10, 4)
+            147:  line(-, 699)
+            148:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 16
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "ShotCounter"
+        nliterals: 8
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 15
+        nlineinfos: 31
+        ndefaultparams: 0
+        ninstructions: 169
+        nfunctions: 0
+        Literals: [
+            0: "tempAtkData"
+            1: "attackLV"
+            2: "p"
+            3: "hitResult"
+            4: "hitGroup"
+            5: "actor"
+            6: "cancelCount"
+            7: "len"
+          ]
+        Parameters: [
+            0: "this"
+            1: "atk"
+            2: "def"
+            3: "info"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 6, start_op: 44, end_op: 60
+            1: name: "@INDEX@", pos: 5, start_op: 43, end_op: 60
+            2: name: "a", pos: 9, start_op: 90, end_op: 104
+            3: name: "@INDEX@", pos: 8, start_op: 89, end_op: 104
+            4: name: "c_", pos: 6, start_op: 70, end_op: 109
+            5: name: "dc_", pos: 5, start_op: 67, end_op: 109
+            6: name: "ac_", pos: 4, start_op: 64, end_op: 109
+            7: name: "a", pos: 8, start_op: 150, end_op: 166
+            8: name: "@INDEX@", pos: 7, start_op: 149, end_op: 166
+            9: name: "oa_", pos: 5, start_op: 114, end_op: 166
+            10: name: "o_", pos: 4, start_op: 113, end_op: 166
+            11: name: "info", pos: 3, start_op: 0, end_op: 168
+            12: name: "def", pos: 2, start_op: 0, end_op: 168
+            13: name: "atk", pos: 1, start_op: 0, end_op: 168
+            14: name: "this", pos: 0, start_op: 0, end_op: 168
+          ]
+        Line Informations: [
+            0: line: 702, op: 1
+            1: line: 703, op: 13
+            2: line: 704, op: 20
+            3: line: 705, op: 28
+            4: line: 706, op: 36
+            5: line: 707, op: 40
+            6: line: 708, op: 46
+            7: line: 709, op: 51
+            8: line: 713, op: 61
+            9: line: 714, op: 64
+            10: line: 716, op: 67
+            11: line: 717, op: 70
+            12: line: 719, op: 71
+            13: line: 720, op: 74
+            14: line: 721, op: 86
+            15: line: 722, op: 92
+            16: line: 723, op: 97
+            17: line: 728, op: 106
+            18: line: 741, op: 112
+            19: line: 742, op: 114
+            20: line: 743, op: 120
+            21: line: 744, op: 122
+            22: line: 747, op: 126
+            23: line: 748, op: 127
+            24: line: 750, op: 129
+            25: line: 751, op: 134
+            26: line: 752, op: 142
+            27: line: 753, op: 146
+            28: line: 754, op: 152
+            29: line: 755, op: 157
+            30: line: 763, op: 167
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 702)
+            1:  getk(s4, "tempAtkData", s1)
+            2:  getk(s4, "attackLV", s4)
+            3:  loadint(s5, 0)
+            4:  eq(s4, 5, s4, 0)
+            5:  or(s4, 5, s4)
+            6:  getk(s5, "tempAtkData", s2)
+            7:  getk(s5, "attackLV", s5)
+            8:  loadint(s6, 0)
+            9:  eq(s5, 6, s5, 0)
+            10:  move(s4, s5)
+            11:  jz(s4, 1)
+            12:  return(255, 0)
+            13:  line(-, 703)
+            14:  getk(s4, "tempAtkData", s1)
+            15:  getk(s4, "attackLV", s4)
+            16:  getk(s5, "tempAtkData", s2)
+            17:  getk(s5, "attackLV", s5)
+            18:  eq(s4, 5, s4, 0)
+            19:  jz(s4, 91)
+            20:  line(-, 704)
+            21:  getk(s4, "p", s1)
+            22:  dload(s5, "hitResult", s6, "p")
+            23:  get(s6, s1, s6)
+            24:  getk(s6, "hitResult", s6)
+            25:  loadint(s7, 64)
+            26:  bitw(s6, s7, s6, BW_OR)
+            27:  set(s255, s4, s5, s6)
+            28:  line(-, 705)
+            29:  getk(s4, "p", s2)
+            30:  dload(s5, "hitResult", s6, "p")
+            31:  get(s6, s2, s6)
+            32:  getk(s6, "hitResult", s6)
+            33:  loadint(s7, 64)
+            34:  bitw(s6, s7, s6, BW_OR)
+            35:  set(s255, s4, s5, s6)
+            36:  line(-, 706)
+            37:  getk(s4, "p", s1)
+            38:  getk(s4, "hitGroup", s4)
+            39:  jz(s4, 21)
+            40:  line(-, 707)
+            41:  getk(s4, "p", s1)
+            42:  getk(s4, "hitGroup", s4)
+            43:  loadnulls(s5, 3)
+            44:  foreach(s4, 16, s5)
+            45:  postforeach(s4, 16)
+            46:  line(-, 708)
+            47:  loadroot(s8)
+            48:  getk(s8, "actor", s8)
+            49:  exists(s8, s8, s6)
+            50:  jz(s8, 9)
+            51:  line(-, 709)
+            52:  loadroot(s8)
+            53:  getk(s8, "actor", s8)
+            54:  get(s8, s8, s6)
+            55:  getk(s8, "p", s8)
+            56:  dload(s9, "hitResult", s10, "p")
+            57:  get(s10, s1, s10)
+            58:  getk(s10, "hitResult", s10)
+            59:  set(s255, s8, s9, s10)
+            60:  jmp(-, -17)
+            61:  line(-, 713)
+            62:  getk(s4, "p", s1)
+            63:  getk(s4, "cancelCount", s4)
+            64:  line(-, 714)
+            65:  getk(s5, "p", s2)
+            66:  getk(s5, "cancelCount", s5)
+            67:  line(-, 716)
+            68:  getk(s6, "tempAtkData", s2)
+            69:  getk(s6, "cancelCount", s6)
+            70:  line(-, 717)
+            71:  line(-, 719)
+            72:  loadint(s7, 0)
+            73:  jcmp(s7, 36, s6, CMP_G)
+            74:  line(-, 720)
+            75:  getk(s7, "p", s1)
+            76:  getk(s7, "hitGroup", s7)
+            77:  and(s7, 7, s7)
+            78:  getk(s8, "p", s1)
+            79:  getk(s8, "hitGroup", s8)
+            80:  prepcallk(s8, "len", s8, s9)
+            81:  call(8, s8, s9, 1)
+            82:  loadint(s9, 0)
+            83:  cmp(s8, s9, s8, CMP_G)
+            84:  move(s7, s8)
+            85:  jz(s7, 20)
+            86:  line(-, 721)
+            87:  getk(s7, "p", s1)
+            88:  getk(s7, "hitGroup", s7)
+            89:  loadnulls(s8, 3)
+            90:  foreach(s7, 14, s8)
+            91:  postforeach(s7, 14)
+            92:  line(-, 722)
+            93:  loadroot(s11)
+            94:  getk(s11, "actor", s11)
+            95:  exists(s11, s11, s9)
+            96:  jz(s11, 7)
+            97:  line(-, 723)
+            98:  loadroot(s11)
+            99:  getk(s11, "actor", s11)
+            100:  get(s11, s11, s9)
+            101:  getk(s11, "p", s11)
+            102:  load(s12, "cancelCount")
+            103:  comparith(s11, 720902, s12, 45)
+            104:  jmp(-, -15)
+            105:  jmp(-, 4)
+            106:  line(-, 728)
+            107:  getk(s7, "p", s1)
+            108:  load(s8, "cancelCount")
+            109:  comparith(s7, 458758, s8, 45)
+            110:  jmp(-, 56)
+            111:  line(-, 741)
+            112:  loadnulls(s4, 1)
+            113:  loadnulls(s5, 1)
+            114:  line(-, 742)
+            115:  getk(s6, "tempAtkData", s1)
+            116:  getk(s6, "attackLV", s6)
+            117:  getk(s7, "tempAtkData", s2)
+            118:  getk(s7, "attackLV", s7)
+            119:  jcmp(s7, 5, s6, CMP_G)
+            120:  line(-, 743)
+            121:  move(s4, s2)
+            122:  line(-, 744)
+            123:  move(s5, s1)
+            124:  jmp(-, 4)
+            125:  line(-, 747)
+            126:  move(s4, s1)
+            127:  line(-, 748)
+            128:  move(s5, s2)
+            129:  line(-, 750)
+            130:  getk(s6, "p", s4)
+            131:  load(s7, "cancelCount")
+            132:  loadint(s8, 0)
+            133:  set(s255, s6, s7, s8)
+            134:  line(-, 751)
+            135:  getk(s6, "p", s4)
+            136:  dload(s7, "hitResult", s8, "p")
+            137:  get(s8, s2, s8)
+            138:  getk(s8, "hitResult", s8)
+            139:  loadint(s9, 128)
+            140:  bitw(s8, s9, s8, BW_OR)
+            141:  set(s255, s6, s7, s8)
+            142:  line(-, 752)
+            143:  getk(s6, "p", s4)
+            144:  getk(s6, "hitGroup", s6)
+            145:  jz(s6, 21)
+            146:  line(-, 753)
+            147:  getk(s6, "p", s4)
+            148:  getk(s6, "hitGroup", s6)
+            149:  loadnulls(s7, 3)
+            150:  foreach(s6, 16, s7)
+            151:  postforeach(s6, 16)
+            152:  line(-, 754)
+            153:  loadroot(s10)
+            154:  getk(s10, "actor", s10)
+            155:  exists(s10, s10, s8)
+            156:  jz(s10, 9)
+            157:  line(-, 755)
+            158:  loadroot(s10)
+            159:  getk(s10, "actor", s10)
+            160:  get(s10, s10, s8)
+            161:  getk(s10, "p", s10)
+            162:  dload(s11, "hitResult", s12, "p")
+            163:  get(s12, s4, s12)
+            164:  getk(s12, "hitResult", s12)
+            165:  set(s255, s10, s11, s12)
+            166:  jmp(-, -17)
+            167:  line(-, 763)
+            168:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 14
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "OnMove"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 21
+        nlineinfos: 79
+        ndefaultparams: 0
+        ninstructions: 522
+        nfunctions: 0
+        Literals: [
+            0: "player1"
+            1: "actor"
+            2: "player2"
+            3: "IsWall"
+            4: "vx"
+            5: "stage"
+            6: "wallOwnerRight"
+            7: "wallOwnerLeft"
+            8: "y"
+            9: "vy"
+            10: "wallGround"
+            11: "p"
+            12: "freeMap"
+            13: "x"
+            14: "wallLeft"
+            15: "wallRight"
+            16: "left"
+            17: "right"
+            18: "top"
+            19: "bottom"
+            20: "Warp"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 16, start_op: 407, end_op: 412
+            1: name: "t", pos: 16, start_op: 428, end_op: 433
+            2: name: "dx", pos: 15, start_op: 387, end_op: 433
+            3: name: "t", pos: 16, start_op: 459, end_op: 464
+            4: name: "t", pos: 16, start_op: 480, end_op: 485
+            5: name: "dx", pos: 15, start_op: 439, end_op: 485
+            6: name: "x1", pos: 14, start_op: 313, end_op: 519
+            7: name: "x0", pos: 13, start_op: 309, end_op: 519
+            8: name: "bottom0", pos: 12, start_op: 291, end_op: 519
+            9: name: "top1", pos: 11, start_op: 287, end_op: 519
+            10: name: "bottom1", pos: 10, start_op: 280, end_op: 519
+            11: name: "top0", pos: 9, start_op: 276, end_op: 519
+            12: name: "right0", pos: 8, start_op: 269, end_op: 519
+            13: name: "left1", pos: 7, start_op: 265, end_op: 519
+            14: name: "right1", pos: 6, start_op: 258, end_op: 519
+            15: name: "left0", pos: 5, start_op: 254, end_op: 519
+            16: name: "wall1", pos: 4, start_op: 28, end_op: 519
+            17: name: "wall0", pos: 3, start_op: 24, end_op: 519
+            18: name: "p1", pos: 2, start_op: 20, end_op: 519
+            19: name: "p0", pos: 1, start_op: 17, end_op: 519
+            20: name: "this", pos: 0, start_op: 0, end_op: 521
+          ]
+        Line Informations: [
+            0: line: 768, op: 1
+            1: line: 769, op: 7
+            2: line: 772, op: 14
+            3: line: 773, op: 17
+            4: line: 776, op: 20
+            5: line: 777, op: 24
+            6: line: 779, op: 28
+            7: line: 780, op: 42
+            8: line: 781, op: 56
+            9: line: 782, op: 70
+            10: line: 785, op: 84
+            11: line: 787, op: 99
+            12: line: 789, op: 105
+            13: line: 791, op: 120
+            14: line: 795, op: 126
+            15: line: 797, op: 141
+            16: line: 798, op: 147
+            17: line: 800, op: 157
+            18: line: 802, op: 172
+            19: line: 803, op: 178
+            20: line: 805, op: 188
+            21: line: 807, op: 203
+            22: line: 808, op: 209
+            23: line: 810, op: 219
+            24: line: 812, op: 234
+            25: line: 813, op: 240
+            26: line: 817, op: 250
+            27: line: 818, op: 254
+            28: line: 819, op: 258
+            29: line: 821, op: 261
+            30: line: 822, op: 265
+            31: line: 823, op: 269
+            32: line: 825, op: 272
+            33: line: 826, op: 276
+            34: line: 827, op: 280
+            35: line: 829, op: 283
+            36: line: 830, op: 287
+            37: line: 831, op: 291
+            38: line: 834, op: 294
+            39: line: 837, op: 305
+            40: line: 838, op: 309
+            41: line: 841, op: 313
+            42: line: 843, op: 324
+            43: line: 846, op: 330
+            44: line: 848, op: 341
+            45: line: 851, op: 347
+            46: line: 853, op: 358
+            47: line: 856, op: 364
+            48: line: 858, op: 375
+            49: line: 861, op: 381
+            50: line: 863, op: 384
+            51: line: 864, op: 387
+            52: line: 865, op: 390
+            53: line: 866, op: 393
+            54: line: 868, op: 401
+            55: line: 869, op: 407
+            56: line: 870, op: 410
+            57: line: 872, op: 414
+            58: line: 874, op: 422
+            59: line: 875, op: 428
+            60: line: 876, op: 431
+            61: line: 882, op: 436
+            62: line: 883, op: 439
+            63: line: 884, op: 442
+            64: line: 885, op: 445
+            65: line: 887, op: 453
+            66: line: 888, op: 459
+            67: line: 889, op: 462
+            68: line: 891, op: 466
+            69: line: 893, op: 474
+            70: line: 894, op: 480
+            71: line: 895, op: 483
+            72: line: 899, op: 486
+            73: line: 900, op: 495
+            74: line: 901, op: 499
+            75: line: 903, op: 503
+            76: line: 904, op: 512
+            77: line: 905, op: 516
+            78: line: 907, op: 520
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 768)
+            1:  dload(s1, "player1", s2, "actor")
+            2:  get(s2, s0, s2)
+            3:  exists(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 769)
+            8:  dload(s1, "player2", s2, "actor")
+            9:  get(s2, s0, s2)
+            10:  exists(s1, s2, s1)
+            11:  not(s1, s1)
+            12:  jz(s1, 1)
+            13:  return(255, 0)
+            14:  line(-, 772)
+            15:  getk(s1, "actor", s0)
+            16:  getk(s1, "player1", s1)
+            17:  line(-, 773)
+            18:  getk(s2, "actor", s0)
+            19:  getk(s2, "player2", s2)
+            20:  line(-, 776)
+            21:  prepcallk(s3, "IsWall", s1, s4)
+            22:  getk(s5, "vx", s1)
+            23:  call(3, s3, s4, 2)
+            24:  line(-, 777)
+            25:  prepcallk(s4, "IsWall", s2, s5)
+            26:  getk(s6, "vx", s2)
+            27:  call(4, s4, s5, 2)
+            28:  line(-, 779)
+            29:  getk(s5, "stage", s0)
+            30:  getk(s5, "wallOwnerRight", s5)
+            31:  loadint(s6, 0)
+            32:  eq(s5, 6, s5, 0)
+            33:  and(s5, 3, s5)
+            34:  loadint(s6, 1)
+            35:  ne(s6, 6, s3, 0)
+            36:  move(s5, s6)
+            37:  jz(s5, 4)
+            38:  getk(s5, "stage", s0)
+            39:  load(s6, "wallOwnerRight")
+            40:  loadint(s7, -1)
+            41:  set(s255, s5, s6, s7)
+            42:  line(-, 780)
+            43:  getk(s5, "stage", s0)
+            44:  getk(s5, "wallOwnerRight", s5)
+            45:  loadint(s6, 1)
+            46:  eq(s5, 6, s5, 0)
+            47:  and(s5, 3, s5)
+            48:  loadint(s6, 1)
+            49:  ne(s6, 6, s4, 0)
+            50:  move(s5, s6)
+            51:  jz(s5, 4)
+            52:  getk(s5, "stage", s0)
+            53:  load(s6, "wallOwnerRight")
+            54:  loadint(s7, -1)
+            55:  set(s255, s5, s6, s7)
+            56:  line(-, 781)
+            57:  getk(s5, "stage", s0)
+            58:  getk(s5, "wallOwnerLeft", s5)
+            59:  loadint(s6, 0)
+            60:  eq(s5, 6, s5, 0)
+            61:  and(s5, 3, s5)
+            62:  loadint(s6, -1)
+            63:  ne(s6, 6, s3, 0)
+            64:  move(s5, s6)
+            65:  jz(s5, 4)
+            66:  getk(s5, "stage", s0)
+            67:  load(s6, "wallOwnerLeft")
+            68:  loadint(s7, -1)
+            69:  set(s255, s5, s6, s7)
+            70:  line(-, 782)
+            71:  getk(s5, "stage", s0)
+            72:  getk(s5, "wallOwnerLeft", s5)
+            73:  loadint(s6, 1)
+            74:  eq(s5, 6, s5, 0)
+            75:  and(s5, 3, s5)
+            76:  loadint(s6, -1)
+            77:  ne(s6, 6, s4, 0)
+            78:  move(s5, s6)
+            79:  jz(s5, 4)
+            80:  getk(s5, "stage", s0)
+            81:  load(s6, "wallOwnerLeft")
+            82:  loadint(s7, -1)
+            83:  set(s255, s5, s6, s7)
+            84:  line(-, 785)
+            85:  getk(s5, "y", s1)
+            86:  getk(s6, "vy", s1)
+            87:  add(s5, s6, s5)
+            88:  getk(s6, "stage", s0)
+            89:  getk(s6, "wallGround", s6)
+            90:  cmp(s5, s6, s5, CMP_GE)
+            91:  and(s5, 5, s5)
+            92:  getk(s6, "p", s1)
+            93:  getk(s6, "freeMap", s6)
+            94:  loadbool(s7, 0)
+            95:  eq(s6, 7, s6, 0)
+            96:  move(s5, s6)
+            97:  jz(s5, 7)
+            98:  line(-, 787)
+            99:  dload(s5, "vy", s6, "stage")
+            100:  get(s6, s0, s6)
+            101:  getk(s6, "wallGround", s6)
+            102:  getk(s7, "y", s1)
+            103:  sub(s6, s7, s6)
+            104:  set(s255, s1, s5, s6)
+            105:  line(-, 789)
+            106:  getk(s5, "y", s2)
+            107:  getk(s6, "vy", s2)
+            108:  add(s5, s6, s5)
+            109:  getk(s6, "stage", s0)
+            110:  getk(s6, "wallGround", s6)
+            111:  cmp(s5, s6, s5, CMP_GE)
+            112:  and(s5, 5, s5)
+            113:  getk(s6, "p", s2)
+            114:  getk(s6, "freeMap", s6)
+            115:  loadbool(s7, 0)
+            116:  eq(s6, 7, s6, 0)
+            117:  move(s5, s6)
+            118:  jz(s5, 7)
+            119:  line(-, 791)
+            120:  dload(s5, "vy", s6, "stage")
+            121:  get(s6, s0, s6)
+            122:  getk(s6, "wallGround", s6)
+            123:  getk(s7, "y", s2)
+            124:  sub(s6, s7, s6)
+            125:  set(s255, s2, s5, s6)
+            126:  line(-, 795)
+            127:  getk(s5, "x", s1)
+            128:  getk(s6, "vx", s1)
+            129:  add(s5, s6, s5)
+            130:  getk(s6, "stage", s0)
+            131:  getk(s6, "wallLeft", s6)
+            132:  cmp(s5, s6, s5, CMP_LE)
+            133:  and(s5, 5, s5)
+            134:  getk(s6, "p", s1)
+            135:  getk(s6, "freeMap", s6)
+            136:  loadbool(s7, 0)
+            137:  eq(s6, 7, s6, 0)
+            138:  move(s5, s6)
+            139:  jz(s5, 17)
+            140:  line(-, 797)
+            141:  dload(s5, "vx", s6, "stage")
+            142:  get(s6, s0, s6)
+            143:  getk(s6, "wallLeft", s6)
+            144:  getk(s7, "x", s1)
+            145:  sub(s6, s7, s6)
+            146:  set(s255, s1, s5, s6)
+            147:  line(-, 798)
+            148:  getk(s5, "stage", s0)
+            149:  getk(s5, "wallOwnerLeft", s5)
+            150:  loadint(s6, -1)
+            151:  eq(s5, 6, s5, 0)
+            152:  jz(s5, 4)
+            153:  getk(s5, "stage", s0)
+            154:  load(s6, "wallOwnerLeft")
+            155:  loadint(s7, 0)
+            156:  set(s255, s5, s6, s7)
+            157:  line(-, 800)
+            158:  getk(s5, "x", s2)
+            159:  getk(s6, "vx", s2)
+            160:  add(s5, s6, s5)
+            161:  getk(s6, "stage", s0)
+            162:  getk(s6, "wallRight", s6)
+            163:  cmp(s5, s6, s5, CMP_GE)
+            164:  and(s5, 5, s5)
+            165:  getk(s6, "p", s2)
+            166:  getk(s6, "freeMap", s6)
+            167:  loadbool(s7, 0)
+            168:  eq(s6, 7, s6, 0)
+            169:  move(s5, s6)
+            170:  jz(s5, 17)
+            171:  line(-, 802)
+            172:  dload(s5, "vx", s6, "stage")
+            173:  get(s6, s0, s6)
+            174:  getk(s6, "wallRight", s6)
+            175:  getk(s7, "x", s2)
+            176:  sub(s6, s7, s6)
+            177:  set(s255, s2, s5, s6)
+            178:  line(-, 803)
+            179:  getk(s5, "stage", s0)
+            180:  getk(s5, "wallOwnerRight", s5)
+            181:  loadint(s6, -1)
+            182:  eq(s5, 6, s5, 0)
+            183:  jz(s5, 4)
+            184:  getk(s5, "stage", s0)
+            185:  load(s6, "wallOwnerRight")
+            186:  loadint(s7, 1)
+            187:  set(s255, s5, s6, s7)
+            188:  line(-, 805)
+            189:  getk(s5, "x", s1)
+            190:  getk(s6, "vx", s1)
+            191:  add(s5, s6, s5)
+            192:  getk(s6, "stage", s0)
+            193:  getk(s6, "wallRight", s6)
+            194:  cmp(s5, s6, s5, CMP_GE)
+            195:  and(s5, 5, s5)
+            196:  getk(s6, "p", s1)
+            197:  getk(s6, "freeMap", s6)
+            198:  loadbool(s7, 0)
+            199:  eq(s6, 7, s6, 0)
+            200:  move(s5, s6)
+            201:  jz(s5, 17)
+            202:  line(-, 807)
+            203:  dload(s5, "vx", s6, "stage")
+            204:  get(s6, s0, s6)
+            205:  getk(s6, "wallRight", s6)
+            206:  getk(s7, "x", s1)
+            207:  sub(s6, s7, s6)
+            208:  set(s255, s1, s5, s6)
+            209:  line(-, 808)
+            210:  getk(s5, "stage", s0)
+            211:  getk(s5, "wallOwnerRight", s5)
+            212:  loadint(s6, -1)
+            213:  eq(s5, 6, s5, 0)
+            214:  jz(s5, 4)
+            215:  getk(s5, "stage", s0)
+            216:  load(s6, "wallOwnerRight")
+            217:  loadint(s7, 0)
+            218:  set(s255, s5, s6, s7)
+            219:  line(-, 810)
+            220:  getk(s5, "x", s2)
+            221:  getk(s6, "vx", s2)
+            222:  add(s5, s6, s5)
+            223:  getk(s6, "stage", s0)
+            224:  getk(s6, "wallLeft", s6)
+            225:  cmp(s5, s6, s5, CMP_LE)
+            226:  and(s5, 5, s5)
+            227:  getk(s6, "p", s2)
+            228:  getk(s6, "freeMap", s6)
+            229:  loadbool(s7, 0)
+            230:  eq(s6, 7, s6, 0)
+            231:  move(s5, s6)
+            232:  jz(s5, 17)
+            233:  line(-, 812)
+            234:  dload(s5, "vx", s6, "stage")
+            235:  get(s6, s0, s6)
+            236:  getk(s6, "wallLeft", s6)
+            237:  getk(s7, "x", s2)
+            238:  sub(s6, s7, s6)
+            239:  set(s255, s2, s5, s6)
+            240:  line(-, 813)
+            241:  getk(s5, "stage", s0)
+            242:  getk(s5, "wallOwnerLeft", s5)
+            243:  loadint(s6, -1)
+            244:  eq(s5, 6, s5, 0)
+            245:  jz(s5, 4)
+            246:  getk(s5, "stage", s0)
+            247:  load(s6, "wallOwnerLeft")
+            248:  loadint(s7, 1)
+            249:  set(s255, s5, s6, s7)
+            250:  line(-, 817)
+            251:  getk(s5, "left", s1)
+            252:  getk(s6, "vx", s1)
+            253:  add(s5, s6, s5)
+            254:  line(-, 818)
+            255:  getk(s6, "right", s2)
+            256:  getk(s7, "vx", s2)
+            257:  add(s6, s7, s6)
+            258:  line(-, 819)
+            259:  jcmp(s6, 1, s5, CMP_G)
+            260:  return(255, 0)
+            261:  line(-, 821)
+            262:  getk(s7, "left", s2)
+            263:  getk(s8, "vx", s2)
+            264:  add(s7, s8, s7)
+            265:  line(-, 822)
+            266:  getk(s8, "right", s1)
+            267:  getk(s9, "vx", s1)
+            268:  add(s8, s9, s8)
+            269:  line(-, 823)
+            270:  jcmp(s7, 1, s8, CMP_L)
+            271:  return(255, 0)
+            272:  line(-, 825)
+            273:  getk(s9, "top", s1)
+            274:  getk(s10, "vy", s1)
+            275:  add(s9, s10, s9)
+            276:  line(-, 826)
+            277:  getk(s10, "bottom", s2)
+            278:  getk(s11, "vy", s2)
+            279:  add(s10, s11, s10)
+            280:  line(-, 827)
+            281:  jcmp(s10, 1, s9, CMP_G)
+            282:  return(255, 0)
+            283:  line(-, 829)
+            284:  getk(s11, "top", s2)
+            285:  getk(s12, "vy", s2)
+            286:  add(s11, s12, s11)
+            287:  line(-, 830)
+            288:  getk(s12, "bottom", s1)
+            289:  getk(s13, "vy", s1)
+            290:  add(s12, s13, s12)
+            291:  line(-, 831)
+            292:  jcmp(s11, 1, s12, CMP_L)
+            293:  return(255, 0)
+            294:  line(-, 834)
+            295:  getk(s13, "left", s1)
+            296:  getk(s14, "right", s1)
+            297:  eq(s13, 14, s13, 0)
+            298:  or(s13, 4, s13)
+            299:  getk(s14, "left", s2)
+            300:  getk(s15, "right", s2)
+            301:  eq(s14, 15, s14, 0)
+            302:  move(s13, s14)
+            303:  jz(s13, 1)
+            304:  return(255, 0)
+            305:  line(-, 837)
+            306:  getk(s13, "x", s1)
+            307:  getk(s14, "vx", s1)
+            308:  add(s13, s14, s13)
+            309:  line(-, 838)
+            310:  getk(s14, "x", s2)
+            311:  getk(s15, "vx", s2)
+            312:  add(s14, s15, s14)
+            313:  line(-, 841)
+            314:  loadint(s15, 1)
+            315:  eq(s15, 15, s3, 0)
+            316:  and(s15, 5, s15)
+            317:  getk(s16, "stage", s0)
+            318:  getk(s16, "wallOwnerRight", s16)
+            319:  loadint(s17, 0)
+            320:  eq(s16, 17, s16, 0)
+            321:  move(s15, s16)
+            322:  jz(s15, 7)
+            323:  line(-, 843)
+            324:  dload(s15, "vx", s16, "left")
+            325:  get(s16, s1, s16)
+            326:  getk(s17, "right", s2)
+            327:  sub(s16, s17, s16)
+            328:  set(s255, s2, s15, s16)
+            329:  jmp(-, 156)
+            330:  line(-, 846)
+            331:  loadint(s15, 1)
+            332:  eq(s15, 15, s4, 0)
+            333:  and(s15, 5, s15)
+            334:  getk(s16, "stage", s0)
+            335:  getk(s16, "wallOwnerRight", s16)
+            336:  loadint(s17, 1)
+            337:  eq(s16, 17, s16, 0)
+            338:  move(s15, s16)
+            339:  jz(s15, 7)
+            340:  line(-, 848)
+            341:  dload(s15, "vx", s16, "left")
+            342:  get(s16, s2, s16)
+            343:  getk(s17, "right", s1)
+            344:  sub(s16, s17, s16)
+            345:  set(s255, s1, s15, s16)
+            346:  jmp(-, 139)
+            347:  line(-, 851)
+            348:  loadint(s15, -1)
+            349:  eq(s15, 15, s4, 0)
+            350:  and(s15, 5, s15)
+            351:  getk(s16, "stage", s0)
+            352:  getk(s16, "wallOwnerLeft", s16)
+            353:  loadint(s17, 1)
+            354:  eq(s16, 17, s16, 0)
+            355:  move(s15, s16)
+            356:  jz(s15, 7)
+            357:  line(-, 853)
+            358:  dload(s15, "vx", s16, "right")
+            359:  get(s16, s2, s16)
+            360:  getk(s17, "left", s1)
+            361:  sub(s16, s17, s16)
+            362:  set(s255, s1, s15, s16)
+            363:  jmp(-, 122)
+            364:  line(-, 856)
+            365:  loadint(s15, -1)
+            366:  eq(s15, 15, s3, 0)
+            367:  and(s15, 5, s15)
+            368:  getk(s16, "stage", s0)
+            369:  getk(s16, "wallOwnerLeft", s16)
+            370:  loadint(s17, 0)
+            371:  eq(s16, 17, s16, 0)
+            372:  move(s15, s16)
+            373:  jz(s15, 7)
+            374:  line(-, 858)
+            375:  dload(s15, "vx", s16, "right")
+            376:  get(s16, s1, s16)
+            377:  getk(s17, "left", s2)
+            378:  sub(s16, s17, s16)
+            379:  set(s255, s2, s15, s16)
+            380:  jmp(-, 105)
+            381:  line(-, 861)
+            382:  jcmp(s14, 52, s13, CMP_G)
+            383:  line(-, 863)
+            384:  sub(s15, s5, s6)
+            385:  loadfloat(s16, 2)
+            386:  div(s15, s16, s15)
+            387:  line(-, 864)
+            388:  load(s16, "vx")
+            389:  comparith(s16, 65551, s16, 43)
+            390:  line(-, 865)
+            391:  load(s16, "vx")
+            392:  comparith(s16, 131087, s16, 45)
+            393:  line(-, 866)
+            394:  prepcallk(s16, "IsWall", s1, s17)
+            395:  getk(s18, "vx", s1)
+            396:  call(16, s16, s17, 2)
+            397:  loadint(s17, 1)
+            398:  eq(s16, 17, s16, 0)
+            399:  jz(s16, 14)
+            400:  line(-, 868)
+            401:  getk(s16, "x", s1)
+            402:  getk(s17, "vx", s1)
+            403:  add(s16, s17, s16)
+            404:  getk(s17, "stage", s0)
+            405:  getk(s17, "wallRight", s17)
+            406:  sub(s16, s17, s16)
+            407:  line(-, 869)
+            408:  load(s17, "vx")
+            409:  comparith(s17, 65552, s17, 45)
+            410:  line(-, 870)
+            411:  load(s17, "vx")
+            412:  comparith(s17, 131088, s17, 45)
+            413:  jmp(-, 20)
+            414:  line(-, 872)
+            415:  prepcallk(s16, "IsWall", s2, s17)
+            416:  getk(s18, "vx", s2)
+            417:  call(16, s16, s17, 2)
+            418:  loadint(s17, -1)
+            419:  eq(s16, 17, s16, 0)
+            420:  jz(s16, 13)
+            421:  line(-, 874)
+            422:  getk(s16, "x", s2)
+            423:  getk(s17, "vx", s2)
+            424:  add(s16, s17, s16)
+            425:  getk(s17, "stage", s0)
+            426:  getk(s17, "wallLeft", s17)
+            427:  sub(s16, s17, s16)
+            428:  line(-, 875)
+            429:  load(s17, "vx")
+            430:  comparith(s17, 65552, s17, 45)
+            431:  line(-, 876)
+            432:  load(s17, "vx")
+            433:  comparith(s17, 131088, s17, 45)
+            434:  jmp(-, 51)
+            435:  line(-, 882)
+            436:  sub(s15, s7, s8)
+            437:  loadfloat(s16, 2)
+            438:  div(s15, s16, s15)
+            439:  line(-, 883)
+            440:  load(s16, "vx")
+            441:  comparith(s16, 65551, s16, 45)
+            442:  line(-, 884)
+            443:  load(s16, "vx")
+            444:  comparith(s16, 131087, s16, 43)
+            445:  line(-, 885)
+            446:  prepcallk(s16, "IsWall", s2, s17)
+            447:  getk(s18, "vx", s2)
+            448:  call(16, s16, s17, 2)
+            449:  loadint(s17, 1)
+            450:  eq(s16, 17, s16, 0)
+            451:  jz(s16, 14)
+            452:  line(-, 887)
+            453:  getk(s16, "x", s2)
+            454:  getk(s17, "vx", s2)
+            455:  add(s16, s17, s16)
+            456:  getk(s17, "stage", s0)
+            457:  getk(s17, "wallRight", s17)
+            458:  sub(s16, s17, s16)
+            459:  line(-, 888)
+            460:  load(s17, "vx")
+            461:  comparith(s17, 65552, s17, 45)
+            462:  line(-, 889)
+            463:  load(s17, "vx")
+            464:  comparith(s17, 131088, s17, 45)
+            465:  jmp(-, 20)
+            466:  line(-, 891)
+            467:  prepcallk(s16, "IsWall", s1, s17)
+            468:  getk(s18, "vx", s1)
+            469:  call(16, s16, s17, 2)
+            470:  loadint(s17, -1)
+            471:  eq(s16, 17, s16, 0)
+            472:  jz(s16, 13)
+            473:  line(-, 893)
+            474:  getk(s16, "x", s1)
+            475:  getk(s17, "vx", s1)
+            476:  add(s16, s17, s16)
+            477:  getk(s17, "stage", s0)
+            478:  getk(s17, "wallLeft", s17)
+            479:  sub(s16, s17, s16)
+            480:  line(-, 894)
+            481:  load(s17, "vx")
+            482:  comparith(s17, 65552, s17, 45)
+            483:  line(-, 895)
+            484:  load(s17, "vx")
+            485:  comparith(s17, 131088, s17, 45)
+            486:  line(-, 899)
+            487:  prepcallk(s15, "Warp", s1, s16)
+            488:  getk(s17, "x", s1)
+            489:  getk(s18, "vx", s1)
+            490:  add(s17, s18, s17)
+            491:  getk(s18, "y", s1)
+            492:  getk(s19, "vy", s1)
+            493:  add(s18, s19, s18)
+            494:  call(255, s15, s16, 3)
+            495:  line(-, 900)
+            496:  load(s15, "vx")
+            497:  loadint(s16, 0)
+            498:  set(s255, s1, s15, s16)
+            499:  line(-, 901)
+            500:  load(s15, "vy")
+            501:  loadint(s16, 0)
+            502:  set(s255, s1, s15, s16)
+            503:  line(-, 903)
+            504:  prepcallk(s15, "Warp", s2, s16)
+            505:  getk(s17, "x", s2)
+            506:  getk(s18, "vx", s2)
+            507:  add(s17, s18, s17)
+            508:  getk(s18, "y", s2)
+            509:  getk(s19, "vy", s2)
+            510:  add(s18, s19, s18)
+            511:  call(255, s15, s16, 3)
+            512:  line(-, 904)
+            513:  load(s15, "vx")
+            514:  loadint(s16, 0)
+            515:  set(s255, s2, s15, s16)
+            516:  line(-, 905)
+            517:  load(s15, "vy")
+            518:  loadint(s16, 0)
+            519:  set(s255, s2, s15, s16)
+            520:  line(-, 907)
+            521:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 20
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

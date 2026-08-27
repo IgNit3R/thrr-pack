@@ -1,0 +1,35 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/ichirin.csv"
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+
+#フェイス画像
+,DefineObject,ichirin,-360,0,false
+,DefineObject,hijiri,-360,0,true
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+
+
+#Label:Lose
+
+# 新聞見だし
+#『一輪氏、謎の敵に敗れる』
+
+,ImageDef,ichirin,一輪_負1,0,0
+,Show,ichirin,30,-64,0
+,ImageDef,hijiri,聖_決1,0,0
+,Show,hijiri,30,-64,0
+,SetFocus,hijiri
+ふぉっふぉっふぉ\n壊滅じゃ　壊滅じゃ\,a11x2,0,0
+
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.Continue();"
+
+,End

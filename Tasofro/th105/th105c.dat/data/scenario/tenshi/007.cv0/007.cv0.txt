@@ -1,0 +1,260 @@
+## =======================================================================
+#Stage:Final
+#Title:楽不可極、暇不可潰
+#Place:有頂天
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:tenshi,160,0,0,8888FF
+Character:reimu,160,0,1,FF8888
+
+#分画面外に待機
+Action:reimu,100
+#カメラ固定
+Action:tenshi,4
+#フォーカス瞬間移動
+#Action:tenshi,11
+
+#向き固定解除
+Action:tenshi,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta03.ogg
+
+Sleep:60;
+
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+Face:tenshi,普
+もう大分集まっているけど
+まだ巫女が来ていないみたい……\
+
+Face:tenshi,惑
+神社の起工記念だっていうのに肝心の巫女が
+いないなんて\
+
+Face:tenshi,普
+まあ、忙しいのかも知れないし……\
+
+Face:tenshi,余
+それとも小鬼が誘って無いのかな\
+
+Face:tenshi,普
+……\
+
+Face:tenshi,余
+様子を見に行ってくるか\
+
+Hide:1
+
+Sleep:30
+#画面上部へ移動
+Action:tenshi,151
+
+Sleep:90
+
+#フェードアウト　白
+Action:tenshi,162
+FadeBgm:2000,0
+Sleep:60
+
+Stage:0,0
+Action:tenshi,130
+Action:reimu,103
+
+Sleep:85;
+
+#フェードイン　白
+Bgm:data/bgm/ta07.ogg
+Action:tenshi,163
+
+#カメラ下へ
+Action:tenshi,131
+#Sleep:40;
+
+#ステージタイトル表示
+Object:data/scenario/tenshi/effect/StageTitle008.bmp,0,256,-32
+
+#Sleep:20;
+#自キャラ画面上から落下して登場
+Action:tenshi,6
+#Sleep:40;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+#Sleep:10;
+Action:tenshi,7
+#ステージタイトル表示
+
+Face:tenshi,惑
+あれ？
+どこに居るのかな～\
+
+Face:tenshi,
+Hide:1
+Sleep:30
+
+# 敵登場
+Action:reimu,101
+Action:reimu,102
+
+Sleep:20
+
+Face:reimu,怒
+誰よ！　ってあんたね
+何か用？　やっぱり神社を奪いに来たの？\
+
+Face:tenshi,嬉
+そうじゃないの
+貴方、神社の起工記念祭に行かないの？\
+
+# 名前のテロップ
+Object:data/scenario/reimu/effect/Name.bmp,2,352,304
+
+Face:reimu,驚
+起工記念祭？\
+
+Face:tenshi,余
+有頂天でやるって今みんな集まってるわよ？\
+
+Face:reimu,惑
+むむむ？
+あー、萃香が言ってた奴かしら？\
+
+Face:tenshi,惑
+貴方以外は殆ど集まったみたい\
+
+Face:reimu,嬉
+あー
+あーアレかー\
+
+Face:reimu,余
+へぇ、あんたがそれを誘いに来るなんて\
+
+Face:tenshi,余
+別に良いじゃないの\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:reimu,嬉
+だってさ、萃香は「起工記念祭と言いつつみんなで
+天人を虐める祭」をやるって言って\
+
+Face:tenshi,驚
+！？\
+
+Face:reimu,余
+私は一度あんたを倒したからいいやって
+言ったんだけどねぇ\
+
+Face:tenshi,惑
+……\
+
+Face:tenshi,驚
+なるほどー、それでみんなノリが良かったのか\
+
+Face:tenshi,余
+ふっふっふ
+楽しい事してくれるわ\
+
+Face:reimu,余
+で、どうだったの？
+みんなにコテンパンにされた？\
+
+Face:tenshi,余
+勿論、全員コテンパンにしてきました
+あっという間でしたわ\
+
+Face:reimu,驚
+へー、実は凄いのね
+みんな立て続けに行ったんでしょ？\
+
+Face:tenshi,驚
+そりゃ勝負になりませんよ
+貴方にだって、この間はわざと負けたのですよ？\
+
+Face:reimu,普
+へぇ
+そんな感じじゃなかったけどねぇ\
+
+PlayBgm:data/bgm/st05.ogg
+
+Face:reimu,余
+何となく、私も祭に参加したい気になってきた\
+
+Face:tenshi,普
+良いですね
+貴方が居なければその祭も片手落ちでしょう\
+
+Face:reimu,余
+でも天界まで行くのに時間が掛かるから……\
+
+Face:reimu,決
+先にここで祭を始めよう！\
+
+Face:tenshi,決
+望むところ！
+全員を倒して、あの小鬼の驚いた顔を見てやるよ！\
+
+
+Action:tenshi,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:reimu,嬉
+ほーら、もう疲れたんじゃないの？\
+
+Face:reimu,普
+ところで私で何人目？\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:reimu,200
+#攻撃側ニュートラル移行検知
+Action:tenshi,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,134 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/marisa.csv"
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+
+#フェイス画像
+,DefineObject,marisa,-360,0,false
+,DefineObject,mamizou,-360,0,true
+
+#肩書き
+,DefineObject,marisa_label,50,360,false
+,DefineObject,mamizou_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,marisa_label,"data/system/char_def/name/name_01marisa.png",0,0,0,0
+,ImageFile,mamizou_label,"data/system/char_def/name/name_09mamizou.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage6 「ムーンサイドフェスティバル」
+# 場所：狸の野原
+#
+# 最初、背景は無人
+
+,Function,GameStory_2P_InSpecial(),
+,Sleep,120
+
+#0１２３４５６７８９０１２３４
+,ImageDef,marisa,魔理沙_驚1,0,0
+,Show,marisa,30,-64,0
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+,Show,mamizou,30,-64,0
+,SetFocus,mamizou
+あっはっは\,a05x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_余1,0,0
+儂じゃよ　儂,a11x2,0,0
+,Show,mamizou_label,20,0,-64
+,WaitInput
+,ClearBalloon,mamizou
+,Hide,mamizou_label,20,0,64
+
+# 名前テロップ
+# いつも驚きを提供する化け狸　二ッ岩マミゾウ
+
+,ImageDef,marisa,魔理沙_汗1,0,0
+,SetFocus,marisa
+何だ\,c05x2,0,0
+
+,ClearBalloon,marisa
+化け狸の仕業か\nすっかり騙されたな\,a11x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,marisa,魔理沙_驚1,0,0
+って事は\n私の人気が無くなったのも……\,c15x3,0,0
+
+,ClearBalloon,marisa
+,ImageDef,marisa,魔理沙_余1,0,0
+フェイクって事だな\n安心したぜ\,a11x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,mamizou,マミゾウ_普1,0,0
+,SetFocus,mamizou
+そうじゃ\,a05x2,0,0
+
+,ClearBalloon,mamizou
+儂らは人を化かすのが\n大好物じゃて……\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_嬉1,0,0
+ついつい騙そうと\nしちゃうんじゃ\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,marisa,魔理沙_必1,0,0
+,SetFocus,marisa
+じゃ\nこれから本戦って事だな？\,a11x2,0,0
+,ClearBalloon,marisa
+
+# -------------------------------
+
+,Hide,mamizou,30,-64,0,&
+,Hide,marisa,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobIn();"
+,Sleep,150
+
+# 二人の絵が消える
+#
+# 背景に狸が集まって来る（移動が面倒なら、突如煙を出して出現しても可）
+
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+,Show,mamizou,30,-64,0,&
+,Show,marisa,30,-64,0
+,SetFocus,mamizou
+おう　ノリが良いのう\,a11x2,0,0
+
+,ClearBalloon,mamizou
+早速観客も戻ってきたぞい\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,marisa,魔理沙_汗1,0,0
+,SetFocus,marisa
+ついでだから\n狸の人気も貰っていくか\,c11x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,mamizou,マミゾウ_余1,0,0
+,SetFocus,mamizou
+そう簡単にいくかな？\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_決1,0,0
+今度は本当に人気を失う事に\nなるかも知れないぞ\,a15x3,0,0
+
+,ClearBalloon,mamizou
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,marisa,30,-64,0,&
+,Hide,mamizou,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(110);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

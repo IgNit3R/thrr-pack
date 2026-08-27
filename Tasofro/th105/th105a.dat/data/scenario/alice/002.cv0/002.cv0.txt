@@ -1,0 +1,211 @@
+## =======================================================================
+#Stage:3
+#Title:図書館の虫
+#Place:大図書館
+#Weather:花曇
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:alice,160,0,0,8888FF
+Character:patchouli,160,0,1,FF8888
+Character:sakuya,160,0,2,FF8888
+
+#カメラ固定
+Action:alice,4
+
+#フォーカス瞬間移動
+#Action:alice,11
+
+#向き固定解除
+Action:alice,152
+
+#敵フィールド端で待機
+Action:patchouli,100
+#敵登場
+Action:patchouli,101
+Action:patchouli,102
+Sleep:20
+
+Label:Start
+PlayBgm:data/bgm/st15.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/alice/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+Face:patchouli,惑
+何よ\
+
+Face:alice,普
+ちょっと調べ物がしたくてね\
+
+Face:patchouli,普
+……\
+
+Face:patchouli,普
+貴方の気質は雹\
+
+Face:patchouli,普
+雹は上昇気流で自らの重さを支えられなく
+なった氷塊が落ちてくる天気\
+
+Face:patchouli,余
+貴方にぴったりね\
+
+Face:alice,普
+何の話？\
+
+Face:alice,
+Hide:1
+#敵天候
+Action:patchouli,103
+Sleep:30
+
+# 名前のテロップ
+Object:data/scenario/patchouli/effect/Name.bmp,2,352,304
+
+Face:patchouli,普
+調べ物って、天気の話でしょ？\
+
+Face:alice,驚
+違うわよ、地震の事よ！\
+
+Face:patchouli,惑
+地震……？@
+何で今、地震の事なんか\
+
+Face:patchouli,余
+今、調べなければいけないのは天気@
+貴方には判っていないようね\
+
+Face:alice,怒
+何ですって？\
+
+Face:alice,決
+良いわ、自分で調べるから！\
+
+Face:patchouli,決
+ふん
+未熟者が\
+
+#PlayBgm:data/bgm/st01.ogg
+Action:alice,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:patchouli,驚
+地震、地震だって？@
+ふむ、そういう見方も出来るのか\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:patchouli,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:patchouli,200
+#攻撃側ニュートラル移行検知
+Action:alice,202
+
+#自天候
+Action:alice,103
+Sleep:60
+
+Face:alice,余
+さあ、勝手に調べるわ！\
+
+Face:patchouli,負
+もう、今はそれどころじゃないのにー\
+
+Face:alice,
+Face:patchouli,
+Hide:1
+Sleep:30
+
+#二番手登場
+Action:sakuya,105
+#Weather:曇天
+Action:sakuya,103
+
+#105終了検知
+Action:sakuya,106
+
+Face:sakuya,普
+パチュリー様、お茶の時間です\
+
+Face:alice,普
+どうも\
+
+Face:sakuya,汗
+貴方の分はありません
+っていつの間に入り込んでたのですか\
+
+Face:patchouli,負
+咲夜、そいつを外につまみ出しておいて\
+
+Face:sakuya,普
+判りました\
+
+
+Hide:1
+FadeBgm:2000,0
+
+Sleep:10
+
+#やられキャラ画面退場
+Action:patchouli,201
+
+#ステージ間調整自キャラ
+Action:alice,150
+Sleep:15
+
+#ステージ間調整敵
+Action:sakuya,110
+Stage:12,120
+#CrossFadeBgm:data/bgm/st12.ogg,2000,0
+
+#カメラ中央あわせ
+Action:alice,4
+
+#ステージ間調整敵　終了検知
+Action:sakuya,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

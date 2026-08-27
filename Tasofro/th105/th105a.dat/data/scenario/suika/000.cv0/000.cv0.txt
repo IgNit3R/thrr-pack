@@ -1,0 +1,233 @@
+## =======================================================================
+#Stage:1
+#Title:新旧妖怪の山
+#Place:妖怪の山
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:suika,160,0,0,8888FF
+Character:aya,160,0,1,FF8888
+
+#背景　妖怪の山
+Stage:3,0
+
+#自キャラ画面外に待機
+Action:suika,1
+
+#敵画面外に待機
+Action:aya,100
+
+Label:Start
+PlayBgm:data/bgm/ta00.ogg
+
+#自キャラ天候
+Action:suika,103
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/suika/effect/StageTitle001.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage1.bmp,1,256,352
+#Sleep:60;
+
+#カメラ移動
+Action:suika,2
+
+#登場
+Action:suika,50
+Action:suika,51
+
+Face:suika,普
+あー山登り山登り\
+
+Face:suika,嬉
+妖怪の山も懐かしいねぇ\
+
+Face:suika,余
+もっとも、昔はこんなにきな臭くなかったけどねぇ\
+
+Face:suika,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+Action:aya,101
+Action:aya,102
+
+# 名前のテロップ
+Object:data/scenario/aya/effect/Name.bmp,2,352,304
+
+Action:aya,103
+
+Face:aya,惑
+あやややや
+ど、どうして貴方がここに？\
+
+Face:suika,余
+たまには運動でもしないとねぇ\
+
+Face:aya,汗
+またまたぁ
+貴方が山に来るとみんな混乱するんですよ\
+
+Face:aya,惑
+ちょっと控えて貰えると嬉しいのですが\
+
+Face:suika,嬉
+別に天狗から山を取り戻そうとか
+思っていないから\
+
+Face:suika,普
+私が来ても気にせずお酒飲んでいていいよ\
+
+Face:aya,普
+仕事中ですけどね\
+
+Face:aya,惑
+でも、そういう訳にも行かないのですよ\
+
+Face:aya,惑
+貴方が誰かに見つかってしまうと誰かが
+貴方を追い出しに動かなければいけません\
+
+Face:suika,余
+誰が来たって負けないから大丈夫\
+
+Face:aya,驚
+違うんですよ、貴方が勝ってしまうと
+<ruby おおごと>大事</ruby>になるのです\
+
+Face:aya,惑
+組織ってものはメンツを大切にするので……\
+
+Hide:1
+Sleep:20
+Action:suika,107
+Sleep:30
+
+Face:suika,惑
+へぇ、面倒だねぇ
+そんなの辞めちゃったら？\
+
+Face:aya,普
+ま、それがより心の安定をもたらしたりと、
+良いところでも有るのですが\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:aya,普
+そんな訳で貴方は私に負けて戻るのが一番無難な
+選択肢なのです\
+
+Face:suika,決
+じゃあやってみ？\
+
+#戦闘開始処理
+Sleep:10
+
+PlayBgm:data/bgm/st21.ogg
+Action:suika,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:aya,嬉
+では、見つからないように帰ってくださいね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:aya,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:aya,200
+#攻撃側ニュートラル移行検知
+Action:suika,202
+
+#自キャラ天候
+Action:suika,103
+Sleep:60
+
+Face:suika,嬉
+さて、勝ってしまった訳だけど\
+
+Face:aya,負
+えーと何処に向かってるのですか？\
+
+Face:suika,惑
+山の上の上のずーっと上\
+
+Face:aya,負
+奇妙な山登りですね\
+
+Face:suika,余
+さっきも言ったけど、天狗の生活を邪魔する
+気は無いよ\
+
+Face:aya,負
+しょうがないですね
+私が保証人になりますから、行っていいですよ\
+
+Face:aya,負
+その代わり、本当に天狗との接触は避けて
+下さいね\
+
+Face:suika,普
+嘘は吐かないよ\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30;
+#上空移行用上空退避
+Action:suika,151
+
+Sleep:90;
+
+#フェードアウト　黒
+Action:suika,160
+Sleep:60;
+
+
+Stage:4,0
+
+End:
+
+
+
+
+
+## =======================================================================

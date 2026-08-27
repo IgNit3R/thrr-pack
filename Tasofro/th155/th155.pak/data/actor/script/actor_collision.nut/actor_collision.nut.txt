@@ -1,0 +1,869 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\script\actor_collision.nut: 
+sourcename: ""
+name: "main"
+nliterals: 7
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 8
+ndefaultparams: 0
+ninstructions: 30
+nfunctions: 7
+Literals: [
+    0: "FitBoxfromSprite"
+    1: "FitRotatefromVec"
+    2: "StoreActorData"
+    3: "StoreShotActorData"
+    4: "CalcContactTestParam"
+    5: "CalcContactTestHit"
+    6: "CalcContactTestGuard"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 29
+    1: name: "this", pos: 0, start_op: 0, end_op: 29
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 6, op: 4
+    2: line: 11, op: 8
+    3: line: 29, op: 12
+    4: line: 50, op: 16
+    5: line: 56, op: 20
+    6: line: 94, op: 24
+    7: line: 181, op: 28
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "FitBoxfromSprite")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 6)
+    5:  load(s2, "FitRotatefromVec")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 11)
+    9:  load(s2, "StoreActorData")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 29)
+    13:  load(s2, "StoreShotActorData")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 50)
+    17:  load(s2, "CalcContactTestParam")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 56)
+    21:  load(s2, "CalcContactTestHit")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 94)
+    25:  load(s2, "CalcContactTestGuard")
+    26:  closure(s3, 6)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 181)
+    29:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "FitBoxfromSprite"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "SetCollisionRotation"
+            1: "rz"
+            2: "SetCollisionScaling"
+            3: "sx"
+            4: "sy"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 3, op: 1
+            1: line: 4, op: 6
+            2: line: 5, op: 12
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 3)
+            1:  prepcallk(s1, "SetCollisionRotation", s0, s2)
+            2:  loadfloat(s3, 0)
+            3:  loadfloat(s4, 0)
+            4:  getk(s5, "rz", s0)
+            5:  call(255, s1, s2, 4)
+            6:  line(-, 4)
+            7:  prepcallk(s1, "SetCollisionScaling", s0, s2)
+            8:  getk(s3, "sx", s0)
+            9:  getk(s4, "sy", s0)
+            10:  loadfloat(s5, 1)
+            11:  call(255, s1, s2, 4)
+            12:  line(-, 5)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "FitRotatefromVec"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 13
+        nfunctions: 0
+        Literals: [
+            0: "rz"
+            1: "atan2"
+            2: "va"
+            3: "y"
+            4: "x"
+            5: "direction"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 12
+          ]
+        Line Informations: [
+            0: line: 7, op: 1
+            1: line: 8, op: 11
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 7)
+            1:  dload(s1, "rz", s2, "atan2")
+            2:  prepcall(s2, s2, s0, s3)
+            3:  getk(s4, "va", s0)
+            4:  getk(s4, "y", s4)
+            5:  getk(s5, "va", s0)
+            6:  getk(s5, "x", s5)
+            7:  getk(s6, "direction", s0)
+            8:  mul(s5, s6, s5)
+            9:  call(2, s2, s3, 3)
+            10:  set(s255, s0, s1, s2)
+            11:  line(-, 8)
+            12:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "StoreActorData"
+        nliterals: 12
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 56
+        nfunctions: 0
+        Literals: [
+            0: "temp_frame_data"
+            1: "GetKeyFrameData"
+            2: "temp_atk_data"
+            3: "battle"
+            4: "temp_actor_data"
+            5: "temp_actor_data_index"
+            6: "direction"
+            7: "attackLV"
+            8: "atk_id"
+            9: "disableGuard"
+            10: "attack_state"
+            11: "flagAttack"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 55
+          ]
+        Line Informations: [
+            0: line: 14, op: 1
+            1: line: 17, op: 5
+            2: line: 19, op: 16
+            3: line: 20, op: 21
+            4: line: 21, op: 26
+            5: line: 22, op: 31
+            6: line: 25, op: 36
+            7: line: 26, op: 46
+            8: line: 27, op: 54
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 14)
+            1:  dload(s1, "temp_frame_data", s2, "GetKeyFrameData")
+            2:  prepcall(s2, s2, s0, s3)
+            3:  call(2, s2, s3, 1)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 17)
+            6:  load(s1, "temp_atk_data")
+            7:  loadroot(s2)
+            8:  getk(s2, "battle", s2)
+            9:  getk(s2, "temp_actor_data", s2)
+            10:  loadroot(s3)
+            11:  getk(s3, "battle", s3)
+            12:  load(s4, "temp_actor_data_index")
+            13:  pinc(s3, s3, s4, 1)
+            14:  get(s2, s2, s3)
+            15:  set(s255, s0, s1, s2)
+            16:  line(-, 19)
+            17:  getk(s1, "temp_atk_data", s0)
+            18:  dload(s2, "direction", s3, "direction")
+            19:  get(s3, s0, s3)
+            20:  set(s255, s1, s2, s3)
+            21:  line(-, 20)
+            22:  getk(s1, "temp_atk_data", s0)
+            23:  dload(s2, "attackLV", s3, "attackLV")
+            24:  get(s3, s0, s3)
+            25:  set(s255, s1, s2, s3)
+            26:  line(-, 21)
+            27:  getk(s1, "temp_atk_data", s0)
+            28:  dload(s2, "atk_id", s3, "atk_id")
+            29:  get(s3, s0, s3)
+            30:  set(s255, s1, s2, s3)
+            31:  line(-, 22)
+            32:  getk(s1, "temp_atk_data", s0)
+            33:  load(s2, "disableGuard")
+            34:  loadbool(s3, 0)
+            35:  set(s255, s1, s2, s3)
+            36:  line(-, 25)
+            37:  dload(s1, "attack_state", s2, "flagAttack")
+            38:  get(s2, s0, s2)
+            39:  loadint(s3, 16777216)
+            40:  bitw(s2, s3, s2, BW_AND)
+            41:  jz(s2, 2)
+            42:  loadint(s2, 2)
+            43:  jmp(-, 1)
+            44:  loadint(s2, 1)
+            45:  set(s255, s0, s1, s2)
+            46:  line(-, 26)
+            47:  getk(s1, "flagAttack", s0)
+            48:  loadint(s2, 16)
+            49:  bitw(s1, s2, s1, BW_AND)
+            50:  jz(s1, 3)
+            51:  load(s1, "attack_state")
+            52:  loadint(s2, 4)
+            53:  comparith(s1, 2, s1, 43)
+            54:  line(-, 27)
+            55:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "StoreShotActorData"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 61
+        nfunctions: 0
+        Literals: [
+            0: "temp_frame_data"
+            1: "GetKeyFrameData"
+            2: "temp_atk_data"
+            3: "battle"
+            4: "temp_actor_data"
+            5: "temp_actor_data_index"
+            6: "direction"
+            7: "attackLV"
+            8: "atk_id"
+            9: "cancelCount"
+            10: "disableGuard"
+            11: "attack_state"
+            12: "flagAttack"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 60
+          ]
+        Line Informations: [
+            0: line: 32, op: 1
+            1: line: 35, op: 5
+            2: line: 37, op: 16
+            3: line: 38, op: 21
+            4: line: 39, op: 26
+            5: line: 40, op: 31
+            6: line: 42, op: 36
+            7: line: 45, op: 41
+            8: line: 46, op: 51
+            9: line: 47, op: 59
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 32)
+            1:  dload(s1, "temp_frame_data", s2, "GetKeyFrameData")
+            2:  prepcall(s2, s2, s0, s3)
+            3:  call(2, s2, s3, 1)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 35)
+            6:  load(s1, "temp_atk_data")
+            7:  loadroot(s2)
+            8:  getk(s2, "battle", s2)
+            9:  getk(s2, "temp_actor_data", s2)
+            10:  loadroot(s3)
+            11:  getk(s3, "battle", s3)
+            12:  load(s4, "temp_actor_data_index")
+            13:  pinc(s3, s3, s4, 1)
+            14:  get(s2, s2, s3)
+            15:  set(s255, s0, s1, s2)
+            16:  line(-, 37)
+            17:  getk(s1, "temp_atk_data", s0)
+            18:  dload(s2, "direction", s3, "direction")
+            19:  get(s3, s0, s3)
+            20:  set(s255, s1, s2, s3)
+            21:  line(-, 38)
+            22:  getk(s1, "temp_atk_data", s0)
+            23:  dload(s2, "attackLV", s3, "attackLV")
+            24:  get(s3, s0, s3)
+            25:  set(s255, s1, s2, s3)
+            26:  line(-, 39)
+            27:  getk(s1, "temp_atk_data", s0)
+            28:  dload(s2, "atk_id", s3, "atk_id")
+            29:  get(s3, s0, s3)
+            30:  set(s255, s1, s2, s3)
+            31:  line(-, 40)
+            32:  getk(s1, "temp_atk_data", s0)
+            33:  dload(s2, "cancelCount", s3, "cancelCount")
+            34:  get(s3, s0, s3)
+            35:  set(s255, s1, s2, s3)
+            36:  line(-, 42)
+            37:  getk(s1, "temp_atk_data", s0)
+            38:  load(s2, "disableGuard")
+            39:  loadbool(s3, 0)
+            40:  set(s255, s1, s2, s3)
+            41:  line(-, 45)
+            42:  dload(s1, "attack_state", s2, "flagAttack")
+            43:  get(s2, s0, s2)
+            44:  loadint(s3, 16777216)
+            45:  bitw(s2, s3, s2, BW_AND)
+            46:  jz(s2, 2)
+            47:  loadint(s2, 2)
+            48:  jmp(-, 1)
+            49:  loadint(s2, 1)
+            50:  set(s255, s0, s1, s2)
+            51:  line(-, 46)
+            52:  getk(s1, "flagAttack", s0)
+            53:  loadint(s2, 16)
+            54:  bitw(s1, s2, s1, BW_AND)
+            55:  jz(s1, 3)
+            56:  load(s1, "attack_state")
+            57:  loadint(s2, 4)
+            58:  comparith(s1, 2, s1, 43)
+            59:  line(-, 47)
+            60:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "CalcContactTestParam"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 8
+        nfunctions: 0
+        Literals: [
+            0: "CalcContactTestHit"
+            1: "CalcContactTestGuard"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 7
+          ]
+        Line Informations: [
+            0: line: 52, op: 1
+            1: line: 53, op: 3
+            2: line: 54, op: 6
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 52)
+            1:  prepcallk(s1, "CalcContactTestHit", s0, s2)
+            2:  call(255, s1, s2, 1)
+            3:  line(-, 53)
+            4:  prepcallk(s1, "CalcContactTestGuard", s0, s2)
+            5:  call(255, s1, s2, 1)
+            6:  line(-, 54)
+            7:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "CalcContactTestHit"
+        nliterals: 15
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 132
+        nfunctions: 0
+        Literals: [
+            0: "catch_state"
+            1: "flagState"
+            2: "graze_state"
+            3: "graze"
+            4: "hit_state"
+            5: "invinBoss"
+            6: "damageStopTime"
+            7: "recover"
+            8: "stanBossCount"
+            9: "IsDamage"
+            10: "hitTarget"
+            11: "baria"
+            12: "invinObject"
+            13: "invin"
+            14: "invinGrab"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 131
+          ]
+        Line Informations: [
+            0: line: 59, op: 1
+            1: line: 60, op: 4
+            2: line: 61, op: 12
+            3: line: 64, op: 22
+            4: line: 65, op: 26
+            5: line: 67, op: 39
+            6: line: 69, op: 43
+            7: line: 71, op: 47
+            8: line: 73, op: 69
+            9: line: 75, op: 75
+            10: line: 78, op: 79
+            11: line: 80, op: 91
+            12: line: 83, op: 96
+            13: line: 85, op: 108
+            14: line: 88, op: 113
+            15: line: 90, op: 125
+            16: line: 92, op: 130
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 59)
+            1:  load(s1, "catch_state")
+            2:  loadint(s2, 0)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 60)
+            5:  getk(s1, "flagState", s0)
+            6:  loadint(s2, 524288)
+            7:  bitw(s1, s2, s1, BW_AND)
+            8:  jz(s1, 3)
+            9:  load(s1, "catch_state")
+            10:  loadint(s2, 1)
+            11:  set(s255, s0, s1, s2)
+            12:  line(-, 61)
+            13:  getk(s1, "flagState", s0)
+            14:  loadint(s2, 4194304)
+            15:  bitw(s1, s2, s1, BW_AND)
+            16:  jz(s1, 5)
+            17:  dload(s1, "catch_state", s2, "catch_state")
+            18:  get(s2, s0, s2)
+            19:  loadint(s3, 2)
+            20:  bitw(s2, s3, s2, BW_OR)
+            21:  set(s255, s0, s1, s2)
+            22:  line(-, 64)
+            23:  load(s1, "graze_state")
+            24:  loadint(s2, 0)
+            25:  set(s255, s0, s1, s2)
+            26:  line(-, 65)
+            27:  getk(s1, "flagState", s0)
+            28:  loadint(s2, 4096)
+            29:  bitw(s1, s2, s1, BW_AND)
+            30:  or(s1, 4, s1)
+            31:  getk(s2, "graze", s0)
+            32:  loadint(s3, 0)
+            33:  cmp(s2, s3, s2, CMP_G)
+            34:  move(s1, s2)
+            35:  jz(s1, 3)
+            36:  load(s1, "graze_state")
+            37:  loadint(s2, 2)
+            38:  set(s255, s0, s1, s2)
+            39:  line(-, 67)
+            40:  load(s1, "hit_state")
+            41:  loadint(s2, 0)
+            42:  set(s255, s0, s1, s2)
+            43:  line(-, 69)
+            44:  getk(s1, "invinBoss", s0)
+            45:  jz(s1, 1)
+            46:  return(255, 0)
+            47:  line(-, 71)
+            48:  getk(s1, "damageStopTime", s0)
+            49:  loadint(s2, 0)
+            50:  cmp(s1, s2, s1, CMP_LE)
+            51:  and(s1, 15, s1)
+            52:  getk(s2, "recover", s0)
+            53:  loadint(s3, 0)
+            54:  eq(s2, 3, s2, 0)
+            55:  and(s2, 10, s2)
+            56:  getk(s3, "stanBossCount", s0)
+            57:  loadint(s4, 0)
+            58:  eq(s3, 4, s3, 0)
+            59:  and(s3, 5, s3)
+            60:  prepcallk(s4, "IsDamage", s0, s5)
+            61:  call(4, s4, s5, 1)
+            62:  loadint(s5, 2)
+            63:  eq(s4, 5, s4, 0)
+            64:  move(s3, s4)
+            65:  move(s2, s3)
+            66:  move(s1, s2)
+            67:  jz(s1, 1)
+            68:  return(255, 0)
+            69:  line(-, 73)
+            70:  getk(s1, "hitTarget", s0)
+            71:  loadnulls(s2, 1)
+            72:  eq(s1, 2, s1, 0)
+            73:  jz(s1, 1)
+            74:  return(255, 0)
+            75:  line(-, 75)
+            76:  getk(s1, "baria", s0)
+            77:  jz(s1, 1)
+            78:  return(255, 0)
+            79:  line(-, 78)
+            80:  getk(s1, "flagState", s0)
+            81:  loadint(s2, 65536)
+            82:  bitw(s1, s2, s1, BW_AND)
+            83:  loadint(s2, 0)
+            84:  eq(s1, 2, s1, 0)
+            85:  and(s1, 3, s1)
+            86:  getk(s2, "invinObject", s0)
+            87:  not(s2, s2)
+            88:  move(s1, s2)
+            89:  jz(s1, 6)
+            90:  line(-, 80)
+            91:  dload(s1, "hit_state", s2, "hit_state")
+            92:  get(s2, s0, s2)
+            93:  loadint(s3, 2)
+            94:  bitw(s2, s3, s2, BW_OR)
+            95:  set(s255, s0, s1, s2)
+            96:  line(-, 83)
+            97:  getk(s1, "flagState", s0)
+            98:  loadint(s2, 32768)
+            99:  bitw(s1, s2, s1, BW_AND)
+            100:  loadint(s2, 0)
+            101:  eq(s1, 2, s1, 0)
+            102:  and(s1, 3, s1)
+            103:  getk(s2, "invin", s0)
+            104:  not(s2, s2)
+            105:  move(s1, s2)
+            106:  jz(s1, 6)
+            107:  line(-, 85)
+            108:  dload(s1, "hit_state", s2, "hit_state")
+            109:  get(s2, s0, s2)
+            110:  loadint(s3, 1)
+            111:  bitw(s2, s3, s2, BW_OR)
+            112:  set(s255, s0, s1, s2)
+            113:  line(-, 88)
+            114:  getk(s1, "flagState", s0)
+            115:  loadint(s2, 8192)
+            116:  bitw(s1, s2, s1, BW_AND)
+            117:  loadint(s2, 0)
+            118:  eq(s1, 2, s1, 0)
+            119:  and(s1, 3, s1)
+            120:  getk(s2, "invinGrab", s0)
+            121:  not(s2, s2)
+            122:  move(s1, s2)
+            123:  jz(s1, 6)
+            124:  line(-, 90)
+            125:  dload(s1, "hit_state", s2, "hit_state")
+            126:  get(s2, s0, s2)
+            127:  loadint(s3, 4)
+            128:  bitw(s2, s3, s2, BW_OR)
+            129:  set(s255, s0, s1, s2)
+            130:  line(-, 92)
+            131:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "CalcContactTestGuard"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 36
+        ndefaultparams: 0
+        ninstructions: 151
+        nfunctions: 0
+        Literals: [
+            0: "disableGuard"
+            1: "flagState"
+            2: "guard_state"
+            3: "IsGuard"
+            4: "autoGuard"
+            5: "cpuState"
+            6: "rand"
+            7: "com_guard_rate"
+            8: "target"
+            9: "x"
+            10: "direction"
+            11: "input"
+            12: "autoGuardCount"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 150
+          ]
+        Line Informations: [
+            0: line: 97, op: 1
+            1: line: 101, op: 15
+            2: line: 102, op: 18
+            3: line: 105, op: 20
+            4: line: 107, op: 26
+            5: line: 108, op: 29
+            6: line: 111, op: 31
+            7: line: 113, op: 37
+            8: line: 114, op: 40
+            9: line: 117, op: 42
+            10: line: 119, op: 46
+            11: line: 120, op: 49
+            12: line: 124, op: 51
+            13: line: 126, op: 55
+            14: line: 127, op: 66
+            15: line: 133, op: 70
+            16: line: 135, op: 76
+            17: line: 137, op: 80
+            18: line: 139, op: 85
+            19: line: 140, op: 88
+            20: line: 145, op: 92
+            21: line: 147, op: 97
+            22: line: 148, op: 100
+            23: line: 152, op: 103
+            24: line: 154, op: 109
+            25: line: 156, op: 114
+            26: line: 157, op: 117
+            27: line: 162, op: 121
+            28: line: 164, op: 126
+            29: line: 165, op: 129
+            30: line: 169, op: 131
+            31: line: 171, op: 136
+            32: line: 173, op: 140
+            33: line: 174, op: 143
+            34: line: 180, op: 145
+            35: line: 181, op: 149
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 97)
+            1:  getk(s1, "disableGuard", s0)
+            2:  or(s1, 10, s1)
+            3:  getk(s2, "disableGuard", s0)
+            4:  or(s2, 7, s2)
+            5:  getk(s3, "flagState", s0)
+            6:  loadint(s4, 16)
+            7:  loadint(s5, 2048)
+            8:  bitw(s4, s5, s4, BW_OR)
+            9:  bitw(s3, s4, s3, BW_AND)
+            10:  not(s3, s3)
+            11:  move(s2, s3)
+            12:  move(s1, s2)
+            13:  jz(s1, 6)
+            14:  line(-, 101)
+            15:  load(s1, "guard_state")
+            16:  loadint(s2, 0)
+            17:  set(s255, s0, s1, s2)
+            18:  line(-, 102)
+            19:  return(255, 0)
+            20:  line(-, 105)
+            21:  prepcallk(s1, "IsGuard", s0, s2)
+            22:  call(1, s1, s2, 1)
+            23:  loadint(s2, 0)
+            24:  jcmp(s2, 6, s1, CMP_G)
+            25:  line(-, 107)
+            26:  load(s1, "guard_state")
+            27:  loadint(s2, 1)
+            28:  set(s255, s0, s1, s2)
+            29:  line(-, 108)
+            30:  return(255, 0)
+            31:  line(-, 111)
+            32:  getk(s1, "flagState", s0)
+            33:  loadint(s2, 2048)
+            34:  bitw(s1, s2, s1, BW_AND)
+            35:  jz(s1, 6)
+            36:  line(-, 113)
+            37:  load(s1, "guard_state")
+            38:  loadint(s2, 2)
+            39:  set(s255, s0, s1, s2)
+            40:  line(-, 114)
+            41:  return(255, 0)
+            42:  line(-, 117)
+            43:  getk(s1, "autoGuard", s0)
+            44:  jz(s1, 6)
+            45:  line(-, 119)
+            46:  load(s1, "guard_state")
+            47:  loadint(s2, 1)
+            48:  set(s255, s0, s1, s2)
+            49:  line(-, 120)
+            50:  return(255, 0)
+            51:  line(-, 124)
+            52:  getk(s1, "cpuState", s0)
+            53:  jz(s1, 15)
+            54:  line(-, 126)
+            55:  dload(s1, "guard_state", s2, "rand")
+            56:  prepcall(s2, s2, s0, s3)
+            57:  call(2, s2, s3, 1)
+            58:  loadint(s3, 100)
+            59:  mod(s2, s3, s2)
+            60:  getk(s3, "com_guard_rate", s0)
+            61:  jcmp(s3, 2, s2, CMP_LE)
+            62:  loadint(s2, 1)
+            63:  jmp(-, 1)
+            64:  loadint(s2, 0)
+            65:  set(s255, s0, s1, s2)
+            66:  line(-, 127)
+            67:  return(255, 0)
+            68:  jmp(-, 76)
+            69:  line(-, 133)
+            70:  getk(s1, "target", s0)
+            71:  getk(s1, "x", s1)
+            72:  getk(s2, "x", s0)
+            73:  eq(s1, 2, s1, 0)
+            74:  jz(s1, 28)
+            75:  line(-, 135)
+            76:  getk(s1, "direction", s0)
+            77:  loadfloat(s2, 0)
+            78:  jcmp(s2, 12, s1, CMP_G)
+            79:  line(-, 137)
+            80:  getk(s1, "input", s0)
+            81:  getk(s1, "x", s1)
+            82:  loadint(s2, 0)
+            83:  jcmp(s2, 6, s1, CMP_L)
+            84:  line(-, 139)
+            85:  load(s1, "guard_state")
+            86:  loadint(s2, 1)
+            87:  set(s255, s0, s1, s2)
+            88:  line(-, 140)
+            89:  return(255, 0)
+            90:  jmp(-, 11)
+            91:  line(-, 145)
+            92:  getk(s1, "input", s0)
+            93:  getk(s1, "x", s1)
+            94:  loadint(s2, 0)
+            95:  jcmp(s2, 6, s1, CMP_G)
+            96:  line(-, 147)
+            97:  load(s1, "guard_state")
+            98:  loadint(s2, 1)
+            99:  set(s255, s0, s1, s2)
+            100:  line(-, 148)
+            101:  return(255, 0)
+            102:  jmp(-, 28)
+            103:  line(-, 152)
+            104:  getk(s1, "target", s0)
+            105:  getk(s1, "x", s1)
+            106:  getk(s2, "x", s0)
+            107:  jcmp(s2, 12, s1, CMP_G)
+            108:  line(-, 154)
+            109:  getk(s1, "input", s0)
+            110:  getk(s1, "x", s1)
+            111:  loadint(s2, 0)
+            112:  jcmp(s2, 6, s1, CMP_L)
+            113:  line(-, 156)
+            114:  load(s1, "guard_state")
+            115:  loadint(s2, 1)
+            116:  set(s255, s0, s1, s2)
+            117:  line(-, 157)
+            118:  return(255, 0)
+            119:  jmp(-, 11)
+            120:  line(-, 162)
+            121:  getk(s1, "input", s0)
+            122:  getk(s1, "x", s1)
+            123:  loadint(s2, 0)
+            124:  jcmp(s2, 6, s1, CMP_G)
+            125:  line(-, 164)
+            126:  load(s1, "guard_state")
+            127:  loadint(s2, 1)
+            128:  set(s255, s0, s1, s2)
+            129:  line(-, 165)
+            130:  return(255, 0)
+            131:  line(-, 169)
+            132:  getk(s1, "autoGuardCount", s0)
+            133:  loadint(s2, 0)
+            134:  jcmp(s2, 10, s1, CMP_G)
+            135:  line(-, 171)
+            136:  getk(s1, "input", s0)
+            137:  getk(s1, "x", s1)
+            138:  jz(s1, 6)
+            139:  line(-, 173)
+            140:  load(s1, "guard_state")
+            141:  loadint(s2, 1)
+            142:  set(s255, s0, s1, s2)
+            143:  line(-, 174)
+            144:  return(255, 0)
+            145:  line(-, 180)
+            146:  load(s1, "guard_state")
+            147:  loadint(s2, 0)
+            148:  set(s255, s0, s1, s2)
+            149:  line(-, 181)
+            150:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

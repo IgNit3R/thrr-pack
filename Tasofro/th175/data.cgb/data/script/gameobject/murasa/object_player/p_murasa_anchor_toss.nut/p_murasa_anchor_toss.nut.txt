@@ -1,0 +1,777 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut: 
+sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+name: "main"
+nliterals: 13
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 34
+nfunctions: 9
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "lib"
+    3: "shot"
+    4: "common_message"
+    5: "destruct"
+    6: "kill_move"
+    7: "interactive"
+    8: "on_hit_target"
+    9: "on_hit_ground"
+    10: "on_graze_target"
+    11: "determination"
+    12: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 33
+    1: name: "this", pos: 0, start_op: 0, end_op: 33
+  ]
+Line Informations: [
+    0: line: 6, op: 0
+    1: line: 65, op: 3
+    2: line: 67, op: 9
+    3: line: 71, op: 12
+    4: line: 77, op: 15
+    5: line: 96, op: 18
+    6: line: 100, op: 21
+    7: line: 102, op: 24
+    8: line: 105, op: 27
+    9: line: 109, op: 30
+    10: line: 118, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  loadroot(s3)
+    5:  getk(s3, "lib", s3)
+    6:  getk(s3, "shot", s3)
+    7:  getk(s3, "common_message", s3)
+    8:  newslot(s255, s0, s2, s3)
+    9:  load(s2, "destruct")
+    10:  closure(s3, 1)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "kill_move")
+    13:  closure(s3, 2)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "interactive")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_hit_target")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_hit_ground")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "on_graze_target")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "determination")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "plot")
+    31:  closure(s3, 8)
+    32:  newslot(s2, s0, s2, s3)
+    33:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "construct"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 66
+        nfunctions: 2
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "attack_power"
+            3: "attack_baria"
+            4: "count"
+            5: "vx"
+            6: "vy"
+            7: "pos_y"
+            8: "hit_wait"
+            9: "direction_h"
+            10: "obj"
+            11: "player"
+            12: "hit_action"
+            13: "frameset"
+            14: "_composition_create_framepointer"
+            15: "resource_pool"
+            16: "player_murasa/anchor_center_spin"
+            17: "maskbits"
+            18: "state"
+            19: "h_entity"
+            20: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 65
+          ]
+        Line Informations: [
+            0: line: 7, op: 0
+            1: line: 9, op: 0
+            2: line: 10, op: 3
+            3: line: 11, op: 6
+            4: line: 12, op: 9
+            5: line: 15, op: 12
+            6: line: 16, op: 15
+            7: line: 17, op: 18
+            8: line: 18, op: 21
+            9: line: 19, op: 24
+            10: line: 20, op: 27
+            11: line: 21, op: 32
+            12: line: 28, op: 35
+            13: line: 29, op: 43
+            14: line: 31, op: 46
+            15: line: 56, op: 49
+            16: line: 63, op: 65
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "attack_power")
+            7:  loadint(s2, 5)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "attack_baria")
+            10:  loadint(s2, 1)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "count")
+            13:  loadint(s2, 0)
+            14:  newslot(s255, s0, s1, s2)
+            15:  load(s1, "vx")
+            16:  loadfloat(s2, 0)
+            17:  newslot(s255, s0, s1, s2)
+            18:  load(s1, "vy")
+            19:  loadfloat(s2, -15)
+            20:  newslot(s255, s0, s1, s2)
+            21:  load(s1, "pos_y")
+            22:  loadint(s2, 0)
+            23:  newslot(s255, s0, s1, s2)
+            24:  load(s1, "hit_wait")
+            25:  loadint(s2, 0)
+            26:  newslot(s255, s0, s1, s2)
+            27:  dload(s1, "direction_h", s2, "obj")
+            28:  get(s2, s0, s2)
+            29:  getk(s2, "player", s2)
+            30:  getk(s2, "direction_h", s2)
+            31:  newslot(s255, s0, s1, s2)
+            32:  load(s1, "hit_action")
+            33:  closure(s2, 0)
+            34:  newslot(s255, s0, s1, s2)
+            35:  load(s1, "frameset")
+            36:  loadroot(s2)
+            37:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            38:  loadroot(s4)
+            39:  getk(s4, "resource_pool", s4)
+            40:  getk(s4, "player_murasa/anchor_center_spin", s4)
+            41:  call(2, s2, s3, 2)
+            42:  set(s255, s0, s1, s2)
+            43:  load(s1, "maskbits")
+            44:  loadint(s2, 64)
+            45:  set(s255, s0, s1, s2)
+            46:  load(s1, "state")
+            47:  closure(s2, 1)
+            48:  newslot(s255, s0, s1, s2)
+            49:  load(s1, "h_entity")
+            50:  loadroot(s2)
+            51:  prepcallk(s2, "_vspace_regist", s2, s3)
+            52:  move(s4, s0)
+            53:  loadint(s5, 1)
+            54:  loadint(s6, 2)
+            55:  bitw(s5, s6, s5, BW_OR)
+            56:  loadint(s6, 8)
+            57:  bitw(s5, s6, s5, BW_OR)
+            58:  loadint(s6, 64)
+            59:  bitw(s5, s6, s5, BW_OR)
+            60:  loadint(s6, 128)
+            61:  bitw(s5, s6, s5, BW_OR)
+            62:  loadint(s6, 0)
+            63:  call(2, s2, s3, 4)
+            64:  newslot(s255, s0, s1, s2)
+            65:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+                name: null
+                nliterals: 12
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 29
+                nfunctions: 0
+                Literals: [
+                    0: "on_hit_damage_reaction"
+                    1: "_audio_play"
+                    2: "se"
+                    3: "hit_impactB"
+                    4: "object_pool"
+                    5: "limit_group"
+                    6: "Spawn_CountSprite"
+                    7: "x"
+                    8: "hit_x"
+                    9: "y"
+                    10: "hit_y"
+                    11: "hit_flash"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "_target"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_target", pos: 1, start_op: 0, end_op: 28
+                    1: name: "this", pos: 0, start_op: 0, end_op: 28
+                  ]
+                Line Informations: [
+                    0: line: 21, op: 0
+                    1: line: 22, op: 0
+                    2: line: 23, op: 3
+                    3: line: 24, op: 10
+                    4: line: 25, op: 18
+                    5: line: 26, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+                    1:  move(s4, s0)
+                    2:  call(255, s2, s3, 2)
+                    3:  loadroot(s2)
+                    4:  prepcallk(s2, "_audio_play", s2, s3)
+                    5:  loadroot(s4)
+                    6:  getk(s4, "se", s4)
+                    7:  getk(s4, "hit_impactB", s4)
+                    8:  loadint(s5, 1)
+                    9:  call(255, s2, s3, 3)
+                    10:  loadroot(s2)
+                    11:  getk(s2, "object_pool", s2)
+                    12:  prepcallk(s2, "limit_group", s2, s3)
+                    13:  loadint(s4, 5)
+                    14:  loadint(s5, 8)
+                    15:  loadint(s6, 16)
+                    16:  bitw(s5, s6, s5, BW_OR)
+                    17:  call(255, s2, s3, 3)
+                    18:  prepcallk(s2, "Spawn_CountSprite", s0, s3)
+                    19:  getk(s4, "x", s1)
+                    20:  getk(s5, "hit_x", s1)
+                    21:  add(s4, s5, s4)
+                    22:  getk(s5, "y", s1)
+                    23:  getk(s6, "hit_y", s1)
+                    24:  add(s5, s6, s5)
+                    25:  load(s6, "hit_flash")
+                    26:  loadint(s7, 20)
+                    27:  call(255, s2, s3, 5)
+                    28:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+                name: null
+                nliterals: 12
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 14
+                ndefaultparams: 0
+                ninstructions: 48
+                nfunctions: 0
+                Literals: [
+                    0: "obj"
+                    1: "player"
+                    2: "motion"
+                    3: "attack_fall"
+                    4: "kill_move"
+                    5: "angle"
+                    6: "vy"
+                    7: "pos_y"
+                    8: "x"
+                    9: "y"
+                    10: "_vspace_commit"
+                    11: "h_entity"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 47
+                  ]
+                Line Informations: [
+                    0: line: 31, op: 0
+                    1: line: 32, op: 0
+                    2: line: 33, op: 5
+                    3: line: 34, op: 7
+                    4: line: 36, op: 8
+                    5: line: 44, op: 11
+                    6: line: 45, op: 14
+                    7: line: 46, op: 17
+                    8: line: 47, op: 26
+                    9: line: 48, op: 28
+                    10: line: 51, op: 29
+                    11: line: 52, op: 34
+                    12: line: 53, op: 43
+                    13: line: 54, op: 47
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "obj", s0)
+                    1:  getk(s1, "player", s1)
+                    2:  getk(s1, "motion", s1)
+                    3:  ne(s1, 3, s1, 255)
+                    4:  jz(s1, 3)
+                    5:  prepcallk(s1, "kill_move", s0, s2)
+                    6:  call(255, s1, s2, 1)
+                    7:  return(255, 0)
+                    8:  load(s1, "angle")
+                    9:  loadfloat(s2, 0.523599)
+                    10:  comparith(s1, 2, s1, 45)
+                    11:  load(s1, "vy")
+                    12:  loadfloat(s2, 1)
+                    13:  comparith(s1, 2, s1, 43)
+                    14:  dload(s1, "pos_y", s2, "vy")
+                    15:  get(s2, s0, s2)
+                    16:  comparith(s1, 2, s1, 43)
+                    17:  getk(s1, "pos_y", s0)
+                    18:  loadfloat(s2, 0)
+                    19:  cmp(s1, s2, s1, CMP_GE)
+                    20:  and(s1, 4, s1)
+                    21:  getk(s2, "vy", s0)
+                    22:  loadfloat(s3, 0)
+                    23:  cmp(s2, s3, s2, CMP_G)
+                    24:  move(s1, s2)
+                    25:  jz(s1, 3)
+                    26:  prepcallk(s1, "kill_move", s0, s2)
+                    27:  call(255, s1, s2, 1)
+                    28:  return(255, 0)
+                    29:  dload(s1, "x", s2, "obj")
+                    30:  get(s2, s0, s2)
+                    31:  getk(s2, "player", s2)
+                    32:  getk(s2, "x", s2)
+                    33:  set(s255, s0, s1, s2)
+                    34:  dload(s1, "y", s2, "obj")
+                    35:  get(s2, s0, s2)
+                    36:  getk(s2, "player", s2)
+                    37:  getk(s2, "y", s2)
+                    38:  loadint(s3, 64)
+                    39:  sub(s2, s3, s2)
+                    40:  getk(s3, "pos_y", s0)
+                    41:  add(s2, s3, s2)
+                    42:  set(s255, s0, s1, s2)
+                    43:  loadroot(s1)
+                    44:  prepcallk(s1, "_vspace_commit", s1, s2)
+                    45:  getk(s3, "h_entity", s0)
+                    46:  call(255, s1, s2, 2)
+                    47:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "destruct"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "_vspace_unregist"
+            1: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 68, op: 0
+            1: line: 69, op: 0
+            2: line: 70, op: 4
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s1)
+            1:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            2:  getk(s3, "h_entity", s0)
+            3:  call(255, s1, s2, 2)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "kill_move"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 13
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "_vspace_unregist"
+            2: "h_entity"
+            3: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 12
+          ]
+        Line Informations: [
+            0: line: 71, op: 0
+            1: line: 72, op: 0
+            2: line: 73, op: 3
+            3: line: 74, op: 7
+            4: line: 75, op: 10
+            5: line: 76, op: 12
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            5:  getk(s3, "h_entity", s0)
+            6:  call(255, s1, s2, 2)
+            7:  load(s1, "h_entity")
+            8:  loadnulls(s2, 1)
+            9:  set(s255, s0, s1, s2)
+            10:  prepcallk(s1, "kill", s0, s2)
+            11:  call(255, s1, s2, 1)
+            12:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "interactive"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 9
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "state"
+            3: "scale_x"
+            4: "direction_h"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 8
+          ]
+        Line Informations: [
+            0: line: 78, op: 0
+            1: line: 79, op: 0
+            2: line: 80, op: 3
+            3: line: 81, op: 5
+            4: line: 95, op: 8
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  prepcallk(s1, "state", s0, s2)
+            4:  call(255, s1, s2, 1)
+            5:  dload(s1, "scale_x", s2, "direction_h")
+            6:  get(s2, s0, s2)
+            7:  set(s255, s0, s1, s2)
+            8:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "on_hit_target"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "lib"
+            1: "shot"
+            2: "default_hit_check"
+            3: "call"
+            4: "hit_action"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 13
+            1: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 96, op: 0
+            1: line: 97, op: 0
+            2: line: 98, op: 10
+            3: line: 99, op: 13
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  getk(s2, "lib", s2)
+            2:  getk(s2, "shot", s2)
+            3:  getk(s2, "default_hit_check", s2)
+            4:  prepcallk(s2, "call", s2, s3)
+            5:  dmove(s4, s0, s5, s1)
+            6:  call(2, s2, s3, 3)
+            7:  not(s2, s2)
+            8:  jz(s2, 1)
+            9:  return(255, 0)
+            10:  prepcallk(s2, "hit_action", s0, s3)
+            11:  move(s4, s1)
+            12:  call(255, s2, s3, 2)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 100, op: 0
+            1: line: 101, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 102, op: 0
+            1: line: 103, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 106, op: 0
+            1: line: 107, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\murasa\object_player\p_murasa_anchor_toss.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s2"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "scale_x"
+            6: "rotate"
+            7: "angle"
+            8: "translate"
+            9: "x"
+            10: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 110, op: 0
+            1: line: 111, op: 0
+            2: line: 113, op: 4
+            3: line: 114, op: 8
+            4: line: 115, op: 13
+            5: line: 116, op: 17
+            6: line: 118, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s2", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s2", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "scale_x", s0)
+            11:  loadint(s4, 1)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s2", s0)
+            14:  prepcallk(s1, "rotate", s1, s2)
+            15:  getk(s3, "angle", s0)
+            16:  call(255, s1, s2, 2)
+            17:  getk(s1, "layer_s2", s0)
+            18:  prepcallk(s1, "translate", s1, s2)
+            19:  getk(s3, "x", s0)
+            20:  getk(s4, "y", s0)
+            21:  call(255, s1, s2, 3)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

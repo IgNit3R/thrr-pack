@@ -1,0 +1,828 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\talk\talk_generate.nut: 
+sourcename: ""
+name: "main"
+nliterals: 16
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 15
+nlineinfos: 24
+ndefaultparams: 0
+ninstructions: 122
+nfunctions: 2
+Literals: [
+    0: "win_rate"
+    1: "character_name"
+    2: "manbow"
+    3: "LoadCSV"
+    4: "data/win/rate/"
+    5: ".csv"
+    6: "len"
+    7: "target"
+    8: "push"
+    9: "character_id"
+    10: "cond"
+    11: "tointeger"
+    12: "top"
+    13: "rate"
+    14: "GenerateResultMessage"
+    15: "GetResultMessageTarget"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "i", pos: 13, start_op: 50, end_op: 73
+    1: name: "i", pos: 15, start_op: 83, end_op: 99
+    2: name: "cur", pos: 14, start_op: 81, end_op: 106
+    3: name: "rate", pos: 13, start_op: 79, end_op: 106
+    4: name: "cond", pos: 12, start_op: 48, end_op: 106
+    5: name: "d", pos: 11, start_op: 32, end_op: 106
+    6: name: "@ITERATOR@", pos: 10, start_op: 28, end_op: 107
+    7: name: "t", pos: 9, start_op: 28, end_op: 107
+    8: name: "@INDEX@", pos: 8, start_op: 27, end_op: 107
+    9: name: "data", pos: 7, start_op: 26, end_op: 110
+    10: name: "src", pos: 6, start_op: 19, end_op: 110
+    11: name: "v", pos: 4, start_op: 8, end_op: 111
+    12: name: "@INDEX@", pos: 3, start_op: 7, end_op: 111
+    13: name: "vargv", pos: 1, start_op: 0, end_op: 121
+    14: name: "this", pos: 0, start_op: 0, end_op: 121
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 4, op: 4
+    2: line: 6, op: 11
+    3: line: 7, op: 19
+    4: line: 8, op: 24
+    5: line: 9, op: 26
+    6: line: 11, op: 31
+    7: line: 13, op: 32
+    8: line: 15, op: 41
+    9: line: 17, op: 46
+    10: line: 18, op: 48
+    11: line: 20, op: 53
+    12: line: 22, op: 74
+    13: line: 24, op: 77
+    14: line: 25, op: 79
+    15: line: 26, op: 81
+    16: line: 28, op: 86
+    17: line: 29, op: 94
+    18: line: 31, op: 100
+    19: line: 33, op: 103
+    20: line: 35, op: 108
+    21: line: 40, op: 112
+    22: line: 115, op: 116
+    23: line: 144, op: 120
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "win_rate")
+    2:  newobj(s3, 0, 0, 0)
+    3:  newslot(s255, s0, s2, s3)
+    4:  line(-, 4)
+    5:  loadroot(s2)
+    6:  getk(s2, "character_name", s2)
+    7:  loadnulls(s3, 3)
+    8:  foreach(s2, 103, s3)
+    9:  postforeach(s2, 103)
+    10:  line(-, 6)
+    11:  loadroot(s6)
+    12:  getk(s6, "manbow", s6)
+    13:  prepcallk(s6, "LoadCSV", s6, s7)
+    14:  load(s8, "data/win/rate/")
+    15:  add(s8, s4, s8)
+    16:  load(s9, ".csv")
+    17:  add(s8, s9, s8)
+    18:  call(6, s6, s7, 2)
+    19:  line(-, 7)
+    20:  loadnulls(s7, 1)
+    21:  eq(s7, 7, s6, 0)
+    22:  jz(s7, 1)
+    23:  jmp(-, -16)
+    24:  line(-, 8)
+    25:  newobj(s7, 0, 0, 1)
+    26:  line(-, 9)
+    27:  loadnulls(s8, 3)
+    28:  foreach(s6, 79, s8)
+    29:  postforeach(s6, 79)
+    30:  line(-, 11)
+    31:  newobj(s11, 0, 0, 0)
+    32:  line(-, 13)
+    33:  loadint(s12, 0)
+    34:  get(s12, s9, s12)
+    35:  prepcallk(s12, "len", s12, s13)
+    36:  call(12, s12, s13, 1)
+    37:  loadint(s13, 0)
+    38:  eq(s12, 13, s12, 0)
+    39:  jz(s12, 1)
+    40:  jmp(-, -13)
+    41:  line(-, 15)
+    42:  load(s12, "target")
+    43:  loadint(s13, 0)
+    44:  get(s13, s9, s13)
+    45:  newslot(s255, s11, s12, s13)
+    46:  line(-, 17)
+    47:  newobj(s12, 0, 0, 1)
+    48:  line(-, 18)
+    49:  loadint(s13, 0)
+    50:  loadint(s14, 3)
+    51:  jcmp(s14, 22, s13, CMP_L)
+    52:  line(-, 20)
+    53:  prepcallk(s14, "push", s12, s15)
+    54:  loadint(s16, 1)
+    55:  add(s16, s16, s13)
+    56:  get(s16, s9, s16)
+    57:  loadroot(s17)
+    58:  getk(s17, "character_id", s17)
+    59:  exists(s16, s17, s16)
+    60:  jz(s16, 9)
+    61:  loadint(s17, 1)
+    62:  loadroot(s18)
+    63:  getk(s18, "character_id", s18)
+    64:  loadint(s19, 1)
+    65:  add(s19, s19, s13)
+    66:  get(s19, s9, s19)
+    67:  get(s18, s18, s19)
+    68:  bitw(s16, s18, s17, BW_SHIFTL)
+    69:  jmp(-, 1)
+    70:  loadint(s16, -1)
+    71:  call(255, s14, s15, 2)
+    72:  pincl(s14, s13, 0, 1)
+    73:  jmp(-, -24)
+    74:  line(-, 22)
+    75:  load(s13, "cond")
+    76:  newslot(s255, s11, s13, s12)
+    77:  line(-, 24)
+    78:  newobj(s13, 0, 0, 1)
+    79:  line(-, 25)
+    80:  loadint(s14, 0)
+    81:  line(-, 26)
+    82:  loadint(s15, 0)
+    83:  loadint(s16, 10)
+    84:  jcmp(s16, 15, s15, CMP_L)
+    85:  line(-, 28)
+    86:  prepcallk(s16, "push", s13, s17)
+    87:  loadint(s18, 4)
+    88:  add(s18, s18, s15)
+    89:  get(s18, s9, s18)
+    90:  prepcallk(s18, "tointeger", s18, s19)
+    91:  call(18, s18, s19, 1)
+    92:  add(s18, s14, s18)
+    93:  call(255, s16, s17, 2)
+    94:  line(-, 29)
+    95:  prepcallk(s16, "top", s13, s17)
+    96:  call(16, s16, s17, 1)
+    97:  move(s14, s16)
+    98:  pincl(s16, s15, 0, 1)
+    99:  jmp(-, -17)
+    100:  line(-, 31)
+    101:  load(s15, "rate")
+    102:  newslot(s255, s11, s15, s13)
+    103:  line(-, 33)
+    104:  prepcallk(s15, "push", s7, s16)
+    105:  move(s17, s11)
+    106:  call(255, s15, s16, 2)
+    107:  jmp(-, -80)
+    108:  line(-, 35)
+    109:  getk(s8, "win_rate", s0)
+    110:  newslot(s255, s8, s4, s7)
+    111:  jmp(-, -104)
+    112:  line(-, 40)
+    113:  load(s2, "GenerateResultMessage")
+    114:  closure(s3, 0)
+    115:  newslot(s2, s0, s2, s3)
+    116:  line(-, 115)
+    117:  load(s2, "GetResultMessageTarget")
+    118:  closure(s3, 1)
+    119:  newslot(s2, s0, s2, s3)
+    120:  line(-, 144)
+    121:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "GenerateResultMessage"
+        nliterals: 27
+        nparameters: 6
+        noutervals: 0
+        nlocalvarinfos: 13
+        nlineinfos: 31
+        ndefaultparams: 0
+        ninstructions: 201
+        nfunctions: 1
+        Literals: [
+            0: "GetResultMessageTarget"
+            1: "manbow"
+            2: "LoadCSVtoTable"
+            3: "data/win/message/"
+            4: ".csv"
+            5: "push"
+            6: ":start"
+            7: "win_back"
+            8: "wb_default"
+            9: "win_front"
+            10: "wf_default"
+            11: ""
+            12: "Sleep"
+            13: "lose_back"
+            14: "lb_default"
+            15: "lose_front"
+            16: "lf_default"
+            17: "message"
+            18: "len"
+            19: "face"
+            20: "name"
+            21: "ImageDef"
+            22: "SetFocus"
+            23: "balloon"
+            24: "Function"
+            25: "::battle.BeginResultEnd()"
+            26: "command_line"
+          ]
+        Parameters: [
+            0: "this"
+            1: "master_name_win"
+            2: "slave_name_win"
+            3: "master_name_lose"
+            4: "slave_name_lose"
+            5: "reverse"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 12, start_op: 94, end_op: 185
+            1: name: "last_target", pos: 11, start_op: 92, end_op: 198
+            2: name: "func_image_def", pos: 10, start_op: 40, end_op: 198
+            3: name: "c", pos: 9, start_op: 33, end_op: 198
+            4: name: "src", pos: 8, start_op: 31, end_op: 198
+            5: name: "data", pos: 7, start_op: 7, end_op: 198
+            6: name: "target", pos: 6, start_op: 5, end_op: 198
+            7: name: "reverse", pos: 5, start_op: 0, end_op: 200
+            8: name: "slave_name_lose", pos: 4, start_op: 0, end_op: 200
+            9: name: "master_name_lose", pos: 3, start_op: 0, end_op: 200
+            10: name: "slave_name_win", pos: 2, start_op: 0, end_op: 200
+            11: name: "master_name_win", pos: 1, start_op: 0, end_op: 200
+            12: name: "this", pos: 0, start_op: 0, end_op: 200
+          ]
+        Line Informations: [
+            0: line: 42, op: 1
+            1: line: 44, op: 5
+            2: line: 45, op: 7
+            3: line: 46, op: 21
+            4: line: 48, op: 26
+            5: line: 49, op: 26
+            6: line: 52, op: 29
+            7: line: 53, op: 31
+            8: line: 55, op: 33
+            9: line: 57, op: 38
+            10: line: 74, op: 40
+            11: line: 75, op: 49
+            12: line: 77, op: 58
+            13: line: 79, op: 65
+            14: line: 80, op: 74
+            15: line: 82, op: 83
+            16: line: 84, op: 90
+            17: line: 85, op: 92
+            18: line: 87, op: 97
+            19: line: 89, op: 106
+            20: line: 91, op: 115
+            21: line: 93, op: 124
+            22: line: 97, op: 138
+            23: line: 100, op: 153
+            24: line: 102, op: 162
+            25: line: 103, op: 165
+            26: line: 105, op: 172
+            27: line: 108, op: 186
+            28: line: 110, op: 193
+            29: line: 112, op: 196
+            30: line: 113, op: 199
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 42)
+            1:  prepcallk(s6, "GetResultMessageTarget", s0, s7)
+            2:  dmove(s8, s1, s9, s2)
+            3:  dmove(s10, s3, s11, s4)
+            4:  call(6, s6, s7, 5)
+            5:  line(-, 44)
+            6:  newobj(s7, 0, 0, 0)
+            7:  line(-, 45)
+            8:  loadroot(s8)
+            9:  getk(s8, "manbow", s8)
+            10:  prepcallk(s8, "LoadCSVtoTable", s8, s9)
+            11:  load(s10, "data/win/message/")
+            12:  add(s10, s1, s10)
+            13:  load(s11, ".csv")
+            14:  add(s10, s11, s10)
+            15:  move(s11, s7)
+            16:  call(8, s8, s9, 3)
+            17:  not(s8, s8)
+            18:  jz(s8, 2)
+            19:  loadbool(s8, 0)
+            20:  return(1, 8)
+            21:  line(-, 46)
+            22:  exists(s8, s7, s6)
+            23:  not(s8, s8)
+            24:  jz(s8, 4)
+            25:  line(-, 48)
+            26:  line(-, 49)
+            27:  loadbool(s8, 0)
+            28:  return(1, 8)
+            29:  line(-, 52)
+            30:  get(s8, s7, s6)
+            31:  line(-, 53)
+            32:  newobj(s9, 0, 0, 1)
+            33:  line(-, 55)
+            34:  prepcallk(s10, "push", s9, s11)
+            35:  newobj(s12, 1, 0, 1)
+            36:  appendarray(s12, 6, 1)
+            37:  call(255, s10, s11, 2)
+            38:  line(-, 57)
+            39:  closure(s10, 0)
+            40:  line(-, 74)
+            41:  dmove(s11, s0, s12, s2)
+            42:  dload(s13, "win_back", s14, "wb_default")
+            43:  get(s14, s8, s14)
+            44:  jz(s5, 2)
+            45:  loadint(s15, 1)
+            46:  jmp(-, 1)
+            47:  loadint(s15, 0)
+            48:  call(255, s10, s11, 5)
+            49:  line(-, 75)
+            50:  dmove(s11, s0, s12, s1)
+            51:  dload(s13, "win_front", s14, "wf_default")
+            52:  get(s14, s8, s14)
+            53:  jz(s5, 2)
+            54:  loadint(s15, 1)
+            55:  jmp(-, 1)
+            56:  loadint(s15, 0)
+            57:  call(255, s10, s11, 5)
+            58:  line(-, 77)
+            59:  prepcallk(s11, "push", s9, s12)
+            60:  newobj(s13, 3, 0, 1)
+            61:  appendarray(s13, 11, 1)
+            62:  appendarray(s13, 12, 1)
+            63:  appendarray(s13, 15, 2)
+            64:  call(255, s11, s12, 2)
+            65:  line(-, 79)
+            66:  dmove(s11, s0, s12, s4)
+            67:  dload(s13, "lose_back", s14, "lb_default")
+            68:  get(s14, s8, s14)
+            69:  jz(s5, 2)
+            70:  loadint(s15, 0)
+            71:  jmp(-, 1)
+            72:  loadint(s15, 1)
+            73:  call(255, s10, s11, 5)
+            74:  line(-, 80)
+            75:  dmove(s11, s0, s12, s3)
+            76:  dload(s13, "lose_front", s14, "lf_default")
+            77:  get(s14, s8, s14)
+            78:  jz(s5, 2)
+            79:  loadint(s15, 0)
+            80:  jmp(-, 1)
+            81:  loadint(s15, 1)
+            82:  call(255, s10, s11, 5)
+            83:  line(-, 82)
+            84:  prepcallk(s11, "push", s9, s12)
+            85:  newobj(s13, 3, 0, 1)
+            86:  appendarray(s13, 11, 1)
+            87:  appendarray(s13, 12, 1)
+            88:  appendarray(s13, 45, 2)
+            89:  call(255, s11, s12, 2)
+            90:  line(-, 84)
+            91:  load(s11, "")
+            92:  line(-, 85)
+            93:  loadint(s12, 0)
+            94:  loadint(s13, 3)
+            95:  jcmp(s13, 90, s12, CMP_L)
+            96:  line(-, 87)
+            97:  load(s13, "message")
+            98:  add(s13, s12, s13)
+            99:  get(s13, s8, s13)
+            100:  prepcallk(s13, "len", s13, s14)
+            101:  call(13, s13, s14, 1)
+            102:  loadint(s14, 0)
+            103:  eq(s13, 14, s13, 0)
+            104:  jz(s13, 1)
+            105:  jmp(-, 78)
+            106:  line(-, 89)
+            107:  load(s13, "face")
+            108:  add(s13, s12, s13)
+            109:  get(s13, s8, s13)
+            110:  prepcallk(s13, "len", s13, s14)
+            111:  call(13, s13, s14, 1)
+            112:  loadint(s14, 0)
+            113:  jcmp(s14, 39, s13, CMP_G)
+            114:  line(-, 91)
+            115:  load(s13, "name")
+            116:  add(s13, s12, s13)
+            117:  get(s13, s8, s13)
+            118:  prepcallk(s13, "len", s13, s14)
+            119:  call(13, s13, s14, 1)
+            120:  loadint(s14, 0)
+            121:  eq(s13, 14, s13, 0)
+            122:  jz(s13, 14)
+            123:  line(-, 93)
+            124:  prepcallk(s13, "push", s9, s14)
+            125:  newobj(s15, 6, 0, 1)
+            126:  appendarray(s15, 11, 1)
+            127:  appendarray(s15, 21, 1)
+            128:  appendarray(s15, 11, 0)
+            129:  load(s16, "face")
+            130:  add(s16, s12, s16)
+            131:  get(s16, s8, s16)
+            132:  appendarray(s15, 16, 0)
+            133:  appendarray(s15, 0, 2)
+            134:  appendarray(s15, 0, 2)
+            135:  call(255, s13, s14, 2)
+            136:  jmp(-, 16)
+            137:  line(-, 97)
+            138:  prepcallk(s13, "push", s9, s14)
+            139:  newobj(s15, 6, 0, 1)
+            140:  appendarray(s15, 11, 1)
+            141:  appendarray(s15, 21, 1)
+            142:  load(s16, "name")
+            143:  add(s16, s12, s16)
+            144:  get(s16, s8, s16)
+            145:  appendarray(s15, 16, 0)
+            146:  load(s16, "face")
+            147:  add(s16, s12, s16)
+            148:  get(s16, s8, s16)
+            149:  appendarray(s15, 16, 0)
+            150:  appendarray(s15, 0, 2)
+            151:  appendarray(s15, 0, 2)
+            152:  call(255, s13, s14, 2)
+            153:  line(-, 100)
+            154:  load(s13, "name")
+            155:  add(s13, s12, s13)
+            156:  get(s13, s8, s13)
+            157:  prepcallk(s13, "len", s13, s14)
+            158:  call(13, s13, s14, 1)
+            159:  loadint(s14, 0)
+            160:  jcmp(s14, 11, s13, CMP_G)
+            161:  line(-, 102)
+            162:  load(s13, "name")
+            163:  add(s13, s12, s13)
+            164:  get(s11, s8, s13)
+            165:  line(-, 103)
+            166:  prepcallk(s13, "push", s9, s14)
+            167:  newobj(s15, 3, 0, 1)
+            168:  appendarray(s15, 11, 1)
+            169:  appendarray(s15, 22, 1)
+            170:  appendarray(s15, 11, 0)
+            171:  call(255, s13, s14, 2)
+            172:  line(-, 105)
+            173:  prepcallk(s13, "push", s9, s14)
+            174:  newobj(s15, 2, 0, 1)
+            175:  load(s16, "message")
+            176:  add(s16, s12, s16)
+            177:  get(s16, s8, s16)
+            178:  appendarray(s15, 16, 0)
+            179:  load(s16, "balloon")
+            180:  add(s16, s12, s16)
+            181:  get(s16, s8, s16)
+            182:  appendarray(s15, 16, 0)
+            183:  call(255, s13, s14, 2)
+            184:  incl(12, s12, 0, 1)
+            185:  jmp(-, -92)
+            186:  line(-, 108)
+            187:  prepcallk(s12, "push", s9, s13)
+            188:  newobj(s14, 3, 0, 1)
+            189:  appendarray(s14, 11, 1)
+            190:  appendarray(s14, 24, 1)
+            191:  appendarray(s14, 25, 1)
+            192:  call(255, s12, s13, 2)
+            193:  line(-, 110)
+            194:  load(s12, "command_line")
+            195:  set(s255, s0, s12, s9)
+            196:  line(-, 112)
+            197:  loadbool(s12, 1)
+            198:  return(1, 12)
+            199:  line(-, 113)
+            200:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 16
+                nparameters: 5
+                noutervals: 2
+                nlocalvarinfos: 7
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 86
+                nfunctions: 0
+                Literals: [
+                    0: "null"
+                    1: "default"
+                    2: "loser"
+                    3: "winner"
+                    4: "push"
+                    5: ""
+                    6: "LoadImageDef"
+                    7: "data/event/pic/"
+                    8: "/face_r.pat"
+                    9: "/face.pat"
+                    10: "DefineObject"
+                    11: "true"
+                    12: "false"
+                    13: "ImageDef"
+                    14: "Show"
+                    15: "SetFocus"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "src_name"
+                    2: "_name"
+                    3: "_face"
+                    4: "side"
+                  ]
+                Outer Values: [
+                    0: type: otLOCAL, object: 8, name: "src"
+                    1: type: otLOCAL, object: 9, name: "c"
+                  ]
+                Local variables informations: [
+                    0: name: "group", pos: 6, start_op: 20, end_op: 83
+                    1: name: "n", pos: 5, start_op: 15, end_op: 83
+                    2: name: "side", pos: 4, start_op: 0, end_op: 85
+                    3: name: "_face", pos: 3, start_op: 0, end_op: 85
+                    4: name: "_name", pos: 2, start_op: 0, end_op: 85
+                    5: name: "src_name", pos: 1, start_op: 0, end_op: 85
+                    6: name: "this", pos: 0, start_op: 0, end_op: 85
+                  ]
+                Line Informations: [
+                    0: line: 59, op: 1
+                    1: line: 61, op: 6
+                    2: line: 63, op: 15
+                    3: line: 65, op: 20
+                    4: line: 66, op: 36
+                    5: line: 68, op: 57
+                    6: line: 70, op: 68
+                    7: line: 72, op: 76
+                    8: line: 73, op: 84
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 59)
+                    1:  getouter(s5, 0)
+                    2:  get(s5, s5, s2)
+                    3:  eq(s5, 0, s5, 255)
+                    4:  jz(s5, 1)
+                    5:  return(255, 0)
+                    6:  line(-, 61)
+                    7:  getouter(s5, 0)
+                    8:  get(s5, s5, s2)
+                    9:  eq(s5, 1, s5, 255)
+                    10:  jz(s5, 2)
+                    11:  move(s5, s1)
+                    12:  jmp(-, 2)
+                    13:  getouter(s6, 0)
+                    14:  get(s5, s6, s2)
+                    15:  line(-, 63)
+                    16:  jz(s4, 2)
+                    17:  load(s6, "loser")
+                    18:  jmp(-, 1)
+                    19:  load(s6, "winner")
+                    20:  line(-, 65)
+                    21:  getouter(s7, 1)
+                    22:  prepcallk(s7, "push", s7, s8)
+                    23:  newobj(s9, 4, 0, 1)
+                    24:  appendarray(s9, 5, 1)
+                    25:  appendarray(s9, 6, 1)
+                    26:  appendarray(s9, 2, 0)
+                    27:  load(s10, "data/event/pic/")
+                    28:  add(s10, s5, s10)
+                    29:  jz(s4, 2)
+                    30:  load(s11, "/face_r.pat")
+                    31:  jmp(-, 1)
+                    32:  load(s11, "/face.pat")
+                    33:  add(s10, s11, s10)
+                    34:  appendarray(s9, 10, 0)
+                    35:  call(255, s7, s8, 2)
+                    36:  line(-, 66)
+                    37:  getouter(s7, 1)
+                    38:  prepcallk(s7, "push", s7, s8)
+                    39:  newobj(s9, 8, 0, 1)
+                    40:  appendarray(s9, 5, 1)
+                    41:  appendarray(s9, 10, 1)
+                    42:  appendarray(s9, 2, 0)
+                    43:  appendarray(s9, 2, 0)
+                    44:  appendarray(s9, 6, 0)
+                    45:  loadint(s10, 240)
+                    46:  loadint(s11, 800)
+                    47:  mul(s11, s11, s4)
+                    48:  add(s10, s11, s10)
+                    49:  appendarray(s9, 10, 0)
+                    50:  appendarray(s9, 0, 2)
+                    51:  jz(s4, 2)
+                    52:  load(s10, "true")
+                    53:  jmp(-, 1)
+                    54:  load(s10, "false")
+                    55:  appendarray(s9, 10, 0)
+                    56:  call(255, s7, s8, 2)
+                    57:  line(-, 68)
+                    58:  getouter(s7, 1)
+                    59:  prepcallk(s7, "push", s7, s8)
+                    60:  newobj(s9, 6, 0, 1)
+                    61:  appendarray(s9, 5, 1)
+                    62:  appendarray(s9, 13, 1)
+                    63:  appendarray(s9, 2, 0)
+                    64:  appendarray(s9, 3, 0)
+                    65:  appendarray(s9, 0, 2)
+                    66:  appendarray(s9, 0, 2)
+                    67:  call(255, s7, s8, 2)
+                    68:  line(-, 70)
+                    69:  getouter(s7, 1)
+                    70:  prepcallk(s7, "push", s7, s8)
+                    71:  newobj(s9, 3, 0, 1)
+                    72:  appendarray(s9, 5, 1)
+                    73:  appendarray(s9, 14, 1)
+                    74:  appendarray(s9, 2, 0)
+                    75:  call(255, s7, s8, 2)
+                    76:  line(-, 72)
+                    77:  getouter(s7, 1)
+                    78:  prepcallk(s7, "push", s7, s8)
+                    79:  newobj(s9, 3, 0, 1)
+                    80:  appendarray(s9, 5, 1)
+                    81:  appendarray(s9, 15, 1)
+                    82:  appendarray(s9, 2, 0)
+                    83:  call(255, s7, s8, 2)
+                    84:  line(-, 73)
+                    85:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 13
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 17
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "GetResultMessageTarget"
+        nliterals: 6
+        nparameters: 5
+        noutervals: 0
+        nlocalvarinfos: 17
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 86
+        nfunctions: 0
+        Literals: [
+            0: "win_rate"
+            1: "character_id"
+            2: "cond"
+            3: "rand"
+            4: "rate"
+            5: "common"
+          ]
+        Parameters: [
+            0: "this"
+            1: "master_name_win"
+            2: "slave_name_win"
+            3: "master_name_lose"
+            4: "slave_name_lose"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "@ITERATOR@", pos: 12, start_op: 26, end_op: 50
+            1: name: "v", pos: 11, start_op: 26, end_op: 50
+            2: name: "@INDEX@", pos: 10, start_op: 25, end_op: 50
+            3: name: "v", pos: 14, start_op: 61, end_op: 69
+            4: name: "i", pos: 13, start_op: 60, end_op: 69
+            5: name: "result", pos: 11, start_op: 58, end_op: 83
+            6: name: "r", pos: 10, start_op: 56, end_op: 83
+            7: name: "t2", pos: 9, start_op: 24, end_op: 83
+            8: name: "cond2", pos: 8, start_op: 21, end_op: 83
+            9: name: "cond1", pos: 7, start_op: 15, end_op: 83
+            10: name: "cond0", pos: 6, start_op: 9, end_op: 83
+            11: name: "t", pos: 5, start_op: 3, end_op: 83
+            12: name: "slave_name_lose", pos: 4, start_op: 0, end_op: 85
+            13: name: "master_name_lose", pos: 3, start_op: 0, end_op: 85
+            14: name: "slave_name_win", pos: 2, start_op: 0, end_op: 85
+            15: name: "master_name_win", pos: 1, start_op: 0, end_op: 85
+            16: name: "this", pos: 0, start_op: 0, end_op: 85
+          ]
+        Line Informations: [
+            0: line: 118, op: 1
+            1: line: 119, op: 3
+            2: line: 120, op: 9
+            3: line: 121, op: 15
+            4: line: 122, op: 21
+            5: line: 123, op: 24
+            6: line: 125, op: 29
+            7: line: 127, op: 47
+            8: line: 128, op: 48
+            9: line: 132, op: 51
+            10: line: 133, op: 56
+            11: line: 134, op: 58
+            12: line: 136, op: 64
+            13: line: 138, op: 66
+            14: line: 139, op: 67
+            15: line: 142, op: 70
+            16: line: 144, op: 84
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 118)
+            1:  getk(s5, "win_rate", s0)
+            2:  get(s5, s5, s1)
+            3:  line(-, 119)
+            4:  loadint(s6, 1)
+            5:  loadroot(s7)
+            6:  getk(s7, "character_id", s7)
+            7:  get(s7, s7, s3)
+            8:  bitw(s6, s7, s6, BW_SHIFTL)
+            9:  line(-, 120)
+            10:  loadint(s7, 1)
+            11:  loadroot(s8)
+            12:  getk(s8, "character_id", s8)
+            13:  get(s8, s8, s4)
+            14:  bitw(s7, s8, s7, BW_SHIFTL)
+            15:  line(-, 121)
+            16:  loadint(s8, 1)
+            17:  loadroot(s9)
+            18:  getk(s9, "character_id", s9)
+            19:  get(s9, s9, s2)
+            20:  bitw(s8, s9, s8, BW_SHIFTL)
+            21:  line(-, 122)
+            22:  loadint(s9, 0)
+            23:  get(s9, s5, s9)
+            24:  line(-, 123)
+            25:  loadnulls(s10, 3)
+            26:  foreach(s5, 24, s10)
+            27:  postforeach(s5, 24)
+            28:  line(-, 125)
+            29:  getk(s13, "cond", s11)
+            30:  loadint(s14, 0)
+            31:  get(s13, s13, s14)
+            32:  bitw(s13, s6, s13, BW_AND)
+            33:  and(s13, 11, s13)
+            34:  getk(s14, "cond", s11)
+            35:  loadint(s15, 1)
+            36:  get(s14, s14, s15)
+            37:  bitw(s14, s7, s14, BW_AND)
+            38:  and(s14, 5, s14)
+            39:  getk(s15, "cond", s11)
+            40:  loadint(s16, 2)
+            41:  get(s15, s15, s16)
+            42:  bitw(s15, s8, s15, BW_AND)
+            43:  move(s14, s15)
+            44:  move(s13, s14)
+            45:  jz(s13, 4)
+            46:  line(-, 127)
+            47:  move(s9, s11)
+            48:  line(-, 128)
+            49:  jmp(-, 1)
+            50:  jmp(-, -25)
+            51:  line(-, 132)
+            52:  prepcallk(s10, "rand", s0, s11)
+            53:  call(10, s10, s11, 1)
+            54:  loadint(s11, 100)
+            55:  mod(s10, s11, s10)
+            56:  line(-, 133)
+            57:  loadint(s11, 0)
+            58:  line(-, 134)
+            59:  getk(s12, "rate", s9)
+            60:  loadnulls(s13, 3)
+            61:  foreach(s12, 8, s13)
+            62:  postforeach(s12, 8)
+            63:  line(-, 136)
+            64:  jcmp(s14, 4, s10, CMP_L)
+            65:  line(-, 138)
+            66:  move(s11, s13)
+            67:  line(-, 139)
+            68:  jmp(-, 1)
+            69:  jmp(-, -9)
+            70:  line(-, 142)
+            71:  loadint(s12, 5)
+            72:  jcmp(s12, 5, s11, CMP_L)
+            73:  load(s13, "common")
+            74:  loadint(s14, 1)
+            75:  add(s14, s11, s14)
+            76:  add(s12, s14, s13)
+            77:  jmp(-, 5)
+            78:  loadint(s13, 1)
+            79:  add(s13, s13, s11)
+            80:  loadint(s14, 5)
+            81:  sub(s13, s14, s13)
+            82:  add(s12, s13, s3)
+            83:  return(1, 12)
+            84:  line(-, 144)
+            85:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 17
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 20
+bgenerator: 0
+varparams: 1
+

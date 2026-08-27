@@ -1,0 +1,785 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\flandre\object_player\p_flandre_fireball.nut: 
+sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+name: "main"
+nliterals: 14
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 37
+nfunctions: 8
+Literals: [
+    0: "construct"
+    1: "destruct"
+    2: "message"
+    3: "lib"
+    4: "shot"
+    5: "common_message"
+    6: "interactive"
+    7: "kill_move"
+    8: "on_hit_target"
+    9: "on_hit_playershot_kill"
+    10: "on_hit_ground"
+    11: "on_graze_target"
+    12: "determination"
+    13: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 36
+    1: name: "this", pos: 0, start_op: 0, end_op: 36
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 42, op: 3
+    2: line: 48, op: 6
+    3: line: 50, op: 12
+    4: line: 55, op: 15
+    5: line: 72, op: 18
+    6: line: 74, op: 24
+    7: line: 91, op: 27
+    8: line: 94, op: 30
+    9: line: 98, op: 33
+    10: line: 108, op: 36
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "destruct")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "message")
+    7:  loadroot(s3)
+    8:  getk(s3, "lib", s3)
+    9:  getk(s3, "shot", s3)
+    10:  getk(s3, "common_message", s3)
+    11:  newslot(s255, s0, s2, s3)
+    12:  load(s2, "interactive")
+    13:  closure(s3, 2)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "kill_move")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_hit_target")
+    19:  loadroot(s3)
+    20:  getk(s3, "lib", s3)
+    21:  getk(s3, "shot", s3)
+    22:  getk(s3, "on_hit_playershot_kill", s3)
+    23:  newslot(s255, s0, s2, s3)
+    24:  load(s2, "on_hit_ground")
+    25:  closure(s3, 4)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_graze_target")
+    28:  closure(s3, 5)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "determination")
+    31:  closure(s3, 6)
+    32:  newslot(s2, s0, s2, s3)
+    33:  load(s2, "plot")
+    34:  closure(s3, 7)
+    35:  newslot(s2, s0, s2, s3)
+    36:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "construct"
+        nliterals: 19
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 62
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "attack_power"
+            2: "score"
+            3: "push_x"
+            4: "push_y"
+            5: "vx"
+            6: "vy"
+            7: "v"
+            8: "direction_h"
+            9: "obj"
+            10: "player"
+            11: "frameset"
+            12: "_composition_create_framepointer"
+            13: "resource_pool"
+            14: "player_flandre/fire_ball"
+            15: "maskbits"
+            16: "state"
+            17: "h_entity"
+            18: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 61
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 8, op: 12
+            6: line: 13, op: 15
+            7: line: 14, op: 18
+            8: line: 15, op: 21
+            9: line: 16, op: 24
+            10: line: 18, op: 29
+            11: line: 19, op: 37
+            12: line: 21, op: 40
+            13: line: 33, op: 43
+            14: line: 40, op: 61
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "attack_power")
+            4:  loadint(s2, 3)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "score")
+            7:  loadint(s2, 100)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "push_x")
+            10:  loadfloat(s2, -3)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "push_y")
+            13:  loadfloat(s2, -5)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "vx")
+            16:  loadint(s2, 15)
+            17:  newslot(s255, s0, s1, s2)
+            18:  load(s1, "vy")
+            19:  loadint(s2, 0)
+            20:  newslot(s255, s0, s1, s2)
+            21:  load(s1, "v")
+            22:  loadfloat(s2, 0)
+            23:  newslot(s255, s0, s1, s2)
+            24:  dload(s1, "direction_h", s2, "obj")
+            25:  get(s2, s0, s2)
+            26:  getk(s2, "player", s2)
+            27:  getk(s2, "direction_h", s2)
+            28:  newslot(s255, s0, s1, s2)
+            29:  load(s1, "frameset")
+            30:  loadroot(s2)
+            31:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            32:  loadroot(s4)
+            33:  getk(s4, "resource_pool", s4)
+            34:  getk(s4, "player_flandre/fire_ball", s4)
+            35:  call(2, s2, s3, 2)
+            36:  newslot(s255, s0, s1, s2)
+            37:  load(s1, "maskbits")
+            38:  loadint(s2, 8)
+            39:  newslot(s255, s0, s1, s2)
+            40:  load(s1, "state")
+            41:  closure(s2, 0)
+            42:  newslot(s255, s0, s1, s2)
+            43:  load(s1, "h_entity")
+            44:  loadroot(s2)
+            45:  prepcallk(s2, "_vspace_regist", s2, s3)
+            46:  move(s4, s0)
+            47:  loadint(s5, 1)
+            48:  loadint(s6, 2)
+            49:  bitw(s5, s6, s5, BW_OR)
+            50:  loadint(s6, 8)
+            51:  bitw(s5, s6, s5, BW_OR)
+            52:  loadint(s6, 64)
+            53:  bitw(s5, s6, s5, BW_OR)
+            54:  loadint(s6, 128)
+            55:  bitw(s5, s6, s5, BW_OR)
+            56:  loadint(s6, 16)
+            57:  bitw(s5, s6, s5, BW_OR)
+            58:  loadint(s6, 0)
+            59:  call(2, s2, s3, 4)
+            60:  newslot(s255, s0, s1, s2)
+            61:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+                name: null
+                nliterals: 11
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 25
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "lib"
+                    2: "check"
+                    3: "in_world"
+                    4: "kill"
+                    5: "x"
+                    6: "vx"
+                    7: "y"
+                    8: "vy"
+                    9: "_vspace_commit"
+                    10: "h_entity"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 24
+                  ]
+                Line Informations: [
+                    0: line: 21, op: 0
+                    1: line: 22, op: 0
+                    2: line: 23, op: 2
+                    3: line: 25, op: 11
+                    4: line: 26, op: 13
+                    5: line: 28, op: 14
+                    6: line: 29, op: 17
+                    7: line: 30, op: 20
+                    8: line: 31, op: 24
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  loadroot(s1)
+                    3:  getk(s1, "lib", s1)
+                    4:  getk(s1, "check", s1)
+                    5:  prepcallk(s1, "in_world", s1, s2)
+                    6:  move(s3, s0)
+                    7:  loadint(s4, 32)
+                    8:  call(1, s1, s2, 3)
+                    9:  not(s1, s1)
+                    10:  jz(s1, 3)
+                    11:  prepcallk(s1, "kill", s0, s2)
+                    12:  call(255, s1, s2, 1)
+                    13:  return(255, 0)
+                    14:  dload(s1, "x", s2, "vx")
+                    15:  get(s2, s0, s2)
+                    16:  comparith(s1, 2, s1, 43)
+                    17:  dload(s1, "y", s2, "vy")
+                    18:  get(s2, s0, s2)
+                    19:  comparith(s1, 2, s1, 43)
+                    20:  loadroot(s1)
+                    21:  prepcallk(s1, "_vspace_commit", s1, s2)
+                    22:  getk(s3, "h_entity", s0)
+                    23:  call(255, s1, s2, 2)
+                    24:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "destruct"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "lib"
+            2: "shot"
+            3: "common_destruct"
+            4: "call"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 43, op: 0
+            1: line: 44, op: 0
+            2: line: 45, op: 3
+            3: line: 46, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  getk(s1, "lib", s1)
+            5:  getk(s1, "shot", s1)
+            6:  getk(s1, "common_destruct", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  call(255, s1, s2, 2)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "interactive"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 6
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 5
+          ]
+        Line Informations: [
+            0: line: 51, op: 0
+            1: line: 52, op: 0
+            2: line: 53, op: 3
+            3: line: 54, op: 5
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  prepcallk(s1, "state", s0, s2)
+            4:  call(255, s1, s2, 1)
+            5:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "kill_move"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 1
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "frameset"
+            3: "_composition_create_framepointer"
+            4: "resource_pool"
+            5: "player_flandre/fire_ball_hit"
+            6: "count"
+            7: "vx"
+            8: "vy"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 55, op: 0
+            1: line: 56, op: 0
+            2: line: 57, op: 2
+            3: line: 58, op: 6
+            4: line: 59, op: 9
+            5: line: 60, op: 17
+            6: line: 61, op: 20
+            7: line: 62, op: 26
+            8: line: 70, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 27)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "frameset")
+            10:  loadroot(s2)
+            11:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            12:  loadroot(s4)
+            13:  getk(s4, "resource_pool", s4)
+            14:  getk(s4, "player_flandre/fire_ball_hit", s4)
+            15:  call(2, s2, s3, 2)
+            16:  set(s255, s0, s1, s2)
+            17:  load(s1, "count")
+            18:  loadint(s2, 0)
+            19:  set(s255, s0, s1, s2)
+            20:  load(s1, "vx")
+            21:  loadfloat(s2, 0.1)
+            22:  comparith(s1, 2, s1, 42)
+            23:  load(s1, "vy")
+            24:  loadfloat(s2, 0)
+            25:  comparith(s1, 2, s1, 42)
+            26:  load(s1, "state")
+            27:  closure(s2, 0)
+            28:  set(s255, s0, s1, s2)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 10
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 9
+                  ]
+                Line Informations: [
+                    0: line: 62, op: 0
+                    1: line: 63, op: 0
+                    2: line: 64, op: 2
+                    3: line: 65, op: 6
+                    4: line: 66, op: 8
+                    5: line: 68, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 20)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 3)
+                    6:  prepcallk(s1, "kill", s0, s2)
+                    7:  call(255, s1, s2, 1)
+                    8:  return(255, 0)
+                    9:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "on_hit_ground"
+        nliterals: 10
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 1
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "count"
+            3: "vx"
+            4: "vy"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_reimu/shot_c_air_hit"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 29
+            1: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 74, op: 0
+            1: line: 75, op: 0
+            2: line: 76, op: 2
+            3: line: 77, op: 6
+            4: line: 78, op: 9
+            5: line: 79, op: 12
+            6: line: 80, op: 18
+            7: line: 81, op: 26
+            8: line: 89, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "h_entity", s0)
+            1:  jz(s2, 27)
+            2:  loadroot(s2)
+            3:  prepcallk(s2, "_vspace_unregist", s2, s3)
+            4:  getk(s4, "h_entity", s0)
+            5:  call(255, s2, s3, 2)
+            6:  load(s2, "h_entity")
+            7:  loadnulls(s3, 1)
+            8:  set(s255, s0, s2, s3)
+            9:  load(s2, "count")
+            10:  loadint(s3, 0)
+            11:  set(s255, s0, s2, s3)
+            12:  load(s2, "vx")
+            13:  loadint(s3, 0)
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "vy")
+            16:  loadint(s3, 0)
+            17:  set(s255, s0, s2, s3)
+            18:  load(s2, "frameset")
+            19:  loadroot(s3)
+            20:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            21:  loadroot(s5)
+            22:  getk(s5, "resource_pool", s5)
+            23:  getk(s5, "player_reimu/shot_c_air_hit", s5)
+            24:  call(3, s3, s4, 2)
+            25:  set(s255, s0, s2, s3)
+            26:  load(s2, "state")
+            27:  closure(s3, 0)
+            28:  set(s255, s0, s2, s3)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 10
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 9
+                  ]
+                Line Informations: [
+                    0: line: 81, op: 0
+                    1: line: 82, op: 0
+                    2: line: 83, op: 2
+                    3: line: 84, op: 6
+                    4: line: 85, op: 8
+                    5: line: 87, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 15)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 3)
+                    6:  prepcallk(s1, "kill", s0, s2)
+                    7:  call(255, s1, s2, 1)
+                    8:  return(255, 0)
+                    9:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 91, op: 0
+            1: line: 92, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 95, op: 0
+            1: line: 96, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\flandre\object_player\p_flandre_fireball.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s2_add"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "direction_h"
+            6: "rotate"
+            7: "angle"
+            8: "translate"
+            9: "x"
+            10: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 99, op: 0
+            1: line: 100, op: 0
+            2: line: 102, op: 4
+            3: line: 103, op: 8
+            4: line: 104, op: 13
+            5: line: 105, op: 17
+            6: line: 108, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s2_add", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s2_add", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "direction_h", s0)
+            11:  loadint(s4, 1)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s2_add", s0)
+            14:  prepcallk(s1, "rotate", s1, s2)
+            15:  getk(s3, "angle", s0)
+            16:  call(255, s1, s2, 2)
+            17:  getk(s1, "layer_s2_add", s0)
+            18:  prepcallk(s1, "translate", s1, s2)
+            19:  getk(s3, "x", s0)
+            20:  getk(s4, "y", s0)
+            21:  call(255, s1, s2, 3)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

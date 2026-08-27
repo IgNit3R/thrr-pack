@@ -1,0 +1,1334 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\system\select\script\story_select_action.nut: 
+sourcename: ""
+name: "main"
+nliterals: 49
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 5
+nlineinfos: 32
+ndefaultparams: 0
+ninstructions: 158
+nfunctions: 10
+Literals: [
+    0: "story_list_base"
+    1: "reimu"
+    2: "marisa"
+    3: "nitori"
+    4: "mamizou"
+    5: "miko"
+    6: "futo"
+    7: "udonge"
+    8: "usami"
+    9: "tenshi"
+    10: "yukari"
+    11: "jyoon"
+    12: "slave_list"
+    13: "stage_num"
+    14: "manbow"
+    15: "LoadCSVtoArray"
+    16: "data/story/stage_list/"
+    17: ".csv"
+    18: "slave_1p"
+    19: "len"
+    20: "story_list"
+    21: "difficulty"
+    22: "device"
+    23: "device_id"
+    24: "count"
+    25: "help"
+    26: "B1"
+    27: "ok"
+    28: "B2"
+    29: "cancel"
+    30: "UD"
+    31: "select"
+    32: "cursor_story"
+    33: "cursor_stage"
+    34: "cursor_spell"
+    35: "prev_story"
+    36: "master"
+    37: "val"
+    38: "state"
+    39: "Initialize"
+    40: "Terminate"
+    41: "Resume"
+    42: "Suspend"
+    43: "Update"
+    44: "SelectStory"
+    45: "SelectStage"
+    46: "SelectSpell"
+    47: "SelectEnd"
+    48: "BeginBattle"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "t", pos: 6, start_op: 30, end_op: 50
+    1: name: "v", pos: 4, start_op: 26, end_op: 51
+    2: name: "@INDEX@", pos: 3, start_op: 25, end_op: 51
+    3: name: "vargv", pos: 1, start_op: 0, end_op: 157
+    4: name: "this", pos: 0, start_op: 0, end_op: 157
+  ]
+Line Informations: [
+    0: line: 17, op: 0
+    1: line: 18, op: 15
+    2: line: 19, op: 19
+    3: line: 20, op: 23
+    4: line: 22, op: 29
+    5: line: 23, op: 30
+    6: line: 24, op: 40
+    7: line: 25, op: 46
+    8: line: 28, op: 52
+    9: line: 30, op: 56
+    10: line: 32, op: 60
+    11: line: 33, op: 64
+    12: line: 35, op: 68
+    13: line: 37, op: 72
+    14: line: 39, op: 86
+    15: line: 40, op: 90
+    16: line: 41, op: 94
+    17: line: 42, op: 98
+    18: line: 44, op: 102
+    19: line: 45, op: 106
+    20: line: 47, op: 111
+    21: line: 50, op: 115
+    22: line: 90, op: 120
+    23: line: 103, op: 124
+    24: line: 123, op: 128
+    25: line: 134, op: 132
+    26: line: 147, op: 136
+    27: line: 182, op: 140
+    28: line: 197, op: 144
+    29: line: 213, op: 148
+    30: line: 223, op: 152
+    31: line: 253, op: 156
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 17)
+    1:  load(s2, "story_list_base")
+    2:  newobj(s3, 11, 0, 1)
+    3:  appendarray(s3, 1, 1)
+    4:  appendarray(s3, 2, 1)
+    5:  appendarray(s3, 3, 1)
+    6:  appendarray(s3, 4, 1)
+    7:  appendarray(s3, 5, 1)
+    8:  appendarray(s3, 6, 1)
+    9:  appendarray(s3, 7, 1)
+    10:  appendarray(s3, 8, 1)
+    11:  appendarray(s3, 9, 1)
+    12:  appendarray(s3, 10, 1)
+    13:  appendarray(s3, 11, 1)
+    14:  newslot(s255, s0, s2, s3)
+    15:  line(-, 18)
+    16:  load(s2, "slave_list")
+    17:  newobj(s3, 0, 0, 0)
+    18:  newslot(s255, s0, s2, s3)
+    19:  line(-, 19)
+    20:  load(s2, "stage_num")
+    21:  newobj(s3, 0, 0, 0)
+    22:  newslot(s255, s0, s2, s3)
+    23:  line(-, 20)
+    24:  getk(s2, "story_list_base", s0)
+    25:  loadnulls(s3, 3)
+    26:  foreach(s2, 25, s3)
+    27:  postforeach(s2, 25)
+    28:  line(-, 22)
+    29:  newobj(s6, 0, 0, 1)
+    30:  line(-, 23)
+    31:  loadroot(s7)
+    32:  getk(s7, "manbow", s7)
+    33:  prepcallk(s7, "LoadCSVtoArray", s7, s8)
+    34:  load(s9, "data/story/stage_list/")
+    35:  add(s9, s4, s9)
+    36:  load(s10, ".csv")
+    37:  add(s9, s10, s9)
+    38:  move(s10, s6)
+    39:  call(255, s7, s8, 3)
+    40:  line(-, 24)
+    41:  getk(s7, "slave_list", s0)
+    42:  loadint(s8, 0)
+    43:  get(s8, s6, s8)
+    44:  getk(s8, "slave_1p", s8)
+    45:  newslot(s255, s7, s4, s8)
+    46:  line(-, 25)
+    47:  getk(s7, "stage_num", s0)
+    48:  prepcallk(s8, "len", s6, s9)
+    49:  call(8, s8, s9, 1)
+    50:  newslot(s255, s7, s4, s8)
+    51:  jmp(-, -26)
+    52:  line(-, 28)
+    53:  load(s2, "story_list")
+    54:  newobj(s3, 0, 0, 1)
+    55:  newslot(s255, s0, s2, s3)
+    56:  line(-, 30)
+    57:  load(s2, "difficulty")
+    58:  loadint(s3, 0)
+    59:  newslot(s255, s0, s2, s3)
+    60:  line(-, 32)
+    61:  load(s2, "device")
+    62:  loadnulls(s3, 1)
+    63:  newslot(s255, s0, s2, s3)
+    64:  line(-, 33)
+    65:  load(s2, "device_id")
+    66:  loadint(s3, -128)
+    67:  newslot(s255, s0, s2, s3)
+    68:  line(-, 35)
+    69:  load(s2, "count")
+    70:  loadint(s3, 0)
+    71:  newslot(s255, s0, s2, s3)
+    72:  line(-, 37)
+    73:  load(s2, "help")
+    74:  newobj(s3, 8, 0, 1)
+    75:  appendarray(s3, 26, 1)
+    76:  appendarray(s3, 27, 1)
+    77:  loadnulls(s4, 1)
+    78:  appendarray(s3, 4, 0)
+    79:  appendarray(s3, 28, 1)
+    80:  appendarray(s3, 29, 1)
+    81:  loadnulls(s4, 1)
+    82:  appendarray(s3, 4, 0)
+    83:  appendarray(s3, 30, 1)
+    84:  appendarray(s3, 31, 1)
+    85:  newslot(s255, s0, s2, s3)
+    86:  line(-, 39)
+    87:  load(s2, "cursor_story")
+    88:  loadnulls(s3, 1)
+    89:  newslot(s255, s0, s2, s3)
+    90:  line(-, 40)
+    91:  load(s2, "cursor_stage")
+    92:  loadnulls(s3, 1)
+    93:  newslot(s255, s0, s2, s3)
+    94:  line(-, 41)
+    95:  load(s2, "cursor_spell")
+    96:  loadnulls(s3, 1)
+    97:  newslot(s255, s0, s2, s3)
+    98:  line(-, 42)
+    99:  load(s2, "prev_story")
+    100:  loadint(s3, -1)
+    101:  newslot(s255, s0, s2, s3)
+    102:  line(-, 44)
+    103:  load(s2, "master")
+    104:  newobj(s3, 0, 0, 0)
+    105:  newslot(s255, s0, s2, s3)
+    106:  line(-, 45)
+    107:  getk(s2, "master", s0)
+    108:  load(s3, "val")
+    109:  loadint(s4, 0)
+    110:  newslot(s255, s2, s3, s4)
+    111:  line(-, 47)
+    112:  load(s2, "state")
+    113:  loadnulls(s3, 1)
+    114:  newslot(s255, s0, s2, s3)
+    115:  line(-, 50)
+    116:  load(s2, "Initialize")
+    117:  loadint(s3, 0)
+    118:  closure(s3, 0)
+    119:  newslot(s2, s0, s2, s3)
+    120:  line(-, 90)
+    121:  load(s2, "Terminate")
+    122:  closure(s3, 1)
+    123:  newslot(s2, s0, s2, s3)
+    124:  line(-, 103)
+    125:  load(s2, "Resume")
+    126:  closure(s3, 2)
+    127:  newslot(s2, s0, s2, s3)
+    128:  line(-, 123)
+    129:  load(s2, "Suspend")
+    130:  closure(s3, 3)
+    131:  newslot(s2, s0, s2, s3)
+    132:  line(-, 134)
+    133:  load(s2, "Update")
+    134:  closure(s3, 4)
+    135:  newslot(s2, s0, s2, s3)
+    136:  line(-, 147)
+    137:  load(s2, "SelectStory")
+    138:  closure(s3, 5)
+    139:  newslot(s2, s0, s2, s3)
+    140:  line(-, 182)
+    141:  load(s2, "SelectStage")
+    142:  closure(s3, 6)
+    143:  newslot(s2, s0, s2, s3)
+    144:  line(-, 197)
+    145:  load(s2, "SelectSpell")
+    146:  closure(s3, 7)
+    147:  newslot(s2, s0, s2, s3)
+    148:  line(-, 213)
+    149:  load(s2, "SelectEnd")
+    150:  closure(s3, 8)
+    151:  newslot(s2, s0, s2, s3)
+    152:  line(-, 223)
+    153:  load(s2, "BeginBattle")
+    154:  closure(s3, 9)
+    155:  newslot(s2, s0, s2, s3)
+    156:  line(-, 253)
+    157:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Initialize"
+        nliterals: 32
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 20
+        ndefaultparams: 1
+        ninstructions: 115
+        nfunctions: 0
+        Literals: [
+            0: "difficulty"
+            1: "device"
+            2: "device_id"
+            3: "input_all"
+            4: "GetLastDevice"
+            5: "input"
+            6: "CreateSystemInputDevice"
+            7: "count"
+            8: "story_list"
+            9: "story_list_base"
+            10: "savedata"
+            11: "story"
+            12: "available"
+            13: "push"
+            14: "cursor_story"
+            15: "Cursor"
+            16: "len"
+            17: "cursor_spell"
+            18: "cursor_stage"
+            19: "stage"
+            20: "state"
+            21: "SelectStory"
+            22: "anime"
+            23: "action"
+            24: "weakref"
+            25: "manbow"
+            26: "CompileFile"
+            27: "data/system/select/script/story_select_animation.nut"
+            28: "Initialize"
+            29: "loop"
+            30: "AddTask"
+            31: "Begin"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_difficulty"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "v", pos: 4, start_op: 34, end_op: 47
+            1: name: "@INDEX@", pos: 3, start_op: 33, end_op: 47
+            2: name: "_difficulty", pos: 1, start_op: 0, end_op: 114
+            3: name: "this", pos: 0, start_op: 0, end_op: 114
+          ]
+        Line Informations: [
+            0: line: 52, op: 1
+            1: line: 53, op: 1
+            2: line: 55, op: 4
+            3: line: 56, op: 8
+            4: line: 57, op: 15
+            5: line: 59, op: 23
+            6: line: 62, op: 27
+            7: line: 63, op: 31
+            8: line: 65, op: 37
+            9: line: 74, op: 48
+            10: line: 75, op: 58
+            11: line: 76, op: 66
+            12: line: 78, op: 76
+            13: line: 80, op: 80
+            14: line: 81, op: 84
+            15: line: 82, op: 90
+            16: line: 83, op: 97
+            17: line: 84, op: 101
+            18: line: 86, op: 107
+            19: line: 87, op: 113
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 52)
+            1:  line(-, 53)
+            2:  load(s2, "difficulty")
+            3:  set(s255, s0, s2, s1)
+            4:  line(-, 55)
+            5:  load(s2, "device")
+            6:  loadnulls(s3, 1)
+            7:  set(s255, s0, s2, s3)
+            8:  line(-, 56)
+            9:  load(s2, "device_id")
+            10:  loadroot(s3)
+            11:  getk(s3, "input_all", s3)
+            12:  prepcallk(s3, "GetLastDevice", s3, s4)
+            13:  call(3, s3, s4, 1)
+            14:  set(s255, s0, s2, s3)
+            15:  line(-, 57)
+            16:  load(s2, "device")
+            17:  loadroot(s3)
+            18:  getk(s3, "input", s3)
+            19:  prepcallk(s3, "CreateSystemInputDevice", s3, s4)
+            20:  getk(s5, "device_id", s0)
+            21:  call(3, s3, s4, 2)
+            22:  set(s255, s0, s2, s3)
+            23:  line(-, 59)
+            24:  load(s2, "count")
+            25:  loadint(s3, 0)
+            26:  set(s255, s0, s2, s3)
+            27:  line(-, 62)
+            28:  load(s2, "story_list")
+            29:  newobj(s3, 0, 0, 1)
+            30:  set(s255, s0, s2, s3)
+            31:  line(-, 63)
+            32:  getk(s2, "story_list_base", s0)
+            33:  loadnulls(s3, 3)
+            34:  foreach(s2, 13, s3)
+            35:  postforeach(s2, 13)
+            36:  line(-, 65)
+            37:  loadroot(s6)
+            38:  getk(s6, "savedata", s6)
+            39:  getk(s6, "story", s6)
+            40:  get(s6, s6, s4)
+            41:  getk(s6, "available", s6)
+            42:  jz(s6, 4)
+            43:  getk(s6, "story_list", s0)
+            44:  prepcallk(s6, "push", s6, s7)
+            45:  move(s8, s4)
+            46:  call(255, s6, s7, 2)
+            47:  jmp(-, -14)
+            48:  line(-, 74)
+            49:  dload(s2, "cursor_story", s3, "Cursor")
+            50:  prepcall(s3, s3, s0, s4)
+            51:  loadint(s5, 0)
+            52:  getk(s6, "story_list", s0)
+            53:  prepcallk(s6, "len", s6, s7)
+            54:  call(6, s6, s7, 1)
+            55:  getk(s7, "device", s0)
+            56:  call(3, s3, s4, 4)
+            57:  newslot(s255, s0, s2, s3)
+            58:  line(-, 75)
+            59:  dload(s2, "cursor_spell", s3, "Cursor")
+            60:  prepcall(s3, s3, s0, s4)
+            61:  loadint(s5, 0)
+            62:  loadint(s6, 3)
+            63:  getk(s7, "device", s0)
+            64:  call(3, s3, s4, 4)
+            65:  set(s255, s0, s2, s3)
+            66:  line(-, 76)
+            67:  dload(s2, "cursor_stage", s3, "Cursor")
+            68:  prepcall(s3, s3, s0, s4)
+            69:  loadint(s5, 0)
+            70:  getk(s6, "stage", s0)
+            71:  prepcallk(s6, "len", s6, s7)
+            72:  call(6, s6, s7, 1)
+            73:  getk(s7, "device", s0)
+            74:  call(3, s3, s4, 4)
+            75:  set(s255, s0, s2, s3)
+            76:  line(-, 78)
+            77:  dload(s2, "state", s3, "SelectStory")
+            78:  get(s3, s0, s3)
+            79:  set(s255, s0, s2, s3)
+            80:  line(-, 80)
+            81:  load(s2, "anime")
+            82:  newobj(s3, 0, 0, 0)
+            83:  newslot(s255, s0, s2, s3)
+            84:  line(-, 81)
+            85:  getk(s2, "anime", s0)
+            86:  dload(s3, "action", s4, "weakref")
+            87:  prepcall(s4, s4, s0, s5)
+            88:  call(4, s4, s5, 1)
+            89:  newslot(s255, s2, s3, s4)
+            90:  line(-, 82)
+            91:  loadroot(s2)
+            92:  getk(s2, "manbow", s2)
+            93:  prepcallk(s2, "CompileFile", s2, s3)
+            94:  dload(s4, "data/system/select/script/story_select_animation.nut", s5, "anime")
+            95:  get(s5, s0, s5)
+            96:  call(255, s2, s3, 3)
+            97:  line(-, 83)
+            98:  getk(s2, "anime", s0)
+            99:  prepcallk(s2, "Initialize", s2, s3)
+            100:  call(255, s2, s3, 1)
+            101:  line(-, 84)
+            102:  loadroot(s2)
+            103:  getk(s2, "loop", s2)
+            104:  prepcallk(s2, "AddTask", s2, s3)
+            105:  getk(s4, "anime", s0)
+            106:  call(255, s2, s3, 2)
+            107:  line(-, 86)
+            108:  loadroot(s2)
+            109:  getk(s2, "loop", s2)
+            110:  prepcallk(s2, "Begin", s2, s3)
+            111:  move(s4, s0)
+            112:  call(255, s2, s3, 2)
+            113:  line(-, 87)
+            114:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Terminate"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 0
+        Literals: [
+            0: "menu"
+            1: "help"
+            2: "Reset"
+            3: "effect"
+            4: "Clear"
+            5: "anime"
+            6: "loop"
+            7: "DeleteTask"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 92, op: 1
+            1: line: 94, op: 1
+            2: line: 96, op: 7
+            3: line: 98, op: 12
+            4: line: 99, op: 20
+            5: line: 100, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 92)
+            1:  line(-, 94)
+            2:  loadroot(s1)
+            3:  getk(s1, "menu", s1)
+            4:  getk(s1, "help", s1)
+            5:  prepcallk(s1, "Reset", s1, s2)
+            6:  call(255, s1, s2, 1)
+            7:  line(-, 96)
+            8:  loadroot(s1)
+            9:  getk(s1, "effect", s1)
+            10:  prepcallk(s1, "Clear", s1, s2)
+            11:  call(255, s1, s2, 1)
+            12:  line(-, 98)
+            13:  getk(s1, "anime", s0)
+            14:  jz(s1, 5)
+            15:  loadroot(s1)
+            16:  getk(s1, "loop", s1)
+            17:  prepcallk(s1, "DeleteTask", s1, s2)
+            18:  getk(s3, "anime", s0)
+            19:  call(255, s1, s2, 2)
+            20:  line(-, 99)
+            21:  load(s1, "anime")
+            22:  loadnulls(s2, 1)
+            23:  set(s255, s0, s1, s2)
+            24:  line(-, 100)
+            25:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Resume"
+        nliterals: 19
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 58
+        nfunctions: 0
+        Literals: [
+            0: "anime"
+            1: "cursor_story"
+            2: "Reset"
+            3: "cursor_spell"
+            4: "cursor_stage"
+            5: "state"
+            6: "SelectStory"
+            7: "action"
+            8: "weakref"
+            9: "manbow"
+            10: "CompileFile"
+            11: "data/system/select/script/story_select_animation.nut"
+            12: "Initialize"
+            13: "loop"
+            14: "AddTask"
+            15: "sound"
+            16: "PlayBGM"
+            17: "savedata"
+            18: "GetTitleBGMID"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 57
+          ]
+        Line Informations: [
+            0: line: 105, op: 1
+            1: line: 107, op: 4
+            2: line: 108, op: 8
+            3: line: 109, op: 12
+            4: line: 111, op: 16
+            5: line: 113, op: 20
+            6: line: 114, op: 24
+            7: line: 115, op: 30
+            8: line: 116, op: 37
+            9: line: 117, op: 41
+            10: line: 119, op: 47
+            11: line: 120, op: 56
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 105)
+            1:  getk(s1, "anime", s0)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  line(-, 107)
+            5:  getk(s1, "cursor_story", s0)
+            6:  prepcallk(s1, "Reset", s1, s2)
+            7:  call(255, s1, s2, 1)
+            8:  line(-, 108)
+            9:  getk(s1, "cursor_spell", s0)
+            10:  prepcallk(s1, "Reset", s1, s2)
+            11:  call(255, s1, s2, 1)
+            12:  line(-, 109)
+            13:  getk(s1, "cursor_stage", s0)
+            14:  prepcallk(s1, "Reset", s1, s2)
+            15:  call(255, s1, s2, 1)
+            16:  line(-, 111)
+            17:  dload(s1, "state", s2, "SelectStory")
+            18:  get(s2, s0, s2)
+            19:  set(s255, s0, s1, s2)
+            20:  line(-, 113)
+            21:  load(s1, "anime")
+            22:  newobj(s2, 0, 0, 0)
+            23:  newslot(s255, s0, s1, s2)
+            24:  line(-, 114)
+            25:  getk(s1, "anime", s0)
+            26:  dload(s2, "action", s3, "weakref")
+            27:  prepcall(s3, s3, s0, s4)
+            28:  call(3, s3, s4, 1)
+            29:  newslot(s255, s1, s2, s3)
+            30:  line(-, 115)
+            31:  loadroot(s1)
+            32:  getk(s1, "manbow", s1)
+            33:  prepcallk(s1, "CompileFile", s1, s2)
+            34:  dload(s3, "data/system/select/script/story_select_animation.nut", s4, "anime")
+            35:  get(s4, s0, s4)
+            36:  call(255, s1, s2, 3)
+            37:  line(-, 116)
+            38:  getk(s1, "anime", s0)
+            39:  prepcallk(s1, "Initialize", s1, s2)
+            40:  call(255, s1, s2, 1)
+            41:  line(-, 117)
+            42:  loadroot(s1)
+            43:  getk(s1, "loop", s1)
+            44:  prepcallk(s1, "AddTask", s1, s2)
+            45:  getk(s3, "anime", s0)
+            46:  call(255, s1, s2, 2)
+            47:  line(-, 119)
+            48:  loadroot(s1)
+            49:  getk(s1, "sound", s1)
+            50:  prepcallk(s1, "PlayBGM", s1, s2)
+            51:  loadroot(s3)
+            52:  getk(s3, "savedata", s3)
+            53:  prepcallk(s3, "GetTitleBGMID", s3, s4)
+            54:  call(3, s3, s4, 1)
+            55:  call(255, s1, s2, 2)
+            56:  line(-, 120)
+            57:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "Suspend"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 0
+        Literals: [
+            0: "menu"
+            1: "help"
+            2: "Reset"
+            3: "effect"
+            4: "Clear"
+            5: "anime"
+            6: "loop"
+            7: "DeleteTask"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 125, op: 1
+            1: line: 127, op: 6
+            2: line: 129, op: 11
+            3: line: 130, op: 19
+            4: line: 131, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 125)
+            1:  loadroot(s1)
+            2:  getk(s1, "menu", s1)
+            3:  getk(s1, "help", s1)
+            4:  prepcallk(s1, "Reset", s1, s2)
+            5:  call(255, s1, s2, 1)
+            6:  line(-, 127)
+            7:  loadroot(s1)
+            8:  getk(s1, "effect", s1)
+            9:  prepcallk(s1, "Clear", s1, s2)
+            10:  call(255, s1, s2, 1)
+            11:  line(-, 129)
+            12:  getk(s1, "anime", s0)
+            13:  jz(s1, 5)
+            14:  loadroot(s1)
+            15:  getk(s1, "loop", s1)
+            16:  prepcallk(s1, "DeleteTask", s1, s2)
+            17:  getk(s3, "anime", s0)
+            18:  call(255, s1, s2, 2)
+            19:  line(-, 130)
+            20:  load(s1, "anime")
+            21:  loadnulls(s2, 1)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 131)
+            24:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "Update"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 18
+        nfunctions: 0
+        Literals: [
+            0: "menu"
+            1: "help"
+            2: "Set"
+            3: "device"
+            4: "Update"
+            5: "state"
+            6: "count"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 17
+          ]
+        Line Informations: [
+            0: line: 136, op: 1
+            1: line: 138, op: 6
+            2: line: 141, op: 10
+            3: line: 143, op: 13
+            4: line: 144, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 136)
+            1:  getk(s1, "menu", s0)
+            2:  getk(s1, "help", s1)
+            3:  prepcallk(s1, "Set", s1, s2)
+            4:  getk(s3, "help", s0)
+            5:  call(255, s1, s2, 2)
+            6:  line(-, 138)
+            7:  getk(s1, "device", s0)
+            8:  prepcallk(s1, "Update", s1, s2)
+            9:  call(255, s1, s2, 1)
+            10:  line(-, 141)
+            11:  prepcallk(s1, "state", s0, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 143)
+            14:  load(s1, "count")
+            15:  pinc(s1, s0, s1, 1)
+            16:  line(-, 144)
+            17:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "SelectStory"
+        nliterals: 19
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 19
+        ndefaultparams: 0
+        ninstructions: 86
+        nfunctions: 0
+        Literals: [
+            0: "cursor_story"
+            1: "Update"
+            2: "ok"
+            3: "state"
+            4: "SelectStage"
+            5: "prev_story"
+            6: "val"
+            7: "cursor_stage"
+            8: "story_list"
+            9: "savedata"
+            10: "story"
+            11: "stage"
+            12: "stage_num"
+            13: "SetItemNum"
+            14: "master"
+            15: "character_id"
+            16: "cancel"
+            17: "loop"
+            18: "EndWithFade"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "num", pos: 2, start_op: 35, end_op: 72
+            1: name: "name", pos: 1, start_op: 33, end_op: 72
+            2: name: "this", pos: 0, start_op: 0, end_op: 85
+          ]
+        Line Informations: [
+            0: line: 149, op: 1
+            1: line: 151, op: 4
+            2: line: 153, op: 9
+            3: line: 154, op: 12
+            4: line: 156, op: 19
+            5: line: 157, op: 23
+            6: line: 160, op: 28
+            7: line: 161, op: 33
+            8: line: 162, op: 35
+            9: line: 164, op: 42
+            10: line: 165, op: 48
+            11: line: 166, op: 53
+            12: line: 168, op: 59
+            13: line: 170, op: 64
+            14: line: 171, op: 71
+            15: line: 174, op: 73
+            16: line: 176, op: 78
+            17: line: 177, op: 82
+            18: line: 179, op: 84
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 149)
+            1:  getk(s1, "cursor_story", s0)
+            2:  prepcallk(s1, "Update", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 151)
+            5:  getk(s1, "cursor_story", s0)
+            6:  getk(s1, "ok", s1)
+            7:  jz(s1, 65)
+            8:  line(-, 153)
+            9:  dload(s1, "state", s2, "SelectStage")
+            10:  get(s2, s0, s2)
+            11:  set(s255, s0, s1, s2)
+            12:  line(-, 154)
+            13:  getk(s1, "prev_story", s0)
+            14:  getk(s2, "cursor_story", s0)
+            15:  getk(s2, "val", s2)
+            16:  ne(s1, 2, s1, 0)
+            17:  jz(s1, 10)
+            18:  line(-, 156)
+            19:  dload(s1, "prev_story", s2, "cursor_story")
+            20:  get(s2, s0, s2)
+            21:  getk(s2, "val", s2)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 157)
+            24:  getk(s1, "cursor_stage", s0)
+            25:  load(s2, "val")
+            26:  loadint(s3, 0)
+            27:  set(s255, s1, s2, s3)
+            28:  line(-, 160)
+            29:  getk(s1, "story_list", s0)
+            30:  getk(s2, "cursor_story", s0)
+            31:  getk(s2, "val", s2)
+            32:  get(s1, s1, s2)
+            33:  line(-, 161)
+            34:  loadint(s2, 1)
+            35:  line(-, 162)
+            36:  loadroot(s3)
+            37:  getk(s3, "savedata", s3)
+            38:  getk(s3, "story", s3)
+            39:  exists(s3, s3, s1)
+            40:  jz(s3, 18)
+            41:  line(-, 164)
+            42:  getk(s3, "savedata", s0)
+            43:  getk(s3, "story", s3)
+            44:  get(s3, s3, s1)
+            45:  getk(s3, "stage", s3)
+            46:  loadint(s4, 1)
+            47:  add(s2, s4, s3)
+            48:  line(-, 165)
+            49:  loadint(s3, 0)
+            50:  jcmp(s3, 2, s2, CMP_LE)
+            51:  loadint(s2, 1)
+            52:  jmp(-, 6)
+            53:  line(-, 166)
+            54:  getk(s3, "stage_num", s0)
+            55:  get(s3, s3, s1)
+            56:  jcmp(s3, 2, s2, CMP_G)
+            57:  getk(s3, "stage_num", s0)
+            58:  get(s2, s3, s1)
+            59:  line(-, 168)
+            60:  getk(s3, "cursor_stage", s0)
+            61:  prepcallk(s3, "SetItemNum", s3, s4)
+            62:  move(s5, s2)
+            63:  call(255, s3, s4, 2)
+            64:  line(-, 170)
+            65:  getk(s3, "master", s0)
+            66:  load(s4, "val")
+            67:  loadroot(s5)
+            68:  getk(s5, "character_id", s5)
+            69:  get(s5, s5, s1)
+            70:  set(s255, s3, s4, s5)
+            71:  line(-, 171)
+            72:  return(255, 0)
+            73:  line(-, 174)
+            74:  getk(s1, "cursor_story", s0)
+            75:  getk(s1, "cancel", s1)
+            76:  jz(s1, 7)
+            77:  line(-, 176)
+            78:  loadroot(s1)
+            79:  getk(s1, "loop", s1)
+            80:  prepcallk(s1, "EndWithFade", s1, s2)
+            81:  call(255, s1, s2, 1)
+            82:  line(-, 177)
+            83:  return(255, 0)
+            84:  line(-, 179)
+            85:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "SelectStage"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "cursor_stage"
+            1: "Update"
+            2: "ok"
+            3: "state"
+            4: "SelectSpell"
+            5: "cancel"
+            6: "SelectStory"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 184, op: 1
+            1: line: 186, op: 4
+            2: line: 188, op: 9
+            3: line: 190, op: 13
+            4: line: 192, op: 18
+            5: line: 194, op: 21
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 184)
+            1:  getk(s1, "cursor_stage", s0)
+            2:  prepcallk(s1, "Update", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 186)
+            5:  getk(s1, "cursor_stage", s0)
+            6:  getk(s1, "ok", s1)
+            7:  jz(s1, 5)
+            8:  line(-, 188)
+            9:  dload(s1, "state", s2, "SelectSpell")
+            10:  get(s2, s0, s2)
+            11:  set(s255, s0, s1, s2)
+            12:  jmp(-, 8)
+            13:  line(-, 190)
+            14:  getk(s1, "cursor_stage", s0)
+            15:  getk(s1, "cancel", s1)
+            16:  jz(s1, 4)
+            17:  line(-, 192)
+            18:  dload(s1, "state", s2, "SelectStory")
+            19:  get(s2, s0, s2)
+            20:  set(s255, s0, s1, s2)
+            21:  line(-, 194)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "SelectSpell"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 24
+        nfunctions: 0
+        Literals: [
+            0: "cursor_spell"
+            1: "Update"
+            2: "ok"
+            3: "BeginBattle"
+            4: "cancel"
+            5: "state"
+            6: "SelectStage"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 23
+          ]
+        Line Informations: [
+            0: line: 199, op: 1
+            1: line: 201, op: 4
+            2: line: 203, op: 9
+            3: line: 204, op: 11
+            4: line: 206, op: 14
+            5: line: 208, op: 19
+            6: line: 210, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 199)
+            1:  getk(s1, "cursor_spell", s0)
+            2:  prepcallk(s1, "Update", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 201)
+            5:  getk(s1, "cursor_spell", s0)
+            6:  getk(s1, "ok", s1)
+            7:  jz(s1, 6)
+            8:  line(-, 203)
+            9:  prepcallk(s1, "BeginBattle", s0, s2)
+            10:  call(255, s1, s2, 1)
+            11:  line(-, 204)
+            12:  return(255, 0)
+            13:  jmp(-, 8)
+            14:  line(-, 206)
+            15:  getk(s1, "cursor_spell", s0)
+            16:  getk(s1, "cancel", s1)
+            17:  jz(s1, 4)
+            18:  line(-, 208)
+            19:  dload(s1, "state", s2, "SelectStage")
+            20:  get(s2, s0, s2)
+            21:  set(s255, s0, s1, s2)
+            22:  line(-, 210)
+            23:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "SelectEnd"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 18
+        nfunctions: 0
+        Literals: [
+            0: "input"
+            1: "b1"
+            2: "sound"
+            3: "PlaySE"
+            4: "sys_cancel"
+            5: "state"
+            6: "SelectColor"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 17
+          ]
+        Line Informations: [
+            0: line: 215, op: 1
+            1: line: 217, op: 7
+            2: line: 218, op: 12
+            3: line: 220, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 215)
+            1:  getk(s1, "input", s0)
+            2:  getk(s1, "b1", s1)
+            3:  loadint(s2, 1)
+            4:  eq(s1, 2, s1, 0)
+            5:  jz(s1, 10)
+            6:  line(-, 217)
+            7:  loadroot(s1)
+            8:  getk(s1, "sound", s1)
+            9:  prepcallk(s1, "PlaySE", s1, s2)
+            10:  load(s3, "sys_cancel")
+            11:  call(255, s1, s2, 2)
+            12:  line(-, 218)
+            13:  dload(s1, "state", s2, "SelectColor")
+            14:  get(s2, s0, s2)
+            15:  set(s255, s0, s1, s2)
+            16:  line(-, 220)
+            17:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "BeginBattle"
+        nliterals: 24
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 66
+        nfunctions: 1
+        Literals: [
+            0: "story"
+            1: "InitializeParam"
+            2: "device_id"
+            3: "difficulty"
+            4: "scenario_name"
+            5: "story_list"
+            6: "cursor_story"
+            7: "val"
+            8: "slave_name"
+            9: "slave_list"
+            10: "spell"
+            11: "cursor_spell"
+            12: "stage"
+            13: "cursor_stage"
+            14: "seed"
+            15: "rand"
+            16: "sound"
+            17: "StopBGM"
+            18: "device"
+            19: "Lock"
+            20: "replay"
+            21: "Reset"
+            22: "loop"
+            23: "Fade"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "param", pos: 1, start_op: 5, end_op: 63
+            1: name: "this", pos: 0, start_op: 0, end_op: 65
+          ]
+        Line Informations: [
+            0: line: 225, op: 1
+            1: line: 226, op: 1
+            2: line: 228, op: 5
+            3: line: 230, op: 9
+            4: line: 232, op: 13
+            5: line: 233, op: 20
+            6: line: 234, op: 26
+            7: line: 236, op: 31
+            8: line: 238, op: 36
+            9: line: 240, op: 41
+            10: line: 242, op: 47
+            11: line: 244, op: 53
+            12: line: 246, op: 58
+            13: line: 251, op: 64
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 225)
+            1:  line(-, 226)
+            2:  getk(s1, "story", s0)
+            3:  prepcallk(s1, "InitializeParam", s1, s2)
+            4:  call(1, s1, s2, 1)
+            5:  line(-, 228)
+            6:  dload(s2, "device_id", s3, "device_id")
+            7:  get(s3, s0, s3)
+            8:  set(s255, s1, s2, s3)
+            9:  line(-, 230)
+            10:  dload(s2, "difficulty", s3, "difficulty")
+            11:  get(s3, s0, s3)
+            12:  set(s255, s1, s2, s3)
+            13:  line(-, 232)
+            14:  dload(s2, "scenario_name", s3, "story_list")
+            15:  get(s3, s0, s3)
+            16:  getk(s4, "cursor_story", s0)
+            17:  getk(s4, "val", s4)
+            18:  get(s3, s3, s4)
+            19:  set(s255, s1, s2, s3)
+            20:  line(-, 233)
+            21:  dload(s2, "slave_name", s3, "slave_list")
+            22:  get(s3, s0, s3)
+            23:  getk(s4, "scenario_name", s1)
+            24:  get(s3, s3, s4)
+            25:  set(s255, s1, s2, s3)
+            26:  line(-, 234)
+            27:  dload(s2, "spell", s3, "cursor_spell")
+            28:  get(s3, s0, s3)
+            29:  getk(s3, "val", s3)
+            30:  set(s255, s1, s2, s3)
+            31:  line(-, 236)
+            32:  dload(s2, "stage", s3, "cursor_stage")
+            33:  get(s3, s0, s3)
+            34:  getk(s3, "val", s3)
+            35:  set(s255, s1, s2, s3)
+            36:  line(-, 238)
+            37:  dload(s2, "seed", s3, "rand")
+            38:  prepcall(s3, s3, s0, s4)
+            39:  call(3, s3, s4, 1)
+            40:  set(s255, s1, s2, s3)
+            41:  line(-, 240)
+            42:  loadroot(s2)
+            43:  getk(s2, "sound", s2)
+            44:  prepcallk(s2, "StopBGM", s2, s3)
+            45:  loadint(s4, 500)
+            46:  call(255, s2, s3, 2)
+            47:  line(-, 242)
+            48:  getk(s2, "device", s0)
+            49:  jz(s2, 3)
+            50:  getk(s2, "device", s0)
+            51:  prepcallk(s2, "Lock", s2, s3)
+            52:  call(255, s2, s3, 1)
+            53:  line(-, 244)
+            54:  loadroot(s2)
+            55:  getk(s2, "replay", s2)
+            56:  prepcallk(s2, "Reset", s2, s3)
+            57:  call(255, s2, s3, 1)
+            58:  line(-, 246)
+            59:  loadroot(s2)
+            60:  getk(s2, "loop", s2)
+            61:  prepcallk(s2, "Fade", s2, s3)
+            62:  closure(s4, 0)
+            63:  call(255, s2, s3, 2)
+            64:  line(-, 251)
+            65:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 1
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 14
+                nfunctions: 0
+                Literals: [
+                    0: "menu"
+                    1: "story_select"
+                    2: "Suspend"
+                    3: "story"
+                    4: "Initialize"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [
+                    0: type: otLOCAL, object: 1, name: "param"
+                  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 13
+                  ]
+                Line Informations: [
+                    0: line: 248, op: 1
+                    1: line: 249, op: 6
+                    2: line: 250, op: 12
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 248)
+                    1:  loadroot(s1)
+                    2:  getk(s1, "menu", s1)
+                    3:  getk(s1, "story_select", s1)
+                    4:  prepcallk(s1, "Suspend", s1, s2)
+                    5:  call(255, s1, s2, 1)
+                    6:  line(-, 249)
+                    7:  loadroot(s1)
+                    8:  getk(s1, "story", s1)
+                    9:  prepcallk(s1, "Initialize", s1, s2)
+                    10:  getouter(s3, 0)
+                    11:  call(255, s1, s2, 2)
+                    12:  line(-, 250)
+                    13:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 11
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,736 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\reimu\object_player\p_reimu_amulet.nut: 
+sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+name: "main"
+nliterals: 14
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 37
+nfunctions: 8
+Literals: [
+    0: "construct"
+    1: "kill_move"
+    2: "destruct"
+    3: "message"
+    4: "lib"
+    5: "shot"
+    6: "common_message"
+    7: "interactive"
+    8: "on_hit_target"
+    9: "on_hit_playershot_kill"
+    10: "on_hit_ground"
+    11: "on_graze_target"
+    12: "determination"
+    13: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 36
+    1: name: "this", pos: 0, start_op: 0, end_op: 36
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 39, op: 3
+    2: line: 57, op: 6
+    3: line: 63, op: 9
+    4: line: 65, op: 15
+    5: line: 74, op: 18
+    6: line: 76, op: 24
+    7: line: 93, op: 27
+    8: line: 96, op: 30
+    9: line: 100, op: 33
+    10: line: 112, op: 36
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "kill_move")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "destruct")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "message")
+    10:  loadroot(s3)
+    11:  getk(s3, "lib", s3)
+    12:  getk(s3, "shot", s3)
+    13:  getk(s3, "common_message", s3)
+    14:  newslot(s255, s0, s2, s3)
+    15:  load(s2, "interactive")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_hit_target")
+    19:  loadroot(s3)
+    20:  getk(s3, "lib", s3)
+    21:  getk(s3, "shot", s3)
+    22:  getk(s3, "on_hit_playershot_kill", s3)
+    23:  newslot(s255, s0, s2, s3)
+    24:  load(s2, "on_hit_ground")
+    25:  closure(s3, 4)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_graze_target")
+    28:  closure(s3, 5)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "determination")
+    31:  closure(s3, 6)
+    32:  newslot(s2, s0, s2, s3)
+    33:  load(s2, "plot")
+    34:  closure(s3, 7)
+    35:  newslot(s2, s0, s2, s3)
+    36:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "construct"
+        nliterals: 18
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 61
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "attack_power"
+            3: "score"
+            4: "push_x"
+            5: "push_y"
+            6: "vx"
+            7: "direction_h"
+            8: "obj"
+            9: "player"
+            10: "frameset"
+            11: "_composition_create_framepointer"
+            12: "resource_pool"
+            13: "player_reimu/shot_c_air"
+            14: "maskbits"
+            15: "state"
+            16: "h_entity"
+            17: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 60
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 8, op: 12
+            6: line: 9, op: 15
+            7: line: 14, op: 18
+            8: line: 15, op: 21
+            9: line: 17, op: 26
+            10: line: 18, op: 34
+            11: line: 20, op: 37
+            12: line: 29, op: 40
+            13: line: 37, op: 60
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "attack_power")
+            7:  loadint(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "score")
+            10:  loadint(s2, 100)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "push_x")
+            13:  loadfloat(s2, -3)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "push_y")
+            16:  loadfloat(s2, -5)
+            17:  set(s255, s0, s1, s2)
+            18:  load(s1, "vx")
+            19:  loadint(s2, 10)
+            20:  set(s255, s0, s1, s2)
+            21:  dload(s1, "direction_h", s2, "obj")
+            22:  get(s2, s0, s2)
+            23:  getk(s2, "player", s2)
+            24:  getk(s2, "direction_h", s2)
+            25:  newslot(s255, s0, s1, s2)
+            26:  load(s1, "frameset")
+            27:  loadroot(s2)
+            28:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            29:  loadroot(s4)
+            30:  getk(s4, "resource_pool", s4)
+            31:  getk(s4, "player_reimu/shot_c_air", s4)
+            32:  call(2, s2, s3, 2)
+            33:  newslot(s255, s0, s1, s2)
+            34:  load(s1, "maskbits")
+            35:  loadint(s2, 8)
+            36:  newslot(s255, s0, s1, s2)
+            37:  load(s1, "state")
+            38:  closure(s2, 0)
+            39:  newslot(s255, s0, s1, s2)
+            40:  load(s1, "h_entity")
+            41:  loadroot(s2)
+            42:  prepcallk(s2, "_vspace_regist", s2, s3)
+            43:  move(s4, s0)
+            44:  loadint(s5, 1)
+            45:  loadint(s6, 2)
+            46:  bitw(s5, s6, s5, BW_OR)
+            47:  loadint(s6, 8)
+            48:  bitw(s5, s6, s5, BW_OR)
+            49:  loadint(s6, 64)
+            50:  bitw(s5, s6, s5, BW_OR)
+            51:  loadint(s6, 128)
+            52:  bitw(s5, s6, s5, BW_OR)
+            53:  loadint(s6, 16)
+            54:  bitw(s5, s6, s5, BW_OR)
+            55:  loadint(s6, 256)
+            56:  bitw(s5, s6, s5, BW_OR)
+            57:  loadint(s6, 0)
+            58:  call(2, s2, s3, 4)
+            59:  newslot(s255, s0, s1, s2)
+            60:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 46
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "x"
+                    2: "world"
+                    3: "right"
+                    4: "left"
+                    5: "y"
+                    6: "top"
+                    7: "bottom"
+                    8: "kill_move"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 45
+                  ]
+                Line Informations: [
+                    0: line: 20, op: 0
+                    1: line: 21, op: 0
+                    2: line: 22, op: 2
+                    3: line: 24, op: 42
+                    4: line: 25, op: 44
+                    5: line: 27, op: 45
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 60)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  or(s1, 35, s1)
+                    6:  getk(s2, "x", s0)
+                    7:  loadroot(s3)
+                    8:  getk(s3, "world", s3)
+                    9:  getk(s3, "right", s3)
+                    10:  loadint(s4, 32)
+                    11:  add(s3, s4, s3)
+                    12:  cmp(s2, s3, s2, CMP_G)
+                    13:  or(s2, 26, s2)
+                    14:  getk(s3, "x", s0)
+                    15:  loadroot(s4)
+                    16:  getk(s4, "world", s4)
+                    17:  getk(s4, "left", s4)
+                    18:  loadint(s5, 32)
+                    19:  sub(s4, s5, s4)
+                    20:  cmp(s3, s4, s3, CMP_L)
+                    21:  or(s3, 17, s3)
+                    22:  getk(s4, "y", s0)
+                    23:  loadroot(s5)
+                    24:  getk(s5, "world", s5)
+                    25:  getk(s5, "top", s5)
+                    26:  loadint(s6, 32)
+                    27:  sub(s5, s6, s5)
+                    28:  cmp(s4, s5, s4, CMP_L)
+                    29:  or(s4, 8, s4)
+                    30:  getk(s5, "y", s0)
+                    31:  loadroot(s6)
+                    32:  getk(s6, "world", s6)
+                    33:  getk(s6, "bottom", s6)
+                    34:  loadint(s7, 32)
+                    35:  add(s6, s7, s6)
+                    36:  cmp(s5, s6, s5, CMP_G)
+                    37:  move(s4, s5)
+                    38:  move(s3, s4)
+                    39:  move(s2, s3)
+                    40:  move(s1, s2)
+                    41:  jz(s1, 3)
+                    42:  prepcallk(s1, "kill_move", s0, s2)
+                    43:  call(255, s1, s2, 1)
+                    44:  return(255, 0)
+                    45:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "kill_move"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 1
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "count"
+            3: "vx"
+            4: "vy"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_reimu/shot_c_air_hit"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 39, op: 0
+            1: line: 40, op: 0
+            2: line: 41, op: 2
+            3: line: 42, op: 6
+            4: line: 44, op: 9
+            5: line: 45, op: 12
+            6: line: 46, op: 18
+            7: line: 47, op: 26
+            8: line: 55, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 27)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "count")
+            10:  loadint(s2, 0)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "vx")
+            13:  loadint(s2, 0)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "vy")
+            16:  loadint(s2, 0)
+            17:  set(s255, s0, s1, s2)
+            18:  load(s1, "frameset")
+            19:  loadroot(s2)
+            20:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            21:  loadroot(s4)
+            22:  getk(s4, "resource_pool", s4)
+            23:  getk(s4, "player_reimu/shot_c_air_hit", s4)
+            24:  call(2, s2, s3, 2)
+            25:  set(s255, s0, s1, s2)
+            26:  load(s1, "state")
+            27:  closure(s2, 0)
+            28:  set(s255, s0, s1, s2)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 10
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 9
+                  ]
+                Line Informations: [
+                    0: line: 47, op: 0
+                    1: line: 48, op: 0
+                    2: line: 49, op: 2
+                    3: line: 50, op: 6
+                    4: line: 51, op: 8
+                    5: line: 53, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 15)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 3)
+                    6:  prepcallk(s1, "kill", s0, s2)
+                    7:  call(255, s1, s2, 1)
+                    8:  return(255, 0)
+                    9:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "destruct"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "lib"
+            2: "shot"
+            3: "common_destruct"
+            4: "call"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 58, op: 0
+            1: line: 59, op: 0
+            2: line: 60, op: 3
+            3: line: 61, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  getk(s1, "lib", s1)
+            5:  getk(s1, "shot", s1)
+            6:  getk(s1, "common_destruct", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  call(255, s1, s2, 2)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "interactive"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 16
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "state"
+            3: "x"
+            4: "vx"
+            5: "y"
+            6: "vy"
+            7: "_vspace_commit"
+            8: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 15
+          ]
+        Line Informations: [
+            0: line: 66, op: 0
+            1: line: 67, op: 0
+            2: line: 68, op: 3
+            3: line: 69, op: 5
+            4: line: 70, op: 8
+            5: line: 71, op: 11
+            6: line: 72, op: 15
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  prepcallk(s1, "state", s0, s2)
+            4:  call(255, s1, s2, 1)
+            5:  dload(s1, "x", s2, "vx")
+            6:  get(s2, s0, s2)
+            7:  comparith(s1, 2, s1, 43)
+            8:  dload(s1, "y", s2, "vy")
+            9:  get(s2, s0, s2)
+            10:  comparith(s1, 2, s1, 43)
+            11:  loadroot(s1)
+            12:  prepcallk(s1, "_vspace_commit", s1, s2)
+            13:  getk(s3, "h_entity", s0)
+            14:  call(255, s1, s2, 2)
+            15:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "on_hit_ground"
+        nliterals: 2
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 4
+            1: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 76, op: 0
+            1: line: 77, op: 0
+            2: line: 78, op: 2
+            3: line: 92, op: 4
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "h_entity", s0)
+            1:  jz(s2, 2)
+            2:  prepcallk(s2, "kill_move", s0, s3)
+            3:  call(255, s2, s3, 1)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 93, op: 0
+            1: line: 94, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 97, op: 0
+            1: line: 98, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\reimu\object_player\p_reimu_amulet.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s2"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "direction_h"
+            6: "rotate"
+            7: "angle"
+            8: "translate"
+            9: "x"
+            10: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 101, op: 0
+            1: line: 102, op: 0
+            2: line: 104, op: 4
+            3: line: 105, op: 8
+            4: line: 106, op: 13
+            5: line: 107, op: 17
+            6: line: 108, op: 22
+            7: line: 112, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s2", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s2", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "direction_h", s0)
+            11:  loadint(s4, 1)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s2", s0)
+            14:  prepcallk(s1, "rotate", s1, s2)
+            15:  getk(s3, "angle", s0)
+            16:  call(255, s1, s2, 2)
+            17:  getk(s1, "layer_s2", s0)
+            18:  prepcallk(s1, "scale", s1, s2)
+            19:  getk(s3, "direction_h", s0)
+            20:  loadint(s4, 1)
+            21:  call(255, s1, s2, 3)
+            22:  getk(s1, "layer_s2", s0)
+            23:  prepcallk(s1, "translate", s1, s2)
+            24:  getk(s3, "x", s0)
+            25:  getk(s4, "y", s0)
+            26:  call(255, s1, s2, 3)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

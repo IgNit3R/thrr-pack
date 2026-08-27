@@ -1,0 +1,633 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\lib\default_proc.nut: 
+sourcename: "data\script\lib\default_proc.nut"
+name: "main"
+nliterals: 7
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 8
+ndefaultparams: 0
+ninstructions: 22
+nfunctions: 7
+Literals: [
+    0: "setup"
+    1: "on_hit_target"
+    2: "on_hit_damage_reaction"
+    3: "on_hit_ground"
+    4: "on_graze_spread"
+    5: "on_graze_target"
+    6: "message"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 21
+    1: name: "this", pos: 0, start_op: 0, end_op: 21
+  ]
+Line Informations: [
+    0: line: 8, op: 0
+    1: line: 28, op: 3
+    2: line: 52, op: 6
+    3: line: 60, op: 9
+    4: line: 70, op: 12
+    5: line: 84, op: 15
+    6: line: 118, op: 18
+    7: line: 146, op: 21
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "setup")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "on_hit_target")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "on_hit_damage_reaction")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "on_hit_ground")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "on_graze_spread")
+    13:  closure(s3, 4)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "on_graze_target")
+    16:  closure(s3, 5)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "message")
+    19:  closure(s3, 6)
+    20:  newslot(s2, s0, s2, s3)
+    21:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "setup"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 46
+        nfunctions: 0
+        Literals: [
+            0: "on_hit_target"
+            1: "on_hit_damage_reaction"
+            2: "on_hit_ground"
+            3: "on_graze_spread"
+            4: "on_graze_target"
+            5: "group"
+            6: "water_reserve"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_obj"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_obj", pos: 1, start_op: 0, end_op: 45
+            1: name: "this", pos: 0, start_op: 0, end_op: 45
+          ]
+        Line Informations: [
+            0: line: 9, op: 0
+            1: line: 10, op: 0
+            2: line: 13, op: 4
+            3: line: 14, op: 11
+            4: line: 15, op: 18
+            5: line: 16, op: 25
+            6: line: 17, op: 32
+            7: line: 20, op: 39
+            8: line: 21, op: 42
+            9: line: 22, op: 45
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadnulls(s2, 1)
+            1:  eq(s2, 2, s1, 0)
+            2:  jz(s2, 1)
+            3:  return(255, 0)
+            4:  load(s2, "on_hit_target")
+            5:  exists(s2, s1, s2)
+            6:  not(s2, s2)
+            7:  jz(s2, 3)
+            8:  dload(s2, "on_hit_target", s3, "on_hit_target")
+            9:  get(s3, s0, s3)
+            10:  newslot(s255, s1, s2, s3)
+            11:  load(s2, "on_hit_damage_reaction")
+            12:  exists(s2, s1, s2)
+            13:  not(s2, s2)
+            14:  jz(s2, 3)
+            15:  dload(s2, "on_hit_damage_reaction", s3, "on_hit_damage_reaction")
+            16:  get(s3, s0, s3)
+            17:  newslot(s255, s1, s2, s3)
+            18:  load(s2, "on_hit_ground")
+            19:  exists(s2, s1, s2)
+            20:  not(s2, s2)
+            21:  jz(s2, 3)
+            22:  dload(s2, "on_hit_ground", s3, "on_hit_ground")
+            23:  get(s3, s0, s3)
+            24:  newslot(s255, s1, s2, s3)
+            25:  load(s2, "on_graze_spread")
+            26:  exists(s2, s1, s2)
+            27:  not(s2, s2)
+            28:  jz(s2, 3)
+            29:  dload(s2, "on_graze_spread", s3, "on_graze_spread")
+            30:  get(s3, s0, s3)
+            31:  newslot(s255, s1, s2, s3)
+            32:  load(s2, "on_graze_target")
+            33:  exists(s2, s1, s2)
+            34:  not(s2, s2)
+            35:  jz(s2, 3)
+            36:  dload(s2, "on_graze_target", s3, "on_graze_target")
+            37:  get(s3, s0, s3)
+            38:  newslot(s255, s1, s2, s3)
+            39:  load(s2, "group")
+            40:  loadnulls(s3, 1)
+            41:  newslot(s255, s1, s2, s3)
+            42:  load(s2, "water_reserve")
+            43:  loadint(s3, 1)
+            44:  newslot(s255, s1, s2, s3)
+            45:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "on_hit_target"
+        nliterals: 13
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 32
+        nfunctions: 0
+        Literals: [
+            0: "invincible_time"
+            1: "print"
+            2: "default_proc on_hit_target"
+            3: " "
+            4: "scene"
+            5: "rootenv"
+            6: "obj"
+            7: "player"
+            8: "on_hit_damage_reaction"
+            9: "_audio_play"
+            10: "se"
+            11: "hit_000"
+            12: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 31
+            1: name: "this", pos: 0, start_op: 0, end_op: 31
+          ]
+        Line Informations: [
+            0: line: 29, op: 0
+            1: line: 31, op: 0
+            2: line: 33, op: 5
+            3: line: 35, op: 19
+            4: line: 42, op: 22
+            5: line: 45, op: 29
+            6: line: 46, op: 31
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "invincible_time", s1)
+            1:  loadint(s3, 0)
+            2:  ne(s2, 3, s2, 0)
+            3:  jz(s2, 1)
+            4:  return(255, 0)
+            5:  prepcallk(s2, "print", s0, s3)
+            6:  dload(s4, "default_proc on_hit_target", s5, "invincible_time")
+            7:  get(s5, s1, s5)
+            8:  add(s4, s5, s4)
+            9:  load(s5, " ")
+            10:  add(s4, s5, s4)
+            11:  loadroot(s5)
+            12:  getk(s5, "scene", s5)
+            13:  getk(s5, "rootenv", s5)
+            14:  getk(s5, "obj", s5)
+            15:  getk(s5, "player", s5)
+            16:  getk(s5, "invincible_time", s5)
+            17:  add(s4, s5, s4)
+            18:  call(255, s2, s3, 2)
+            19:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+            20:  move(s4, s0)
+            21:  call(255, s2, s3, 2)
+            22:  loadroot(s2)
+            23:  prepcallk(s2, "_audio_play", s2, s3)
+            24:  loadroot(s4)
+            25:  getk(s4, "se", s4)
+            26:  getk(s4, "hit_000", s4)
+            27:  loadint(s5, 1)
+            28:  call(255, s2, s3, 3)
+            29:  prepcallk(s2, "kill", s0, s3)
+            30:  call(255, s2, s3, 1)
+            31:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "on_hit_damage_reaction"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 53, op: 0
+            1: line: 54, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "on_hit_ground"
+        nliterals: 2
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 7
+        nfunctions: 0
+        Literals: [
+            0: "Kill_EnemyBullet"
+            1: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 6
+            1: name: "this", pos: 0, start_op: 0, end_op: 6
+          ]
+        Line Informations: [
+            0: line: 61, op: 0
+            1: line: 62, op: 0
+            2: line: 63, op: 1
+            3: line: 64, op: 4
+            4: line: 65, op: 6
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+            1:  prepcallk(s2, "Kill_EnemyBullet", s0, s3)
+            2:  move(s4, s0)
+            3:  call(255, s2, s3, 2)
+            4:  prepcallk(s2, "kill_move", s0, s3)
+            5:  call(255, s2, s3, 1)
+            6:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "on_graze_spread"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "Kill_EnemyBullet"
+            1: "lib"
+            2: "gameobject_function"
+            3: "Create_Water"
+            4: "x"
+            5: "y"
+            6: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 71, op: 0
+            1: line: 72, op: 0
+            2: line: 73, op: 1
+            3: line: 74, op: 4
+            4: line: 76, op: 11
+            5: line: 77, op: 13
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+            1:  prepcallk(s1, "Kill_EnemyBullet", s0, s2)
+            2:  move(s3, s0)
+            3:  call(255, s1, s2, 2)
+            4:  loadroot(s1)
+            5:  getk(s1, "lib", s1)
+            6:  getk(s1, "gameobject_function", s1)
+            7:  prepcallk(s1, "Create_Water", s1, s2)
+            8:  getk(s3, "x", s0)
+            9:  getk(s4, "y", s0)
+            10:  call(255, s1, s2, 3)
+            11:  prepcallk(s1, "kill_move", s0, s2)
+            12:  call(255, s1, s2, 1)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "on_graze_target"
+        nliterals: 20
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 69
+        nfunctions: 0
+        Literals: [
+            0: "just_graze"
+            1: "lib"
+            2: "gameobject_function"
+            3: "Spawn_Effect"
+            4: "x"
+            5: "y"
+            6: "graze_poor"
+            7: "_audio_play"
+            8: "se"
+            9: "graze_just"
+            10: "object_pool"
+            11: "limit_group"
+            12: "execllent_graze"
+            13: "water"
+            14: "put"
+            15: "water_reserve"
+            16: "group"
+            17: "message"
+            18: "graze_000"
+            19: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 68
+            1: name: "this", pos: 0, start_op: 0, end_op: 68
+          ]
+        Line Informations: [
+            0: line: 85, op: 0
+            1: line: 86, op: 0
+            2: line: 88, op: 7
+            3: line: 90, op: 17
+            4: line: 94, op: 24
+            5: line: 96, op: 32
+            6: line: 97, op: 35
+            7: line: 100, op: 38
+            8: line: 103, op: 46
+            9: line: 105, op: 50
+            10: line: 108, op: 58
+            11: line: 111, op: 59
+            12: line: 112, op: 66
+            13: line: 113, op: 68
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  and(s2, 5, s1)
+            1:  move(s2, s1)
+            2:  getk(s3, "just_graze", s1)
+            3:  loadint(s4, 0)
+            4:  cmp(s3, s4, s3, CMP_G)
+            5:  move(s2, s3)
+            6:  jz(s2, 52)
+            7:  loadroot(s2)
+            8:  getk(s2, "lib", s2)
+            9:  getk(s2, "gameobject_function", s2)
+            10:  prepcallk(s2, "Spawn_Effect", s2, s3)
+            11:  getk(s4, "x", s1)
+            12:  getk(s5, "y", s1)
+            13:  loadint(s6, 32)
+            14:  sub(s5, s6, s5)
+            15:  load(s6, "graze_poor")
+            16:  call(255, s2, s3, 4)
+            17:  loadroot(s2)
+            18:  prepcallk(s2, "_audio_play", s2, s3)
+            19:  loadroot(s4)
+            20:  getk(s4, "se", s4)
+            21:  getk(s4, "graze_just", s4)
+            22:  loadint(s5, 1)
+            23:  call(255, s2, s3, 3)
+            24:  loadroot(s2)
+            25:  getk(s2, "object_pool", s2)
+            26:  prepcallk(s2, "limit_group", s2, s3)
+            27:  loadint(s4, 10)
+            28:  loadint(s5, 8)
+            29:  loadint(s6, 16)
+            30:  bitw(s5, s6, s5, BW_OR)
+            31:  call(255, s2, s3, 3)
+            32:  load(s2, "just_graze")
+            33:  loadint(s3, 0)
+            34:  set(s255, s1, s2, s3)
+            35:  load(s2, "execllent_graze")
+            36:  loadint(s3, 0)
+            37:  set(s255, s1, s2, s3)
+            38:  loadroot(s2)
+            39:  getk(s2, "lib", s2)
+            40:  getk(s2, "water", s2)
+            41:  prepcallk(s2, "put", s2, s3)
+            42:  getk(s4, "x", s0)
+            43:  getk(s5, "y", s0)
+            44:  getk(s6, "water_reserve", s0)
+            45:  call(255, s2, s3, 4)
+            46:  getk(s2, "group", s0)
+            47:  loadnulls(s3, 1)
+            48:  ne(s2, 3, s2, 0)
+            49:  jz(s2, 8)
+            50:  loadroot(s2)
+            51:  getk(s2, "object_pool", s2)
+            52:  prepcallk(s2, "message", s2, s3)
+            53:  loadint(s4, 4103)
+            54:  newobj(s5, 1, 0, 1)
+            55:  getk(s6, "group", s0)
+            56:  appendarray(s5, 6, 0)
+            57:  call(255, s2, s3, 3)
+            58:  return(255, 0)
+            59:  loadroot(s2)
+            60:  prepcallk(s2, "_audio_play", s2, s3)
+            61:  loadroot(s4)
+            62:  getk(s4, "se", s4)
+            63:  getk(s4, "graze_000", s4)
+            64:  loadint(s5, 1)
+            65:  call(255, s2, s3, 3)
+            66:  prepcallk(s2, "kill", s0, s3)
+            67:  call(255, s2, s3, 1)
+            68:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\lib\default_proc.nut"
+        name: "message"
+        nliterals: 10
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "h_entity"
+            3: "_vspace_shift_position"
+            4: "group"
+            5: "lib"
+            6: "water"
+            7: "put"
+            8: "water_reserve"
+            9: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_msg"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 52
+            1: name: "_msg", pos: 1, start_op: 0, end_op: 52
+            2: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 119, op: 0
+            1: line: 120, op: 0
+            2: line: 123, op: 3
+            3: line: 124, op: 7
+            4: line: 125, op: 11
+            5: line: 127, op: 14
+            6: line: 129, op: 22
+            7: line: 132, op: 27
+            8: line: 134, op: 32
+            9: line: 135, op: 40
+            10: line: 137, op: 42
+            11: line: 140, op: 47
+            12: line: 141, op: 49
+            13: line: 144, op: 50
+            14: line: 146, op: 52
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 21)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  load(s3, "h_entity")
+            12:  exists(s3, s0, s3)
+            13:  jz(s3, 8)
+            14:  loadroot(s3)
+            15:  prepcallk(s3, "_vspace_shift_position", s3, s4)
+            16:  getk(s5, "h_entity", s0)
+            17:  loadint(s6, 0)
+            18:  get(s6, s2, s6)
+            19:  loadint(s7, 1)
+            20:  get(s7, s2, s7)
+            21:  call(255, s3, s4, 4)
+            22:  jmp(-, 27)
+            23:  jmp(-, 3)
+            24:  loadint(s3, 4103)
+            25:  eq(s3, 3, s1, 0)
+            26:  jz(s3, 17)
+            27:  loadint(s3, 0)
+            28:  get(s3, s2, s3)
+            29:  getk(s4, "group", s0)
+            30:  eq(s3, 4, s3, 0)
+            31:  jz(s3, 10)
+            32:  loadroot(s3)
+            33:  getk(s3, "lib", s3)
+            34:  getk(s3, "water", s3)
+            35:  prepcallk(s3, "put", s3, s4)
+            36:  getk(s5, "x", s0)
+            37:  getk(s6, "y", s0)
+            38:  getk(s7, "water_reserve", s0)
+            39:  call(255, s3, s4, 4)
+            40:  prepcallk(s3, "kill", s0, s4)
+            41:  call(255, s3, s4, 1)
+            42:  jmp(-, 7)
+            43:  jmp(-, 3)
+            44:  loadint(s3, 4106)
+            45:  eq(s3, 3, s1, 0)
+            46:  jz(s3, 3)
+            47:  prepcallk(s3, "kill", s0, s4)
+            48:  call(255, s3, s4, 1)
+            49:  jmp(-, 0)
+            50:  loadnulls(s3, 1)
+            51:  return(1, 3)
+            52:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

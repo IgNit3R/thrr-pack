@@ -1,0 +1,130 @@
+## =======================================================================
+#Stage:4
+#Title:瑕ついた神社
+#Place:壊れた神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:udonge,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#カメラ固定
+Action:udonge,4
+#フォーカス瞬間移動
+Action:udonge,11
+
+#向き固定解除
+Action:udonge,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta00.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/udonge/effect/StageTitle004.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Sleep:60;
+
+Face:udonge,惑
+どうも、貴方が何をしたのか判っていないの
+説明して貰えないでしょうか？\
+
+Face:tenshi,負
+今更そんな話、どうでも良いわ\
+
+Face:udonge,惑
+どうもおかしいわね……
+大体、何でそんなにボロボロなの？\
+
+Face:tenshi,負
+くたびれてるからねぇ\
+
+Face:udonge,怒
+話にならないわ
+まあいいわ、地震の事は自分で調べるから\
+
+Face:tenshi,負
+地震？\
+
+Face:tenshi,負
+ああ、地震は大丈夫よ
+大丈夫……\
+
+Face:udonge,汗
+もっとシャキッと！\
+
+PlayBgm:data/bgm/st05.ogg
+
+#戦闘開始処理
+Action:udonge,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:tenshi,普
+いつまでもくよくよしていちゃいけないわ\
+
+Face:tenshi,普
+取り敢えず、天界に戻って次の策を練るか……\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　神社へ
+Action:tenshi,182
+#天候解除
+Action:udonge,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:udonge,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

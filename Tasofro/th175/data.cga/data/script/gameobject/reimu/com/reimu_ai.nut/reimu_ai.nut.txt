@@ -1,0 +1,623 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\reimu\com\reimu_ai.nut: 
+sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+name: "main"
+nliterals: 3
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 4
+ndefaultparams: 0
+ninstructions: 10
+nfunctions: 3
+Literals: [
+    0: "begin_battle"
+    1: "com_common_interrupt"
+    2: "com_common_recover"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 9
+    1: name: "this", pos: 0, start_op: 0, end_op: 9
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 14, op: 3
+    2: line: 47, op: 6
+    3: line: 90, op: 9
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "begin_battle")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "com_common_interrupt")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "com_common_recover")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+        name: "begin_battle"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "ground"
+            2: "Activate_ComRoutine"
+            3: "g"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 1, op: 0
+            1: line: 3, op: 0
+            2: line: 5, op: 4
+            3: line: 7, op: 8
+            4: line: 10, op: 11
+            5: line: 13, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "state", s0)
+            1:  loadnulls(s2, 1)
+            2:  eq(s1, 2, s1, 0)
+            3:  jz(s1, 10)
+            4:  getk(s1, "ground", s0)
+            5:  loadbool(s2, 1)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  jmp(-, 3)
+            11:  load(s1, "g")
+            12:  loadfloat(s2, 0.5)
+            13:  set(s255, s0, s1, s2)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+        name: "com_common_interrupt"
+        nliterals: 10
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "count"
+            2: "motion"
+            3: "damage"
+            4: "vx"
+            5: "direction_h"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 24
+            1: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 15, op: 0
+            1: line: 16, op: 0
+            2: line: 17, op: 2
+            3: line: 18, op: 5
+            4: line: 19, op: 7
+            5: line: 20, op: 12
+            6: line: 21, op: 15
+            7: line: 22, op: 18
+            8: line: 23, op: 21
+            9: line: 46, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  load(s2, "count")
+            3:  loadint(s3, 0)
+            4:  set(s255, s0, s2, s3)
+            5:  dload(s2, "motion", s3, "damage")
+            6:  set(s255, s0, s2, s3)
+            7:  load(s2, "vx")
+            8:  loadint(s3, -3)
+            9:  getk(s4, "direction_h", s0)
+            10:  mul(s3, s4, s3)
+            11:  set(s255, s0, s2, s3)
+            12:  load(s2, "vy")
+            13:  loadfloat(s3, -6.5)
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "g")
+            16:  loadfloat(s3, 0.5)
+            17:  set(s255, s0, s2, s3)
+            18:  load(s2, "ground")
+            19:  loadbool(s3, 0)
+            20:  set(s255, s0, s2, s3)
+            21:  load(s2, "state")
+            22:  closure(s3, 0)
+            23:  set(s255, s0, s2, s3)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 18
+                ndefaultparams: 0
+                ninstructions: 71
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "vx"
+                    2: "VX_Brake"
+                    3: "vy"
+                    4: "g"
+                    5: "ground"
+                    6: "motion"
+                    7: "damage2"
+                    8: "Landing"
+                    9: "com_common_recover"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 70
+                  ]
+                Line Informations: [
+                    0: line: 23, op: 0
+                    1: line: 24, op: 0
+                    2: line: 25, op: 2
+                    3: line: 26, op: 5
+                    4: line: 27, op: 14
+                    5: line: 28, op: 17
+                    6: line: 30, op: 23
+                    7: line: 31, op: 30
+                    8: line: 32, op: 37
+                    9: line: 34, op: 47
+                    10: line: 35, op: 50
+                    11: line: 36, op: 54
+                    12: line: 37, op: 58
+                    13: line: 38, op: 60
+                    14: line: 40, op: 62
+                    15: line: 41, op: 66
+                    16: line: 42, op: 69
+                    17: line: 45, op: 70
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 999)
+                    4:  jcmp(s2, 42, s1, CMP_LE)
+                    5:  getk(s1, "vx", s0)
+                    6:  getk(s2, "vx", s0)
+                    7:  mul(s1, s2, s1)
+                    8:  loadfloat(s2, 1)
+                    9:  jcmp(s2, 4, s1, CMP_G)
+                    10:  prepcallk(s1, "VX_Brake", s0, s2)
+                    11:  move(s3, s0)
+                    12:  loadfloat(s4, 0.1)
+                    13:  call(255, s1, s2, 3)
+                    14:  getk(s1, "count", s0)
+                    15:  loadint(s2, 45)
+                    16:  jcmp(s2, 6, s1, CMP_LE)
+                    17:  getk(s1, "vy", s0)
+                    18:  loadfloat(s2, -1)
+                    19:  jcmp(s2, 3, s1, CMP_GE)
+                    20:  load(s1, "g")
+                    21:  loadfloat(s2, 0.05)
+                    22:  set(s255, s0, s1, s2)
+                    23:  getk(s1, "count", s0)
+                    24:  loadint(s2, 45)
+                    25:  eq(s1, 2, s1, 0)
+                    26:  jz(s1, 3)
+                    27:  load(s1, "g")
+                    28:  loadfloat(s2, 0.5)
+                    29:  set(s255, s0, s1, s2)
+                    30:  getk(s1, "count", s0)
+                    31:  loadint(s2, 999)
+                    32:  eq(s1, 2, s1, 0)
+                    33:  jz(s1, 3)
+                    34:  load(s1, "count")
+                    35:  loadint(s2, 998)
+                    36:  set(s255, s0, s1, s2)
+                    37:  getk(s1, "vy", s0)
+                    38:  loadfloat(s2, 0)
+                    39:  cmp(s1, s2, s1, CMP_G)
+                    40:  and(s1, 2, s1)
+                    41:  getk(s2, "ground", s0)
+                    42:  move(s1, s2)
+                    43:  jz(s1, 3)
+                    44:  load(s1, "count")
+                    45:  loadint(s2, 1000)
+                    46:  set(s255, s0, s1, s2)
+                    47:  getk(s1, "count", s0)
+                    48:  loadint(s2, 1000)
+                    49:  jcmp(s2, 20, s1, CMP_GE)
+                    50:  prepcallk(s1, "VX_Brake", s0, s2)
+                    51:  move(s3, s0)
+                    52:  loadfloat(s4, 0.25)
+                    53:  call(255, s1, s2, 3)
+                    54:  getk(s1, "count", s0)
+                    55:  loadint(s2, 1000)
+                    56:  eq(s1, 2, s1, 0)
+                    57:  jz(s1, 4)
+                    58:  dload(s1, "motion", s2, "damage2")
+                    59:  set(s255, s0, s1, s2)
+                    60:  prepcallk(s1, "Landing", s0, s2)
+                    61:  call(255, s1, s2, 1)
+                    62:  getk(s1, "count", s0)
+                    63:  loadint(s2, 1030)
+                    64:  eq(s1, 2, s1, 0)
+                    65:  jz(s1, 4)
+                    66:  prepcallk(s1, "com_common_recover", s0, s2)
+                    67:  loadnulls(s3, 1)
+                    68:  call(255, s1, s2, 2)
+                    69:  return(255, 0)
+                    70:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+        name: "com_common_recover"
+        nliterals: 18
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "lib"
+            2: "enemy"
+            3: "baria_active"
+            4: "count"
+            5: "vx"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "motion"
+            10: "stand"
+            11: "flag1"
+            12: "direction_h"
+            13: "x"
+            14: "world"
+            15: "left"
+            16: "right"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 52
+            1: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 47, op: 0
+            1: line: 48, op: 0
+            2: line: 49, op: 2
+            3: line: 50, op: 8
+            4: line: 51, op: 11
+            5: line: 52, op: 14
+            6: line: 53, op: 17
+            7: line: 54, op: 20
+            8: line: 55, op: 23
+            9: line: 56, op: 25
+            10: line: 57, op: 29
+            11: line: 58, op: 39
+            12: line: 59, op: 49
+            13: line: 90, op: 52
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  loadroot(s2)
+            3:  getk(s2, "lib", s2)
+            4:  getk(s2, "enemy", s2)
+            5:  prepcallk(s2, "baria_active", s2, s3)
+            6:  move(s4, s0)
+            7:  call(255, s2, s3, 2)
+            8:  load(s2, "count")
+            9:  loadint(s3, 0)
+            10:  set(s255, s0, s2, s3)
+            11:  load(s2, "vx")
+            12:  loadint(s3, 0)
+            13:  set(s255, s0, s2, s3)
+            14:  load(s2, "vy")
+            15:  loadint(s3, 0)
+            16:  set(s255, s0, s2, s3)
+            17:  load(s2, "g")
+            18:  loadint(s3, 0)
+            19:  set(s255, s0, s2, s3)
+            20:  load(s2, "ground")
+            21:  loadbool(s3, 1)
+            22:  set(s255, s0, s2, s3)
+            23:  dload(s2, "motion", s3, "stand")
+            24:  set(s255, s0, s2, s3)
+            25:  dload(s2, "flag1", s3, "direction_h")
+            26:  get(s3, s0, s3)
+            27:  neg(s3, s3)
+            28:  set(s255, s0, s2, s3)
+            29:  getk(s2, "x", s0)
+            30:  loadroot(s3)
+            31:  getk(s3, "world", s3)
+            32:  getk(s3, "left", s3)
+            33:  loadint(s4, 196)
+            34:  add(s3, s4, s3)
+            35:  jcmp(s3, 3, s2, CMP_L)
+            36:  load(s2, "flag1")
+            37:  loadint(s3, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  getk(s2, "x", s0)
+            40:  loadroot(s3)
+            41:  getk(s3, "world", s3)
+            42:  getk(s3, "right", s3)
+            43:  loadint(s4, 196)
+            44:  sub(s3, s4, s3)
+            45:  jcmp(s3, 3, s2, CMP_G)
+            46:  load(s2, "flag1")
+            47:  loadint(s3, -1)
+            48:  set(s255, s0, s2, s3)
+            49:  load(s2, "state")
+            50:  closure(s3, 0)
+            51:  set(s255, s0, s2, s3)
+            52:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\reimu\com\reimu_ai.nut"
+                name: null
+                nliterals: 18
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 25
+                ndefaultparams: 0
+                ninstructions: 120
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "motion"
+                    2: "roll"
+                    3: "vx"
+                    4: "flag1"
+                    5: "vy"
+                    6: "g"
+                    7: "ground"
+                    8: "VX_Brake"
+                    9: "direction_h"
+                    10: "x"
+                    11: "world"
+                    12: "left"
+                    13: "right"
+                    14: "landing"
+                    15: "stand"
+                    16: "state"
+                    17: "Activate_ComStack"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 119
+                  ]
+                Line Informations: [
+                    0: line: 59, op: 0
+                    1: line: 60, op: 0
+                    2: line: 61, op: 2
+                    3: line: 62, op: 5
+                    4: line: 63, op: 9
+                    5: line: 64, op: 11
+                    6: line: 65, op: 16
+                    7: line: 66, op: 19
+                    8: line: 67, op: 22
+                    9: line: 69, op: 25
+                    10: line: 70, op: 38
+                    11: line: 71, op: 65
+                    12: line: 73, op: 70
+                    13: line: 75, op: 85
+                    14: line: 76, op: 88
+                    15: line: 77, op: 92
+                    16: line: 78, op: 94
+                    17: line: 79, op: 97
+                    18: line: 80, op: 100
+                    19: line: 82, op: 103
+                    20: line: 84, op: 109
+                    21: line: 85, op: 113
+                    22: line: 86, op: 116
+                    23: line: 87, op: 118
+                    24: line: 89, op: 119
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 599)
+                    4:  jcmp(s2, 80, s1, CMP_LE)
+                    5:  getk(s1, "count", s0)
+                    6:  loadint(s2, 6)
+                    7:  eq(s1, 2, s1, 0)
+                    8:  jz(s1, 16)
+                    9:  dload(s1, "motion", s2, "roll")
+                    10:  set(s255, s0, s1, s2)
+                    11:  load(s1, "vx")
+                    12:  loadfloat(s2, -8)
+                    13:  getk(s3, "flag1", s0)
+                    14:  mul(s2, s3, s2)
+                    15:  set(s255, s0, s1, s2)
+                    16:  load(s1, "vy")
+                    17:  loadfloat(s2, -4)
+                    18:  set(s255, s0, s1, s2)
+                    19:  load(s1, "g")
+                    20:  loadfloat(s2, 0.25)
+                    21:  set(s255, s0, s1, s2)
+                    22:  load(s1, "ground")
+                    23:  loadbool(s2, 0)
+                    24:  set(s255, s0, s1, s2)
+                    25:  getk(s1, "count", s0)
+                    26:  loadint(s2, 6)
+                    27:  cmp(s1, s2, s1, CMP_GE)
+                    28:  and(s1, 4, s1)
+                    29:  getk(s2, "count", s0)
+                    30:  loadint(s3, 22)
+                    31:  cmp(s2, s3, s2, CMP_LE)
+                    32:  move(s1, s2)
+                    33:  jz(s1, 4)
+                    34:  prepcallk(s1, "VX_Brake", s0, s2)
+                    35:  move(s3, s0)
+                    36:  loadfloat(s4, 0.2)
+                    37:  call(255, s1, s2, 3)
+                    38:  getk(s1, "direction_h", s0)
+                    39:  loadint(s2, -1)
+                    40:  eq(s1, 2, s1, 0)
+                    41:  and(s1, 8, s1)
+                    42:  getk(s2, "x", s0)
+                    43:  loadroot(s3)
+                    44:  getk(s3, "world", s3)
+                    45:  getk(s3, "left", s3)
+                    46:  loadint(s4, 32)
+                    47:  add(s3, s4, s3)
+                    48:  cmp(s2, s3, s2, CMP_L)
+                    49:  move(s1, s2)
+                    50:  or(s1, 13, s1)
+                    51:  getk(s2, "direction_h", s0)
+                    52:  loadint(s3, 1)
+                    53:  eq(s2, 3, s2, 0)
+                    54:  and(s2, 8, s2)
+                    55:  getk(s3, "x", s0)
+                    56:  loadroot(s4)
+                    57:  getk(s4, "world", s4)
+                    58:  getk(s4, "right", s4)
+                    59:  loadint(s5, 32)
+                    60:  sub(s4, s5, s4)
+                    61:  cmp(s3, s4, s3, CMP_G)
+                    62:  move(s2, s3)
+                    63:  move(s1, s2)
+                    64:  jz(s1, 5)
+                    65:  dload(s1, "vx", s2, "vx")
+                    66:  get(s2, s0, s2)
+                    67:  loadfloat(s3, -0.5)
+                    68:  mul(s2, s3, s2)
+                    69:  set(s255, s0, s1, s2)
+                    70:  getk(s1, "count", s0)
+                    71:  loadint(s2, 6)
+                    72:  cmp(s1, s2, s1, CMP_G)
+                    73:  and(s1, 7, s1)
+                    74:  getk(s2, "vy", s0)
+                    75:  loadfloat(s3, 0)
+                    76:  cmp(s2, s3, s2, CMP_G)
+                    77:  and(s2, 2, s2)
+                    78:  getk(s3, "ground", s0)
+                    79:  move(s2, s3)
+                    80:  move(s1, s2)
+                    81:  jz(s1, 3)
+                    82:  load(s1, "count")
+                    83:  loadint(s2, 600)
+                    84:  set(s255, s0, s1, s2)
+                    85:  getk(s1, "count", s0)
+                    86:  loadint(s2, 600)
+                    87:  jcmp(s2, 21, s1, CMP_GE)
+                    88:  getk(s1, "count", s0)
+                    89:  loadint(s2, 600)
+                    90:  eq(s1, 2, s1, 0)
+                    91:  jz(s1, 11)
+                    92:  dload(s1, "motion", s2, "landing")
+                    93:  set(s255, s0, s1, s2)
+                    94:  load(s1, "vx")
+                    95:  loadint(s2, 0)
+                    96:  set(s255, s0, s1, s2)
+                    97:  load(s1, "vy")
+                    98:  loadint(s2, 0)
+                    99:  set(s255, s0, s1, s2)
+                    100:  load(s1, "g")
+                    101:  loadint(s2, 0)
+                    102:  set(s255, s0, s1, s2)
+                    103:  getk(s1, "count", s0)
+                    104:  loadint(s2, 606)
+                    105:  eq(s1, 2, s1, 0)
+                    106:  jz(s1, 2)
+                    107:  dload(s1, "motion", s2, "stand")
+                    108:  set(s255, s0, s1, s2)
+                    109:  getk(s1, "count", s0)
+                    110:  loadint(s2, 606)
+                    111:  eq(s1, 2, s1, 0)
+                    112:  jz(s1, 6)
+                    113:  load(s1, "state")
+                    114:  loadnulls(s2, 1)
+                    115:  set(s255, s0, s1, s2)
+                    116:  prepcallk(s1, "Activate_ComStack", s0, s2)
+                    117:  call(255, s1, s2, 1)
+                    118:  return(255, 0)
+                    119:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

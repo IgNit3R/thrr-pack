@@ -1,0 +1,1221 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\script\game.nut: 
+sourcename: ""
+name: "main"
+nliterals: 12
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 14
+ndefaultparams: 0
+ninstructions: 51
+nfunctions: 12
+Literals: [
+    0: "Game_SetGameActionData"
+    1: "EndBattle"
+    2: "Game_FightEndFunction"
+    3: "Game_RoundReset"
+    4: "Set_MonoColor"
+    5: "Set_ReverseColor"
+    6: "Clear_FieldEffect"
+    7: "Set_Vibration"
+    8: "ActorTimeStop"
+    9: "StartBattleBGM"
+    10: "StopBattleBGM"
+    11: "Game_MainUpdate"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 50
+    1: name: "this", pos: 0, start_op: 0, end_op: 50
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 3, op: 1
+    2: line: 75, op: 5
+    3: line: 82, op: 9
+    4: line: 87, op: 13
+    5: line: 104, op: 17
+    6: line: 108, op: 21
+    7: line: 112, op: 25
+    8: line: 116, op: 29
+    9: line: 120, op: 33
+    10: line: 130, op: 37
+    11: line: 136, op: 41
+    12: line: 140, op: 45
+    13: line: 162, op: 49
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  line(-, 3)
+    2:  load(s2, "Game_SetGameActionData")
+    3:  closure(s3, 0)
+    4:  newslot(s2, s0, s2, s3)
+    5:  line(-, 75)
+    6:  load(s2, "EndBattle")
+    7:  closure(s3, 1)
+    8:  newslot(s2, s0, s2, s3)
+    9:  line(-, 82)
+    10:  load(s2, "Game_FightEndFunction")
+    11:  closure(s3, 2)
+    12:  newslot(s2, s0, s2, s3)
+    13:  line(-, 87)
+    14:  load(s2, "Game_RoundReset")
+    15:  closure(s3, 3)
+    16:  newslot(s2, s0, s2, s3)
+    17:  line(-, 104)
+    18:  load(s2, "Set_MonoColor")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  line(-, 108)
+    22:  load(s2, "Set_ReverseColor")
+    23:  closure(s3, 5)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 112)
+    26:  load(s2, "Clear_FieldEffect")
+    27:  closure(s3, 6)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 116)
+    30:  load(s2, "Set_Vibration")
+    31:  closure(s3, 7)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 120)
+    34:  load(s2, "ActorTimeStop")
+    35:  closure(s3, 8)
+    36:  newslot(s2, s0, s2, s3)
+    37:  line(-, 130)
+    38:  load(s2, "StartBattleBGM")
+    39:  closure(s3, 9)
+    40:  newslot(s2, s0, s2, s3)
+    41:  line(-, 136)
+    42:  load(s2, "StopBattleBGM")
+    43:  closure(s3, 10)
+    44:  newslot(s2, s0, s2, s3)
+    45:  line(-, 140)
+    46:  load(s2, "Game_MainUpdate")
+    47:  closure(s3, 11)
+    48:  newslot(s2, s0, s2, s3)
+    49:  line(-, 162)
+    50:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Game_SetGameActionData"
+        nliterals: 43
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 45
+        ndefaultparams: 0
+        ninstructions: 288
+        nfunctions: 0
+        Literals: [
+            0: "game"
+            1: "globalCount"
+            2: "stageClear"
+            3: "gameOver"
+            4: "battleState"
+            5: "battleType"
+            6: "win"
+            7: "winner"
+            8: "roundNum"
+            9: "matchNum"
+            10: "lostPopular"
+            11: "parfect"
+            12: "timeBonus"
+            13: "demoCount"
+            14: "demoBgm"
+            15: "skipDemo"
+            16: "endWinDemo"
+            17: "endLoseDemo"
+            18: "debugFreeTime"
+            19: "popular"
+            20: "popularCount"
+            21: "popularStack"
+            22: "popularTotal"
+            23: "popularADD"
+            24: "battleTime"
+            25: "timeStopActor"
+            26: "timeStop"
+            27: "enableTimeCount"
+            28: "enableAddScore"
+            29: "enableInput"
+            30: "enableHit"
+            31: "enableEvent"
+            32: "fadeScreen"
+            33: "fadeBackScreen"
+            34: "practice"
+            35: "autoLife"
+            36: "autoSP"
+            37: "autoMana"
+            38: "autoGuard"
+            39: "autoBaria"
+            40: "slowCount"
+            41: "climaxBgmCount"
+            42: "climaxChangeBgmCount"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 287
+          ]
+        Line Informations: [
+            0: line: 4, op: 1
+            1: line: 6, op: 1
+            2: line: 8, op: 6
+            3: line: 11, op: 12
+            4: line: 12, op: 18
+            5: line: 14, op: 24
+            6: line: 15, op: 30
+            7: line: 16, op: 36
+            8: line: 17, op: 46
+            9: line: 18, op: 52
+            10: line: 19, op: 58
+            11: line: 27, op: 64
+            12: line: 28, op: 70
+            13: line: 29, op: 76
+            14: line: 32, op: 82
+            15: line: 33, op: 88
+            16: line: 34, op: 94
+            17: line: 35, op: 102
+            18: line: 36, op: 110
+            19: line: 38, op: 118
+            20: line: 41, op: 124
+            21: line: 43, op: 130
+            22: line: 44, op: 136
+            23: line: 45, op: 146
+            24: line: 46, op: 154
+            25: line: 48, op: 160
+            26: line: 49, op: 166
+            27: line: 50, op: 172
+            28: line: 52, op: 180
+            29: line: 53, op: 186
+            30: line: 54, op: 192
+            31: line: 55, op: 198
+            32: line: 56, op: 204
+            33: line: 59, op: 210
+            34: line: 60, op: 216
+            35: line: 63, op: 222
+            36: line: 64, op: 228
+            37: line: 65, op: 236
+            38: line: 66, op: 244
+            39: line: 67, op: 252
+            40: line: 68, op: 260
+            41: line: 71, op: 268
+            42: line: 72, op: 274
+            43: line: 73, op: 280
+            44: line: 74, op: 286
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 4)
+            1:  line(-, 6)
+            2:  loadroot(s1)
+            3:  load(s2, "game")
+            4:  newobj(s3, 0, 0, 0)
+            5:  newslot(s255, s1, s2, s3)
+            6:  line(-, 8)
+            7:  loadroot(s1)
+            8:  getk(s1, "game", s1)
+            9:  load(s2, "globalCount")
+            10:  loadint(s3, 0)
+            11:  newslot(s255, s1, s2, s3)
+            12:  line(-, 11)
+            13:  loadroot(s1)
+            14:  getk(s1, "game", s1)
+            15:  load(s2, "stageClear")
+            16:  loadbool(s3, 0)
+            17:  newslot(s255, s1, s2, s3)
+            18:  line(-, 12)
+            19:  loadroot(s1)
+            20:  getk(s1, "game", s1)
+            21:  load(s2, "gameOver")
+            22:  loadint(s3, 0)
+            23:  newslot(s255, s1, s2, s3)
+            24:  line(-, 14)
+            25:  loadroot(s1)
+            26:  getk(s1, "game", s1)
+            27:  load(s2, "battleState")
+            28:  loadint(s3, 3)
+            29:  newslot(s255, s1, s2, s3)
+            30:  line(-, 15)
+            31:  loadroot(s1)
+            32:  getk(s1, "game", s1)
+            33:  load(s2, "battleType")
+            34:  loadint(s3, 0)
+            35:  newslot(s255, s1, s2, s3)
+            36:  line(-, 16)
+            37:  loadroot(s1)
+            38:  getk(s1, "game", s1)
+            39:  load(s2, "win")
+            40:  newobj(s3, 2, 0, 1)
+            41:  newobj(s4, 0, 0, 1)
+            42:  appendarray(s3, 4, 0)
+            43:  newobj(s4, 0, 0, 1)
+            44:  appendarray(s3, 4, 0)
+            45:  newslot(s255, s1, s2, s3)
+            46:  line(-, 17)
+            47:  loadroot(s1)
+            48:  getk(s1, "game", s1)
+            49:  load(s2, "winner")
+            50:  loadint(s3, 0)
+            51:  newslot(s255, s1, s2, s3)
+            52:  line(-, 18)
+            53:  loadroot(s1)
+            54:  getk(s1, "game", s1)
+            55:  load(s2, "roundNum")
+            56:  loadint(s3, 0)
+            57:  newslot(s255, s1, s2, s3)
+            58:  line(-, 19)
+            59:  loadroot(s1)
+            60:  getk(s1, "game", s1)
+            61:  load(s2, "matchNum")
+            62:  loadint(s3, 2)
+            63:  newslot(s255, s1, s2, s3)
+            64:  line(-, 27)
+            65:  loadroot(s1)
+            66:  getk(s1, "game", s1)
+            67:  load(s2, "lostPopular")
+            68:  loadint(s3, 0)
+            69:  newslot(s255, s1, s2, s3)
+            70:  line(-, 28)
+            71:  loadroot(s1)
+            72:  getk(s1, "game", s1)
+            73:  load(s2, "parfect")
+            74:  loadbool(s3, 1)
+            75:  newslot(s255, s1, s2, s3)
+            76:  line(-, 29)
+            77:  loadroot(s1)
+            78:  getk(s1, "game", s1)
+            79:  load(s2, "timeBonus")
+            80:  loadbool(s3, 1)
+            81:  newslot(s255, s1, s2, s3)
+            82:  line(-, 32)
+            83:  loadroot(s1)
+            84:  getk(s1, "game", s1)
+            85:  load(s2, "demoCount")
+            86:  loadint(s3, 0)
+            87:  newslot(s255, s1, s2, s3)
+            88:  line(-, 33)
+            89:  loadroot(s1)
+            90:  getk(s1, "game", s1)
+            91:  load(s2, "demoBgm")
+            92:  loadnulls(s3, 1)
+            93:  newslot(s255, s1, s2, s3)
+            94:  line(-, 34)
+            95:  loadroot(s1)
+            96:  getk(s1, "game", s1)
+            97:  load(s2, "skipDemo")
+            98:  newobj(s3, 2, 0, 1)
+            99:  appendarray(s3, 0, 4)
+            100:  appendarray(s3, 0, 4)
+            101:  newslot(s255, s1, s2, s3)
+            102:  line(-, 35)
+            103:  loadroot(s1)
+            104:  getk(s1, "game", s1)
+            105:  load(s2, "endWinDemo")
+            106:  newobj(s3, 2, 0, 1)
+            107:  appendarray(s3, 0, 4)
+            108:  appendarray(s3, 0, 4)
+            109:  newslot(s255, s1, s2, s3)
+            110:  line(-, 36)
+            111:  loadroot(s1)
+            112:  getk(s1, "game", s1)
+            113:  load(s2, "endLoseDemo")
+            114:  newobj(s3, 2, 0, 1)
+            115:  appendarray(s3, 0, 4)
+            116:  appendarray(s3, 0, 4)
+            117:  newslot(s255, s1, s2, s3)
+            118:  line(-, 38)
+            119:  loadroot(s1)
+            120:  getk(s1, "game", s1)
+            121:  load(s2, "debugFreeTime")
+            122:  loadint(s3, 0)
+            123:  newslot(s255, s1, s2, s3)
+            124:  line(-, 41)
+            125:  loadroot(s1)
+            126:  getk(s1, "game", s1)
+            127:  load(s2, "popular")
+            128:  loadint(s3, 0)
+            129:  newslot(s255, s1, s2, s3)
+            130:  line(-, 43)
+            131:  loadroot(s1)
+            132:  getk(s1, "game", s1)
+            133:  load(s2, "popularCount")
+            134:  loadint(s3, 0)
+            135:  newslot(s255, s1, s2, s3)
+            136:  line(-, 44)
+            137:  loadroot(s1)
+            138:  getk(s1, "game", s1)
+            139:  load(s2, "popularStack")
+            140:  newobj(s3, 2, 0, 1)
+            141:  newobj(s4, 0, 0, 1)
+            142:  appendarray(s3, 4, 0)
+            143:  newobj(s4, 0, 0, 1)
+            144:  appendarray(s3, 4, 0)
+            145:  newslot(s255, s1, s2, s3)
+            146:  line(-, 45)
+            147:  loadroot(s1)
+            148:  getk(s1, "game", s1)
+            149:  load(s2, "popularTotal")
+            150:  newobj(s3, 2, 0, 1)
+            151:  appendarray(s3, 0, 2)
+            152:  appendarray(s3, 0, 2)
+            153:  newslot(s255, s1, s2, s3)
+            154:  line(-, 46)
+            155:  loadroot(s1)
+            156:  getk(s1, "game", s1)
+            157:  load(s2, "popularADD")
+            158:  loadint(s3, 0)
+            159:  newslot(s255, s1, s2, s3)
+            160:  line(-, 48)
+            161:  loadroot(s1)
+            162:  getk(s1, "game", s1)
+            163:  load(s2, "battleTime")
+            164:  loadint(s3, 9999)
+            165:  newslot(s255, s1, s2, s3)
+            166:  line(-, 49)
+            167:  loadroot(s1)
+            168:  getk(s1, "game", s1)
+            169:  load(s2, "timeStopActor")
+            170:  loadint(s3, 0)
+            171:  newslot(s255, s1, s2, s3)
+            172:  line(-, 50)
+            173:  loadroot(s1)
+            174:  getk(s1, "game", s1)
+            175:  load(s2, "timeStop")
+            176:  newobj(s3, 2, 0, 1)
+            177:  appendarray(s3, 0, 2)
+            178:  appendarray(s3, 0, 2)
+            179:  newslot(s255, s1, s2, s3)
+            180:  line(-, 52)
+            181:  loadroot(s1)
+            182:  getk(s1, "game", s1)
+            183:  load(s2, "enableTimeCount")
+            184:  loadbool(s3, 0)
+            185:  newslot(s255, s1, s2, s3)
+            186:  line(-, 53)
+            187:  loadroot(s1)
+            188:  getk(s1, "game", s1)
+            189:  load(s2, "enableAddScore")
+            190:  loadbool(s3, 1)
+            191:  newslot(s255, s1, s2, s3)
+            192:  line(-, 54)
+            193:  loadroot(s1)
+            194:  getk(s1, "game", s1)
+            195:  load(s2, "enableInput")
+            196:  loadbool(s3, 1)
+            197:  newslot(s255, s1, s2, s3)
+            198:  line(-, 55)
+            199:  loadroot(s1)
+            200:  getk(s1, "game", s1)
+            201:  load(s2, "enableHit")
+            202:  loadbool(s3, 1)
+            203:  newslot(s255, s1, s2, s3)
+            204:  line(-, 56)
+            205:  loadroot(s1)
+            206:  getk(s1, "game", s1)
+            207:  load(s2, "enableEvent")
+            208:  loadbool(s3, 1)
+            209:  newslot(s255, s1, s2, s3)
+            210:  line(-, 59)
+            211:  loadroot(s1)
+            212:  getk(s1, "game", s1)
+            213:  load(s2, "fadeScreen")
+            214:  loadnulls(s3, 1)
+            215:  newslot(s255, s1, s2, s3)
+            216:  line(-, 60)
+            217:  loadroot(s1)
+            218:  getk(s1, "game", s1)
+            219:  load(s2, "fadeBackScreen")
+            220:  loadnulls(s3, 1)
+            221:  newslot(s255, s1, s2, s3)
+            222:  line(-, 63)
+            223:  loadroot(s1)
+            224:  getk(s1, "game", s1)
+            225:  load(s2, "practice")
+            226:  loadint(s3, 0)
+            227:  newslot(s255, s1, s2, s3)
+            228:  line(-, 64)
+            229:  loadroot(s1)
+            230:  getk(s1, "game", s1)
+            231:  load(s2, "autoLife")
+            232:  newobj(s3, 2, 0, 1)
+            233:  appendarray(s3, 1065353216, 3)
+            234:  appendarray(s3, 1065353216, 3)
+            235:  newslot(s255, s1, s2, s3)
+            236:  line(-, 65)
+            237:  loadroot(s1)
+            238:  getk(s1, "game", s1)
+            239:  load(s2, "autoSP")
+            240:  newobj(s3, 2, 0, 1)
+            241:  appendarray(s3, 1065353216, 3)
+            242:  appendarray(s3, 1065353216, 3)
+            243:  newslot(s255, s1, s2, s3)
+            244:  line(-, 66)
+            245:  loadroot(s1)
+            246:  getk(s1, "game", s1)
+            247:  load(s2, "autoMana")
+            248:  newobj(s3, 2, 0, 1)
+            249:  appendarray(s3, 1065353216, 3)
+            250:  appendarray(s3, 1065353216, 3)
+            251:  newslot(s255, s1, s2, s3)
+            252:  line(-, 67)
+            253:  loadroot(s1)
+            254:  getk(s1, "game", s1)
+            255:  load(s2, "autoGuard")
+            256:  newobj(s3, 2, 0, 1)
+            257:  appendarray(s3, 0, 4)
+            258:  appendarray(s3, 0, 4)
+            259:  newslot(s255, s1, s2, s3)
+            260:  line(-, 68)
+            261:  loadroot(s1)
+            262:  getk(s1, "game", s1)
+            263:  load(s2, "autoBaria")
+            264:  newobj(s3, 2, 0, 1)
+            265:  appendarray(s3, 0, 4)
+            266:  appendarray(s3, 0, 4)
+            267:  newslot(s255, s1, s2, s3)
+            268:  line(-, 71)
+            269:  loadroot(s1)
+            270:  getk(s1, "game", s1)
+            271:  load(s2, "slowCount")
+            272:  loadint(s3, 0)
+            273:  newslot(s255, s1, s2, s3)
+            274:  line(-, 72)
+            275:  loadroot(s1)
+            276:  getk(s1, "game", s1)
+            277:  load(s2, "climaxBgmCount")
+            278:  loadint(s3, 0)
+            279:  newslot(s255, s1, s2, s3)
+            280:  line(-, 73)
+            281:  loadroot(s1)
+            282:  getk(s1, "game", s1)
+            283:  load(s2, "climaxChangeBgmCount")
+            284:  loadint(s3, 0)
+            285:  newslot(s255, s1, s2, s3)
+            286:  line(-, 74)
+            287:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "EndBattle"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "ReleaseAllActor"
+            1: "Game_SetGameActionData"
+            2: "battleUpdate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 77, op: 1
+            1: line: 78, op: 4
+            2: line: 79, op: 8
+            3: line: 81, op: 13
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 77)
+            1:  loadroot(s1)
+            2:  prepcallk(s1, "ReleaseAllActor", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 78)
+            5:  loadroot(s1)
+            6:  prepcallk(s1, "Game_SetGameActionData", s1, s2)
+            7:  call(255, s1, s2, 1)
+            8:  line(-, 79)
+            9:  loadroot(s1)
+            10:  load(s2, "battleUpdate")
+            11:  loadnulls(s3, 1)
+            12:  set(s255, s1, s2, s3)
+            13:  line(-, 81)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Game_FightEndFunction"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 24
+        nfunctions: 0
+        Literals: [
+            0: "actor"
+            1: "player1"
+            2: "u"
+            3: "EndSpellCard"
+            4: "call"
+            5: "player2"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 23
+          ]
+        Line Informations: [
+            0: line: 84, op: 1
+            1: line: 85, op: 11
+            2: line: 86, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 84)
+            1:  loadroot(s1)
+            2:  getk(s1, "actor", s1)
+            3:  getk(s1, "player1", s1)
+            4:  getk(s1, "u", s1)
+            5:  getk(s1, "EndSpellCard", s1)
+            6:  prepcallk(s1, "call", s1, s2)
+            7:  loadroot(s3)
+            8:  getk(s3, "actor", s3)
+            9:  getk(s3, "player1", s3)
+            10:  call(255, s1, s2, 2)
+            11:  line(-, 85)
+            12:  loadroot(s1)
+            13:  getk(s1, "actor", s1)
+            14:  getk(s1, "player2", s1)
+            15:  getk(s1, "u", s1)
+            16:  getk(s1, "EndSpellCard", s1)
+            17:  prepcallk(s1, "call", s1, s2)
+            18:  loadroot(s3)
+            19:  getk(s3, "actor", s3)
+            20:  getk(s3, "player2", s3)
+            21:  call(255, s1, s2, 2)
+            22:  line(-, 86)
+            23:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "Game_RoundReset"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 48
+        nfunctions: 0
+        Literals: [
+            0: "game"
+            1: "battleTime"
+            2: "act"
+            3: "BattleStatus"
+            4: "remain_time"
+            5: "timeStopActor"
+            6: "timeStop"
+            7: "enableTimeCount"
+            8: "slowCount"
+            9: "globalCount"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 47
+          ]
+        Line Informations: [
+            0: line: 88, op: 1
+            1: line: 89, op: 1
+            2: line: 90, op: 7
+            3: line: 91, op: 14
+            4: line: 92, op: 20
+            5: line: 93, op: 28
+            6: line: 96, op: 34
+            7: line: 97, op: 40
+            8: line: 100, op: 46
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 88)
+            1:  line(-, 89)
+            2:  loadroot(s1)
+            3:  getk(s1, "game", s1)
+            4:  load(s2, "battleTime")
+            5:  loadint(s3, 9999)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 90)
+            8:  loadroot(s1)
+            9:  getk(s1, "act", s1)
+            10:  getk(s1, "BattleStatus", s1)
+            11:  load(s2, "remain_time")
+            12:  loadint(s3, 99)
+            13:  set(s255, s1, s2, s3)
+            14:  line(-, 91)
+            15:  loadroot(s1)
+            16:  getk(s1, "game", s1)
+            17:  load(s2, "timeStopActor")
+            18:  loadint(s3, 0)
+            19:  set(s255, s1, s2, s3)
+            20:  line(-, 92)
+            21:  loadroot(s1)
+            22:  getk(s1, "game", s1)
+            23:  load(s2, "timeStop")
+            24:  newobj(s3, 2, 0, 1)
+            25:  appendarray(s3, 0, 2)
+            26:  appendarray(s3, 0, 2)
+            27:  set(s255, s1, s2, s3)
+            28:  line(-, 93)
+            29:  loadroot(s1)
+            30:  getk(s1, "game", s1)
+            31:  load(s2, "enableTimeCount")
+            32:  loadbool(s3, 0)
+            33:  set(s255, s1, s2, s3)
+            34:  line(-, 96)
+            35:  loadroot(s1)
+            36:  getk(s1, "game", s1)
+            37:  load(s2, "slowCount")
+            38:  loadint(s3, 0)
+            39:  set(s255, s1, s2, s3)
+            40:  line(-, 97)
+            41:  loadroot(s1)
+            42:  getk(s1, "game", s1)
+            43:  load(s2, "globalCount")
+            44:  loadint(s3, 0)
+            45:  set(s255, s1, s2, s3)
+            46:  line(-, 100)
+            47:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "Set_MonoColor"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 16
+        nfunctions: 0
+        Literals: [
+            0: "stage"
+            1: "renderState"
+            2: "pixelShader"
+            3: "blend"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 15
+          ]
+        Line Informations: [
+            0: line: 105, op: 1
+            1: line: 106, op: 7
+            2: line: 107, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 105)
+            1:  loadroot(s1)
+            2:  getk(s1, "stage", s1)
+            3:  getk(s1, "renderState", s1)
+            4:  load(s2, "pixelShader")
+            5:  loadint(s3, 1)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 106)
+            8:  loadroot(s1)
+            9:  getk(s1, "stage", s1)
+            10:  getk(s1, "renderState", s1)
+            11:  load(s2, "blend")
+            12:  loadfloat(s3, 1)
+            13:  set(s255, s1, s2, s3)
+            14:  line(-, 107)
+            15:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "Set_ReverseColor"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 16
+        nfunctions: 0
+        Literals: [
+            0: "stage"
+            1: "renderState"
+            2: "pixelShader"
+            3: "blend"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 15
+          ]
+        Line Informations: [
+            0: line: 109, op: 1
+            1: line: 110, op: 7
+            2: line: 111, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 109)
+            1:  loadroot(s1)
+            2:  getk(s1, "stage", s1)
+            3:  getk(s1, "renderState", s1)
+            4:  load(s2, "pixelShader")
+            5:  loadint(s3, 1)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 110)
+            8:  loadroot(s1)
+            9:  getk(s1, "stage", s1)
+            10:  getk(s1, "renderState", s1)
+            11:  load(s2, "blend")
+            12:  loadfloat(s3, 1)
+            13:  set(s255, s1, s2, s3)
+            14:  line(-, 111)
+            15:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "Clear_FieldEffect"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 16
+        nfunctions: 0
+        Literals: [
+            0: "stage"
+            1: "renderState"
+            2: "pixelShader"
+            3: "blend"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 15
+          ]
+        Line Informations: [
+            0: line: 113, op: 1
+            1: line: 114, op: 7
+            2: line: 115, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 113)
+            1:  loadroot(s1)
+            2:  getk(s1, "stage", s1)
+            3:  getk(s1, "renderState", s1)
+            4:  load(s2, "pixelShader")
+            5:  loadint(s3, 255)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 114)
+            8:  loadroot(s1)
+            9:  getk(s1, "stage", s1)
+            10:  getk(s1, "renderState", s1)
+            11:  load(s2, "blend")
+            12:  loadfloat(s3, 0)
+            13:  set(s255, s1, s2, s3)
+            14:  line(-, 115)
+            15:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "Set_Vibration"
+        nliterals: 2
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 7
+        nfunctions: 0
+        Literals: [
+            0: "camera"
+            1: "vibrationRadius"
+          ]
+        Parameters: [
+            0: "this"
+            1: "X_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "X_", pos: 1, start_op: 0, end_op: 6
+            1: name: "this", pos: 0, start_op: 0, end_op: 6
+          ]
+        Line Informations: [
+            0: line: 117, op: 1
+            1: line: 118, op: 5
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 117)
+            1:  loadroot(s2)
+            2:  getk(s2, "camera", s2)
+            3:  load(s3, "vibrationRadius")
+            4:  set(s255, s2, s3, s1)
+            5:  line(-, 118)
+            6:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "ActorTimeStop"
+        nliterals: 2
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "game"
+            1: "timeStopActor"
+          ]
+        Parameters: [
+            0: "this"
+            1: "x_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "x_", pos: 1, start_op: 0, end_op: 16
+            1: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 121, op: 1
+            1: line: 122, op: 3
+            2: line: 124, op: 10
+            3: line: 125, op: 15
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 121)
+            1:  loadint(s2, 0)
+            2:  jcmp(s2, 7, s1, CMP_LE)
+            3:  line(-, 122)
+            4:  loadroot(s2)
+            5:  getk(s2, "game", s2)
+            6:  load(s3, "timeStopActor")
+            7:  loadint(s4, 0)
+            8:  set(s255, s2, s3, s4)
+            9:  jmp(-, 5)
+            10:  line(-, 124)
+            11:  loadroot(s2)
+            12:  getk(s2, "game", s2)
+            13:  load(s3, "timeStopActor")
+            14:  set(s255, s2, s3, s1)
+            15:  line(-, 125)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "StartBattleBGM"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "PlayBGM"
+            1: "load_data"
+            2: "bgm"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 131, op: 1
+            1: line: 132, op: 1
+            2: line: 133, op: 8
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 131)
+            1:  line(-, 132)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "PlayBGM", s1, s2)
+            4:  loadroot(s3)
+            5:  getk(s3, "load_data", s3)
+            6:  getk(s3, "bgm", s3)
+            7:  call(255, s1, s2, 2)
+            8:  line(-, 133)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: ""
+        name: "StopBattleBGM"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 136, op: 0
+            1: line: 137, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 136)
+            1:  line(-, 137)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: ""
+        name: "Game_MainUpdate"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 13
+        ndefaultparams: 0
+        ninstructions: 108
+        nfunctions: 0
+        Literals: [
+            0: "game"
+            1: "timeStopActor"
+            2: "actorgroup_default"
+            3: "SetUpdateMask"
+            4: "timeStop"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 107
+          ]
+        Line Informations: [
+            0: line: 142, op: 1
+            1: line: 143, op: 6
+            2: line: 144, op: 11
+            3: line: 145, op: 24
+            4: line: 149, op: 32
+            5: line: 150, op: 39
+            6: line: 151, op: 45
+            7: line: 152, op: 60
+            8: line: 155, op: 70
+            9: line: 156, op: 77
+            10: line: 157, op: 83
+            11: line: 158, op: 98
+            12: line: 162, op: 106
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 142)
+            1:  loadroot(s1)
+            2:  getk(s1, "game", s1)
+            3:  getk(s1, "timeStopActor", s1)
+            4:  loadint(s2, 0)
+            5:  jcmp(s2, 25, s1, CMP_G)
+            6:  line(-, 143)
+            7:  loadroot(s1)
+            8:  getk(s1, "game", s1)
+            9:  load(s2, "timeStopActor")
+            10:  pinc(s1, s1, s2, 255)
+            11:  line(-, 144)
+            12:  loadroot(s1)
+            13:  getk(s1, "game", s1)
+            14:  getk(s1, "timeStopActor", s1)
+            15:  loadint(s2, 0)
+            16:  eq(s1, 2, s1, 0)
+            17:  jz(s1, 6)
+            18:  loadroot(s1)
+            19:  getk(s1, "actorgroup_default", s1)
+            20:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            21:  loadint(s3, -1)
+            22:  call(255, s1, s2, 2)
+            23:  jmp(-, 6)
+            24:  line(-, 145)
+            25:  loadroot(s1)
+            26:  getk(s1, "actorgroup_default", s1)
+            27:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            28:  loadint(s3, 0)
+            29:  call(255, s1, s2, 2)
+            30:  jmp(-, 75)
+            31:  line(-, 149)
+            32:  loadroot(s1)
+            33:  getk(s1, "game", s1)
+            34:  getk(s1, "timeStop", s1)
+            35:  loadint(s2, 0)
+            36:  get(s1, s1, s2)
+            37:  loadint(s2, 0)
+            38:  jcmp(s2, 30, s1, CMP_G)
+            39:  line(-, 150)
+            40:  loadroot(s1)
+            41:  getk(s1, "game", s1)
+            42:  getk(s1, "timeStop", s1)
+            43:  loadint(s2, 0)
+            44:  pinc(s1, s1, s2, 255)
+            45:  line(-, 151)
+            46:  loadroot(s1)
+            47:  getk(s1, "game", s1)
+            48:  getk(s1, "timeStop", s1)
+            49:  loadint(s2, 0)
+            50:  get(s1, s1, s2)
+            51:  loadint(s2, 0)
+            52:  eq(s1, 2, s1, 0)
+            53:  jz(s1, 6)
+            54:  loadroot(s1)
+            55:  getk(s1, "actorgroup_default", s1)
+            56:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            57:  loadint(s3, -1)
+            58:  call(255, s1, s2, 2)
+            59:  jmp(-, 8)
+            60:  line(-, 152)
+            61:  loadroot(s1)
+            62:  getk(s1, "actorgroup_default", s1)
+            63:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            64:  loadint(s3, 1)
+            65:  loadint(s4, 16)
+            66:  bitw(s3, s4, s3, BW_OR)
+            67:  call(255, s1, s2, 2)
+            68:  jmp(-, 37)
+            69:  line(-, 155)
+            70:  loadroot(s1)
+            71:  getk(s1, "game", s1)
+            72:  getk(s1, "timeStop", s1)
+            73:  loadint(s2, 1)
+            74:  get(s1, s1, s2)
+            75:  loadint(s2, 0)
+            76:  jcmp(s2, 29, s1, CMP_G)
+            77:  line(-, 156)
+            78:  loadroot(s1)
+            79:  getk(s1, "game", s1)
+            80:  getk(s1, "timeStop", s1)
+            81:  loadint(s2, 1)
+            82:  pinc(s1, s1, s2, 255)
+            83:  line(-, 157)
+            84:  loadroot(s1)
+            85:  getk(s1, "game", s1)
+            86:  getk(s1, "timeStop", s1)
+            87:  loadint(s2, 1)
+            88:  get(s1, s1, s2)
+            89:  loadint(s2, 0)
+            90:  eq(s1, 2, s1, 0)
+            91:  jz(s1, 6)
+            92:  loadroot(s1)
+            93:  getk(s1, "actorgroup_default", s1)
+            94:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            95:  loadint(s3, -1)
+            96:  call(255, s1, s2, 2)
+            97:  jmp(-, 8)
+            98:  line(-, 158)
+            99:  loadroot(s1)
+            100:  getk(s1, "actorgroup_default", s1)
+            101:  prepcallk(s1, "SetUpdateMask", s1, s2)
+            102:  loadint(s3, 2)
+            103:  loadint(s4, 32)
+            104:  bitw(s3, s4, s3, BW_OR)
+            105:  call(255, s1, s2, 2)
+            106:  line(-, 162)
+            107:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

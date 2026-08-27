@@ -1,0 +1,249 @@
+#========================================================================
+#	Stage:7
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/kokoro.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,kokoro,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,kokoro_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,kokoro,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_驚1,0,0
+,ImageDef,kokoro,こころ_普1,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,kokoro_label,"data/system/char_def/name/name_10kokoro.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+,Function,GameStory_1P_In(),
+,Sleep,120
+
+,Show,reimu,30,-64,0
+
+,SetFocus,reimu
+こ　これは\,c05x2,20,-30
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普2,0,0
+昼間の喧噪が\n嘘のようね\,a11x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_汗1,0,0
+みんな生気が無い\n何か不気味……\,c11x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普2,0,0
+誰か居る……\,a05x2
+,ClearBalloon,reimu
+
+,Function,GameStory_2P_InSpecial(),
+,Sleep,180
+
+,ImageDef,reimu,霊夢_驚1,0,0
+誰？\,a05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_怒2,0,0
+見たところ\n人間じゃ無いわね\,a11x2
+,ClearBalloon,reimu
+
+,Show,kokoro,30,-64,0
+
+,SetFocus,kokoro
+……\,a05x2
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_怒1,0,0
+何よあんた\n無視するの？\,b11x2
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+貴方がお面を奪ったの？\,a11x2
+,ClearBalloon,kokoro
+
+,ImageDef,reimu,霊夢_惑1,0,0
+,SetFocus,reimu
+？\,a05x2
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_惑1,20,0
+私の希望……,c05x2
+,WaitInput
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_余1,20,0
+あら貴方？\,a05x2,20,0
+,ClearBalloon,kokoro
+
+ずいぶんと\n希望が満ち満ちているわね♪\,a15x3
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_嬉1,0,0
+えっ　あー\nそりゃもちろん,a11x2
+,WaitInput
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_普1,20,0
+つまり私の希望の面が\n貴方の元に……,a11x2
+,WaitInput
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_怒2,0,0
+って\nあんた何なのよ\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_嬉1,20,0
+私の名は\R[秦|はたの]こころ,a11x2
+,Show,kokoro_label,20,0,-64
+,WaitInput
+,ClearBalloon,kokoro
+,Hide,kokoro_label,20,0,64
+
+,ImageDef,kokoro,こころ_怒1,20,0
+全ての感情を司る者だ！\,b11x2
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_汗1,0,0
+また変な妖怪が\n現れたものね,c11x2
+,WaitInput
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_普1,20,0
+私は全ての感情が\n平等に訪れる様に\n調整する\,a15x3
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_怒1,20,0
+偏った感情など認めないぞ！\,a11x2,20,0
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_怒2,0,0
+じゃあ\n今のこの場所はどうなのよ\,c11x2
+,ClearBalloon,reimu
+
+みんな無感情で不気味だわ\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_汗1,0,0
+だから……\nえーっと,c05x2
+,WaitInput
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_驚1,20,0
+そうだ！\,b05x2
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_普1,20,0
+私はそれを解決するために\n出てきたんだった！\,b11x2
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_嬉1,20,0
+希望溢れる人間を\nついに見つけたんだもん\,c11x2
+,ClearBalloon,kokoro
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+私？\n希望溢れるけど？\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,kokoro
+,ImageDef,kokoro,こころ_普1,20,0
+全ての感情を正常化し\n街を元通りにするには\,a11x2
+,ClearBalloon,kokoro
+
+
+# ----------------------------------
+# 会話中に一時無音になるのは演出です
+,Function,"StopBGM(4000);",# BGM停止
+
+,ImageDef,kokoro,こころ_決1,20,0
+,SetFocus,kokoro
+希望溢れる貴方を\n私の希望の面として\n加える必要がある！\,a15x3
+,ClearBalloon,kokoro
+
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_驚1,0,0
+ちょっ\,a05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_必1,0,0
+本性を現したわね\nこの妖怪めが\,b11x2
+,ClearBalloon,reimu
+
+結局\n人間を襲うのが\n目的なんでしょ？\,c15x3
+,ClearBalloon,reimu
+
+,Function,"GameStory_PlayBattleBGM(111);",# 戦闘BGM再生開始
+
+,SetFocus,kokoro
+失った希望の面の替わりは\n新しい\R[希望|みらい]なのだ\,a11x2
+,ClearBalloon,kokoro
+
+,SetFocus,kokoro
+貴方に怨みは無いが\,a11x2
+,ClearBalloon,kokoro
+
+,ImageDef,kokoro,こころ_決1,0,0
+幻想郷の希望\n全て私が頂こう！\n全ての人間の感情の為に！\,b15x3
+
+,Hide,reimu,30,-64,0,&
+,Hide,kokoro,30,-64,0
+
+#,Function,"StopBGM(2000);",# BGM停止
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

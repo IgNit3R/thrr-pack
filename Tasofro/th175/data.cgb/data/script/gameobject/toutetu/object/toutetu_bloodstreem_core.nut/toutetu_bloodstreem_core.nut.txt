@@ -1,0 +1,2891 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut: 
+sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+name: "main"
+nliterals: 18
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 16
+ndefaultparams: 0
+ninstructions: 49
+nfunctions: 14
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "set_bubble"
+    3: "update_default"
+    4: "update_side"
+    5: "update_berserk"
+    6: "destruct"
+    7: "interactive"
+    8: "kill_move"
+    9: "on_hit_target"
+    10: "on_hit_ground"
+    11: "on_graze_spread"
+    12: "on_graze_target"
+    13: "lib"
+    14: "shot"
+    15: "default_on_graze_target_good"
+    16: "determination"
+    17: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 48
+    1: name: "this", pos: 0, start_op: 0, end_op: 48
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 35, op: 3
+    2: line: 60, op: 6
+    3: line: 78, op: 9
+    4: line: 110, op: 12
+    5: line: 168, op: 15
+    6: line: 226, op: 18
+    7: line: 238, op: 21
+    8: line: 296, op: 24
+    9: line: 306, op: 27
+    10: line: 308, op: 30
+    11: line: 310, op: 33
+    12: line: 312, op: 36
+    13: line: 314, op: 42
+    14: line: 318, op: 45
+    15: line: 328, op: 48
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "set_bubble")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "update_default")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "update_side")
+    13:  closure(s3, 4)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "update_berserk")
+    16:  closure(s3, 5)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "destruct")
+    19:  closure(s3, 6)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "interactive")
+    22:  closure(s3, 7)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "kill_move")
+    25:  closure(s3, 8)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_hit_target")
+    28:  closure(s3, 9)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "on_hit_ground")
+    31:  closure(s3, 10)
+    32:  newslot(s2, s0, s2, s3)
+    33:  load(s2, "on_graze_spread")
+    34:  closure(s3, 11)
+    35:  newslot(s2, s0, s2, s3)
+    36:  load(s2, "on_graze_target")
+    37:  loadroot(s3)
+    38:  getk(s3, "lib", s3)
+    39:  getk(s3, "shot", s3)
+    40:  getk(s3, "default_on_graze_target_good", s3)
+    41:  newslot(s255, s0, s2, s3)
+    42:  load(s2, "determination")
+    43:  closure(s3, 12)
+    44:  newslot(s2, s0, s2, s3)
+    45:  load(s2, "plot")
+    46:  closure(s3, 13)
+    47:  newslot(s2, s0, s2, s3)
+    48:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "construct"
+        nliterals: 25
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 24
+        ndefaultparams: 0
+        ninstructions: 72
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "enable_erace"
+            3: "count"
+            4: "resource"
+            5: "pool"
+            6: "_composition_create_resource"
+            7: "data/sprite/toutetu/blood_flood.gif"
+            8: "direction_h"
+            9: "check_motion"
+            10: "active_time"
+            11: "streem_speed"
+            12: "streem_shift"
+            13: "bullet_pow"
+            14: "prev"
+            15: "next"
+            16: "prev_b"
+            17: "next_b"
+            18: "prev_c"
+            19: "next_c"
+            20: "prev_d"
+            21: "next_d"
+            22: "h_entity"
+            23: "_vspace_regist"
+            24: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 71
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 9, op: 12
+            6: line: 10, op: 15
+            7: line: 13, op: 22
+            8: line: 14, op: 25
+            9: line: 15, op: 28
+            10: line: 16, op: 31
+            11: line: 17, op: 34
+            12: line: 18, op: 37
+            13: line: 20, op: 40
+            14: line: 21, op: 42
+            15: line: 22, op: 45
+            16: line: 23, op: 47
+            17: line: 24, op: 50
+            18: line: 25, op: 52
+            19: line: 26, op: 55
+            20: line: 27, op: 57
+            21: line: 29, op: 60
+            22: line: 31, op: 68
+            23: line: 33, op: 71
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "enable_erace")
+            7:  loadbool(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "count")
+            10:  loadint(s2, 0)
+            11:  newslot(s255, s0, s1, s2)
+            12:  load(s1, "resource")
+            13:  newobj(s2, 0, 0, 0)
+            14:  newslot(s255, s0, s1, s2)
+            15:  getk(s1, "resource", s0)
+            16:  load(s2, "pool")
+            17:  loadroot(s3)
+            18:  prepcallk(s3, "_composition_create_resource", s3, s4)
+            19:  load(s5, "data/sprite/toutetu/blood_flood.gif")
+            20:  call(3, s3, s4, 2)
+            21:  newslot(s255, s1, s2, s3)
+            22:  load(s1, "direction_h")
+            23:  loadint(s2, 1)
+            24:  newslot(s255, s0, s1, s2)
+            25:  load(s1, "check_motion")
+            26:  loadnulls(s2, 1)
+            27:  newslot(s255, s0, s1, s2)
+            28:  load(s1, "active_time")
+            29:  loadint(s2, 0)
+            30:  newslot(s255, s0, s1, s2)
+            31:  load(s1, "streem_speed")
+            32:  loadfloat(s2, 0)
+            33:  newslot(s255, s0, s1, s2)
+            34:  load(s1, "streem_shift")
+            35:  loadfloat(s2, 0)
+            36:  newslot(s255, s0, s1, s2)
+            37:  load(s1, "bullet_pow")
+            38:  loadfloat(s2, 1)
+            39:  newslot(s255, s0, s1, s2)
+            40:  load(s1, "prev")
+            41:  newslot(s255, s0, s1, s0)
+            42:  load(s1, "next")
+            43:  loadnulls(s2, 1)
+            44:  newslot(s255, s0, s1, s2)
+            45:  load(s1, "prev_b")
+            46:  newslot(s255, s0, s1, s0)
+            47:  load(s1, "next_b")
+            48:  loadnulls(s2, 1)
+            49:  newslot(s255, s0, s1, s2)
+            50:  load(s1, "prev_c")
+            51:  newslot(s255, s0, s1, s0)
+            52:  load(s1, "next_c")
+            53:  loadnulls(s2, 1)
+            54:  newslot(s255, s0, s1, s2)
+            55:  load(s1, "prev_d")
+            56:  newslot(s255, s0, s1, s0)
+            57:  load(s1, "next_d")
+            58:  loadnulls(s2, 1)
+            59:  newslot(s255, s0, s1, s2)
+            60:  load(s1, "h_entity")
+            61:  loadroot(s2)
+            62:  prepcallk(s2, "_vspace_regist", s2, s3)
+            63:  move(s4, s0)
+            64:  loadint(s5, 1)
+            65:  loadint(s6, 0)
+            66:  call(2, s2, s3, 4)
+            67:  newslot(s255, s0, s1, s2)
+            68:  load(s1, "state")
+            69:  closure(s2, 0)
+            70:  newslot(s255, s0, s1, s2)
+            71:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 31, op: 0
+                    1: line: 32, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "message"
+        nliterals: 9
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 67
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "state"
+            3: "update_default"
+            4: "direction_h"
+            5: "active_time"
+            6: "bullet_pow"
+            7: "update_side"
+            8: "update_berserk"
+          ]
+        Parameters: [
+            0: "this"
+            1: "id_"
+            2: "param_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "param_", pos: 2, start_op: 0, end_op: 66
+            1: name: "id_", pos: 1, start_op: 0, end_op: 66
+            2: name: "this", pos: 0, start_op: 0, end_op: 66
+          ]
+        Line Informations: [
+            0: line: 35, op: 0
+            1: line: 36, op: 0
+            2: line: 38, op: 3
+            3: line: 39, op: 7
+            4: line: 40, op: 11
+            5: line: 42, op: 16
+            6: line: 43, op: 19
+            7: line: 44, op: 23
+            8: line: 45, op: 27
+            9: line: 47, op: 32
+            10: line: 48, op: 35
+            11: line: 49, op: 38
+            12: line: 50, op: 42
+            13: line: 51, op: 46
+            14: line: 53, op: 51
+            15: line: 54, op: 54
+            16: line: 55, op: 57
+            17: line: 56, op: 61
+            18: line: 57, op: 65
+            19: line: 59, op: 66
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 54)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 1)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 13)
+            16:  dload(s3, "state", s4, "update_default")
+            17:  get(s4, s0, s4)
+            18:  set(s255, s0, s3, s4)
+            19:  load(s3, "direction_h")
+            20:  loadint(s4, 0)
+            21:  get(s4, s2, s4)
+            22:  set(s255, s0, s3, s4)
+            23:  load(s3, "active_time")
+            24:  loadint(s4, 1)
+            25:  get(s4, s2, s4)
+            26:  set(s255, s0, s3, s4)
+            27:  jmp(-, 38)
+            28:  jmp(-, 3)
+            29:  loadint(s3, 2)
+            30:  eq(s3, 3, s1, 0)
+            31:  jz(s3, 16)
+            32:  load(s3, "bullet_pow")
+            33:  loadfloat(s4, 0.5)
+            34:  set(s255, s0, s3, s4)
+            35:  dload(s3, "state", s4, "update_side")
+            36:  get(s4, s0, s4)
+            37:  set(s255, s0, s3, s4)
+            38:  load(s3, "direction_h")
+            39:  loadint(s4, 0)
+            40:  get(s4, s2, s4)
+            41:  set(s255, s0, s3, s4)
+            42:  load(s3, "active_time")
+            43:  loadint(s4, 1)
+            44:  get(s4, s2, s4)
+            45:  set(s255, s0, s3, s4)
+            46:  jmp(-, 19)
+            47:  jmp(-, 3)
+            48:  loadint(s3, 3)
+            49:  eq(s3, 3, s1, 0)
+            50:  jz(s3, 15)
+            51:  load(s3, "bullet_pow")
+            52:  loadfloat(s4, 0.5)
+            53:  set(s255, s0, s3, s4)
+            54:  dload(s3, "state", s4, "update_berserk")
+            55:  get(s4, s0, s4)
+            56:  set(s255, s0, s3, s4)
+            57:  load(s3, "direction_h")
+            58:  loadint(s4, 0)
+            59:  get(s4, s2, s4)
+            60:  set(s255, s0, s3, s4)
+            61:  load(s3, "active_time")
+            62:  loadint(s4, 1)
+            63:  get(s4, s2, s4)
+            64:  set(s255, s0, s3, s4)
+            65:  jmp(-, 0)
+            66:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "set_bubble"
+        nliterals: 15
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 16
+        ndefaultparams: 0
+        ninstructions: 74
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "_composition_create_framepointer"
+            2: "resource_pool"
+            3: "toutetu/blood_bubble"
+            4: "x"
+            5: "rand"
+            6: "y"
+            7: "count"
+            8: "alpha"
+            9: "direction_h"
+            10: "scale_x"
+            11: "scale_y"
+            12: "prev"
+            13: "next_b"
+            14: "next"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_x"
+            2: "_y"
+            3: "_d"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 4, start_op: 1, end_op: 72
+            1: name: "_d", pos: 3, start_op: 0, end_op: 73
+            2: name: "_y", pos: 2, start_op: 0, end_op: 73
+            3: name: "_x", pos: 1, start_op: 0, end_op: 73
+            4: name: "this", pos: 0, start_op: 0, end_op: 73
+          ]
+        Line Informations: [
+            0: line: 60, op: 0
+            1: line: 61, op: 0
+            2: line: 62, op: 1
+            3: line: 63, op: 9
+            4: line: 64, op: 18
+            5: line: 65, op: 27
+            6: line: 66, op: 30
+            7: line: 67, op: 33
+            8: line: 68, op: 35
+            9: line: 69, op: 45
+            10: line: 70, op: 55
+            11: line: 71, op: 57
+            12: line: 73, op: 65
+            13: line: 74, op: 68
+            14: line: 76, op: 71
+            15: line: 77, op: 73
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  newobj(s4, 0, 0, 0)
+            1:  load(s5, "frameset")
+            2:  loadroot(s6)
+            3:  prepcallk(s6, "_composition_create_framepointer", s6, s7)
+            4:  loadroot(s8)
+            5:  getk(s8, "resource_pool", s8)
+            6:  getk(s8, "toutetu/blood_bubble", s8)
+            7:  call(6, s6, s7, 2)
+            8:  newslot(s255, s4, s5, s6)
+            9:  load(s5, "x")
+            10:  loadint(s6, 64)
+            11:  sub(s6, s6, s1)
+            12:  prepcallk(s7, "rand", s0, s8)
+            13:  call(7, s7, s8, 1)
+            14:  loadint(s8, 128)
+            15:  mod(s7, s8, s7)
+            16:  add(s6, s7, s6)
+            17:  newslot(s255, s4, s5, s6)
+            18:  load(s5, "y")
+            19:  loadint(s6, 8)
+            20:  sub(s6, s6, s2)
+            21:  prepcallk(s7, "rand", s0, s8)
+            22:  call(7, s7, s8, 1)
+            23:  loadint(s8, 16)
+            24:  mod(s7, s8, s7)
+            25:  add(s6, s7, s6)
+            26:  newslot(s255, s4, s5, s6)
+            27:  load(s5, "count")
+            28:  loadint(s6, 0)
+            29:  newslot(s255, s4, s5, s6)
+            30:  load(s5, "alpha")
+            31:  loadfloat(s6, 1)
+            32:  newslot(s255, s4, s5, s6)
+            33:  load(s5, "direction_h")
+            34:  newslot(s255, s4, s5, s3)
+            35:  load(s5, "scale_x")
+            36:  loadfloat(s6, 1)
+            37:  prepcallk(s7, "rand", s0, s8)
+            38:  call(7, s7, s8, 1)
+            39:  loadint(s8, 31)
+            40:  mod(s7, s8, s7)
+            41:  loadfloat(s8, 0.01)
+            42:  mul(s7, s8, s7)
+            43:  add(s6, s7, s6)
+            44:  newslot(s255, s4, s5, s6)
+            45:  load(s5, "scale_y")
+            46:  loadfloat(s6, 1)
+            47:  prepcallk(s7, "rand", s0, s8)
+            48:  call(7, s7, s8, 1)
+            49:  loadint(s8, 11)
+            50:  mod(s7, s8, s7)
+            51:  loadfloat(s8, 0.01)
+            52:  mul(s7, s8, s7)
+            53:  add(s6, s7, s6)
+            54:  newslot(s255, s4, s5, s6)
+            55:  load(s5, "prev")
+            56:  newslot(s255, s4, s5, s0)
+            57:  getk(s5, "next_b", s0)
+            58:  loadnulls(s6, 1)
+            59:  eq(s5, 6, s5, 0)
+            60:  jz(s5, 4)
+            61:  load(s5, "next")
+            62:  loadnulls(s6, 1)
+            63:  newslot(s255, s4, s5, s6)
+            64:  jmp(-, 6)
+            65:  dload(s5, "next", s6, "next_b")
+            66:  get(s6, s0, s6)
+            67:  newslot(s255, s4, s5, s6)
+            68:  getk(s5, "next_b", s0)
+            69:  load(s6, "prev")
+            70:  newslot(s255, s5, s6, s4)
+            71:  load(s5, "next_b")
+            72:  set(s255, s0, s5, s4)
+            73:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "update_default"
+        nliterals: 27
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 21
+        ndefaultparams: 0
+        ninstructions: 230
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "obj"
+            2: "enemy"
+            3: "motion"
+            4: "damage"
+            5: "life"
+            6: "active_time"
+            7: "kill_move"
+            8: "bullet_pow"
+            9: "streem_speed"
+            10: "_liquid_external_velocity"
+            11: "camera"
+            12: "x"
+            13: "y"
+            14: "direction_h"
+            15: "player"
+            16: "ground"
+            17: "Spawn_EnemyBulletMessage"
+            18: "rand"
+            19: "toutetu_big_blood_bubble"
+            20: "Spawn_CountSpriteMove"
+            21: "toutetu/blood_splash_001"
+            22: "layer_s2"
+            23: "stage"
+            24: "draw"
+            25: "message"
+            26: "set_bubble"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 150, end_op: 152
+            1: name: "this", pos: 0, start_op: 0, end_op: 229
+          ]
+        Line Informations: [
+            0: line: 78, op: 0
+            1: line: 79, op: 0
+            2: line: 80, op: 2
+            3: line: 81, op: 19
+            4: line: 82, op: 21
+            5: line: 84, op: 22
+            6: line: 85, op: 25
+            7: line: 86, op: 31
+            8: line: 87, op: 34
+            9: line: 88, op: 40
+            10: line: 89, op: 57
+            11: line: 90, op: 61
+            12: line: 92, op: 68
+            13: line: 93, op: 74
+            14: line: 95, op: 118
+            15: line: 96, op: 129
+            16: line: 97, op: 150
+            17: line: 103, op: 153
+            18: line: 106, op: 159
+            19: line: 108, op: 208
+            20: line: 109, op: 229
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  getk(s1, "obj", s0)
+            3:  getk(s1, "enemy", s1)
+            4:  getk(s1, "motion", s1)
+            5:  eq(s1, 4, s1, 255)
+            6:  or(s1, 11, s1)
+            7:  getk(s2, "obj", s0)
+            8:  getk(s2, "enemy", s2)
+            9:  getk(s2, "life", s2)
+            10:  loadint(s3, 0)
+            11:  cmp(s2, s3, s2, CMP_LE)
+            12:  or(s2, 4, s2)
+            13:  getk(s3, "count", s0)
+            14:  getk(s4, "active_time", s0)
+            15:  cmp(s3, s4, s3, CMP_GE)
+            16:  move(s2, s3)
+            17:  move(s1, s2)
+            18:  jz(s1, 3)
+            19:  prepcallk(s1, "kill_move", s0, s2)
+            20:  call(255, s1, s2, 1)
+            21:  return(255, 0)
+            22:  load(s1, "bullet_pow")
+            23:  loadfloat(s2, 0.002)
+            24:  comparith(s1, 2, s1, 43)
+            25:  getk(s1, "bullet_pow", s0)
+            26:  loadfloat(s2, 1)
+            27:  jcmp(s2, 3, s1, CMP_G)
+            28:  load(s1, "bullet_pow")
+            29:  loadfloat(s2, 1)
+            30:  set(s255, s0, s1, s2)
+            31:  load(s1, "streem_speed")
+            32:  loadfloat(s2, 0.1)
+            33:  comparith(s1, 2, s1, 43)
+            34:  getk(s1, "streem_speed", s0)
+            35:  loadfloat(s2, 4)
+            36:  jcmp(s2, 3, s1, CMP_G)
+            37:  load(s1, "streem_speed")
+            38:  loadfloat(s2, 4)
+            39:  set(s255, s0, s1, s2)
+            40:  loadroot(s1)
+            41:  prepcallk(s1, "_liquid_external_velocity", s1, s2)
+            42:  loadroot(s3)
+            43:  getk(s3, "camera", s3)
+            44:  getk(s3, "x", s3)
+            45:  loadroot(s4)
+            46:  getk(s4, "camera", s4)
+            47:  getk(s4, "y", s4)
+            48:  loadint(s5, 264)
+            49:  add(s4, s5, s4)
+            50:  loadint(s5, 640)
+            51:  loadint(s6, 64)
+            52:  getk(s7, "direction_h", s0)
+            53:  loadfloat(s8, 0.05)
+            54:  mul(s7, s8, s7)
+            55:  loadint(s8, 0)
+            56:  call(255, s1, s2, 7)
+            57:  getk(s1, "obj", s0)
+            58:  getk(s1, "player", s1)
+            59:  getk(s1, "ground", s1)
+            60:  jz(s1, 7)
+            61:  getk(s1, "obj", s0)
+            62:  getk(s1, "player", s1)
+            63:  dload(s2, "x", s3, "streem_speed")
+            64:  get(s3, s0, s3)
+            65:  getk(s4, "direction_h", s0)
+            66:  mul(s3, s4, s3)
+            67:  comparith(s1, 65539, s2, 43)
+            68:  getk(s1, "count", s0)
+            69:  loadint(s2, 120)
+            70:  mod(s1, s2, s1)
+            71:  loadint(s2, 1)
+            72:  eq(s1, 2, s1, 0)
+            73:  jz(s1, 44)
+            74:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            75:  getk(s3, "x", s0)
+            76:  prepcallk(s4, "rand", s0, s5)
+            77:  call(4, s4, s5, 1)
+            78:  loadint(s5, 128)
+            79:  mod(s4, s5, s4)
+            80:  getk(s5, "direction_h", s0)
+            81:  mul(s4, s5, s4)
+            82:  sub(s3, s4, s3)
+            83:  loadroot(s4)
+            84:  getk(s4, "camera", s4)
+            85:  getk(s4, "y", s4)
+            86:  loadint(s5, 288)
+            87:  add(s4, s5, s4)
+            88:  prepcallk(s5, "rand", s0, s6)
+            89:  call(5, s5, s6, 1)
+            90:  loadint(s6, 16)
+            91:  mod(s5, s6, s5)
+            92:  add(s4, s5, s4)
+            93:  load(s5, "toutetu_big_blood_bubble")
+            94:  loadint(s6, 8194)
+            95:  newobj(s7, 3, 0, 1)
+            96:  loadint(s8, 1)
+            97:  prepcallk(s9, "rand", s0, s10)
+            98:  call(9, s9, s10, 1)
+            99:  loadint(s10, 21)
+            100:  mod(s9, s10, s9)
+            101:  loadfloat(s10, 0.1)
+            102:  mul(s9, s10, s9)
+            103:  add(s8, s9, s8)
+            104:  getk(s9, "direction_h", s0)
+            105:  mul(s8, s9, s8)
+            106:  appendarray(s7, 8, 0)
+            107:  loadint(s8, -2)
+            108:  loadfloat(s9, 0.1)
+            109:  prepcallk(s10, "rand", s0, s11)
+            110:  call(10, s10, s11, 1)
+            111:  loadint(s11, 21)
+            112:  mod(s10, s11, s10)
+            113:  mul(s9, s10, s9)
+            114:  sub(s8, s9, s8)
+            115:  appendarray(s7, 8, 0)
+            116:  appendarray(s7, 1020054733, 3)
+            117:  call(255, s1, s2, 6)
+            118:  getk(s1, "obj", s0)
+            119:  getk(s1, "enemy", s1)
+            120:  getk(s1, "ground", s1)
+            121:  and(s1, 6, s1)
+            122:  getk(s2, "count", s0)
+            123:  loadint(s3, 10)
+            124:  mod(s2, s3, s2)
+            125:  loadint(s3, 1)
+            126:  eq(s2, 3, s2, 0)
+            127:  move(s1, s2)
+            128:  jz(s1, 24)
+            129:  prepcallk(s1, "Spawn_CountSpriteMove", s0, s2)
+            130:  getk(s3, "obj", s0)
+            131:  getk(s3, "enemy", s3)
+            132:  getk(s3, "x", s3)
+            133:  loadint(s4, 16)
+            134:  getk(s5, "direction_h", s0)
+            135:  mul(s4, s5, s4)
+            136:  sub(s3, s4, s3)
+            137:  getk(s4, "obj", s0)
+            138:  getk(s4, "enemy", s4)
+            139:  getk(s4, "y", s4)
+            140:  load(s5, "toutetu/blood_splash_001")
+            141:  loadint(s6, 30)
+            142:  getk(s7, "layer_s2", s0)
+            143:  newobj(s8, 2, 0, 1)
+            144:  loadfloat(s9, 6)
+            145:  getk(s10, "direction_h", s0)
+            146:  mul(s9, s10, s9)
+            147:  appendarray(s8, 9, 0)
+            148:  appendarray(s8, 0, 2)
+            149:  call(1, s1, s2, 7)
+            150:  dload(s2, "direction_h", s3, "direction_h")
+            151:  get(s3, s0, s3)
+            152:  set(s255, s1, s2, s3)
+            153:  getk(s1, "count", s0)
+            154:  loadint(s2, 3)
+            155:  mod(s1, s2, s1)
+            156:  loadint(s2, 1)
+            157:  eq(s1, 2, s1, 0)
+            158:  jz(s1, 49)
+            159:  getk(s1, "stage", s0)
+            160:  getk(s1, "draw", s1)
+            161:  prepcallk(s1, "message", s1, s2)
+            162:  loadint(s3, 8)
+            163:  newobj(s4, 9, 0, 1)
+            164:  loadroot(s5)
+            165:  getk(s5, "camera", s5)
+            166:  getk(s5, "x", s5)
+            167:  prepcallk(s6, "rand", s0, s7)
+            168:  call(6, s6, s7, 1)
+            169:  loadint(s7, 640)
+            170:  mod(s6, s7, s6)
+            171:  add(s5, s6, s5)
+            172:  appendarray(s4, 5, 0)
+            173:  loadroot(s5)
+            174:  getk(s5, "camera", s5)
+            175:  getk(s5, "y", s5)
+            176:  loadint(s6, 320)
+            177:  add(s5, s6, s5)
+            178:  prepcallk(s6, "rand", s0, s7)
+            179:  call(6, s6, s7, 1)
+            180:  loadint(s7, 32)
+            181:  mod(s6, s7, s6)
+            182:  add(s5, s6, s5)
+            183:  appendarray(s4, 5, 0)
+            184:  loadfloat(s5, 1.5708)
+            185:  neg(s5, s5)
+            186:  appendarray(s4, 5, 0)
+            187:  appendarray(s4, 1065353216, 3)
+            188:  appendarray(s4, 8, 2)
+            189:  appendarray(s4, 1028443341, 3)
+            190:  getk(s5, "streem_speed", s0)
+            191:  prepcallk(s6, "rand", s0, s7)
+            192:  call(6, s6, s7, 1)
+            193:  loadint(s7, 3)
+            194:  mod(s6, s7, s6)
+            195:  add(s5, s6, s5)
+            196:  getk(s6, "direction_h", s0)
+            197:  mul(s5, s6, s5)
+            198:  appendarray(s4, 5, 0)
+            199:  loadint(s5, -6)
+            200:  prepcallk(s6, "rand", s0, s7)
+            201:  call(6, s6, s7, 1)
+            202:  loadint(s7, 6)
+            203:  mod(s6, s7, s6)
+            204:  sub(s5, s6, s5)
+            205:  appendarray(s4, 5, 0)
+            206:  appendarray(s4, 1056964608, 3)
+            207:  call(255, s1, s2, 3)
+            208:  prepcallk(s1, "set_bubble", s0, s2)
+            209:  loadroot(s3)
+            210:  getk(s3, "camera", s3)
+            211:  getk(s3, "x", s3)
+            212:  prepcallk(s4, "rand", s0, s5)
+            213:  call(4, s4, s5, 1)
+            214:  loadint(s5, 640)
+            215:  mod(s4, s5, s4)
+            216:  add(s3, s4, s3)
+            217:  loadroot(s4)
+            218:  getk(s4, "camera", s4)
+            219:  getk(s4, "y", s4)
+            220:  loadint(s5, 320)
+            221:  add(s4, s5, s4)
+            222:  prepcallk(s5, "rand", s0, s6)
+            223:  call(5, s5, s6, 1)
+            224:  loadint(s6, 3)
+            225:  mod(s5, s6, s5)
+            226:  add(s4, s5, s4)
+            227:  getk(s5, "direction_h", s0)
+            228:  call(255, s1, s2, 4)
+            229:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "update_side"
+        nliterals: 34
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 41
+        ndefaultparams: 0
+        ninstructions: 611
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "obj"
+            2: "enemy"
+            3: "motion"
+            4: "damage"
+            5: "life"
+            6: "active_time"
+            7: "kill_move"
+            8: "bullet_pow"
+            9: "streem_speed"
+            10: "streem_shift"
+            11: "sin"
+            12: "rand"
+            13: "Spawn_GroupBulletMessage"
+            14: "camera"
+            15: "x"
+            16: "y"
+            17: "blood_drop"
+            18: "blood_bubble"
+            19: "Spawn_EnemyBulletMessage"
+            20: "toutetu_big_blood_bubble"
+            21: "player"
+            22: "ground"
+            23: "Spawn_CountSpriteMove"
+            24: "toutetu/blood_splash_001"
+            25: "layer_s2"
+            26: "direction_h"
+            27: "_audio_play"
+            28: "se"
+            29: "boss_shot"
+            30: "stage"
+            31: "draw"
+            32: "message"
+            33: "set_bubble"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "d_", pos: 1, start_op: 386, end_op: 391
+            1: name: "a_", pos: 1, start_op: 432, end_op: 434
+            2: name: "d_", pos: 2, start_op: 461, end_op: 508
+            3: name: "x_", pos: 1, start_op: 456, end_op: 508
+            4: name: "d_", pos: 2, start_op: 528, end_op: 575
+            5: name: "x_", pos: 1, start_op: 523, end_op: 575
+            6: name: "d_", pos: 2, start_op: 589, end_op: 609
+            7: name: "x_", pos: 1, start_op: 584, end_op: 609
+            8: name: "this", pos: 0, start_op: 0, end_op: 610
+          ]
+        Line Informations: [
+            0: line: 110, op: 0
+            1: line: 111, op: 0
+            2: line: 112, op: 2
+            3: line: 113, op: 19
+            4: line: 114, op: 21
+            5: line: 116, op: 22
+            6: line: 117, op: 25
+            7: line: 118, op: 31
+            8: line: 119, op: 34
+            9: line: 120, op: 43
+            10: line: 121, op: 46
+            11: line: 122, op: 49
+            12: line: 123, op: 55
+            13: line: 124, op: 61
+            14: line: 126, op: 114
+            15: line: 130, op: 168
+            16: line: 132, op: 219
+            17: line: 136, op: 270
+            18: line: 137, op: 276
+            19: line: 139, op: 322
+            20: line: 140, op: 328
+            21: line: 143, op: 374
+            22: line: 144, op: 378
+            23: line: 145, op: 386
+            24: line: 147, op: 392
+            25: line: 148, op: 398
+            26: line: 149, op: 415
+            27: line: 150, op: 432
+            28: line: 152, op: 435
+            29: line: 153, op: 441
+            30: line: 154, op: 448
+            31: line: 155, op: 456
+            32: line: 156, op: 461
+            33: line: 158, op: 509
+            34: line: 159, op: 515
+            35: line: 160, op: 523
+            36: line: 161, op: 528
+            37: line: 163, op: 576
+            38: line: 164, op: 584
+            39: line: 165, op: 589
+            40: line: 166, op: 610
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  getk(s1, "obj", s0)
+            3:  getk(s1, "enemy", s1)
+            4:  getk(s1, "motion", s1)
+            5:  eq(s1, 4, s1, 255)
+            6:  or(s1, 11, s1)
+            7:  getk(s2, "obj", s0)
+            8:  getk(s2, "enemy", s2)
+            9:  getk(s2, "life", s2)
+            10:  loadint(s3, 0)
+            11:  cmp(s2, s3, s2, CMP_LE)
+            12:  or(s2, 4, s2)
+            13:  getk(s3, "count", s0)
+            14:  getk(s4, "active_time", s0)
+            15:  cmp(s3, s4, s3, CMP_GE)
+            16:  move(s2, s3)
+            17:  move(s1, s2)
+            18:  jz(s1, 3)
+            19:  prepcallk(s1, "kill_move", s0, s2)
+            20:  call(255, s1, s2, 1)
+            21:  return(255, 0)
+            22:  load(s1, "bullet_pow")
+            23:  loadfloat(s2, 0.002)
+            24:  comparith(s1, 2, s1, 43)
+            25:  getk(s1, "bullet_pow", s0)
+            26:  loadfloat(s2, 1)
+            27:  jcmp(s2, 3, s1, CMP_GE)
+            28:  load(s1, "bullet_pow")
+            29:  loadfloat(s2, 1)
+            30:  set(s255, s0, s1, s2)
+            31:  load(s1, "streem_speed")
+            32:  loadfloat(s2, 0.1)
+            33:  comparith(s1, 2, s1, 43)
+            34:  dload(s1, "streem_shift", s2, "sin")
+            35:  prepcall(s2, s2, s0, s3)
+            36:  getk(s4, "count", s0)
+            37:  loadfloat(s5, 0.017453)
+            38:  mul(s4, s5, s4)
+            39:  call(2, s2, s3, 2)
+            40:  loadfloat(s3, 1)
+            41:  mul(s2, s3, s2)
+            42:  set(s255, s0, s1, s2)
+            43:  getk(s1, "streem_speed", s0)
+            44:  loadfloat(s2, 3)
+            45:  jcmp(s2, 328, s1, CMP_G)
+            46:  load(s1, "streem_speed")
+            47:  loadfloat(s2, 3)
+            48:  set(s255, s0, s1, s2)
+            49:  getk(s1, "count", s0)
+            50:  loadint(s2, 10)
+            51:  mod(s1, s2, s1)
+            52:  loadint(s2, 1)
+            53:  eq(s1, 2, s1, 0)
+            54:  jz(s1, 215)
+            55:  prepcallk(s1, "rand", s0, s2)
+            56:  call(1, s1, s2, 1)
+            57:  loadint(s2, 100)
+            58:  mod(s1, s2, s1)
+            59:  loadint(s2, 75)
+            60:  jcmp(s2, 107, s1, CMP_LE)
+            61:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            62:  loadroot(s3)
+            63:  getk(s3, "camera", s3)
+            64:  getk(s3, "x", s3)
+            65:  loadint(s4, 32)
+            66:  sub(s3, s4, s3)
+            67:  prepcallk(s4, "rand", s0, s5)
+            68:  call(4, s4, s5, 1)
+            69:  loadint(s5, 64)
+            70:  mod(s4, s5, s4)
+            71:  add(s3, s4, s3)
+            72:  loadroot(s4)
+            73:  getk(s4, "camera", s4)
+            74:  getk(s4, "y", s4)
+            75:  loadint(s5, 288)
+            76:  add(s4, s5, s4)
+            77:  prepcallk(s5, "rand", s0, s6)
+            78:  call(5, s5, s6, 1)
+            79:  loadint(s6, 16)
+            80:  mod(s5, s6, s5)
+            81:  add(s4, s5, s4)
+            82:  load(s5, "blood_drop")
+            83:  loadint(s6, 1)
+            84:  loadint(s7, 8194)
+            85:  newobj(s8, 3, 0, 1)
+            86:  getk(s9, "streem_shift", s0)
+            87:  loadfloat(s10, 1.5)
+            88:  mul(s9, s10, s9)
+            89:  loadint(s10, 1)
+            90:  add(s9, s10, s9)
+            91:  prepcallk(s10, "rand", s0, s11)
+            92:  call(10, s10, s11, 1)
+            93:  loadint(s11, 11)
+            94:  mod(s10, s11, s10)
+            95:  loadfloat(s11, 0.1)
+            96:  mul(s10, s11, s10)
+            97:  add(s9, s10, s9)
+            98:  getk(s10, "bullet_pow", s0)
+            99:  mul(s9, s10, s9)
+            100:  appendarray(s8, 9, 0)
+            101:  loadint(s9, -2)
+            102:  loadfloat(s10, 0.1)
+            103:  prepcallk(s11, "rand", s0, s12)
+            104:  call(11, s11, s12, 1)
+            105:  loadint(s12, 31)
+            106:  mod(s11, s12, s11)
+            107:  mul(s10, s11, s10)
+            108:  sub(s9, s10, s9)
+            109:  getk(s10, "bullet_pow", s0)
+            110:  mul(s9, s10, s9)
+            111:  appendarray(s8, 9, 0)
+            112:  appendarray(s8, 1036831949, 3)
+            113:  call(255, s1, s2, 7)
+            114:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            115:  loadroot(s3)
+            116:  getk(s3, "camera", s3)
+            117:  getk(s3, "x", s3)
+            118:  loadint(s4, 608)
+            119:  add(s3, s4, s3)
+            120:  prepcallk(s4, "rand", s0, s5)
+            121:  call(4, s4, s5, 1)
+            122:  loadint(s5, 64)
+            123:  mod(s4, s5, s4)
+            124:  add(s3, s4, s3)
+            125:  loadroot(s4)
+            126:  getk(s4, "camera", s4)
+            127:  getk(s4, "y", s4)
+            128:  loadint(s5, 288)
+            129:  add(s4, s5, s4)
+            130:  prepcallk(s5, "rand", s0, s6)
+            131:  call(5, s5, s6, 1)
+            132:  loadint(s6, 16)
+            133:  mod(s5, s6, s5)
+            134:  add(s4, s5, s4)
+            135:  load(s5, "blood_drop")
+            136:  loadint(s6, 2)
+            137:  loadint(s7, 8194)
+            138:  newobj(s8, 3, 0, 1)
+            139:  getk(s9, "streem_shift", s0)
+            140:  loadfloat(s10, 1.5)
+            141:  mul(s9, s10, s9)
+            142:  loadint(s10, 1)
+            143:  sub(s9, s10, s9)
+            144:  prepcallk(s10, "rand", s0, s11)
+            145:  call(10, s10, s11, 1)
+            146:  loadint(s11, 11)
+            147:  mod(s10, s11, s10)
+            148:  loadfloat(s11, 0.1)
+            149:  mul(s10, s11, s10)
+            150:  sub(s9, s10, s9)
+            151:  getk(s10, "bullet_pow", s0)
+            152:  mul(s9, s10, s9)
+            153:  appendarray(s8, 9, 0)
+            154:  loadint(s9, -2)
+            155:  loadfloat(s10, 0.1)
+            156:  prepcallk(s11, "rand", s0, s12)
+            157:  call(11, s11, s12, 1)
+            158:  loadint(s12, 31)
+            159:  mod(s11, s12, s11)
+            160:  mul(s10, s11, s10)
+            161:  sub(s9, s10, s9)
+            162:  getk(s10, "bullet_pow", s0)
+            163:  mul(s9, s10, s9)
+            164:  appendarray(s8, 9, 0)
+            165:  appendarray(s8, 1036831949, 3)
+            166:  call(255, s1, s2, 7)
+            167:  jmp(-, 102)
+            168:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            169:  loadroot(s3)
+            170:  getk(s3, "camera", s3)
+            171:  getk(s3, "x", s3)
+            172:  loadint(s4, 32)
+            173:  sub(s3, s4, s3)
+            174:  prepcallk(s4, "rand", s0, s5)
+            175:  call(4, s4, s5, 1)
+            176:  loadint(s5, 64)
+            177:  mod(s4, s5, s4)
+            178:  add(s3, s4, s3)
+            179:  loadroot(s4)
+            180:  getk(s4, "camera", s4)
+            181:  getk(s4, "y", s4)
+            182:  loadint(s5, 288)
+            183:  add(s4, s5, s4)
+            184:  prepcallk(s5, "rand", s0, s6)
+            185:  call(5, s5, s6, 1)
+            186:  loadint(s6, 16)
+            187:  mod(s5, s6, s5)
+            188:  add(s4, s5, s4)
+            189:  load(s5, "blood_bubble")
+            190:  loadint(s6, 5)
+            191:  loadint(s7, 8194)
+            192:  newobj(s8, 3, 0, 1)
+            193:  getk(s9, "streem_shift", s0)
+            194:  loadint(s10, 1)
+            195:  add(s9, s10, s9)
+            196:  prepcallk(s10, "rand", s0, s11)
+            197:  call(10, s10, s11, 1)
+            198:  loadint(s11, 11)
+            199:  mod(s10, s11, s10)
+            200:  loadfloat(s11, 0.1)
+            201:  mul(s10, s11, s10)
+            202:  add(s9, s10, s9)
+            203:  getk(s10, "bullet_pow", s0)
+            204:  mul(s9, s10, s9)
+            205:  appendarray(s8, 9, 0)
+            206:  loadint(s9, -2)
+            207:  loadfloat(s10, 0.1)
+            208:  prepcallk(s11, "rand", s0, s12)
+            209:  call(11, s11, s12, 1)
+            210:  loadint(s12, 31)
+            211:  mod(s11, s12, s11)
+            212:  mul(s10, s11, s10)
+            213:  sub(s9, s10, s9)
+            214:  getk(s10, "bullet_pow", s0)
+            215:  mul(s9, s10, s9)
+            216:  appendarray(s8, 9, 0)
+            217:  appendarray(s8, 1020054733, 3)
+            218:  call(255, s1, s2, 7)
+            219:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            220:  loadroot(s3)
+            221:  getk(s3, "camera", s3)
+            222:  getk(s3, "x", s3)
+            223:  loadint(s4, 608)
+            224:  add(s3, s4, s3)
+            225:  prepcallk(s4, "rand", s0, s5)
+            226:  call(4, s4, s5, 1)
+            227:  loadint(s5, 64)
+            228:  mod(s4, s5, s4)
+            229:  add(s3, s4, s3)
+            230:  loadroot(s4)
+            231:  getk(s4, "camera", s4)
+            232:  getk(s4, "y", s4)
+            233:  loadint(s5, 288)
+            234:  add(s4, s5, s4)
+            235:  prepcallk(s5, "rand", s0, s6)
+            236:  call(5, s5, s6, 1)
+            237:  loadint(s6, 16)
+            238:  mod(s5, s6, s5)
+            239:  add(s4, s5, s4)
+            240:  load(s5, "blood_bubble")
+            241:  loadint(s6, 6)
+            242:  loadint(s7, 8194)
+            243:  newobj(s8, 3, 0, 1)
+            244:  getk(s9, "streem_shift", s0)
+            245:  loadint(s10, 1)
+            246:  sub(s9, s10, s9)
+            247:  prepcallk(s10, "rand", s0, s11)
+            248:  call(10, s10, s11, 1)
+            249:  loadint(s11, 11)
+            250:  mod(s10, s11, s10)
+            251:  loadfloat(s11, 0.1)
+            252:  mul(s10, s11, s10)
+            253:  sub(s9, s10, s9)
+            254:  getk(s10, "bullet_pow", s0)
+            255:  mul(s9, s10, s9)
+            256:  appendarray(s8, 9, 0)
+            257:  loadint(s9, -2)
+            258:  loadfloat(s10, 0.1)
+            259:  prepcallk(s11, "rand", s0, s12)
+            260:  call(11, s11, s12, 1)
+            261:  loadint(s12, 31)
+            262:  mod(s11, s12, s11)
+            263:  mul(s10, s11, s10)
+            264:  sub(s9, s10, s9)
+            265:  getk(s10, "bullet_pow", s0)
+            266:  mul(s9, s10, s9)
+            267:  appendarray(s8, 9, 0)
+            268:  appendarray(s8, 1020054733, 3)
+            269:  call(255, s1, s2, 7)
+            270:  getk(s1, "count", s0)
+            271:  loadint(s2, 240)
+            272:  mod(s1, s2, s1)
+            273:  loadint(s2, 1)
+            274:  eq(s1, 2, s1, 0)
+            275:  jz(s1, 46)
+            276:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            277:  loadroot(s3)
+            278:  getk(s3, "camera", s3)
+            279:  getk(s3, "x", s3)
+            280:  loadint(s4, 608)
+            281:  add(s3, s4, s3)
+            282:  prepcallk(s4, "rand", s0, s5)
+            283:  call(4, s4, s5, 1)
+            284:  loadint(s5, 64)
+            285:  mod(s4, s5, s4)
+            286:  add(s3, s4, s3)
+            287:  loadroot(s4)
+            288:  getk(s4, "camera", s4)
+            289:  getk(s4, "y", s4)
+            290:  loadint(s5, 288)
+            291:  add(s4, s5, s4)
+            292:  prepcallk(s5, "rand", s0, s6)
+            293:  call(5, s5, s6, 1)
+            294:  loadint(s6, 16)
+            295:  mod(s5, s6, s5)
+            296:  add(s4, s5, s4)
+            297:  load(s5, "toutetu_big_blood_bubble")
+            298:  loadint(s6, 8194)
+            299:  newobj(s7, 3, 0, 1)
+            300:  loadint(s8, 1)
+            301:  prepcallk(s9, "rand", s0, s10)
+            302:  call(9, s9, s10, 1)
+            303:  loadint(s10, 11)
+            304:  mod(s9, s10, s9)
+            305:  loadfloat(s10, 0.1)
+            306:  mul(s9, s10, s9)
+            307:  add(s8, s9, s8)
+            308:  loadint(s9, -1)
+            309:  mul(s8, s9, s8)
+            310:  appendarray(s7, 8, 0)
+            311:  loadint(s8, -2)
+            312:  loadfloat(s9, 0.1)
+            313:  prepcallk(s10, "rand", s0, s11)
+            314:  call(10, s10, s11, 1)
+            315:  loadint(s11, 21)
+            316:  mod(s10, s11, s10)
+            317:  mul(s9, s10, s9)
+            318:  sub(s8, s9, s8)
+            319:  appendarray(s7, 8, 0)
+            320:  appendarray(s7, 1017370378, 3)
+            321:  call(255, s1, s2, 6)
+            322:  getk(s1, "count", s0)
+            323:  loadint(s2, 240)
+            324:  mod(s1, s2, s1)
+            325:  loadint(s2, 121)
+            326:  eq(s1, 2, s1, 0)
+            327:  jz(s1, 46)
+            328:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            329:  loadroot(s3)
+            330:  getk(s3, "camera", s3)
+            331:  getk(s3, "x", s3)
+            332:  loadint(s4, 32)
+            333:  sub(s3, s4, s3)
+            334:  prepcallk(s4, "rand", s0, s5)
+            335:  call(4, s4, s5, 1)
+            336:  loadint(s5, 64)
+            337:  mod(s4, s5, s4)
+            338:  add(s3, s4, s3)
+            339:  loadroot(s4)
+            340:  getk(s4, "camera", s4)
+            341:  getk(s4, "y", s4)
+            342:  loadint(s5, 288)
+            343:  add(s4, s5, s4)
+            344:  prepcallk(s5, "rand", s0, s6)
+            345:  call(5, s5, s6, 1)
+            346:  loadint(s6, 16)
+            347:  mod(s5, s6, s5)
+            348:  add(s4, s5, s4)
+            349:  load(s5, "toutetu_big_blood_bubble")
+            350:  loadint(s6, 8194)
+            351:  newobj(s7, 3, 0, 1)
+            352:  loadint(s8, 1)
+            353:  prepcallk(s9, "rand", s0, s10)
+            354:  call(9, s9, s10, 1)
+            355:  loadint(s10, 11)
+            356:  mod(s9, s10, s9)
+            357:  loadfloat(s10, 0.1)
+            358:  mul(s9, s10, s9)
+            359:  add(s8, s9, s8)
+            360:  loadint(s9, 1)
+            361:  mul(s8, s9, s8)
+            362:  appendarray(s7, 8, 0)
+            363:  loadint(s8, -2)
+            364:  loadfloat(s9, 0.1)
+            365:  prepcallk(s10, "rand", s0, s11)
+            366:  call(10, s10, s11, 1)
+            367:  loadint(s11, 21)
+            368:  mod(s10, s11, s10)
+            369:  mul(s9, s10, s9)
+            370:  sub(s8, s9, s8)
+            371:  appendarray(s7, 8, 0)
+            372:  appendarray(s7, 1017370378, 3)
+            373:  call(255, s1, s2, 6)
+            374:  getk(s1, "obj", s0)
+            375:  getk(s1, "player", s1)
+            376:  getk(s1, "ground", s1)
+            377:  jz(s1, 14)
+            378:  getk(s1, "obj", s0)
+            379:  getk(s1, "player", s1)
+            380:  getk(s1, "x", s1)
+            381:  getk(s2, "x", s0)
+            382:  jcmp(s2, 2, s1, CMP_G)
+            383:  loadint(s1, 1)
+            384:  jmp(-, 1)
+            385:  loadint(s1, -1)
+            386:  getk(s2, "obj", s0)
+            387:  getk(s2, "player", s2)
+            388:  dload(s3, "x", s4, "streem_speed")
+            389:  get(s4, s0, s4)
+            390:  mul(s4, s1, s4)
+            391:  comparith(s2, 131076, s3, 43)
+            392:  getk(s1, "count", s0)
+            393:  loadint(s2, 6)
+            394:  mod(s1, s2, s1)
+            395:  loadint(s2, 1)
+            396:  eq(s1, 2, s1, 0)
+            397:  jz(s1, 37)
+            398:  prepcallk(s1, "Spawn_CountSpriteMove", s0, s2)
+            399:  getk(s3, "x", s0)
+            400:  prepcallk(s4, "rand", s0, s5)
+            401:  call(4, s4, s5, 1)
+            402:  loadint(s5, 128)
+            403:  mod(s4, s5, s4)
+            404:  add(s3, s4, s3)
+            405:  getk(s4, "y", s0)
+            406:  loadint(s5, 32)
+            407:  sub(s4, s5, s4)
+            408:  load(s5, "toutetu/blood_splash_001")
+            409:  loadint(s6, 30)
+            410:  getk(s7, "layer_s2", s0)
+            411:  newobj(s8, 2, 0, 1)
+            412:  appendarray(s8, 1086324736, 3)
+            413:  appendarray(s8, 0, 2)
+            414:  call(255, s1, s2, 7)
+            415:  prepcallk(s1, "Spawn_CountSpriteMove", s0, s2)
+            416:  getk(s3, "x", s0)
+            417:  prepcallk(s4, "rand", s0, s5)
+            418:  call(4, s4, s5, 1)
+            419:  loadint(s5, 128)
+            420:  mod(s4, s5, s4)
+            421:  sub(s3, s4, s3)
+            422:  getk(s4, "y", s0)
+            423:  loadint(s5, 32)
+            424:  sub(s4, s5, s4)
+            425:  load(s5, "toutetu/blood_splash_001")
+            426:  loadint(s6, 30)
+            427:  getk(s7, "layer_s2", s0)
+            428:  newobj(s8, 2, 0, 1)
+            429:  appendarray(s8, -1061158912, 3)
+            430:  appendarray(s8, 0, 2)
+            431:  call(1, s1, s2, 7)
+            432:  load(s2, "direction_h")
+            433:  loadint(s3, -1)
+            434:  set(s255, s1, s2, s3)
+            435:  getk(s1, "count", s0)
+            436:  loadint(s2, 6)
+            437:  mod(s1, s2, s1)
+            438:  loadint(s2, 1)
+            439:  eq(s1, 2, s1, 0)
+            440:  jz(s1, 68)
+            441:  loadroot(s1)
+            442:  prepcallk(s1, "_audio_play", s1, s2)
+            443:  loadroot(s3)
+            444:  getk(s3, "se", s3)
+            445:  getk(s3, "boss_shot", s3)
+            446:  loadint(s4, 1)
+            447:  call(255, s1, s2, 3)
+            448:  loadroot(s1)
+            449:  getk(s1, "camera", s1)
+            450:  getk(s1, "x", s1)
+            451:  prepcallk(s2, "rand", s0, s3)
+            452:  call(2, s2, s3, 1)
+            453:  loadint(s3, 640)
+            454:  mod(s2, s3, s2)
+            455:  add(s1, s2, s1)
+            456:  getk(s2, "x", s0)
+            457:  jcmp(s2, 2, s1, CMP_G)
+            458:  loadint(s2, 1)
+            459:  jmp(-, 1)
+            460:  loadint(s2, -1)
+            461:  getk(s3, "stage", s0)
+            462:  getk(s3, "draw", s3)
+            463:  prepcallk(s3, "message", s3, s4)
+            464:  loadint(s5, 8)
+            465:  newobj(s6, 9, 0, 1)
+            466:  loadroot(s7)
+            467:  getk(s7, "camera", s7)
+            468:  getk(s7, "x", s7)
+            469:  prepcallk(s8, "rand", s0, s9)
+            470:  call(8, s8, s9, 1)
+            471:  loadint(s9, 640)
+            472:  mod(s8, s9, s8)
+            473:  add(s7, s8, s7)
+            474:  appendarray(s6, 7, 0)
+            475:  loadroot(s7)
+            476:  getk(s7, "camera", s7)
+            477:  getk(s7, "y", s7)
+            478:  loadint(s8, 320)
+            479:  add(s7, s8, s7)
+            480:  prepcallk(s8, "rand", s0, s9)
+            481:  call(8, s8, s9, 1)
+            482:  loadint(s9, 32)
+            483:  mod(s8, s9, s8)
+            484:  add(s7, s8, s7)
+            485:  appendarray(s6, 7, 0)
+            486:  loadfloat(s7, 1.5708)
+            487:  neg(s7, s7)
+            488:  appendarray(s6, 7, 0)
+            489:  appendarray(s6, 1065353216, 3)
+            490:  appendarray(s6, 9, 2)
+            491:  appendarray(s6, 1028443341, 3)
+            492:  getk(s7, "streem_speed", s0)
+            493:  prepcallk(s8, "rand", s0, s9)
+            494:  call(8, s8, s9, 1)
+            495:  loadint(s9, 3)
+            496:  mod(s8, s9, s8)
+            497:  add(s7, s8, s7)
+            498:  mul(s7, s2, s7)
+            499:  appendarray(s6, 7, 0)
+            500:  loadint(s7, -6)
+            501:  prepcallk(s8, "rand", s0, s9)
+            502:  call(8, s8, s9, 1)
+            503:  loadint(s9, 6)
+            504:  mod(s8, s9, s8)
+            505:  sub(s7, s8, s7)
+            506:  appendarray(s6, 7, 0)
+            507:  appendarray(s6, 1056964608, 3)
+            508:  call(255, s3, s4, 3)
+            509:  getk(s1, "count", s0)
+            510:  loadint(s2, 3)
+            511:  mod(s1, s2, s1)
+            512:  loadint(s2, 1)
+            513:  eq(s1, 2, s1, 0)
+            514:  jz(s1, 61)
+            515:  loadroot(s1)
+            516:  getk(s1, "camera", s1)
+            517:  getk(s1, "x", s1)
+            518:  prepcallk(s2, "rand", s0, s3)
+            519:  call(2, s2, s3, 1)
+            520:  loadint(s3, 640)
+            521:  mod(s2, s3, s2)
+            522:  add(s1, s2, s1)
+            523:  getk(s2, "x", s0)
+            524:  jcmp(s2, 2, s1, CMP_G)
+            525:  loadint(s2, 1)
+            526:  jmp(-, 1)
+            527:  loadint(s2, -1)
+            528:  getk(s3, "stage", s0)
+            529:  getk(s3, "draw", s3)
+            530:  prepcallk(s3, "message", s3, s4)
+            531:  loadint(s5, 8)
+            532:  newobj(s6, 9, 0, 1)
+            533:  loadroot(s7)
+            534:  getk(s7, "camera", s7)
+            535:  getk(s7, "x", s7)
+            536:  prepcallk(s8, "rand", s0, s9)
+            537:  call(8, s8, s9, 1)
+            538:  loadint(s9, 640)
+            539:  mod(s8, s9, s8)
+            540:  add(s7, s8, s7)
+            541:  appendarray(s6, 7, 0)
+            542:  loadroot(s7)
+            543:  getk(s7, "camera", s7)
+            544:  getk(s7, "y", s7)
+            545:  loadint(s8, 320)
+            546:  add(s7, s8, s7)
+            547:  prepcallk(s8, "rand", s0, s9)
+            548:  call(8, s8, s9, 1)
+            549:  loadint(s9, 32)
+            550:  mod(s8, s9, s8)
+            551:  add(s7, s8, s7)
+            552:  appendarray(s6, 7, 0)
+            553:  loadfloat(s7, 1.5708)
+            554:  neg(s7, s7)
+            555:  appendarray(s6, 7, 0)
+            556:  appendarray(s6, 1065353216, 3)
+            557:  appendarray(s6, 8, 2)
+            558:  appendarray(s6, 1028443341, 3)
+            559:  getk(s7, "streem_speed", s0)
+            560:  prepcallk(s8, "rand", s0, s9)
+            561:  call(8, s8, s9, 1)
+            562:  loadint(s9, 3)
+            563:  mod(s8, s9, s8)
+            564:  add(s7, s8, s7)
+            565:  mul(s7, s2, s7)
+            566:  appendarray(s6, 7, 0)
+            567:  loadint(s7, -6)
+            568:  prepcallk(s8, "rand", s0, s9)
+            569:  call(8, s8, s9, 1)
+            570:  loadint(s9, 6)
+            571:  mod(s8, s9, s8)
+            572:  sub(s7, s8, s7)
+            573:  appendarray(s6, 7, 0)
+            574:  appendarray(s6, 1056964608, 3)
+            575:  call(255, s3, s4, 3)
+            576:  loadroot(s1)
+            577:  getk(s1, "camera", s1)
+            578:  getk(s1, "x", s1)
+            579:  prepcallk(s2, "rand", s0, s3)
+            580:  call(2, s2, s3, 1)
+            581:  loadint(s3, 640)
+            582:  mod(s2, s3, s2)
+            583:  add(s1, s2, s1)
+            584:  getk(s2, "x", s0)
+            585:  jcmp(s2, 2, s1, CMP_G)
+            586:  loadint(s2, 1)
+            587:  jmp(-, 1)
+            588:  loadint(s2, -1)
+            589:  prepcallk(s3, "set_bubble", s0, s4)
+            590:  loadroot(s5)
+            591:  getk(s5, "camera", s5)
+            592:  getk(s5, "x", s5)
+            593:  prepcallk(s6, "rand", s0, s7)
+            594:  call(6, s6, s7, 1)
+            595:  loadint(s7, 640)
+            596:  mod(s6, s7, s6)
+            597:  add(s5, s6, s5)
+            598:  loadroot(s6)
+            599:  getk(s6, "camera", s6)
+            600:  getk(s6, "y", s6)
+            601:  loadint(s7, 320)
+            602:  add(s6, s7, s6)
+            603:  prepcallk(s7, "rand", s0, s8)
+            604:  call(7, s7, s8, 1)
+            605:  loadint(s8, 3)
+            606:  mod(s7, s8, s7)
+            607:  add(s6, s7, s6)
+            608:  move(s7, s2)
+            609:  call(255, s3, s4, 4)
+            610:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 13
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "update_berserk"
+        nliterals: 32
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 41
+        ndefaultparams: 0
+        ninstructions: 592
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "obj"
+            2: "enemy"
+            3: "motion"
+            4: "damage"
+            5: "life"
+            6: "kill_move"
+            7: "bullet_pow"
+            8: "streem_speed"
+            9: "Spawn_GroupBulletMessage"
+            10: "camera"
+            11: "x"
+            12: "rand"
+            13: "y"
+            14: "blood_drop"
+            15: "blood_bubble"
+            16: "streem_shift"
+            17: "Spawn_EnemyBulletMessage"
+            18: "toutetu_big_blood_bubble"
+            19: "player"
+            20: "ground"
+            21: "Spawn_CountSpriteMove"
+            22: "toutetu/blood_splash_001"
+            23: "layer_s2"
+            24: "direction_h"
+            25: "_audio_play"
+            26: "se"
+            27: "boss_shot"
+            28: "stage"
+            29: "draw"
+            30: "message"
+            31: "set_bubble"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "d_", pos: 1, start_op: 371, end_op: 376
+            1: name: "a_", pos: 1, start_op: 413, end_op: 415
+            2: name: "d_", pos: 2, start_op: 442, end_op: 489
+            3: name: "x_", pos: 1, start_op: 437, end_op: 489
+            4: name: "d_", pos: 2, start_op: 509, end_op: 556
+            5: name: "x_", pos: 1, start_op: 504, end_op: 556
+            6: name: "d_", pos: 2, start_op: 570, end_op: 590
+            7: name: "x_", pos: 1, start_op: 565, end_op: 590
+            8: name: "this", pos: 0, start_op: 0, end_op: 591
+          ]
+        Line Informations: [
+            0: line: 168, op: 0
+            1: line: 169, op: 0
+            2: line: 170, op: 2
+            3: line: 171, op: 14
+            4: line: 172, op: 16
+            5: line: 174, op: 17
+            6: line: 175, op: 20
+            7: line: 176, op: 26
+            8: line: 177, op: 29
+            9: line: 178, op: 32
+            10: line: 179, op: 35
+            11: line: 180, op: 41
+            12: line: 182, op: 90
+            13: line: 185, op: 139
+            14: line: 186, op: 150
+            15: line: 188, op: 201
+            16: line: 192, op: 252
+            17: line: 193, op: 255
+            18: line: 194, op: 261
+            19: line: 196, op: 307
+            20: line: 197, op: 313
+            21: line: 201, op: 359
+            22: line: 202, op: 363
+            23: line: 203, op: 371
+            24: line: 205, op: 377
+            25: line: 206, op: 383
+            26: line: 207, op: 398
+            27: line: 208, op: 413
+            28: line: 210, op: 416
+            29: line: 211, op: 422
+            30: line: 212, op: 429
+            31: line: 213, op: 437
+            32: line: 214, op: 442
+            33: line: 216, op: 490
+            34: line: 217, op: 496
+            35: line: 218, op: 504
+            36: line: 219, op: 509
+            37: line: 221, op: 557
+            38: line: 222, op: 565
+            39: line: 223, op: 570
+            40: line: 224, op: 591
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  getk(s1, "obj", s0)
+            3:  getk(s1, "enemy", s1)
+            4:  getk(s1, "motion", s1)
+            5:  eq(s1, 4, s1, 255)
+            6:  or(s1, 6, s1)
+            7:  getk(s2, "obj", s0)
+            8:  getk(s2, "enemy", s2)
+            9:  getk(s2, "life", s2)
+            10:  loadint(s3, 0)
+            11:  cmp(s2, s3, s2, CMP_LE)
+            12:  move(s1, s2)
+            13:  jz(s1, 3)
+            14:  prepcallk(s1, "kill_move", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  return(255, 0)
+            17:  load(s1, "bullet_pow")
+            18:  loadfloat(s2, 0.0005)
+            19:  comparith(s1, 2, s1, 43)
+            20:  getk(s1, "bullet_pow", s0)
+            21:  loadfloat(s2, 1.25)
+            22:  jcmp(s2, 3, s1, CMP_GE)
+            23:  load(s1, "bullet_pow")
+            24:  loadfloat(s2, 1)
+            25:  set(s255, s0, s1, s2)
+            26:  load(s1, "streem_speed")
+            27:  loadfloat(s2, 0.1)
+            28:  comparith(s1, 2, s1, 43)
+            29:  getk(s1, "streem_speed", s0)
+            30:  loadfloat(s2, 4)
+            31:  jcmp(s2, 327, s1, CMP_G)
+            32:  load(s1, "streem_speed")
+            33:  loadfloat(s2, 4)
+            34:  set(s255, s0, s1, s2)
+            35:  getk(s1, "count", s0)
+            36:  loadint(s2, 3)
+            37:  mod(s1, s2, s1)
+            38:  loadint(s2, 1)
+            39:  eq(s1, 2, s1, 0)
+            40:  jz(s1, 98)
+            41:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            42:  loadroot(s3)
+            43:  getk(s3, "camera", s3)
+            44:  getk(s3, "x", s3)
+            45:  loadint(s4, 32)
+            46:  sub(s3, s4, s3)
+            47:  prepcallk(s4, "rand", s0, s5)
+            48:  call(4, s4, s5, 1)
+            49:  loadint(s5, 64)
+            50:  mod(s4, s5, s4)
+            51:  add(s3, s4, s3)
+            52:  loadroot(s4)
+            53:  getk(s4, "camera", s4)
+            54:  getk(s4, "y", s4)
+            55:  loadint(s5, 288)
+            56:  add(s4, s5, s4)
+            57:  prepcallk(s5, "rand", s0, s6)
+            58:  call(5, s5, s6, 1)
+            59:  loadint(s6, 16)
+            60:  mod(s5, s6, s5)
+            61:  add(s4, s5, s4)
+            62:  load(s5, "blood_drop")
+            63:  loadint(s6, 1)
+            64:  loadint(s7, 8194)
+            65:  newobj(s8, 3, 0, 1)
+            66:  loadint(s9, 1)
+            67:  prepcallk(s10, "rand", s0, s11)
+            68:  call(10, s10, s11, 1)
+            69:  loadint(s11, 31)
+            70:  mod(s10, s11, s10)
+            71:  loadfloat(s11, 0.1)
+            72:  mul(s10, s11, s10)
+            73:  add(s9, s10, s9)
+            74:  getk(s10, "bullet_pow", s0)
+            75:  mul(s9, s10, s9)
+            76:  appendarray(s8, 9, 0)
+            77:  loadint(s9, -4)
+            78:  loadfloat(s10, 0.1)
+            79:  prepcallk(s11, "rand", s0, s12)
+            80:  call(11, s11, s12, 1)
+            81:  loadint(s12, 61)
+            82:  mod(s11, s12, s11)
+            83:  mul(s10, s11, s10)
+            84:  sub(s9, s10, s9)
+            85:  getk(s10, "bullet_pow", s0)
+            86:  mul(s9, s10, s9)
+            87:  appendarray(s8, 9, 0)
+            88:  appendarray(s8, 1045220557, 3)
+            89:  call(255, s1, s2, 7)
+            90:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            91:  loadroot(s3)
+            92:  getk(s3, "camera", s3)
+            93:  getk(s3, "x", s3)
+            94:  loadint(s4, 608)
+            95:  add(s3, s4, s3)
+            96:  prepcallk(s4, "rand", s0, s5)
+            97:  call(4, s4, s5, 1)
+            98:  loadint(s5, 64)
+            99:  mod(s4, s5, s4)
+            100:  add(s3, s4, s3)
+            101:  loadroot(s4)
+            102:  getk(s4, "camera", s4)
+            103:  getk(s4, "y", s4)
+            104:  loadint(s5, 288)
+            105:  add(s4, s5, s4)
+            106:  prepcallk(s5, "rand", s0, s6)
+            107:  call(5, s5, s6, 1)
+            108:  loadint(s6, 16)
+            109:  mod(s5, s6, s5)
+            110:  add(s4, s5, s4)
+            111:  load(s5, "blood_drop")
+            112:  loadint(s6, 2)
+            113:  loadint(s7, 8194)
+            114:  newobj(s8, 3, 0, 1)
+            115:  loadint(s9, -1)
+            116:  prepcallk(s10, "rand", s0, s11)
+            117:  call(10, s10, s11, 1)
+            118:  loadint(s11, 31)
+            119:  mod(s10, s11, s10)
+            120:  loadfloat(s11, 0.1)
+            121:  mul(s10, s11, s10)
+            122:  sub(s9, s10, s9)
+            123:  getk(s10, "bullet_pow", s0)
+            124:  mul(s9, s10, s9)
+            125:  appendarray(s8, 9, 0)
+            126:  loadint(s9, -4)
+            127:  loadfloat(s10, 0.1)
+            128:  prepcallk(s11, "rand", s0, s12)
+            129:  call(11, s11, s12, 1)
+            130:  loadint(s12, 61)
+            131:  mod(s11, s12, s11)
+            132:  mul(s10, s11, s10)
+            133:  sub(s9, s10, s9)
+            134:  getk(s10, "bullet_pow", s0)
+            135:  mul(s9, s10, s9)
+            136:  appendarray(s8, 9, 0)
+            137:  appendarray(s8, 1045220557, 3)
+            138:  call(255, s1, s2, 7)
+            139:  getk(s1, "count", s0)
+            140:  loadint(s2, 240)
+            141:  cmp(s1, s2, s1, CMP_GE)
+            142:  and(s1, 6, s1)
+            143:  getk(s2, "count", s0)
+            144:  loadint(s3, 20)
+            145:  mod(s2, s3, s2)
+            146:  loadint(s3, 1)
+            147:  eq(s2, 3, s2, 0)
+            148:  move(s1, s2)
+            149:  jz(s1, 102)
+            150:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            151:  loadroot(s3)
+            152:  getk(s3, "camera", s3)
+            153:  getk(s3, "x", s3)
+            154:  loadint(s4, 32)
+            155:  sub(s3, s4, s3)
+            156:  prepcallk(s4, "rand", s0, s5)
+            157:  call(4, s4, s5, 1)
+            158:  loadint(s5, 64)
+            159:  mod(s4, s5, s4)
+            160:  add(s3, s4, s3)
+            161:  loadroot(s4)
+            162:  getk(s4, "camera", s4)
+            163:  getk(s4, "y", s4)
+            164:  loadint(s5, 288)
+            165:  add(s4, s5, s4)
+            166:  prepcallk(s5, "rand", s0, s6)
+            167:  call(5, s5, s6, 1)
+            168:  loadint(s6, 16)
+            169:  mod(s5, s6, s5)
+            170:  add(s4, s5, s4)
+            171:  load(s5, "blood_bubble")
+            172:  loadint(s6, 5)
+            173:  loadint(s7, 8194)
+            174:  newobj(s8, 3, 0, 1)
+            175:  getk(s9, "streem_shift", s0)
+            176:  loadint(s10, 1)
+            177:  add(s9, s10, s9)
+            178:  prepcallk(s10, "rand", s0, s11)
+            179:  call(10, s10, s11, 1)
+            180:  loadint(s11, 11)
+            181:  mod(s10, s11, s10)
+            182:  loadfloat(s11, 0.1)
+            183:  mul(s10, s11, s10)
+            184:  add(s9, s10, s9)
+            185:  getk(s10, "bullet_pow", s0)
+            186:  mul(s9, s10, s9)
+            187:  appendarray(s8, 9, 0)
+            188:  loadint(s9, -2)
+            189:  loadfloat(s10, 0.1)
+            190:  prepcallk(s11, "rand", s0, s12)
+            191:  call(11, s11, s12, 1)
+            192:  loadint(s12, 31)
+            193:  mod(s11, s12, s11)
+            194:  mul(s10, s11, s10)
+            195:  sub(s9, s10, s9)
+            196:  getk(s10, "bullet_pow", s0)
+            197:  mul(s9, s10, s9)
+            198:  appendarray(s8, 9, 0)
+            199:  appendarray(s8, 1020054733, 3)
+            200:  call(255, s1, s2, 7)
+            201:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            202:  loadroot(s3)
+            203:  getk(s3, "camera", s3)
+            204:  getk(s3, "x", s3)
+            205:  loadint(s4, 608)
+            206:  add(s3, s4, s3)
+            207:  prepcallk(s4, "rand", s0, s5)
+            208:  call(4, s4, s5, 1)
+            209:  loadint(s5, 64)
+            210:  mod(s4, s5, s4)
+            211:  add(s3, s4, s3)
+            212:  loadroot(s4)
+            213:  getk(s4, "camera", s4)
+            214:  getk(s4, "y", s4)
+            215:  loadint(s5, 288)
+            216:  add(s4, s5, s4)
+            217:  prepcallk(s5, "rand", s0, s6)
+            218:  call(5, s5, s6, 1)
+            219:  loadint(s6, 16)
+            220:  mod(s5, s6, s5)
+            221:  add(s4, s5, s4)
+            222:  load(s5, "blood_bubble")
+            223:  loadint(s6, 6)
+            224:  loadint(s7, 8194)
+            225:  newobj(s8, 3, 0, 1)
+            226:  getk(s9, "streem_shift", s0)
+            227:  loadint(s10, 1)
+            228:  sub(s9, s10, s9)
+            229:  prepcallk(s10, "rand", s0, s11)
+            230:  call(10, s10, s11, 1)
+            231:  loadint(s11, 11)
+            232:  mod(s10, s11, s10)
+            233:  loadfloat(s11, 0.1)
+            234:  mul(s10, s11, s10)
+            235:  sub(s9, s10, s9)
+            236:  getk(s10, "bullet_pow", s0)
+            237:  mul(s9, s10, s9)
+            238:  appendarray(s8, 9, 0)
+            239:  loadint(s9, -2)
+            240:  loadfloat(s10, 0.1)
+            241:  prepcallk(s11, "rand", s0, s12)
+            242:  call(11, s11, s12, 1)
+            243:  loadint(s12, 31)
+            244:  mod(s11, s12, s11)
+            245:  mul(s10, s11, s10)
+            246:  sub(s9, s10, s9)
+            247:  getk(s10, "bullet_pow", s0)
+            248:  mul(s9, s10, s9)
+            249:  appendarray(s8, 9, 0)
+            250:  appendarray(s8, 1020054733, 3)
+            251:  call(255, s1, s2, 7)
+            252:  getk(s1, "count", s0)
+            253:  loadint(s2, 480)
+            254:  jcmp(s2, 104, s1, CMP_GE)
+            255:  getk(s1, "count", s0)
+            256:  loadint(s2, 120)
+            257:  mod(s1, s2, s1)
+            258:  loadint(s2, 1)
+            259:  eq(s1, 2, s1, 0)
+            260:  jz(s1, 46)
+            261:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            262:  loadroot(s3)
+            263:  getk(s3, "camera", s3)
+            264:  getk(s3, "x", s3)
+            265:  loadint(s4, 608)
+            266:  add(s3, s4, s3)
+            267:  prepcallk(s4, "rand", s0, s5)
+            268:  call(4, s4, s5, 1)
+            269:  loadint(s5, 64)
+            270:  mod(s4, s5, s4)
+            271:  add(s3, s4, s3)
+            272:  loadroot(s4)
+            273:  getk(s4, "camera", s4)
+            274:  getk(s4, "y", s4)
+            275:  loadint(s5, 288)
+            276:  add(s4, s5, s4)
+            277:  prepcallk(s5, "rand", s0, s6)
+            278:  call(5, s5, s6, 1)
+            279:  loadint(s6, 16)
+            280:  mod(s5, s6, s5)
+            281:  add(s4, s5, s4)
+            282:  load(s5, "toutetu_big_blood_bubble")
+            283:  loadint(s6, 8194)
+            284:  newobj(s7, 3, 0, 1)
+            285:  loadint(s8, 1)
+            286:  prepcallk(s9, "rand", s0, s10)
+            287:  call(9, s9, s10, 1)
+            288:  loadint(s10, 21)
+            289:  mod(s9, s10, s9)
+            290:  loadfloat(s10, 0.1)
+            291:  mul(s9, s10, s9)
+            292:  add(s8, s9, s8)
+            293:  loadint(s9, -1)
+            294:  mul(s8, s9, s8)
+            295:  appendarray(s7, 8, 0)
+            296:  loadint(s8, -2)
+            297:  loadfloat(s9, 0.1)
+            298:  prepcallk(s10, "rand", s0, s11)
+            299:  call(10, s10, s11, 1)
+            300:  loadint(s11, 21)
+            301:  mod(s10, s11, s10)
+            302:  mul(s9, s10, s9)
+            303:  sub(s8, s9, s8)
+            304:  appendarray(s7, 8, 0)
+            305:  appendarray(s7, 1020054733, 3)
+            306:  call(255, s1, s2, 6)
+            307:  getk(s1, "count", s0)
+            308:  loadint(s2, 120)
+            309:  mod(s1, s2, s1)
+            310:  loadint(s2, 61)
+            311:  eq(s1, 2, s1, 0)
+            312:  jz(s1, 46)
+            313:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            314:  loadroot(s3)
+            315:  getk(s3, "camera", s3)
+            316:  getk(s3, "x", s3)
+            317:  loadint(s4, 32)
+            318:  sub(s3, s4, s3)
+            319:  prepcallk(s4, "rand", s0, s5)
+            320:  call(4, s4, s5, 1)
+            321:  loadint(s5, 64)
+            322:  mod(s4, s5, s4)
+            323:  add(s3, s4, s3)
+            324:  loadroot(s4)
+            325:  getk(s4, "camera", s4)
+            326:  getk(s4, "y", s4)
+            327:  loadint(s5, 288)
+            328:  add(s4, s5, s4)
+            329:  prepcallk(s5, "rand", s0, s6)
+            330:  call(5, s5, s6, 1)
+            331:  loadint(s6, 16)
+            332:  mod(s5, s6, s5)
+            333:  add(s4, s5, s4)
+            334:  load(s5, "toutetu_big_blood_bubble")
+            335:  loadint(s6, 8194)
+            336:  newobj(s7, 3, 0, 1)
+            337:  loadint(s8, 1)
+            338:  prepcallk(s9, "rand", s0, s10)
+            339:  call(9, s9, s10, 1)
+            340:  loadint(s10, 21)
+            341:  mod(s9, s10, s9)
+            342:  loadfloat(s10, 0.1)
+            343:  mul(s9, s10, s9)
+            344:  add(s8, s9, s8)
+            345:  loadint(s9, 1)
+            346:  mul(s8, s9, s8)
+            347:  appendarray(s7, 8, 0)
+            348:  loadint(s8, -2)
+            349:  loadfloat(s9, 0.1)
+            350:  prepcallk(s10, "rand", s0, s11)
+            351:  call(10, s10, s11, 1)
+            352:  loadint(s11, 21)
+            353:  mod(s10, s11, s10)
+            354:  mul(s9, s10, s9)
+            355:  sub(s8, s9, s8)
+            356:  appendarray(s7, 8, 0)
+            357:  appendarray(s7, 1020054733, 3)
+            358:  call(255, s1, s2, 6)
+            359:  getk(s1, "obj", s0)
+            360:  getk(s1, "player", s1)
+            361:  getk(s1, "ground", s1)
+            362:  jz(s1, 14)
+            363:  getk(s1, "obj", s0)
+            364:  getk(s1, "player", s1)
+            365:  getk(s1, "x", s1)
+            366:  getk(s2, "x", s0)
+            367:  jcmp(s2, 2, s1, CMP_G)
+            368:  loadint(s1, 1)
+            369:  jmp(-, 1)
+            370:  loadint(s1, -1)
+            371:  getk(s2, "obj", s0)
+            372:  getk(s2, "player", s2)
+            373:  dload(s3, "x", s4, "streem_speed")
+            374:  get(s4, s0, s4)
+            375:  mul(s4, s1, s4)
+            376:  comparith(s2, 131076, s3, 43)
+            377:  getk(s1, "count", s0)
+            378:  loadint(s2, 6)
+            379:  mod(s1, s2, s1)
+            380:  loadint(s2, 1)
+            381:  eq(s1, 2, s1, 0)
+            382:  jz(s1, 33)
+            383:  prepcallk(s1, "Spawn_CountSpriteMove", s0, s2)
+            384:  getk(s3, "x", s0)
+            385:  prepcallk(s4, "rand", s0, s5)
+            386:  call(4, s4, s5, 1)
+            387:  loadint(s5, 128)
+            388:  mod(s4, s5, s4)
+            389:  add(s3, s4, s3)
+            390:  getk(s4, "y", s0)
+            391:  load(s5, "toutetu/blood_splash_001")
+            392:  loadint(s6, 30)
+            393:  getk(s7, "layer_s2", s0)
+            394:  newobj(s8, 2, 0, 1)
+            395:  appendarray(s8, 1086324736, 3)
+            396:  appendarray(s8, 0, 2)
+            397:  call(255, s1, s2, 7)
+            398:  prepcallk(s1, "Spawn_CountSpriteMove", s0, s2)
+            399:  getk(s3, "x", s0)
+            400:  prepcallk(s4, "rand", s0, s5)
+            401:  call(4, s4, s5, 1)
+            402:  loadint(s5, 128)
+            403:  mod(s4, s5, s4)
+            404:  sub(s3, s4, s3)
+            405:  getk(s4, "y", s0)
+            406:  load(s5, "toutetu/blood_splash_001")
+            407:  loadint(s6, 30)
+            408:  getk(s7, "layer_s2", s0)
+            409:  newobj(s8, 2, 0, 1)
+            410:  appendarray(s8, -1061158912, 3)
+            411:  appendarray(s8, 0, 2)
+            412:  call(1, s1, s2, 7)
+            413:  load(s2, "direction_h")
+            414:  loadint(s3, -1)
+            415:  set(s255, s1, s2, s3)
+            416:  getk(s1, "count", s0)
+            417:  loadint(s2, 6)
+            418:  mod(s1, s2, s1)
+            419:  loadint(s2, 1)
+            420:  eq(s1, 2, s1, 0)
+            421:  jz(s1, 68)
+            422:  loadroot(s1)
+            423:  prepcallk(s1, "_audio_play", s1, s2)
+            424:  loadroot(s3)
+            425:  getk(s3, "se", s3)
+            426:  getk(s3, "boss_shot", s3)
+            427:  loadint(s4, 1)
+            428:  call(255, s1, s2, 3)
+            429:  loadroot(s1)
+            430:  getk(s1, "camera", s1)
+            431:  getk(s1, "x", s1)
+            432:  prepcallk(s2, "rand", s0, s3)
+            433:  call(2, s2, s3, 1)
+            434:  loadint(s3, 640)
+            435:  mod(s2, s3, s2)
+            436:  add(s1, s2, s1)
+            437:  getk(s2, "x", s0)
+            438:  jcmp(s2, 2, s1, CMP_G)
+            439:  loadint(s2, 1)
+            440:  jmp(-, 1)
+            441:  loadint(s2, -1)
+            442:  getk(s3, "stage", s0)
+            443:  getk(s3, "draw", s3)
+            444:  prepcallk(s3, "message", s3, s4)
+            445:  loadint(s5, 8)
+            446:  newobj(s6, 9, 0, 1)
+            447:  loadroot(s7)
+            448:  getk(s7, "camera", s7)
+            449:  getk(s7, "x", s7)
+            450:  prepcallk(s8, "rand", s0, s9)
+            451:  call(8, s8, s9, 1)
+            452:  loadint(s9, 640)
+            453:  mod(s8, s9, s8)
+            454:  add(s7, s8, s7)
+            455:  appendarray(s6, 7, 0)
+            456:  loadroot(s7)
+            457:  getk(s7, "camera", s7)
+            458:  getk(s7, "y", s7)
+            459:  loadint(s8, 320)
+            460:  add(s7, s8, s7)
+            461:  prepcallk(s8, "rand", s0, s9)
+            462:  call(8, s8, s9, 1)
+            463:  loadint(s9, 32)
+            464:  mod(s8, s9, s8)
+            465:  add(s7, s8, s7)
+            466:  appendarray(s6, 7, 0)
+            467:  loadfloat(s7, 1.5708)
+            468:  neg(s7, s7)
+            469:  appendarray(s6, 7, 0)
+            470:  appendarray(s6, 1065353216, 3)
+            471:  appendarray(s6, 9, 2)
+            472:  appendarray(s6, 1028443341, 3)
+            473:  getk(s7, "streem_speed", s0)
+            474:  prepcallk(s8, "rand", s0, s9)
+            475:  call(8, s8, s9, 1)
+            476:  loadint(s9, 3)
+            477:  mod(s8, s9, s8)
+            478:  add(s7, s8, s7)
+            479:  mul(s7, s2, s7)
+            480:  appendarray(s6, 7, 0)
+            481:  loadint(s7, -6)
+            482:  prepcallk(s8, "rand", s0, s9)
+            483:  call(8, s8, s9, 1)
+            484:  loadint(s9, 6)
+            485:  mod(s8, s9, s8)
+            486:  sub(s7, s8, s7)
+            487:  appendarray(s6, 7, 0)
+            488:  appendarray(s6, 1056964608, 3)
+            489:  call(255, s3, s4, 3)
+            490:  getk(s1, "count", s0)
+            491:  loadint(s2, 3)
+            492:  mod(s1, s2, s1)
+            493:  loadint(s2, 1)
+            494:  eq(s1, 2, s1, 0)
+            495:  jz(s1, 61)
+            496:  loadroot(s1)
+            497:  getk(s1, "camera", s1)
+            498:  getk(s1, "x", s1)
+            499:  prepcallk(s2, "rand", s0, s3)
+            500:  call(2, s2, s3, 1)
+            501:  loadint(s3, 640)
+            502:  mod(s2, s3, s2)
+            503:  add(s1, s2, s1)
+            504:  getk(s2, "x", s0)
+            505:  jcmp(s2, 2, s1, CMP_G)
+            506:  loadint(s2, 1)
+            507:  jmp(-, 1)
+            508:  loadint(s2, -1)
+            509:  getk(s3, "stage", s0)
+            510:  getk(s3, "draw", s3)
+            511:  prepcallk(s3, "message", s3, s4)
+            512:  loadint(s5, 8)
+            513:  newobj(s6, 9, 0, 1)
+            514:  loadroot(s7)
+            515:  getk(s7, "camera", s7)
+            516:  getk(s7, "x", s7)
+            517:  prepcallk(s8, "rand", s0, s9)
+            518:  call(8, s8, s9, 1)
+            519:  loadint(s9, 640)
+            520:  mod(s8, s9, s8)
+            521:  add(s7, s8, s7)
+            522:  appendarray(s6, 7, 0)
+            523:  loadroot(s7)
+            524:  getk(s7, "camera", s7)
+            525:  getk(s7, "y", s7)
+            526:  loadint(s8, 320)
+            527:  add(s7, s8, s7)
+            528:  prepcallk(s8, "rand", s0, s9)
+            529:  call(8, s8, s9, 1)
+            530:  loadint(s9, 32)
+            531:  mod(s8, s9, s8)
+            532:  add(s7, s8, s7)
+            533:  appendarray(s6, 7, 0)
+            534:  loadfloat(s7, 1.5708)
+            535:  neg(s7, s7)
+            536:  appendarray(s6, 7, 0)
+            537:  appendarray(s6, 1065353216, 3)
+            538:  appendarray(s6, 8, 2)
+            539:  appendarray(s6, 1028443341, 3)
+            540:  getk(s7, "streem_speed", s0)
+            541:  prepcallk(s8, "rand", s0, s9)
+            542:  call(8, s8, s9, 1)
+            543:  loadint(s9, 3)
+            544:  mod(s8, s9, s8)
+            545:  add(s7, s8, s7)
+            546:  mul(s7, s2, s7)
+            547:  appendarray(s6, 7, 0)
+            548:  loadint(s7, -6)
+            549:  prepcallk(s8, "rand", s0, s9)
+            550:  call(8, s8, s9, 1)
+            551:  loadint(s9, 6)
+            552:  mod(s8, s9, s8)
+            553:  sub(s7, s8, s7)
+            554:  appendarray(s6, 7, 0)
+            555:  appendarray(s6, 1056964608, 3)
+            556:  call(255, s3, s4, 3)
+            557:  loadroot(s1)
+            558:  getk(s1, "camera", s1)
+            559:  getk(s1, "x", s1)
+            560:  prepcallk(s2, "rand", s0, s3)
+            561:  call(2, s2, s3, 1)
+            562:  loadint(s3, 640)
+            563:  mod(s2, s3, s2)
+            564:  add(s1, s2, s1)
+            565:  getk(s2, "x", s0)
+            566:  jcmp(s2, 2, s1, CMP_G)
+            567:  loadint(s2, 1)
+            568:  jmp(-, 1)
+            569:  loadint(s2, -1)
+            570:  prepcallk(s3, "set_bubble", s0, s4)
+            571:  loadroot(s5)
+            572:  getk(s5, "camera", s5)
+            573:  getk(s5, "x", s5)
+            574:  prepcallk(s6, "rand", s0, s7)
+            575:  call(6, s6, s7, 1)
+            576:  loadint(s7, 640)
+            577:  mod(s6, s7, s6)
+            578:  add(s5, s6, s5)
+            579:  loadroot(s6)
+            580:  getk(s6, "camera", s6)
+            581:  getk(s6, "y", s6)
+            582:  loadint(s7, 320)
+            583:  add(s6, s7, s6)
+            584:  prepcallk(s7, "rand", s0, s8)
+            585:  call(7, s7, s8, 1)
+            586:  loadint(s8, 3)
+            587:  mod(s7, s8, s7)
+            588:  add(s6, s7, s6)
+            589:  move(s7, s2)
+            590:  call(255, s3, s4, 4)
+            591:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 13
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "destruct"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "resource"
+            1: "lib"
+            2: "shot"
+            3: "common_destruct"
+            4: "call"
+            5: "prev"
+            6: "prev_b"
+            7: "prev_c"
+            8: "next"
+            9: "next_b"
+            10: "next_c"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 227, op: 0
+            1: line: 228, op: 0
+            2: line: 229, op: 2
+            3: line: 230, op: 9
+            4: line: 231, op: 12
+            5: line: 232, op: 15
+            6: line: 233, op: 18
+            7: line: 234, op: 21
+            8: line: 235, op: 24
+            9: line: 236, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "resource")
+            1:  delete(s1, s0, s1)
+            2:  loadroot(s1)
+            3:  getk(s1, "lib", s1)
+            4:  getk(s1, "shot", s1)
+            5:  getk(s1, "common_destruct", s1)
+            6:  prepcallk(s1, "call", s1, s2)
+            7:  move(s3, s0)
+            8:  call(255, s1, s2, 2)
+            9:  load(s1, "prev")
+            10:  loadnulls(s2, 1)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "prev_b")
+            13:  loadnulls(s2, 1)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "prev_c")
+            16:  loadnulls(s2, 1)
+            17:  set(s255, s0, s1, s2)
+            18:  load(s1, "next")
+            19:  loadnulls(s2, 1)
+            20:  set(s255, s0, s1, s2)
+            21:  load(s1, "next_b")
+            22:  loadnulls(s2, 1)
+            23:  set(s255, s0, s1, s2)
+            24:  load(s1, "next_c")
+            25:  loadnulls(s2, 1)
+            26:  set(s255, s0, s1, s2)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "interactive"
+        nliterals: 18
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 44
+        ndefaultparams: 0
+        ninstructions: 146
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "next"
+            2: "count"
+            3: "alpha"
+            4: "scale_x"
+            5: "scale_y"
+            6: "prev"
+            7: "next_b"
+            8: "frameset"
+            9: "step"
+            10: "x"
+            11: "streem_speed"
+            12: "direction_h"
+            13: "next_c"
+            14: "y"
+            15: "vy"
+            16: "next_d"
+            17: "add_y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 4, start_op: 112, end_op: 144
+            1: name: "a_", pos: 3, start_op: 81, end_op: 144
+            2: name: "a_", pos: 2, start_op: 49, end_op: 144
+            3: name: "a_", pos: 1, start_op: 3, end_op: 144
+            4: name: "this", pos: 0, start_op: 0, end_op: 145
+          ]
+        Line Informations: [
+            0: line: 239, op: 0
+            1: line: 240, op: 0
+            2: line: 241, op: 2
+            3: line: 242, op: 3
+            4: line: 243, op: 6
+            5: line: 244, op: 8
+            6: line: 245, op: 11
+            7: line: 246, op: 14
+            8: line: 247, op: 17
+            9: line: 250, op: 21
+            10: line: 251, op: 24
+            11: line: 252, op: 27
+            12: line: 254, op: 30
+            13: line: 255, op: 33
+            14: line: 256, op: 37
+            15: line: 258, op: 45
+            16: line: 260, op: 48
+            17: line: 261, op: 49
+            18: line: 262, op: 52
+            19: line: 263, op: 54
+            20: line: 264, op: 57
+            21: line: 265, op: 62
+            22: line: 266, op: 65
+            23: line: 267, op: 69
+            24: line: 269, op: 77
+            25: line: 272, op: 80
+            26: line: 273, op: 81
+            27: line: 274, op: 84
+            28: line: 275, op: 87
+            29: line: 276, op: 90
+            30: line: 277, op: 93
+            31: line: 278, op: 96
+            32: line: 279, op: 100
+            33: line: 281, op: 108
+            34: line: 284, op: 111
+            35: line: 285, op: 112
+            36: line: 286, op: 115
+            37: line: 287, op: 118
+            38: line: 288, op: 121
+            39: line: 289, op: 127
+            40: line: 290, op: 130
+            41: line: 291, op: 134
+            42: line: 293, op: 142
+            43: line: 295, op: 145
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "state", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  getk(s1, "next", s0)
+            3:  loadnulls(s2, 1)
+            4:  ne(s2, 2, s1, 0)
+            5:  jz(s2, 42)
+            6:  load(s2, "count")
+            7:  pinc(s2, s1, s2, 1)
+            8:  getk(s2, "count", s1)
+            9:  loadint(s3, 30)
+            10:  jcmp(s3, 10, s2, CMP_LE)
+            11:  load(s2, "alpha")
+            12:  loadfloat(s3, 0.033)
+            13:  comparith(s2, 65539, s2, 43)
+            14:  load(s2, "scale_x")
+            15:  loadfloat(s3, 0.01)
+            16:  comparith(s2, 65539, s2, 43)
+            17:  load(s2, "scale_y")
+            18:  loadfloat(s3, 0.005)
+            19:  comparith(s2, 65539, s2, 43)
+            20:  jmp(-, 9)
+            21:  load(s2, "alpha")
+            22:  loadfloat(s3, 0.033)
+            23:  comparith(s2, 65539, s2, 45)
+            24:  load(s2, "scale_x")
+            25:  loadfloat(s3, 0.01)
+            26:  comparith(s2, 65539, s2, 43)
+            27:  load(s2, "scale_y")
+            28:  loadfloat(s3, 0.005)
+            29:  comparith(s2, 65539, s2, 43)
+            30:  getk(s2, "alpha", s1)
+            31:  loadfloat(s3, 0)
+            32:  jcmp(s3, 12, s2, CMP_LE)
+            33:  getk(s2, "prev", s1)
+            34:  dload(s3, "next", s4, "next")
+            35:  get(s4, s1, s4)
+            36:  set(s255, s2, s3, s4)
+            37:  getk(s2, "next", s1)
+            38:  loadnulls(s3, 1)
+            39:  ne(s2, 3, s2, 0)
+            40:  jz(s2, 4)
+            41:  getk(s2, "next", s1)
+            42:  dload(s3, "prev", s4, "prev")
+            43:  get(s4, s1, s4)
+            44:  set(s255, s2, s3, s4)
+            45:  getk(s2, "next", s1)
+            46:  move(s1, s2)
+            47:  jmp(-, -45)
+            48:  getk(s2, "next_b", s0)
+            49:  loadnulls(s3, 1)
+            50:  ne(s3, 3, s2, 0)
+            51:  jz(s3, 28)
+            52:  load(s3, "count")
+            53:  pinc(s3, s2, s3, 1)
+            54:  getk(s3, "frameset", s2)
+            55:  prepcallk(s3, "step", s3, s4)
+            56:  call(255, s3, s4, 1)
+            57:  dload(s3, "x", s4, "streem_speed")
+            58:  get(s4, s0, s4)
+            59:  getk(s5, "direction_h", s2)
+            60:  mul(s4, s5, s4)
+            61:  comparith(s3, 131076, s3, 43)
+            62:  getk(s3, "count", s2)
+            63:  loadint(s4, 16)
+            64:  jcmp(s4, 12, s3, CMP_GE)
+            65:  getk(s3, "prev", s2)
+            66:  dload(s4, "next", s5, "next")
+            67:  get(s5, s2, s5)
+            68:  set(s255, s3, s4, s5)
+            69:  getk(s3, "next", s2)
+            70:  loadnulls(s4, 1)
+            71:  ne(s3, 4, s3, 0)
+            72:  jz(s3, 4)
+            73:  getk(s3, "next", s2)
+            74:  dload(s4, "prev", s5, "prev")
+            75:  get(s5, s2, s5)
+            76:  set(s255, s3, s4, s5)
+            77:  getk(s3, "next", s2)
+            78:  move(s2, s3)
+            79:  jmp(-, -31)
+            80:  getk(s3, "next_c", s0)
+            81:  loadnulls(s4, 1)
+            82:  ne(s4, 4, s3, 0)
+            83:  jz(s4, 27)
+            84:  dload(s4, "y", s5, "vy")
+            85:  get(s5, s3, s5)
+            86:  comparith(s4, 196613, s4, 43)
+            87:  load(s4, "scale_y")
+            88:  loadfloat(s5, 0.01)
+            89:  comparith(s4, 196613, s4, 43)
+            90:  load(s4, "alpha")
+            91:  loadfloat(s5, 0.033)
+            92:  comparith(s4, 196613, s4, 45)
+            93:  getk(s4, "alpha", s3)
+            94:  loadfloat(s5, 0)
+            95:  jcmp(s5, 12, s4, CMP_LE)
+            96:  getk(s4, "prev", s3)
+            97:  dload(s5, "next", s6, "next")
+            98:  get(s6, s3, s6)
+            99:  set(s255, s4, s5, s6)
+            100:  getk(s4, "next", s3)
+            101:  loadnulls(s5, 1)
+            102:  ne(s4, 5, s4, 0)
+            103:  jz(s4, 4)
+            104:  getk(s4, "next", s3)
+            105:  dload(s5, "prev", s6, "prev")
+            106:  get(s6, s3, s6)
+            107:  set(s255, s4, s5, s6)
+            108:  getk(s4, "next", s3)
+            109:  move(s3, s4)
+            110:  jmp(-, -30)
+            111:  getk(s4, "next_d", s0)
+            112:  loadnulls(s5, 1)
+            113:  ne(s5, 5, s4, 0)
+            114:  jz(s5, 30)
+            115:  dload(s5, "y", s6, "vy")
+            116:  get(s6, s4, s6)
+            117:  comparith(s5, 262150, s5, 43)
+            118:  dload(s5, "add_y", s6, "vy")
+            119:  get(s6, s4, s6)
+            120:  comparith(s5, 262150, s5, 43)
+            121:  getk(s5, "add_y", s4)
+            122:  loadint(s6, -128)
+            123:  jcmp(s6, 3, s5, CMP_LE)
+            124:  load(s5, "add_y")
+            125:  loadint(s6, -128)
+            126:  set(s255, s4, s5, s6)
+            127:  getk(s5, "add_y", s4)
+            128:  loadint(s6, -360)
+            129:  jcmp(s6, 12, s5, CMP_LE)
+            130:  getk(s5, "prev", s4)
+            131:  dload(s6, "next", s7, "next")
+            132:  get(s7, s4, s7)
+            133:  set(s255, s5, s6, s7)
+            134:  getk(s5, "next", s4)
+            135:  loadnulls(s6, 1)
+            136:  ne(s5, 6, s5, 0)
+            137:  jz(s5, 4)
+            138:  getk(s5, "next", s4)
+            139:  dload(s6, "prev", s7, "prev")
+            140:  get(s7, s4, s7)
+            141:  set(s255, s5, s6, s7)
+            142:  getk(s5, "next", s4)
+            143:  move(s4, s5)
+            144:  jmp(-, -33)
+            145:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "kill_move"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "Kill_EnemyBullet"
+            3: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 296, op: 0
+            1: line: 297, op: 0
+            2: line: 298, op: 2
+            3: line: 299, op: 6
+            4: line: 301, op: 9
+            5: line: 302, op: 12
+            6: line: 304, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 12)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  prepcallk(s1, "Kill_EnemyBullet", s0, s2)
+            10:  move(s3, s0)
+            11:  call(255, s1, s2, 2)
+            12:  prepcallk(s1, "kill", s0, s2)
+            13:  call(255, s1, s2, 1)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "on_hit_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 306, op: 0
+            1: line: 307, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 308, op: 0
+            1: line: 309, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "on_graze_spread"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 310, op: 0
+            1: line: 311, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    12: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 315, op: 0
+            1: line: 316, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    13: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodstreem_core.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 22
+        nfunctions: 0
+        Literals: [
+            0: "next_b"
+            1: "layer_s0"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "scale_x"
+            6: "scale_y"
+            7: "translate"
+            8: "x"
+            9: "y"
+            10: "next"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 1, end_op: 20
+            1: name: "this", pos: 0, start_op: 0, end_op: 21
+          ]
+        Line Informations: [
+            0: line: 319, op: 0
+            1: line: 320, op: 0
+            2: line: 321, op: 1
+            3: line: 322, op: 4
+            4: line: 323, op: 8
+            5: line: 324, op: 13
+            6: line: 325, op: 18
+            7: line: 328, op: 21
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "next_b", s0)
+            1:  loadnulls(s2, 1)
+            2:  ne(s2, 2, s1, 0)
+            3:  jz(s2, 17)
+            4:  getk(s2, "layer_s0", s0)
+            5:  prepcallk(s2, "plot", s2, s3)
+            6:  getk(s4, "frameset", s1)
+            7:  call(255, s2, s3, 2)
+            8:  getk(s2, "layer_s0", s0)
+            9:  prepcallk(s2, "scale", s2, s3)
+            10:  getk(s4, "scale_x", s1)
+            11:  getk(s5, "scale_y", s1)
+            12:  call(255, s2, s3, 3)
+            13:  getk(s2, "layer_s0", s0)
+            14:  prepcallk(s2, "translate", s2, s3)
+            15:  getk(s4, "x", s1)
+            16:  getk(s5, "y", s1)
+            17:  call(255, s2, s3, 3)
+            18:  getk(s2, "next", s1)
+            19:  move(s1, s2)
+            20:  jmp(-, -20)
+            21:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

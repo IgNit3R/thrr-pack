@@ -1,0 +1,868 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut: 
+sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+name: "main"
+nliterals: 16
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 13
+ndefaultparams: 0
+ninstructions: 43
+nfunctions: 10
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "update_default"
+    3: "destruct"
+    4: "lib"
+    5: "shot"
+    6: "common_destruct"
+    7: "interactive"
+    8: "kill_move"
+    9: "on_hit_target"
+    10: "on_hit_ground"
+    11: "on_graze_spread"
+    12: "on_graze_target"
+    13: "default_on_graze_target_good"
+    14: "determination"
+    15: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 42
+    1: name: "this", pos: 0, start_op: 0, end_op: 42
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 19, op: 3
+    2: line: 30, op: 6
+    3: line: 59, op: 9
+    4: line: 61, op: 15
+    5: line: 65, op: 18
+    6: line: 75, op: 21
+    7: line: 77, op: 24
+    8: line: 79, op: 27
+    9: line: 81, op: 30
+    10: line: 83, op: 36
+    11: line: 87, op: 39
+    12: line: 90, op: 42
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "update_default")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "destruct")
+    10:  loadroot(s3)
+    11:  getk(s3, "lib", s3)
+    12:  getk(s3, "shot", s3)
+    13:  getk(s3, "common_destruct", s3)
+    14:  newslot(s255, s0, s2, s3)
+    15:  load(s2, "interactive")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "kill_move")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_hit_target")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "on_hit_ground")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_graze_spread")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "on_graze_target")
+    31:  loadroot(s3)
+    32:  getk(s3, "lib", s3)
+    33:  getk(s3, "shot", s3)
+    34:  getk(s3, "default_on_graze_target_good", s3)
+    35:  newslot(s255, s0, s2, s3)
+    36:  load(s2, "determination")
+    37:  closure(s3, 8)
+    38:  newslot(s2, s0, s2, s3)
+    39:  load(s2, "plot")
+    40:  closure(s3, 9)
+    41:  newslot(s2, s0, s2, s3)
+    42:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "construct"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "enable_erace"
+            3: "count"
+            4: "direction_h"
+            5: "check_motion"
+            6: "h_entity"
+            7: "_vspace_regist"
+            8: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 10, op: 12
+            6: line: 11, op: 15
+            7: line: 13, op: 18
+            8: line: 15, op: 26
+            9: line: 17, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "enable_erace")
+            7:  loadbool(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "count")
+            10:  loadint(s2, 0)
+            11:  newslot(s255, s0, s1, s2)
+            12:  load(s1, "direction_h")
+            13:  loadint(s2, 1)
+            14:  newslot(s255, s0, s1, s2)
+            15:  load(s1, "check_motion")
+            16:  loadnulls(s2, 1)
+            17:  newslot(s255, s0, s1, s2)
+            18:  load(s1, "h_entity")
+            19:  loadroot(s2)
+            20:  prepcallk(s2, "_vspace_regist", s2, s3)
+            21:  move(s4, s0)
+            22:  loadint(s5, 1)
+            23:  loadint(s6, 0)
+            24:  call(2, s2, s3, 4)
+            25:  newslot(s255, s0, s1, s2)
+            26:  load(s1, "state")
+            27:  closure(s2, 0)
+            28:  newslot(s255, s0, s1, s2)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 15, op: 0
+                    1: line: 16, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "message"
+        nliterals: 4
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "state"
+            3: "update_default"
+          ]
+        Parameters: [
+            0: "this"
+            1: "id_"
+            2: "param_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "param_", pos: 2, start_op: 0, end_op: 20
+            1: name: "id_", pos: 1, start_op: 0, end_op: 20
+            2: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 19, op: 0
+            1: line: 20, op: 0
+            2: line: 22, op: 3
+            3: line: 23, op: 7
+            4: line: 24, op: 11
+            5: line: 26, op: 16
+            6: line: 27, op: 19
+            7: line: 29, op: 20
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 8)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 1)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 4)
+            16:  dload(s3, "state", s4, "update_default")
+            17:  get(s4, s0, s4)
+            18:  set(s255, s0, s3, s4)
+            19:  jmp(-, 0)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "update_default"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 16
+        ndefaultparams: 0
+        ninstructions: 195
+        nfunctions: 1
+        Literals: [
+            0: "count"
+            1: "obj"
+            2: "enemy"
+            3: "motion"
+            4: "damage"
+            5: "life"
+            6: "kill_move"
+            7: "Spawn_DangerEffect"
+            8: "camera"
+            9: "y"
+            10: "direction_h"
+            11: "_audio_play"
+            12: "se"
+            13: "boss_shot"
+            14: "Spawn_GroupBulletMessage"
+            15: "x"
+            16: "rand"
+            17: "toutetu_blood_bubble"
+            18: "stage"
+            19: "draw"
+            20: "message"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_update", pos: 1, start_op: 27, end_op: 36
+            1: name: "this", pos: 0, start_op: 0, end_op: 194
+          ]
+        Line Informations: [
+            0: line: 30, op: 0
+            1: line: 31, op: 0
+            2: line: 32, op: 2
+            3: line: 33, op: 19
+            4: line: 34, op: 21
+            5: line: 36, op: 22
+            6: line: 37, op: 26
+            7: line: 45, op: 27
+            8: line: 47, op: 37
+            9: line: 48, op: 40
+            10: line: 49, op: 53
+            11: line: 51, op: 98
+            12: line: 52, op: 104
+            13: line: 54, op: 146
+            14: line: 55, op: 152
+            15: line: 57, op: 194
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  getk(s1, "obj", s0)
+            3:  getk(s1, "enemy", s1)
+            4:  getk(s1, "motion", s1)
+            5:  eq(s1, 4, s1, 255)
+            6:  or(s1, 11, s1)
+            7:  getk(s2, "obj", s0)
+            8:  getk(s2, "enemy", s2)
+            9:  getk(s2, "life", s2)
+            10:  loadint(s3, 0)
+            11:  cmp(s2, s3, s2, CMP_LE)
+            12:  or(s2, 4, s2)
+            13:  getk(s3, "count", s0)
+            14:  loadint(s4, 360)
+            15:  cmp(s3, s4, s3, CMP_GE)
+            16:  move(s2, s3)
+            17:  move(s1, s2)
+            18:  jz(s1, 3)
+            19:  prepcallk(s1, "kill_move", s0, s2)
+            20:  call(255, s1, s2, 1)
+            21:  return(255, 0)
+            22:  getk(s1, "count", s0)
+            23:  loadint(s2, 90)
+            24:  eq(s1, 2, s1, 0)
+            25:  jz(s1, 11)
+            26:  closure(s1, 0)
+            27:  prepcallk(s2, "Spawn_DangerEffect", s0, s3)
+            28:  loadint(s4, 0)
+            29:  loadroot(s5)
+            30:  getk(s5, "camera", s5)
+            31:  getk(s5, "y", s5)
+            32:  loadint(s6, 288)
+            33:  add(s5, s6, s5)
+            34:  getk(s6, "direction_h", s0)
+            35:  move(s7, s1)
+            36:  call(255, s2, s3, 5)
+            37:  getk(s1, "count", s0)
+            38:  loadint(s2, 150)
+            39:  jcmp(s2, 58, s1, CMP_GE)
+            40:  getk(s1, "count", s0)
+            41:  loadint(s2, 6)
+            42:  mod(s1, s2, s1)
+            43:  loadint(s2, 1)
+            44:  eq(s1, 2, s1, 0)
+            45:  jz(s1, 7)
+            46:  loadroot(s1)
+            47:  prepcallk(s1, "_audio_play", s1, s2)
+            48:  loadroot(s3)
+            49:  getk(s3, "se", s3)
+            50:  getk(s3, "boss_shot", s3)
+            51:  loadint(s4, 1)
+            52:  call(255, s1, s2, 3)
+            53:  getk(s1, "count", s0)
+            54:  loadint(s2, 3)
+            55:  mod(s1, s2, s1)
+            56:  loadint(s2, 1)
+            57:  eq(s1, 2, s1, 0)
+            58:  jz(s1, 39)
+            59:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            60:  loadroot(s3)
+            61:  getk(s3, "camera", s3)
+            62:  getk(s3, "x", s3)
+            63:  prepcallk(s4, "rand", s0, s5)
+            64:  call(4, s4, s5, 1)
+            65:  loadint(s5, 640)
+            66:  mod(s4, s5, s4)
+            67:  add(s3, s4, s3)
+            68:  loadroot(s4)
+            69:  getk(s4, "camera", s4)
+            70:  getk(s4, "y", s4)
+            71:  loadint(s5, 320)
+            72:  add(s4, s5, s4)
+            73:  prepcallk(s5, "rand", s0, s6)
+            74:  call(5, s5, s6, 1)
+            75:  loadint(s6, 16)
+            76:  mod(s5, s6, s5)
+            77:  add(s4, s5, s4)
+            78:  load(s5, "toutetu_blood_bubble")
+            79:  loadint(s6, 1)
+            80:  loadint(s7, 8194)
+            81:  newobj(s8, 3, 0, 1)
+            82:  loadint(s9, 1)
+            83:  prepcallk(s10, "rand", s0, s11)
+            84:  call(10, s10, s11, 1)
+            85:  loadint(s11, 3)
+            86:  mod(s10, s11, s10)
+            87:  sub(s9, s10, s9)
+            88:  appendarray(s8, 9, 0)
+            89:  loadint(s9, -3)
+            90:  prepcallk(s10, "rand", s0, s11)
+            91:  call(10, s10, s11, 1)
+            92:  loadint(s11, 2)
+            93:  mod(s10, s11, s10)
+            94:  sub(s9, s10, s9)
+            95:  appendarray(s8, 9, 0)
+            96:  appendarray(s8, 1036831949, 3)
+            97:  call(255, s1, s2, 7)
+            98:  getk(s1, "count", s0)
+            99:  loadint(s2, 6)
+            100:  mod(s1, s2, s1)
+            101:  loadint(s2, 1)
+            102:  eq(s1, 2, s1, 0)
+            103:  jz(s1, 42)
+            104:  getk(s1, "stage", s0)
+            105:  getk(s1, "draw", s1)
+            106:  prepcallk(s1, "message", s1, s2)
+            107:  loadint(s3, 8)
+            108:  newobj(s4, 9, 0, 1)
+            109:  loadroot(s5)
+            110:  getk(s5, "camera", s5)
+            111:  getk(s5, "x", s5)
+            112:  prepcallk(s6, "rand", s0, s7)
+            113:  call(6, s6, s7, 1)
+            114:  loadint(s7, 640)
+            115:  mod(s6, s7, s6)
+            116:  add(s5, s6, s5)
+            117:  appendarray(s4, 5, 0)
+            118:  loadroot(s5)
+            119:  getk(s5, "camera", s5)
+            120:  getk(s5, "y", s5)
+            121:  loadint(s6, 320)
+            122:  add(s5, s6, s5)
+            123:  appendarray(s4, 5, 0)
+            124:  loadfloat(s5, 1.5708)
+            125:  neg(s5, s5)
+            126:  appendarray(s4, 5, 0)
+            127:  appendarray(s4, 1065353216, 3)
+            128:  appendarray(s4, 9, 2)
+            129:  appendarray(s4, 1028443341, 3)
+            130:  loadint(s5, 6)
+            131:  prepcallk(s6, "rand", s0, s7)
+            132:  call(6, s6, s7, 1)
+            133:  loadint(s7, 13)
+            134:  mod(s6, s7, s6)
+            135:  sub(s5, s6, s5)
+            136:  appendarray(s4, 5, 0)
+            137:  loadint(s5, -6)
+            138:  prepcallk(s6, "rand", s0, s7)
+            139:  call(6, s6, s7, 1)
+            140:  loadint(s7, 6)
+            141:  mod(s6, s7, s6)
+            142:  sub(s5, s6, s5)
+            143:  appendarray(s4, 5, 0)
+            144:  appendarray(s4, 1056964608, 3)
+            145:  call(255, s1, s2, 3)
+            146:  getk(s1, "count", s0)
+            147:  loadint(s2, 3)
+            148:  mod(s1, s2, s1)
+            149:  loadint(s2, 1)
+            150:  eq(s1, 2, s1, 0)
+            151:  jz(s1, 42)
+            152:  getk(s1, "stage", s0)
+            153:  getk(s1, "draw", s1)
+            154:  prepcallk(s1, "message", s1, s2)
+            155:  loadint(s3, 8)
+            156:  newobj(s4, 9, 0, 1)
+            157:  loadroot(s5)
+            158:  getk(s5, "camera", s5)
+            159:  getk(s5, "x", s5)
+            160:  prepcallk(s6, "rand", s0, s7)
+            161:  call(6, s6, s7, 1)
+            162:  loadint(s7, 640)
+            163:  mod(s6, s7, s6)
+            164:  add(s5, s6, s5)
+            165:  appendarray(s4, 5, 0)
+            166:  loadroot(s5)
+            167:  getk(s5, "camera", s5)
+            168:  getk(s5, "y", s5)
+            169:  loadint(s6, 320)
+            170:  add(s5, s6, s5)
+            171:  appendarray(s4, 5, 0)
+            172:  loadfloat(s5, 1.5708)
+            173:  neg(s5, s5)
+            174:  appendarray(s4, 5, 0)
+            175:  appendarray(s4, 1065353216, 3)
+            176:  appendarray(s4, 8, 2)
+            177:  appendarray(s4, 1028443341, 3)
+            178:  loadint(s5, 6)
+            179:  prepcallk(s6, "rand", s0, s7)
+            180:  call(6, s6, s7, 1)
+            181:  loadint(s7, 13)
+            182:  mod(s6, s7, s6)
+            183:  sub(s5, s6, s5)
+            184:  appendarray(s4, 5, 0)
+            185:  loadint(s5, -6)
+            186:  prepcallk(s6, "rand", s0, s7)
+            187:  call(6, s6, s7, 1)
+            188:  loadint(s7, 6)
+            189:  mod(s6, s7, s6)
+            190:  sub(s5, s6, s5)
+            191:  appendarray(s4, 5, 0)
+            192:  appendarray(s4, 1056964608, 3)
+            193:  call(255, s1, s2, 3)
+            194:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 18
+                nfunctions: 0
+                Literals: [
+                    0: "camera"
+                    1: "x"
+                    2: "set"
+                    3: "y"
+                    4: "update"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "x_", pos: 1, start_op: 5, end_op: 16
+                    1: name: "this", pos: 0, start_op: 0, end_op: 17
+                  ]
+                Line Informations: [
+                    0: line: 37, op: 0
+                    1: line: 38, op: 0
+                    2: line: 39, op: 5
+                    3: line: 40, op: 7
+                    4: line: 41, op: 11
+                    5: line: 43, op: 14
+                    6: line: 44, op: 17
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  loadroot(s1)
+                    1:  getk(s1, "camera", s1)
+                    2:  getk(s1, "x", s1)
+                    3:  loadint(s2, 32)
+                    4:  add(s1, s2, s1)
+                    5:  loadint(s2, 608)
+                    6:  jcmp(s2, 7, s1, CMP_LE)
+                    7:  prepcallk(s2, "set", s0, s3)
+                    8:  move(s4, s1)
+                    9:  getk(s5, "y", s0)
+                    10:  call(255, s2, s3, 3)
+                    11:  loadint(s2, 64)
+                    12:  add(s1, s2, s1)
+                    13:  jmp(-, -9)
+                    14:  load(s2, "update")
+                    15:  loadnulls(s3, 1)
+                    16:  set(s255, s0, s2, s3)
+                    17:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "interactive"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [
+            0: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 62, op: 0
+            1: line: 63, op: 0
+            2: line: 64, op: 2
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "state", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "kill_move"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "Kill_EnemyBullet"
+            3: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 65, op: 0
+            1: line: 66, op: 0
+            2: line: 67, op: 2
+            3: line: 68, op: 6
+            4: line: 70, op: 9
+            5: line: 71, op: 12
+            6: line: 73, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 12)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  prepcallk(s1, "Kill_EnemyBullet", s0, s2)
+            10:  move(s3, s0)
+            11:  call(255, s1, s2, 2)
+            12:  prepcallk(s1, "kill", s0, s2)
+            13:  call(255, s1, s2, 1)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "on_hit_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 75, op: 0
+            1: line: 76, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 77, op: 0
+            1: line: 78, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "on_graze_spread"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 79, op: 0
+            1: line: 80, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 84, op: 0
+            1: line: 85, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_bloodflood_core.nut"
+        name: "plot"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 88, op: 0
+            1: line: 90, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

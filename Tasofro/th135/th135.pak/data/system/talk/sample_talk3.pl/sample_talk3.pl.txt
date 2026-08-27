@@ -1,0 +1,80 @@
+#========================================================================
+#	Stage:1
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+# 背景ロード
+#,Function,if (!::act.BG.is_active) ::act.BG.Start(0);
+
+:init
+
+,SetDefaultBalloon,1
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+#,Sleep,120
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-50,0,false
+,DefineObject,marisa,-50,0,true
+
+,DefineObject,reimu_label,50,320,false
+,DefineObject,marisa_label,1050,320,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+,ImageFile,reimu,"data/system/char_def/pict_01reimu.png",20,0,420,270
+,ImageFile,marisa,"data/system/char_def/pict_02marisa.png",20,0,450,320
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,marisa_label,"data/system/char_def/name/name_02marisa.png",0,0,0,0
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+,Show,reimu,30,-64,0	,#霊夢登場
+,Show,marisa,30,-64,0	,#魔理沙登場
+#,Sleep,30
+
+,SetFocus,reimu,
+
+対戦後のリザルト画面です\
+
+,ImageFile,reimu,"data/system/char_def/face/reimu/汗.png",20,0,400,270
+
+文章と新聞記事は仮のものです\
+
+
+,SetFocus,marisa,
+
+誰かサンプルの文章\n考えてください！\
+
+,Function,"
+	::act.fader.FadeOut(60, 0x00000000, 
+	function()
+	{
+		::act.CommonRender.SetEnable(true);
+		::act.BattleRender.SetEnable(false);
+		::act.BattleRender.pl.EndStage();
+		::act.BattleRender.pl.BeginStage(0);
+
+		// 背景ロード
+		try {
+			if (!::act.BG.is_active) ::act.BG.Start(0);
+		} catch(_e) {}
+		
+		Game_Reset();
+
+		// ストーリー開始
+		::act.Talk.pl.BeginStage(0);
+		::act.Talk.LoadScript(""data/system/talk/sample_talk2.pl"");
+
+		//::act.fader.FadeIn(30, 0x00000000, null);
+	});"
+
+,End

@@ -1,0 +1,197 @@
+## =======================================================================
+#Stage:6
+#Title:幽霊の湊
+#Place:大図書館
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:remilia,160,0,0,8888FF
+Character:komachi,160,0,1,FF8888
+#敵画面外に待機
+Action:komachi,100
+#カメラ固定
+Action:remilia,4
+
+#フォーカス瞬間移動
+#Action:remilia,11
+
+#向き固定解除
+Action:remilia,152
+
+Label:Start
+PlayBgm:data/bgm/ta02.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/remilia/effect/StageTitle006.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage6.bmp,1,256,352
+Sleep:60
+
+Face:remilia,普
+咲夜ー
+もっとちゃんと犯人を選んでよー！\
+Face:remilia,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:komachi,101
+Action:komachi,102
+
+Sleep:20
+
+Face:komachi,惑
+犯人？
+これはまた不思議な二人称だね\
+
+# 名前のテロップ
+Object:data/scenario/komachi/effect/Name.bmp,2,352,304
+
+Face:remilia,嬉
+おお、今度はそれっぽいよ、咲夜\
+
+#敵天候
+Action:komachi,103
+
+Face:komachi,普
+何がそれっぽいんだい？\
+
+Face:remilia,普
+その物騒な鎌といい犯人面した風貌
+いかにもじゃないか\
+
+Face:komachi,汗
+酷い言いようだねぇ
+ま、死神なんて縁起の良いもんでもないしね\
+
+Face:remilia,余
+もう、犯行の動機なんてどうでもいいや
+どうせ有罪判決なんだから\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:komachi,驚
+おや、裁判の真似事かい？
+それなら私の方が良く見てるからやり方は詳しいよ\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:remilia,余
+へえ、習おうかしら
+犯人の捕まえ方\
+
+Face:komachi,普
+裁判は犯人を捕まえたりしないんだ\
+
+Face:remilia,驚
+え？　じゃあ何をするの？\
+
+Face:komachi,普
+そうだなぁ、舌を抜いたり焼いたりするんだ\
+
+Face:remilia,決
+いいねぇいいねぇ@
+じゃあ今回はそれにしよう！\
+
+#戦闘開始
+PlayBgm:data/bgm/st22.ogg
+Action:remilia,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:komachi,惑
+はて、何の為に私はここに連れて
+こられたんだろう\
+
+Face:komachi,惑
+はあ、仕事に戻らんと怒られるね
+じゃ、これにて\
+
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:komachi,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:komachi,200
+#攻撃側ニュートラル移行検知
+Action:remilia,202
+
+#自キャラ天候
+Action:remilia,103
+Sleep:60
+
+Face:remilia,惑
+舌を抜く為に天気をおかしく……
+な、訳が無い\
+
+Face:komachi,負
+お前さんも退屈なんだねぇ@
+暇つぶしたければ遊びに来てやるよ\
+
+Face:remilia,惑
+あんたは仕事しなくていいのかい？\
+
+Face:komachi,汗
+あ、仕事に戻らんとね\
+
+Face:remilia,惑
+咲夜ー！
+次！\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+#やられキャラ画面退場
+Action:komachi,201
+
+#自キャラ基準点へ移動
+Action:remilia,150
+
+#カメラ中央あわせ
+Action:remilia,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

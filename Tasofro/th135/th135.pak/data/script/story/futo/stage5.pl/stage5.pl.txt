@@ -1,0 +1,113 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+,LoadImageDef,"data/system/char_def/face/miko.csv"
+
+#フェイス画像
+,DefineObject,futo,-360,0,false
+,DefineObject,miko,-360,0,true
+
+#肩書き
+,DefineObject,futo_label,50,360,false
+,DefineObject,miko_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,futo_label,"data/system/char_def/name/name_04futo.png",0,0,0,0
+,ImageFile,miko_label,"data/system/char_def/name/name_06miko.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage5 「締めの宗教大戦？」
+# 場所：狸の野原
+#0１２３４５６７８９０１２３４
+
+# 時系列的に神子がマミゾウと闘った後になるので
+# 背景は気を付けてください
+
+,ImageDef,futo,布都_普1,0,0
+,Show,futo,30,-64,0
+,SetFocus,futo
+おっと\nもうこんな時間か\,a11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,futo,布都_普3,0,0
+太子様はもうお帰りに\nなっているだろう\,a11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,futo,布都_選1,0,0
+本番は明日だな\,a11x2,0,0
+
+,ClearBalloon,futo
+,Function,GameStory_2P_In(),
+,Sleep,120
+# 神子が現る
+
+,ImageDef,miko,神子_普1,0,0
+,Show,miko,30,-64,0
+,SetFocus,miko
+これ\n何をしておる？\,a11x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,futo,布都_驚1,0,0
+,SetFocus,futo
+あ　太子様,a05x2,0,0
+,Show,miko_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,miko_label,20,0,64
+
+# 名前テロップ
+# 宇宙を司る全能道士　　豊聡耳神子
+
+,ImageDef,miko,神子_嬉1,0,0
+,SetFocus,miko
+こんな所で\n何をしておるんじゃ？\,a11x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,futo,布都_驚1,0,0
+,SetFocus,futo
+え？\nええ　皆に決闘をする理由を\n伝えてましたが\,a15x3,0,0
+
+,ClearBalloon,futo
+,ImageDef,miko,神子_普1,0,0
+,SetFocus,miko
+ほう\nそんな事頼んだかのう\,a11x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,futo,布都_驚1,0,0
+,SetFocus,futo
+ええ\n本気で闘うために\n決闘前に理由は言わぬと\,a15x3,0,0
+
+,ClearBalloon,futo
+,ImageDef,miko,神子_余1,0,0
+,SetFocus,miko
+そうかそうか\,a05x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,miko,神子_必1,0,0
+決闘前に\n理由は言わぬか……\,a11x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,miko,神子_決1,0,0
+それは簡単じゃのう！\,a11x2,0,0
+
+,ClearBalloon,miko
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,futo,30,-64,0,&
+,Hide,miko,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(109);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

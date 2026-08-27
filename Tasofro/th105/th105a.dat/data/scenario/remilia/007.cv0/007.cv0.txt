@@ -1,0 +1,185 @@
+## =======================================================================
+#Stage:8
+#Title:坐忘
+#Place:紅魔館ロビー
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:remilia,160,0,0,8888FF
+Character:yukari,160,0,1,FF8888
+#敵画面外に待機
+Action:yukari,100
+#カメラ固定
+Action:remilia,4
+
+#フォーカス瞬間移動
+#Action:remilia,11
+
+#向き固定解除
+Action:remilia,152
+
+Label:Start
+PlayBgm:data/bgm/ta07.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/remilia/effect/StageTitle008.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Sleep:60
+
+Face:remilia,普
+やっぱり私には向かないわ
+<ruby アームチェアディテクティブ>楽して出来る探偵</ruby>は\
+
+Face:remilia,嬉
+咲夜ー！
+犯人捜しはもう良いわ……\
+
+Face:remilia,嬉
+冥界は雪、神社は地震で倒壊、と色々起きている
+みたいだし、それを確認して貰おうかな\
+
+Face:remilia,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:yukari,101
+Action:yukari,102
+
+Sleep:20
+
+Face:yukari,普
+貴方は何をしている\
+
+# 名前のテロップ
+Object:data/scenario/yukari/effect/Name.bmp,2,352,304
+
+Face:remilia,驚
+#０１２３４５６７８９０１２３４５６７８９０１２３
+これはまた一番本命っぽいのを捕まえなかったもんね\
+
+#敵天候
+Action:yukari,103
+
+Face:yukari,普
+そう、日光を遮る事が出来ないから
+動きたくないのね\
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+Face:remilia,驚
+え？\
+
+Face:yukari,普
+そう、犯人は日光の避けようのない雲の上にいる
+だから動きたくないのね\
+
+Face:remilia,驚
+え？
+そうなの？　何の話？\
+
+Face:yukari,余
+<ruby アームチェアディテクティブ>安楽椅子探偵</ruby>とは、楽して出来る探偵の事ではない\
+
+Face:yukari,普
+何故、動かないで正確に推理できるのか\
+
+Face:yukari,普
+いったん現場を見てしまうと光景が焼き付いてしまう
+何事も、心から思っている事を忘れる事が出来ないの\
+
+Face:yukari,決
+だったら見ない方が正しい判断が出来る\
+
+Face:remilia,普
+……\
+
+Face:yukari,決
+椅子に坐って全てを忘れよ\
+
+Face:remilia,普
+……\
+
+PlayBgm:data/bgm/st05.ogg
+
+Face:remilia,余
+天気を操作できるという事は地上の者ではない
+という事ね\
+
+Face:remilia,普
+雪も神社も地震も余分な情報だと\
+
+Face:remilia,惑
+でも私はどのみち外を出歩けない\
+
+Face:remilia,余
+こういう時は人に行かせるしか無いって事ね\
+
+Face:yukari,決
+あら、私に行かせようって言うの？\
+
+Face:remilia,決
+だって、その為に出てきたんでしょ？\
+
+
+#戦闘開始
+Action:remilia,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yukari,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:yukari,200
+#攻撃側ニュートラル移行検知
+Action:remilia,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

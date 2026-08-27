@@ -1,0 +1,814 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\futo_base.nut: 
+sourcename: ""
+name: "main"
+nliterals: 3
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 4
+ndefaultparams: 0
+ninstructions: 14
+nfunctions: 3
+Literals: [
+    0: "Update_Normal"
+    1: "Update_Input"
+    2: "TeamSkillChain_Input"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 13
+    1: name: "this", pos: 0, start_op: 0, end_op: 13
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 17, op: 4
+    2: line: 99, op: 8
+    3: line: 149, op: 12
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "Update_Normal")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 17)
+    5:  load(s2, "Update_Input")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 99)
+    9:  load(s2, "TeamSkillChain_Input")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 149)
+    13:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Update_Normal"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 51
+        nfunctions: 0
+        Literals: [
+            0: "MainLoopFirst"
+            1: "IsDamage"
+            2: "stateLabel"
+            3: "battle"
+            4: "state"
+            5: "cpuState"
+            6: "input"
+            7: "team"
+            8: "current"
+            9: "Update_Input"
+            10: "MainLoop"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 50
+          ]
+        Line Informations: [
+            0: line: 2, op: 1
+            1: line: 4, op: 5
+            2: line: 5, op: 9
+            3: line: 6, op: 14
+            4: line: 8, op: 18
+            5: line: 10, op: 21
+            6: line: 11, op: 28
+            7: line: 12, op: 33
+            8: line: 14, op: 43
+            9: line: 15, op: 46
+            10: line: 16, op: 49
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 2)
+            1:  prepcallk(s1, "MainLoopFirst", s0, s2)
+            2:  call(1, s1, s2, 1)
+            3:  not(s1, s1)
+            4:  jz(s1, 16)
+            5:  line(-, 4)
+            6:  prepcallk(s1, "IsDamage", s0, s2)
+            7:  call(1, s1, s2, 1)
+            8:  jz(s1, 9)
+            9:  line(-, 5)
+            10:  getk(s1, "stateLabel", s0)
+            11:  jz(s1, 2)
+            12:  prepcallk(s1, "stateLabel", s0, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 6)
+            15:  loadbool(s1, 1)
+            16:  return(1, 1)
+            17:  jmp(-, 3)
+            18:  line(-, 8)
+            19:  loadbool(s1, 0)
+            20:  return(1, 1)
+            21:  line(-, 10)
+            22:  loadroot(s1)
+            23:  getk(s1, "battle", s1)
+            24:  getk(s1, "state", s1)
+            25:  loadint(s2, 8)
+            26:  eq(s1, 2, s1, 0)
+            27:  jz(s1, 15)
+            28:  line(-, 11)
+            29:  getk(s1, "cpuState", s0)
+            30:  jz(s1, 2)
+            31:  prepcallk(s1, "cpuState", s0, s2)
+            32:  call(255, s1, s2, 1)
+            33:  line(-, 12)
+            34:  getk(s1, "input", s0)
+            35:  and(s1, 4, s1)
+            36:  getk(s2, "team", s0)
+            37:  getk(s2, "current", s2)
+            38:  eq(s2, 0, s2, 0)
+            39:  move(s1, s2)
+            40:  jz(s1, 2)
+            41:  prepcallk(s1, "Update_Input", s0, s2)
+            42:  call(255, s1, s2, 1)
+            43:  line(-, 14)
+            44:  prepcallk(s1, "MainLoop", s0, s2)
+            45:  call(255, s1, s2, 1)
+            46:  line(-, 15)
+            47:  loadbool(s1, 1)
+            48:  return(1, 1)
+            49:  line(-, 16)
+            50:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Update_Input"
+        nliterals: 36
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 48
+        ndefaultparams: 0
+        ninstructions: 298
+        nfunctions: 0
+        Literals: [
+            0: "command_change"
+            1: "team"
+            2: "op"
+            3: "op_stop"
+            4: "master"
+            5: "command"
+            6: "rsv_k01"
+            7: "Cancel_Check"
+            8: "Okult_Init"
+            9: "ResetReserve"
+            10: "rsv_k2"
+            11: "rsv_y"
+            12: "centerStop"
+            13: "k"
+            14: "rsv_x"
+            15: "direction"
+            16: "SP_B_Init"
+            17: "SP_B_Air_Init"
+            18: "SP_A_Init"
+            19: "y"
+            20: "centerY"
+            21: "SP_F_Init"
+            22: "SP_D_Init"
+            23: "SP_C_Init"
+            24: "SP_E_Init"
+            25: "rsv_k0"
+            26: "target"
+            27: "abs"
+            28: "x"
+            29: "current"
+            30: "invinGrab"
+            31: "flagState"
+            32: "IsDamage"
+            33: "Atk_Grab_Init"
+            34: "Input_CommonAttack"
+            35: "InputMove"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 1, start_op: 73, end_op: 86
+            1: name: "t_", pos: 1, start_op: 90, end_op: 103
+            2: name: "this", pos: 0, start_op: 0, end_op: 297
+          ]
+        Line Informations: [
+            0: line: 19, op: 1
+            1: line: 21, op: 6
+            2: line: 22, op: 29
+            3: line: 23, op: 37
+            4: line: 24, op: 41
+            5: line: 28, op: 47
+            6: line: 29, op: 52
+            7: line: 30, op: 60
+            8: line: 31, op: 65
+            9: line: 32, op: 71
+            10: line: 33, op: 79
+            11: line: 34, op: 83
+            12: line: 37, op: 89
+            13: line: 38, op: 96
+            14: line: 39, op: 100
+            15: line: 41, op: 104
+            16: line: 43, op: 107
+            17: line: 44, op: 112
+            18: line: 45, op: 118
+            19: line: 46, op: 122
+            20: line: 47, op: 126
+            21: line: 50, op: 131
+            22: line: 51, op: 134
+            23: line: 52, op: 138
+            24: line: 53, op: 142
+            25: line: 56, op: 147
+            26: line: 57, op: 150
+            27: line: 58, op: 154
+            28: line: 62, op: 157
+            29: line: 63, op: 164
+            30: line: 64, op: 168
+            31: line: 65, op: 172
+            32: line: 67, op: 175
+            33: line: 68, op: 182
+            34: line: 69, op: 186
+            35: line: 70, op: 190
+            36: line: 72, op: 193
+            37: line: 73, op: 199
+            38: line: 74, op: 203
+            39: line: 75, op: 207
+            40: line: 81, op: 210
+            41: line: 86, op: 255
+            42: line: 87, op: 275
+            43: line: 88, op: 280
+            44: line: 89, op: 284
+            45: line: 94, op: 287
+            46: line: 96, op: 293
+            47: line: 97, op: 296
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 19)
+            1:  prepcallk(s1, "command_change", s0, s2)
+            2:  call(1, s1, s2, 1)
+            3:  jz(s1, 2)
+            4:  loadbool(s1, 1)
+            5:  return(1, 1)
+            6:  line(-, 21)
+            7:  getk(s1, "team", s0)
+            8:  getk(s1, "op", s1)
+            9:  loadint(s2, 1000)
+            10:  cmp(s1, s2, s1, CMP_GE)
+            11:  and(s1, 16, s1)
+            12:  getk(s2, "team", s0)
+            13:  getk(s2, "op_stop", s2)
+            14:  loadint(s3, 0)
+            15:  eq(s2, 3, s2, 0)
+            16:  and(s2, 10, s2)
+            17:  getk(s3, "team", s0)
+            18:  getk(s3, "master", s3)
+            19:  eq(s3, 0, s3, 0)
+            20:  and(s3, 5, s3)
+            21:  getk(s4, "command", s0)
+            22:  getk(s4, "rsv_k01", s4)
+            23:  loadint(s5, 0)
+            24:  cmp(s4, s5, s4, CMP_G)
+            25:  move(s3, s4)
+            26:  move(s2, s3)
+            27:  move(s1, s2)
+            28:  jz(s1, 18)
+            29:  line(-, 22)
+            30:  prepcallk(s1, "Cancel_Check", s0, s2)
+            31:  loadint(s3, 60)
+            32:  loadint(s4, 200)
+            33:  loadint(s5, 0)
+            34:  loadbool(s6, 0)
+            35:  call(1, s1, s2, 5)
+            36:  jz(s1, 10)
+            37:  line(-, 23)
+            38:  prepcallk(s1, "Okult_Init", s0, s2)
+            39:  loadnulls(s3, 1)
+            40:  call(255, s1, s2, 2)
+            41:  line(-, 24)
+            42:  getk(s1, "command", s0)
+            43:  prepcallk(s1, "ResetReserve", s1, s2)
+            44:  call(255, s1, s2, 1)
+            45:  loadbool(s1, 1)
+            46:  return(1, 1)
+            47:  line(-, 28)
+            48:  getk(s1, "command", s0)
+            49:  getk(s1, "rsv_k2", s1)
+            50:  loadint(s2, 0)
+            51:  jcmp(s2, 158, s1, CMP_G)
+            52:  line(-, 29)
+            53:  prepcallk(s1, "Cancel_Check", s0, s2)
+            54:  loadint(s3, 60)
+            55:  loadint(s4, 200)
+            56:  loadint(s5, 0)
+            57:  loadbool(s6, 0)
+            58:  call(1, s1, s2, 5)
+            59:  jz(s1, 150)
+            60:  line(-, 30)
+            61:  getk(s1, "command", s0)
+            62:  getk(s1, "rsv_y", s1)
+            63:  loadint(s2, 0)
+            64:  jcmp(s2, 42, s1, CMP_L)
+            65:  line(-, 31)
+            66:  getk(s1, "centerStop", s0)
+            67:  getk(s2, "centerStop", s0)
+            68:  mul(s1, s2, s1)
+            69:  loadint(s2, 1)
+            70:  jcmp(s2, 17, s1, CMP_LE)
+            71:  line(-, 32)
+            72:  newobj(s1, 0, 0, 0)
+            73:  dload(s2, "k", s3, "command")
+            74:  get(s3, s0, s3)
+            75:  getk(s3, "rsv_x", s3)
+            76:  getk(s4, "direction", s0)
+            77:  mul(s3, s4, s3)
+            78:  newslot(s255, s1, s2, s3)
+            79:  line(-, 33)
+            80:  prepcallk(s2, "SP_B_Init", s0, s3)
+            81:  move(s4, s1)
+            82:  call(255, s2, s3, 2)
+            83:  line(-, 34)
+            84:  getk(s2, "command", s0)
+            85:  prepcallk(s2, "ResetReserve", s2, s3)
+            86:  call(255, s2, s3, 1)
+            87:  jmp(-, 16)
+            88:  line(-, 37)
+            89:  newobj(s1, 0, 0, 0)
+            90:  dload(s2, "k", s3, "command")
+            91:  get(s3, s0, s3)
+            92:  getk(s3, "rsv_x", s3)
+            93:  getk(s4, "direction", s0)
+            94:  mul(s3, s4, s3)
+            95:  newslot(s255, s1, s2, s3)
+            96:  line(-, 38)
+            97:  prepcallk(s2, "SP_B_Air_Init", s0, s3)
+            98:  move(s4, s1)
+            99:  call(255, s2, s3, 2)
+            100:  line(-, 39)
+            101:  getk(s2, "command", s0)
+            102:  prepcallk(s2, "ResetReserve", s2, s3)
+            103:  call(255, s2, s3, 1)
+            104:  line(-, 41)
+            105:  loadbool(s1, 1)
+            106:  return(1, 1)
+            107:  line(-, 43)
+            108:  getk(s1, "command", s0)
+            109:  getk(s1, "rsv_y", s1)
+            110:  loadint(s2, 0)
+            111:  jcmp(s2, 45, s1, CMP_G)
+            112:  line(-, 44)
+            113:  getk(s1, "centerStop", s0)
+            114:  getk(s2, "centerStop", s0)
+            115:  mul(s1, s2, s1)
+            116:  loadint(s2, 1)
+            117:  jcmp(s2, 12, s1, CMP_LE)
+            118:  line(-, 45)
+            119:  prepcallk(s1, "SP_A_Init", s0, s2)
+            120:  loadnulls(s3, 1)
+            121:  call(255, s1, s2, 2)
+            122:  line(-, 46)
+            123:  getk(s1, "command", s0)
+            124:  prepcallk(s1, "ResetReserve", s1, s2)
+            125:  call(255, s1, s2, 1)
+            126:  line(-, 47)
+            127:  loadbool(s1, 1)
+            128:  return(1, 1)
+            129:  jmp(-, 27)
+            130:  line(-, 50)
+            131:  getk(s1, "y", s0)
+            132:  getk(s2, "centerY", s0)
+            133:  jcmp(s2, 12, s1, CMP_G)
+            134:  line(-, 51)
+            135:  prepcallk(s1, "SP_F_Init", s0, s2)
+            136:  loadnulls(s3, 1)
+            137:  call(255, s1, s2, 2)
+            138:  line(-, 52)
+            139:  getk(s1, "command", s0)
+            140:  prepcallk(s1, "ResetReserve", s1, s2)
+            141:  call(255, s1, s2, 1)
+            142:  line(-, 53)
+            143:  loadbool(s1, 1)
+            144:  return(1, 1)
+            145:  jmp(-, 11)
+            146:  line(-, 56)
+            147:  prepcallk(s1, "SP_A_Init", s0, s2)
+            148:  loadnulls(s3, 1)
+            149:  call(255, s1, s2, 2)
+            150:  line(-, 57)
+            151:  getk(s1, "command", s0)
+            152:  prepcallk(s1, "ResetReserve", s1, s2)
+            153:  call(255, s1, s2, 1)
+            154:  line(-, 58)
+            155:  loadbool(s1, 1)
+            156:  return(1, 1)
+            157:  line(-, 62)
+            158:  getk(s1, "command", s0)
+            159:  getk(s1, "rsv_x", s1)
+            160:  getk(s2, "direction", s0)
+            161:  mul(s1, s2, s1)
+            162:  loadint(s2, 0)
+            163:  jcmp(s2, 11, s1, CMP_G)
+            164:  line(-, 63)
+            165:  prepcallk(s1, "SP_D_Init", s0, s2)
+            166:  loadnulls(s3, 1)
+            167:  call(255, s1, s2, 2)
+            168:  line(-, 64)
+            169:  getk(s1, "command", s0)
+            170:  prepcallk(s1, "ResetReserve", s1, s2)
+            171:  call(255, s1, s2, 1)
+            172:  line(-, 65)
+            173:  loadbool(s1, 1)
+            174:  return(1, 1)
+            175:  line(-, 67)
+            176:  getk(s1, "command", s0)
+            177:  getk(s1, "rsv_x", s1)
+            178:  getk(s2, "direction", s0)
+            179:  mul(s1, s2, s1)
+            180:  loadint(s2, 0)
+            181:  jcmp(s2, 11, s1, CMP_L)
+            182:  line(-, 68)
+            183:  prepcallk(s1, "SP_C_Init", s0, s2)
+            184:  loadnulls(s3, 1)
+            185:  call(255, s1, s2, 2)
+            186:  line(-, 69)
+            187:  getk(s1, "command", s0)
+            188:  prepcallk(s1, "ResetReserve", s1, s2)
+            189:  call(255, s1, s2, 1)
+            190:  line(-, 70)
+            191:  loadbool(s1, 1)
+            192:  return(1, 1)
+            193:  line(-, 72)
+            194:  getk(s1, "command", s0)
+            195:  getk(s1, "rsv_x", s1)
+            196:  loadint(s2, 0)
+            197:  eq(s1, 2, s1, 0)
+            198:  jz(s1, 11)
+            199:  line(-, 73)
+            200:  prepcallk(s1, "SP_E_Init", s0, s2)
+            201:  loadnulls(s3, 1)
+            202:  call(255, s1, s2, 2)
+            203:  line(-, 74)
+            204:  getk(s1, "command", s0)
+            205:  prepcallk(s1, "ResetReserve", s1, s2)
+            206:  call(255, s1, s2, 1)
+            207:  line(-, 75)
+            208:  loadbool(s1, 1)
+            209:  return(1, 1)
+            210:  line(-, 81)
+            211:  getk(s1, "command", s0)
+            212:  getk(s1, "rsv_k0", s1)
+            213:  and(s1, 39, s1)
+            214:  getk(s2, "command", s0)
+            215:  getk(s2, "rsv_y", s2)
+            216:  loadint(s3, 0)
+            217:  eq(s2, 3, s2, 0)
+            218:  and(s2, 33, s2)
+            219:  getk(s3, "command", s0)
+            220:  getk(s3, "rsv_x", s3)
+            221:  getk(s4, "direction", s0)
+            222:  mul(s3, s4, s3)
+            223:  loadint(s4, 0)
+            224:  cmp(s3, s4, s3, CMP_G)
+            225:  and(s3, 25, s3)
+            226:  getk(s4, "centerStop", s0)
+            227:  getk(s5, "centerStop", s0)
+            228:  mul(s4, s5, s4)
+            229:  loadint(s5, 1)
+            230:  cmp(s4, s5, s4, CMP_LE)
+            231:  and(s4, 18, s4)
+            232:  getk(s5, "target", s0)
+            233:  getk(s5, "centerStop", s5)
+            234:  getk(s6, "target", s0)
+            235:  getk(s6, "centerStop", s6)
+            236:  mul(s5, s6, s5)
+            237:  loadint(s6, 1)
+            238:  cmp(s5, s6, s5, CMP_LE)
+            239:  and(s5, 9, s5)
+            240:  prepcallk(s6, "abs", s0, s7)
+            241:  getk(s8, "target", s0)
+            242:  getk(s8, "x", s8)
+            243:  getk(s9, "x", s0)
+            244:  sub(s8, s9, s8)
+            245:  call(6, s6, s7, 2)
+            246:  loadint(s7, 90)
+            247:  cmp(s6, s7, s6, CMP_LE)
+            248:  move(s5, s6)
+            249:  move(s4, s5)
+            250:  move(s3, s4)
+            251:  move(s2, s3)
+            252:  move(s1, s2)
+            253:  jz(s1, 33)
+            254:  line(-, 86)
+            255:  getk(s1, "team", s0)
+            256:  getk(s1, "current", s1)
+            257:  getk(s1, "target", s1)
+            258:  getk(s1, "invinGrab", s1)
+            259:  loadint(s2, 0)
+            260:  eq(s1, 2, s1, 0)
+            261:  and(s1, 12, s1)
+            262:  getk(s2, "target", s0)
+            263:  getk(s2, "flagState", s2)
+            264:  loadint(s3, 8192)
+            265:  bitw(s2, s3, s2, BW_AND)
+            266:  not(s2, s2)
+            267:  and(s2, 5, s2)
+            268:  getk(s3, "target", s0)
+            269:  prepcallk(s3, "IsDamage", s3, s4)
+            270:  call(3, s3, s4, 1)
+            271:  not(s3, s3)
+            272:  move(s2, s3)
+            273:  move(s1, s2)
+            274:  jz(s1, 12)
+            275:  line(-, 87)
+            276:  prepcallk(s1, "Cancel_Check", s0, s2)
+            277:  loadint(s3, 1)
+            278:  call(1, s1, s2, 2)
+            279:  jz(s1, 7)
+            280:  line(-, 88)
+            281:  prepcallk(s1, "Atk_Grab_Init", s0, s2)
+            282:  loadnulls(s3, 1)
+            283:  call(255, s1, s2, 2)
+            284:  line(-, 89)
+            285:  loadbool(s1, 1)
+            286:  return(1, 1)
+            287:  line(-, 94)
+            288:  prepcallk(s1, "Input_CommonAttack", s0, s2)
+            289:  call(1, s1, s2, 1)
+            290:  jz(s1, 2)
+            291:  loadbool(s1, 1)
+            292:  return(1, 1)
+            293:  line(-, 96)
+            294:  prepcallk(s1, "InputMove", s0, s2)
+            295:  call(255, s1, s2, 1)
+            296:  line(-, 97)
+            297:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "TeamSkillChain_Input"
+        nliterals: 16
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 35
+        ndefaultparams: 0
+        ninstructions: 158
+        nfunctions: 0
+        Literals: [
+            0: "command"
+            1: "rsv_y"
+            2: "centerStop"
+            3: "k"
+            4: "rsv_x"
+            5: "direction"
+            6: "SP_B_Init"
+            7: "ResetReserve"
+            8: "SP_B_Air_Init"
+            9: "SP_A_Init"
+            10: "y"
+            11: "centerY"
+            12: "SP_F_Init"
+            13: "SP_D_Init"
+            14: "SP_C_Init"
+            15: "SP_E_Init"
+          ]
+        Parameters: [
+            0: "this"
+            1: "input_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 13, end_op: 26
+            1: name: "t_", pos: 2, start_op: 30, end_op: 43
+            2: name: "input_", pos: 1, start_op: 0, end_op: 157
+            3: name: "this", pos: 0, start_op: 0, end_op: 157
+          ]
+        Line Informations: [
+            0: line: 100, op: 1
+            1: line: 101, op: 5
+            2: line: 102, op: 11
+            3: line: 103, op: 19
+            4: line: 104, op: 23
+            5: line: 107, op: 29
+            6: line: 108, op: 36
+            7: line: 109, op: 40
+            8: line: 111, op: 44
+            9: line: 113, op: 47
+            10: line: 114, op: 52
+            11: line: 115, op: 58
+            12: line: 116, op: 62
+            13: line: 117, op: 66
+            14: line: 120, op: 71
+            15: line: 121, op: 74
+            16: line: 122, op: 78
+            17: line: 123, op: 82
+            18: line: 126, op: 87
+            19: line: 127, op: 90
+            20: line: 128, op: 94
+            21: line: 132, op: 97
+            22: line: 133, op: 103
+            23: line: 134, op: 110
+            24: line: 135, op: 114
+            25: line: 136, op: 118
+            26: line: 138, op: 121
+            27: line: 139, op: 128
+            28: line: 140, op: 132
+            29: line: 141, op: 136
+            30: line: 143, op: 139
+            31: line: 144, op: 145
+            32: line: 145, op: 149
+            33: line: 146, op: 153
+            34: line: 149, op: 156
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 100)
+            1:  getk(s2, "command", s1)
+            2:  getk(s2, "rsv_y", s2)
+            3:  loadint(s3, 0)
+            4:  jcmp(s3, 42, s2, CMP_L)
+            5:  line(-, 101)
+            6:  getk(s2, "centerStop", s0)
+            7:  getk(s3, "centerStop", s0)
+            8:  mul(s2, s3, s2)
+            9:  loadint(s3, 1)
+            10:  jcmp(s3, 17, s2, CMP_LE)
+            11:  line(-, 102)
+            12:  newobj(s2, 0, 0, 0)
+            13:  dload(s3, "k", s4, "command")
+            14:  get(s4, s0, s4)
+            15:  getk(s4, "rsv_x", s4)
+            16:  getk(s5, "direction", s0)
+            17:  mul(s4, s5, s4)
+            18:  newslot(s255, s2, s3, s4)
+            19:  line(-, 103)
+            20:  prepcallk(s3, "SP_B_Init", s0, s4)
+            21:  move(s5, s2)
+            22:  call(255, s3, s4, 2)
+            23:  line(-, 104)
+            24:  getk(s3, "command", s0)
+            25:  prepcallk(s3, "ResetReserve", s3, s4)
+            26:  call(255, s3, s4, 1)
+            27:  jmp(-, 16)
+            28:  line(-, 107)
+            29:  newobj(s2, 0, 0, 0)
+            30:  dload(s3, "k", s4, "command")
+            31:  get(s4, s0, s4)
+            32:  getk(s4, "rsv_x", s4)
+            33:  getk(s5, "direction", s0)
+            34:  mul(s4, s5, s4)
+            35:  newslot(s255, s2, s3, s4)
+            36:  line(-, 108)
+            37:  prepcallk(s3, "SP_B_Air_Init", s0, s4)
+            38:  move(s5, s2)
+            39:  call(255, s3, s4, 2)
+            40:  line(-, 109)
+            41:  getk(s3, "command", s0)
+            42:  prepcallk(s3, "ResetReserve", s3, s4)
+            43:  call(255, s3, s4, 1)
+            44:  line(-, 111)
+            45:  loadbool(s2, 1)
+            46:  return(1, 2)
+            47:  line(-, 113)
+            48:  getk(s2, "command", s1)
+            49:  getk(s2, "rsv_y", s2)
+            50:  loadint(s3, 0)
+            51:  jcmp(s3, 45, s2, CMP_G)
+            52:  line(-, 114)
+            53:  getk(s2, "centerStop", s0)
+            54:  getk(s3, "centerStop", s0)
+            55:  mul(s2, s3, s2)
+            56:  loadint(s3, 1)
+            57:  jcmp(s3, 12, s2, CMP_LE)
+            58:  line(-, 115)
+            59:  prepcallk(s2, "SP_A_Init", s0, s3)
+            60:  loadnulls(s4, 1)
+            61:  call(255, s2, s3, 2)
+            62:  line(-, 116)
+            63:  getk(s2, "command", s0)
+            64:  prepcallk(s2, "ResetReserve", s2, s3)
+            65:  call(255, s2, s3, 1)
+            66:  line(-, 117)
+            67:  loadbool(s2, 1)
+            68:  return(1, 2)
+            69:  jmp(-, 27)
+            70:  line(-, 120)
+            71:  getk(s2, "y", s0)
+            72:  getk(s3, "centerY", s0)
+            73:  jcmp(s3, 12, s2, CMP_G)
+            74:  line(-, 121)
+            75:  prepcallk(s2, "SP_F_Init", s0, s3)
+            76:  loadnulls(s4, 1)
+            77:  call(255, s2, s3, 2)
+            78:  line(-, 122)
+            79:  getk(s2, "command", s0)
+            80:  prepcallk(s2, "ResetReserve", s2, s3)
+            81:  call(255, s2, s3, 1)
+            82:  line(-, 123)
+            83:  loadbool(s2, 1)
+            84:  return(1, 2)
+            85:  jmp(-, 11)
+            86:  line(-, 126)
+            87:  prepcallk(s2, "SP_A_Init", s0, s3)
+            88:  loadnulls(s4, 1)
+            89:  call(255, s2, s3, 2)
+            90:  line(-, 127)
+            91:  getk(s2, "command", s0)
+            92:  prepcallk(s2, "ResetReserve", s2, s3)
+            93:  call(255, s2, s3, 1)
+            94:  line(-, 128)
+            95:  loadbool(s2, 1)
+            96:  return(1, 2)
+            97:  line(-, 132)
+            98:  getk(s2, "command", s1)
+            99:  getk(s2, "rsv_y", s2)
+            100:  loadint(s3, 0)
+            101:  eq(s2, 3, s2, 0)
+            102:  jz(s2, 53)
+            103:  line(-, 133)
+            104:  getk(s2, "command", s1)
+            105:  getk(s2, "rsv_x", s2)
+            106:  getk(s3, "direction", s0)
+            107:  mul(s2, s3, s2)
+            108:  loadint(s3, 0)
+            109:  jcmp(s3, 11, s2, CMP_G)
+            110:  line(-, 134)
+            111:  prepcallk(s2, "SP_D_Init", s0, s3)
+            112:  loadnulls(s4, 1)
+            113:  call(255, s2, s3, 2)
+            114:  line(-, 135)
+            115:  getk(s2, "command", s0)
+            116:  prepcallk(s2, "ResetReserve", s2, s3)
+            117:  call(255, s2, s3, 1)
+            118:  line(-, 136)
+            119:  loadbool(s2, 1)
+            120:  return(1, 2)
+            121:  line(-, 138)
+            122:  getk(s2, "command", s1)
+            123:  getk(s2, "rsv_x", s2)
+            124:  getk(s3, "direction", s0)
+            125:  mul(s2, s3, s2)
+            126:  loadint(s3, 0)
+            127:  jcmp(s3, 11, s2, CMP_L)
+            128:  line(-, 139)
+            129:  prepcallk(s2, "SP_C_Init", s0, s3)
+            130:  loadnulls(s4, 1)
+            131:  call(255, s2, s3, 2)
+            132:  line(-, 140)
+            133:  getk(s2, "command", s0)
+            134:  prepcallk(s2, "ResetReserve", s2, s3)
+            135:  call(255, s2, s3, 1)
+            136:  line(-, 141)
+            137:  loadbool(s2, 1)
+            138:  return(1, 2)
+            139:  line(-, 143)
+            140:  getk(s2, "command", s1)
+            141:  getk(s2, "rsv_x", s2)
+            142:  loadint(s3, 0)
+            143:  eq(s2, 3, s2, 0)
+            144:  jz(s2, 11)
+            145:  line(-, 144)
+            146:  prepcallk(s2, "SP_E_Init", s0, s3)
+            147:  loadnulls(s4, 1)
+            148:  call(255, s2, s3, 2)
+            149:  line(-, 145)
+            150:  getk(s2, "command", s0)
+            151:  prepcallk(s2, "ResetReserve", s2, s3)
+            152:  call(255, s2, s3, 1)
+            153:  line(-, 146)
+            154:  loadbool(s2, 1)
+            155:  return(1, 2)
+            156:  line(-, 149)
+            157:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

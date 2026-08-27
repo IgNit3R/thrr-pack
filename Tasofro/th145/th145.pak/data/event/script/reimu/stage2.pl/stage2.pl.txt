@@ -1,0 +1,252 @@
+#========================================================================
+#	博麗霊夢　オープニング編
+#	ステージ　華扇
+#	場所：博麗神社
+#	ステージタイトル
+#	   「オカルトな仙人」
+#
+#========================================================================
+
+:init
+
+
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/event/pic/reimu.csv"
+,LoadImageDef,"data/event/pic/kasen.csv"
+
+#フェイス画像
+,DefineObject,reimu,-360,0,false
+,DefineObject,kasen,-360,0,true
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+#開始カメラ演出
+,Function,GameStory_BeginCamera();
+,Sleep,2
+,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,Function,"GameStory_PlayBGM(701);",# 会話BGM再生開始
+
+#肩書き
+,DefineObject,reimu_label,50,360,false
+,DefineObject,kasen_label,1120,360,false
+
+#初期表情設定
+,ImageDef,reimu,霊夢_普1,0,0
+,ImageDef,kasen,華扇_普1,0,0
+
+#Xフレームの待機処理
+,Function,"function main(){ for (local i=0; i < 40; i++) suspend(); }"
+
+#タイトルコール出現
+,Function,GameStory_TitleCall();
+,Function,"function main(){ for (local i=0; i < 150; i++) suspend(); }"
+#,Move,reimu,0,-25,25	,#フェイス画像位置を非トーク位置にシフト
+#,Sleep,40
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_怒1,0,0
+,th145_Show,kasen,-1280	,#華扇フェイス表示開始
+なるほどねぇ\n魔理沙も、玉をねぇ\,c11x2,0,0
+,ClearBalloon,kasen
+
+
+,th145_CharName_Cutin,kasen
+,Sleep,10
+
+
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_惑1,0,0
+,th145_Show,reimu,-1280	,#&,#霊夢フェイス表示開始
+魔理沙、も？\,a05x2,0,0
+,ClearBalloon,reimu
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_汗1,0,0
+あ、うそうそごめん\n何の話でしたっけ？\,a11x2,0,0
+,ClearBalloon,kasen
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_余1,0,0
+ふん\nとぼけたって無駄よ\,a11x2,0,0
+,ClearBalloon,reimu
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_敵1,0,0
+あんたならあの\R[都市伝説|つくりばなし]について\n何か知ってるかもと思ったけど\nやっぱりね\,a15x3,0,0
+,ClearBalloon,reimu
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_驚1,0,0
+あの都市伝説って……\n『七つのオカルトボールを\n　　　　　　　集めると……』\,a15x3,0,0
+,ClearBalloon,kasen
+
+『願いが叶う』\n　　　　って奴？,a11x2,0,0
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_惑1,0,0
+『大異変が起こる』\n　　　　　　って奴\,a11x2,0,0
+,ClearBalloon,kasen
+,ClearBalloon,reimu
+
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_汗1,0,0
+え？,a05x2,0,0
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_余1,0,0
+ん？\,a05x2,0,0
+,ClearBalloon,kasen
+,ClearBalloon,reimu
+
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,kasen,華扇_普1,0,0
+,ImageDef,reimu,霊夢_驚1,0,0
+まあいいや\nでね、魔理沙が変な技使ったら\n出てきたのよ、変な玉が\,a15x3,0,0
+,ClearBalloon,reimu
+
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,kasen,華扇_決1,0,0
+,ImageDef,reimu,霊夢_余1,0,0
+私はあの玉が\n噂のオカルトボールだと思うのよねぇ\,c15x3,0,0
+,ClearBalloon,reimu
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_汗1,0,0
+そもそも誰が\R[都市伝説|つくりばなし]を\n利用して広めた噂なのか\n判らないけど\,a15x3,0,0
+,ClearBalloon,reimu
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_決1,0,0
+貴方の魔理沙の話が\n本当だとすると\,a11x2,0,0
+,ClearBalloon,kasen
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,kasen,華扇_怒1,0,0
+今オカルトボールを\n持っているのは貴方\,a11x2,0,0
+,ClearBalloon,kasen
+
+,SetFocus,reimu		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_余1,0,0
+ん？\,a05x2,0,0
+,ClearBalloon,reimu
+
+,SetFocus,kasen		,#発言中キャラを指定
+,ImageDef,reimu,霊夢_惑1,0,0
+,ImageDef,kasen,華扇_決1,0,0
+悪いけど……\n今この場で頂くよ！\,b11x2,0,0
+,ClearBalloon,kasen
+
+
+,Function,"StopBGM(500);",# BGM停止
+
+#両者フェイス撤去
+,th145_Hide,reimu,-1280,&
+,th145_Hide,kasen,-1280,
+#,Hide,kasen,30,-64,0,&
+#,Hide,reimu,30,-64,0
+
+#,th145_Hide,reimu,-640	,#霊夢フェイス隠し開始
+
+,Function,"GameStory_PlayBattleBGM(501);",# 戦闘BGM再生開始
+
+,ClearBalloon,reimu
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+# -------------------------------------------------------
+# 敗北編
+# -------------------------------------------------------
+:lose
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+#初期表情設定
+,ImageDef,reimu,霊夢_負1,0,0
+,ImageDef,kasen,華扇_決1,0,0
+
+,th145_Show,reimu,-1280	,&,#霊夢フェイス表示開始
+,th145_Show,kasen,-1280	,#華扇フェイス表示開始
+
+,SetFocus,kasen
+オカルトボールは何故か実在する\n霊夢が犯人とは思いがたいが……\nでも危ないところだった……\,a15x3,0,0
+
+,Function,"::StopBGM(1500);"
+#コンテニュー処理へのジャンプを予定　現在は仮で次のステージに進んでから一つ戻る処理を行い、同ステージの最初から再開します
+,Thread,"::story.BeginOpening();"#オープニング開始
+
+,End
+
+# -------------------------------------------------------
+# 勝利
+# -------------------------------------------------------
+:win
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+#初期表情設定
+,ImageDef,reimu,霊夢_惑1,0,0
+,ImageDef,kasen,華扇_惑1,0,0
+
+#,Move,reimu,0,-25,25
+,th145_Show,reimu,-1280	,&,#霊夢フェイス表示開始
+,th145_Show,kasen,-1280	,#華扇フェイス表示開始
+
+,SetFocus,kasen
+やっぱり\nすんなり渡してはくれないか\,c15x3,0,0
+,ClearBalloon,kasen
+
+,SetFocus,kasen
+,ImageDef,kasen,華扇_諭1,0,0
+ここで本気を出すのは\n色々と危ないな\nせめて警告だけでも\,d15x3,0,0
+,ClearBalloon,kasen
+
+
+,SetFocus,reimu,0,
+何なのよ！\nあんたも変な玉だして！\,a11x2,0,0
+,ClearBalloon,reimu
+
+,SetFocus,reimu,0,
+,ImageDef,reimu,霊夢_汗1,0,0
+もしかして\n本当に噂どおりに……？\,a11x2,0,0
+,ClearBalloon,reimu
+
+,SetFocus,kasen
+,ImageDef,kasen,華扇_諭1,0,0
+,ImageDef,reimu,霊夢_普1,0,0
+霊夢、このボールは危ないわ\nこれは誰かが作った噂では無い\,a15x3,0,0
+,ClearBalloon,kasen
+
+,SetFocus,kasen
+,ImageDef,kasen,華扇_怒1,0,0
+,ImageDef,reimu,霊夢_驚1,0,0
+ボールだけ\R[都市伝説|つくりばなし]じゃ無いわ！\n恐らく本物の\R[大異変|オカルト]よ！\,b15x3,0,0
+,ClearBalloon,kasen
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

@@ -1,0 +1,214 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\shion\com\shion_ai.nut: 
+sourcename: "data\script\gameobject\shion\com\shion_ai.nut"
+name: "main"
+nliterals: 2
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 3
+ndefaultparams: 0
+ninstructions: 7
+nfunctions: 2
+Literals: [
+    0: "begin_battle"
+    1: "com_cancel"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 6
+    1: name: "this", pos: 0, start_op: 0, end_op: 6
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 14, op: 3
+    2: line: 23, op: 6
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "begin_battle")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "com_cancel")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\shion\com\shion_ai.nut"
+        name: "begin_battle"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "ground"
+            2: "Activate_ComRoutine"
+            3: "g"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 1, op: 0
+            1: line: 3, op: 0
+            2: line: 5, op: 4
+            3: line: 7, op: 8
+            4: line: 10, op: 11
+            5: line: 13, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "state", s0)
+            1:  loadnulls(s2, 1)
+            2:  eq(s1, 2, s1, 0)
+            3:  jz(s1, 10)
+            4:  getk(s1, "ground", s0)
+            5:  loadbool(s2, 1)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  jmp(-, 3)
+            11:  load(s1, "g")
+            12:  loadfloat(s2, 0.5)
+            13:  set(s255, s0, s1, s2)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\shion\com\shion_ai.nut"
+        name: "com_cancel"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 16
+        nfunctions: 1
+        Literals: [
+            0: "motion"
+            1: "damage"
+            2: "GetFront"
+            3: "vy"
+            4: "vx"
+            5: "direction_h"
+            6: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 1, start_op: 0, end_op: 15
+            1: name: "this", pos: 0, start_op: 0, end_op: 15
+          ]
+        Line Informations: [
+            0: line: 14, op: 0
+            1: line: 15, op: 0
+            2: line: 16, op: 2
+            3: line: 17, op: 4
+            4: line: 18, op: 7
+            5: line: 19, op: 12
+            6: line: 23, op: 15
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  dload(s2, "motion", s3, "damage")
+            1:  set(s255, s0, s2, s3)
+            2:  prepcallk(s2, "GetFront", s0, s3)
+            3:  call(255, s2, s3, 1)
+            4:  load(s2, "vy")
+            5:  loadint(s3, 0)
+            6:  set(s255, s0, s2, s3)
+            7:  load(s2, "vx")
+            8:  loadfloat(s3, -6)
+            9:  getk(s4, "direction_h", s0)
+            10:  mul(s3, s4, s3)
+            11:  set(s255, s0, s2, s3)
+            12:  load(s2, "state")
+            13:  closure(s3, 0)
+            14:  set(s255, s0, s2, s3)
+            15:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\shion\com\shion_ai.nut"
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 12
+                nfunctions: 0
+                Literals: [
+                    0: "VX_Brake"
+                    1: "obj"
+                    2: "enemy"
+                    3: "motion"
+                    4: "stand"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 11
+                  ]
+                Line Informations: [
+                    0: line: 19, op: 0
+                    1: line: 20, op: 0
+                    2: line: 21, op: 4
+                    3: line: 22, op: 11
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  prepcallk(s1, "VX_Brake", s0, s2)
+                    1:  move(s3, s0)
+                    2:  loadfloat(s4, 0.3)
+                    3:  call(255, s1, s2, 3)
+                    4:  getk(s1, "obj", s0)
+                    5:  getk(s1, "enemy", s1)
+                    6:  getk(s1, "motion", s1)
+                    7:  eq(s1, 4, s1, 255)
+                    8:  jz(s1, 2)
+                    9:  dload(s1, "motion", s2, "stand")
+                    10:  set(s255, s0, s1, s2)
+                    11:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

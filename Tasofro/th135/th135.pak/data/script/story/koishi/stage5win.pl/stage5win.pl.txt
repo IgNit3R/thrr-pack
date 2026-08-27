@@ -1,0 +1,64 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/koishi.csv"
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+
+#フェイス画像
+,DefineObject,koishi,-360,0,false
+,DefineObject,reimu,-360,0,true
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+
+
+#Label:Win
+
+# ＊ここは新聞にならずに会話シーンを入れてください
+#
+,ImageDef,reimu,霊夢_決1,0,0
+,Show,reimu,30,-64,0
+,SetFocus,reimu
+やるな？\,a05x2,0,0
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+儂も本気を出すとするかのう\,a15x3,0,0
+
+,ClearBalloon,reimu
+,ImageDef,koishi,こいし_普2,0,0
+,Show,koishi,30,-64,0
+,SetFocus,koishi
+もう終わり？\,a05x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,reimu,霊夢_決1,0,0
+,SetFocus,reimu
+どうかな？\,a05x2,3,0,0
+
+,ClearBalloon,reimu
+
+# --------------------------
+
+,Hide,reimu,30,-64,0,&
+,Hide,koishi,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobOut();"
+,Sleep,150
+
+# 二人の会話の絵が消える
+# こいしからモクモクと煙が出る
+#
+# それと同時に背景のキャラ達もドロンと狸に戻り
+# 一斉に霧散する
+# そこに残ったのは誰も居ない野原
+
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

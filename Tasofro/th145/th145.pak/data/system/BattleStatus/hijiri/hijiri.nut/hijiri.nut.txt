@@ -1,0 +1,405 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\hijiri\hijiri.nut: 
+sourcename: ""
+name: "main"
+nliterals: 15
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 50
+nfunctions: 3
+Literals: [
+    0: "HijiriStatus"
+    1: "BattleStatus"
+    2: "chantType"
+    3: "chant"
+    4: "charge"
+    5: "ex_f"
+    6: "ex_f_max"
+    7: "ex_b"
+    8: "ex_b_max"
+    9: "no_disp_num"
+    10: "practice_item"
+    11: "practice_item_id"
+    12: "Hijiri_BottomDraw"
+    13: "HijiriBottomDraw_Left"
+    14: "HijiriBottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 49
+    1: name: "this", pos: 0, start_op: 0, end_op: 49
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 17, op: 35
+    2: line: 20, op: 36
+    3: line: 38, op: 40
+    4: line: 56, op: 44
+    5: line: 73, op: 48
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "HijiriStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "chantType")
+    5:  loadnulls(s5, 1)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "chant")
+    8:  loadint(s5, -1)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "charge")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_f")
+    14:  loadint(s5, 0)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "ex_f_max")
+    17:  loadint(s5, 320)
+    18:  newslota(0, s3, s4, s5)
+    19:  load(s4, "ex_b")
+    20:  loadint(s5, 0)
+    21:  newslota(0, s3, s4, s5)
+    22:  load(s4, "ex_b_max")
+    23:  loadint(s5, 320)
+    24:  newslota(0, s3, s4, s5)
+    25:  load(s4, "no_disp_num")
+    26:  loadbool(s5, 0)
+    27:  newslota(0, s3, s4, s5)
+    28:  load(s4, "practice_item")
+    29:  loadint(s5, 0)
+    30:  newslota(0, s3, s4, s5)
+    31:  load(s4, "practice_item_id")
+    32:  loadint(s5, 0)
+    33:  newslota(0, s3, s4, s5)
+    34:  newslot(s2, s0, s2, s3)
+    35:  line(-, 17)
+    36:  line(-, 20)
+    37:  load(s2, "Hijiri_BottomDraw")
+    38:  closure(s3, 0)
+    39:  newslot(s2, s0, s2, s3)
+    40:  line(-, 38)
+    41:  load(s2, "HijiriBottomDraw_Left")
+    42:  closure(s3, 1)
+    43:  newslot(s2, s0, s2, s3)
+    44:  line(-, 56)
+    45:  load(s2, "HijiriBottomDraw_Right")
+    46:  closure(s3, 2)
+    47:  newslot(s2, s0, s2, s3)
+    48:  line(-, 73)
+    49:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Hijiri_BottomDraw"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "HijiriStatus"
+            2: "player_id"
+            3: "HijiriBottomDraw_Left"
+            4: "HijiriBottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 24, op: 1
+            1: line: 27, op: 7
+            2: line: 29, op: 14
+            3: line: 31, op: 17
+            4: line: 33, op: 24
+            5: line: 35, op: 26
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 24)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "HijiriStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 27)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 29)
+            14:  prepcallk(s1, "HijiriBottomDraw_Left", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 9)
+            17:  line(-, 31)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 3)
+            23:  line(-, 33)
+            24:  prepcallk(s1, "HijiriBottomDraw_Right", s0, s2)
+            25:  call(255, s1, s2, 1)
+            26:  line(-, 35)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "HijiriBottomDraw_Left"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 66
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "visible"
+            2: "bottom"
+            3: "layer0"
+            4: "chant"
+            5: "Blit"
+            6: "images"
+            7: "resource"
+            8: "chant_count"
+            9: "BLEND_ALPHA"
+            10: "occult_ball"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 2, start_op: 11, end_op: 63
+            1: name: "dst_layer", pos: 1, start_op: 9, end_op: 63
+            2: name: "this", pos: 0, start_op: 0, end_op: 65
+          ]
+        Line Informations: [
+            0: line: 40, op: 1
+            1: line: 41, op: 6
+            2: line: 44, op: 9
+            3: line: 46, op: 14
+            4: line: 48, op: 18
+            5: line: 50, op: 43
+            6: line: 53, op: 64
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 40)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "visible", s1)
+            3:  not(s1, s1)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 41)
+            7:  getk(s1, "bottom", s0)
+            8:  getk(s1, "layer0", s1)
+            9:  line(-, 44)
+            10:  loadint(s2, 0)
+            11:  loadint(s3, 5)
+            12:  jcmp(s3, 51, s2, CMP_L)
+            13:  line(-, 46)
+            14:  getk(s3, "status", s0)
+            15:  getk(s3, "chant", s3)
+            16:  jcmp(s3, 25, s2, CMP_L)
+            17:  line(-, 48)
+            18:  prepcallk(s3, "Blit", s1, s4)
+            19:  loadint(s5, 96)
+            20:  loadint(s6, 26)
+            21:  sub(s5, s6, s5)
+            22:  loadint(s6, 32)
+            23:  mul(s6, s6, s2)
+            24:  add(s5, s6, s5)
+            25:  loadint(s6, 19)
+            26:  sub(s5, s6, s5)
+            27:  loadint(s6, 640)
+            28:  loadint(s7, 19)
+            29:  sub(s6, s7, s6)
+            30:  loadint(s7, 64)
+            31:  loadint(s8, 64)
+            32:  getk(s9, "status", s0)
+            33:  getk(s9, "images", s9)
+            34:  getk(s9, "resource", s9)
+            35:  getk(s9, "chant_count", s9)
+            36:  loadint(s10, 0)
+            37:  loadint(s11, 0)
+            38:  getk(s12, "BLEND_ALPHA", s0)
+            39:  loadfloat(s13, 1)
+            40:  call(255, s3, s4, 10)
+            41:  jmp(-, 20)
+            42:  line(-, 50)
+            43:  prepcallk(s3, "Blit", s1, s4)
+            44:  loadint(s5, 96)
+            45:  loadint(s6, 26)
+            46:  sub(s5, s6, s5)
+            47:  loadint(s6, 32)
+            48:  mul(s6, s6, s2)
+            49:  add(s5, s6, s5)
+            50:  loadint(s6, 640)
+            51:  loadint(s7, 26)
+            52:  loadint(s8, 26)
+            53:  getk(s9, "status", s0)
+            54:  getk(s9, "images", s9)
+            55:  getk(s9, "resource", s9)
+            56:  getk(s9, "occult_ball", s9)
+            57:  loadint(s10, 0)
+            58:  loadint(s11, 0)
+            59:  getk(s12, "BLEND_ALPHA", s0)
+            60:  loadfloat(s13, 1)
+            61:  call(255, s3, s4, 10)
+            62:  pincl(s3, s2, 0, 1)
+            63:  jmp(-, -53)
+            64:  line(-, 53)
+            65:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 14
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "HijiriBottomDraw_Right"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 66
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "visible"
+            2: "bottom"
+            3: "layer0"
+            4: "chant"
+            5: "Blit"
+            6: "images"
+            7: "resource"
+            8: "chant_count"
+            9: "BLEND_ALPHA"
+            10: "occult_ball"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 2, start_op: 11, end_op: 63
+            1: name: "dst_layer", pos: 1, start_op: 9, end_op: 63
+            2: name: "this", pos: 0, start_op: 0, end_op: 65
+          ]
+        Line Informations: [
+            0: line: 58, op: 1
+            1: line: 59, op: 6
+            2: line: 62, op: 9
+            3: line: 64, op: 14
+            4: line: 66, op: 18
+            5: line: 68, op: 43
+            6: line: 71, op: 64
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 58)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "visible", s1)
+            3:  not(s1, s1)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 59)
+            7:  getk(s1, "bottom", s0)
+            8:  getk(s1, "layer0", s1)
+            9:  line(-, 62)
+            10:  loadint(s2, 0)
+            11:  loadint(s3, 5)
+            12:  jcmp(s3, 51, s2, CMP_L)
+            13:  line(-, 64)
+            14:  getk(s3, "status", s0)
+            15:  getk(s3, "chant", s3)
+            16:  jcmp(s3, 25, s2, CMP_L)
+            17:  line(-, 66)
+            18:  prepcallk(s3, "Blit", s1, s4)
+            19:  loadint(s5, 1280)
+            20:  loadint(s6, 96)
+            21:  loadint(s7, 32)
+            22:  mul(s7, s7, s2)
+            23:  add(s6, s7, s6)
+            24:  sub(s5, s6, s5)
+            25:  loadint(s6, 19)
+            26:  sub(s5, s6, s5)
+            27:  loadint(s6, 640)
+            28:  loadint(s7, 19)
+            29:  sub(s6, s7, s6)
+            30:  loadint(s7, 64)
+            31:  loadint(s8, 64)
+            32:  getk(s9, "status", s0)
+            33:  getk(s9, "images", s9)
+            34:  getk(s9, "resource", s9)
+            35:  getk(s9, "chant_count", s9)
+            36:  loadint(s10, 0)
+            37:  loadint(s11, 0)
+            38:  getk(s12, "BLEND_ALPHA", s0)
+            39:  loadfloat(s13, 1)
+            40:  call(255, s3, s4, 10)
+            41:  jmp(-, 20)
+            42:  line(-, 68)
+            43:  prepcallk(s3, "Blit", s1, s4)
+            44:  loadint(s5, 1280)
+            45:  loadint(s6, 96)
+            46:  loadint(s7, 32)
+            47:  mul(s7, s7, s2)
+            48:  add(s6, s7, s6)
+            49:  sub(s5, s6, s5)
+            50:  loadint(s6, 640)
+            51:  loadint(s7, 26)
+            52:  loadint(s8, 26)
+            53:  getk(s9, "status", s0)
+            54:  getk(s9, "images", s9)
+            55:  getk(s9, "resource", s9)
+            56:  getk(s9, "occult_ball", s9)
+            57:  loadint(s10, 0)
+            58:  loadint(s11, 0)
+            59:  getk(s12, "BLEND_ALPHA", s0)
+            60:  loadfloat(s13, 1)
+            61:  call(255, s3, s4, 10)
+            62:  pincl(s3, s2, 0, 1)
+            63:  jmp(-, -53)
+            64:  line(-, 71)
+            65:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 14
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

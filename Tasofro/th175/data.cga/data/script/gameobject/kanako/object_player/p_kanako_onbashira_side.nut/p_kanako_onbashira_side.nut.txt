@@ -1,0 +1,1866 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut: 
+sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+name: "main"
+nliterals: 12
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 13
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 12
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "update_move"
+    3: "update_upper"
+    4: "destruct"
+    5: "interactive"
+    6: "determination"
+    7: "plot"
+    8: "kill_move"
+    9: "on_hit_target"
+    10: "on_hit_ground"
+    11: "on_graze_target"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 49, op: 3
+    2: line: 109, op: 7
+    3: line: 162, op: 10
+    4: line: 240, op: 13
+    5: line: 249, op: 16
+    6: line: 256, op: 19
+    7: line: 262, op: 22
+    8: line: 277, op: 25
+    9: line: 285, op: 28
+    10: line: 289, op: 31
+    11: line: 291, op: 34
+    12: line: 292, op: 37
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  loadnulls(s3, 1)
+    5:  closure(s3, 1)
+    6:  newslot(s2, s0, s2, s3)
+    7:  load(s2, "update_move")
+    8:  closure(s3, 2)
+    9:  newslot(s2, s0, s2, s3)
+    10:  load(s2, "update_upper")
+    11:  closure(s3, 3)
+    12:  newslot(s2, s0, s2, s3)
+    13:  load(s2, "destruct")
+    14:  closure(s3, 4)
+    15:  newslot(s2, s0, s2, s3)
+    16:  load(s2, "interactive")
+    17:  closure(s3, 5)
+    18:  newslot(s2, s0, s2, s3)
+    19:  load(s2, "determination")
+    20:  closure(s3, 6)
+    21:  newslot(s2, s0, s2, s3)
+    22:  load(s2, "plot")
+    23:  closure(s3, 7)
+    24:  newslot(s2, s0, s2, s3)
+    25:  load(s2, "kill_move")
+    26:  closure(s3, 8)
+    27:  newslot(s2, s0, s2, s3)
+    28:  load(s2, "on_hit_target")
+    29:  closure(s3, 9)
+    30:  newslot(s2, s0, s2, s3)
+    31:  load(s2, "on_hit_ground")
+    32:  closure(s3, 10)
+    33:  newslot(s2, s0, s2, s3)
+    34:  load(s2, "on_graze_target")
+    35:  closure(s3, 11)
+    36:  newslot(s2, s0, s2, s3)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "construct"
+        nliterals: 29
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 27
+        ndefaultparams: 0
+        ninstructions: 95
+        nfunctions: 2
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "attack_power"
+            3: "score"
+            4: "push_x"
+            5: "push_y"
+            6: "count"
+            7: "direction_h"
+            8: "obj"
+            9: "player"
+            10: "alpha"
+            11: "hit_action"
+            12: "hit_cycle"
+            13: "hit_count"
+            14: "flash_a"
+            15: "flash_r"
+            16: "flash_g"
+            17: "flash_b"
+            18: "pos_x"
+            19: "pos_y"
+            20: "rot_speed"
+            21: "plot_layer"
+            22: "layer_s2"
+            23: "ready_next"
+            24: "frameset"
+            25: "maskbits"
+            26: "state"
+            27: "h_entity"
+            28: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 94
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 7, op: 6
+            4: line: 8, op: 9
+            5: line: 9, op: 12
+            6: line: 10, op: 15
+            7: line: 15, op: 18
+            8: line: 16, op: 21
+            9: line: 17, op: 26
+            10: line: 18, op: 29
+            11: line: 19, op: 32
+            12: line: 20, op: 35
+            13: line: 22, op: 38
+            14: line: 23, op: 41
+            15: line: 24, op: 44
+            16: line: 25, op: 47
+            17: line: 27, op: 50
+            18: line: 28, op: 53
+            19: line: 30, op: 56
+            20: line: 31, op: 59
+            21: line: 32, op: 62
+            22: line: 34, op: 65
+            23: line: 35, op: 68
+            24: line: 37, op: 71
+            25: line: 40, op: 74
+            26: line: 48, op: 94
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "attack_power")
+            7:  loadint(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "score")
+            10:  loadint(s2, 0)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "push_x")
+            13:  loadfloat(s2, -1)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "push_y")
+            16:  loadfloat(s2, -5)
+            17:  set(s255, s0, s1, s2)
+            18:  load(s1, "count")
+            19:  loadint(s2, 0)
+            20:  newslot(s255, s0, s1, s2)
+            21:  dload(s1, "direction_h", s2, "obj")
+            22:  get(s2, s0, s2)
+            23:  getk(s2, "player", s2)
+            24:  getk(s2, "direction_h", s2)
+            25:  newslot(s255, s0, s1, s2)
+            26:  load(s1, "alpha")
+            27:  loadfloat(s2, 1)
+            28:  newslot(s255, s0, s1, s2)
+            29:  load(s1, "hit_action")
+            30:  closure(s2, 0)
+            31:  newslot(s255, s0, s1, s2)
+            32:  load(s1, "hit_cycle")
+            33:  loadint(s2, 0)
+            34:  newslot(s255, s0, s1, s2)
+            35:  load(s1, "hit_count")
+            36:  loadint(s2, 0)
+            37:  newslot(s255, s0, s1, s2)
+            38:  load(s1, "flash_a")
+            39:  loadfloat(s2, 0)
+            40:  newslot(s255, s0, s1, s2)
+            41:  load(s1, "flash_r")
+            42:  loadfloat(s2, 1)
+            43:  newslot(s255, s0, s1, s2)
+            44:  load(s1, "flash_g")
+            45:  loadfloat(s2, 1)
+            46:  newslot(s255, s0, s1, s2)
+            47:  load(s1, "flash_b")
+            48:  loadfloat(s2, 1)
+            49:  newslot(s255, s0, s1, s2)
+            50:  load(s1, "pos_x")
+            51:  loadint(s2, 0)
+            52:  newslot(s255, s0, s1, s2)
+            53:  load(s1, "pos_y")
+            54:  loadint(s2, 0)
+            55:  newslot(s255, s0, s1, s2)
+            56:  load(s1, "rot_speed")
+            57:  loadfloat(s2, 0)
+            58:  newslot(s255, s0, s1, s2)
+            59:  dload(s1, "plot_layer", s2, "layer_s2")
+            60:  get(s2, s0, s2)
+            61:  newslot(s255, s0, s1, s2)
+            62:  load(s1, "ready_next")
+            63:  loadbool(s2, 0)
+            64:  newslot(s255, s0, s1, s2)
+            65:  load(s1, "frameset")
+            66:  loadnulls(s2, 1)
+            67:  newslot(s255, s0, s1, s2)
+            68:  load(s1, "maskbits")
+            69:  loadint(s2, 64)
+            70:  newslot(s255, s0, s1, s2)
+            71:  load(s1, "state")
+            72:  closure(s2, 1)
+            73:  newslot(s255, s0, s1, s2)
+            74:  load(s1, "h_entity")
+            75:  loadroot(s2)
+            76:  prepcallk(s2, "_vspace_regist", s2, s3)
+            77:  move(s4, s0)
+            78:  loadint(s5, 1)
+            79:  loadint(s6, 2)
+            80:  bitw(s5, s6, s5, BW_OR)
+            81:  loadint(s6, 8)
+            82:  bitw(s5, s6, s5, BW_OR)
+            83:  loadint(s6, 64)
+            84:  bitw(s5, s6, s5, BW_OR)
+            85:  loadint(s6, 128)
+            86:  bitw(s5, s6, s5, BW_OR)
+            87:  loadint(s6, 16)
+            88:  bitw(s5, s6, s5, BW_OR)
+            89:  loadint(s6, 256)
+            90:  bitw(s5, s6, s5, BW_OR)
+            91:  loadint(s6, 0)
+            92:  call(2, s2, s3, 4)
+            93:  newslot(s255, s0, s1, s2)
+            94:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 1
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 18, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 37, op: 0
+                    1: line: 38, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "message"
+        nliterals: 28
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 41
+        ndefaultparams: 1
+        ninstructions: 158
+        nfunctions: 3
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "count"
+            3: "_vspace_unregist"
+            4: "h_entity"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_kanako/onbasira_007"
+            9: "flash_a"
+            10: "vx"
+            11: "vy"
+            12: "state"
+            13: "obj"
+            14: "player"
+            15: "pole_shot"
+            16: "_audio_play"
+            17: "se"
+            18: "kanako_rotate"
+            19: "attack_power"
+            20: "rot_speed"
+            21: "plot_layer"
+            22: "y_rate"
+            23: "t_angle"
+            24: "player_kanako/onbasira_010"
+            25: "hit_action"
+            26: "update_move"
+            27: "update_upper"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_message_id"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 157
+            1: name: "_message_id", pos: 1, start_op: 0, end_op: 157
+            2: name: "this", pos: 0, start_op: 0, end_op: 157
+          ]
+        Line Informations: [
+            0: line: 49, op: 0
+            1: line: 50, op: 0
+            2: line: 52, op: 3
+            3: line: 53, op: 7
+            4: line: 54, op: 11
+            5: line: 56, op: 16
+            6: line: 57, op: 19
+            7: line: 58, op: 23
+            8: line: 59, op: 26
+            9: line: 60, op: 34
+            10: line: 61, op: 37
+            11: line: 62, op: 40
+            12: line: 63, op: 43
+            13: line: 67, op: 46
+            14: line: 69, op: 51
+            15: line: 70, op: 55
+            16: line: 71, op: 62
+            17: line: 72, op: 65
+            18: line: 73, op: 68
+            19: line: 74, op: 71
+            20: line: 75, op: 75
+            21: line: 76, op: 79
+            22: line: 77, op: 83
+            23: line: 78, op: 87
+            24: line: 79, op: 95
+            25: line: 85, op: 98
+            26: line: 86, op: 101
+            27: line: 88, op: 106
+            28: line: 89, op: 110
+            29: line: 90, op: 117
+            30: line: 91, op: 120
+            31: line: 92, op: 123
+            32: line: 93, op: 126
+            33: line: 94, op: 130
+            34: line: 95, op: 134
+            35: line: 96, op: 138
+            36: line: 97, op: 142
+            37: line: 98, op: 150
+            38: line: 104, op: 153
+            39: line: 105, op: 156
+            40: line: 107, op: 157
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 145)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 4115)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 32)
+            16:  load(s3, "count")
+            17:  loadint(s4, 0)
+            18:  set(s255, s0, s3, s4)
+            19:  loadroot(s3)
+            20:  prepcallk(s3, "_vspace_unregist", s3, s4)
+            21:  getk(s5, "h_entity", s0)
+            22:  call(255, s3, s4, 2)
+            23:  load(s3, "h_entity")
+            24:  loadnulls(s4, 1)
+            25:  set(s255, s0, s3, s4)
+            26:  load(s3, "frameset")
+            27:  loadroot(s4)
+            28:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            29:  loadroot(s6)
+            30:  getk(s6, "resource_pool", s6)
+            31:  getk(s6, "player_kanako/onbasira_007", s6)
+            32:  call(4, s4, s5, 2)
+            33:  set(s255, s0, s3, s4)
+            34:  load(s3, "flash_a")
+            35:  loadfloat(s4, 1)
+            36:  set(s255, s0, s3, s4)
+            37:  load(s3, "vx")
+            38:  loadint(s4, 0)
+            39:  set(s255, s0, s3, s4)
+            40:  load(s3, "vy")
+            41:  loadint(s4, 0)
+            42:  set(s255, s0, s3, s4)
+            43:  load(s3, "state")
+            44:  closure(s4, 0)
+            45:  set(s255, s0, s3, s4)
+            46:  jmp(-, 110)
+            47:  jmp(-, 3)
+            48:  loadint(s3, 1)
+            49:  eq(s3, 3, s1, 0)
+            50:  jz(s3, 52)
+            51:  getk(s3, "obj", s0)
+            52:  getk(s3, "player", s3)
+            53:  load(s4, "pole_shot")
+            54:  pinc(s3, s3, s4, 1)
+            55:  loadroot(s3)
+            56:  prepcallk(s3, "_audio_play", s3, s4)
+            57:  loadroot(s5)
+            58:  getk(s5, "se", s5)
+            59:  getk(s5, "kanako_rotate", s5)
+            60:  loadint(s6, 1)
+            61:  call(255, s3, s4, 3)
+            62:  load(s3, "attack_power")
+            63:  loadint(s4, 3)
+            64:  set(s255, s0, s3, s4)
+            65:  load(s3, "vy")
+            66:  loadfloat(s4, -10)
+            67:  set(s255, s0, s3, s4)
+            68:  load(s3, "flash_a")
+            69:  loadfloat(s4, 1)
+            70:  set(s255, s0, s3, s4)
+            71:  load(s3, "rot_speed")
+            72:  loadfloat(s4, 0.523599)
+            73:  neg(s4, s4)
+            74:  set(s255, s0, s3, s4)
+            75:  load(s3, "plot_layer")
+            76:  loadint(s4, 0)
+            77:  get(s4, s2, s4)
+            78:  set(s255, s0, s3, s4)
+            79:  load(s3, "y_rate")
+            80:  loadint(s4, 1)
+            81:  get(s4, s2, s4)
+            82:  newslot(s255, s0, s3, s4)
+            83:  load(s3, "t_angle")
+            84:  loadint(s4, 2)
+            85:  get(s4, s2, s4)
+            86:  newslot(s255, s0, s3, s4)
+            87:  load(s3, "frameset")
+            88:  loadroot(s4)
+            89:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            90:  loadroot(s6)
+            91:  getk(s6, "resource_pool", s6)
+            92:  getk(s6, "player_kanako/onbasira_010", s6)
+            93:  call(4, s4, s5, 2)
+            94:  set(s255, s0, s3, s4)
+            95:  load(s3, "hit_action")
+            96:  closure(s4, 1)
+            97:  set(s255, s0, s3, s4)
+            98:  dload(s3, "state", s4, "update_move")
+            99:  get(s4, s0, s4)
+            100:  set(s255, s0, s3, s4)
+            101:  jmp(-, 55)
+            102:  jmp(-, 3)
+            103:  loadint(s3, 2)
+            104:  eq(s3, 3, s1, 0)
+            105:  jz(s3, 51)
+            106:  getk(s3, "obj", s0)
+            107:  getk(s3, "player", s3)
+            108:  load(s4, "pole_shot")
+            109:  pinc(s3, s3, s4, 1)
+            110:  loadroot(s3)
+            111:  prepcallk(s3, "_audio_play", s3, s4)
+            112:  loadroot(s5)
+            113:  getk(s5, "se", s5)
+            114:  getk(s5, "kanako_rotate", s5)
+            115:  loadint(s6, 1)
+            116:  call(255, s3, s4, 3)
+            117:  load(s3, "attack_power")
+            118:  loadint(s4, 3)
+            119:  set(s255, s0, s3, s4)
+            120:  load(s3, "vy")
+            121:  loadfloat(s4, -10)
+            122:  set(s255, s0, s3, s4)
+            123:  load(s3, "flash_a")
+            124:  loadfloat(s4, 1)
+            125:  set(s255, s0, s3, s4)
+            126:  load(s3, "rot_speed")
+            127:  loadfloat(s4, 0.523599)
+            128:  neg(s4, s4)
+            129:  set(s255, s0, s3, s4)
+            130:  load(s3, "plot_layer")
+            131:  loadint(s4, 0)
+            132:  get(s4, s2, s4)
+            133:  set(s255, s0, s3, s4)
+            134:  load(s3, "y_rate")
+            135:  loadint(s4, 1)
+            136:  get(s4, s2, s4)
+            137:  newslot(s255, s0, s3, s4)
+            138:  load(s3, "t_angle")
+            139:  loadint(s4, 2)
+            140:  get(s4, s2, s4)
+            141:  newslot(s255, s0, s3, s4)
+            142:  load(s3, "frameset")
+            143:  loadroot(s4)
+            144:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            145:  loadroot(s6)
+            146:  getk(s6, "resource_pool", s6)
+            147:  getk(s6, "player_kanako/onbasira_010", s6)
+            148:  call(4, s4, s5, 2)
+            149:  set(s255, s0, s3, s4)
+            150:  load(s3, "hit_action")
+            151:  closure(s4, 2)
+            152:  set(s255, s0, s3, s4)
+            153:  dload(s3, "state", s4, "update_upper")
+            154:  get(s4, s0, s4)
+            155:  set(s255, s0, s3, s4)
+            156:  jmp(-, 0)
+            157:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 9
+                nfunctions: 0
+                Literals: [
+                    0: "alpha"
+                    1: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 8
+                  ]
+                Line Informations: [
+                    0: line: 63, op: 0
+                    1: line: 64, op: 0
+                    2: line: 65, op: 3
+                    3: line: 66, op: 8
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "alpha")
+                    1:  loadfloat(s2, 0.2)
+                    2:  comparith(s1, 2, s1, 45)
+                    3:  getk(s1, "alpha", s0)
+                    4:  loadfloat(s2, 0)
+                    5:  jcmp(s2, 2, s1, CMP_LE)
+                    6:  prepcallk(s1, "kill", s0, s2)
+                    7:  call(255, s1, s2, 1)
+                    8:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+                name: null
+                nliterals: 12
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 29
+                nfunctions: 0
+                Literals: [
+                    0: "object_pool"
+                    1: "limit_group"
+                    2: "on_hit_damage_reaction"
+                    3: "Spawn_CountSprite"
+                    4: "x"
+                    5: "hit_x"
+                    6: "y"
+                    7: "hit_y"
+                    8: "hit_flash"
+                    9: "_audio_play"
+                    10: "se"
+                    11: "hit_impactB"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "_target"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_target", pos: 1, start_op: 0, end_op: 28
+                    1: name: "this", pos: 0, start_op: 0, end_op: 28
+                  ]
+                Line Informations: [
+                    0: line: 79, op: 0
+                    1: line: 80, op: 0
+                    2: line: 81, op: 8
+                    3: line: 82, op: 11
+                    4: line: 83, op: 21
+                    5: line: 84, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  loadroot(s2)
+                    1:  getk(s2, "object_pool", s2)
+                    2:  prepcallk(s2, "limit_group", s2, s3)
+                    3:  loadint(s4, 6)
+                    4:  loadint(s5, 8)
+                    5:  loadint(s6, 16)
+                    6:  bitw(s5, s6, s5, BW_OR)
+                    7:  call(255, s2, s3, 3)
+                    8:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+                    9:  move(s4, s0)
+                    10:  call(255, s2, s3, 2)
+                    11:  prepcallk(s2, "Spawn_CountSprite", s0, s3)
+                    12:  getk(s4, "x", s1)
+                    13:  getk(s5, "hit_x", s1)
+                    14:  add(s4, s5, s4)
+                    15:  getk(s5, "y", s1)
+                    16:  getk(s6, "hit_y", s1)
+                    17:  add(s5, s6, s5)
+                    18:  load(s6, "hit_flash")
+                    19:  loadint(s7, 20)
+                    20:  call(255, s2, s3, 5)
+                    21:  loadroot(s2)
+                    22:  prepcallk(s2, "_audio_play", s2, s3)
+                    23:  loadroot(s4)
+                    24:  getk(s4, "se", s4)
+                    25:  getk(s4, "hit_impactB", s4)
+                    26:  loadint(s5, 1)
+                    27:  call(255, s2, s3, 3)
+                    28:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+                name: null
+                nliterals: 12
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 29
+                nfunctions: 0
+                Literals: [
+                    0: "object_pool"
+                    1: "limit_group"
+                    2: "on_hit_damage_reaction"
+                    3: "Spawn_CountSprite"
+                    4: "x"
+                    5: "hit_x"
+                    6: "y"
+                    7: "hit_y"
+                    8: "hit_flash"
+                    9: "_audio_play"
+                    10: "se"
+                    11: "hit_impactB"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "_target"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_target", pos: 1, start_op: 0, end_op: 28
+                    1: name: "this", pos: 0, start_op: 0, end_op: 28
+                  ]
+                Line Informations: [
+                    0: line: 98, op: 0
+                    1: line: 99, op: 0
+                    2: line: 100, op: 8
+                    3: line: 101, op: 11
+                    4: line: 102, op: 21
+                    5: line: 103, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  loadroot(s2)
+                    1:  getk(s2, "object_pool", s2)
+                    2:  prepcallk(s2, "limit_group", s2, s3)
+                    3:  loadint(s4, 6)
+                    4:  loadint(s5, 8)
+                    5:  loadint(s6, 16)
+                    6:  bitw(s5, s6, s5, BW_OR)
+                    7:  call(255, s2, s3, 3)
+                    8:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+                    9:  move(s4, s0)
+                    10:  call(255, s2, s3, 2)
+                    11:  prepcallk(s2, "Spawn_CountSprite", s0, s3)
+                    12:  getk(s4, "x", s1)
+                    13:  getk(s5, "hit_x", s1)
+                    14:  add(s4, s5, s4)
+                    15:  getk(s5, "y", s1)
+                    16:  getk(s6, "hit_y", s1)
+                    17:  add(s5, s6, s5)
+                    18:  load(s6, "hit_flash")
+                    19:  loadint(s7, 20)
+                    20:  call(255, s2, s3, 5)
+                    21:  loadroot(s2)
+                    22:  prepcallk(s2, "_audio_play", s2, s3)
+                    23:  loadroot(s4)
+                    24:  getk(s4, "se", s4)
+                    25:  getk(s4, "hit_impactB", s4)
+                    26:  loadint(s5, 1)
+                    27:  call(255, s2, s3, 3)
+                    28:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "update_move"
+        nliterals: 25
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 39
+        ndefaultparams: 0
+        ninstructions: 168
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "angle"
+            2: "rot_speed"
+            3: "flash_a"
+            4: "t_angle"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_kanako/onbasira_002"
+            9: "player_kanako/onbasira_007"
+            10: "player_kanako/onbasira_001"
+            11: "vx"
+            12: "cos"
+            13: "direction_h"
+            14: "vy"
+            15: "sin"
+            16: "v"
+            17: "_audio_play"
+            18: "se"
+            19: "kanako_pole_swing"
+            20: "message"
+            21: "x"
+            22: "y"
+            23: "_vspace_commit"
+            24: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 167
+          ]
+        Line Informations: [
+            0: line: 109, op: 0
+            1: line: 110, op: 0
+            2: line: 111, op: 2
+            3: line: 112, op: 5
+            4: line: 113, op: 8
+            5: line: 114, op: 14
+            6: line: 115, op: 18
+            7: line: 116, op: 22
+            8: line: 117, op: 29
+            9: line: 120, op: 37
+            10: line: 121, op: 41
+            11: line: 123, op: 44
+            12: line: 124, op: 47
+            13: line: 125, op: 50
+            14: line: 127, op: 56
+            15: line: 128, op: 60
+            16: line: 130, op: 68
+            17: line: 131, op: 72
+            18: line: 132, op: 80
+            19: line: 133, op: 87
+            20: line: 134, op: 92
+            21: line: 135, op: 95
+            22: line: 137, op: 102
+            23: line: 138, op: 105
+            24: line: 139, op: 108
+            25: line: 141, op: 114
+            26: line: 142, op: 118
+            27: line: 144, op: 126
+            28: line: 145, op: 130
+            29: line: 146, op: 133
+            30: line: 149, op: 134
+            31: line: 150, op: 137
+            32: line: 151, op: 140
+            33: line: 152, op: 146
+            34: line: 153, op: 149
+            35: line: 156, op: 153
+            36: line: 157, op: 158
+            37: line: 159, op: 163
+            38: line: 160, op: 167
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  dload(s1, "angle", s2, "rot_speed")
+            3:  get(s2, s0, s2)
+            4:  comparith(s1, 2, s1, 43)
+            5:  load(s1, "flash_a")
+            6:  loadfloat(s2, 0.33)
+            7:  comparith(s1, 2, s1, 45)
+            8:  getk(s1, "flash_a", s0)
+            9:  loadfloat(s2, 0)
+            10:  jcmp(s2, 3, s1, CMP_LE)
+            11:  load(s1, "flash_a")
+            12:  loadfloat(s2, 0)
+            13:  set(s255, s0, s1, s2)
+            14:  getk(s1, "count", s0)
+            15:  loadint(s2, 1)
+            16:  eq(s1, 2, s1, 0)
+            17:  jz(s1, 19)
+            18:  load(s1, "rot_speed")
+            19:  loadfloat(s2, 0.523599)
+            20:  neg(s2, s2)
+            21:  set(s255, s0, s1, s2)
+            22:  dload(s1, "angle", s2, "t_angle")
+            23:  get(s2, s0, s2)
+            24:  loadint(s3, 90)
+            25:  add(s2, s3, s2)
+            26:  loadfloat(s3, 0.017453)
+            27:  mul(s2, s3, s2)
+            28:  set(s255, s0, s1, s2)
+            29:  load(s1, "frameset")
+            30:  loadroot(s2)
+            31:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            32:  loadroot(s4)
+            33:  getk(s4, "resource_pool", s4)
+            34:  getk(s4, "player_kanako/onbasira_002", s4)
+            35:  call(2, s2, s3, 2)
+            36:  set(s255, s0, s1, s2)
+            37:  getk(s1, "count", s0)
+            38:  loadint(s2, 14)
+            39:  eq(s1, 2, s1, 0)
+            40:  jz(s1, 3)
+            41:  load(s1, "count")
+            42:  loadint(s2, 120)
+            43:  set(s255, s0, s1, s2)
+            44:  getk(s1, "count", s0)
+            45:  loadint(s2, 120)
+            46:  jcmp(s2, 9, s1, CMP_GE)
+            47:  load(s1, "rot_speed")
+            48:  loadfloat(s2, 0.10472)
+            49:  comparith(s1, 2, s1, 43)
+            50:  getk(s1, "rot_speed", s0)
+            51:  loadint(s2, 0)
+            52:  jcmp(s2, 3, s1, CMP_G)
+            53:  load(s1, "rot_speed")
+            54:  loadint(s2, 0)
+            55:  set(s255, s0, s1, s2)
+            56:  getk(s1, "count", s0)
+            57:  loadint(s2, 120)
+            58:  eq(s1, 2, s1, 0)
+            59:  jz(s1, 8)
+            60:  load(s1, "frameset")
+            61:  loadroot(s2)
+            62:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            63:  loadroot(s4)
+            64:  getk(s4, "resource_pool", s4)
+            65:  getk(s4, "player_kanako/onbasira_007", s4)
+            66:  call(2, s2, s3, 2)
+            67:  set(s255, s0, s1, s2)
+            68:  getk(s1, "count", s0)
+            69:  loadint(s2, 129)
+            70:  eq(s1, 2, s1, 0)
+            71:  jz(s1, 30)
+            72:  load(s1, "frameset")
+            73:  loadroot(s2)
+            74:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            75:  loadroot(s4)
+            76:  getk(s4, "resource_pool", s4)
+            77:  getk(s4, "player_kanako/onbasira_001", s4)
+            78:  call(2, s2, s3, 2)
+            79:  set(s255, s0, s1, s2)
+            80:  dload(s1, "vx", s2, "cos")
+            81:  prepcall(s2, s2, s0, s3)
+            82:  getk(s4, "angle", s0)
+            83:  call(2, s2, s3, 2)
+            84:  getk(s3, "direction_h", s0)
+            85:  mul(s2, s3, s2)
+            86:  set(s255, s0, s1, s2)
+            87:  dload(s1, "vy", s2, "sin")
+            88:  prepcall(s2, s2, s0, s3)
+            89:  getk(s4, "angle", s0)
+            90:  call(2, s2, s3, 2)
+            91:  set(s255, s0, s1, s2)
+            92:  load(s1, "v")
+            93:  loadint(s2, 32)
+            94:  set(s255, s0, s1, s2)
+            95:  loadroot(s1)
+            96:  prepcallk(s1, "_audio_play", s1, s2)
+            97:  loadroot(s3)
+            98:  getk(s3, "se", s3)
+            99:  getk(s3, "kanako_pole_swing", s3)
+            100:  loadint(s4, 1)
+            101:  call(255, s1, s2, 3)
+            102:  getk(s1, "count", s0)
+            103:  loadint(s2, 131)
+            104:  jcmp(s2, 9, s1, CMP_GE)
+            105:  load(s1, "v")
+            106:  loadfloat(s2, 3)
+            107:  comparith(s1, 2, s1, 45)
+            108:  getk(s1, "v", s0)
+            109:  loadint(s2, 0)
+            110:  jcmp(s2, 3, s1, CMP_L)
+            111:  load(s1, "v")
+            112:  loadint(s2, 0)
+            113:  set(s255, s0, s1, s2)
+            114:  getk(s1, "count", s0)
+            115:  loadint(s2, 137)
+            116:  eq(s1, 2, s1, 0)
+            117:  jz(s1, 8)
+            118:  load(s1, "frameset")
+            119:  loadroot(s2)
+            120:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            121:  loadroot(s4)
+            122:  getk(s4, "resource_pool", s4)
+            123:  getk(s4, "player_kanako/onbasira_007", s4)
+            124:  call(2, s2, s3, 2)
+            125:  set(s255, s0, s1, s2)
+            126:  getk(s1, "count", s0)
+            127:  loadint(s2, 181)
+            128:  eq(s1, 2, s1, 0)
+            129:  jz(s1, 4)
+            130:  prepcallk(s1, "message", s0, s2)
+            131:  loadint(s3, 4115)
+            132:  call(255, s1, s2, 2)
+            133:  return(255, 0)
+            134:  getk(s1, "count", s0)
+            135:  loadint(s2, 120)
+            136:  jcmp(s2, 16, s1, CMP_LE)
+            137:  load(s1, "vy")
+            138:  loadfloat(s2, 0.75)
+            139:  comparith(s1, 2, s1, 43)
+            140:  getk(s1, "vy", s0)
+            141:  loadfloat(s2, -0.5)
+            142:  jcmp(s2, 3, s1, CMP_G)
+            143:  load(s1, "vy")
+            144:  loadfloat(s2, -0.5)
+            145:  set(s255, s0, s1, s2)
+            146:  dload(s1, "x", s2, "vx")
+            147:  get(s2, s0, s2)
+            148:  comparith(s1, 2, s1, 43)
+            149:  dload(s1, "y", s2, "vy")
+            150:  get(s2, s0, s2)
+            151:  comparith(s1, 2, s1, 43)
+            152:  jmp(-, 10)
+            153:  dload(s1, "x", s2, "vx")
+            154:  get(s2, s0, s2)
+            155:  getk(s3, "v", s0)
+            156:  mul(s2, s3, s2)
+            157:  comparith(s1, 2, s1, 43)
+            158:  dload(s1, "y", s2, "vy")
+            159:  get(s2, s0, s2)
+            160:  getk(s3, "v", s0)
+            161:  mul(s2, s3, s2)
+            162:  comparith(s1, 2, s1, 43)
+            163:  loadroot(s1)
+            164:  prepcallk(s1, "_vspace_commit", s1, s2)
+            165:  getk(s3, "h_entity", s0)
+            166:  call(255, s1, s2, 2)
+            167:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "update_upper"
+        nliterals: 30
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 56
+        ndefaultparams: 0
+        ninstructions: 246
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "angle"
+            2: "rot_speed"
+            3: "flash_a"
+            4: "t_angle"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_kanako/onbasira_002"
+            9: "player_kanako/onbasira_007"
+            10: "player_kanako/onbasira_001"
+            11: "vx"
+            12: "cos"
+            13: "direction_h"
+            14: "vy"
+            15: "sin"
+            16: "v"
+            17: "_audio_play"
+            18: "se"
+            19: "kanako_pole_swing"
+            20: "message"
+            21: "attack_power"
+            22: "player_kanako/onbasira_009_hit"
+            23: "atan2"
+            24: "y"
+            25: "world"
+            26: "bottom"
+            27: "x"
+            28: "_vspace_commit"
+            29: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 245
+          ]
+        Line Informations: [
+            0: line: 162, op: 0
+            1: line: 163, op: 0
+            2: line: 164, op: 2
+            3: line: 165, op: 5
+            4: line: 166, op: 8
+            5: line: 167, op: 14
+            6: line: 168, op: 17
+            7: line: 169, op: 21
+            8: line: 170, op: 25
+            9: line: 171, op: 32
+            10: line: 174, op: 40
+            11: line: 175, op: 44
+            12: line: 177, op: 47
+            13: line: 178, op: 50
+            14: line: 179, op: 53
+            15: line: 181, op: 59
+            16: line: 182, op: 63
+            17: line: 184, op: 71
+            18: line: 185, op: 75
+            19: line: 186, op: 83
+            20: line: 187, op: 90
+            21: line: 188, op: 95
+            22: line: 189, op: 98
+            23: line: 191, op: 105
+            24: line: 192, op: 114
+            25: line: 193, op: 117
+            26: line: 194, op: 120
+            27: line: 195, op: 123
+            28: line: 198, op: 126
+            29: line: 199, op: 130
+            30: line: 201, op: 138
+            31: line: 202, op: 142
+            32: line: 203, op: 145
+            33: line: 206, op: 146
+            34: line: 207, op: 149
+            35: line: 208, op: 153
+            36: line: 209, op: 156
+            37: line: 210, op: 164
+            38: line: 211, op: 169
+            39: line: 213, op: 174
+            40: line: 214, op: 177
+            41: line: 215, op: 185
+            42: line: 216, op: 198
+            43: line: 217, op: 201
+            44: line: 221, op: 202
+            45: line: 222, op: 205
+            46: line: 223, op: 208
+            47: line: 224, op: 214
+            48: line: 225, op: 217
+            49: line: 228, op: 221
+            50: line: 229, op: 224
+            51: line: 230, op: 227
+            52: line: 233, op: 231
+            53: line: 234, op: 236
+            54: line: 237, op: 241
+            55: line: 238, op: 245
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  dload(s1, "angle", s2, "rot_speed")
+            3:  get(s2, s0, s2)
+            4:  comparith(s1, 2, s1, 43)
+            5:  load(s1, "flash_a")
+            6:  loadfloat(s2, 0.33)
+            7:  comparith(s1, 2, s1, 45)
+            8:  getk(s1, "flash_a", s0)
+            9:  loadfloat(s2, 0)
+            10:  jcmp(s2, 3, s1, CMP_LE)
+            11:  load(s1, "flash_a")
+            12:  loadfloat(s2, 0)
+            13:  set(s255, s0, s1, s2)
+            14:  getk(s1, "count", s0)
+            15:  loadint(s2, 599)
+            16:  jcmp(s2, 129, s1, CMP_LE)
+            17:  getk(s1, "count", s0)
+            18:  loadint(s2, 1)
+            19:  eq(s1, 2, s1, 0)
+            20:  jz(s1, 19)
+            21:  load(s1, "rot_speed")
+            22:  loadfloat(s2, 0.523599)
+            23:  neg(s2, s2)
+            24:  set(s255, s0, s1, s2)
+            25:  dload(s1, "angle", s2, "t_angle")
+            26:  get(s2, s0, s2)
+            27:  loadint(s3, 90)
+            28:  add(s2, s3, s2)
+            29:  loadfloat(s3, 0.017453)
+            30:  mul(s2, s3, s2)
+            31:  set(s255, s0, s1, s2)
+            32:  load(s1, "frameset")
+            33:  loadroot(s2)
+            34:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            35:  loadroot(s4)
+            36:  getk(s4, "resource_pool", s4)
+            37:  getk(s4, "player_kanako/onbasira_002", s4)
+            38:  call(2, s2, s3, 2)
+            39:  set(s255, s0, s1, s2)
+            40:  getk(s1, "count", s0)
+            41:  loadint(s2, 14)
+            42:  eq(s1, 2, s1, 0)
+            43:  jz(s1, 3)
+            44:  load(s1, "count")
+            45:  loadint(s2, 120)
+            46:  set(s255, s0, s1, s2)
+            47:  getk(s1, "count", s0)
+            48:  loadint(s2, 120)
+            49:  jcmp(s2, 9, s1, CMP_GE)
+            50:  load(s1, "rot_speed")
+            51:  loadfloat(s2, 0.10472)
+            52:  comparith(s1, 2, s1, 43)
+            53:  getk(s1, "rot_speed", s0)
+            54:  loadint(s2, 0)
+            55:  jcmp(s2, 3, s1, CMP_G)
+            56:  load(s1, "rot_speed")
+            57:  loadint(s2, 0)
+            58:  set(s255, s0, s1, s2)
+            59:  getk(s1, "count", s0)
+            60:  loadint(s2, 120)
+            61:  eq(s1, 2, s1, 0)
+            62:  jz(s1, 8)
+            63:  load(s1, "frameset")
+            64:  loadroot(s2)
+            65:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            66:  loadroot(s4)
+            67:  getk(s4, "resource_pool", s4)
+            68:  getk(s4, "player_kanako/onbasira_007", s4)
+            69:  call(2, s2, s3, 2)
+            70:  set(s255, s0, s1, s2)
+            71:  getk(s1, "count", s0)
+            72:  loadint(s2, 129)
+            73:  eq(s1, 2, s1, 0)
+            74:  jz(s1, 30)
+            75:  load(s1, "frameset")
+            76:  loadroot(s2)
+            77:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            78:  loadroot(s4)
+            79:  getk(s4, "resource_pool", s4)
+            80:  getk(s4, "player_kanako/onbasira_001", s4)
+            81:  call(2, s2, s3, 2)
+            82:  set(s255, s0, s1, s2)
+            83:  dload(s1, "vx", s2, "cos")
+            84:  prepcall(s2, s2, s0, s3)
+            85:  getk(s4, "angle", s0)
+            86:  call(2, s2, s3, 2)
+            87:  getk(s3, "direction_h", s0)
+            88:  mul(s2, s3, s2)
+            89:  set(s255, s0, s1, s2)
+            90:  dload(s1, "vy", s2, "sin")
+            91:  prepcall(s2, s2, s0, s3)
+            92:  getk(s4, "angle", s0)
+            93:  call(2, s2, s3, 2)
+            94:  set(s255, s0, s1, s2)
+            95:  load(s1, "v")
+            96:  loadint(s2, 32)
+            97:  set(s255, s0, s1, s2)
+            98:  loadroot(s1)
+            99:  prepcallk(s1, "_audio_play", s1, s2)
+            100:  loadroot(s3)
+            101:  getk(s3, "se", s3)
+            102:  getk(s3, "kanako_pole_swing", s3)
+            103:  loadint(s4, 1)
+            104:  call(255, s1, s2, 3)
+            105:  getk(s1, "count", s0)
+            106:  loadint(s2, 130)
+            107:  cmp(s1, s2, s1, CMP_GE)
+            108:  and(s1, 4, s1)
+            109:  getk(s2, "count", s0)
+            110:  loadint(s3, 599)
+            111:  cmp(s2, s3, s2, CMP_LE)
+            112:  move(s1, s2)
+            113:  jz(s1, 12)
+            114:  load(s1, "v")
+            115:  loadfloat(s2, 3)
+            116:  comparith(s1, 2, s1, 45)
+            117:  getk(s1, "v", s0)
+            118:  loadfloat(s2, 9)
+            119:  jcmp(s2, 6, s1, CMP_LE)
+            120:  load(s1, "v")
+            121:  loadfloat(s2, 9)
+            122:  set(s255, s0, s1, s2)
+            123:  load(s1, "count")
+            124:  loadint(s2, 600)
+            125:  set(s255, s0, s1, s2)
+            126:  getk(s1, "count", s0)
+            127:  loadint(s2, 137)
+            128:  eq(s1, 2, s1, 0)
+            129:  jz(s1, 8)
+            130:  load(s1, "frameset")
+            131:  loadroot(s2)
+            132:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            133:  loadroot(s4)
+            134:  getk(s4, "resource_pool", s4)
+            135:  getk(s4, "player_kanako/onbasira_007", s4)
+            136:  call(2, s2, s3, 2)
+            137:  set(s255, s0, s1, s2)
+            138:  getk(s1, "count", s0)
+            139:  loadint(s2, 181)
+            140:  eq(s1, 2, s1, 0)
+            141:  jz(s1, 4)
+            142:  prepcallk(s1, "message", s0, s2)
+            143:  loadint(s3, 4115)
+            144:  call(255, s1, s2, 2)
+            145:  return(255, 0)
+            146:  getk(s1, "count", s0)
+            147:  loadint(s2, 600)
+            148:  jcmp(s2, 53, s1, CMP_GE)
+            149:  getk(s1, "count", s0)
+            150:  loadint(s2, 600)
+            151:  eq(s1, 2, s1, 0)
+            152:  jz(s1, 21)
+            153:  load(s1, "attack_power")
+            154:  loadint(s2, 2)
+            155:  set(s255, s0, s1, s2)
+            156:  load(s1, "frameset")
+            157:  loadroot(s2)
+            158:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            159:  loadroot(s4)
+            160:  getk(s4, "resource_pool", s4)
+            161:  getk(s4, "player_kanako/onbasira_009_hit", s4)
+            162:  call(2, s2, s3, 2)
+            163:  set(s255, s0, s1, s2)
+            164:  dload(s1, "vx", s2, "vx")
+            165:  get(s2, s0, s2)
+            166:  getk(s3, "v", s0)
+            167:  mul(s2, s3, s2)
+            168:  set(s255, s0, s1, s2)
+            169:  dload(s1, "vy", s2, "vy")
+            170:  get(s2, s0, s2)
+            171:  getk(s3, "v", s0)
+            172:  mul(s2, s3, s2)
+            173:  set(s255, s0, s1, s2)
+            174:  load(s1, "vy")
+            175:  loadfloat(s2, 0.5)
+            176:  comparith(s1, 2, s1, 43)
+            177:  dload(s1, "angle", s2, "atan2")
+            178:  prepcall(s2, s2, s0, s3)
+            179:  getk(s4, "vy", s0)
+            180:  getk(s5, "vx", s0)
+            181:  getk(s6, "direction_h", s0)
+            182:  mul(s5, s6, s5)
+            183:  call(2, s2, s3, 3)
+            184:  set(s255, s0, s1, s2)
+            185:  getk(s1, "y", s0)
+            186:  loadroot(s2)
+            187:  getk(s2, "world", s2)
+            188:  getk(s2, "bottom", s2)
+            189:  loadint(s3, 96)
+            190:  add(s2, s3, s2)
+            191:  cmp(s1, s2, s1, CMP_GE)
+            192:  or(s1, 4, s1)
+            193:  getk(s2, "count", s0)
+            194:  loadint(s3, 651)
+            195:  cmp(s2, s3, s2, CMP_GE)
+            196:  move(s1, s2)
+            197:  jz(s1, 4)
+            198:  prepcallk(s1, "message", s0, s2)
+            199:  loadint(s3, 4115)
+            200:  call(255, s1, s2, 2)
+            201:  return(255, 0)
+            202:  getk(s1, "count", s0)
+            203:  loadint(s2, 120)
+            204:  jcmp(s2, 16, s1, CMP_LE)
+            205:  load(s1, "vy")
+            206:  loadfloat(s2, 0.75)
+            207:  comparith(s1, 2, s1, 43)
+            208:  getk(s1, "vy", s0)
+            209:  loadfloat(s2, -0.5)
+            210:  jcmp(s2, 3, s1, CMP_G)
+            211:  load(s1, "vy")
+            212:  loadfloat(s2, -0.5)
+            213:  set(s255, s0, s1, s2)
+            214:  dload(s1, "x", s2, "vx")
+            215:  get(s2, s0, s2)
+            216:  comparith(s1, 2, s1, 43)
+            217:  dload(s1, "y", s2, "vy")
+            218:  get(s2, s0, s2)
+            219:  comparith(s1, 2, s1, 43)
+            220:  jmp(-, 20)
+            221:  getk(s1, "count", s0)
+            222:  loadint(s2, 600)
+            223:  jcmp(s2, 7, s1, CMP_GE)
+            224:  dload(s1, "x", s2, "vx")
+            225:  get(s2, s0, s2)
+            226:  comparith(s1, 2, s1, 43)
+            227:  dload(s1, "y", s2, "vy")
+            228:  get(s2, s0, s2)
+            229:  comparith(s1, 2, s1, 43)
+            230:  jmp(-, 10)
+            231:  dload(s1, "x", s2, "vx")
+            232:  get(s2, s0, s2)
+            233:  getk(s3, "v", s0)
+            234:  mul(s2, s3, s2)
+            235:  comparith(s1, 2, s1, 43)
+            236:  dload(s1, "y", s2, "vy")
+            237:  get(s2, s0, s2)
+            238:  getk(s3, "v", s0)
+            239:  mul(s2, s3, s2)
+            240:  comparith(s1, 2, s1, 43)
+            241:  loadroot(s1)
+            242:  prepcallk(s1, "_vspace_commit", s1, s2)
+            243:  getk(s3, "h_entity", s0)
+            244:  call(255, s1, s2, 2)
+            245:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "destruct"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "obj"
+            2: "player"
+            3: "pole_shot"
+            4: "lib"
+            5: "shot"
+            6: "common_destruct"
+            7: "call"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 241, op: 0
+            1: line: 242, op: 0
+            2: line: 243, op: 3
+            3: line: 244, op: 7
+            4: line: 245, op: 17
+            5: line: 247, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  getk(s1, "obj", s0)
+            4:  getk(s1, "player", s1)
+            5:  load(s2, "pole_shot")
+            6:  pinc(s1, s1, s2, 255)
+            7:  getk(s1, "obj", s0)
+            8:  getk(s1, "player", s1)
+            9:  getk(s1, "pole_shot", s1)
+            10:  loadint(s2, 0)
+            11:  jcmp(s2, 5, s1, CMP_L)
+            12:  getk(s1, "obj", s0)
+            13:  getk(s1, "player", s1)
+            14:  load(s2, "pole_shot")
+            15:  loadint(s3, 0)
+            16:  set(s255, s1, s2, s3)
+            17:  loadroot(s1)
+            18:  getk(s1, "lib", s1)
+            19:  getk(s1, "shot", s1)
+            20:  getk(s1, "common_destruct", s1)
+            21:  prepcallk(s1, "call", s1, s2)
+            22:  move(s3, s0)
+            23:  call(255, s1, s2, 2)
+            24:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "interactive"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "scale_x"
+            3: "direction_h"
+            4: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 250, op: 0
+            1: line: 251, op: 0
+            2: line: 252, op: 5
+            3: line: 253, op: 8
+            4: line: 254, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  jz(s1, 3)
+            2:  getk(s1, "frameset", s0)
+            3:  prepcallk(s1, "step", s1, s2)
+            4:  call(255, s1, s2, 1)
+            5:  dload(s1, "scale_x", s2, "direction_h")
+            6:  get(s2, s0, s2)
+            7:  set(s255, s0, s1, s2)
+            8:  prepcallk(s1, "state", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 257, op: 0
+            1: line: 260, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "plot"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 46
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "frameset"
+            2: "plot_layer"
+            3: "plot"
+            4: "rotate"
+            5: "angle"
+            6: "scale"
+            7: "scale_x"
+            8: "scale_y"
+            9: "translate"
+            10: "x"
+            11: "y"
+            12: "blend"
+            13: "alpha"
+            14: "flash_a"
+            15: "color"
+            16: "flash_r"
+            17: "flash_g"
+            18: "flash_b"
+            19: "pixelshader"
+            20: "ps_fill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 45
+          ]
+        Line Informations: [
+            0: line: 263, op: 0
+            1: line: 264, op: 0
+            2: line: 265, op: 9
+            3: line: 266, op: 13
+            4: line: 267, op: 17
+            5: line: 268, op: 22
+            6: line: 269, op: 27
+            7: line: 271, op: 32
+            8: line: 272, op: 35
+            9: line: 273, op: 41
+            10: line: 275, op: 45
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  or(s1, 4, s1)
+            3:  getk(s2, "frameset", s0)
+            4:  loadnulls(s3, 1)
+            5:  eq(s2, 3, s2, 0)
+            6:  move(s1, s2)
+            7:  jz(s1, 1)
+            8:  return(255, 0)
+            9:  getk(s1, "plot_layer", s0)
+            10:  prepcallk(s1, "plot", s1, s2)
+            11:  getk(s3, "frameset", s0)
+            12:  call(255, s1, s2, 2)
+            13:  getk(s1, "plot_layer", s0)
+            14:  prepcallk(s1, "rotate", s1, s2)
+            15:  getk(s3, "angle", s0)
+            16:  call(255, s1, s2, 2)
+            17:  getk(s1, "plot_layer", s0)
+            18:  prepcallk(s1, "scale", s1, s2)
+            19:  getk(s3, "scale_x", s0)
+            20:  getk(s4, "scale_y", s0)
+            21:  call(255, s1, s2, 3)
+            22:  getk(s1, "plot_layer", s0)
+            23:  prepcallk(s1, "translate", s1, s2)
+            24:  getk(s3, "x", s0)
+            25:  getk(s4, "y", s0)
+            26:  call(255, s1, s2, 3)
+            27:  getk(s1, "plot_layer", s0)
+            28:  prepcallk(s1, "blend", s1, s2)
+            29:  loadint(s3, 1)
+            30:  getk(s4, "alpha", s0)
+            31:  call(255, s1, s2, 3)
+            32:  getk(s1, "flash_a", s0)
+            33:  loadfloat(s2, 0)
+            34:  jcmp(s2, 10, s1, CMP_G)
+            35:  getk(s1, "plot_layer", s0)
+            36:  prepcallk(s1, "color", s1, s2)
+            37:  getk(s3, "flash_r", s0)
+            38:  getk(s4, "flash_g", s0)
+            39:  getk(s5, "flash_b", s0)
+            40:  call(255, s1, s2, 4)
+            41:  getk(s1, "plot_layer", s0)
+            42:  prepcallk(s1, "pixelshader", s1, s2)
+            43:  getk(s3, "ps_fill", s0)
+            44:  call(255, s1, s2, 2)
+            45:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "kill_move"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 12
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 11
+          ]
+        Line Informations: [
+            0: line: 277, op: 0
+            1: line: 278, op: 0
+            2: line: 279, op: 2
+            3: line: 280, op: 6
+            4: line: 281, op: 9
+            5: line: 283, op: 11
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 9)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  prepcallk(s1, "kill", s0, s2)
+            10:  call(255, s1, s2, 1)
+            11:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "on_hit_target"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 14
+        nfunctions: 0
+        Literals: [
+            0: "lib"
+            1: "shot"
+            2: "default_hit_check"
+            3: "call"
+            4: "hit_action"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 13
+            1: name: "this", pos: 0, start_op: 0, end_op: 13
+          ]
+        Line Informations: [
+            0: line: 285, op: 0
+            1: line: 286, op: 0
+            2: line: 287, op: 10
+            3: line: 288, op: 13
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "lib", s0)
+            1:  getk(s2, "shot", s2)
+            2:  getk(s2, "default_hit_check", s2)
+            3:  prepcallk(s2, "call", s2, s3)
+            4:  dmove(s4, s0, s5, s1)
+            5:  call(2, s2, s3, 3)
+            6:  loadbool(s3, 0)
+            7:  eq(s2, 3, s2, 0)
+            8:  jz(s2, 1)
+            9:  return(255, 0)
+            10:  prepcallk(s2, "hit_action", s0, s3)
+            11:  move(s4, s1)
+            12:  call(255, s2, s3, 2)
+            13:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 289, op: 0
+            1: line: 290, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_onbashira_side.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 291, op: 0
+            1: line: 292, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

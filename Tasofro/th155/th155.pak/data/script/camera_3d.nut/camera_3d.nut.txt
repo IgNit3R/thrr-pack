@@ -1,0 +1,182 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\camera_3d.nut: 
+sourcename: ""
+name: "main"
+nliterals: 1
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 2
+ndefaultparams: 0
+ninstructions: 6
+nfunctions: 1
+Literals: [
+    0: "UpdateCamera3D"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 5
+    1: name: "this", pos: 0, start_op: 0, end_op: 5
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 20, op: 4
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "UpdateCamera3D")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 20)
+    5:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "UpdateCamera3D"
+        nliterals: 16
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 79
+        nfunctions: 0
+        Literals: [
+            0: "offset_x"
+            1: "offset_y"
+            2: "at_x"
+            3: "camera2d"
+            4: "left"
+            5: "right"
+            6: "eye_x"
+            7: "at_y"
+            8: "top"
+            9: "bottom"
+            10: "eye_y"
+            11: "eye_z"
+            12: "fov"
+            13: "atan"
+            14: "z_far"
+            15: "at_z"
+          ]
+        Parameters: [
+            0: "this"
+            1: "camera"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "w", pos: 2, start_op: 53, end_op: 76
+            1: name: "camera", pos: 1, start_op: 0, end_op: 78
+            2: name: "this", pos: 0, start_op: 0, end_op: 78
+          ]
+        Line Informations: [
+            0: line: 3, op: 1
+            1: line: 4, op: 4
+            2: line: 6, op: 8
+            3: line: 7, op: 23
+            4: line: 9, op: 27
+            5: line: 10, op: 43
+            6: line: 12, op: 47
+            7: line: 14, op: 53
+            8: line: 15, op: 57
+            9: line: 17, op: 67
+            10: line: 18, op: 71
+            11: line: 20, op: 77
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 3)
+            1:  dload(s2, "offset_x", s3, "offset_x")
+            2:  get(s3, s1, s3)
+            3:  set(s255, s0, s2, s3)
+            4:  line(-, 4)
+            5:  dload(s2, "offset_y", s3, "offset_y")
+            6:  get(s3, s1, s3)
+            7:  set(s255, s0, s2, s3)
+            8:  line(-, 6)
+            9:  dload(s2, "at_x", s3, "camera2d")
+            10:  get(s3, s1, s3)
+            11:  getk(s3, "left", s3)
+            12:  getk(s4, "camera2d", s1)
+            13:  getk(s4, "right", s4)
+            14:  add(s3, s4, s3)
+            15:  neg(s3, s3)
+            16:  loadint(s4, 2)
+            17:  div(s3, s4, s3)
+            18:  loadint(s4, 640)
+            19:  add(s3, s4, s3)
+            20:  loadint(s4, 1)
+            21:  mul(s3, s4, s3)
+            22:  set(s255, s0, s2, s3)
+            23:  line(-, 7)
+            24:  dload(s2, "eye_x", s3, "at_x")
+            25:  get(s3, s0, s3)
+            26:  set(s255, s0, s2, s3)
+            27:  line(-, 9)
+            28:  dload(s2, "at_y", s3, "camera2d")
+            29:  get(s3, s1, s3)
+            30:  getk(s3, "top", s3)
+            31:  getk(s4, "camera2d", s1)
+            32:  getk(s4, "bottom", s4)
+            33:  add(s3, s4, s3)
+            34:  loadint(s4, 2)
+            35:  div(s3, s4, s3)
+            36:  loadint(s4, 560)
+            37:  loadint(s5, 100)
+            38:  add(s4, s5, s4)
+            39:  sub(s3, s4, s3)
+            40:  loadint(s4, 1)
+            41:  mul(s3, s4, s3)
+            42:  set(s255, s0, s2, s3)
+            43:  line(-, 10)
+            44:  dload(s2, "eye_y", s3, "at_y")
+            45:  get(s3, s0, s3)
+            46:  set(s255, s0, s2, s3)
+            47:  line(-, 12)
+            48:  getk(s2, "camera2d", s1)
+            49:  getk(s2, "right", s2)
+            50:  getk(s3, "camera2d", s1)
+            51:  getk(s3, "left", s3)
+            52:  sub(s2, s3, s2)
+            53:  line(-, 14)
+            54:  load(s3, "eye_z")
+            55:  loadfloat(s4, -1300)
+            56:  set(s255, s0, s3, s4)
+            57:  line(-, 15)
+            58:  dload(s3, "fov", s4, "atan")
+            59:  prepcall(s4, s4, s0, s5)
+            60:  getk(s6, "eye_z", s0)
+            61:  neg(s6, s6)
+            62:  div(s6, s6, s2)
+            63:  call(4, s4, s5, 2)
+            64:  loadfloat(s5, 1.6)
+            65:  mul(s4, s5, s4)
+            66:  set(s255, s0, s3, s4)
+            67:  line(-, 17)
+            68:  load(s3, "z_far")
+            69:  loadint(s4, 300000)
+            70:  set(s255, s0, s3, s4)
+            71:  line(-, 18)
+            72:  dload(s3, "at_z", s4, "eye_z")
+            73:  get(s4, s0, s4)
+            74:  getk(s5, "z_far", s0)
+            75:  add(s4, s5, s4)
+            76:  set(s255, s0, s3, s4)
+            77:  line(-, 20)
+            78:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

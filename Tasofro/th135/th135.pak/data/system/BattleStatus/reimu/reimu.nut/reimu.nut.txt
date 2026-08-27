@@ -1,0 +1,696 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\system\BattleStatus\reimu\reimu.nut: 
+sourcename: ""
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 32
+nfunctions: 3
+Literals: [
+    0: "ReimuStatus"
+    1: "BattleStatus"
+    2: "ex_f"
+    3: "ex_f_max"
+    4: "ex_b"
+    5: "ex_b_max"
+    6: "Reimu_BottomDraw"
+    7: "Reimu_BottomDraw_Left"
+    8: "Reimu_BottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 31
+    1: name: "this", pos: 0, start_op: 0, end_op: 31
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 10, op: 17
+    2: line: 13, op: 18
+    3: line: 31, op: 22
+    4: line: 68, op: 26
+    5: line: 104, op: 30
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "ReimuStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "ex_f")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f_max")
+    8:  loadint(s5, 320)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_b")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b_max")
+    14:  loadint(s5, 320)
+    15:  newslota(0, s3, s4, s5)
+    16:  newslot(s2, s0, s2, s3)
+    17:  line(-, 10)
+    18:  line(-, 13)
+    19:  load(s2, "Reimu_BottomDraw")
+    20:  closure(s3, 0)
+    21:  newslot(s2, s0, s2, s3)
+    22:  line(-, 31)
+    23:  load(s2, "Reimu_BottomDraw_Left")
+    24:  closure(s3, 1)
+    25:  newslot(s2, s0, s2, s3)
+    26:  line(-, 68)
+    27:  load(s2, "Reimu_BottomDraw_Right")
+    28:  closure(s3, 2)
+    29:  newslot(s2, s0, s2, s3)
+    30:  line(-, 104)
+    31:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Reimu_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 35
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "name"
+            2: "ReimuStatus"
+            3: "player_id"
+            4: "Reimu_BottomDraw_Left"
+            5: "Reimu_BottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 34
+          ]
+        Line Informations: [
+            0: line: 16, op: 1
+            1: line: 17, op: 7
+            2: line: 20, op: 14
+            3: line: 22, op: 21
+            4: line: 24, op: 24
+            5: line: 26, op: 31
+            6: line: 28, op: 33
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 16)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "name", s1)
+            3:  loadint(s2, 0)
+            4:  ne(s1, 2, s1, 0)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 17)
+            8:  getk(s1, "status", s0)
+            9:  getk(s2, "ReimuStatus", s0)
+            10:  instanceof(s1, s2, s1)
+            11:  not(s1, s1)
+            12:  jz(s1, 1)
+            13:  return(255, 0)
+            14:  line(-, 20)
+            15:  getk(s1, "status", s0)
+            16:  getk(s1, "player_id", s1)
+            17:  loadint(s2, 0)
+            18:  eq(s1, 2, s1, 0)
+            19:  jz(s1, 4)
+            20:  line(-, 22)
+            21:  prepcallk(s1, "Reimu_BottomDraw_Left", s0, s2)
+            22:  call(255, s1, s2, 1)
+            23:  jmp(-, 9)
+            24:  line(-, 24)
+            25:  getk(s1, "status", s0)
+            26:  getk(s1, "player_id", s1)
+            27:  loadint(s2, 1)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 3)
+            30:  line(-, 26)
+            31:  prepcallk(s1, "Reimu_BottomDraw_Right", s0, s2)
+            32:  call(255, s1, s2, 1)
+            33:  line(-, 28)
+            34:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Reimu_BottomDraw_Left"
+        nliterals: 24
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 7
+        nlineinfos: 21
+        ndefaultparams: 0
+        ninstructions: 187
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "images"
+            2: "resource"
+            3: "reimu_base"
+            4: "bottom"
+            5: "BitBlt"
+            6: "image_width"
+            7: "image_height"
+            8: "BLEND_ALPHA"
+            9: "guardcrash_alert"
+            10: "cos"
+            11: "count"
+            12: "reimu_red"
+            13: "BLEND_ADD"
+            14: "ex_b"
+            15: "ex_b_max"
+            16: "reimu_blue"
+            17: "ex_f"
+            18: "ex_f_max"
+            19: "hp_frame_left"
+            20: "character_name_l"
+            21: "graph"
+            22: "en_frame"
+            23: "en_kao"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "alpha", pos: 3, start_op: 34, end_op: 73
+            1: name: "img_bar2", pos: 5, start_op: 120, end_op: 184
+            2: name: "img_bar1", pos: 4, start_op: 81, end_op: 184
+            3: name: "bar_width", pos: 3, start_op: 76, end_op: 184
+            4: name: "base_x", pos: 2, start_op: 7, end_op: 184
+            5: name: "img_base", pos: 1, start_op: 5, end_op: 184
+            6: name: "this", pos: 0, start_op: 0, end_op: 186
+          ]
+        Line Informations: [
+            0: line: 34, op: 1
+            1: line: 35, op: 5
+            2: line: 36, op: 7
+            3: line: 39, op: 20
+            4: line: 41, op: 25
+            5: line: 42, op: 34
+            6: line: 43, op: 54
+            7: line: 47, op: 74
+            8: line: 48, op: 76
+            9: line: 49, op: 81
+            10: line: 50, op: 89
+            11: line: 51, op: 93
+            12: line: 52, op: 97
+            13: line: 54, op: 115
+            14: line: 55, op: 120
+            15: line: 56, op: 128
+            16: line: 57, op: 132
+            17: line: 58, op: 136
+            18: line: 61, op: 154
+            19: line: 64, op: 168
+            20: line: 65, op: 185
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 34)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "images", s1)
+            3:  getk(s1, "resource", s1)
+            4:  getk(s1, "reimu_base", s1)
+            5:  line(-, 35)
+            6:  loadint(s2, 0)
+            7:  line(-, 36)
+            8:  getk(s3, "bottom", s0)
+            9:  prepcallk(s3, "BitBlt", s3, s4)
+            10:  move(s5, s2)
+            11:  loadint(s6, 0)
+            12:  getk(s7, "image_width", s1)
+            13:  getk(s8, "image_height", s1)
+            14:  move(s9, s1)
+            15:  loadint(s10, 0)
+            16:  loadint(s11, 0)
+            17:  getk(s12, "BLEND_ALPHA", s0)
+            18:  loadfloat(s13, 1)
+            19:  call(255, s3, s4, 10)
+            20:  line(-, 39)
+            21:  getk(s3, "status", s0)
+            22:  getk(s3, "guardcrash_alert", s3)
+            23:  jz(s3, 50)
+            24:  line(-, 41)
+            25:  prepcallk(s3, "cos", s0, s4)
+            26:  getk(s5, "count", s0)
+            27:  loadfloat(s6, 0.24)
+            28:  mul(s5, s6, s5)
+            29:  call(3, s3, s4, 2)
+            30:  loadfloat(s4, 0.5)
+            31:  mul(s3, s4, s3)
+            32:  loadfloat(s4, 0.5)
+            33:  add(s3, s4, s3)
+            34:  line(-, 42)
+            35:  getk(s4, "bottom", s0)
+            36:  prepcallk(s4, "BitBlt", s4, s5)
+            37:  loadint(s6, 40)
+            38:  add(s6, s6, s2)
+            39:  loadint(s7, 53)
+            40:  loadint(s8, 320)
+            41:  loadint(s9, 18)
+            42:  getk(s10, "status", s0)
+            43:  getk(s10, "images", s10)
+            44:  getk(s10, "resource", s10)
+            45:  getk(s10, "reimu_red", s10)
+            46:  loadint(s11, 0)
+            47:  loadint(s12, 0)
+            48:  getk(s13, "BLEND_ALPHA", s0)
+            49:  loadfloat(s14, 0.1)
+            50:  mul(s14, s14, s3)
+            51:  loadfloat(s15, 0.1)
+            52:  add(s14, s15, s14)
+            53:  call(255, s4, s5, 10)
+            54:  line(-, 43)
+            55:  getk(s4, "bottom", s0)
+            56:  prepcallk(s4, "BitBlt", s4, s5)
+            57:  loadint(s6, 40)
+            58:  add(s6, s6, s2)
+            59:  loadint(s7, 53)
+            60:  loadint(s8, 320)
+            61:  loadint(s9, 18)
+            62:  getk(s10, "status", s0)
+            63:  getk(s10, "images", s10)
+            64:  getk(s10, "resource", s10)
+            65:  getk(s10, "reimu_red", s10)
+            66:  loadint(s11, 0)
+            67:  loadint(s12, 0)
+            68:  getk(s13, "BLEND_ADD", s0)
+            69:  loadfloat(s14, 0.1)
+            70:  mul(s14, s14, s3)
+            71:  loadfloat(s15, 0.05)
+            72:  add(s14, s15, s14)
+            73:  call(255, s4, s5, 10)
+            74:  line(-, 47)
+            75:  loadnulls(s3, 1)
+            76:  line(-, 48)
+            77:  getk(s4, "status", s0)
+            78:  getk(s4, "images", s4)
+            79:  getk(s4, "resource", s4)
+            80:  getk(s4, "reimu_red", s4)
+            81:  line(-, 49)
+            82:  getk(s5, "status", s0)
+            83:  getk(s5, "ex_b", s5)
+            84:  loadint(s6, 320)
+            85:  mul(s5, s6, s5)
+            86:  getk(s6, "status", s0)
+            87:  getk(s6, "ex_b_max", s6)
+            88:  div(s3, s6, s5)
+            89:  line(-, 50)
+            90:  loadint(s5, 0)
+            91:  jcmp(s5, 1, s3, CMP_L)
+            92:  loadint(s3, 0)
+            93:  line(-, 51)
+            94:  loadint(s5, 320)
+            95:  jcmp(s5, 1, s3, CMP_G)
+            96:  loadint(s3, 320)
+            97:  line(-, 52)
+            98:  getk(s5, "bottom", s0)
+            99:  prepcallk(s5, "BitBlt", s5, s6)
+            100:  loadint(s7, 39)
+            101:  add(s7, s7, s2)
+            102:  loadint(s8, 320)
+            103:  add(s7, s8, s7)
+            104:  sub(s7, s3, s7)
+            105:  loadint(s8, 53)
+            106:  move(s9, s3)
+            107:  getk(s10, "image_height", s4)
+            108:  move(s11, s4)
+            109:  loadint(s12, 320)
+            110:  sub(s12, s3, s12)
+            111:  loadint(s13, 0)
+            112:  getk(s14, "BLEND_ALPHA", s0)
+            113:  loadfloat(s15, 1)
+            114:  call(255, s5, s6, 10)
+            115:  line(-, 54)
+            116:  getk(s5, "status", s0)
+            117:  getk(s5, "images", s5)
+            118:  getk(s5, "resource", s5)
+            119:  getk(s5, "reimu_blue", s5)
+            120:  line(-, 55)
+            121:  getk(s6, "status", s0)
+            122:  getk(s6, "ex_f", s6)
+            123:  loadint(s7, 320)
+            124:  mul(s6, s7, s6)
+            125:  getk(s7, "status", s0)
+            126:  getk(s7, "ex_f_max", s7)
+            127:  div(s3, s7, s6)
+            128:  line(-, 56)
+            129:  loadint(s6, 0)
+            130:  jcmp(s6, 1, s3, CMP_L)
+            131:  loadint(s3, 0)
+            132:  line(-, 57)
+            133:  loadint(s6, 320)
+            134:  jcmp(s6, 1, s3, CMP_G)
+            135:  loadint(s3, 320)
+            136:  line(-, 58)
+            137:  getk(s6, "bottom", s0)
+            138:  prepcallk(s6, "BitBlt", s6, s7)
+            139:  loadint(s8, 39)
+            140:  add(s8, s8, s2)
+            141:  loadint(s9, 320)
+            142:  add(s8, s9, s8)
+            143:  sub(s8, s3, s8)
+            144:  loadint(s9, 53)
+            145:  move(s10, s3)
+            146:  getk(s11, "image_height", s5)
+            147:  move(s12, s5)
+            148:  loadint(s13, 320)
+            149:  sub(s13, s3, s13)
+            150:  loadint(s14, 0)
+            151:  getk(s15, "BLEND_ALPHA", s0)
+            152:  loadfloat(s16, 1)
+            153:  call(255, s6, s7, 10)
+            154:  line(-, 61)
+            155:  getk(s6, "hp_frame_left", s0)
+            156:  prepcallk(s6, "BitBlt", s6, s7)
+            157:  loadint(s8, 115)
+            158:  loadint(s9, 47)
+            159:  loadint(s10, 128)
+            160:  loadint(s11, 28)
+            161:  getk(s12, "resource", s0)
+            162:  getk(s12, "character_name_l", s12)
+            163:  loadint(s13, 0)
+            164:  loadint(s14, 0)
+            165:  getk(s15, "BLEND_ALPHA", s0)
+            166:  loadfloat(s16, 1)
+            167:  call(255, s6, s7, 10)
+            168:  line(-, 64)
+            169:  getk(s6, "graph", s0)
+            170:  getk(s6, "en_frame", s6)
+            171:  prepcallk(s6, "BitBlt", s6, s7)
+            172:  loadint(s8, 14)
+            173:  loadint(s9, 14)
+            174:  loadint(s10, 100)
+            175:  loadint(s11, 100)
+            176:  getk(s12, "status", s0)
+            177:  getk(s12, "images", s12)
+            178:  getk(s12, "resource", s12)
+            179:  getk(s12, "en_kao", s12)
+            180:  loadint(s13, 0)
+            181:  loadint(s14, 0)
+            182:  getk(s15, "BLEND_ALPHA", s0)
+            183:  loadfloat(s16, 1)
+            184:  call(255, s6, s7, 10)
+            185:  line(-, 65)
+            186:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 17
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Reimu_BottomDraw_Right"
+        nliterals: 26
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 7
+        nlineinfos: 21
+        ndefaultparams: 0
+        ninstructions: 187
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "images"
+            2: "resource"
+            3: "reimu_base"
+            4: "MirrorBltAbsolute"
+            5: "bottom"
+            6: "image_width"
+            7: "image_height"
+            8: "BLEND_ALPHA"
+            9: "guardcrash_alert"
+            10: "cos"
+            11: "count"
+            12: "reimu_red"
+            13: "BLEND_ADD"
+            14: "ex_b"
+            15: "ex_b_max"
+            16: "reimu_blue"
+            17: "ex_f"
+            18: "ex_f_max"
+            19: "hp_frame_right"
+            20: "BitBlt"
+            21: "character_name_r"
+            22: "MirrorBlt"
+            23: "graph"
+            24: "en_frame"
+            25: "en_kao"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "alpha", pos: 3, start_op: 34, end_op: 73
+            1: name: "img_bar2", pos: 5, start_op: 120, end_op: 184
+            2: name: "img_bar1", pos: 4, start_op: 81, end_op: 184
+            3: name: "bar_width", pos: 3, start_op: 76, end_op: 184
+            4: name: "base_x", pos: 2, start_op: 7, end_op: 184
+            5: name: "img_base", pos: 1, start_op: 5, end_op: 184
+            6: name: "this", pos: 0, start_op: 0, end_op: 186
+          ]
+        Line Informations: [
+            0: line: 71, op: 1
+            1: line: 72, op: 5
+            2: line: 73, op: 7
+            3: line: 76, op: 20
+            4: line: 78, op: 25
+            5: line: 79, op: 34
+            6: line: 80, op: 54
+            7: line: 84, op: 74
+            8: line: 85, op: 76
+            9: line: 86, op: 81
+            10: line: 87, op: 89
+            11: line: 88, op: 93
+            12: line: 89, op: 97
+            13: line: 91, op: 115
+            14: line: 92, op: 120
+            15: line: 93, op: 128
+            16: line: 94, op: 132
+            17: line: 95, op: 136
+            18: line: 98, op: 154
+            19: line: 101, op: 168
+            20: line: 102, op: 185
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 71)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "images", s1)
+            3:  getk(s1, "resource", s1)
+            4:  getk(s1, "reimu_base", s1)
+            5:  line(-, 72)
+            6:  loadint(s2, 0)
+            7:  line(-, 73)
+            8:  prepcallk(s3, "MirrorBltAbsolute", s0, s4)
+            9:  getk(s5, "bottom", s0)
+            10:  move(s6, s2)
+            11:  loadint(s7, 0)
+            12:  getk(s8, "image_width", s1)
+            13:  getk(s9, "image_height", s1)
+            14:  move(s10, s1)
+            15:  loadint(s11, 0)
+            16:  loadint(s12, 0)
+            17:  getk(s13, "BLEND_ALPHA", s0)
+            18:  loadfloat(s14, 1)
+            19:  call(255, s3, s4, 11)
+            20:  line(-, 76)
+            21:  getk(s3, "status", s0)
+            22:  getk(s3, "guardcrash_alert", s3)
+            23:  jz(s3, 50)
+            24:  line(-, 78)
+            25:  prepcallk(s3, "cos", s0, s4)
+            26:  getk(s5, "count", s0)
+            27:  loadfloat(s6, 0.24)
+            28:  mul(s5, s6, s5)
+            29:  call(3, s3, s4, 2)
+            30:  loadfloat(s4, 0.5)
+            31:  mul(s3, s4, s3)
+            32:  loadfloat(s4, 0.5)
+            33:  add(s3, s4, s3)
+            34:  line(-, 79)
+            35:  prepcallk(s4, "MirrorBltAbsolute", s0, s5)
+            36:  getk(s6, "bottom", s0)
+            37:  loadint(s7, 40)
+            38:  add(s7, s7, s2)
+            39:  loadint(s8, 53)
+            40:  loadint(s9, 320)
+            41:  loadint(s10, 18)
+            42:  getk(s11, "status", s0)
+            43:  getk(s11, "images", s11)
+            44:  getk(s11, "resource", s11)
+            45:  getk(s11, "reimu_red", s11)
+            46:  loadint(s12, 0)
+            47:  loadint(s13, 0)
+            48:  getk(s14, "BLEND_ALPHA", s0)
+            49:  loadfloat(s15, 0.1)
+            50:  mul(s15, s15, s3)
+            51:  loadfloat(s16, 0.1)
+            52:  add(s15, s16, s15)
+            53:  call(255, s4, s5, 11)
+            54:  line(-, 80)
+            55:  prepcallk(s4, "MirrorBltAbsolute", s0, s5)
+            56:  getk(s6, "bottom", s0)
+            57:  loadint(s7, 40)
+            58:  add(s7, s7, s2)
+            59:  loadint(s8, 53)
+            60:  loadint(s9, 320)
+            61:  loadint(s10, 18)
+            62:  getk(s11, "status", s0)
+            63:  getk(s11, "images", s11)
+            64:  getk(s11, "resource", s11)
+            65:  getk(s11, "reimu_red", s11)
+            66:  loadint(s12, 0)
+            67:  loadint(s13, 0)
+            68:  getk(s14, "BLEND_ADD", s0)
+            69:  loadfloat(s15, 0.1)
+            70:  mul(s15, s15, s3)
+            71:  loadfloat(s16, 0.05)
+            72:  add(s15, s16, s15)
+            73:  call(255, s4, s5, 11)
+            74:  line(-, 84)
+            75:  loadnulls(s3, 1)
+            76:  line(-, 85)
+            77:  getk(s4, "status", s0)
+            78:  getk(s4, "images", s4)
+            79:  getk(s4, "resource", s4)
+            80:  getk(s4, "reimu_red", s4)
+            81:  line(-, 86)
+            82:  getk(s5, "status", s0)
+            83:  getk(s5, "ex_b", s5)
+            84:  loadint(s6, 320)
+            85:  mul(s5, s6, s5)
+            86:  getk(s6, "status", s0)
+            87:  getk(s6, "ex_b_max", s6)
+            88:  div(s3, s6, s5)
+            89:  line(-, 87)
+            90:  loadint(s5, 0)
+            91:  jcmp(s5, 1, s3, CMP_L)
+            92:  loadint(s3, 0)
+            93:  line(-, 88)
+            94:  loadint(s5, 320)
+            95:  jcmp(s5, 1, s3, CMP_G)
+            96:  loadint(s3, 320)
+            97:  line(-, 89)
+            98:  prepcallk(s5, "MirrorBltAbsolute", s0, s6)
+            99:  getk(s7, "bottom", s0)
+            100:  loadint(s8, 39)
+            101:  add(s8, s8, s2)
+            102:  loadint(s9, 320)
+            103:  add(s8, s9, s8)
+            104:  sub(s8, s3, s8)
+            105:  loadint(s9, 53)
+            106:  move(s10, s3)
+            107:  getk(s11, "image_height", s4)
+            108:  move(s12, s4)
+            109:  loadint(s13, 320)
+            110:  sub(s13, s3, s13)
+            111:  loadint(s14, 0)
+            112:  getk(s15, "BLEND_ALPHA", s0)
+            113:  loadfloat(s16, 1)
+            114:  call(255, s5, s6, 11)
+            115:  line(-, 91)
+            116:  getk(s5, "status", s0)
+            117:  getk(s5, "images", s5)
+            118:  getk(s5, "resource", s5)
+            119:  getk(s5, "reimu_blue", s5)
+            120:  line(-, 92)
+            121:  getk(s6, "status", s0)
+            122:  getk(s6, "ex_f", s6)
+            123:  loadint(s7, 320)
+            124:  mul(s6, s7, s6)
+            125:  getk(s7, "status", s0)
+            126:  getk(s7, "ex_f_max", s7)
+            127:  div(s3, s7, s6)
+            128:  line(-, 93)
+            129:  loadint(s6, 0)
+            130:  jcmp(s6, 1, s3, CMP_L)
+            131:  loadint(s3, 0)
+            132:  line(-, 94)
+            133:  loadint(s6, 320)
+            134:  jcmp(s6, 1, s3, CMP_G)
+            135:  loadint(s3, 320)
+            136:  line(-, 95)
+            137:  prepcallk(s6, "MirrorBltAbsolute", s0, s7)
+            138:  getk(s8, "bottom", s0)
+            139:  loadint(s9, 39)
+            140:  add(s9, s9, s2)
+            141:  loadint(s10, 320)
+            142:  add(s9, s10, s9)
+            143:  sub(s9, s3, s9)
+            144:  loadint(s10, 53)
+            145:  move(s11, s3)
+            146:  getk(s12, "image_height", s5)
+            147:  move(s13, s5)
+            148:  loadint(s14, 320)
+            149:  sub(s14, s3, s14)
+            150:  loadint(s15, 0)
+            151:  getk(s16, "BLEND_ALPHA", s0)
+            152:  loadfloat(s17, 1)
+            153:  call(255, s6, s7, 11)
+            154:  line(-, 98)
+            155:  getk(s6, "hp_frame_right", s0)
+            156:  prepcallk(s6, "BitBlt", s6, s7)
+            157:  loadint(s8, 212)
+            158:  loadint(s9, 47)
+            159:  loadint(s10, 128)
+            160:  loadint(s11, 28)
+            161:  getk(s12, "resource", s0)
+            162:  getk(s12, "character_name_r", s12)
+            163:  loadint(s13, 0)
+            164:  loadint(s14, 0)
+            165:  getk(s15, "BLEND_ALPHA", s0)
+            166:  loadfloat(s16, 1)
+            167:  call(255, s6, s7, 10)
+            168:  line(-, 101)
+            169:  prepcallk(s6, "MirrorBlt", s0, s7)
+            170:  getk(s8, "graph", s0)
+            171:  getk(s8, "en_frame", s8)
+            172:  loadint(s9, 14)
+            173:  loadint(s10, 14)
+            174:  loadint(s11, 100)
+            175:  loadint(s12, 100)
+            176:  getk(s13, "status", s0)
+            177:  getk(s13, "images", s13)
+            178:  getk(s13, "resource", s13)
+            179:  getk(s13, "en_kao", s13)
+            180:  loadint(s14, 0)
+            181:  loadint(s15, 0)
+            182:  getk(s16, "BLEND_ALPHA", s0)
+            183:  loadfloat(s17, 1)
+            184:  call(255, s6, s7, 11)
+            185:  line(-, 102)
+            186:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 18
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

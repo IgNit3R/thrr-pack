@@ -1,0 +1,1116 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\script\player_spell.nut: 
+sourcename: ""
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 10
+ndefaultparams: 0
+ninstructions: 39
+nfunctions: 9
+Literals: [
+    0: "Load_SpellCardData"
+    1: "Set_SpellCardData"
+    2: "Set_SlaveCardData"
+    3: "CallSpellCard"
+    4: "Call_Delay"
+    5: "EndSpellCard"
+    6: "UseSpellCard"
+    7: "UseChangeSpellCard"
+    8: "UseClimaxSpell"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 38
+    1: name: "this", pos: 0, start_op: 0, end_op: 38
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 7, op: 4
+    2: line: 22, op: 8
+    3: line: 38, op: 12
+    4: line: 89, op: 17
+    5: line: 100, op: 21
+    6: line: 129, op: 25
+    7: line: 150, op: 29
+    8: line: 171, op: 33
+    9: line: 185, op: 37
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "Load_SpellCardData")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 7)
+    5:  load(s2, "Set_SpellCardData")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 22)
+    9:  load(s2, "Set_SlaveCardData")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 38)
+    13:  load(s2, "CallSpellCard")
+    14:  loadint(s3, 0)
+    15:  closure(s3, 3)
+    16:  newslot(s2, s0, s2, s3)
+    17:  line(-, 89)
+    18:  load(s2, "Call_Delay")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  line(-, 100)
+    22:  load(s2, "EndSpellCard")
+    23:  closure(s3, 5)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 129)
+    26:  load(s2, "UseSpellCard")
+    27:  closure(s3, 6)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 150)
+    30:  load(s2, "UseChangeSpellCard")
+    31:  closure(s3, 7)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 171)
+    34:  load(s2, "UseClimaxSpell")
+    35:  closure(s3, 8)
+    36:  newslot(s2, s0, s2, s3)
+    37:  line(-, 185)
+    38:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Load_SpellCardData"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 13
+        nfunctions: 0
+        Literals: [
+            0: "manbow"
+            1: "LoadCSVtoArray"
+            2: "data/spell/"
+            3: ".csv"
+            4: "spellList"
+          ]
+        Parameters: [
+            0: "this"
+            1: "name_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "name_", pos: 1, start_op: 0, end_op: 12
+            1: name: "this", pos: 0, start_op: 0, end_op: 12
+          ]
+        Line Informations: [
+            0: line: 3, op: 1
+            1: line: 5, op: 1
+            2: line: 6, op: 11
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 3)
+            1:  line(-, 5)
+            2:  loadroot(s2)
+            3:  getk(s2, "manbow", s2)
+            4:  prepcallk(s2, "LoadCSVtoArray", s2, s3)
+            5:  load(s4, "data/spell/")
+            6:  add(s4, s1, s4)
+            7:  load(s5, ".csv")
+            8:  add(s4, s5, s4)
+            9:  getk(s5, "spellList", s0)
+            10:  call(255, s2, s3, 3)
+            11:  line(-, 6)
+            12:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Set_SpellCardData"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "spellList"
+            1: "len"
+            2: "team"
+            3: "sp_max"
+            4: "sp"
+          ]
+        Parameters: [
+            0: "this"
+            1: "type_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 14, end_op: 18
+            1: name: "type_", pos: 1, start_op: 0, end_op: 22
+            2: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 8, op: 1
+            1: line: 9, op: 1
+            2: line: 10, op: 11
+            3: line: 11, op: 14
+            4: line: 19, op: 21
+            5: line: 21, op: 21
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 8)
+            1:  line(-, 9)
+            2:  getk(s2, "spellList", s0)
+            3:  and(s2, 6, s2)
+            4:  getk(s3, "spellList", s0)
+            5:  prepcallk(s3, "len", s3, s4)
+            6:  call(3, s3, s4, 1)
+            7:  loadint(s4, 0)
+            8:  cmp(s3, s4, s3, CMP_G)
+            9:  move(s2, s3)
+            10:  jz(s2, 9)
+            11:  line(-, 10)
+            12:  getk(s2, "spellList", s0)
+            13:  get(s2, s2, s1)
+            14:  line(-, 11)
+            15:  getk(s3, "team", s0)
+            16:  dload(s4, "sp_max", s5, "sp")
+            17:  get(s5, s2, s5)
+            18:  set(s255, s3, s4, s5)
+            19:  jmp(-, 1)
+            20:  line(-, 19)
+            21:  line(-, 21)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Set_SlaveCardData"
+        nliterals: 6
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 0
+        Literals: [
+            0: "spellList"
+            1: "len"
+            2: "team"
+            3: "sp_max2"
+            4: "sp_max"
+            5: "sp"
+          ]
+        Parameters: [
+            0: "this"
+            1: "type_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 14, end_op: 21
+            1: name: "type_", pos: 1, start_op: 0, end_op: 25
+            2: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 23, op: 1
+            1: line: 24, op: 1
+            2: line: 25, op: 11
+            3: line: 27, op: 14
+            4: line: 35, op: 24
+            5: line: 37, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 23)
+            1:  line(-, 24)
+            2:  getk(s2, "spellList", s0)
+            3:  and(s2, 6, s2)
+            4:  getk(s3, "spellList", s0)
+            5:  prepcallk(s3, "len", s3, s4)
+            6:  call(3, s3, s4, 1)
+            7:  loadint(s4, 0)
+            8:  cmp(s3, s4, s3, CMP_G)
+            9:  move(s2, s3)
+            10:  jz(s2, 12)
+            11:  line(-, 25)
+            12:  getk(s2, "spellList", s0)
+            13:  get(s2, s2, s1)
+            14:  line(-, 27)
+            15:  getk(s3, "team", s0)
+            16:  dload(s4, "sp_max2", s5, "team")
+            17:  get(s5, s0, s5)
+            18:  getk(s5, "sp_max", s5)
+            19:  getk(s6, "sp", s2)
+            20:  add(s5, s6, s5)
+            21:  set(s255, s3, s4, s5)
+            22:  jmp(-, 1)
+            23:  line(-, 35)
+            24:  line(-, 37)
+            25:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "CallSpellCard"
+        nliterals: 25
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 18
+        ndefaultparams: 1
+        ninstructions: 179
+        nfunctions: 0
+        Literals: [
+            0: "spellList"
+            1: "EndSpellCard"
+            2: "SetTimeStop"
+            3: "team"
+            4: "spell_active"
+            5: "spell_time"
+            6: "spell_use_count"
+            7: "master"
+            8: "spellcard"
+            9: "Activate"
+            10: "id"
+            11: "name"
+            12: "sp"
+            13: "sp_max2"
+            14: "slave"
+            15: "type"
+            16: "slave_ban"
+            17: "PlaySE"
+            18: "SetEffect"
+            19: "Call_Delay"
+            20: "weakref"
+            21: "index"
+            22: "SetFreeObjectStencil"
+            23: "SpellFace"
+            24: "SpellFace_Slave"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+            2: "type_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 3, start_op: 3, end_op: 176
+            1: name: "type_", pos: 2, start_op: 0, end_op: 178
+            2: name: "time_", pos: 1, start_op: 0, end_op: 178
+            3: name: "this", pos: 0, start_op: 0, end_op: 178
+          ]
+        Line Informations: [
+            0: line: 39, op: 1
+            1: line: 40, op: 3
+            2: line: 47, op: 6
+            3: line: 49, op: 12
+            4: line: 50, op: 17
+            5: line: 51, op: 22
+            6: line: 54, op: 27
+            7: line: 57, op: 38
+            8: line: 58, op: 61
+            9: line: 60, op: 65
+            10: line: 63, op: 75
+            11: line: 64, op: 81
+            12: line: 65, op: 93
+            13: line: 68, op: 114
+            14: line: 69, op: 127
+            15: line: 75, op: 146
+            16: line: 76, op: 149
+            17: line: 88, op: 177
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 39)
+            1:  getk(s3, "spellList", s0)
+            2:  get(s3, s3, s2)
+            3:  line(-, 40)
+            4:  prepcallk(s4, "EndSpellCard", s0, s5)
+            5:  call(255, s4, s5, 1)
+            6:  line(-, 47)
+            7:  loadint(s4, 0)
+            8:  jcmp(s4, 3, s1, CMP_G)
+            9:  prepcallk(s4, "SetTimeStop", s0, s5)
+            10:  move(s6, s1)
+            11:  call(255, s4, s5, 2)
+            12:  line(-, 49)
+            13:  getk(s4, "team", s0)
+            14:  load(s5, "spell_active")
+            15:  loadbool(s6, 1)
+            16:  set(s255, s4, s5, s6)
+            17:  line(-, 50)
+            18:  getk(s4, "team", s0)
+            19:  load(s5, "spell_time")
+            20:  loadint(s6, 9999)
+            21:  set(s255, s4, s5, s6)
+            22:  line(-, 51)
+            23:  getk(s4, "team", s0)
+            24:  load(s5, "spell_use_count")
+            25:  loadint(s6, 0)
+            26:  set(s255, s4, s5, s6)
+            27:  line(-, 54)
+            28:  getk(s4, "team", s0)
+            29:  getk(s4, "master", s4)
+            30:  getk(s4, "spellcard", s4)
+            31:  prepcallk(s4, "Activate", s4, s5)
+            32:  getk(s6, "spellList", s0)
+            33:  getk(s7, "spellcard", s0)
+            34:  getk(s7, "id", s7)
+            35:  get(s6, s6, s7)
+            36:  getk(s6, "name", s6)
+            37:  call(255, s4, s5, 2)
+            38:  line(-, 57)
+            39:  getk(s4, "team", s0)
+            40:  getk(s4, "sp", s4)
+            41:  getk(s5, "team", s0)
+            42:  getk(s5, "sp_max2", s5)
+            43:  cmp(s4, s5, s4, CMP_GE)
+            44:  and(s4, 15, s4)
+            45:  getk(s5, "team", s0)
+            46:  getk(s5, "slave", s5)
+            47:  and(s5, 11, s5)
+            48:  getk(s6, "team", s0)
+            49:  getk(s6, "slave", s6)
+            50:  getk(s6, "type", s6)
+            51:  loadint(s7, 19)
+            52:  ne(s6, 7, s6, 0)
+            53:  and(s6, 4, s6)
+            54:  getk(s7, "team", s0)
+            55:  getk(s7, "slave_ban", s7)
+            56:  not(s7, s7)
+            57:  move(s6, s7)
+            58:  move(s5, s6)
+            59:  move(s4, s5)
+            60:  jz(s4, 84)
+            61:  line(-, 58)
+            62:  prepcallk(s4, "PlaySE", s0, s5)
+            63:  loadint(s6, 827)
+            64:  call(255, s4, s5, 2)
+            65:  line(-, 60)
+            66:  prepcallk(s4, "SetEffect", s0, s5)
+            67:  loadint(s6, 0)
+            68:  loadint(s7, 0)
+            69:  loadfloat(s8, 1)
+            70:  getk(s9, "Call_Delay", s0)
+            71:  newobj(s10, 0, 0, 0)
+            72:  prepcallk(s11, "weakref", s0, s12)
+            73:  call(11, s11, s12, 1)
+            74:  call(255, s4, s5, 7)
+            75:  line(-, 63)
+            76:  getk(s4, "team", s0)
+            77:  getk(s4, "index", s4)
+            78:  loadint(s5, 0)
+            79:  eq(s4, 5, s4, 0)
+            80:  jz(s4, 32)
+            81:  line(-, 64)
+            82:  prepcallk(s4, "SetFreeObjectStencil", s0, s5)
+            83:  loadint(s6, -1480)
+            84:  loadint(s7, 360)
+            85:  loadint(s8, 444)
+            86:  add(s7, s8, s7)
+            87:  loadfloat(s8, 1)
+            88:  getk(s9, "SpellFace", s0)
+            89:  newobj(s10, 0, 0, 0)
+            90:  prepcallk(s11, "weakref", s0, s12)
+            91:  call(11, s11, s12, 1)
+            92:  call(255, s4, s5, 7)
+            93:  line(-, 65)
+            94:  getk(s4, "team", s0)
+            95:  getk(s4, "slave", s4)
+            96:  jz(s4, 15)
+            97:  getk(s4, "team", s0)
+            98:  getk(s4, "slave", s4)
+            99:  prepcallk(s4, "SetFreeObjectStencil", s4, s5)
+            100:  loadint(s6, 1280)
+            101:  loadint(s7, 1480)
+            102:  add(s6, s7, s6)
+            103:  loadint(s7, 360)
+            104:  loadint(s8, 444)
+            105:  sub(s7, s8, s7)
+            106:  loadfloat(s8, -1)
+            107:  getk(s9, "SpellFace_Slave", s0)
+            108:  newobj(s10, 0, 0, 0)
+            109:  prepcallk(s11, "weakref", s0, s12)
+            110:  call(11, s11, s12, 1)
+            111:  call(255, s4, s5, 7)
+            112:  jmp(-, 31)
+            113:  line(-, 68)
+            114:  prepcallk(s4, "SetFreeObjectStencil", s0, s5)
+            115:  loadint(s6, 1280)
+            116:  loadint(s7, 1480)
+            117:  add(s6, s7, s6)
+            118:  loadint(s7, 360)
+            119:  loadint(s8, 444)
+            120:  add(s7, s8, s7)
+            121:  loadfloat(s8, -1)
+            122:  getk(s9, "SpellFace", s0)
+            123:  newobj(s10, 0, 0, 0)
+            124:  prepcallk(s11, "weakref", s0, s12)
+            125:  call(11, s11, s12, 1)
+            126:  call(255, s4, s5, 7)
+            127:  line(-, 69)
+            128:  getk(s4, "team", s0)
+            129:  getk(s4, "slave", s4)
+            130:  jz(s4, 13)
+            131:  getk(s4, "team", s0)
+            132:  getk(s4, "slave", s4)
+            133:  prepcallk(s4, "SetFreeObjectStencil", s4, s5)
+            134:  loadint(s6, -1480)
+            135:  loadint(s7, 360)
+            136:  loadint(s8, 444)
+            137:  sub(s7, s8, s7)
+            138:  loadfloat(s8, 1)
+            139:  getk(s9, "SpellFace_Slave", s0)
+            140:  newobj(s10, 0, 0, 0)
+            141:  prepcallk(s11, "weakref", s0, s12)
+            142:  call(11, s11, s12, 1)
+            143:  call(255, s4, s5, 7)
+            144:  jmp(-, 32)
+            145:  line(-, 75)
+            146:  prepcallk(s4, "PlaySE", s0, s5)
+            147:  loadint(s6, 826)
+            148:  call(255, s4, s5, 2)
+            149:  line(-, 76)
+            150:  prepcallk(s4, "SetFreeObjectStencil", s0, s5)
+            151:  getk(s6, "team", s0)
+            152:  getk(s6, "index", s6)
+            153:  loadint(s7, 0)
+            154:  eq(s6, 7, s6, 0)
+            155:  jz(s6, 2)
+            156:  loadint(s6, -1480)
+            157:  jmp(-, 3)
+            158:  loadint(s7, 1280)
+            159:  loadint(s8, 1480)
+            160:  add(s6, s8, s7)
+            161:  loadint(s7, 360)
+            162:  loadint(s8, 442)
+            163:  add(s7, s8, s7)
+            164:  getk(s8, "team", s0)
+            165:  getk(s8, "index", s8)
+            166:  loadint(s9, 0)
+            167:  eq(s8, 9, s8, 0)
+            168:  jz(s8, 2)
+            169:  loadfloat(s8, 1)
+            170:  jmp(-, 1)
+            171:  loadfloat(s8, -1)
+            172:  getk(s9, "SpellFace", s0)
+            173:  newobj(s10, 0, 0, 0)
+            174:  prepcallk(s11, "weakref", s0, s12)
+            175:  call(11, s11, s12, 1)
+            176:  call(255, s4, s5, 7)
+            177:  line(-, 88)
+            178:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 13
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "Call_Delay"
+        nliterals: 1
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 6
+        nfunctions: 1
+        Literals: [
+            0: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 5
+            1: name: "this", pos: 0, start_op: 0, end_op: 5
+          ]
+        Line Informations: [
+            0: line: 90, op: 1
+            1: line: 99, op: 4
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 90)
+            1:  load(s2, "stateLabel")
+            2:  closure(s3, 0)
+            3:  set(s255, s0, s2, s3)
+            4:  line(-, 99)
+            5:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 11
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 40
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "initTable"
+                    2: "pare"
+                    3: "team"
+                    4: "slave"
+                    5: "spellcard"
+                    6: "Activate"
+                    7: "spellList"
+                    8: "id"
+                    9: "name"
+                    10: "Release"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 39
+                  ]
+                Line Informations: [
+                    0: line: 91, op: 1
+                    1: line: 92, op: 3
+                    2: line: 93, op: 8
+                    3: line: 94, op: 14
+                    4: line: 96, op: 35
+                    5: line: 98, op: 38
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 91)
+                    1:  load(s1, "count")
+                    2:  pinc(s1, s0, s1, 1)
+                    3:  line(-, 92)
+                    4:  getk(s1, "count", s0)
+                    5:  loadint(s2, 30)
+                    6:  eq(s1, 2, s1, 0)
+                    7:  jz(s1, 30)
+                    8:  line(-, 93)
+                    9:  getk(s1, "initTable", s0)
+                    10:  getk(s1, "pare", s1)
+                    11:  getk(s1, "team", s1)
+                    12:  getk(s1, "slave", s1)
+                    13:  jz(s1, 21)
+                    14:  line(-, 94)
+                    15:  getk(s1, "initTable", s0)
+                    16:  getk(s1, "pare", s1)
+                    17:  getk(s1, "team", s1)
+                    18:  getk(s1, "slave", s1)
+                    19:  getk(s1, "spellcard", s1)
+                    20:  prepcallk(s1, "Activate", s1, s2)
+                    21:  getk(s3, "initTable", s0)
+                    22:  getk(s3, "pare", s3)
+                    23:  getk(s3, "team", s3)
+                    24:  getk(s3, "slave", s3)
+                    25:  getk(s3, "spellList", s3)
+                    26:  getk(s4, "initTable", s0)
+                    27:  getk(s4, "pare", s4)
+                    28:  getk(s4, "team", s4)
+                    29:  getk(s4, "slave", s4)
+                    30:  getk(s4, "spellcard", s4)
+                    31:  getk(s4, "id", s4)
+                    32:  get(s3, s3, s4)
+                    33:  getk(s3, "name", s3)
+                    34:  call(255, s1, s2, 2)
+                    35:  line(-, 96)
+                    36:  prepcallk(s1, "Release", s0, s2)
+                    37:  call(255, s1, s2, 1)
+                    38:  line(-, 98)
+                    39:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "EndSpellCard"
+        nliterals: 12
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 19
+        ndefaultparams: 0
+        ninstructions: 91
+        nfunctions: 0
+        Literals: [
+            0: "team"
+            1: "spell_active"
+            2: "spell_time"
+            3: "SetSpellBack"
+            4: "master"
+            5: "spellcard"
+            6: "Deactivate"
+            7: "slave"
+            8: "spellEndFunc"
+            9: "spell_use_count"
+            10: "sp"
+            11: "sp_max"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 90
+          ]
+        Line Informations: [
+            0: line: 101, op: 1
+            1: line: 102, op: 1
+            2: line: 103, op: 12
+            3: line: 106, op: 14
+            4: line: 108, op: 18
+            5: line: 112, op: 23
+            6: line: 113, op: 29
+            7: line: 114, op: 38
+            8: line: 115, op: 41
+            9: line: 116, op: 42
+            10: line: 117, op: 45
+            11: line: 119, op: 49
+            12: line: 121, op: 54
+            13: line: 122, op: 59
+            14: line: 123, op: 63
+            15: line: 124, op: 69
+            16: line: 125, op: 78
+            17: line: 127, op: 84
+            18: line: 128, op: 89
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 101)
+            1:  line(-, 102)
+            2:  getk(s1, "team", s0)
+            3:  getk(s1, "spell_active", s1)
+            4:  not(s1, s1)
+            5:  or(s1, 5, s1)
+            6:  getk(s2, "team", s0)
+            7:  getk(s2, "spell_time", s2)
+            8:  loadint(s3, 0)
+            9:  cmp(s2, s3, s2, CMP_L)
+            10:  move(s1, s2)
+            11:  jz(s1, 2)
+            12:  line(-, 103)
+            13:  return(255, 0)
+            14:  line(-, 106)
+            15:  prepcallk(s1, "SetSpellBack", s0, s2)
+            16:  loadbool(s3, 0)
+            17:  call(255, s1, s2, 2)
+            18:  line(-, 108)
+            19:  getk(s1, "team", s0)
+            20:  load(s2, "spell_time")
+            21:  loadint(s3, 0)
+            22:  set(s255, s1, s2, s3)
+            23:  line(-, 112)
+            24:  getk(s1, "team", s0)
+            25:  getk(s1, "master", s1)
+            26:  getk(s1, "spellcard", s1)
+            27:  prepcallk(s1, "Deactivate", s1, s2)
+            28:  call(255, s1, s2, 1)
+            29:  line(-, 113)
+            30:  getk(s1, "team", s0)
+            31:  getk(s1, "slave", s1)
+            32:  jz(s1, 5)
+            33:  getk(s1, "team", s0)
+            34:  getk(s1, "slave", s1)
+            35:  getk(s1, "spellcard", s1)
+            36:  prepcallk(s1, "Deactivate", s1, s2)
+            37:  call(255, s1, s2, 1)
+            38:  line(-, 114)
+            39:  getk(s1, "spellEndFunc", s0)
+            40:  jz(s1, 8)
+            41:  line(-, 115)
+            42:  line(-, 116)
+            43:  prepcallk(s1, "spellEndFunc", s0, s2)
+            44:  call(255, s1, s2, 1)
+            45:  line(-, 117)
+            46:  load(s1, "spellEndFunc")
+            47:  loadnulls(s2, 1)
+            48:  set(s255, s0, s1, s2)
+            49:  line(-, 119)
+            50:  getk(s1, "team", s0)
+            51:  load(s2, "spell_active")
+            52:  loadbool(s3, 0)
+            53:  set(s255, s1, s2, s3)
+            54:  line(-, 121)
+            55:  getk(s1, "team", s0)
+            56:  getk(s1, "spell_use_count", s1)
+            57:  loadint(s2, 1)
+            58:  jcmp(s2, 25, s1, CMP_LE)
+            59:  line(-, 122)
+            60:  getk(s1, "team", s0)
+            61:  load(s2, "spell_use_count")
+            62:  pinc(s1, s1, s2, 1)
+            63:  line(-, 123)
+            64:  getk(s1, "team", s0)
+            65:  dload(s2, "sp", s3, "team")
+            66:  get(s3, s0, s3)
+            67:  getk(s3, "sp_max", s3)
+            68:  comparith(s1, 65539, s2, 45)
+            69:  line(-, 124)
+            70:  getk(s1, "team", s0)
+            71:  getk(s1, "sp", s1)
+            72:  loadint(s2, 0)
+            73:  jcmp(s2, 4, s1, CMP_L)
+            74:  getk(s1, "team", s0)
+            75:  load(s2, "sp")
+            76:  loadint(s3, 0)
+            77:  set(s255, s1, s2, s3)
+            78:  line(-, 125)
+            79:  getk(s1, "team", s0)
+            80:  load(s2, "spell_time")
+            81:  loadint(s3, 0)
+            82:  set(s255, s1, s2, s3)
+            83:  jmp(-, 5)
+            84:  line(-, 127)
+            85:  getk(s1, "team", s0)
+            86:  load(s2, "sp")
+            87:  loadint(s3, 0)
+            88:  set(s255, s1, s2, s3)
+            89:  line(-, 128)
+            90:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "UseSpellCard"
+        nliterals: 14
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 59
+        nfunctions: 0
+        Literals: [
+            0: "SetTimeStop"
+            1: "team"
+            2: "spell_time"
+            3: "spell_use_count"
+            4: "PlaySE"
+            5: "SetSpellBack"
+            6: "SetEffect"
+            7: "point0_x"
+            8: "point0_y"
+            9: "direction"
+            10: "EF_SpellFlash"
+            11: "index"
+            12: "SetFreeObject"
+            13: "SpellUseFace"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+            2: "sp_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "sp_", pos: 2, start_op: 0, end_op: 58
+            1: name: "time_", pos: 1, start_op: 0, end_op: 58
+            2: name: "this", pos: 0, start_op: 0, end_op: 58
+          ]
+        Line Informations: [
+            0: line: 130, op: 1
+            1: line: 131, op: 4
+            2: line: 132, op: 5
+            3: line: 133, op: 10
+            4: line: 134, op: 14
+            5: line: 135, op: 18
+            6: line: 136, op: 22
+            7: line: 142, op: 30
+            8: line: 143, op: 36
+            9: line: 146, op: 48
+            10: line: 148, op: 57
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 130)
+            1:  prepcallk(s3, "SetTimeStop", s0, s4)
+            2:  move(s5, s1)
+            3:  call(255, s3, s4, 2)
+            4:  line(-, 131)
+            5:  line(-, 132)
+            6:  getk(s3, "team", s0)
+            7:  load(s4, "spell_time")
+            8:  loadint(s5, 1)
+            9:  set(s255, s3, s4, s5)
+            10:  line(-, 133)
+            11:  getk(s3, "team", s0)
+            12:  load(s4, "spell_use_count")
+            13:  pinc(s3, s3, s4, 1)
+            14:  line(-, 134)
+            15:  prepcallk(s3, "PlaySE", s0, s4)
+            16:  loadint(s5, 820)
+            17:  call(255, s3, s4, 2)
+            18:  line(-, 135)
+            19:  prepcallk(s3, "SetSpellBack", s0, s4)
+            20:  loadbool(s5, 1)
+            21:  call(255, s3, s4, 2)
+            22:  line(-, 136)
+            23:  prepcallk(s3, "SetEffect", s0, s4)
+            24:  getk(s5, "point0_x", s0)
+            25:  getk(s6, "point0_y", s0)
+            26:  getk(s7, "direction", s0)
+            27:  getk(s8, "EF_SpellFlash", s0)
+            28:  newobj(s9, 0, 0, 0)
+            29:  call(255, s3, s4, 6)
+            30:  line(-, 142)
+            31:  getk(s3, "team", s0)
+            32:  getk(s3, "index", s3)
+            33:  loadint(s4, 0)
+            34:  eq(s3, 4, s3, 0)
+            35:  jz(s3, 11)
+            36:  line(-, 143)
+            37:  prepcallk(s3, "SetFreeObject", s0, s4)
+            38:  loadint(s5, 640)
+            39:  loadint(s6, 640)
+            40:  add(s5, s6, s5)
+            41:  loadint(s6, 720)
+            42:  loadfloat(s7, 1)
+            43:  getk(s8, "SpellUseFace", s0)
+            44:  newobj(s9, 0, 0, 0)
+            45:  call(255, s3, s4, 6)
+            46:  jmp(-, 10)
+            47:  line(-, 146)
+            48:  prepcallk(s3, "SetFreeObject", s0, s4)
+            49:  loadint(s5, 640)
+            50:  loadint(s6, 640)
+            51:  sub(s5, s6, s5)
+            52:  loadint(s6, 720)
+            53:  loadfloat(s7, -1)
+            54:  getk(s8, "SpellUseFace", s0)
+            55:  newobj(s9, 0, 0, 0)
+            56:  call(255, s3, s4, 6)
+            57:  line(-, 148)
+            58:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "UseChangeSpellCard"
+        nliterals: 10
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 27
+        nfunctions: 0
+        Literals: [
+            0: "SetTimeStop"
+            1: "team"
+            2: "spell_time"
+            3: "spell_use_count"
+            4: "PlaySE"
+            5: "SetEffect"
+            6: "point0_x"
+            7: "point0_y"
+            8: "direction"
+            9: "EF_SpellFlash"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+            2: "sp_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "sp_", pos: 2, start_op: 0, end_op: 26
+            1: name: "time_", pos: 1, start_op: 0, end_op: 26
+            2: name: "this", pos: 0, start_op: 0, end_op: 26
+          ]
+        Line Informations: [
+            0: line: 151, op: 1
+            1: line: 152, op: 4
+            2: line: 153, op: 9
+            3: line: 154, op: 13
+            4: line: 156, op: 17
+            5: line: 168, op: 25
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 151)
+            1:  prepcallk(s3, "SetTimeStop", s0, s4)
+            2:  move(s5, s1)
+            3:  call(255, s3, s4, 2)
+            4:  line(-, 152)
+            5:  getk(s3, "team", s0)
+            6:  load(s4, "spell_time")
+            7:  loadint(s5, 1)
+            8:  set(s255, s3, s4, s5)
+            9:  line(-, 153)
+            10:  getk(s3, "team", s0)
+            11:  load(s4, "spell_use_count")
+            12:  pinc(s3, s3, s4, 1)
+            13:  line(-, 154)
+            14:  prepcallk(s3, "PlaySE", s0, s4)
+            15:  loadint(s5, 821)
+            16:  call(255, s3, s4, 2)
+            17:  line(-, 156)
+            18:  prepcallk(s3, "SetEffect", s0, s4)
+            19:  getk(s5, "point0_x", s0)
+            20:  getk(s6, "point0_y", s0)
+            21:  getk(s7, "direction", s0)
+            22:  getk(s8, "EF_SpellFlash", s0)
+            23:  newobj(s9, 0, 0, 0)
+            24:  call(255, s3, s4, 6)
+            25:  line(-, 168)
+            26:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "UseClimaxSpell"
+        nliterals: 14
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 42
+        nfunctions: 0
+        Literals: [
+            0: "PlaySE"
+            1: "SetEffect"
+            2: "point0_x"
+            3: "point0_y"
+            4: "direction"
+            5: "EF_ClimaxFlash"
+            6: "SetTimeStop"
+            7: "lastword"
+            8: "Activate"
+            9: "team"
+            10: "AddOP"
+            11: "sp"
+            12: "sp2_enable"
+            13: "EndSpellCard"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+            2: "name_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "name_", pos: 2, start_op: 0, end_op: 41
+            1: name: "time_", pos: 1, start_op: 0, end_op: 41
+            2: name: "this", pos: 0, start_op: 0, end_op: 41
+          ]
+        Line Informations: [
+            0: line: 172, op: 1
+            1: line: 173, op: 4
+            2: line: 174, op: 12
+            3: line: 175, op: 16
+            4: line: 177, op: 21
+            5: line: 178, op: 27
+            6: line: 179, op: 32
+            7: line: 181, op: 37
+            8: line: 185, op: 40
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 172)
+            1:  prepcallk(s3, "PlaySE", s0, s4)
+            2:  loadint(s5, 824)
+            3:  call(255, s3, s4, 2)
+            4:  line(-, 173)
+            5:  prepcallk(s3, "SetEffect", s0, s4)
+            6:  getk(s5, "point0_x", s0)
+            7:  getk(s6, "point0_y", s0)
+            8:  getk(s7, "direction", s0)
+            9:  getk(s8, "EF_ClimaxFlash", s0)
+            10:  newobj(s9, 0, 0, 0)
+            11:  call(255, s3, s4, 6)
+            12:  line(-, 174)
+            13:  prepcallk(s3, "SetTimeStop", s0, s4)
+            14:  move(s5, s1)
+            15:  call(255, s3, s4, 2)
+            16:  line(-, 175)
+            17:  getk(s3, "lastword", s0)
+            18:  prepcallk(s3, "Activate", s3, s4)
+            19:  move(s5, s2)
+            20:  call(255, s3, s4, 2)
+            21:  line(-, 177)
+            22:  getk(s3, "team", s0)
+            23:  prepcallk(s3, "AddOP", s3, s4)
+            24:  loadint(s5, -2000)
+            25:  loadint(s6, 9999)
+            26:  call(255, s3, s4, 3)
+            27:  line(-, 178)
+            28:  getk(s3, "team", s0)
+            29:  load(s4, "sp")
+            30:  loadint(s5, 0)
+            31:  set(s255, s3, s4, s5)
+            32:  line(-, 179)
+            33:  getk(s3, "team", s0)
+            34:  load(s4, "sp2_enable")
+            35:  loadbool(s5, 0)
+            36:  set(s255, s3, s4, s5)
+            37:  line(-, 181)
+            38:  prepcallk(s3, "EndSpellCard", s0, s4)
+            39:  call(255, s3, s4, 1)
+            40:  line(-, 185)
+            41:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,266 @@
+## =======================================================================
+#Stage:Final
+#Title:天の娘、地の神、人の心
+#Place:有頂天
+#Weather:極光
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+Character:sakuya,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#敵画面外に待機
+Action:tenshi,100
+#カメラ初期位置固定
+Action:tenshi,130
+#霊夢画面外待機
+Action:sakuya,5
+
+#向き固定解除
+Action:sakuya,152
+
+Label:Start
+
+Sleep:85;
+Bgm:data/bgm/ta07.ogg
+
+#フェードイン　白
+Action:sakuya,163
+
+#カメラ下へ
+Action:tenshi,131
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle006.bmp,0,256,-32
+#画面上から落下して登場
+Action:sakuya,6
+Action:sakuya,7
+#Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Sleep:180;
+
+#sleep,60
+Face:sakuya,驚
+ここが天界……？\
+
+Face:sakuya,普
+天気が悪くなる事のない雲上の地@
+何という贅沢な世界でしょう\
+
+Face:sakuya,余
+地上の災禍から逃れ……\
+
+#イベント　地震
+Action:tenshi,133
+Sleep:60;
+
+Face:sakuya,驚
+え！？
+地震？　天界で？\
+
+Hide:1
+Sleep:60;
+
+Action:tenshi,133
+
+Face:tenshi,無
+地震を起こす大ナマズは
+元々、天人が使役できる神であった\
+
+#イベント　メッセージウィンドウ消去
+#イベント　カメラ上空へ
+Action:tenshi,132
+
+Action:tenshi,133
+
+天は大地を制す為に宙に浮いた\
+
+
+Action:tenshi,133
+#イベント　地震
+何故なら\
+
+
+#Face:sakuya,
+Face:tenshi,
+
+#sleep,60
+
+# 天子登場
+#イベント　大地震
+#イベント　カメラフォーカス元へ
+Action:tenshi,134
+#sleep,180
+
+天は大きな要石だから\
+
+#登場ポーズ終了指令
+Action:tenshi,139
+#sleep,30
+
+Face:sakuya,驚
+か、要石？\
+
+Face:tenshi,普
+そう、要石が宙に浮いているから地震は止まない\
+
+Face:tenshi,嬉
+大地は生き続け、地上は豊かになるのです\
+
+Face:sakuya,普
+地震は起こらないに越した事はないと思うけど\
+
+
+#Name:非想非非想天の娘　比那名居天子
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,普
+貴方は何をしに<ruby ここ>天界</ruby>までやってきたのですか？\
+
+Face:sakuya,汗
+えーっと\
+
+Face:sakuya,普
+そ、そう。真夏の雪？　いや、緋色の霧@
+そうだわ。緋色の霧に興味があってそのまま……\
+
+Face:tenshi,余
+それではるばる天界まで？\
+
+Face:sakuya,普
+そうです。@
+今のところ手がかりも何も見つかっていないのですが\
+
+Face:tenshi,惑
+うーん
+それでは満点はあげられないわ\
+
+Face:sakuya,汗
+え？\
+
+Face:tenshi,普
+まず、緋色の霧は私の剣で吸い上げた物よ\
+
+Face:tenshi,普
+でも、私の目的がまだ見破られていないじゃない@
+それでは貴方に価値はない\
+
+Face:sakuya,惑
+一体何を言って……\
+
+
+Face:tenshi,怒
+私は<accent>地上の誰か</accent>に私の異変を<accent>見破られて</accent>@
+それから天界まで昇ってくる事を期待していたの\
+
+Face:tenshi,
+
+#イベント　天子地面に剣を刺して地震発生
+Action:tenshi,135
+Action:tenshi,136
+
+Face:tenshi,
+なのに貴方と来たら\
+
+#イベント　要石を動かして地震発生
+Action:tenshi,137
+Action:tenshi,138
+
+Hide:0
+
+Face:tenshi,怒
+ピクニック気分で私のもとまで来たって言うの？\
+
+Face:sakuya,普
+何だか知りませんけど……\
+
+Face:sakuya,怒
+もの凄く腹が立ってきましたよ\
+
+Face:tenshi,普
+貴方が腹を立てても、どうせ私の異変を解決する事
+なんて出来やしないんでしょ？\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:tenshi,惑
+さっさと帰って異変解決の専門家を呼んで来たら？\
+
+
+Face:sakuya,怒
+あんた程腹立たしい奴も久しぶりね\
+
+Bgm:data/bgm/st05.ogg
+
+Face:sakuya,普
+でも、貴方は一つ残念な間違いを犯している\
+
+Face:sakuya,決
+私はただの山登りではなく、
+異変解決を兼業としている幻想郷一のメイドなのよ！\
+
+Face:tenshi,余
+はっ！
+体から立ち上る緋色の霧に気付いたのは見事だわ\
+
+Face:tenshi,普
+しかし緋色の雲が何を呼ぶのか気が付いていなかった\
+
+Face:tenshi,決
+緋色の雲が呼ぶ物がなんだったのか……@
+マグニチュード最大でその身に刻み込め！\
+
+
+#戦闘開始処理
+Action:sakuya,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　有頂天へ
+Action:tenshi,180
+#天候解除
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+FadeBgm:2000,0
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,62 @@
+#========================================================================
+#	Stage:3win
+#========================================================================
+
+:init
+:main_1
+,SetDefaultBalloon,0
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,futo,-360,0,true
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+
+,ImageDef,reimu,霊夢_嬉1,0,0
+,ImageDef,futo,布都_負1,20,0
+
+#,Function,"GameStory_PlayBGM(302);",# BGM再生開始
+
+,Return
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Show,reimu,30,-64,0
+,Show,futo,30,-64,0	,#双方登場
+
+,SetFocus,futo
+流石じゃな\,a05x2
+観客の人気が\n全てを物語っている\,a11x2
+
+,ClearBalloon,futo
+,SetFocus,reimu,0,
+観客が多いと気分が\n盛り上がるわね～\,a11x2
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+こう　ばったばったと\n派手に暴れたく……\,a11x2
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_惑1,0,0
+あれ？\n私って何でこんなに人気集め\nしているのかしら？\,c15x3
+
+,ClearBalloon,reimu
+,SetFocus,futo,0,
+知らんがな,c05x2
+,WaitInput
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

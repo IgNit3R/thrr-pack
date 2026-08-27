@@ -1,0 +1,204 @@
+## =======================================================================
+#Stage:6
+#Title:天道是か非か
+#Place:博麗神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:yukari,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+
+
+
+#自分画面外に待機
+Action:yukari,1
+
+#敵画面外に待機
+Action:tenshi,100
+
+#向き固定解除
+Action:yukari,152
+
+Label:Start
+PlayBgm:data/bgm/ta07.ogg
+
+#画面フェードイン
+Action:yukari,161
+
+Sleep:60;
+
+
+
+Action:yukari,2
+
+#ステージタイトル表示
+Object:data/scenario/yukari/effect/StageTitle006.bmp,0,256,-32
+#カメラ移動
+Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+#Sleep:60;
+# 敵登場
+Action:tenshi,101
+Action:tenshi,102
+
+
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,普
+さあさあ、新生神社の落成式よー\
+
+Face:tenshi,無
+Face:yukari,無
+観客（パチパチパチ）\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:tenshi,嬉
+神社は災害により倒壊してしまいましたが、
+それを機に美しく強く生まれ変わったのです\
+
+Face:tenshi,普
+そもそも、神社は何故長い間同じ形で風化もせず
+壊れもせずに、信仰を保てたのでしょうか？\
+
+Face:tenshi,普
+それには日本の神社特有のある風習による
+深い理由が有ったのです\
+
+Face:tenshi,決
+その風習とは、定期的に建物を改築する儀式
+式年遷宮です\
+
+Face:tenshi,嬉
+今回の出来事を機に博麗神社も式年遷宮を――\
+
+#登場
+PlayBgm:data/bgm/st18.ogg
+
+Action:yukari,50
+Action:yukari,51
+
+Sleep:80;
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+Face:tenshi,驚
+Face:yukari,嬉
+つーかまーえた\
+
+Face:tenshi,驚
+何！？　何！？
+今は神社の落成式中よ？\
+
+Face:yukari,普
+こんな神社壊れちゃいなよ\
+
+Face:tenshi,怒
+いきなり出てきて何よ！
+そんな事させないわ！\
+
+Face:yukari,余
+へぇ、自分の時はいとも簡単に壊した癖に
+今になって壊しちゃ駄目って言うの？\
+
+Face:tenshi,汗
+ぐっ、それは\
+
+Face:yukari,普
+何を仕込んだのさ\
+
+Face:tenshi,余
+何の話？\
+
+Face:yukari,普
+判っているよ@
+お前の家系は神社を持っているってね\
+
+Face:yukari,余
+自分の良いように神社を改造して
+自分の住む場所を増やそうって魂胆だろう？\
+
+Face:tenshi,嬉
+ええそうよ、良いじゃないそのくらい
+だから何？\
+
+Face:yukari,決
+だから壊れちゃいなよ\
+
+Bgm:data/bgm/st05.ogg
+
+Face:tenshi,余
+ふふふ、地面を這い蹲っている土くさい妖怪が
+愉しい事言ってくれるじゃないの\
+
+Face:yukari,普
+この間、天界を見てきたわ\
+
+Face:yukari,余
+天界は広くて土地が余ってそうね@
+それなのにさらに地上にも住む処って……\
+
+Face:tenshi,決
+貧しくても恨む無きは<ruby かた>難</ruby>し
+地上に居るからって僻まない事ね！\
+
+Face:yukari,決
+富みて奢る無きは易し
+鼻につくわ、その天人特有の上から目線\
+
+Face:yukari,決
+美しく残酷にこの大地から<ruby い>住</ruby>ね！\
+#戦闘開始処理
+
+Action:yukari,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　神社へ
+Action:tenshi,181
+#天候解除
+Action:yukari,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:alice,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+## =======================================================================

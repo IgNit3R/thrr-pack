@@ -1,0 +1,312 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\script\shot_function.nut: 
+sourcename: ""
+name: "main"
+nliterals: 3
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 4
+ndefaultparams: 0
+ninstructions: 15
+nfunctions: 3
+Literals: [
+    0: "ShotCommonInit"
+    1: "KeyActionRelease"
+    2: "Damage_ConvertOP"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 14
+    1: name: "this", pos: 0, start_op: 0, end_op: 14
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 25, op: 4
+    2: line: 29, op: 8
+    3: line: 36, op: 13
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "ShotCommonInit")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 25)
+    5:  load(s2, "KeyActionRelease")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 29)
+    9:  load(s2, "Damage_ConvertOP")
+    10:  loadint(s3, 1)
+    11:  closure(s3, 2)
+    12:  newslot(s2, s0, s2, s3)
+    13:  line(-, 36)
+    14:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "ShotCommonInit"
+        nliterals: 24
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 16
+        ndefaultparams: 0
+        ninstructions: 71
+        nfunctions: 0
+        Literals: [
+            0: "actorType"
+            1: "target"
+            2: "owner"
+            3: "team"
+            4: "weakref"
+            5: "initTable"
+            6: "vf"
+            7: "Vector3"
+            8: "va"
+            9: "vfBaria"
+            10: "hitTarget"
+            11: "hitOwner"
+            12: "DrawActorPriority"
+            13: "SetUpdateFunction"
+            14: "Shot_CommonUpdate"
+            15: "SetEndTakeCallbackFunction"
+            16: "KeyActionCheck"
+            17: "SetEndMotionCallbackFunction"
+            18: "ReleaseActor"
+            19: "SetContactTestCallbackFunction"
+            20: "StoreShotActorData"
+            21: "SetTeamShot"
+            22: "init"
+            23: "call"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 70
+            1: name: "this", pos: 0, start_op: 0, end_op: 70
+          ]
+        Line Informations: [
+            0: line: 2, op: 1
+            1: line: 3, op: 4
+            2: line: 5, op: 12
+            3: line: 7, op: 15
+            4: line: 8, op: 20
+            5: line: 9, op: 25
+            6: line: 11, op: 30
+            7: line: 12, op: 34
+            8: line: 14, op: 39
+            9: line: 15, op: 43
+            10: line: 16, op: 47
+            11: line: 17, op: 51
+            12: line: 18, op: 55
+            13: line: 22, op: 59
+            14: line: 23, op: 62
+            15: line: 24, op: 69
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 2)
+            1:  load(s2, "actorType")
+            2:  loadint(s3, 2)
+            3:  set(s255, s0, s2, s3)
+            4:  line(-, 3)
+            5:  dload(s2, "target", s3, "owner")
+            6:  get(s3, s0, s3)
+            7:  getk(s3, "team", s3)
+            8:  getk(s3, "target", s3)
+            9:  prepcallk(s3, "weakref", s3, s4)
+            10:  call(3, s3, s4, 1)
+            11:  set(s255, s0, s2, s3)
+            12:  line(-, 5)
+            13:  load(s2, "initTable")
+            14:  set(s255, s0, s2, s1)
+            15:  line(-, 7)
+            16:  dload(s2, "vf", s3, "Vector3")
+            17:  prepcall(s3, s3, s0, s4)
+            18:  call(3, s3, s4, 1)
+            19:  set(s255, s0, s2, s3)
+            20:  line(-, 8)
+            21:  dload(s2, "va", s3, "Vector3")
+            22:  prepcall(s3, s3, s0, s4)
+            23:  call(3, s3, s4, 1)
+            24:  set(s255, s0, s2, s3)
+            25:  line(-, 9)
+            26:  dload(s2, "vfBaria", s3, "Vector3")
+            27:  prepcall(s3, s3, s0, s4)
+            28:  call(3, s3, s4, 1)
+            29:  set(s255, s0, s2, s3)
+            30:  line(-, 11)
+            31:  load(s2, "hitTarget")
+            32:  newobj(s3, 0, 0, 0)
+            33:  set(s255, s0, s2, s3)
+            34:  line(-, 12)
+            35:  dload(s2, "hitOwner", s3, "weakref")
+            36:  prepcall(s3, s3, s0, s4)
+            37:  call(3, s3, s4, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  line(-, 14)
+            40:  prepcallk(s2, "DrawActorPriority", s0, s3)
+            41:  loadint(s4, 200)
+            42:  call(255, s2, s3, 2)
+            43:  line(-, 15)
+            44:  prepcallk(s2, "SetUpdateFunction", s0, s3)
+            45:  getk(s4, "Shot_CommonUpdate", s0)
+            46:  call(255, s2, s3, 2)
+            47:  line(-, 16)
+            48:  prepcallk(s2, "SetEndTakeCallbackFunction", s0, s3)
+            49:  getk(s4, "KeyActionCheck", s0)
+            50:  call(255, s2, s3, 2)
+            51:  line(-, 17)
+            52:  prepcallk(s2, "SetEndMotionCallbackFunction", s0, s3)
+            53:  getk(s4, "ReleaseActor", s0)
+            54:  call(255, s2, s3, 2)
+            55:  line(-, 18)
+            56:  prepcallk(s2, "SetContactTestCallbackFunction", s0, s3)
+            57:  getk(s4, "StoreShotActorData", s0)
+            58:  call(255, s2, s3, 2)
+            59:  line(-, 22)
+            60:  prepcallk(s2, "SetTeamShot", s0, s3)
+            61:  call(255, s2, s3, 1)
+            62:  line(-, 23)
+            63:  getk(s2, "init", s1)
+            64:  jz(s2, 4)
+            65:  getk(s2, "init", s1)
+            66:  prepcallk(s2, "call", s2, s3)
+            67:  dmove(s4, s0, s5, s1)
+            68:  call(255, s2, s3, 3)
+            69:  line(-, 24)
+            70:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "KeyActionRelease"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "ReleaseActor"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 26, op: 1
+            1: line: 27, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 26)
+            1:  prepcallk(s1, "ReleaseActor", s0, s2)
+            2:  call(255, s1, s2, 1)
+            3:  line(-, 27)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Damage_ConvertOP"
+        nliterals: 6
+        nparameters: 5
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 6
+        ndefaultparams: 1
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "team"
+            1: "current"
+            2: "IsDamage"
+            3: "num"
+            4: "SetFreeObject"
+            5: "Occult_PowerCreatePoint"
+          ]
+        Parameters: [
+            0: "this"
+            1: "x_"
+            2: "y_"
+            3: "num_"
+            4: "dLv_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 5, start_op: 9, end_op: 20
+            1: name: "dLv_", pos: 4, start_op: 0, end_op: 22
+            2: name: "num_", pos: 3, start_op: 0, end_op: 22
+            3: name: "y_", pos: 2, start_op: 0, end_op: 22
+            4: name: "x_", pos: 1, start_op: 0, end_op: 22
+            5: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 30, op: 1
+            1: line: 31, op: 6
+            2: line: 32, op: 7
+            3: line: 33, op: 11
+            4: line: 34, op: 18
+            5: line: 36, op: 21
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 30)
+            1:  getk(s5, "team", s0)
+            2:  getk(s5, "current", s5)
+            3:  prepcallk(s5, "IsDamage", s5, s6)
+            4:  call(5, s5, s6, 1)
+            5:  jcmp(s4, 15, s5, CMP_GE)
+            6:  line(-, 31)
+            7:  line(-, 32)
+            8:  newobj(s5, 0, 0, 0)
+            9:  load(s6, "num")
+            10:  newslot(s255, s5, s6, s3)
+            11:  line(-, 33)
+            12:  prepcallk(s6, "SetFreeObject", s0, s7)
+            13:  dmove(s8, s1, s9, s2)
+            14:  loadfloat(s10, 1)
+            15:  getk(s11, "Occult_PowerCreatePoint", s0)
+            16:  move(s12, s5)
+            17:  call(255, s6, s7, 6)
+            18:  line(-, 34)
+            19:  loadbool(s6, 1)
+            20:  return(1, 6)
+            21:  line(-, 36)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 13
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

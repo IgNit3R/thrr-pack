@@ -1,0 +1,200 @@
+## =======================================================================
+#Stage:3
+#Title:小人閑居して
+#Place:妖怪の山
+#Weather:霧雨
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:yukari,160,0,0,8888FF
+Character:marisa,160,0,1,FF8888
+
+#分画面外に待機
+Action:marisa,100
+#カメラ固定
+Action:yukari,4
+#フォーカス瞬間移動
+#Action:yukari,11
+# 敵登場
+Action:marisa,101
+Action:marisa,102
+
+#向き固定解除
+Action:yukari,152
+
+Label:Start
+PlayBgm:data/bgm/ta04.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/yukari/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+
+#自分登場
+Action:yukari,50
+Action:yukari,51
+
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+Face:yukari,惑
+あー暑い暑い\
+
+Face:yukari,惑
+さっきの沢で水を補給してくれば良かったわ\
+
+Face:marisa,驚
+のわ！\
+
+Face:marisa,普
+何だお前か@
+お化け屋敷のお化けみたいに突然出てくるなよ\
+
+# 名前のテロップ
+Object:data/scenario/marisa/effect/Name.bmp,2,352,304
+
+Face:yukari,余
+山に人間なんて珍しいから様子をね\
+
+Face:marisa,嬉
+ああ、霊夢がこの上に天人が住む世界があるって
+言うからさ\
+
+Face:marisa,嬉
+何かめぼしい物があるに違いないから\
+
+Face:yukari,普
+そう、天人の持ち物なんて……
+桃とか釣り道具とかそんなのよ\
+
+Face:marisa,普
+そうか？　だって天界だぜ？@
+いわゆる天国だろ？　パラダイスだろ？\
+
+Face:marisa,決
+そこにある物をちょいとばかし貰ってきて
+生活に役立てたいんだ。いい話だろう？\
+
+PlayBgm:data/bgm/st11.ogg
+
+Face:yukari,普
+<ruby しょうじん>小人</ruby><ruby かんきょ>閑居</ruby>して不善を為す\
+
+Face:marisa,惑
+何？\
+
+Face:yukari,決
+#0１２３４５６７８９０１２３４５６７８９０１２３
+貴方みたいな愚か者は、一人で居ると楽する事ばかり
+考えてしまうって事よ\
+
+#戦闘開始処理
+
+Action:yukari,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:marisa,嬉
+いいじゃないか、楽したって\
+
+Face:marisa,余
+楽したい欲望が良い未来を産むんじゃないのか？\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yukari,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:marisa,200
+#攻撃側ニュートラル移行検知
+Action:yukari,202
+
+#自キャラ天候
+#Action:yukari,103
+Sleep:60
+
+Face:yukari,普
+さあ天狗達に気付かれる前に戻った方が賢明よ\
+
+Face:marisa,負
+くそ、天狗よりお前に見つかったのが不運だぜ\
+
+Face:marisa,負
+ってそういえば、何故お前がこんな処にいるんだ？\
+
+Face:yukari,普
+私は天界に向けて山登りをしているのです\
+
+# ここで地面に潜る
+Hide:1
+#紫画面外へ隙間退避
+Action:yukari,155
+#紫画面外へ隙間退避完了確認
+Action:yukari,156
+Hide:0
+
+Face:marisa,無
+Face:yukari,無
+天国、パラダイスです\
+
+Face:marisa,負
+<ruby あいつ>紫</ruby>も天界に向かっているのか……\
+
+Face:marisa,負
+じゃあ、今日の処は退いた方が良さそうだな\
+
+Face:marisa,無
+Face:yukari,無
+安易に天界に行かない方が身の為よ\
+
+
+Hide:1
+Sleep:30;
+Result:
+FadeBgm:2000,0
+
+Stage:5,120
+
+#やられキャラ画面退場
+Action:marisa,201
+
+#自キャラ基準点へ移動
+#Action:yukari,150
+
+#カメラ中央あわせ
+Action:yukari,4
+
+Sleep:120;
+
+
+End:
+
+## =======================================================================

@@ -1,0 +1,1519 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\jyoon\object_player\p_shion_object.nut: 
+sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+name: "main"
+nliterals: 12
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 10
+ndefaultparams: 0
+ninstructions: 31
+nfunctions: 8
+Literals: [
+    0: "construct"
+    1: "destruct"
+    2: "message"
+    3: "lib"
+    4: "shot"
+    5: "common_message"
+    6: "interactive"
+    7: "on_hit_target"
+    8: "on_hit_ground"
+    9: "on_graze_target"
+    10: "determination"
+    11: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 30
+    1: name: "this", pos: 0, start_op: 0, end_op: 30
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 36, op: 3
+    2: line: 43, op: 6
+    3: line: 45, op: 12
+    4: line: 212, op: 15
+    5: line: 214, op: 18
+    6: line: 216, op: 21
+    7: line: 219, op: 24
+    8: line: 230, op: 27
+    9: line: 239, op: 30
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "destruct")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "message")
+    7:  loadroot(s3)
+    8:  getk(s3, "lib", s3)
+    9:  getk(s3, "shot", s3)
+    10:  getk(s3, "common_message", s3)
+    11:  newslot(s255, s0, s2, s3)
+    12:  load(s2, "interactive")
+    13:  closure(s3, 2)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "on_hit_target")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_hit_ground")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_graze_target")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "determination")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "plot")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "construct"
+        nliterals: 27
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 84
+        nfunctions: 0
+        Literals: [
+            0: "init_shot_object"
+            1: "obj"
+            2: "player"
+            3: "shion"
+            4: "vx"
+            5: "vy"
+            6: "v"
+            7: "count"
+            8: "direction_h"
+            9: "hit_flag"
+            10: "mode"
+            11: "pos_x"
+            12: "x"
+            13: "pos_y"
+            14: "y"
+            15: "motion"
+            16: "option_stand"
+            17: "just_graze"
+            18: "graze_time"
+            19: "graze_max"
+            20: "frameset"
+            21: "_composition_create_framepointer"
+            22: "resource_pool"
+            23: "player_jyoon/"
+            24: "maskbits"
+            25: "h_entity"
+            26: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 83
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 8, op: 7
+            4: line: 9, op: 10
+            5: line: 10, op: 13
+            6: line: 11, op: 16
+            7: line: 12, op: 19
+            8: line: 13, op: 24
+            9: line: 14, op: 27
+            10: line: 15, op: 30
+            11: line: 16, op: 35
+            12: line: 17, op: 40
+            13: line: 19, op: 42
+            14: line: 20, op: 45
+            15: line: 21, op: 48
+            16: line: 23, op: 51
+            17: line: 24, op: 62
+            18: line: 27, op: 65
+            19: line: 34, op: 83
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  getk(s1, "obj", s0)
+            4:  getk(s1, "player", s1)
+            5:  load(s2, "shion")
+            6:  set(s255, s1, s2, s0)
+            7:  load(s1, "vx")
+            8:  loadint(s2, 0)
+            9:  newslot(s255, s0, s1, s2)
+            10:  load(s1, "vy")
+            11:  loadint(s2, 0)
+            12:  newslot(s255, s0, s1, s2)
+            13:  load(s1, "v")
+            14:  loadfloat(s2, 0)
+            15:  newslot(s255, s0, s1, s2)
+            16:  load(s1, "count")
+            17:  loadint(s2, 0)
+            18:  newslot(s255, s0, s1, s2)
+            19:  dload(s1, "direction_h", s2, "obj")
+            20:  get(s2, s0, s2)
+            21:  getk(s2, "player", s2)
+            22:  getk(s2, "direction_h", s2)
+            23:  newslot(s255, s0, s1, s2)
+            24:  load(s1, "hit_flag")
+            25:  loadint(s2, 0)
+            26:  newslot(s255, s0, s1, s2)
+            27:  load(s1, "mode")
+            28:  loadint(s2, 1)
+            29:  newslot(s255, s0, s1, s2)
+            30:  dload(s1, "pos_x", s2, "obj")
+            31:  get(s2, s0, s2)
+            32:  getk(s2, "player", s2)
+            33:  getk(s2, "x", s2)
+            34:  newslot(s255, s0, s1, s2)
+            35:  dload(s1, "pos_y", s2, "obj")
+            36:  get(s2, s0, s2)
+            37:  getk(s2, "player", s2)
+            38:  getk(s2, "y", s2)
+            39:  newslot(s255, s0, s1, s2)
+            40:  dload(s1, "motion", s2, "option_stand")
+            41:  newslot(s255, s0, s1, s2)
+            42:  load(s1, "just_graze")
+            43:  loadint(s2, 0)
+            44:  newslot(s255, s0, s1, s2)
+            45:  load(s1, "graze_time")
+            46:  loadint(s2, 0)
+            47:  newslot(s255, s0, s1, s2)
+            48:  load(s1, "graze_max")
+            49:  loadint(s2, 0)
+            50:  newslot(s255, s0, s1, s2)
+            51:  load(s1, "frameset")
+            52:  loadroot(s2)
+            53:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            54:  loadroot(s4)
+            55:  getk(s4, "resource_pool", s4)
+            56:  dload(s5, "player_jyoon/", s6, "motion")
+            57:  get(s6, s0, s6)
+            58:  add(s5, s6, s5)
+            59:  get(s4, s4, s5)
+            60:  call(2, s2, s3, 2)
+            61:  set(s255, s0, s1, s2)
+            62:  load(s1, "maskbits")
+            63:  loadint(s2, 2)
+            64:  set(s255, s0, s1, s2)
+            65:  load(s1, "h_entity")
+            66:  loadroot(s2)
+            67:  prepcallk(s2, "_vspace_regist", s2, s3)
+            68:  move(s4, s0)
+            69:  loadint(s5, 1)
+            70:  loadint(s6, 2)
+            71:  bitw(s5, s6, s5, BW_OR)
+            72:  loadint(s6, 8)
+            73:  bitw(s5, s6, s5, BW_OR)
+            74:  loadint(s6, 64)
+            75:  bitw(s5, s6, s5, BW_OR)
+            76:  loadint(s6, 128)
+            77:  bitw(s5, s6, s5, BW_OR)
+            78:  loadint(s6, 16)
+            79:  bitw(s5, s6, s5, BW_OR)
+            80:  loadint(s6, 0)
+            81:  call(2, s2, s3, 4)
+            82:  newslot(s255, s0, s1, s2)
+            83:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "destruct"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 8
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "_vspace_unregist"
+            2: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 7
+          ]
+        Line Informations: [
+            0: line: 37, op: 0
+            1: line: 38, op: 0
+            2: line: 40, op: 3
+            3: line: 41, op: 7
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            5:  getk(s3, "h_entity", s0)
+            6:  call(255, s1, s2, 2)
+            7:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "interactive"
+        nliterals: 41
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 119
+        ndefaultparams: 0
+        ninstructions: 798
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "just_graze"
+            3: "mode"
+            4: "motion"
+            5: "option_stand"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_jyoon/"
+            9: "vx"
+            10: "vy"
+            11: "x"
+            12: "obj"
+            13: "player"
+            14: "pos_x"
+            15: "y"
+            16: "pos_y"
+            17: "direction_h"
+            18: "graze_stay"
+            19: "_vpad1"
+            20: "up"
+            21: "down"
+            22: "right"
+            23: "left"
+            24: "v"
+            25: "atan2"
+            26: "cos"
+            27: "sin"
+            28: "option_grab"
+            29: "graze_grab"
+            30: "roll"
+            31: "option_warp"
+            32: "option_walk"
+            33: "count"
+            34: "state"
+            35: "ground"
+            36: "world"
+            37: "top"
+            38: "bottom"
+            39: "_vspace_commit"
+            40: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "r_", pos: 2, start_op: 385, end_op: 457
+            1: name: "r_", pos: 2, start_op: 609, end_op: 622
+            2: name: "r_", pos: 2, start_op: 658, end_op: 696
+            3: name: "this", pos: 0, start_op: 0, end_op: 797
+          ]
+        Line Informations: [
+            0: line: 46, op: 0
+            1: line: 47, op: 0
+            2: line: 48, op: 3
+            3: line: 49, op: 6
+            4: line: 51, op: 10
+            5: line: 52, op: 13
+            6: line: 53, op: 15
+            7: line: 55, op: 26
+            8: line: 56, op: 29
+            9: line: 57, op: 32
+            10: line: 58, op: 39
+            11: line: 59, op: 46
+            12: line: 60, op: 51
+            13: line: 62, op: 56
+            14: line: 63, op: 64
+            15: line: 64, op: 72
+            16: line: 66, op: 77
+            17: line: 67, op: 82
+            18: line: 68, op: 85
+            19: line: 70, op: 86
+            20: line: 71, op: 89
+            21: line: 72, op: 92
+            22: line: 73, op: 94
+            23: line: 75, op: 105
+            24: line: 76, op: 118
+            25: line: 77, op: 141
+            26: line: 78, op: 164
+            27: line: 80, op: 183
+            28: line: 81, op: 196
+            29: line: 82, op: 219
+            30: line: 83, op: 242
+            31: line: 85, op: 261
+            32: line: 86, op: 274
+            33: line: 87, op: 293
+            34: line: 88, op: 312
+            35: line: 91, op: 331
+            36: line: 92, op: 337
+            37: line: 94, op: 343
+            38: line: 96, op: 348
+            39: line: 97, op: 351
+            40: line: 98, op: 353
+            41: line: 100, op: 364
+            42: line: 101, op: 373
+            43: line: 102, op: 385
+            44: line: 103, op: 392
+            45: line: 105, op: 399
+            46: line: 106, op: 405
+            47: line: 108, op: 411
+            48: line: 109, op: 438
+            49: line: 110, op: 441
+            50: line: 111, op: 444
+            51: line: 112, op: 449
+            52: line: 113, op: 454
+            53: line: 115, op: 457
+            54: line: 117, op: 462
+            55: line: 118, op: 465
+            56: line: 119, op: 467
+            57: line: 121, op: 478
+            58: line: 122, op: 481
+            59: line: 123, op: 486
+            60: line: 124, op: 489
+            61: line: 125, op: 492
+            62: line: 126, op: 495
+            63: line: 127, op: 500
+            64: line: 128, op: 507
+            65: line: 129, op: 515
+            66: line: 131, op: 520
+            67: line: 132, op: 525
+            68: line: 133, op: 528
+            69: line: 135, op: 529
+            70: line: 136, op: 532
+            71: line: 137, op: 534
+            72: line: 139, op: 545
+            73: line: 140, op: 576
+            74: line: 141, op: 579
+            75: line: 142, op: 582
+            76: line: 143, op: 587
+            77: line: 146, op: 595
+            78: line: 147, op: 609
+            79: line: 148, op: 616
+            80: line: 150, op: 623
+            81: line: 152, op: 628
+            82: line: 153, op: 631
+            83: line: 154, op: 633
+            84: line: 155, op: 644
+            85: line: 156, op: 647
+            86: line: 158, op: 652
+            87: line: 159, op: 655
+            88: line: 160, op: 657
+            89: line: 161, op: 658
+            90: line: 162, op: 661
+            91: line: 163, op: 664
+            92: line: 166, op: 668
+            93: line: 167, op: 677
+            94: line: 169, op: 684
+            95: line: 170, op: 687
+            96: line: 171, op: 690
+            97: line: 172, op: 693
+            98: line: 174, op: 696
+            99: line: 176, op: 697
+            100: line: 177, op: 700
+            101: line: 178, op: 702
+            102: line: 180, op: 713
+            103: line: 181, op: 716
+            104: line: 182, op: 719
+            105: line: 183, op: 722
+            106: line: 184, op: 738
+            107: line: 187, op: 739
+            108: line: 188, op: 742
+            109: line: 190, op: 745
+            110: line: 192, op: 752
+            111: line: 195, op: 759
+            112: line: 197, op: 766
+            113: line: 200, op: 773
+            114: line: 202, op: 778
+            115: line: 204, op: 783
+            116: line: 206, op: 788
+            117: line: 209, op: 793
+            118: line: 210, op: 797
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  load(s1, "just_graze")
+            4:  loadint(s2, 0)
+            5:  set(s255, s0, s1, s2)
+            6:  getk(s1, "mode", s0)
+            7:  loadint(s2, 1)
+            8:  eq(s2, 2, s1, 0)
+            9:  jz(s2, 64)
+            10:  getk(s2, "motion", s0)
+            11:  ne(s2, 5, s2, 255)
+            12:  jz(s2, 13)
+            13:  dload(s2, "motion", s3, "option_stand")
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "frameset")
+            16:  loadroot(s3)
+            17:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            18:  loadroot(s5)
+            19:  getk(s5, "resource_pool", s5)
+            20:  dload(s6, "player_jyoon/", s7, "motion")
+            21:  get(s7, s0, s7)
+            22:  add(s6, s7, s6)
+            23:  get(s5, s5, s6)
+            24:  call(3, s3, s4, 2)
+            25:  set(s255, s0, s2, s3)
+            26:  load(s2, "vx")
+            27:  loadint(s3, 0)
+            28:  set(s255, s0, s2, s3)
+            29:  load(s2, "vy")
+            30:  loadint(s3, 0)
+            31:  set(s255, s0, s2, s3)
+            32:  dload(s2, "x", s3, "obj")
+            33:  get(s3, s0, s3)
+            34:  getk(s3, "player", s3)
+            35:  getk(s3, "x", s3)
+            36:  getk(s4, "pos_x", s0)
+            37:  sub(s3, s4, s3)
+            38:  comparith(s2, 3, s2, 43)
+            39:  dload(s2, "y", s3, "obj")
+            40:  get(s3, s0, s3)
+            41:  getk(s3, "player", s3)
+            42:  getk(s3, "y", s3)
+            43:  getk(s4, "pos_y", s0)
+            44:  sub(s3, s4, s3)
+            45:  comparith(s2, 3, s2, 43)
+            46:  dload(s2, "pos_x", s3, "obj")
+            47:  get(s3, s0, s3)
+            48:  getk(s3, "player", s3)
+            49:  getk(s3, "x", s3)
+            50:  set(s255, s0, s2, s3)
+            51:  dload(s2, "pos_y", s3, "obj")
+            52:  get(s3, s0, s3)
+            53:  getk(s3, "player", s3)
+            54:  getk(s3, "y", s3)
+            55:  set(s255, s0, s2, s3)
+            56:  getk(s2, "obj", s0)
+            57:  getk(s2, "player", s2)
+            58:  getk(s2, "vx", s2)
+            59:  loadint(s3, 0)
+            60:  jcmp(s3, 3, s2, CMP_G)
+            61:  load(s2, "direction_h")
+            62:  loadint(s3, 1)
+            63:  set(s255, s0, s2, s3)
+            64:  getk(s2, "obj", s0)
+            65:  getk(s2, "player", s2)
+            66:  getk(s2, "vx", s2)
+            67:  loadint(s3, 0)
+            68:  jcmp(s3, 3, s2, CMP_L)
+            69:  load(s2, "direction_h")
+            70:  loadint(s3, -1)
+            71:  set(s255, s0, s2, s3)
+            72:  jmp(-, 666)
+            73:  jmp(-, 3)
+            74:  loadint(s2, 2)
+            75:  eq(s2, 2, s1, 0)
+            76:  jz(s2, 268)
+            77:  getk(s2, "obj", s0)
+            78:  getk(s2, "player", s2)
+            79:  getk(s2, "motion", s2)
+            80:  ne(s2, 18, s2, 255)
+            81:  jz(s2, 4)
+            82:  load(s2, "mode")
+            83:  loadint(s3, 3)
+            84:  set(s255, s0, s2, s3)
+            85:  jmp(-, 653)
+            86:  load(s2, "just_graze")
+            87:  loadint(s3, 1)
+            88:  set(s255, s0, s2, s3)
+            89:  getk(s2, "motion", s0)
+            90:  ne(s2, 5, s2, 255)
+            91:  jz(s2, 13)
+            92:  dload(s2, "motion", s3, "option_stand")
+            93:  set(s255, s0, s2, s3)
+            94:  load(s2, "frameset")
+            95:  loadroot(s3)
+            96:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            97:  loadroot(s5)
+            98:  getk(s5, "resource_pool", s5)
+            99:  dload(s6, "player_jyoon/", s7, "motion")
+            100:  get(s7, s0, s7)
+            101:  add(s6, s7, s6)
+            102:  get(s5, s5, s6)
+            103:  call(3, s3, s4, 2)
+            104:  set(s255, s0, s2, s3)
+            105:  loadroot(s2)
+            106:  getk(s2, "_vpad1", s2)
+            107:  getk(s2, "up", s2)
+            108:  loadint(s3, 0)
+            109:  ne(s2, 3, s2, 0)
+            110:  and(s2, 6, s2)
+            111:  loadroot(s3)
+            112:  getk(s3, "_vpad1", s3)
+            113:  getk(s3, "down", s3)
+            114:  loadint(s4, 0)
+            115:  eq(s3, 4, s3, 0)
+            116:  move(s2, s3)
+            117:  jz(s2, 65)
+            118:  loadroot(s2)
+            119:  getk(s2, "_vpad1", s2)
+            120:  getk(s2, "right", s2)
+            121:  loadint(s3, 0)
+            122:  ne(s2, 3, s2, 0)
+            123:  and(s2, 6, s2)
+            124:  loadroot(s3)
+            125:  getk(s3, "_vpad1", s3)
+            126:  getk(s3, "left", s3)
+            127:  loadint(s4, 0)
+            128:  eq(s3, 4, s3, 0)
+            129:  move(s2, s3)
+            130:  jz(s2, 10)
+            131:  load(s2, "vx")
+            132:  loadfloat(s3, 5)
+            133:  loadfloat(s4, 0.7071)
+            134:  mul(s3, s4, s3)
+            135:  set(s255, s0, s2, s3)
+            136:  load(s2, "vy")
+            137:  loadfloat(s3, -5)
+            138:  loadfloat(s4, 0.7071)
+            139:  mul(s3, s4, s3)
+            140:  set(s255, s0, s2, s3)
+            141:  loadroot(s2)
+            142:  getk(s2, "_vpad1", s2)
+            143:  getk(s2, "right", s2)
+            144:  loadint(s3, 0)
+            145:  eq(s2, 3, s2, 0)
+            146:  and(s2, 6, s2)
+            147:  loadroot(s3)
+            148:  getk(s3, "_vpad1", s3)
+            149:  getk(s3, "left", s3)
+            150:  loadint(s4, 0)
+            151:  ne(s3, 4, s3, 0)
+            152:  move(s2, s3)
+            153:  jz(s2, 10)
+            154:  load(s2, "vx")
+            155:  loadfloat(s3, -5)
+            156:  loadfloat(s4, 0.7071)
+            157:  mul(s3, s4, s3)
+            158:  set(s255, s0, s2, s3)
+            159:  load(s2, "vy")
+            160:  loadfloat(s3, -5)
+            161:  loadfloat(s4, 0.7071)
+            162:  mul(s3, s4, s3)
+            163:  set(s255, s0, s2, s3)
+            164:  loadroot(s2)
+            165:  getk(s2, "_vpad1", s2)
+            166:  getk(s2, "right", s2)
+            167:  loadint(s3, 0)
+            168:  eq(s2, 3, s2, 0)
+            169:  and(s2, 6, s2)
+            170:  loadroot(s3)
+            171:  getk(s3, "_vpad1", s3)
+            172:  getk(s3, "left", s3)
+            173:  loadint(s4, 0)
+            174:  eq(s3, 4, s3, 0)
+            175:  move(s2, s3)
+            176:  jz(s2, 6)
+            177:  load(s2, "vx")
+            178:  loadint(s3, 0)
+            179:  set(s255, s0, s2, s3)
+            180:  load(s2, "vy")
+            181:  loadfloat(s3, -5)
+            182:  set(s255, s0, s2, s3)
+            183:  loadroot(s2)
+            184:  getk(s2, "_vpad1", s2)
+            185:  getk(s2, "up", s2)
+            186:  loadint(s3, 0)
+            187:  eq(s2, 3, s2, 0)
+            188:  and(s2, 6, s2)
+            189:  loadroot(s3)
+            190:  getk(s3, "_vpad1", s3)
+            191:  getk(s3, "down", s3)
+            192:  loadint(s4, 0)
+            193:  ne(s3, 4, s3, 0)
+            194:  move(s2, s3)
+            195:  jz(s2, 65)
+            196:  loadroot(s2)
+            197:  getk(s2, "_vpad1", s2)
+            198:  getk(s2, "right", s2)
+            199:  loadint(s3, 0)
+            200:  ne(s2, 3, s2, 0)
+            201:  and(s2, 6, s2)
+            202:  loadroot(s3)
+            203:  getk(s3, "_vpad1", s3)
+            204:  getk(s3, "left", s3)
+            205:  loadint(s4, 0)
+            206:  eq(s3, 4, s3, 0)
+            207:  move(s2, s3)
+            208:  jz(s2, 10)
+            209:  load(s2, "vx")
+            210:  loadfloat(s3, 5)
+            211:  loadfloat(s4, 0.7071)
+            212:  mul(s3, s4, s3)
+            213:  set(s255, s0, s2, s3)
+            214:  load(s2, "vy")
+            215:  loadfloat(s3, 5)
+            216:  loadfloat(s4, 0.7071)
+            217:  mul(s3, s4, s3)
+            218:  set(s255, s0, s2, s3)
+            219:  loadroot(s2)
+            220:  getk(s2, "_vpad1", s2)
+            221:  getk(s2, "right", s2)
+            222:  loadint(s3, 0)
+            223:  eq(s2, 3, s2, 0)
+            224:  and(s2, 6, s2)
+            225:  loadroot(s3)
+            226:  getk(s3, "_vpad1", s3)
+            227:  getk(s3, "left", s3)
+            228:  loadint(s4, 0)
+            229:  ne(s3, 4, s3, 0)
+            230:  move(s2, s3)
+            231:  jz(s2, 10)
+            232:  load(s2, "vx")
+            233:  loadfloat(s3, -5)
+            234:  loadfloat(s4, 0.7071)
+            235:  mul(s3, s4, s3)
+            236:  set(s255, s0, s2, s3)
+            237:  load(s2, "vy")
+            238:  loadfloat(s3, 5)
+            239:  loadfloat(s4, 0.7071)
+            240:  mul(s3, s4, s3)
+            241:  set(s255, s0, s2, s3)
+            242:  loadroot(s2)
+            243:  getk(s2, "_vpad1", s2)
+            244:  getk(s2, "right", s2)
+            245:  loadint(s3, 0)
+            246:  eq(s2, 3, s2, 0)
+            247:  and(s2, 6, s2)
+            248:  loadroot(s3)
+            249:  getk(s3, "_vpad1", s3)
+            250:  getk(s3, "left", s3)
+            251:  loadint(s4, 0)
+            252:  eq(s3, 4, s3, 0)
+            253:  move(s2, s3)
+            254:  jz(s2, 6)
+            255:  load(s2, "vx")
+            256:  loadint(s3, 0)
+            257:  set(s255, s0, s2, s3)
+            258:  load(s2, "vy")
+            259:  loadfloat(s3, 5)
+            260:  set(s255, s0, s2, s3)
+            261:  loadroot(s2)
+            262:  getk(s2, "_vpad1", s2)
+            263:  getk(s2, "up", s2)
+            264:  loadint(s3, 0)
+            265:  eq(s2, 3, s2, 0)
+            266:  and(s2, 6, s2)
+            267:  loadroot(s3)
+            268:  getk(s3, "_vpad1", s3)
+            269:  getk(s3, "down", s3)
+            270:  loadint(s4, 0)
+            271:  eq(s3, 4, s3, 0)
+            272:  move(s2, s3)
+            273:  jz(s2, 57)
+            274:  loadroot(s2)
+            275:  getk(s2, "_vpad1", s2)
+            276:  getk(s2, "right", s2)
+            277:  loadint(s3, 0)
+            278:  ne(s2, 3, s2, 0)
+            279:  and(s2, 6, s2)
+            280:  loadroot(s3)
+            281:  getk(s3, "_vpad1", s3)
+            282:  getk(s3, "left", s3)
+            283:  loadint(s4, 0)
+            284:  eq(s3, 4, s3, 0)
+            285:  move(s2, s3)
+            286:  jz(s2, 6)
+            287:  load(s2, "vx")
+            288:  loadfloat(s3, 5)
+            289:  set(s255, s0, s2, s3)
+            290:  load(s2, "vy")
+            291:  loadint(s3, 0)
+            292:  set(s255, s0, s2, s3)
+            293:  loadroot(s2)
+            294:  getk(s2, "_vpad1", s2)
+            295:  getk(s2, "right", s2)
+            296:  loadint(s3, 0)
+            297:  eq(s2, 3, s2, 0)
+            298:  and(s2, 6, s2)
+            299:  loadroot(s3)
+            300:  getk(s3, "_vpad1", s3)
+            301:  getk(s3, "left", s3)
+            302:  loadint(s4, 0)
+            303:  ne(s3, 4, s3, 0)
+            304:  move(s2, s3)
+            305:  jz(s2, 6)
+            306:  load(s2, "vx")
+            307:  loadfloat(s3, -5)
+            308:  set(s255, s0, s2, s3)
+            309:  load(s2, "vy")
+            310:  loadint(s3, 0)
+            311:  set(s255, s0, s2, s3)
+            312:  loadroot(s2)
+            313:  getk(s2, "_vpad1", s2)
+            314:  getk(s2, "right", s2)
+            315:  loadint(s3, 0)
+            316:  eq(s2, 3, s2, 0)
+            317:  and(s2, 6, s2)
+            318:  loadroot(s3)
+            319:  getk(s3, "_vpad1", s3)
+            320:  getk(s3, "left", s3)
+            321:  loadint(s4, 0)
+            322:  eq(s3, 4, s3, 0)
+            323:  move(s2, s3)
+            324:  jz(s2, 6)
+            325:  load(s2, "vx")
+            326:  loadint(s3, 0)
+            327:  set(s255, s0, s2, s3)
+            328:  load(s2, "vy")
+            329:  loadint(s3, 0)
+            330:  set(s255, s0, s2, s3)
+            331:  getk(s2, "vx", s0)
+            332:  loadint(s3, 0)
+            333:  jcmp(s3, 3, s2, CMP_G)
+            334:  load(s2, "direction_h")
+            335:  loadint(s3, 1)
+            336:  set(s255, s0, s2, s3)
+            337:  getk(s2, "vx", s0)
+            338:  loadint(s3, 0)
+            339:  jcmp(s3, 3, s2, CMP_L)
+            340:  load(s2, "direction_h")
+            341:  loadint(s3, -1)
+            342:  set(s255, s0, s2, s3)
+            343:  jmp(-, 395)
+            344:  jmp(-, 3)
+            345:  loadint(s2, 3)
+            346:  eq(s2, 2, s1, 0)
+            347:  jz(s2, 111)
+            348:  getk(s2, "motion", s0)
+            349:  ne(s2, 5, s2, 255)
+            350:  jz(s2, 13)
+            351:  dload(s2, "motion", s3, "option_stand")
+            352:  set(s255, s0, s2, s3)
+            353:  load(s2, "frameset")
+            354:  loadroot(s3)
+            355:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            356:  loadroot(s5)
+            357:  getk(s5, "resource_pool", s5)
+            358:  dload(s6, "player_jyoon/", s7, "motion")
+            359:  get(s7, s0, s7)
+            360:  add(s6, s7, s6)
+            361:  get(s5, s5, s6)
+            362:  call(3, s3, s4, 2)
+            363:  set(s255, s0, s2, s3)
+            364:  load(s2, "v")
+            365:  loadfloat(s3, 0.5)
+            366:  comparith(s2, 3, s2, 43)
+            367:  getk(s2, "v", s0)
+            368:  loadfloat(s3, 6)
+            369:  jcmp(s3, 3, s2, CMP_G)
+            370:  load(s2, "v")
+            371:  loadfloat(s3, 6)
+            372:  set(s255, s0, s2, s3)
+            373:  prepcallk(s2, "atan2", s0, s3)
+            374:  getk(s4, "obj", s0)
+            375:  getk(s4, "player", s4)
+            376:  getk(s4, "y", s4)
+            377:  getk(s5, "y", s0)
+            378:  sub(s4, s5, s4)
+            379:  getk(s5, "obj", s0)
+            380:  getk(s5, "player", s5)
+            381:  getk(s5, "x", s5)
+            382:  getk(s6, "x", s0)
+            383:  sub(s5, s6, s5)
+            384:  call(2, s2, s3, 3)
+            385:  dload(s3, "vx", s4, "v")
+            386:  get(s4, s0, s4)
+            387:  prepcallk(s5, "cos", s0, s6)
+            388:  move(s7, s2)
+            389:  call(5, s5, s6, 2)
+            390:  mul(s4, s5, s4)
+            391:  set(s255, s0, s3, s4)
+            392:  dload(s3, "vy", s4, "v")
+            393:  get(s4, s0, s4)
+            394:  prepcallk(s5, "sin", s0, s6)
+            395:  move(s7, s2)
+            396:  call(5, s5, s6, 2)
+            397:  mul(s4, s5, s4)
+            398:  set(s255, s0, s3, s4)
+            399:  getk(s3, "vx", s0)
+            400:  loadint(s4, 0)
+            401:  jcmp(s4, 3, s3, CMP_G)
+            402:  load(s3, "direction_h")
+            403:  loadint(s4, 1)
+            404:  set(s255, s0, s3, s4)
+            405:  getk(s3, "vx", s0)
+            406:  loadint(s4, 0)
+            407:  jcmp(s4, 3, s3, CMP_L)
+            408:  load(s3, "direction_h")
+            409:  loadint(s4, -1)
+            410:  set(s255, s0, s3, s4)
+            411:  getk(s3, "obj", s0)
+            412:  getk(s3, "player", s3)
+            413:  getk(s3, "x", s3)
+            414:  getk(s4, "x", s0)
+            415:  sub(s3, s4, s3)
+            416:  getk(s4, "obj", s0)
+            417:  getk(s4, "player", s4)
+            418:  getk(s4, "x", s4)
+            419:  getk(s5, "x", s0)
+            420:  sub(s4, s5, s4)
+            421:  mul(s3, s4, s3)
+            422:  getk(s4, "obj", s0)
+            423:  getk(s4, "player", s4)
+            424:  getk(s4, "y", s4)
+            425:  getk(s5, "y", s0)
+            426:  sub(s4, s5, s4)
+            427:  getk(s5, "obj", s0)
+            428:  getk(s5, "player", s5)
+            429:  getk(s5, "y", s5)
+            430:  getk(s6, "y", s0)
+            431:  sub(s5, s6, s5)
+            432:  mul(s4, s5, s4)
+            433:  add(s3, s4, s3)
+            434:  loadint(s4, 64)
+            435:  loadint(s5, 64)
+            436:  mul(s4, s5, s4)
+            437:  jcmp(s4, 19, s3, CMP_LE)
+            438:  load(s3, "vx")
+            439:  loadint(s4, 0)
+            440:  set(s255, s0, s3, s4)
+            441:  load(s3, "vy")
+            442:  loadint(s4, 0)
+            443:  set(s255, s0, s3, s4)
+            444:  dload(s3, "pos_x", s4, "obj")
+            445:  get(s4, s0, s4)
+            446:  getk(s4, "player", s4)
+            447:  getk(s4, "x", s4)
+            448:  set(s255, s0, s3, s4)
+            449:  dload(s3, "pos_y", s4, "obj")
+            450:  get(s4, s0, s4)
+            451:  getk(s4, "player", s4)
+            452:  getk(s4, "y", s4)
+            453:  set(s255, s0, s3, s4)
+            454:  load(s3, "mode")
+            455:  loadint(s4, 1)
+            456:  set(s255, s0, s3, s4)
+            457:  jmp(-, 281)
+            458:  jmp(-, 3)
+            459:  loadint(s2, 4)
+            460:  eq(s2, 2, s1, 0)
+            461:  jz(s2, 55)
+            462:  getk(s2, "motion", s0)
+            463:  ne(s2, 28, s2, 255)
+            464:  jz(s2, 13)
+            465:  dload(s2, "motion", s3, "option_grab")
+            466:  set(s255, s0, s2, s3)
+            467:  load(s2, "frameset")
+            468:  loadroot(s3)
+            469:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            470:  loadroot(s5)
+            471:  getk(s5, "resource_pool", s5)
+            472:  dload(s6, "player_jyoon/", s7, "motion")
+            473:  get(s7, s0, s7)
+            474:  add(s6, s7, s6)
+            475:  get(s5, s5, s6)
+            476:  call(3, s3, s4, 2)
+            477:  set(s255, s0, s2, s3)
+            478:  load(s2, "just_graze")
+            479:  loadint(s3, 1)
+            480:  set(s255, s0, s2, s3)
+            481:  dload(s2, "direction_h", s3, "obj")
+            482:  get(s3, s0, s3)
+            483:  getk(s3, "player", s3)
+            484:  getk(s3, "direction_h", s3)
+            485:  set(s255, s0, s2, s3)
+            486:  load(s2, "v")
+            487:  loadint(s3, 0)
+            488:  set(s255, s0, s2, s3)
+            489:  load(s2, "vx")
+            490:  loadint(s3, 0)
+            491:  set(s255, s0, s2, s3)
+            492:  load(s2, "vy")
+            493:  loadint(s3, 0)
+            494:  set(s255, s0, s2, s3)
+            495:  dload(s2, "x", s3, "obj")
+            496:  get(s3, s0, s3)
+            497:  getk(s3, "player", s3)
+            498:  getk(s3, "x", s3)
+            499:  set(s255, s0, s2, s3)
+            500:  dload(s2, "y", s3, "obj")
+            501:  get(s3, s0, s3)
+            502:  getk(s3, "player", s3)
+            503:  getk(s3, "y", s3)
+            504:  loadint(s4, 64)
+            505:  sub(s3, s4, s3)
+            506:  set(s255, s0, s2, s3)
+            507:  getk(s2, "obj", s0)
+            508:  getk(s2, "player", s2)
+            509:  getk(s2, "motion", s2)
+            510:  ne(s2, 29, s2, 255)
+            511:  jz(s2, 3)
+            512:  load(s2, "mode")
+            513:  loadint(s3, 0)
+            514:  set(s255, s0, s2, s3)
+            515:  jmp(-, 223)
+            516:  jmp(-, 3)
+            517:  loadint(s2, 5)
+            518:  eq(s2, 2, s1, 0)
+            519:  jz(s2, 105)
+            520:  getk(s2, "obj", s0)
+            521:  getk(s2, "player", s2)
+            522:  getk(s2, "motion", s2)
+            523:  ne(s2, 30, s2, 255)
+            524:  jz(s2, 4)
+            525:  load(s2, "mode")
+            526:  loadint(s3, 0)
+            527:  set(s255, s0, s2, s3)
+            528:  jmp(-, 210)
+            529:  getk(s2, "motion", s0)
+            530:  ne(s2, 31, s2, 255)
+            531:  jz(s2, 13)
+            532:  dload(s2, "motion", s3, "option_warp")
+            533:  set(s255, s0, s2, s3)
+            534:  load(s2, "frameset")
+            535:  loadroot(s3)
+            536:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            537:  loadroot(s5)
+            538:  getk(s5, "resource_pool", s5)
+            539:  dload(s6, "player_jyoon/", s7, "motion")
+            540:  get(s7, s0, s7)
+            541:  add(s6, s7, s6)
+            542:  get(s5, s5, s6)
+            543:  call(3, s3, s4, 2)
+            544:  set(s255, s0, s2, s3)
+            545:  getk(s2, "obj", s0)
+            546:  getk(s2, "player", s2)
+            547:  getk(s2, "x", s2)
+            548:  getk(s3, "x", s0)
+            549:  sub(s2, s3, s2)
+            550:  getk(s3, "obj", s0)
+            551:  getk(s3, "player", s3)
+            552:  getk(s3, "x", s3)
+            553:  getk(s4, "x", s0)
+            554:  sub(s3, s4, s3)
+            555:  mul(s2, s3, s2)
+            556:  getk(s3, "obj", s0)
+            557:  getk(s3, "player", s3)
+            558:  getk(s3, "y", s3)
+            559:  loadint(s4, 64)
+            560:  sub(s3, s4, s3)
+            561:  getk(s4, "y", s0)
+            562:  sub(s3, s4, s3)
+            563:  getk(s4, "obj", s0)
+            564:  getk(s4, "player", s4)
+            565:  getk(s4, "y", s4)
+            566:  loadint(s5, 64)
+            567:  sub(s4, s5, s4)
+            568:  getk(s5, "y", s0)
+            569:  sub(s4, s5, s4)
+            570:  mul(s3, s4, s3)
+            571:  add(s2, s3, s2)
+            572:  loadint(s3, 32)
+            573:  loadint(s4, 32)
+            574:  mul(s3, s4, s3)
+            575:  jcmp(s3, 19, s2, CMP_LE)
+            576:  load(s2, "vx")
+            577:  loadint(s3, 0)
+            578:  set(s255, s0, s2, s3)
+            579:  load(s2, "vy")
+            580:  loadint(s3, 0)
+            581:  set(s255, s0, s2, s3)
+            582:  dload(s2, "x", s3, "obj")
+            583:  get(s3, s0, s3)
+            584:  getk(s3, "player", s3)
+            585:  getk(s3, "x", s3)
+            586:  set(s255, s0, s2, s3)
+            587:  dload(s2, "y", s3, "obj")
+            588:  get(s3, s0, s3)
+            589:  getk(s3, "player", s3)
+            590:  getk(s3, "y", s3)
+            591:  loadint(s4, 64)
+            592:  sub(s3, s4, s3)
+            593:  set(s255, s0, s2, s3)
+            594:  jmp(-, 28)
+            595:  prepcallk(s2, "atan2", s0, s3)
+            596:  getk(s4, "obj", s0)
+            597:  getk(s4, "player", s4)
+            598:  getk(s4, "y", s4)
+            599:  loadint(s5, 64)
+            600:  sub(s4, s5, s4)
+            601:  getk(s5, "y", s0)
+            602:  sub(s4, s5, s4)
+            603:  getk(s5, "obj", s0)
+            604:  getk(s5, "player", s5)
+            605:  getk(s5, "x", s5)
+            606:  getk(s6, "x", s0)
+            607:  sub(s5, s6, s5)
+            608:  call(2, s2, s3, 3)
+            609:  load(s3, "vx")
+            610:  loadint(s4, 32)
+            611:  prepcallk(s5, "cos", s0, s6)
+            612:  move(s7, s2)
+            613:  call(5, s5, s6, 2)
+            614:  mul(s4, s5, s4)
+            615:  set(s255, s0, s3, s4)
+            616:  load(s3, "vy")
+            617:  loadint(s4, 32)
+            618:  prepcallk(s5, "sin", s0, s6)
+            619:  move(s7, s2)
+            620:  call(5, s5, s6, 2)
+            621:  mul(s4, s5, s4)
+            622:  set(s255, s0, s3, s4)
+            623:  jmp(-, 115)
+            624:  jmp(-, 3)
+            625:  loadint(s2, 6)
+            626:  eq(s2, 2, s1, 0)
+            627:  jz(s2, 69)
+            628:  getk(s2, "motion", s0)
+            629:  ne(s2, 32, s2, 255)
+            630:  jz(s2, 21)
+            631:  dload(s2, "motion", s3, "option_walk")
+            632:  set(s255, s0, s2, s3)
+            633:  load(s2, "frameset")
+            634:  loadroot(s3)
+            635:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            636:  loadroot(s5)
+            637:  getk(s5, "resource_pool", s5)
+            638:  dload(s6, "player_jyoon/", s7, "motion")
+            639:  get(s7, s0, s7)
+            640:  add(s6, s7, s6)
+            641:  get(s5, s5, s6)
+            642:  call(3, s3, s4, 2)
+            643:  set(s255, s0, s2, s3)
+            644:  load(s2, "count")
+            645:  loadint(s3, 0)
+            646:  set(s255, s0, s2, s3)
+            647:  dload(s2, "direction_h", s3, "obj")
+            648:  get(s3, s0, s3)
+            649:  getk(s3, "player", s3)
+            650:  getk(s3, "direction_h", s3)
+            651:  set(s255, s0, s2, s3)
+            652:  load(s2, "just_graze")
+            653:  loadint(s3, 1)
+            654:  set(s255, s0, s2, s3)
+            655:  load(s2, "count")
+            656:  pinc(s2, s0, s2, 1)
+            657:  loadint(s2, 0)
+            658:  getk(s3, "count", s0)
+            659:  loadint(s4, 30)
+            660:  jcmp(s4, 7, s3, CMP_GE)
+            661:  load(s3, "vx")
+            662:  loadfloat(s4, 0.8)
+            663:  comparith(s3, 4, s3, 42)
+            664:  load(s3, "vy")
+            665:  loadfloat(s4, 0.8)
+            666:  comparith(s3, 4, s3, 42)
+            667:  jmp(-, 16)
+            668:  load(s3, "vx")
+            669:  loadint(s4, 10)
+            670:  prepcallk(s5, "cos", s0, s6)
+            671:  move(s7, s2)
+            672:  call(5, s5, s6, 2)
+            673:  mul(s4, s5, s4)
+            674:  getk(s5, "direction_h", s0)
+            675:  mul(s4, s5, s4)
+            676:  set(s255, s0, s3, s4)
+            677:  load(s3, "vy")
+            678:  loadint(s4, 10)
+            679:  prepcallk(s5, "sin", s0, s6)
+            680:  move(s7, s2)
+            681:  call(5, s5, s6, 2)
+            682:  mul(s4, s5, s4)
+            683:  set(s255, s0, s3, s4)
+            684:  getk(s3, "count", s0)
+            685:  loadint(s4, 60)
+            686:  jcmp(s4, 9, s3, CMP_GE)
+            687:  load(s3, "vx")
+            688:  loadint(s4, 0)
+            689:  set(s255, s0, s3, s4)
+            690:  load(s3, "vy")
+            691:  loadint(s4, 0)
+            692:  set(s255, s0, s3, s4)
+            693:  load(s3, "mode")
+            694:  loadint(s4, 3)
+            695:  set(s255, s0, s3, s4)
+            696:  jmp(-, 42)
+            697:  getk(s2, "motion", s0)
+            698:  ne(s2, 5, s2, 255)
+            699:  jz(s2, 13)
+            700:  dload(s2, "motion", s3, "option_stand")
+            701:  set(s255, s0, s2, s3)
+            702:  load(s2, "frameset")
+            703:  loadroot(s3)
+            704:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            705:  loadroot(s5)
+            706:  getk(s5, "resource_pool", s5)
+            707:  dload(s6, "player_jyoon/", s7, "motion")
+            708:  get(s7, s0, s7)
+            709:  add(s6, s7, s6)
+            710:  get(s5, s5, s6)
+            711:  call(3, s3, s4, 2)
+            712:  set(s255, s0, s2, s3)
+            713:  load(s2, "v")
+            714:  loadint(s3, 0)
+            715:  set(s255, s0, s2, s3)
+            716:  load(s2, "vx")
+            717:  loadint(s3, 0)
+            718:  set(s255, s0, s2, s3)
+            719:  load(s2, "vy")
+            720:  loadint(s3, 0)
+            721:  set(s255, s0, s2, s3)
+            722:  getk(s2, "obj", s0)
+            723:  getk(s2, "player", s2)
+            724:  getk(s2, "state", s2)
+            725:  loadnulls(s3, 1)
+            726:  eq(s2, 3, s2, 0)
+            727:  and(s2, 6, s2)
+            728:  getk(s3, "obj", s0)
+            729:  getk(s3, "player", s3)
+            730:  getk(s3, "ground", s3)
+            731:  loadbool(s4, 1)
+            732:  eq(s3, 4, s3, 0)
+            733:  move(s2, s3)
+            734:  jz(s2, 3)
+            735:  load(s2, "mode")
+            736:  loadint(s3, 3)
+            737:  set(s255, s0, s2, s3)
+            738:  jmp(-, 0)
+            739:  dload(s1, "x", s2, "vx")
+            740:  get(s2, s0, s2)
+            741:  comparith(s1, 2, s1, 43)
+            742:  dload(s1, "y", s2, "vy")
+            743:  get(s2, s0, s2)
+            744:  comparith(s1, 2, s1, 43)
+            745:  getk(s1, "x", s0)
+            746:  loadroot(s2)
+            747:  getk(s2, "world", s2)
+            748:  getk(s2, "left", s2)
+            749:  loadint(s3, 16)
+            750:  add(s2, s3, s2)
+            751:  jcmp(s2, 7, s1, CMP_L)
+            752:  load(s1, "x")
+            753:  loadroot(s2)
+            754:  getk(s2, "world", s2)
+            755:  getk(s2, "left", s2)
+            756:  loadint(s3, 16)
+            757:  add(s2, s3, s2)
+            758:  set(s255, s0, s1, s2)
+            759:  getk(s1, "x", s0)
+            760:  loadroot(s2)
+            761:  getk(s2, "world", s2)
+            762:  getk(s2, "right", s2)
+            763:  loadint(s3, 16)
+            764:  sub(s2, s3, s2)
+            765:  jcmp(s2, 7, s1, CMP_G)
+            766:  load(s1, "x")
+            767:  loadroot(s2)
+            768:  getk(s2, "world", s2)
+            769:  getk(s2, "right", s2)
+            770:  loadint(s3, 16)
+            771:  sub(s2, s3, s2)
+            772:  set(s255, s0, s1, s2)
+            773:  getk(s1, "y", s0)
+            774:  loadroot(s2)
+            775:  getk(s2, "world", s2)
+            776:  getk(s2, "top", s2)
+            777:  jcmp(s2, 5, s1, CMP_L)
+            778:  load(s1, "y")
+            779:  loadroot(s2)
+            780:  getk(s2, "world", s2)
+            781:  getk(s2, "top", s2)
+            782:  set(s255, s0, s1, s2)
+            783:  getk(s1, "y", s0)
+            784:  loadroot(s2)
+            785:  getk(s2, "world", s2)
+            786:  getk(s2, "bottom", s2)
+            787:  jcmp(s2, 5, s1, CMP_G)
+            788:  load(s1, "y")
+            789:  loadroot(s2)
+            790:  getk(s2, "world", s2)
+            791:  getk(s2, "bottom", s2)
+            792:  set(s255, s0, s1, s2)
+            793:  loadroot(s1)
+            794:  prepcallk(s1, "_vspace_commit", s1, s2)
+            795:  getk(s3, "h_entity", s0)
+            796:  call(255, s1, s2, 2)
+            797:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "on_hit_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 212, op: 0
+            1: line: 213, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 214, op: 0
+            1: line: 215, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 216, op: 0
+            1: line: 217, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "determination"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "_vspace_lookup_collisions"
+            1: "h_entity"
+            2: "_vspace_get_contact_list"
+            3: "on_graze_target"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "obj", pos: 3, start_op: 21, end_op: 26
+            1: name: "@INDEX@", pos: 2, start_op: 20, end_op: 26
+            2: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 220, op: 0
+            1: line: 221, op: 0
+            2: line: 223, op: 11
+            3: line: 224, op: 23
+            4: line: 225, op: 23
+            5: line: 228, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s1)
+            1:  prepcallk(s1, "_vspace_lookup_collisions", s1, s2)
+            2:  getk(s3, "h_entity", s0)
+            3:  loadint(s4, 4)
+            4:  loadint(s5, 2)
+            5:  bitw(s4, s5, s4, BW_OR)
+            6:  loadint(s5, 32)
+            7:  bitw(s4, s5, s4, BW_OR)
+            8:  loadint(s5, 8192)
+            9:  call(1, s1, s2, 4)
+            10:  jz(s1, 16)
+            11:  loadroot(s1)
+            12:  prepcallk(s1, "_vspace_get_contact_list", s1, s2)
+            13:  getk(s3, "h_entity", s0)
+            14:  loadint(s4, 128)
+            15:  loadint(s5, 256)
+            16:  bitw(s4, s5, s4, BW_OR)
+            17:  loadint(s5, 512)
+            18:  bitw(s4, s5, s4, BW_OR)
+            19:  call(1, s1, s2, 3)
+            20:  loadnulls(s2, 3)
+            21:  foreach(s1, 5, s2)
+            22:  postforeach(s1, 5)
+            23:  prepcallk(s5, "on_graze_target", s3, s6)
+            24:  move(s7, s0)
+            25:  call(255, s5, s6, 2)
+            26:  jmp(-, -6)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_shion_object.nut"
+        name: "plot"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 19
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s1"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "direction_h"
+            6: "translate"
+            7: "x"
+            8: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 18
+          ]
+        Line Informations: [
+            0: line: 231, op: 0
+            1: line: 232, op: 0
+            2: line: 234, op: 4
+            3: line: 235, op: 8
+            4: line: 236, op: 13
+            5: line: 239, op: 18
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s1", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s1", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "direction_h", s0)
+            11:  loadint(s4, 1)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s1", s0)
+            14:  prepcallk(s1, "translate", s1, s2)
+            15:  getk(s3, "x", s0)
+            16:  getk(s4, "y", s0)
+            17:  call(255, s1, s2, 3)
+            18:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

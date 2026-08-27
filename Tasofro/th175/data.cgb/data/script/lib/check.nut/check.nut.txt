@@ -1,0 +1,579 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\lib\check.nut: 
+sourcename: "data\script\lib\check.nut"
+name: "main"
+nliterals: 7
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 8
+ndefaultparams: 0
+ninstructions: 26
+nfunctions: 7
+Literals: [
+    0: "damage"
+    1: "dead"
+    2: "in_world"
+    3: "in_world_fall"
+    4: "in_world_side"
+    5: "in_camera"
+    6: "raytest_terrain"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 25
+    1: name: "this", pos: 0, start_op: 0, end_op: 25
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 7, op: 3
+    2: line: 12, op: 6
+    3: line: 16, op: 10
+    4: line: 20, op: 14
+    5: line: 25, op: 18
+    6: line: 31, op: 22
+    7: line: 47, op: 25
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "damage")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "dead")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "in_world")
+    7:  loadint(s3, 0)
+    8:  closure(s3, 2)
+    9:  newslot(s2, s0, s2, s3)
+    10:  load(s2, "in_world_fall")
+    11:  loadint(s3, 0)
+    12:  closure(s3, 3)
+    13:  newslot(s2, s0, s2, s3)
+    14:  load(s2, "in_world_side")
+    15:  loadint(s3, 0)
+    16:  closure(s3, 4)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "in_camera")
+    19:  loadint(s3, 0)
+    20:  closure(s3, 5)
+    21:  newslot(s2, s0, s2, s3)
+    22:  load(s2, "raytest_terrain")
+    23:  closure(s3, 6)
+    24:  newslot(s2, s0, s2, s3)
+    25:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\lib\check.nut"
+        name: "damage"
+        nliterals: 3
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 12
+        nfunctions: 0
+        Literals: [
+            0: "motion"
+            1: "damage"
+            2: "damage2"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 0, end_op: 11
+            1: name: "this", pos: 0, start_op: 0, end_op: 11
+          ]
+        Line Informations: [
+            0: line: 2, op: 0
+            1: line: 3, op: 0
+            2: line: 4, op: 9
+            3: line: 5, op: 11
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "motion", s1)
+            1:  eq(s2, 1, s2, 255)
+            2:  or(s2, 3, s2)
+            3:  getk(s3, "motion", s1)
+            4:  eq(s3, 2, s3, 255)
+            5:  move(s2, s3)
+            6:  jz(s2, 2)
+            7:  loadbool(s2, 1)
+            8:  return(1, 2)
+            9:  loadbool(s2, 0)
+            10:  return(1, 2)
+            11:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\lib\check.nut"
+        name: "dead"
+        nliterals: 1
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 8
+        nfunctions: 0
+        Literals: [
+            0: "life"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 0, end_op: 7
+            1: name: "this", pos: 0, start_op: 0, end_op: 7
+          ]
+        Line Informations: [
+            0: line: 7, op: 0
+            1: line: 8, op: 0
+            2: line: 9, op: 5
+            3: line: 10, op: 7
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "life", s1)
+            1:  loadint(s3, 0)
+            2:  jcmp(s3, 2, s2, CMP_LE)
+            3:  loadbool(s2, 1)
+            4:  return(1, 2)
+            5:  loadbool(s2, 0)
+            6:  return(1, 2)
+            7:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\lib\check.nut"
+        name: "in_world"
+        nliterals: 7
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 4
+        ndefaultparams: 1
+        ninstructions: 36
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "world"
+            2: "right"
+            3: "left"
+            4: "y"
+            5: "bottom"
+            6: "top"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+            2: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 2, start_op: 0, end_op: 35
+            1: name: "a_", pos: 1, start_op: 0, end_op: 35
+            2: name: "this", pos: 0, start_op: 0, end_op: 35
+          ]
+        Line Informations: [
+            0: line: 12, op: 0
+            1: line: 13, op: 0
+            2: line: 14, op: 33
+            3: line: 15, op: 35
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  getk(s3, "x", s1)
+            1:  loadroot(s4)
+            2:  getk(s4, "world", s4)
+            3:  getk(s4, "right", s4)
+            4:  add(s4, s2, s4)
+            5:  cmp(s3, s4, s3, CMP_G)
+            6:  or(s3, 23, s3)
+            7:  getk(s4, "x", s1)
+            8:  loadroot(s5)
+            9:  getk(s5, "world", s5)
+            10:  getk(s5, "left", s5)
+            11:  sub(s5, s2, s5)
+            12:  cmp(s4, s5, s4, CMP_L)
+            13:  or(s4, 15, s4)
+            14:  getk(s5, "y", s1)
+            15:  loadroot(s6)
+            16:  getk(s6, "world", s6)
+            17:  getk(s6, "bottom", s6)
+            18:  add(s6, s2, s6)
+            19:  cmp(s5, s6, s5, CMP_G)
+            20:  or(s5, 7, s5)
+            21:  getk(s6, "y", s1)
+            22:  loadroot(s7)
+            23:  getk(s7, "world", s7)
+            24:  getk(s7, "top", s7)
+            25:  sub(s7, s2, s7)
+            26:  cmp(s6, s7, s6, CMP_L)
+            27:  move(s5, s6)
+            28:  move(s4, s5)
+            29:  move(s3, s4)
+            30:  jz(s3, 2)
+            31:  loadbool(s3, 0)
+            32:  return(1, 3)
+            33:  loadbool(s3, 1)
+            34:  return(1, 3)
+            35:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\lib\check.nut"
+        name: "in_world_fall"
+        nliterals: 6
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 4
+        ndefaultparams: 1
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "world"
+            2: "right"
+            3: "left"
+            4: "y"
+            5: "bottom"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+            2: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 2, start_op: 0, end_op: 27
+            1: name: "a_", pos: 1, start_op: 0, end_op: 27
+            2: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 16, op: 0
+            1: line: 17, op: 0
+            2: line: 18, op: 25
+            3: line: 19, op: 27
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  getk(s3, "x", s1)
+            1:  loadroot(s4)
+            2:  getk(s4, "world", s4)
+            3:  getk(s4, "right", s4)
+            4:  add(s4, s2, s4)
+            5:  cmp(s3, s4, s3, CMP_G)
+            6:  or(s3, 15, s3)
+            7:  getk(s4, "x", s1)
+            8:  loadroot(s5)
+            9:  getk(s5, "world", s5)
+            10:  getk(s5, "left", s5)
+            11:  sub(s5, s2, s5)
+            12:  cmp(s4, s5, s4, CMP_L)
+            13:  or(s4, 7, s4)
+            14:  getk(s5, "y", s1)
+            15:  loadroot(s6)
+            16:  getk(s6, "world", s6)
+            17:  getk(s6, "bottom", s6)
+            18:  add(s6, s2, s6)
+            19:  cmp(s5, s6, s5, CMP_G)
+            20:  move(s4, s5)
+            21:  move(s3, s4)
+            22:  jz(s3, 2)
+            23:  loadbool(s3, 0)
+            24:  return(1, 3)
+            25:  loadbool(s3, 1)
+            26:  return(1, 3)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\lib\check.nut"
+        name: "in_world_side"
+        nliterals: 4
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 4
+        ndefaultparams: 1
+        ninstructions: 20
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "world"
+            2: "right"
+            3: "left"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+            2: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 2, start_op: 0, end_op: 19
+            1: name: "a_", pos: 1, start_op: 0, end_op: 19
+            2: name: "this", pos: 0, start_op: 0, end_op: 19
+          ]
+        Line Informations: [
+            0: line: 20, op: 0
+            1: line: 21, op: 0
+            2: line: 22, op: 17
+            3: line: 23, op: 19
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  getk(s3, "x", s1)
+            1:  loadroot(s4)
+            2:  getk(s4, "world", s4)
+            3:  getk(s4, "right", s4)
+            4:  add(s4, s2, s4)
+            5:  cmp(s3, s4, s3, CMP_G)
+            6:  or(s3, 7, s3)
+            7:  getk(s4, "x", s1)
+            8:  loadroot(s5)
+            9:  getk(s5, "world", s5)
+            10:  getk(s5, "left", s5)
+            11:  sub(s5, s2, s5)
+            12:  cmp(s4, s5, s4, CMP_L)
+            13:  move(s3, s4)
+            14:  jz(s3, 2)
+            15:  loadbool(s3, 0)
+            16:  return(1, 3)
+            17:  loadbool(s3, 1)
+            18:  return(1, 3)
+            19:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\lib\check.nut"
+        name: "in_camera"
+        nliterals: 3
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 4
+        ndefaultparams: 1
+        ninstructions: 40
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "camera"
+            2: "y"
+          ]
+        Parameters: [
+            0: "this"
+            1: "a_"
+            2: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 2, start_op: 0, end_op: 39
+            1: name: "a_", pos: 1, start_op: 0, end_op: 39
+            2: name: "this", pos: 0, start_op: 0, end_op: 39
+          ]
+        Line Informations: [
+            0: line: 25, op: 0
+            1: line: 26, op: 0
+            2: line: 27, op: 37
+            3: line: 28, op: 39
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  getk(s3, "x", s1)
+            1:  loadroot(s4)
+            2:  getk(s4, "camera", s4)
+            3:  getk(s4, "x", s4)
+            4:  loadint(s5, 640)
+            5:  add(s4, s5, s4)
+            6:  add(s4, s2, s4)
+            7:  cmp(s3, s4, s3, CMP_G)
+            8:  or(s3, 25, s3)
+            9:  getk(s4, "x", s1)
+            10:  loadroot(s5)
+            11:  getk(s5, "camera", s5)
+            12:  getk(s5, "x", s5)
+            13:  sub(s5, s2, s5)
+            14:  cmp(s4, s5, s4, CMP_L)
+            15:  or(s4, 17, s4)
+            16:  getk(s5, "y", s1)
+            17:  loadroot(s6)
+            18:  getk(s6, "camera", s6)
+            19:  getk(s6, "y", s6)
+            20:  loadint(s7, 360)
+            21:  add(s6, s7, s6)
+            22:  add(s6, s2, s6)
+            23:  cmp(s5, s6, s5, CMP_G)
+            24:  or(s5, 7, s5)
+            25:  getk(s6, "y", s1)
+            26:  loadroot(s7)
+            27:  getk(s7, "camera", s7)
+            28:  getk(s7, "y", s7)
+            29:  sub(s7, s2, s7)
+            30:  cmp(s6, s7, s6, CMP_L)
+            31:  move(s5, s6)
+            32:  move(s4, s5)
+            33:  move(s3, s4)
+            34:  jz(s3, 2)
+            35:  loadbool(s3, 0)
+            36:  return(1, 3)
+            37:  loadbool(s3, 1)
+            38:  return(1, 3)
+            39:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\lib\check.nut"
+        name: "raytest_terrain"
+        nliterals: 6
+        nparameters: 4
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 47
+        nfunctions: 0
+        Literals: [
+            0: "world"
+            1: "mapdata"
+            2: "gridsize"
+            3: "tointeger"
+            4: "layer"
+            5: "get"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_x1"
+            2: "_y1"
+            3: "_range"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "chip", pos: 8, start_op: 33, end_op: 41
+            1: name: "y", pos: 7, start_op: 23, end_op: 43
+            2: name: "y2", pos: 6, start_op: 22, end_op: 45
+            3: name: "y1", pos: 5, start_op: 14, end_op: 45
+            4: name: "x1", pos: 4, start_op: 7, end_op: 45
+            5: name: "_range", pos: 3, start_op: 0, end_op: 46
+            6: name: "_y1", pos: 2, start_op: 0, end_op: 46
+            7: name: "_x1", pos: 1, start_op: 0, end_op: 46
+            8: name: "this", pos: 0, start_op: 0, end_op: 46
+          ]
+        Line Informations: [
+            0: line: 32, op: 0
+            1: line: 33, op: 0
+            2: line: 34, op: 7
+            3: line: 35, op: 14
+            4: line: 37, op: 22
+            5: line: 38, op: 24
+            6: line: 39, op: 24
+            7: line: 40, op: 33
+            8: line: 42, op: 36
+            9: line: 46, op: 44
+            10: line: 47, op: 46
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s4)
+            1:  getk(s4, "world", s4)
+            2:  getk(s4, "mapdata", s4)
+            3:  getk(s4, "gridsize", s4)
+            4:  div(s4, s4, s1)
+            5:  prepcallk(s4, "tointeger", s4, s5)
+            6:  call(4, s4, s5, 1)
+            7:  loadroot(s5)
+            8:  getk(s5, "world", s5)
+            9:  getk(s5, "mapdata", s5)
+            10:  getk(s5, "gridsize", s5)
+            11:  div(s5, s5, s2)
+            12:  prepcallk(s5, "tointeger", s5, s6)
+            13:  call(5, s5, s6, 1)
+            14:  add(s6, s3, s2)
+            15:  loadroot(s7)
+            16:  getk(s7, "world", s7)
+            17:  getk(s7, "mapdata", s7)
+            18:  getk(s7, "gridsize", s7)
+            19:  div(s6, s7, s6)
+            20:  prepcallk(s6, "tointeger", s6, s7)
+            21:  call(6, s6, s7, 1)
+            22:  move(s7, s5)
+            23:  jcmp(s6, 20, s7, CMP_LE)
+            24:  loadroot(s8)
+            25:  getk(s8, "world", s8)
+            26:  getk(s8, "mapdata", s8)
+            27:  getk(s8, "layer", s8)
+            28:  loadint(s9, 3)
+            29:  get(s8, s8, s9)
+            30:  prepcallk(s8, "get", s8, s9)
+            31:  dmove(s10, s4, s11, s7)
+            32:  call(8, s8, s9, 3)
+            33:  loadint(s9, 65535)
+            34:  ne(s9, 9, s8, 0)
+            35:  jz(s9, 6)
+            36:  loadroot(s9)
+            37:  getk(s9, "world", s9)
+            38:  getk(s9, "mapdata", s9)
+            39:  getk(s9, "gridsize", s9)
+            40:  mul(s9, s9, s7)
+            41:  return(1, 9)
+            42:  pincl(s8, s7, 0, 1)
+            43:  jmp(-, -21)
+            44:  loadnulls(s7, 1)
+            45:  return(1, 7)
+            46:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

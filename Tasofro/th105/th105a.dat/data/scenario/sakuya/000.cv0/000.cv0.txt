@@ -1,0 +1,204 @@
+## =======================================================================
+#Stage:1
+#Title:燻る緋色
+#Place:紅魔館時計台
+#Weather:曇天
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:sakuya,160,0,0,8888FF
+Character:marisa,160,0,1,FF8888
+
+#背景　紅魔館時計台
+Stage:12,0
+
+#自分画面外に待機
+Action:sakuya,1
+
+#敵画面外に待機
+Action:marisa,100
+
+PlayBgm:data/bgm/ta00.ogg
+
+#カメラ中央固定
+Action:sakuya,2
+
+Label:Start
+
+#自キャラ天候
+Action:sakuya,103
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle001.bmp,0,256,-32
+Sleep:30;
+Object:data/scenario/effect/Stage1.bmp,1,256,352
+Sleep:30;
+
+#登場
+Action:sakuya,50
+Action:sakuya,51
+
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+
+# --------------------------------------------
+# ここで体から緋色の霧が立ち上ると良いけど
+
+Action:sakuya,170
+
+Face:sakuya,驚
+これは一体……\
+
+
+Face:sakuya,普
+私の体から何かが抜けていく様に\
+
+
+
+Face:sakuya,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+Action:marisa,101
+Action:marisa,102
+
+Face:marisa,普
+おーいどうした？
+料理に使う雨水でも取りに来たのか？\
+
+Action:sakuya,171
+
+# 名前のテロップ
+Object:data/scenario/marisa/effect/Name.bmp,2,352,304
+
+Face:sakuya,驚
+雨なんて降っていないでしょうに\
+
+Hide:1
+
+#敵天候
+Action:marisa,103
+Sleep:60
+
+Face:marisa,惑
+ん？
+雨なら降ってるぜ？\
+
+Face:sakuya,驚
+あら……雨が降ってきたわ\
+
+Face:marisa,普
+そうなんだよ、最近雨続きで困るよな@
+本を持ち帰ると湿気るし\
+
+Face:sakuya,汗
+勝手に持っていかないの\
+
+Face:sakuya,普
+ま、最近天気が悪いのは確かだけど
+それより何か感じない？\
+
+Face:marisa,普
+ああ？
+全く感じないな\
+
+Face:sakuya,驚
+ほら、貴方の体からも……\
+
+Hide:1
+# ------------------------------------------------------
+# ここで魔理沙の体から緋色の霧を出せると良いなぁ
+Action:marisa,170
+Sleep:60
+
+Face:marisa,決
+とにかく、私はお前には用がないぜ！\
+
+#戦闘開始処理
+PlayBgm:data/bgm/st00.ogg
+Action:sakuya,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:marisa,嬉
+さ、今日も図書館で本でも借りていくぜ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:marisa,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:marisa,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+#天候霧雨に変化
+Action:sakuya,103
+Sleep:60;
+
+Face:sakuya,余
+私も貴方には用はないわ\
+
+Face:marisa,負
+じゃあ戦うなよ\
+
+Face:sakuya,汗
+貴方が先に手を出してきたんでしょ？\
+
+Face:sakuya,普
+雨も止んできたし、
+ちょっと家を留守にしようかしら\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:15,120
+
+#やられキャラ画面退場
+Action:marisa,201
+
+#自キャラ基準点へ移動
+Action:sakuya,150
+
+#カメラ中央あわせ
+Action:sakuya,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,797 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\battle\battle_on_move.nut: 
+sourcename: ""
+name: "main"
+nliterals: 1
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 2
+ndefaultparams: 0
+ninstructions: 6
+nfunctions: 1
+Literals: [
+    0: "OnMove"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 5
+    1: name: "this", pos: 0, start_op: 0, end_op: 5
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 193, op: 4
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "OnMove")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 193)
+    5:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "OnMove"
+        nliterals: 27
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 24
+        nlineinfos: 98
+        ndefaultparams: 0
+        ninstructions: 577
+        nfunctions: 0
+        Literals: [
+            0: "slow_count"
+            1: "time_stop_count"
+            2: "team"
+            3: "current"
+            4: "hitStopTime"
+            5: "damageStopTime"
+            6: "vf"
+            7: "x"
+            8: "abs"
+            9: "vfBaria"
+            10: "SetSpeed_XY"
+            11: "vy"
+            12: "vx"
+            13: "IsWall"
+            14: "corner_right_actor"
+            15: "corner_left_actor"
+            16: "freeMap"
+            17: "y"
+            18: "corner_bottom"
+            19: "corner_left"
+            20: "corner_right"
+            21: "left"
+            22: "right"
+            23: "top"
+            24: "bottom"
+            25: "collisionFree"
+            26: "Warp"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 7, start_op: 27, end_op: 133
+            1: name: "b", pos: 5, start_op: 23, end_op: 134
+            2: name: "val", pos: 4, start_op: 22, end_op: 134
+            3: name: "t", pos: 16, start_op: 465, end_op: 470
+            4: name: "t", pos: 16, start_op: 485, end_op: 490
+            5: name: "dx", pos: 15, start_op: 446, end_op: 490
+            6: name: "t", pos: 16, start_op: 515, end_op: 520
+            7: name: "t", pos: 16, start_op: 535, end_op: 540
+            8: name: "dx", pos: 15, start_op: 496, end_op: 540
+            9: name: "x1", pos: 14, start_op: 376, end_op: 574
+            10: name: "x0", pos: 13, start_op: 372, end_op: 574
+            11: name: "bottom0", pos: 12, start_op: 348, end_op: 574
+            12: name: "top1", pos: 11, start_op: 344, end_op: 574
+            13: name: "bottom1", pos: 10, start_op: 337, end_op: 574
+            14: name: "top0", pos: 9, start_op: 333, end_op: 574
+            15: name: "right0", pos: 8, start_op: 326, end_op: 574
+            16: name: "left1", pos: 7, start_op: 322, end_op: 574
+            17: name: "right1", pos: 6, start_op: 315, end_op: 574
+            18: name: "left0", pos: 5, start_op: 311, end_op: 574
+            19: name: "corner1", pos: 4, start_op: 143, end_op: 574
+            20: name: "corner0", pos: 3, start_op: 139, end_op: 574
+            21: name: "p1", pos: 2, start_op: 20, end_op: 574
+            22: name: "p0", pos: 1, start_op: 15, end_op: 574
+            23: name: "this", pos: 0, start_op: 0, end_op: 576
+          ]
+        Line Informations: [
+            0: line: 4, op: 1
+            1: line: 5, op: 6
+            2: line: 7, op: 10
+            3: line: 8, op: 15
+            4: line: 11, op: 20
+            5: line: 13, op: 26
+            6: line: 14, op: 27
+            7: line: 16, op: 40
+            8: line: 17, op: 46
+            9: line: 18, op: 50
+            10: line: 19, op: 57
+            11: line: 21, op: 71
+            12: line: 25, op: 76
+            13: line: 26, op: 80
+            14: line: 27, op: 87
+            15: line: 29, op: 101
+            16: line: 31, op: 106
+            17: line: 34, op: 112
+            18: line: 36, op: 114
+            19: line: 41, op: 123
+            20: line: 48, op: 128
+            21: line: 54, op: 135
+            22: line: 55, op: 139
+            23: line: 57, op: 143
+            24: line: 58, op: 156
+            25: line: 60, op: 168
+            26: line: 61, op: 181
+            27: line: 64, op: 193
+            28: line: 66, op: 198
+            29: line: 68, op: 204
+            30: line: 71, op: 209
+            31: line: 73, op: 216
+            32: line: 74, op: 221
+            33: line: 76, op: 230
+            34: line: 78, op: 237
+            35: line: 79, op: 242
+            36: line: 82, op: 250
+            37: line: 84, op: 255
+            38: line: 86, op: 261
+            39: line: 89, op: 266
+            40: line: 91, op: 273
+            41: line: 92, op: 278
+            42: line: 94, op: 287
+            43: line: 96, op: 294
+            44: line: 97, op: 299
+            45: line: 103, op: 307
+            46: line: 104, op: 311
+            47: line: 105, op: 315
+            48: line: 107, op: 318
+            49: line: 108, op: 322
+            50: line: 109, op: 326
+            51: line: 111, op: 329
+            52: line: 112, op: 333
+            53: line: 113, op: 337
+            54: line: 115, op: 340
+            55: line: 116, op: 344
+            56: line: 117, op: 348
+            57: line: 120, op: 351
+            58: line: 123, op: 368
+            59: line: 124, op: 372
+            60: line: 127, op: 376
+            61: line: 129, op: 386
+            62: line: 132, op: 392
+            63: line: 134, op: 402
+            64: line: 137, op: 408
+            65: line: 139, op: 418
+            66: line: 142, op: 424
+            67: line: 144, op: 434
+            68: line: 147, op: 440
+            69: line: 149, op: 443
+            70: line: 150, op: 446
+            71: line: 151, op: 449
+            72: line: 152, op: 452
+            73: line: 154, op: 460
+            74: line: 155, op: 465
+            75: line: 156, op: 468
+            76: line: 158, op: 472
+            77: line: 160, op: 480
+            78: line: 161, op: 485
+            79: line: 162, op: 488
+            80: line: 168, op: 493
+            81: line: 169, op: 496
+            82: line: 170, op: 499
+            83: line: 171, op: 502
+            84: line: 173, op: 510
+            85: line: 174, op: 515
+            86: line: 175, op: 518
+            87: line: 177, op: 522
+            88: line: 179, op: 530
+            89: line: 180, op: 535
+            90: line: 181, op: 538
+            91: line: 185, op: 541
+            92: line: 186, op: 550
+            93: line: 187, op: 554
+            94: line: 189, op: 558
+            95: line: 190, op: 567
+            96: line: 191, op: 571
+            97: line: 193, op: 575
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 4)
+            1:  getk(s1, "slow_count", s0)
+            2:  loadint(s2, 1)
+            3:  bitw(s1, s2, s1, BW_AND)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 5)
+            7:  getk(s1, "time_stop_count", s0)
+            8:  jz(s1, 1)
+            9:  return(255, 0)
+            10:  line(-, 7)
+            11:  getk(s1, "team", s0)
+            12:  loadint(s2, 0)
+            13:  get(s1, s1, s2)
+            14:  getk(s1, "current", s1)
+            15:  line(-, 8)
+            16:  getk(s2, "team", s0)
+            17:  loadint(s3, 1)
+            18:  get(s2, s2, s3)
+            19:  getk(s2, "current", s2)
+            20:  line(-, 11)
+            21:  getk(s3, "team", s0)
+            22:  loadnulls(s4, 3)
+            23:  foreach(s3, 111, s4)
+            24:  postforeach(s3, 111)
+            25:  line(-, 13)
+            26:  getk(s7, "current", s5)
+            27:  line(-, 14)
+            28:  and(s8, 9, s7)
+            29:  move(s8, s7)
+            30:  getk(s9, "team", s0)
+            31:  loadint(s10, 1)
+            32:  sub(s10, s4, s10)
+            33:  get(s9, s9, s10)
+            34:  getk(s9, "time_stop_count", s9)
+            35:  loadint(s10, 0)
+            36:  eq(s9, 10, s9, 0)
+            37:  move(s8, s9)
+            38:  jz(s8, 88)
+            39:  line(-, 16)
+            40:  getk(s8, "hitStopTime", s7)
+            41:  getk(s9, "damageStopTime", s7)
+            42:  add(s8, s9, s8)
+            43:  loadint(s9, 0)
+            44:  eq(s8, 9, s8, 0)
+            45:  jz(s8, 65)
+            46:  line(-, 17)
+            47:  getk(s8, "vf", s7)
+            48:  getk(s8, "x", s8)
+            49:  jz(s8, 26)
+            50:  line(-, 18)
+            51:  prepcallk(s8, "abs", s0, s9)
+            52:  getk(s10, "vf", s7)
+            53:  getk(s10, "x", s10)
+            54:  call(8, s8, s9, 2)
+            55:  loadfloat(s9, 1)
+            56:  jcmp(s9, 14, s8, CMP_G)
+            57:  line(-, 19)
+            58:  getk(s8, "vf", s7)
+            59:  dload(s9, "x", s10, "vf")
+            60:  get(s10, s7, s10)
+            61:  getk(s10, "x", s10)
+            62:  loadfloat(s11, 0)
+            63:  jcmp(s11, 2, s10, CMP_G)
+            64:  loadfloat(s10, 1)
+            65:  jmp(-, 3)
+            66:  loadfloat(s11, 1)
+            67:  neg(s11, s11)
+            68:  move(s10, s11)
+            69:  comparith(s8, 524298, s9, 45)
+            70:  jmp(-, 5)
+            71:  line(-, 21)
+            72:  getk(s8, "vf", s7)
+            73:  load(s9, "x")
+            74:  loadfloat(s10, 0)
+            75:  set(s255, s8, s9, s10)
+            76:  line(-, 25)
+            77:  getk(s8, "vfBaria", s7)
+            78:  getk(s8, "x", s8)
+            79:  jz(s8, 26)
+            80:  line(-, 26)
+            81:  prepcallk(s8, "abs", s0, s9)
+            82:  getk(s10, "vfBaria", s7)
+            83:  getk(s10, "x", s10)
+            84:  call(8, s8, s9, 2)
+            85:  loadfloat(s9, 1)
+            86:  jcmp(s9, 14, s8, CMP_G)
+            87:  line(-, 27)
+            88:  getk(s8, "vfBaria", s7)
+            89:  dload(s9, "x", s10, "vfBaria")
+            90:  get(s10, s7, s10)
+            91:  getk(s10, "x", s10)
+            92:  loadfloat(s11, 0)
+            93:  jcmp(s11, 2, s10, CMP_G)
+            94:  loadfloat(s10, 1)
+            95:  jmp(-, 3)
+            96:  loadfloat(s11, 1)
+            97:  neg(s11, s11)
+            98:  move(s10, s11)
+            99:  comparith(s8, 524298, s9, 45)
+            100:  jmp(-, 5)
+            101:  line(-, 29)
+            102:  getk(s8, "vfBaria", s7)
+            103:  load(s9, "x")
+            104:  loadfloat(s10, 0)
+            105:  set(s255, s8, s9, s10)
+            106:  line(-, 31)
+            107:  prepcallk(s8, "SetSpeed_XY", s7, s9)
+            108:  loadnulls(s10, 2)
+            109:  call(255, s8, s9, 3)
+            110:  jmp(-, 15)
+            111:  line(-, 34)
+            112:  getk(s8, "hitStopTime", s7)
+            113:  jz(s8, 8)
+            114:  line(-, 36)
+            115:  load(s8, "vy")
+            116:  loadint(s9, 0)
+            117:  set(s255, s7, s8, s9)
+            118:  load(s8, "vx")
+            119:  loadint(s9, 0)
+            120:  set(s255, s7, s8, s9)
+            121:  jmp(-, 4)
+            122:  line(-, 41)
+            123:  prepcallk(s8, "SetSpeed_XY", s7, s9)
+            124:  loadnulls(s10, 2)
+            125:  call(255, s8, s9, 3)
+            126:  jmp(-, 7)
+            127:  line(-, 48)
+            128:  load(s8, "vy")
+            129:  loadint(s9, 0)
+            130:  set(s255, s7, s8, s9)
+            131:  load(s8, "vx")
+            132:  loadint(s9, 0)
+            133:  set(s255, s7, s8, s9)
+            134:  jmp(-, -112)
+            135:  line(-, 54)
+            136:  prepcallk(s3, "IsWall", s1, s4)
+            137:  getk(s5, "vx", s1)
+            138:  call(3, s3, s4, 2)
+            139:  line(-, 55)
+            140:  prepcallk(s4, "IsWall", s2, s5)
+            141:  getk(s6, "vx", s2)
+            142:  call(4, s4, s5, 2)
+            143:  line(-, 57)
+            144:  getk(s5, "corner_right_actor", s0)
+            145:  loadint(s6, 0)
+            146:  eq(s5, 6, s5, 0)
+            147:  and(s5, 3, s5)
+            148:  loadint(s6, 1)
+            149:  ne(s6, 6, s3, 0)
+            150:  move(s5, s6)
+            151:  jz(s5, 4)
+            152:  load(s5, "corner_right_actor")
+            153:  loadint(s6, -1)
+            154:  set(s255, s0, s5, s6)
+            155:  jmp(-, 12)
+            156:  line(-, 58)
+            157:  getk(s5, "corner_right_actor", s0)
+            158:  loadint(s6, 1)
+            159:  eq(s5, 6, s5, 0)
+            160:  and(s5, 3, s5)
+            161:  loadint(s6, 1)
+            162:  ne(s6, 6, s4, 0)
+            163:  move(s5, s6)
+            164:  jz(s5, 3)
+            165:  load(s5, "corner_right_actor")
+            166:  loadint(s6, -1)
+            167:  set(s255, s0, s5, s6)
+            168:  line(-, 60)
+            169:  getk(s5, "corner_left_actor", s0)
+            170:  loadint(s6, 0)
+            171:  eq(s5, 6, s5, 0)
+            172:  and(s5, 3, s5)
+            173:  loadint(s6, -1)
+            174:  ne(s6, 6, s3, 0)
+            175:  move(s5, s6)
+            176:  jz(s5, 4)
+            177:  load(s5, "corner_left_actor")
+            178:  loadint(s6, -1)
+            179:  set(s255, s0, s5, s6)
+            180:  jmp(-, 12)
+            181:  line(-, 61)
+            182:  getk(s5, "corner_left_actor", s0)
+            183:  loadint(s6, 1)
+            184:  eq(s5, 6, s5, 0)
+            185:  and(s5, 3, s5)
+            186:  loadint(s6, -1)
+            187:  ne(s6, 6, s4, 0)
+            188:  move(s5, s6)
+            189:  jz(s5, 3)
+            190:  load(s5, "corner_left_actor")
+            191:  loadint(s6, -1)
+            192:  set(s255, s0, s5, s6)
+            193:  line(-, 64)
+            194:  getk(s5, "freeMap", s1)
+            195:  not(s5, s5)
+            196:  jz(s5, 53)
+            197:  line(-, 66)
+            198:  getk(s5, "y", s1)
+            199:  getk(s6, "vy", s1)
+            200:  add(s5, s6, s5)
+            201:  getk(s6, "corner_bottom", s0)
+            202:  jcmp(s6, 6, s5, CMP_GE)
+            203:  line(-, 68)
+            204:  dload(s5, "vy", s6, "corner_bottom")
+            205:  get(s6, s0, s6)
+            206:  getk(s7, "y", s1)
+            207:  sub(s6, s7, s6)
+            208:  set(s255, s1, s5, s6)
+            209:  line(-, 71)
+            210:  getk(s5, "x", s1)
+            211:  getk(s6, "vx", s1)
+            212:  add(s5, s6, s5)
+            213:  getk(s6, "corner_left", s0)
+            214:  jcmp(s6, 15, s5, CMP_LE)
+            215:  line(-, 73)
+            216:  dload(s5, "vx", s6, "corner_left")
+            217:  get(s6, s0, s6)
+            218:  getk(s7, "x", s1)
+            219:  sub(s6, s7, s6)
+            220:  set(s255, s1, s5, s6)
+            221:  line(-, 74)
+            222:  getk(s5, "corner_left_actor", s0)
+            223:  loadint(s6, -1)
+            224:  eq(s5, 6, s5, 0)
+            225:  jz(s5, 3)
+            226:  load(s5, "corner_left_actor")
+            227:  loadint(s6, 0)
+            228:  set(s255, s0, s5, s6)
+            229:  jmp(-, 20)
+            230:  line(-, 76)
+            231:  getk(s5, "x", s1)
+            232:  getk(s6, "vx", s1)
+            233:  add(s5, s6, s5)
+            234:  getk(s6, "corner_right", s0)
+            235:  jcmp(s6, 14, s5, CMP_GE)
+            236:  line(-, 78)
+            237:  dload(s5, "vx", s6, "corner_right")
+            238:  get(s6, s0, s6)
+            239:  getk(s7, "x", s1)
+            240:  sub(s6, s7, s6)
+            241:  set(s255, s1, s5, s6)
+            242:  line(-, 79)
+            243:  getk(s5, "corner_right_actor", s0)
+            244:  loadint(s6, -1)
+            245:  eq(s5, 6, s5, 0)
+            246:  jz(s5, 3)
+            247:  load(s5, "corner_right_actor")
+            248:  loadint(s6, 0)
+            249:  set(s255, s0, s5, s6)
+            250:  line(-, 82)
+            251:  getk(s5, "freeMap", s2)
+            252:  not(s5, s5)
+            253:  jz(s5, 53)
+            254:  line(-, 84)
+            255:  getk(s5, "y", s2)
+            256:  getk(s6, "vy", s2)
+            257:  add(s5, s6, s5)
+            258:  getk(s6, "corner_bottom", s0)
+            259:  jcmp(s6, 6, s5, CMP_GE)
+            260:  line(-, 86)
+            261:  dload(s5, "vy", s6, "corner_bottom")
+            262:  get(s6, s0, s6)
+            263:  getk(s7, "y", s2)
+            264:  sub(s6, s7, s6)
+            265:  set(s255, s2, s5, s6)
+            266:  line(-, 89)
+            267:  getk(s5, "x", s2)
+            268:  getk(s6, "vx", s2)
+            269:  add(s5, s6, s5)
+            270:  getk(s6, "corner_right", s0)
+            271:  jcmp(s6, 15, s5, CMP_GE)
+            272:  line(-, 91)
+            273:  dload(s5, "vx", s6, "corner_right")
+            274:  get(s6, s0, s6)
+            275:  getk(s7, "x", s2)
+            276:  sub(s6, s7, s6)
+            277:  set(s255, s2, s5, s6)
+            278:  line(-, 92)
+            279:  getk(s5, "corner_right_actor", s0)
+            280:  loadint(s6, -1)
+            281:  eq(s5, 6, s5, 0)
+            282:  jz(s5, 3)
+            283:  load(s5, "corner_right_actor")
+            284:  loadint(s6, 1)
+            285:  set(s255, s0, s5, s6)
+            286:  jmp(-, 20)
+            287:  line(-, 94)
+            288:  getk(s5, "x", s2)
+            289:  getk(s6, "vx", s2)
+            290:  add(s5, s6, s5)
+            291:  getk(s6, "corner_left", s0)
+            292:  jcmp(s6, 14, s5, CMP_LE)
+            293:  line(-, 96)
+            294:  dload(s5, "vx", s6, "corner_left")
+            295:  get(s6, s0, s6)
+            296:  getk(s7, "x", s2)
+            297:  sub(s6, s7, s6)
+            298:  set(s255, s2, s5, s6)
+            299:  line(-, 97)
+            300:  getk(s5, "corner_left_actor", s0)
+            301:  loadint(s6, -1)
+            302:  eq(s5, 6, s5, 0)
+            303:  jz(s5, 3)
+            304:  load(s5, "corner_left_actor")
+            305:  loadint(s6, 1)
+            306:  set(s255, s0, s5, s6)
+            307:  line(-, 103)
+            308:  getk(s5, "left", s1)
+            309:  getk(s6, "vx", s1)
+            310:  add(s5, s6, s5)
+            311:  line(-, 104)
+            312:  getk(s6, "right", s2)
+            313:  getk(s7, "vx", s2)
+            314:  add(s6, s7, s6)
+            315:  line(-, 105)
+            316:  jcmp(s6, 1, s5, CMP_G)
+            317:  return(255, 0)
+            318:  line(-, 107)
+            319:  getk(s7, "left", s2)
+            320:  getk(s8, "vx", s2)
+            321:  add(s7, s8, s7)
+            322:  line(-, 108)
+            323:  getk(s8, "right", s1)
+            324:  getk(s9, "vx", s1)
+            325:  add(s8, s9, s8)
+            326:  line(-, 109)
+            327:  jcmp(s7, 1, s8, CMP_L)
+            328:  return(255, 0)
+            329:  line(-, 111)
+            330:  getk(s9, "top", s1)
+            331:  getk(s10, "vy", s1)
+            332:  add(s9, s10, s9)
+            333:  line(-, 112)
+            334:  getk(s10, "bottom", s2)
+            335:  getk(s11, "vy", s2)
+            336:  add(s10, s11, s10)
+            337:  line(-, 113)
+            338:  jcmp(s10, 1, s9, CMP_G)
+            339:  return(255, 0)
+            340:  line(-, 115)
+            341:  getk(s11, "top", s2)
+            342:  getk(s12, "vy", s2)
+            343:  add(s11, s12, s11)
+            344:  line(-, 116)
+            345:  getk(s12, "bottom", s1)
+            346:  getk(s13, "vy", s1)
+            347:  add(s12, s13, s12)
+            348:  line(-, 117)
+            349:  jcmp(s11, 1, s12, CMP_L)
+            350:  return(255, 0)
+            351:  line(-, 120)
+            352:  getk(s13, "left", s1)
+            353:  getk(s14, "right", s1)
+            354:  eq(s13, 14, s13, 0)
+            355:  or(s13, 10, s13)
+            356:  getk(s14, "left", s2)
+            357:  getk(s15, "right", s2)
+            358:  eq(s14, 15, s14, 0)
+            359:  or(s14, 5, s14)
+            360:  getk(s15, "collisionFree", s1)
+            361:  or(s15, 2, s15)
+            362:  getk(s16, "collisionFree", s2)
+            363:  move(s15, s16)
+            364:  move(s14, s15)
+            365:  move(s13, s14)
+            366:  jz(s13, 1)
+            367:  return(255, 0)
+            368:  line(-, 123)
+            369:  getk(s13, "x", s1)
+            370:  getk(s14, "vx", s1)
+            371:  add(s13, s14, s13)
+            372:  line(-, 124)
+            373:  getk(s14, "x", s2)
+            374:  getk(s15, "vx", s2)
+            375:  add(s14, s15, s14)
+            376:  line(-, 127)
+            377:  loadint(s15, 1)
+            378:  eq(s15, 15, s3, 0)
+            379:  and(s15, 4, s15)
+            380:  getk(s16, "corner_right_actor", s0)
+            381:  loadint(s17, 0)
+            382:  eq(s16, 17, s16, 0)
+            383:  move(s15, s16)
+            384:  jz(s15, 7)
+            385:  line(-, 129)
+            386:  dload(s15, "vx", s16, "left")
+            387:  get(s16, s1, s16)
+            388:  getk(s17, "right", s2)
+            389:  sub(s16, s17, s16)
+            390:  set(s255, s2, s15, s16)
+            391:  jmp(-, 149)
+            392:  line(-, 132)
+            393:  loadint(s15, 1)
+            394:  eq(s15, 15, s4, 0)
+            395:  and(s15, 4, s15)
+            396:  getk(s16, "corner_right_actor", s0)
+            397:  loadint(s17, 1)
+            398:  eq(s16, 17, s16, 0)
+            399:  move(s15, s16)
+            400:  jz(s15, 7)
+            401:  line(-, 134)
+            402:  dload(s15, "vx", s16, "left")
+            403:  get(s16, s2, s16)
+            404:  getk(s17, "right", s1)
+            405:  sub(s16, s17, s16)
+            406:  set(s255, s1, s15, s16)
+            407:  jmp(-, 133)
+            408:  line(-, 137)
+            409:  loadint(s15, -1)
+            410:  eq(s15, 15, s4, 0)
+            411:  and(s15, 4, s15)
+            412:  getk(s16, "corner_left_actor", s0)
+            413:  loadint(s17, 1)
+            414:  eq(s16, 17, s16, 0)
+            415:  move(s15, s16)
+            416:  jz(s15, 7)
+            417:  line(-, 139)
+            418:  dload(s15, "vx", s16, "right")
+            419:  get(s16, s2, s16)
+            420:  getk(s17, "left", s1)
+            421:  sub(s16, s17, s16)
+            422:  set(s255, s1, s15, s16)
+            423:  jmp(-, 117)
+            424:  line(-, 142)
+            425:  loadint(s15, -1)
+            426:  eq(s15, 15, s3, 0)
+            427:  and(s15, 4, s15)
+            428:  getk(s16, "corner_left_actor", s0)
+            429:  loadint(s17, 0)
+            430:  eq(s16, 17, s16, 0)
+            431:  move(s15, s16)
+            432:  jz(s15, 7)
+            433:  line(-, 144)
+            434:  dload(s15, "vx", s16, "right")
+            435:  get(s16, s1, s16)
+            436:  getk(s17, "left", s2)
+            437:  sub(s16, s17, s16)
+            438:  set(s255, s2, s15, s16)
+            439:  jmp(-, 101)
+            440:  line(-, 147)
+            441:  jcmp(s14, 50, s13, CMP_G)
+            442:  line(-, 149)
+            443:  sub(s15, s5, s6)
+            444:  loadfloat(s16, 2)
+            445:  div(s15, s16, s15)
+            446:  line(-, 150)
+            447:  load(s16, "vx")
+            448:  comparith(s16, 65551, s16, 43)
+            449:  line(-, 151)
+            450:  load(s16, "vx")
+            451:  comparith(s16, 131087, s16, 45)
+            452:  line(-, 152)
+            453:  prepcallk(s16, "IsWall", s1, s17)
+            454:  getk(s18, "vx", s1)
+            455:  call(16, s16, s17, 2)
+            456:  loadint(s17, 1)
+            457:  eq(s16, 17, s16, 0)
+            458:  jz(s16, 13)
+            459:  line(-, 154)
+            460:  getk(s16, "x", s1)
+            461:  getk(s17, "vx", s1)
+            462:  add(s16, s17, s16)
+            463:  getk(s17, "corner_right", s0)
+            464:  sub(s16, s17, s16)
+            465:  line(-, 155)
+            466:  load(s17, "vx")
+            467:  comparith(s17, 65552, s17, 45)
+            468:  line(-, 156)
+            469:  load(s17, "vx")
+            470:  comparith(s17, 131088, s17, 45)
+            471:  jmp(-, 19)
+            472:  line(-, 158)
+            473:  prepcallk(s16, "IsWall", s2, s17)
+            474:  getk(s18, "vx", s2)
+            475:  call(16, s16, s17, 2)
+            476:  loadint(s17, -1)
+            477:  eq(s16, 17, s16, 0)
+            478:  jz(s16, 12)
+            479:  line(-, 160)
+            480:  getk(s16, "x", s2)
+            481:  getk(s17, "vx", s2)
+            482:  add(s16, s17, s16)
+            483:  getk(s17, "corner_left", s0)
+            484:  sub(s16, s17, s16)
+            485:  line(-, 161)
+            486:  load(s17, "vx")
+            487:  comparith(s17, 65552, s17, 45)
+            488:  line(-, 162)
+            489:  load(s17, "vx")
+            490:  comparith(s17, 131088, s17, 45)
+            491:  jmp(-, 49)
+            492:  line(-, 168)
+            493:  sub(s15, s7, s8)
+            494:  loadfloat(s16, 2)
+            495:  div(s15, s16, s15)
+            496:  line(-, 169)
+            497:  load(s16, "vx")
+            498:  comparith(s16, 65551, s16, 45)
+            499:  line(-, 170)
+            500:  load(s16, "vx")
+            501:  comparith(s16, 131087, s16, 43)
+            502:  line(-, 171)
+            503:  prepcallk(s16, "IsWall", s2, s17)
+            504:  getk(s18, "vx", s2)
+            505:  call(16, s16, s17, 2)
+            506:  loadint(s17, 1)
+            507:  eq(s16, 17, s16, 0)
+            508:  jz(s16, 13)
+            509:  line(-, 173)
+            510:  getk(s16, "x", s2)
+            511:  getk(s17, "vx", s2)
+            512:  add(s16, s17, s16)
+            513:  getk(s17, "corner_right", s0)
+            514:  sub(s16, s17, s16)
+            515:  line(-, 174)
+            516:  load(s17, "vx")
+            517:  comparith(s17, 65552, s17, 45)
+            518:  line(-, 175)
+            519:  load(s17, "vx")
+            520:  comparith(s17, 131088, s17, 45)
+            521:  jmp(-, 19)
+            522:  line(-, 177)
+            523:  prepcallk(s16, "IsWall", s1, s17)
+            524:  getk(s18, "vx", s1)
+            525:  call(16, s16, s17, 2)
+            526:  loadint(s17, -1)
+            527:  eq(s16, 17, s16, 0)
+            528:  jz(s16, 12)
+            529:  line(-, 179)
+            530:  getk(s16, "x", s1)
+            531:  getk(s17, "vx", s1)
+            532:  add(s16, s17, s16)
+            533:  getk(s17, "corner_left", s0)
+            534:  sub(s16, s17, s16)
+            535:  line(-, 180)
+            536:  load(s17, "vx")
+            537:  comparith(s17, 65552, s17, 45)
+            538:  line(-, 181)
+            539:  load(s17, "vx")
+            540:  comparith(s17, 131088, s17, 45)
+            541:  line(-, 185)
+            542:  prepcallk(s15, "Warp", s1, s16)
+            543:  getk(s17, "x", s1)
+            544:  getk(s18, "vx", s1)
+            545:  add(s17, s18, s17)
+            546:  getk(s18, "y", s1)
+            547:  getk(s19, "vy", s1)
+            548:  add(s18, s19, s18)
+            549:  call(255, s15, s16, 3)
+            550:  line(-, 186)
+            551:  load(s15, "vx")
+            552:  loadint(s16, 0)
+            553:  set(s255, s1, s15, s16)
+            554:  line(-, 187)
+            555:  load(s15, "vy")
+            556:  loadint(s16, 0)
+            557:  set(s255, s1, s15, s16)
+            558:  line(-, 189)
+            559:  prepcallk(s15, "Warp", s2, s16)
+            560:  getk(s17, "x", s2)
+            561:  getk(s18, "vx", s2)
+            562:  add(s17, s18, s17)
+            563:  getk(s18, "y", s2)
+            564:  getk(s19, "vy", s2)
+            565:  add(s18, s19, s18)
+            566:  call(255, s15, s16, 3)
+            567:  line(-, 190)
+            568:  load(s15, "vx")
+            569:  loadint(s16, 0)
+            570:  set(s255, s2, s15, s16)
+            571:  line(-, 191)
+            572:  load(s15, "vy")
+            573:  loadint(s16, 0)
+            574:  set(s255, s2, s15, s16)
+            575:  line(-, 193)
+            576:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 20
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

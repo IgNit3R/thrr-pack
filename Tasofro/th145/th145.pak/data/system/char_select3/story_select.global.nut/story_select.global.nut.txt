@@ -1,0 +1,4649 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\char_select3\story_select.global.nut: 
+sourcename: ""
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 10
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 9
+Literals: [
+    0: "Init_Story"
+    1: "UpdateClearTimeText"
+    2: "Update_StoryCommon"
+    3: "Update_StorySubMenu"
+    4: "Update_StorySelect"
+    5: "Update_StoryEquip"
+    6: "Render_Story"
+    7: "Story_StartBattle"
+    8: "Story_StartBattleStartBattle2"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 200, op: 4
+    2: line: 225, op: 8
+    3: line: 317, op: 12
+    4: line: 354, op: 16
+    5: line: 424, op: 20
+    6: line: 472, op: 24
+    7: line: 668, op: 28
+    8: line: 683, op: 32
+    9: line: 735, op: 36
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "Init_Story")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 200)
+    5:  load(s2, "UpdateClearTimeText")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 225)
+    9:  load(s2, "Update_StoryCommon")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 317)
+    13:  load(s2, "Update_StorySubMenu")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 354)
+    17:  load(s2, "Update_StorySelect")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 424)
+    21:  load(s2, "Update_StoryEquip")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 472)
+    25:  load(s2, "Render_Story")
+    26:  closure(s3, 6)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 668)
+    29:  load(s2, "Story_StartBattle")
+    30:  closure(s3, 7)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 683)
+    33:  load(s2, "Story_StartBattleStartBattle2")
+    34:  closure(s3, 8)
+    35:  newslot(s2, s0, s2, s3)
+    36:  line(-, 735)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Init_Story"
+        nliterals: 96
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 8
+        nlineinfos: 109
+        ndefaultparams: 0
+        ninstructions: 724
+        nfunctions: 1
+        Literals: [
+            0: "func_update"
+            1: "Update_StorySelect"
+            2: "func_render"
+            3: "Render_Story"
+            4: "func_update_1p"
+            5: "func_update_2p"
+            6: "story_input"
+            7: "skill_scroll_y"
+            8: "skill_scroll_ty"
+            9: "sel_story"
+            10: "CreateSelector"
+            11: "loop"
+            12: "sel_equip"
+            13: "cursor"
+            14: "cursor_prev"
+            15: "equip_cursor_y"
+            16: "story_scroll_y"
+            17: "story_scroll_ty"
+            18: "char_id_trans"
+            19: "story_id_trans"
+            20: "label_index"
+            21: "skill_graph_width"
+            22: "summary_y"
+            23: "summary_ty"
+            24: "cursor_y"
+            25: "menu_mode"
+            26: "disp_char"
+            27: "save_data"
+            28: "story_clear"
+            29: "Update_StoryCommon"
+            30: "pl"
+            31: "visible"
+            32: "act"
+            33: "fader"
+            34: "FadeOut"
+            35: "bindenv"
+            36: "append"
+            37: "itemCount"
+            38: "len"
+            39: "libact"
+            40: "CSV"
+            41: "summary_text"
+            42: "Load"
+            43: "data/system/char_select3/story/summary.txt"
+            44: "GetRowCount"
+            45: "Get"
+            46: "StorySummary"
+            47: "text"
+            48: "layout"
+            49: "SetPrintPattern"
+            50: "font_pattern"
+            51: "stone_text_white_summary"
+            52: "SetText"
+            53: "center_tougou"
+            54: "AssociateResource"
+            55: "resource"
+            56: "center_black"
+            57: "center_frame"
+            58: "offset"
+            59: "center1"
+            60: "center2"
+            61: "menu_mode_1p"
+            62: "cs_1p"
+            63: "equip2p"
+            64: "arrow_b"
+            65: "arrow_lr"
+            66: "arrow_u"
+            67: "name_1p"
+            68: "Clear"
+            69: "name_2p"
+            70: "subject_1p"
+            71: "subject_2p"
+            72: "equip1p"
+            73: "label_clear_time"
+            74: "black_edge_2px"
+            75: "load_data"
+            76: "game_mode"
+            77: "cs_2p"
+            78: "cs_1p_r"
+            79: "wallpaper_02"
+            80: "RT_explain_1p"
+            81: "x"
+            82: "RT_explain_2p"
+            83: "GuideText_2P"
+            84: "ox"
+            85: "y"
+            86: "oy"
+            87: "bg_gradation_1p"
+            88: "alpha"
+            89: "bg_gradation_2p"
+            90: "scale_x"
+            91: "scale_y"
+            92: "colorR"
+            93: "colorG"
+            94: "colorB"
+            95: "UpdateClearTimeText"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 2, start_op: 421, end_op: 433
+            1: name: "i", pos: 3, start_op: 497, end_op: 509
+            2: name: "layer_layout", pos: 7, start_op: 706, end_op: 717
+            3: name: "layer_name", pos: 5, start_op: 700, end_op: 718
+            4: name: "@INDEX@", pos: 4, start_op: 699, end_op: 718
+            5: name: "csv", pos: 2, start_op: 486, end_op: 721
+            6: name: "check_result", pos: 1, start_op: 419, end_op: 721
+            7: name: "this", pos: 0, start_op: 0, end_op: 723
+          ]
+        Line Informations: [
+            0: line: 6, op: 1
+            1: line: 7, op: 4
+            2: line: 8, op: 8
+            3: line: 9, op: 12
+            4: line: 11, op: 16
+            5: line: 13, op: 20
+            6: line: 14, op: 24
+            7: line: 16, op: 28
+            8: line: 17, op: 34
+            9: line: 19, op: 39
+            10: line: 20, op: 45
+            11: line: 21, op: 50
+            12: line: 23, op: 58
+            13: line: 25, op: 62
+            14: line: 26, op: 66
+            15: line: 28, op: 70
+            16: line: 29, op: 75
+            17: line: 30, op: 80
+            18: line: 32, op: 85
+            19: line: 34, op: 107
+            20: line: 35, op: 111
+            21: line: 37, op: 115
+            22: line: 38, op: 119
+            23: line: 39, op: 123
+            24: line: 42, op: 127
+            25: line: 45, op: 137
+            26: line: 46, op: 140
+            27: line: 48, op: 145
+            28: line: 59, op: 158
+            29: line: 62, op: 160
+            30: line: 64, op: 169
+            31: line: 65, op: 175
+            32: line: 66, op: 182
+            33: line: 69, op: 189
+            34: line: 71, op: 208
+            35: line: 72, op: 219
+            36: line: 73, op: 231
+            37: line: 76, op: 243
+            38: line: 78, op: 262
+            39: line: 79, op: 266
+            40: line: 80, op: 271
+            41: line: 83, op: 276
+            42: line: 85, op: 295
+            43: line: 86, op: 299
+            44: line: 87, op: 304
+            45: line: 90, op: 309
+            46: line: 92, op: 328
+            47: line: 93, op: 332
+            48: line: 94, op: 337
+            49: line: 97, op: 342
+            50: line: 99, op: 361
+            51: line: 100, op: 365
+            52: line: 101, op: 370
+            53: line: 104, op: 375
+            54: line: 106, op: 403
+            55: line: 107, op: 407
+            56: line: 108, op: 412
+            57: line: 111, op: 417
+            58: line: 112, op: 419
+            59: line: 114, op: 424
+            60: line: 117, op: 434
+            61: line: 119, op: 437
+            62: line: 120, op: 441
+            63: line: 121, op: 446
+            64: line: 124, op: 451
+            65: line: 126, op: 460
+            66: line: 127, op: 464
+            67: line: 128, op: 469
+            68: line: 131, op: 474
+            69: line: 134, op: 481
+            70: line: 135, op: 486
+            71: line: 136, op: 490
+            72: line: 138, op: 496
+            73: line: 140, op: 501
+            74: line: 145, op: 510
+            75: line: 146, op: 518
+            76: line: 149, op: 527
+            77: line: 150, op: 533
+            78: line: 152, op: 541
+            79: line: 154, op: 548
+            80: line: 157, op: 555
+            81: line: 158, op: 561
+            82: line: 159, op: 567
+            83: line: 161, op: 573
+            84: line: 162, op: 580
+            85: line: 163, op: 587
+            86: line: 164, op: 594
+            87: line: 166, op: 601
+            88: line: 167, op: 606
+            89: line: 168, op: 611
+            90: line: 172, op: 619
+            91: line: 174, op: 633
+            92: line: 176, op: 638
+            93: line: 177, op: 643
+            94: line: 178, op: 648
+            95: line: 179, op: 653
+            96: line: 181, op: 658
+            97: line: 182, op: 666
+            98: line: 184, op: 674
+            99: line: 185, op: 679
+            100: line: 186, op: 684
+            101: line: 187, op: 689
+            102: line: 189, op: 694
+            103: line: 191, op: 703
+            104: line: 192, op: 706
+            105: line: 193, op: 710
+            106: line: 194, op: 714
+            107: line: 197, op: 719
+            108: line: 198, op: 722
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 6)
+            1:  dload(s1, "func_update", s2, "Update_StorySelect")
+            2:  get(s2, s0, s2)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 7)
+            5:  dload(s1, "func_render", s2, "Render_Story")
+            6:  get(s2, s0, s2)
+            7:  set(s255, s0, s1, s2)
+            8:  line(-, 8)
+            9:  load(s1, "func_update_1p")
+            10:  loadnulls(s2, 1)
+            11:  newslot(s255, s0, s1, s2)
+            12:  line(-, 9)
+            13:  load(s1, "func_update_2p")
+            14:  loadnulls(s2, 1)
+            15:  newslot(s255, s0, s1, s2)
+            16:  line(-, 11)
+            17:  load(s1, "story_input")
+            18:  loadnulls(s2, 1)
+            19:  newslot(s255, s0, s1, s2)
+            20:  line(-, 13)
+            21:  load(s1, "skill_scroll_y")
+            22:  loadint(s2, 0)
+            23:  newslot(s255, s0, s1, s2)
+            24:  line(-, 14)
+            25:  load(s1, "skill_scroll_ty")
+            26:  loadint(s2, 0)
+            27:  newslot(s255, s0, s1, s2)
+            28:  line(-, 16)
+            29:  dload(s1, "sel_story", s2, "CreateSelector")
+            30:  prepcall(s2, s2, s0, s3)
+            31:  loadint(s4, 15)
+            32:  call(2, s2, s3, 2)
+            33:  newslot(s255, s0, s1, s2)
+            34:  line(-, 17)
+            35:  getk(s1, "sel_story", s0)
+            36:  load(s2, "loop")
+            37:  loadint(s3, 2)
+            38:  set(s255, s1, s2, s3)
+            39:  line(-, 19)
+            40:  dload(s1, "sel_equip", s2, "CreateSelector")
+            41:  prepcall(s2, s2, s0, s3)
+            42:  loadint(s4, 3)
+            43:  call(2, s2, s3, 2)
+            44:  newslot(s255, s0, s1, s2)
+            45:  line(-, 20)
+            46:  getk(s1, "sel_equip", s0)
+            47:  load(s2, "loop")
+            48:  loadbool(s3, 1)
+            49:  set(s255, s1, s2, s3)
+            50:  line(-, 21)
+            51:  getk(s1, "sel_equip", s0)
+            52:  dload(s2, "cursor", s3, "sel_equip")
+            53:  get(s3, s0, s3)
+            54:  load(s4, "cursor_prev")
+            55:  loadint(s5, 1)
+            56:  set(s3, s3, s4, s5)
+            57:  set(s255, s1, s2, s3)
+            58:  line(-, 23)
+            59:  load(s1, "equip_cursor_y")
+            60:  loadint(s2, 0)
+            61:  newslot(s255, s0, s1, s2)
+            62:  line(-, 25)
+            63:  load(s1, "story_scroll_y")
+            64:  loadint(s2, 0)
+            65:  newslot(s255, s0, s1, s2)
+            66:  line(-, 26)
+            67:  load(s1, "story_scroll_ty")
+            68:  loadint(s2, 0)
+            69:  newslot(s255, s0, s1, s2)
+            70:  line(-, 28)
+            71:  load(s1, "char_id_trans")
+            72:  newobj(s2, 1, 0, 1)
+            73:  appendarray(s2, 0, 2)
+            74:  newslot(s255, s0, s1, s2)
+            75:  line(-, 29)
+            76:  load(s1, "story_id_trans")
+            77:  newobj(s2, 1, 0, 1)
+            78:  appendarray(s2, 0, 2)
+            79:  newslot(s255, s0, s1, s2)
+            80:  line(-, 30)
+            81:  load(s1, "label_index")
+            82:  newobj(s2, 1, 0, 1)
+            83:  appendarray(s2, 0, 2)
+            84:  newslot(s255, s0, s1, s2)
+            85:  line(-, 32)
+            86:  load(s1, "skill_graph_width")
+            87:  newobj(s2, 3, 0, 1)
+            88:  newobj(s3, 4, 0, 1)
+            89:  appendarray(s3, 0, 2)
+            90:  appendarray(s3, 0, 2)
+            91:  appendarray(s3, 0, 2)
+            92:  appendarray(s3, 0, 2)
+            93:  appendarray(s2, 3, 0)
+            94:  newobj(s3, 4, 0, 1)
+            95:  appendarray(s3, 0, 2)
+            96:  appendarray(s3, 0, 2)
+            97:  appendarray(s3, 0, 2)
+            98:  appendarray(s3, 0, 2)
+            99:  appendarray(s2, 3, 0)
+            100:  newobj(s3, 4, 0, 1)
+            101:  appendarray(s3, 0, 2)
+            102:  appendarray(s3, 0, 2)
+            103:  appendarray(s3, 0, 2)
+            104:  appendarray(s3, 0, 2)
+            105:  appendarray(s2, 3, 0)
+            106:  newslot(s255, s0, s1, s2)
+            107:  line(-, 34)
+            108:  load(s1, "summary_y")
+            109:  loadint(s2, -20)
+            110:  newslot(s255, s0, s1, s2)
+            111:  line(-, 35)
+            112:  load(s1, "summary_ty")
+            113:  loadint(s2, 0)
+            114:  newslot(s255, s0, s1, s2)
+            115:  line(-, 37)
+            116:  load(s1, "cursor_y")
+            117:  loadint(s2, 0)
+            118:  newslot(s255, s0, s1, s2)
+            119:  line(-, 38)
+            120:  load(s1, "menu_mode")
+            121:  loadint(s2, 0)
+            122:  newslot(s255, s0, s1, s2)
+            123:  line(-, 39)
+            124:  load(s1, "disp_char")
+            125:  loadint(s2, -1)
+            126:  newslot(s255, s0, s1, s2)
+            127:  line(-, 42)
+            128:  loadroot(s1)
+            129:  getk(s1, "save_data", s1)
+            130:  getk(s1, "story_clear", s1)
+            131:  loadint(s2, 0)
+            132:  get(s1, s1, s2)
+            133:  loadint(s2, 0)
+            134:  eq(s1, 2, s1, 0)
+            135:  jz(s1, 24)
+            136:  line(-, 45)
+            137:  dload(s1, "func_update", s2, "Update_StoryCommon")
+            138:  get(s2, s0, s2)
+            139:  set(s255, s0, s1, s2)
+            140:  line(-, 46)
+            141:  getk(s1, "pl", s0)
+            142:  load(s2, "visible")
+            143:  loadbool(s3, 0)
+            144:  set(s255, s1, s2, s3)
+            145:  line(-, 48)
+            146:  loadroot(s1)
+            147:  getk(s1, "act", s1)
+            148:  getk(s1, "fader", s1)
+            149:  prepcallk(s1, "FadeOut", s1, s2)
+            150:  loadint(s3, 20)
+            151:  loadint(s4, 0)
+            152:  closure(s5, 0)
+            153:  prepcallk(s5, "bindenv", s5, s6)
+            154:  move(s7, s0)
+            155:  call(5, s5, s6, 2)
+            156:  loadbool(s6, 1)
+            157:  call(255, s1, s2, 5)
+            158:  line(-, 59)
+            159:  return(255, 0)
+            160:  line(-, 62)
+            161:  loadroot(s1)
+            162:  getk(s1, "save_data", s1)
+            163:  getk(s1, "story_clear", s1)
+            164:  loadint(s2, 0)
+            165:  get(s1, s1, s2)
+            166:  loadint(s2, 1)
+            167:  jcmp(s2, 21, s1, CMP_GE)
+            168:  line(-, 64)
+            169:  load(s1, "char_id_trans")
+            170:  newobj(s2, 3, 0, 1)
+            171:  appendarray(s2, 0, 2)
+            172:  appendarray(s2, 1, 2)
+            173:  appendarray(s2, 10, 2)
+            174:  newslot(s255, s0, s1, s2)
+            175:  line(-, 65)
+            176:  load(s1, "story_id_trans")
+            177:  newobj(s2, 3, 0, 1)
+            178:  appendarray(s2, 0, 2)
+            179:  appendarray(s2, 1, 2)
+            180:  appendarray(s2, 10, 2)
+            181:  newslot(s255, s0, s1, s2)
+            182:  line(-, 66)
+            183:  load(s1, "label_index")
+            184:  newobj(s2, 3, 0, 1)
+            185:  appendarray(s2, 0, 2)
+            186:  appendarray(s2, 1, 2)
+            187:  appendarray(s2, 10, 2)
+            188:  newslot(s255, s0, s1, s2)
+            189:  line(-, 69)
+            190:  loadroot(s1)
+            191:  getk(s1, "save_data", s1)
+            192:  getk(s1, "story_clear", s1)
+            193:  loadint(s2, 1)
+            194:  get(s1, s1, s2)
+            195:  loadint(s2, 1)
+            196:  cmp(s1, s2, s1, CMP_GE)
+            197:  and(s1, 8, s1)
+            198:  loadroot(s2)
+            199:  getk(s2, "save_data", s2)
+            200:  getk(s2, "story_clear", s2)
+            201:  loadint(s3, 10)
+            202:  get(s2, s2, s3)
+            203:  loadint(s3, 1)
+            204:  cmp(s2, s3, s2, CMP_GE)
+            205:  move(s1, s2)
+            206:  jz(s1, 36)
+            207:  line(-, 71)
+            208:  load(s1, "char_id_trans")
+            209:  newobj(s2, 8, 0, 1)
+            210:  appendarray(s2, 0, 2)
+            211:  appendarray(s2, 1, 2)
+            212:  appendarray(s2, 10, 2)
+            213:  appendarray(s2, 2, 2)
+            214:  appendarray(s2, 3, 2)
+            215:  appendarray(s2, 4, 2)
+            216:  appendarray(s2, 5, 2)
+            217:  appendarray(s2, 8, 2)
+            218:  newslot(s255, s0, s1, s2)
+            219:  line(-, 72)
+            220:  load(s1, "story_id_trans")
+            221:  newobj(s2, 8, 0, 1)
+            222:  appendarray(s2, 0, 2)
+            223:  appendarray(s2, 1, 2)
+            224:  appendarray(s2, 10, 2)
+            225:  appendarray(s2, 2, 2)
+            226:  appendarray(s2, 3, 2)
+            227:  appendarray(s2, 4, 2)
+            228:  appendarray(s2, 5, 2)
+            229:  appendarray(s2, 8, 2)
+            230:  newslot(s255, s0, s1, s2)
+            231:  line(-, 73)
+            232:  load(s1, "label_index")
+            233:  newobj(s2, 8, 0, 1)
+            234:  appendarray(s2, 0, 2)
+            235:  appendarray(s2, 1, 2)
+            236:  appendarray(s2, 10, 2)
+            237:  appendarray(s2, 2, 2)
+            238:  appendarray(s2, 3, 2)
+            239:  appendarray(s2, 4, 2)
+            240:  appendarray(s2, 5, 2)
+            241:  appendarray(s2, 8, 2)
+            242:  newslot(s255, s0, s1, s2)
+            243:  line(-, 76)
+            244:  loadroot(s1)
+            245:  getk(s1, "save_data", s1)
+            246:  getk(s1, "story_clear", s1)
+            247:  loadint(s2, 3)
+            248:  get(s1, s1, s2)
+            249:  loadint(s2, 1)
+            250:  cmp(s1, s2, s1, CMP_GE)
+            251:  or(s1, 8, s1)
+            252:  loadroot(s2)
+            253:  getk(s2, "save_data", s2)
+            254:  getk(s2, "story_clear", s2)
+            255:  loadint(s3, 4)
+            256:  get(s2, s2, s3)
+            257:  loadint(s3, 1)
+            258:  cmp(s2, s3, s2, CMP_GE)
+            259:  move(s1, s2)
+            260:  jz(s1, 15)
+            261:  line(-, 78)
+            262:  getk(s1, "char_id_trans", s0)
+            263:  prepcallk(s1, "append", s1, s2)
+            264:  loadint(s3, 11)
+            265:  call(255, s1, s2, 2)
+            266:  line(-, 79)
+            267:  getk(s1, "story_id_trans", s0)
+            268:  prepcallk(s1, "append", s1, s2)
+            269:  loadint(s3, 11)
+            270:  call(255, s1, s2, 2)
+            271:  line(-, 80)
+            272:  getk(s1, "label_index", s0)
+            273:  prepcallk(s1, "append", s1, s2)
+            274:  loadint(s3, 11)
+            275:  call(255, s1, s2, 2)
+            276:  line(-, 83)
+            277:  loadroot(s1)
+            278:  getk(s1, "save_data", s1)
+            279:  getk(s1, "story_clear", s1)
+            280:  loadint(s2, 2)
+            281:  get(s1, s1, s2)
+            282:  loadint(s2, 1)
+            283:  cmp(s1, s2, s1, CMP_GE)
+            284:  or(s1, 8, s1)
+            285:  loadroot(s2)
+            286:  getk(s2, "save_data", s2)
+            287:  getk(s2, "story_clear", s2)
+            288:  loadint(s3, 5)
+            289:  get(s2, s2, s3)
+            290:  loadint(s3, 1)
+            291:  cmp(s2, s3, s2, CMP_GE)
+            292:  move(s1, s2)
+            293:  jz(s1, 15)
+            294:  line(-, 85)
+            295:  getk(s1, "char_id_trans", s0)
+            296:  prepcallk(s1, "append", s1, s2)
+            297:  loadint(s3, 12)
+            298:  call(255, s1, s2, 2)
+            299:  line(-, 86)
+            300:  getk(s1, "story_id_trans", s0)
+            301:  prepcallk(s1, "append", s1, s2)
+            302:  loadint(s3, 12)
+            303:  call(255, s1, s2, 2)
+            304:  line(-, 87)
+            305:  getk(s1, "label_index", s0)
+            306:  prepcallk(s1, "append", s1, s2)
+            307:  loadint(s3, 12)
+            308:  call(255, s1, s2, 2)
+            309:  line(-, 90)
+            310:  loadroot(s1)
+            311:  getk(s1, "save_data", s1)
+            312:  getk(s1, "story_clear", s1)
+            313:  loadint(s2, 2)
+            314:  get(s1, s1, s2)
+            315:  loadint(s2, 1)
+            316:  cmp(s1, s2, s1, CMP_GE)
+            317:  and(s1, 8, s1)
+            318:  loadroot(s2)
+            319:  getk(s2, "save_data", s2)
+            320:  getk(s2, "story_clear", s2)
+            321:  loadint(s3, 3)
+            322:  get(s2, s2, s3)
+            323:  loadint(s3, 1)
+            324:  cmp(s2, s3, s2, CMP_GE)
+            325:  move(s1, s2)
+            326:  jz(s1, 15)
+            327:  line(-, 92)
+            328:  getk(s1, "char_id_trans", s0)
+            329:  prepcallk(s1, "append", s1, s2)
+            330:  loadint(s3, 6)
+            331:  call(255, s1, s2, 2)
+            332:  line(-, 93)
+            333:  getk(s1, "story_id_trans", s0)
+            334:  prepcallk(s1, "append", s1, s2)
+            335:  loadint(s3, 6)
+            336:  call(255, s1, s2, 2)
+            337:  line(-, 94)
+            338:  getk(s1, "label_index", s0)
+            339:  prepcallk(s1, "append", s1, s2)
+            340:  loadint(s3, 6)
+            341:  call(255, s1, s2, 2)
+            342:  line(-, 97)
+            343:  loadroot(s1)
+            344:  getk(s1, "save_data", s1)
+            345:  getk(s1, "story_clear", s1)
+            346:  loadint(s2, 4)
+            347:  get(s1, s1, s2)
+            348:  loadint(s2, 1)
+            349:  cmp(s1, s2, s1, CMP_GE)
+            350:  and(s1, 8, s1)
+            351:  loadroot(s2)
+            352:  getk(s2, "save_data", s2)
+            353:  getk(s2, "story_clear", s2)
+            354:  loadint(s3, 5)
+            355:  get(s2, s2, s3)
+            356:  loadint(s3, 1)
+            357:  cmp(s2, s3, s2, CMP_GE)
+            358:  move(s1, s2)
+            359:  jz(s1, 15)
+            360:  line(-, 99)
+            361:  getk(s1, "char_id_trans", s0)
+            362:  prepcallk(s1, "append", s1, s2)
+            363:  loadint(s3, 7)
+            364:  call(255, s1, s2, 2)
+            365:  line(-, 100)
+            366:  getk(s1, "story_id_trans", s0)
+            367:  prepcallk(s1, "append", s1, s2)
+            368:  loadint(s3, 7)
+            369:  call(255, s1, s2, 2)
+            370:  line(-, 101)
+            371:  getk(s1, "label_index", s0)
+            372:  prepcallk(s1, "append", s1, s2)
+            373:  loadint(s3, 7)
+            374:  call(255, s1, s2, 2)
+            375:  line(-, 104)
+            376:  loadroot(s1)
+            377:  getk(s1, "save_data", s1)
+            378:  getk(s1, "story_clear", s1)
+            379:  loadint(s2, 11)
+            380:  get(s1, s1, s2)
+            381:  loadint(s2, 1)
+            382:  cmp(s1, s2, s1, CMP_GE)
+            383:  and(s1, 17, s1)
+            384:  loadroot(s2)
+            385:  getk(s2, "save_data", s2)
+            386:  getk(s2, "story_clear", s2)
+            387:  loadint(s3, 12)
+            388:  get(s2, s2, s3)
+            389:  loadint(s3, 1)
+            390:  cmp(s2, s3, s2, CMP_GE)
+            391:  and(s2, 8, s2)
+            392:  loadroot(s3)
+            393:  getk(s3, "save_data", s3)
+            394:  getk(s3, "story_clear", s3)
+            395:  loadint(s4, 8)
+            396:  get(s3, s3, s4)
+            397:  loadint(s4, 1)
+            398:  cmp(s3, s4, s3, CMP_GE)
+            399:  move(s2, s3)
+            400:  move(s1, s2)
+            401:  jz(s1, 15)
+            402:  line(-, 106)
+            403:  getk(s1, "char_id_trans", s0)
+            404:  prepcallk(s1, "append", s1, s2)
+            405:  loadint(s3, 9)
+            406:  call(255, s1, s2, 2)
+            407:  line(-, 107)
+            408:  getk(s1, "story_id_trans", s0)
+            409:  prepcallk(s1, "append", s1, s2)
+            410:  loadint(s3, 9)
+            411:  call(255, s1, s2, 2)
+            412:  line(-, 108)
+            413:  getk(s1, "label_index", s0)
+            414:  prepcallk(s1, "append", s1, s2)
+            415:  loadint(s3, 9)
+            416:  call(255, s1, s2, 2)
+            417:  line(-, 111)
+            418:  loadbool(s1, 1)
+            419:  line(-, 112)
+            420:  loadint(s2, 0)
+            421:  loadint(s3, 13)
+            422:  jcmp(s3, 11, s2, CMP_L)
+            423:  line(-, 114)
+            424:  loadroot(s3)
+            425:  getk(s3, "save_data", s3)
+            426:  getk(s3, "story_clear", s3)
+            427:  get(s3, s3, s2)
+            428:  loadint(s4, 0)
+            429:  eq(s3, 4, s3, 0)
+            430:  jz(s3, 1)
+            431:  loadbool(s1, 0)
+            432:  pincl(s3, s2, 0, 1)
+            433:  jmp(-, -13)
+            434:  line(-, 117)
+            435:  jz(s1, 15)
+            436:  line(-, 119)
+            437:  getk(s2, "char_id_trans", s0)
+            438:  prepcallk(s2, "append", s2, s3)
+            439:  loadint(s4, 13)
+            440:  call(255, s2, s3, 2)
+            441:  line(-, 120)
+            442:  getk(s2, "story_id_trans", s0)
+            443:  prepcallk(s2, "append", s2, s3)
+            444:  loadint(s4, 13)
+            445:  call(255, s2, s3, 2)
+            446:  line(-, 121)
+            447:  getk(s2, "label_index", s0)
+            448:  prepcallk(s2, "append", s2, s3)
+            449:  loadint(s4, 13)
+            450:  call(255, s2, s3, 2)
+            451:  line(-, 124)
+            452:  loadroot(s2)
+            453:  getk(s2, "save_data", s2)
+            454:  getk(s2, "story_clear", s2)
+            455:  loadint(s3, 13)
+            456:  get(s2, s2, s3)
+            457:  loadint(s3, 1)
+            458:  jcmp(s3, 15, s2, CMP_GE)
+            459:  line(-, 126)
+            460:  getk(s2, "char_id_trans", s0)
+            461:  prepcallk(s2, "append", s2, s3)
+            462:  loadint(s4, 0)
+            463:  call(255, s2, s3, 2)
+            464:  line(-, 127)
+            465:  getk(s2, "story_id_trans", s0)
+            466:  prepcallk(s2, "append", s2, s3)
+            467:  loadint(s4, 100)
+            468:  call(255, s2, s3, 2)
+            469:  line(-, 128)
+            470:  getk(s2, "label_index", s0)
+            471:  prepcallk(s2, "append", s2, s3)
+            472:  loadint(s4, 14)
+            473:  call(255, s2, s3, 2)
+            474:  line(-, 131)
+            475:  getk(s2, "sel_story", s0)
+            476:  dload(s3, "itemCount", s4, "char_id_trans")
+            477:  get(s4, s0, s4)
+            478:  prepcallk(s4, "len", s4, s5)
+            479:  call(4, s4, s5, 1)
+            480:  set(s255, s2, s3, s4)
+            481:  line(-, 134)
+            482:  loadroot(s2)
+            483:  getk(s2, "libact", s2)
+            484:  prepcallk(s2, "CSV", s2, s3)
+            485:  call(2, s2, s3, 1)
+            486:  line(-, 135)
+            487:  load(s3, "summary_text")
+            488:  newobj(s4, 0, 0, 1)
+            489:  newslot(s255, s0, s3, s4)
+            490:  line(-, 136)
+            491:  prepcallk(s3, "Load", s2, s4)
+            492:  load(s5, "data/system/char_select3/story/summary.txt")
+            493:  call(3, s3, s4, 2)
+            494:  jz(s3, 15)
+            495:  line(-, 138)
+            496:  loadint(s3, 0)
+            497:  prepcallk(s4, "GetRowCount", s2, s5)
+            498:  call(4, s4, s5, 1)
+            499:  jcmp(s4, 10, s3, CMP_LE)
+            500:  line(-, 140)
+            501:  getk(s4, "summary_text", s0)
+            502:  prepcallk(s4, "append", s4, s5)
+            503:  prepcallk(s6, "Get", s2, s7)
+            504:  loadint(s8, 0)
+            505:  move(s9, s3)
+            506:  call(6, s6, s7, 3)
+            507:  call(255, s4, s5, 2)
+            508:  pincl(s4, s3, 0, 1)
+            509:  jmp(-, -13)
+            510:  line(-, 145)
+            511:  getk(s3, "StorySummary", s0)
+            512:  getk(s3, "text", s3)
+            513:  getk(s3, "layout", s3)
+            514:  prepcallk(s3, "SetPrintPattern", s3, s4)
+            515:  getk(s5, "font_pattern", s0)
+            516:  getk(s5, "stone_text_white_summary", s5)
+            517:  call(255, s3, s4, 2)
+            518:  line(-, 146)
+            519:  getk(s3, "StorySummary", s0)
+            520:  getk(s3, "text", s3)
+            521:  getk(s3, "layout", s3)
+            522:  prepcallk(s3, "SetText", s3, s4)
+            523:  getk(s5, "summary_text", s0)
+            524:  loadint(s6, 0)
+            525:  get(s5, s5, s6)
+            526:  call(255, s3, s4, 2)
+            527:  line(-, 149)
+            528:  getk(s3, "center_tougou", s0)
+            529:  prepcallk(s3, "AssociateResource", s3, s4)
+            530:  getk(s5, "resource", s0)
+            531:  getk(s5, "center_black", s5)
+            532:  call(255, s3, s4, 2)
+            533:  line(-, 150)
+            534:  getk(s3, "center_frame", s0)
+            535:  getk(s3, "offset", s3)
+            536:  getk(s3, "center1", s3)
+            537:  prepcallk(s3, "AssociateResource", s3, s4)
+            538:  getk(s5, "resource", s0)
+            539:  getk(s5, "center2", s5)
+            540:  call(255, s3, s4, 2)
+            541:  line(-, 152)
+            542:  getk(s3, "center_frame", s0)
+            543:  getk(s3, "offset", s3)
+            544:  getk(s3, "menu_mode_1p", s3)
+            545:  load(s4, "visible")
+            546:  loadbool(s5, 0)
+            547:  set(s255, s3, s4, s5)
+            548:  line(-, 154)
+            549:  getk(s3, "center_frame", s0)
+            550:  getk(s3, "offset", s3)
+            551:  getk(s3, "cs_1p", s3)
+            552:  load(s4, "visible")
+            553:  loadbool(s5, 0)
+            554:  set(s255, s3, s4, s5)
+            555:  line(-, 157)
+            556:  getk(s3, "equip2p", s0)
+            557:  getk(s3, "arrow_b", s3)
+            558:  load(s4, "visible")
+            559:  loadbool(s5, 0)
+            560:  set(s255, s3, s4, s5)
+            561:  line(-, 158)
+            562:  getk(s3, "equip2p", s0)
+            563:  getk(s3, "arrow_lr", s3)
+            564:  load(s4, "visible")
+            565:  loadbool(s5, 0)
+            566:  set(s255, s3, s4, s5)
+            567:  line(-, 159)
+            568:  getk(s3, "equip2p", s0)
+            569:  getk(s3, "arrow_u", s3)
+            570:  load(s4, "visible")
+            571:  loadbool(s5, 0)
+            572:  set(s255, s3, s4, s5)
+            573:  line(-, 161)
+            574:  getk(s3, "center_frame", s0)
+            575:  getk(s3, "offset", s3)
+            576:  getk(s3, "name_1p", s3)
+            577:  getk(s3, "layout", s3)
+            578:  prepcallk(s3, "Clear", s3, s4)
+            579:  call(255, s3, s4, 1)
+            580:  line(-, 162)
+            581:  getk(s3, "center_frame", s0)
+            582:  getk(s3, "offset", s3)
+            583:  getk(s3, "name_2p", s3)
+            584:  getk(s3, "layout", s3)
+            585:  prepcallk(s3, "Clear", s3, s4)
+            586:  call(255, s3, s4, 1)
+            587:  line(-, 163)
+            588:  getk(s3, "center_frame", s0)
+            589:  getk(s3, "offset", s3)
+            590:  getk(s3, "subject_1p", s3)
+            591:  getk(s3, "layout", s3)
+            592:  prepcallk(s3, "Clear", s3, s4)
+            593:  call(255, s3, s4, 1)
+            594:  line(-, 164)
+            595:  getk(s3, "center_frame", s0)
+            596:  getk(s3, "offset", s3)
+            597:  getk(s3, "subject_2p", s3)
+            598:  getk(s3, "layout", s3)
+            599:  prepcallk(s3, "Clear", s3, s4)
+            600:  call(255, s3, s4, 1)
+            601:  line(-, 166)
+            602:  getk(s3, "equip1p", s0)
+            603:  load(s4, "visible")
+            604:  loadbool(s5, 0)
+            605:  set(s255, s3, s4, s5)
+            606:  line(-, 167)
+            607:  getk(s3, "label_clear_time", s0)
+            608:  load(s4, "visible")
+            609:  loadbool(s5, 1)
+            610:  set(s255, s3, s4, s5)
+            611:  line(-, 168)
+            612:  getk(s3, "label_clear_time", s0)
+            613:  getk(s3, "text", s3)
+            614:  getk(s3, "layout", s3)
+            615:  prepcallk(s3, "SetPrintPattern", s3, s4)
+            616:  getk(s5, "font_pattern", s0)
+            617:  getk(s5, "black_edge_2px", s5)
+            618:  call(255, s3, s4, 2)
+            619:  line(-, 172)
+            620:  loadroot(s3)
+            621:  getk(s3, "load_data", s3)
+            622:  getk(s3, "game_mode", s3)
+            623:  loadint(s4, 10)
+            624:  eq(s3, 4, s3, 0)
+            625:  jz(s3, 7)
+            626:  getk(s3, "center_frame", s0)
+            627:  getk(s3, "offset", s3)
+            628:  getk(s3, "cs_2p", s3)
+            629:  prepcallk(s3, "AssociateResource", s3, s4)
+            630:  getk(s5, "resource", s0)
+            631:  getk(s5, "cs_1p_r", s5)
+            632:  call(255, s3, s4, 2)
+            633:  line(-, 174)
+            634:  getk(s3, "wallpaper_02", s0)
+            635:  load(s4, "visible")
+            636:  loadbool(s5, 1)
+            637:  set(s255, s3, s4, s5)
+            638:  line(-, 176)
+            639:  getk(s3, "RT_explain_1p", s0)
+            640:  load(s4, "x")
+            641:  loadint(s5, 360)
+            642:  set(s255, s3, s4, s5)
+            643:  line(-, 177)
+            644:  getk(s3, "RT_explain_2p", s0)
+            645:  load(s4, "visible")
+            646:  loadbool(s5, 1)
+            647:  set(s255, s3, s4, s5)
+            648:  line(-, 178)
+            649:  getk(s3, "StorySummary", s0)
+            650:  load(s4, "visible")
+            651:  loadbool(s5, 1)
+            652:  set(s255, s3, s4, s5)
+            653:  line(-, 179)
+            654:  getk(s3, "GuideText_2P", s0)
+            655:  load(s4, "visible")
+            656:  loadbool(s5, 0)
+            657:  set(s255, s3, s4, s5)
+            658:  line(-, 181)
+            659:  getk(s3, "RT_explain_2p", s0)
+            660:  dload(s4, "x", s5, "RT_explain_2p")
+            661:  get(s5, s0, s5)
+            662:  getk(s5, "ox", s5)
+            663:  loadint(s6, 50)
+            664:  add(s5, s6, s5)
+            665:  set(s255, s3, s4, s5)
+            666:  line(-, 182)
+            667:  getk(s3, "RT_explain_2p", s0)
+            668:  dload(s4, "y", s5, "RT_explain_2p")
+            669:  get(s5, s0, s5)
+            670:  getk(s5, "oy", s5)
+            671:  loadint(s6, 15)
+            672:  sub(s5, s6, s5)
+            673:  set(s255, s3, s4, s5)
+            674:  line(-, 184)
+            675:  getk(s3, "bg_gradation_1p", s0)
+            676:  load(s4, "alpha")
+            677:  loadfloat(s5, 0.2)
+            678:  set(s255, s3, s4, s5)
+            679:  line(-, 185)
+            680:  getk(s3, "bg_gradation_2p", s0)
+            681:  load(s4, "alpha")
+            682:  loadfloat(s5, 1)
+            683:  set(s255, s3, s4, s5)
+            684:  line(-, 186)
+            685:  getk(s3, "RT_explain_2p", s0)
+            686:  load(s4, "scale_x")
+            687:  loadfloat(s5, 1)
+            688:  set(s255, s3, s4, s5)
+            689:  line(-, 187)
+            690:  getk(s3, "RT_explain_2p", s0)
+            691:  load(s4, "scale_y")
+            692:  loadfloat(s5, 1)
+            693:  set(s255, s3, s4, s5)
+            694:  line(-, 189)
+            695:  newobj(s3, 3, 0, 1)
+            696:  appendarray(s3, 64, 1)
+            697:  appendarray(s3, 66, 1)
+            698:  appendarray(s3, 65, 1)
+            699:  loadnulls(s4, 3)
+            700:  foreach(s3, 18, s4)
+            701:  postforeach(s3, 18)
+            702:  line(-, 191)
+            703:  getk(s7, "equip2p", s0)
+            704:  get(s7, s7, s5)
+            705:  getk(s7, "layout", s7)
+            706:  line(-, 192)
+            707:  load(s8, "colorR")
+            708:  loadint(s9, 160)
+            709:  set(s255, s7, s8, s9)
+            710:  line(-, 193)
+            711:  load(s8, "colorG")
+            712:  loadint(s9, 160)
+            713:  set(s255, s7, s8, s9)
+            714:  line(-, 194)
+            715:  load(s8, "colorB")
+            716:  loadint(s9, 160)
+            717:  set(s255, s7, s8, s9)
+            718:  jmp(-, -19)
+            719:  line(-, 197)
+            720:  prepcallk(s3, "UpdateClearTimeText", s0, s4)
+            721:  call(255, s3, s4, 1)
+            722:  line(-, 198)
+            723:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 6
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 15
+                nfunctions: 0
+                Literals: [
+                    0: "Story_StartBattle"
+                    1: "act"
+                    2: "BG"
+                    3: "Stop"
+                    4: "pl"
+                    5: "EndStage"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 14
+                  ]
+                Line Informations: [
+                    0: line: 52, op: 1
+                    1: line: 55, op: 3
+                    2: line: 57, op: 9
+                    3: line: 58, op: 13
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 52)
+                    1:  prepcallk(s1, "Story_StartBattle", s0, s2)
+                    2:  call(255, s1, s2, 1)
+                    3:  line(-, 55)
+                    4:  loadroot(s1)
+                    5:  getk(s1, "act", s1)
+                    6:  getk(s1, "BG", s1)
+                    7:  prepcallk(s1, "Stop", s1, s2)
+                    8:  call(255, s1, s2, 1)
+                    9:  line(-, 57)
+                    10:  getk(s1, "pl", s0)
+                    11:  prepcallk(s1, "EndStage", s1, s2)
+                    12:  call(255, s1, s2, 1)
+                    13:  line(-, 58)
+                    14:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "UpdateClearTimeText"
+        nliterals: 16
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 13
+        ndefaultparams: 0
+        ninstructions: 94
+        nfunctions: 0
+        Literals: [
+            0: "save_data"
+            1: "clear_time"
+            2: "act"
+            3: "TitleMenu"
+            4: "difficulty"
+            5: "clear_rank"
+            6: ""
+            7: "\c[64,64,64]--:--:--
+"
+            8: "\c[255,255,255]"
+            9: "0"
+            10: ":"
+            11: "
+"
+            12: "label_clear_time"
+            13: "text"
+            14: "layout"
+            15: "SetText"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "hour", pos: 8, start_op: 53, end_op: 82
+            1: name: "min", pos: 7, start_op: 48, end_op: 82
+            2: name: "sec", pos: 6, start_op: 43, end_op: 82
+            3: name: "time", pos: 5, start_op: 40, end_op: 82
+            4: name: "i", pos: 4, start_op: 22, end_op: 84
+            5: name: "st_text", pos: 3, start_op: 20, end_op: 91
+            6: name: "clear_rank", pos: 2, start_op: 18, end_op: 91
+            7: name: "clear_time", pos: 1, start_op: 9, end_op: 91
+            8: name: "this", pos: 0, start_op: 0, end_op: 93
+          ]
+        Line Informations: [
+            0: line: 202, op: 1
+            1: line: 203, op: 9
+            2: line: 205, op: 18
+            3: line: 207, op: 20
+            4: line: 209, op: 25
+            5: line: 211, op: 29
+            6: line: 214, op: 33
+            7: line: 215, op: 40
+            8: line: 216, op: 43
+            9: line: 217, op: 48
+            10: line: 218, op: 53
+            11: line: 221, op: 85
+            12: line: 222, op: 92
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 202)
+            1:  loadroot(s1)
+            2:  getk(s1, "save_data", s1)
+            3:  getk(s1, "clear_time", s1)
+            4:  loadroot(s2)
+            5:  getk(s2, "act", s2)
+            6:  getk(s2, "TitleMenu", s2)
+            7:  getk(s2, "difficulty", s2)
+            8:  get(s1, s1, s2)
+            9:  line(-, 203)
+            10:  loadroot(s2)
+            11:  getk(s2, "save_data", s2)
+            12:  getk(s2, "clear_rank", s2)
+            13:  loadroot(s3)
+            14:  getk(s3, "act", s3)
+            15:  getk(s3, "TitleMenu", s3)
+            16:  getk(s3, "difficulty", s3)
+            17:  get(s2, s2, s3)
+            18:  line(-, 205)
+            19:  load(s3, "")
+            20:  line(-, 207)
+            21:  loadint(s4, 0)
+            22:  loadint(s5, 15)
+            23:  jcmp(s5, 61, s4, CMP_L)
+            24:  line(-, 209)
+            25:  get(s5, s2, s4)
+            26:  loadint(s6, 0)
+            27:  jcmp(s6, 4, s5, CMP_LE)
+            28:  line(-, 211)
+            29:  load(s5, "\c[64,64,64]--:--:--
+")
+            30:  add(s3, s5, s3)
+            31:  jmp(-, 51)
+            32:  line(-, 214)
+            33:  get(s5, s1, s4)
+            34:  loadint(s6, 1000)
+            35:  mul(s5, s6, s5)
+            36:  loadint(s6, 60)
+            37:  div(s5, s6, s5)
+            38:  loadint(s6, 1000)
+            39:  div(s5, s6, s5)
+            40:  line(-, 215)
+            41:  loadint(s6, 60)
+            42:  mod(s6, s6, s5)
+            43:  line(-, 216)
+            44:  loadint(s7, 60)
+            45:  div(s7, s7, s5)
+            46:  loadint(s8, 60)
+            47:  mod(s7, s8, s7)
+            48:  line(-, 217)
+            49:  loadint(s8, 60)
+            50:  div(s8, s8, s5)
+            51:  loadint(s9, 60)
+            52:  div(s8, s9, s8)
+            53:  line(-, 218)
+            54:  load(s9, "\c[255,255,255]")
+            55:  loadint(s10, 10)
+            56:  jcmp(s10, 2, s8, CMP_L)
+            57:  load(s10, "0")
+            58:  jmp(-, 1)
+            59:  load(s10, "")
+            60:  add(s9, s10, s9)
+            61:  add(s9, s8, s9)
+            62:  load(s10, ":")
+            63:  add(s9, s10, s9)
+            64:  loadint(s10, 10)
+            65:  jcmp(s10, 2, s7, CMP_L)
+            66:  load(s10, "0")
+            67:  jmp(-, 1)
+            68:  load(s10, "")
+            69:  add(s9, s10, s9)
+            70:  add(s9, s7, s9)
+            71:  load(s10, ":")
+            72:  add(s9, s10, s9)
+            73:  loadint(s10, 10)
+            74:  jcmp(s10, 2, s6, CMP_L)
+            75:  load(s10, "0")
+            76:  jmp(-, 1)
+            77:  load(s10, "")
+            78:  add(s9, s10, s9)
+            79:  add(s9, s6, s9)
+            80:  load(s10, "
+")
+            81:  add(s9, s10, s9)
+            82:  add(s3, s9, s3)
+            83:  pincl(s5, s4, 0, 1)
+            84:  jmp(-, -63)
+            85:  line(-, 221)
+            86:  getk(s4, "label_clear_time", s0)
+            87:  getk(s4, "text", s4)
+            88:  getk(s4, "layout", s4)
+            89:  prepcallk(s4, "SetText", s4, s5)
+            90:  move(s6, s3)
+            91:  call(255, s4, s5, 2)
+            92:  line(-, 222)
+            93:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Update_StoryCommon"
+        nliterals: 59
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 45
+        ndefaultparams: 0
+        ninstructions: 485
+        nfunctions: 0
+        Literals: [
+            0: "story_input"
+            1: "input_key"
+            2: "TitleMenu"
+            3: "act"
+            4: "device_id"
+            5: "input_joy"
+            6: "len"
+            7: "sel_story"
+            8: "input"
+            9: "weakref"
+            10: "sel_equip"
+            11: "story_scroll_ty"
+            12: "cursor"
+            13: "story_scroll_y"
+            14: "fabs"
+            15: "skill_scroll_ty"
+            16: "skill_scroll_y"
+            17: "cursor_y"
+            18: "sin"
+            19: "frame"
+            20: "equip_cursor_y"
+            21: "menu_state"
+            22: "p2"
+            23: "char_id"
+            24: "char_resource"
+            25: "equip2p"
+            26: "card_label1"
+            27: "Blit"
+            28: "equip_a"
+            29: "image_card"
+            30: "BLEND_ALPHA"
+            31: "card_label2"
+            32: "equip_b"
+            33: "card_label3"
+            34: "equip_c"
+            35: "equip_"
+            36: "a"
+            37: "b"
+            38: "c"
+            39: "power"
+            40: "speed"
+            41: "range"
+            42: "future"
+            43: "skill_graph_width"
+            44: "resource"
+            45: "graph_bar_horz"
+            46: "card_cost1"
+            47: "layout"
+            48: "SetText"
+            49: "cost"
+            50: "tostring"
+            51: "card_cost2"
+            52: "card_cost3"
+            53: "card_name1"
+            54: "image_label"
+            55: "card_name2"
+            56: "card_name3"
+            57: "summary_y"
+            58: "summary_ty"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "width", pos: 10, start_op: 320, end_op: 354
+            1: name: "equip_table", pos: 9, start_op: 245, end_op: 354
+            2: name: "per", pos: 8, start_op: 243, end_op: 354
+            3: name: "layer", pos: 6, start_op: 239, end_op: 355
+            4: name: "@INDEX@", pos: 5, start_op: 238, end_op: 355
+            5: name: "j", pos: 3, start_op: 227, end_op: 355
+            6: name: "i", pos: 2, start_op: 223, end_op: 357
+            7: name: "input_device", pos: 1, start_op: 18, end_op: 482
+            8: name: "this", pos: 0, start_op: 0, end_op: 484
+          ]
+        Line Informations: [
+            0: line: 228, op: 1
+            1: line: 229, op: 5
+            2: line: 230, op: 18
+            3: line: 232, op: 38
+            4: line: 233, op: 45
+            5: line: 236, op: 52
+            6: line: 237, op: 59
+            7: line: 238, op: 71
+            8: line: 240, op: 82
+            9: line: 241, op: 89
+            10: line: 242, op: 101
+            11: line: 251, op: 112
+            12: line: 254, op: 124
+            13: line: 257, op: 139
+            14: line: 259, op: 156
+            15: line: 260, op: 177
+            16: line: 261, op: 199
+            17: line: 263, op: 221
+            18: line: 265, op: 226
+            19: line: 267, op: 227
+            20: line: 269, op: 242
+            21: line: 270, op: 243
+            22: line: 272, op: 245
+            23: line: 274, op: 259
+            24: line: 276, op: 264
+            25: line: 278, op: 269
+            26: line: 280, op: 274
+            27: line: 282, op: 279
+            28: line: 284, op: 284
+            29: line: 286, op: 289
+            30: line: 288, op: 294
+            31: line: 291, op: 298
+            32: line: 293, op: 312
+            33: line: 295, op: 320
+            34: line: 296, op: 336
+            35: line: 298, op: 353
+            36: line: 302, op: 358
+            37: line: 303, op: 375
+            38: line: 304, op: 392
+            39: line: 306, op: 409
+            40: line: 307, op: 426
+            41: line: 308, op: 443
+            42: line: 312, op: 460
+            43: line: 313, op: 472
+            44: line: 314, op: 483
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 228)
+            1:  load(s1, "story_input")
+            2:  loadroot(s2)
+            3:  getk(s2, "input_key", s2)
+            4:  newslot(s255, s0, s1, s2)
+            5:  line(-, 229)
+            6:  load(s1, "TitleMenu")
+            7:  loadroot(s2)
+            8:  getk(s2, "act", s2)
+            9:  exists(s1, s2, s1)
+            10:  jz(s1, 6)
+            11:  loadroot(s2)
+            12:  getk(s2, "act", s2)
+            13:  getk(s2, "TitleMenu", s2)
+            14:  getk(s2, "device_id", s2)
+            15:  move(s1, s2)
+            16:  jmp(-, 1)
+            17:  loadint(s1, -1)
+            18:  line(-, 230)
+            19:  loadnulls(s2, 1)
+            20:  ne(s2, 2, s1, 0)
+            21:  and(s2, 10, s2)
+            22:  loadint(s3, 0)
+            23:  cmp(s3, s3, s1, CMP_GE)
+            24:  and(s3, 6, s3)
+            25:  loadroot(s4)
+            26:  getk(s4, "input_joy", s4)
+            27:  prepcallk(s4, "len", s4, s5)
+            28:  call(4, s4, s5, 1)
+            29:  cmp(s4, s4, s1, CMP_L)
+            30:  move(s3, s4)
+            31:  move(s2, s3)
+            32:  jz(s2, 5)
+            33:  load(s2, "story_input")
+            34:  loadroot(s3)
+            35:  getk(s3, "input_joy", s3)
+            36:  get(s3, s3, s1)
+            37:  set(s255, s0, s2, s3)
+            38:  line(-, 232)
+            39:  getk(s2, "sel_story", s0)
+            40:  dload(s3, "input", s4, "story_input")
+            41:  get(s4, s0, s4)
+            42:  prepcallk(s4, "weakref", s4, s5)
+            43:  call(4, s4, s5, 1)
+            44:  set(s255, s2, s3, s4)
+            45:  line(-, 233)
+            46:  getk(s2, "sel_equip", s0)
+            47:  dload(s3, "input", s4, "story_input")
+            48:  get(s4, s0, s4)
+            49:  prepcallk(s4, "weakref", s4, s5)
+            50:  call(4, s4, s5, 1)
+            51:  set(s255, s2, s3, s4)
+            52:  line(-, 236)
+            53:  dload(s2, "story_scroll_ty", s3, "sel_story")
+            54:  get(s3, s0, s3)
+            55:  getk(s3, "cursor", s3)
+            56:  loadint(s4, -72)
+            57:  mul(s3, s4, s3)
+            58:  set(s255, s0, s2, s3)
+            59:  line(-, 237)
+            60:  dload(s2, "story_scroll_y", s3, "story_scroll_y")
+            61:  get(s3, s0, s3)
+            62:  loadint(s4, 70)
+            63:  mul(s3, s4, s3)
+            64:  getk(s4, "story_scroll_ty", s0)
+            65:  loadint(s5, 30)
+            66:  mul(s4, s5, s4)
+            67:  add(s3, s4, s3)
+            68:  loadfloat(s4, 100)
+            69:  div(s3, s4, s3)
+            70:  set(s255, s0, s2, s3)
+            71:  line(-, 238)
+            72:  prepcallk(s2, "fabs", s0, s3)
+            73:  getk(s4, "story_scroll_y", s0)
+            74:  getk(s5, "story_scroll_ty", s0)
+            75:  sub(s4, s5, s4)
+            76:  call(2, s2, s3, 2)
+            77:  loadfloat(s3, 3)
+            78:  jcmp(s3, 3, s2, CMP_L)
+            79:  dload(s2, "story_scroll_y", s3, "story_scroll_ty")
+            80:  get(s3, s0, s3)
+            81:  set(s255, s0, s2, s3)
+            82:  line(-, 240)
+            83:  dload(s2, "skill_scroll_ty", s3, "sel_story")
+            84:  get(s3, s0, s3)
+            85:  getk(s3, "cursor", s3)
+            86:  loadint(s4, -720)
+            87:  mul(s3, s4, s3)
+            88:  set(s255, s0, s2, s3)
+            89:  line(-, 241)
+            90:  dload(s2, "skill_scroll_y", s3, "skill_scroll_y")
+            91:  get(s3, s0, s3)
+            92:  loadint(s4, 70)
+            93:  mul(s3, s4, s3)
+            94:  getk(s4, "skill_scroll_ty", s0)
+            95:  loadint(s5, 30)
+            96:  mul(s4, s5, s4)
+            97:  add(s3, s4, s3)
+            98:  loadfloat(s4, 100)
+            99:  div(s3, s4, s3)
+            100:  set(s255, s0, s2, s3)
+            101:  line(-, 242)
+            102:  prepcallk(s2, "fabs", s0, s3)
+            103:  getk(s4, "skill_scroll_y", s0)
+            104:  getk(s5, "skill_scroll_ty", s0)
+            105:  sub(s4, s5, s4)
+            106:  call(2, s2, s3, 2)
+            107:  loadfloat(s3, 3)
+            108:  jcmp(s3, 3, s2, CMP_L)
+            109:  dload(s2, "skill_scroll_y", s3, "skill_scroll_ty")
+            110:  get(s3, s0, s3)
+            111:  set(s255, s0, s2, s3)
+            112:  line(-, 251)
+            113:  dload(s2, "cursor_y", s3, "sin")
+            114:  prepcall(s3, s3, s0, s4)
+            115:  getk(s5, "frame", s0)
+            116:  loadfloat(s6, 0.25)
+            117:  mul(s5, s6, s5)
+            118:  call(3, s3, s4, 2)
+            119:  loadint(s4, 5)
+            120:  mul(s3, s4, s3)
+            121:  loadint(s4, 5)
+            122:  add(s3, s4, s3)
+            123:  set(s255, s0, s2, s3)
+            124:  line(-, 254)
+            125:  dload(s2, "equip_cursor_y", s3, "equip_cursor_y")
+            126:  get(s3, s0, s3)
+            127:  loadint(s4, 70)
+            128:  mul(s3, s4, s3)
+            129:  getk(s4, "sel_equip", s0)
+            130:  getk(s4, "cursor", s4)
+            131:  loadint(s5, 175)
+            132:  mul(s4, s5, s4)
+            133:  loadint(s5, 30)
+            134:  mul(s4, s5, s4)
+            135:  add(s3, s4, s3)
+            136:  loadint(s4, 100)
+            137:  div(s3, s4, s3)
+            138:  set(s255, s0, s2, s3)
+            139:  line(-, 257)
+            140:  getk(s2, "menu_state", s0)
+            141:  getk(s2, "p2", s2)
+            142:  getk(s2, "char_id", s2)
+            143:  loadint(s3, 0)
+            144:  cmp(s2, s3, s2, CMP_GE)
+            145:  and(s2, 8, s2)
+            146:  getk(s3, "menu_state", s0)
+            147:  getk(s3, "p2", s3)
+            148:  getk(s3, "char_id", s3)
+            149:  getk(s4, "char_resource", s0)
+            150:  prepcallk(s4, "len", s4, s5)
+            151:  call(4, s4, s5, 1)
+            152:  cmp(s3, s4, s3, CMP_L)
+            153:  move(s2, s3)
+            154:  jz(s2, 305)
+            155:  line(-, 259)
+            156:  getk(s2, "equip2p", s0)
+            157:  getk(s2, "card_label1", s2)
+            158:  prepcallk(s2, "Blit", s2, s3)
+            159:  loadint(s4, -75)
+            160:  loadint(s5, -7)
+            161:  loadint(s6, 256)
+            162:  loadint(s7, 256)
+            163:  getk(s8, "char_resource", s0)
+            164:  getk(s9, "menu_state", s0)
+            165:  getk(s9, "p2", s9)
+            166:  getk(s9, "char_id", s9)
+            167:  get(s8, s8, s9)
+            168:  getk(s8, "equip_a", s8)
+            169:  loadint(s9, 0)
+            170:  get(s8, s8, s9)
+            171:  getk(s8, "image_card", s8)
+            172:  loadint(s9, 0)
+            173:  loadint(s10, 0)
+            174:  getk(s11, "BLEND_ALPHA", s0)
+            175:  loadfloat(s12, 1)
+            176:  call(255, s2, s3, 10)
+            177:  line(-, 260)
+            178:  getk(s2, "equip2p", s0)
+            179:  getk(s2, "card_label2", s2)
+            180:  prepcallk(s2, "Blit", s2, s3)
+            181:  loadint(s4, -75)
+            182:  loadint(s5, -7)
+            183:  loadint(s6, 256)
+            184:  loadint(s7, 256)
+            185:  getk(s8, "char_resource", s0)
+            186:  getk(s9, "menu_state", s0)
+            187:  getk(s9, "p2", s9)
+            188:  getk(s9, "char_id", s9)
+            189:  get(s8, s8, s9)
+            190:  getk(s8, "equip_b", s8)
+            191:  loadint(s9, 0)
+            192:  get(s8, s8, s9)
+            193:  getk(s8, "image_card", s8)
+            194:  loadint(s9, 0)
+            195:  loadint(s10, 0)
+            196:  getk(s11, "BLEND_ALPHA", s0)
+            197:  loadfloat(s12, 1)
+            198:  call(255, s2, s3, 10)
+            199:  line(-, 261)
+            200:  getk(s2, "equip2p", s0)
+            201:  getk(s2, "card_label3", s2)
+            202:  prepcallk(s2, "Blit", s2, s3)
+            203:  loadint(s4, -75)
+            204:  loadint(s5, -7)
+            205:  loadint(s6, 256)
+            206:  loadint(s7, 256)
+            207:  getk(s8, "char_resource", s0)
+            208:  getk(s9, "menu_state", s0)
+            209:  getk(s9, "p2", s9)
+            210:  getk(s9, "char_id", s9)
+            211:  get(s8, s8, s9)
+            212:  getk(s8, "equip_c", s8)
+            213:  loadint(s9, 0)
+            214:  get(s8, s8, s9)
+            215:  getk(s8, "image_card", s8)
+            216:  loadint(s9, 0)
+            217:  loadint(s10, 0)
+            218:  getk(s11, "BLEND_ALPHA", s0)
+            219:  loadfloat(s12, 1)
+            220:  call(255, s2, s3, 10)
+            221:  line(-, 263)
+            222:  loadint(s2, 0)
+            223:  loadint(s3, 4)
+            224:  jcmp(s3, 133, s2, CMP_L)
+            225:  line(-, 265)
+            226:  loadint(s3, 0)
+            227:  line(-, 267)
+            228:  newobj(s4, 3, 0, 1)
+            229:  getk(s5, "equip2p", s0)
+            230:  getk(s5, "card_label1", s5)
+            231:  appendarray(s4, 5, 0)
+            232:  getk(s5, "equip2p", s0)
+            233:  getk(s5, "card_label2", s5)
+            234:  appendarray(s4, 5, 0)
+            235:  getk(s5, "equip2p", s0)
+            236:  getk(s5, "card_label3", s5)
+            237:  appendarray(s4, 5, 0)
+            238:  loadnulls(s5, 3)
+            239:  foreach(s4, 116, s5)
+            240:  postforeach(s4, 116)
+            241:  line(-, 269)
+            242:  loadint(s8, 100)
+            243:  line(-, 270)
+            244:  loadnulls(s9, 1)
+            245:  line(-, 272)
+            246:  getk(s10, "char_resource", s0)
+            247:  getk(s11, "menu_state", s0)
+            248:  getk(s11, "p2", s11)
+            249:  getk(s11, "char_id", s11)
+            250:  get(s10, s10, s11)
+            251:  load(s11, "equip_")
+            252:  newobj(s12, 3, 0, 1)
+            253:  appendarray(s12, 36, 1)
+            254:  appendarray(s12, 37, 1)
+            255:  appendarray(s12, 38, 1)
+            256:  get(s12, s12, s3)
+            257:  add(s11, s12, s11)
+            258:  get(s9, s10, s11)
+            259:  line(-, 274)
+            260:  loadint(s10, 0)
+            261:  eq(s10, 10, s2, 0)
+            262:  jz(s10, 6)
+            263:  line(-, 276)
+            264:  loadint(s10, 0)
+            265:  get(s10, s9, s10)
+            266:  getk(s10, "power", s10)
+            267:  move(s8, s10)
+            268:  jmp(-, 29)
+            269:  line(-, 278)
+            270:  loadint(s10, 1)
+            271:  eq(s10, 10, s2, 0)
+            272:  jz(s10, 6)
+            273:  line(-, 280)
+            274:  loadint(s10, 0)
+            275:  get(s10, s9, s10)
+            276:  getk(s10, "speed", s10)
+            277:  move(s8, s10)
+            278:  jmp(-, 19)
+            279:  line(-, 282)
+            280:  loadint(s10, 2)
+            281:  eq(s10, 10, s2, 0)
+            282:  jz(s10, 6)
+            283:  line(-, 284)
+            284:  loadint(s10, 0)
+            285:  get(s10, s9, s10)
+            286:  getk(s10, "range", s10)
+            287:  move(s8, s10)
+            288:  jmp(-, 9)
+            289:  line(-, 286)
+            290:  loadint(s10, 3)
+            291:  eq(s10, 10, s2, 0)
+            292:  jz(s10, 5)
+            293:  line(-, 288)
+            294:  loadint(s10, 0)
+            295:  get(s10, s9, s10)
+            296:  getk(s10, "future", s10)
+            297:  move(s8, s10)
+            298:  line(-, 291)
+            299:  getk(s10, "skill_graph_width", s0)
+            300:  get(s10, s10, s3)
+            301:  getk(s11, "skill_graph_width", s0)
+            302:  get(s11, s11, s3)
+            303:  get(s11, s11, s2)
+            304:  loadint(s12, 85)
+            305:  mul(s11, s12, s11)
+            306:  loadint(s12, 15)
+            307:  mul(s12, s12, s8)
+            308:  add(s11, s12, s11)
+            309:  loadint(s12, 100)
+            310:  div(s11, s12, s11)
+            311:  set(s255, s10, s2, s11)
+            312:  line(-, 293)
+            313:  loadint(s10, 121)
+            314:  getk(s11, "skill_graph_width", s0)
+            315:  get(s11, s11, s3)
+            316:  get(s11, s11, s2)
+            317:  mul(s10, s11, s10)
+            318:  loadint(s11, 100)
+            319:  div(s10, s11, s10)
+            320:  line(-, 295)
+            321:  prepcallk(s11, "Blit", s6, s12)
+            322:  loadint(s13, 54)
+            323:  loadint(s14, 5)
+            324:  loadint(s15, 18)
+            325:  mul(s15, s15, s2)
+            326:  add(s14, s15, s14)
+            327:  loadint(s15, 128)
+            328:  loadint(s16, 16)
+            329:  getk(s17, "resource", s0)
+            330:  getk(s17, "graph_bar_horz", s17)
+            331:  loadint(s18, 0)
+            332:  loadint(s19, 48)
+            333:  getk(s20, "BLEND_ALPHA", s0)
+            334:  loadfloat(s21, 1)
+            335:  call(255, s11, s12, 10)
+            336:  line(-, 296)
+            337:  prepcallk(s11, "Blit", s6, s12)
+            338:  loadint(s13, 56)
+            339:  loadint(s14, 7)
+            340:  loadint(s15, 18)
+            341:  mul(s15, s15, s2)
+            342:  add(s14, s15, s14)
+            343:  move(s15, s10)
+            344:  loadint(s16, 12)
+            345:  getk(s17, "resource", s0)
+            346:  getk(s17, "graph_bar_horz", s17)
+            347:  loadint(s18, 0)
+            348:  loadint(s19, 12)
+            349:  mul(s19, s19, s2)
+            350:  getk(s20, "BLEND_ALPHA", s0)
+            351:  loadfloat(s21, 1)
+            352:  call(255, s11, s12, 10)
+            353:  line(-, 298)
+            354:  pincl(s11, s3, 0, 1)
+            355:  jmp(-, -117)
+            356:  pincl(s3, s2, 0, 1)
+            357:  jmp(-, -135)
+            358:  line(-, 302)
+            359:  getk(s2, "equip2p", s0)
+            360:  getk(s2, "card_cost1", s2)
+            361:  getk(s2, "layout", s2)
+            362:  prepcallk(s2, "SetText", s2, s3)
+            363:  getk(s4, "char_resource", s0)
+            364:  getk(s5, "menu_state", s0)
+            365:  getk(s5, "p2", s5)
+            366:  getk(s5, "char_id", s5)
+            367:  get(s4, s4, s5)
+            368:  getk(s4, "equip_a", s4)
+            369:  loadint(s5, 0)
+            370:  get(s4, s4, s5)
+            371:  getk(s4, "cost", s4)
+            372:  prepcallk(s4, "tostring", s4, s5)
+            373:  call(4, s4, s5, 1)
+            374:  call(255, s2, s3, 2)
+            375:  line(-, 303)
+            376:  getk(s2, "equip2p", s0)
+            377:  getk(s2, "card_cost2", s2)
+            378:  getk(s2, "layout", s2)
+            379:  prepcallk(s2, "SetText", s2, s3)
+            380:  getk(s4, "char_resource", s0)
+            381:  getk(s5, "menu_state", s0)
+            382:  getk(s5, "p2", s5)
+            383:  getk(s5, "char_id", s5)
+            384:  get(s4, s4, s5)
+            385:  getk(s4, "equip_b", s4)
+            386:  loadint(s5, 0)
+            387:  get(s4, s4, s5)
+            388:  getk(s4, "cost", s4)
+            389:  prepcallk(s4, "tostring", s4, s5)
+            390:  call(4, s4, s5, 1)
+            391:  call(255, s2, s3, 2)
+            392:  line(-, 304)
+            393:  getk(s2, "equip2p", s0)
+            394:  getk(s2, "card_cost3", s2)
+            395:  getk(s2, "layout", s2)
+            396:  prepcallk(s2, "SetText", s2, s3)
+            397:  getk(s4, "char_resource", s0)
+            398:  getk(s5, "menu_state", s0)
+            399:  getk(s5, "p2", s5)
+            400:  getk(s5, "char_id", s5)
+            401:  get(s4, s4, s5)
+            402:  getk(s4, "equip_c", s4)
+            403:  loadint(s5, 0)
+            404:  get(s4, s4, s5)
+            405:  getk(s4, "cost", s4)
+            406:  prepcallk(s4, "tostring", s4, s5)
+            407:  call(4, s4, s5, 1)
+            408:  call(255, s2, s3, 2)
+            409:  line(-, 306)
+            410:  getk(s2, "equip2p", s0)
+            411:  getk(s2, "card_name1", s2)
+            412:  getk(s2, "layout", s2)
+            413:  prepcallk(s2, "SetText", s2, s3)
+            414:  getk(s4, "char_resource", s0)
+            415:  getk(s5, "menu_state", s0)
+            416:  getk(s5, "p2", s5)
+            417:  getk(s5, "char_id", s5)
+            418:  get(s4, s4, s5)
+            419:  getk(s4, "equip_a", s4)
+            420:  loadint(s5, 0)
+            421:  get(s4, s4, s5)
+            422:  getk(s4, "image_label", s4)
+            423:  prepcallk(s4, "tostring", s4, s5)
+            424:  call(4, s4, s5, 1)
+            425:  call(255, s2, s3, 2)
+            426:  line(-, 307)
+            427:  getk(s2, "equip2p", s0)
+            428:  getk(s2, "card_name2", s2)
+            429:  getk(s2, "layout", s2)
+            430:  prepcallk(s2, "SetText", s2, s3)
+            431:  getk(s4, "char_resource", s0)
+            432:  getk(s5, "menu_state", s0)
+            433:  getk(s5, "p2", s5)
+            434:  getk(s5, "char_id", s5)
+            435:  get(s4, s4, s5)
+            436:  getk(s4, "equip_b", s4)
+            437:  loadint(s5, 0)
+            438:  get(s4, s4, s5)
+            439:  getk(s4, "image_label", s4)
+            440:  prepcallk(s4, "tostring", s4, s5)
+            441:  call(4, s4, s5, 1)
+            442:  call(255, s2, s3, 2)
+            443:  line(-, 308)
+            444:  getk(s2, "equip2p", s0)
+            445:  getk(s2, "card_name3", s2)
+            446:  getk(s2, "layout", s2)
+            447:  prepcallk(s2, "SetText", s2, s3)
+            448:  getk(s4, "char_resource", s0)
+            449:  getk(s5, "menu_state", s0)
+            450:  getk(s5, "p2", s5)
+            451:  getk(s5, "char_id", s5)
+            452:  get(s4, s4, s5)
+            453:  getk(s4, "equip_c", s4)
+            454:  loadint(s5, 0)
+            455:  get(s4, s4, s5)
+            456:  getk(s4, "image_label", s4)
+            457:  prepcallk(s4, "tostring", s4, s5)
+            458:  call(4, s4, s5, 1)
+            459:  call(255, s2, s3, 2)
+            460:  line(-, 312)
+            461:  dload(s2, "summary_y", s3, "summary_y")
+            462:  get(s3, s0, s3)
+            463:  loadint(s4, 70)
+            464:  mul(s3, s4, s3)
+            465:  getk(s4, "summary_ty", s0)
+            466:  loadint(s5, 30)
+            467:  mul(s4, s5, s4)
+            468:  add(s3, s4, s3)
+            469:  loadint(s4, 100)
+            470:  div(s3, s4, s3)
+            471:  set(s255, s0, s2, s3)
+            472:  line(-, 313)
+            473:  prepcallk(s2, "fabs", s0, s3)
+            474:  getk(s4, "summary_y", s0)
+            475:  getk(s5, "summary_ty", s0)
+            476:  sub(s4, s5, s4)
+            477:  call(2, s2, s3, 2)
+            478:  loadfloat(s3, 1.5)
+            479:  jcmp(s3, 3, s2, CMP_L)
+            480:  dload(s2, "summary_y", s3, "summary_ty")
+            481:  get(s3, s0, s3)
+            482:  set(s255, s0, s2, s3)
+            483:  line(-, 314)
+            484:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 22
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "Update_StorySubMenu"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 47
+        nfunctions: 1
+        Literals: [
+            0: "story_input"
+            1: "b2"
+            2: "func_update_old"
+            3: "func_update"
+            4: "func_update_1p_old"
+            5: "func_update_1p"
+            6: "func_update_2p_old"
+            7: "func_update_2p"
+            8: "submenu_active"
+            9: "act"
+            10: "Profile"
+            11: "BeginSubMenu"
+            12: "bindenv"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "b2", pos: 1, start_op: 3, end_op: 44
+            1: name: "this", pos: 0, start_op: 0, end_op: 46
+          ]
+        Line Informations: [
+            0: line: 320, op: 1
+            1: line: 322, op: 3
+            2: line: 324, op: 8
+            3: line: 325, op: 11
+            4: line: 326, op: 15
+            5: line: 328, op: 19
+            6: line: 330, op: 23
+            7: line: 347, op: 33
+            8: line: 348, op: 37
+            9: line: 349, op: 41
+            10: line: 351, op: 45
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 320)
+            1:  getk(s1, "story_input", s0)
+            2:  getk(s1, "b2", s1)
+            3:  line(-, 322)
+            4:  loadint(s2, 1)
+            5:  eq(s2, 2, s1, 0)
+            6:  jz(s2, 38)
+            7:  line(-, 324)
+            8:  dload(s2, "func_update_old", s3, "func_update")
+            9:  get(s3, s0, s3)
+            10:  newslot(s255, s0, s2, s3)
+            11:  line(-, 325)
+            12:  dload(s2, "func_update_1p_old", s3, "func_update_1p")
+            13:  get(s3, s0, s3)
+            14:  newslot(s255, s0, s2, s3)
+            15:  line(-, 326)
+            16:  dload(s2, "func_update_2p_old", s3, "func_update_2p")
+            17:  get(s3, s0, s3)
+            18:  newslot(s255, s0, s2, s3)
+            19:  line(-, 328)
+            20:  load(s2, "submenu_active")
+            21:  loadbool(s3, 1)
+            22:  set(s255, s0, s2, s3)
+            23:  line(-, 330)
+            24:  loadroot(s2)
+            25:  getk(s2, "act", s2)
+            26:  getk(s2, "Profile", s2)
+            27:  prepcallk(s2, "BeginSubMenu", s2, s3)
+            28:  closure(s4, 0)
+            29:  prepcallk(s4, "bindenv", s4, s5)
+            30:  move(s6, s0)
+            31:  call(4, s4, s5, 2)
+            32:  call(255, s2, s3, 2)
+            33:  line(-, 347)
+            34:  load(s2, "func_update")
+            35:  loadnulls(s3, 1)
+            36:  set(s255, s0, s2, s3)
+            37:  line(-, 348)
+            38:  load(s2, "func_update_1p")
+            39:  loadnulls(s3, 1)
+            40:  set(s255, s0, s2, s3)
+            41:  line(-, 349)
+            42:  load(s2, "func_update_2p")
+            43:  loadnulls(s3, 1)
+            44:  set(s255, s0, s2, s3)
+            45:  line(-, 351)
+            46:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 16
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 8
+                ndefaultparams: 0
+                ninstructions: 40
+                nfunctions: 0
+                Literals: [
+                    0: "profiles"
+                    1: "save_data"
+                    2: "profile"
+                    3: "menu_state"
+                    4: "p1"
+                    5: "config_data"
+                    6: "profile_1p_index"
+                    7: "p2"
+                    8: "profile_2p_index"
+                    9: "func_update"
+                    10: "func_update_old"
+                    11: "func_update_1p"
+                    12: "func_update_1p_old"
+                    13: "func_update_2p"
+                    14: "func_update_2p_old"
+                    15: "submenu_active"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 39
+                  ]
+                Line Informations: [
+                    0: line: 333, op: 1
+                    1: line: 335, op: 6
+                    2: line: 336, op: 14
+                    3: line: 339, op: 22
+                    4: line: 340, op: 26
+                    5: line: 341, op: 30
+                    6: line: 343, op: 34
+                    7: line: 345, op: 38
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 333)
+                    1:  load(s1, "profiles")
+                    2:  loadroot(s2)
+                    3:  getk(s2, "save_data", s2)
+                    4:  getk(s2, "profile", s2)
+                    5:  newslot(s255, s0, s1, s2)
+                    6:  line(-, 335)
+                    7:  getk(s1, "menu_state", s0)
+                    8:  getk(s1, "p1", s1)
+                    9:  load(s2, "profile")
+                    10:  loadroot(s3)
+                    11:  getk(s3, "config_data", s3)
+                    12:  getk(s3, "profile_1p_index", s3)
+                    13:  set(s255, s1, s2, s3)
+                    14:  line(-, 336)
+                    15:  getk(s1, "menu_state", s0)
+                    16:  getk(s1, "p2", s1)
+                    17:  load(s2, "profile")
+                    18:  loadroot(s3)
+                    19:  getk(s3, "config_data", s3)
+                    20:  getk(s3, "profile_2p_index", s3)
+                    21:  set(s255, s1, s2, s3)
+                    22:  line(-, 339)
+                    23:  dload(s1, "func_update", s2, "func_update_old")
+                    24:  get(s2, s0, s2)
+                    25:  set(s255, s0, s1, s2)
+                    26:  line(-, 340)
+                    27:  dload(s1, "func_update_1p", s2, "func_update_1p_old")
+                    28:  get(s2, s0, s2)
+                    29:  set(s255, s0, s1, s2)
+                    30:  line(-, 341)
+                    31:  dload(s1, "func_update_2p", s2, "func_update_2p_old")
+                    32:  get(s2, s0, s2)
+                    33:  set(s255, s0, s1, s2)
+                    34:  line(-, 343)
+                    35:  load(s1, "submenu_active")
+                    36:  loadbool(s2, 0)
+                    37:  set(s255, s0, s1, s2)
+                    38:  line(-, 345)
+                    39:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "Update_StorySelect"
+        nliterals: 36
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 33
+        ndefaultparams: 0
+        ninstructions: 207
+        nfunctions: 1
+        Literals: [
+            0: "menu_mode"
+            1: "menu_state"
+            2: "p2"
+            3: "sel_story"
+            4: "Update"
+            5: "cursor"
+            6: "cursor_prev"
+            7: "PlaySE"
+            8: "sys_cursor"
+            9: "disp_char"
+            10: "char_id"
+            11: "char_id_trans"
+            12: "summary_text"
+            13: "len"
+            14: "StorySummary"
+            15: "text"
+            16: "layout"
+            17: "SetText"
+            18: "label_index"
+            19: "summary_y"
+            20: "summary_ty"
+            21: "Update_StoryCommon"
+            22: "Update_StorySubMenu"
+            23: "story_input"
+            24: "b0"
+            25: "p_flash"
+            26: "sys_ok2"
+            27: "func_update"
+            28: "Update_StoryEquip"
+            29: "b1"
+            30: "sys_cancel"
+            31: "StopBGM"
+            32: "act"
+            33: "fader"
+            34: "FadeOut"
+            35: "bindenv"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 206
+          ]
+        Line Informations: [
+            0: line: 356, op: 1
+            1: line: 357, op: 4
+            2: line: 360, op: 10
+            3: line: 362, op: 14
+            4: line: 364, op: 22
+            5: line: 367, op: 26
+            6: line: 369, op: 33
+            7: line: 370, op: 37
+            8: line: 373, op: 46
+            9: line: 375, op: 61
+            10: line: 376, op: 61
+            11: line: 379, op: 73
+            12: line: 380, op: 77
+            13: line: 381, op: 81
+            14: line: 383, op: 87
+            15: line: 384, op: 96
+            16: line: 385, op: 105
+            17: line: 386, op: 114
+            18: line: 387, op: 123
+            19: line: 388, op: 132
+            20: line: 389, op: 141
+            21: line: 394, op: 146
+            22: line: 395, op: 149
+            23: line: 398, op: 152
+            24: line: 400, op: 159
+            25: line: 402, op: 164
+            26: line: 403, op: 169
+            27: line: 405, op: 174
+            28: line: 407, op: 181
+            29: line: 408, op: 185
+            30: line: 409, op: 189
+            31: line: 412, op: 193
+            32: line: 421, op: 205
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 356)
+            1:  load(s1, "menu_mode")
+            2:  loadint(s2, 0)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 357)
+            5:  getk(s1, "menu_state", s0)
+            6:  getk(s1, "p2", s1)
+            7:  load(s2, "menu_mode")
+            8:  loadint(s3, 0)
+            9:  set(s255, s1, s2, s3)
+            10:  line(-, 360)
+            11:  getk(s1, "sel_story", s0)
+            12:  prepcallk(s1, "Update", s1, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 362)
+            15:  getk(s1, "sel_story", s0)
+            16:  getk(s1, "cursor", s1)
+            17:  getk(s2, "sel_story", s0)
+            18:  getk(s2, "cursor_prev", s2)
+            19:  ne(s1, 2, s1, 0)
+            20:  jz(s1, 5)
+            21:  line(-, 364)
+            22:  loadroot(s1)
+            23:  prepcallk(s1, "PlaySE", s1, s2)
+            24:  load(s3, "sys_cursor")
+            25:  call(255, s1, s2, 2)
+            26:  line(-, 367)
+            27:  getk(s1, "disp_char", s0)
+            28:  getk(s2, "sel_story", s0)
+            29:  getk(s2, "cursor", s2)
+            30:  ne(s1, 2, s1, 0)
+            31:  jz(s1, 114)
+            32:  line(-, 369)
+            33:  dload(s1, "disp_char", s2, "sel_story")
+            34:  get(s2, s0, s2)
+            35:  getk(s2, "cursor", s2)
+            36:  set(s255, s0, s1, s2)
+            37:  line(-, 370)
+            38:  getk(s1, "menu_state", s0)
+            39:  getk(s1, "p2", s1)
+            40:  dload(s2, "char_id", s3, "char_id_trans")
+            41:  get(s3, s0, s3)
+            42:  getk(s4, "sel_story", s0)
+            43:  getk(s4, "cursor", s4)
+            44:  get(s3, s3, s4)
+            45:  set(s255, s1, s2, s3)
+            46:  line(-, 373)
+            47:  getk(s1, "sel_story", s0)
+            48:  getk(s1, "cursor", s1)
+            49:  loadint(s2, 0)
+            50:  cmp(s1, s2, s1, CMP_GE)
+            51:  and(s1, 7, s1)
+            52:  getk(s2, "sel_story", s0)
+            53:  getk(s2, "cursor", s2)
+            54:  getk(s3, "summary_text", s0)
+            55:  prepcallk(s3, "len", s3, s4)
+            56:  call(3, s3, s4, 1)
+            57:  cmp(s2, s3, s2, CMP_L)
+            58:  move(s1, s2)
+            59:  jz(s1, 13)
+            60:  line(-, 375)
+            61:  line(-, 376)
+            62:  getk(s1, "StorySummary", s0)
+            63:  getk(s1, "text", s1)
+            64:  getk(s1, "layout", s1)
+            65:  prepcallk(s1, "SetText", s1, s2)
+            66:  getk(s3, "summary_text", s0)
+            67:  getk(s4, "label_index", s0)
+            68:  getk(s5, "sel_story", s0)
+            69:  getk(s5, "cursor", s5)
+            70:  get(s4, s4, s5)
+            71:  get(s3, s3, s4)
+            72:  call(255, s1, s2, 2)
+            73:  line(-, 379)
+            74:  load(s1, "summary_y")
+            75:  loadint(s2, 256)
+            76:  set(s255, s0, s1, s2)
+            77:  line(-, 380)
+            78:  load(s1, "summary_ty")
+            79:  loadint(s2, 0)
+            80:  set(s255, s0, s1, s2)
+            81:  line(-, 381)
+            82:  getk(s1, "sel_story", s0)
+            83:  getk(s1, "cursor", s1)
+            84:  loadint(s2, 2)
+            85:  eq(s2, 2, s1, 0)
+            86:  jz(s2, 6)
+            87:  line(-, 383)
+            88:  load(s2, "summary_ty")
+            89:  loadint(s3, -20)
+            90:  set(s255, s0, s2, s3)
+            91:  jmp(-, 54)
+            92:  jmp(-, 3)
+            93:  loadint(s2, 5)
+            94:  eq(s2, 2, s1, 0)
+            95:  jz(s2, 6)
+            96:  line(-, 384)
+            97:  load(s2, "summary_ty")
+            98:  loadint(s3, -24)
+            99:  set(s255, s0, s2, s3)
+            100:  jmp(-, 45)
+            101:  jmp(-, 3)
+            102:  loadint(s2, 8)
+            103:  eq(s2, 2, s1, 0)
+            104:  jz(s2, 6)
+            105:  line(-, 385)
+            106:  load(s2, "summary_ty")
+            107:  loadint(s3, -15)
+            108:  set(s255, s0, s2, s3)
+            109:  jmp(-, 36)
+            110:  jmp(-, 3)
+            111:  loadint(s2, 10)
+            112:  eq(s2, 2, s1, 0)
+            113:  jz(s2, 6)
+            114:  line(-, 386)
+            115:  load(s2, "summary_ty")
+            116:  loadint(s3, -15)
+            117:  set(s255, s0, s2, s3)
+            118:  jmp(-, 27)
+            119:  jmp(-, 3)
+            120:  loadint(s2, 12)
+            121:  eq(s2, 2, s1, 0)
+            122:  jz(s2, 6)
+            123:  line(-, 387)
+            124:  load(s2, "summary_ty")
+            125:  loadint(s3, -10)
+            126:  set(s255, s0, s2, s3)
+            127:  jmp(-, 18)
+            128:  jmp(-, 3)
+            129:  loadint(s2, 13)
+            130:  eq(s2, 2, s1, 0)
+            131:  jz(s2, 6)
+            132:  line(-, 388)
+            133:  load(s2, "summary_ty")
+            134:  loadint(s3, -20)
+            135:  set(s255, s0, s2, s3)
+            136:  jmp(-, 9)
+            137:  jmp(-, 3)
+            138:  loadint(s2, 14)
+            139:  eq(s2, 2, s1, 0)
+            140:  jz(s2, 5)
+            141:  line(-, 389)
+            142:  load(s2, "summary_ty")
+            143:  loadint(s3, -15)
+            144:  set(s255, s0, s2, s3)
+            145:  jmp(-, 0)
+            146:  line(-, 394)
+            147:  prepcallk(s1, "Update_StoryCommon", s0, s2)
+            148:  call(255, s1, s2, 1)
+            149:  line(-, 395)
+            150:  prepcallk(s1, "Update_StorySubMenu", s0, s2)
+            151:  call(255, s1, s2, 1)
+            152:  line(-, 398)
+            153:  getk(s1, "story_input", s0)
+            154:  getk(s1, "b0", s1)
+            155:  loadint(s2, 1)
+            156:  eq(s1, 2, s1, 0)
+            157:  jz(s1, 16)
+            158:  line(-, 400)
+            159:  getk(s1, "menu_state", s0)
+            160:  getk(s1, "p2", s1)
+            161:  load(s2, "p_flash")
+            162:  loadint(s3, 180)
+            163:  set(s255, s1, s2, s3)
+            164:  line(-, 402)
+            165:  loadroot(s1)
+            166:  prepcallk(s1, "PlaySE", s1, s2)
+            167:  load(s3, "sys_ok2")
+            168:  call(255, s1, s2, 2)
+            169:  line(-, 403)
+            170:  dload(s1, "func_update", s2, "Update_StoryEquip")
+            171:  get(s2, s0, s2)
+            172:  set(s255, s0, s1, s2)
+            173:  jmp(-, 31)
+            174:  line(-, 405)
+            175:  getk(s1, "story_input", s0)
+            176:  getk(s1, "b1", s1)
+            177:  loadint(s2, 1)
+            178:  eq(s1, 2, s1, 0)
+            179:  jz(s1, 25)
+            180:  line(-, 407)
+            181:  loadroot(s1)
+            182:  prepcallk(s1, "PlaySE", s1, s2)
+            183:  load(s3, "sys_cancel")
+            184:  call(255, s1, s2, 2)
+            185:  line(-, 408)
+            186:  dload(s1, "func_update", s2, "Update_StoryCommon")
+            187:  get(s2, s0, s2)
+            188:  set(s255, s0, s1, s2)
+            189:  line(-, 409)
+            190:  prepcallk(s1, "StopBGM", s0, s2)
+            191:  loadint(s3, 500)
+            192:  call(255, s1, s2, 2)
+            193:  line(-, 412)
+            194:  loadroot(s1)
+            195:  getk(s1, "act", s1)
+            196:  getk(s1, "fader", s1)
+            197:  prepcallk(s1, "FadeOut", s1, s2)
+            198:  loadint(s3, 20)
+            199:  loadint(s4, 0)
+            200:  closure(s5, 0)
+            201:  prepcallk(s5, "bindenv", s5, s6)
+            202:  move(s7, s0)
+            203:  call(5, s5, s6, 2)
+            204:  call(255, s1, s2, 4)
+            205:  line(-, 421)
+            206:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 24
+                nfunctions: 0
+                Literals: [
+                    0: "Suspend"
+                    1: "act"
+                    2: "TitleMenu"
+                    3: "Resume"
+                    4: "fader"
+                    5: "FadeIn"
+                    6: "pl"
+                    7: "EndStage"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 23
+                  ]
+                Line Informations: [
+                    0: line: 415, op: 1
+                    1: line: 416, op: 3
+                    2: line: 417, op: 9
+                    3: line: 418, op: 18
+                    4: line: 419, op: 22
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 415)
+                    1:  prepcallk(s1, "Suspend", s0, s2)
+                    2:  call(255, s1, s2, 1)
+                    3:  line(-, 416)
+                    4:  loadroot(s1)
+                    5:  getk(s1, "act", s1)
+                    6:  getk(s1, "TitleMenu", s1)
+                    7:  prepcallk(s1, "Resume", s1, s2)
+                    8:  call(255, s1, s2, 1)
+                    9:  line(-, 417)
+                    10:  loadroot(s1)
+                    11:  getk(s1, "act", s1)
+                    12:  getk(s1, "fader", s1)
+                    13:  prepcallk(s1, "FadeIn", s1, s2)
+                    14:  loadint(s3, 20)
+                    15:  loadint(s4, 0)
+                    16:  loadnulls(s5, 1)
+                    17:  call(255, s1, s2, 4)
+                    18:  line(-, 418)
+                    19:  getk(s1, "pl", s0)
+                    20:  prepcallk(s1, "EndStage", s1, s2)
+                    21:  call(255, s1, s2, 1)
+                    22:  line(-, 419)
+                    23:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "Update_StoryEquip"
+        nliterals: 24
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 19
+        ndefaultparams: 0
+        ninstructions: 102
+        nfunctions: 1
+        Literals: [
+            0: "menu_mode"
+            1: "menu_state"
+            2: "p2"
+            3: "sel_equip"
+            4: "Update"
+            5: "cursor"
+            6: "cursor_prev"
+            7: "PlaySE"
+            8: "sys_cursor"
+            9: "Update_StoryCommon"
+            10: "Update_StorySubMenu"
+            11: "story_input"
+            12: "b0"
+            13: "sys_ok1"
+            14: "func_update"
+            15: "p_flash"
+            16: "accept_flash"
+            17: "act"
+            18: "fader"
+            19: "FadeOut"
+            20: "bindenv"
+            21: "b1"
+            22: "sys_cancel"
+            23: "Update_StorySelect"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 101
+          ]
+        Line Informations: [
+            0: line: 426, op: 1
+            1: line: 427, op: 4
+            2: line: 430, op: 10
+            3: line: 432, op: 14
+            4: line: 434, op: 22
+            5: line: 438, op: 26
+            6: line: 439, op: 29
+            7: line: 442, op: 32
+            8: line: 444, op: 39
+            9: line: 445, op: 43
+            10: line: 447, op: 47
+            11: line: 448, op: 53
+            12: line: 449, op: 59
+            13: line: 451, op: 65
+            14: line: 463, op: 79
+            15: line: 465, op: 86
+            16: line: 466, op: 90
+            17: line: 467, op: 96
+            18: line: 469, op: 100
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 426)
+            1:  load(s1, "menu_mode")
+            2:  loadint(s2, 1)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 427)
+            5:  getk(s1, "menu_state", s0)
+            6:  getk(s1, "p2", s1)
+            7:  load(s2, "menu_mode")
+            8:  loadint(s3, 1)
+            9:  set(s255, s1, s2, s3)
+            10:  line(-, 430)
+            11:  getk(s1, "sel_equip", s0)
+            12:  prepcallk(s1, "Update", s1, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 432)
+            15:  getk(s1, "sel_equip", s0)
+            16:  getk(s1, "cursor", s1)
+            17:  getk(s2, "sel_equip", s0)
+            18:  getk(s2, "cursor_prev", s2)
+            19:  ne(s1, 2, s1, 0)
+            20:  jz(s1, 5)
+            21:  line(-, 434)
+            22:  loadroot(s1)
+            23:  prepcallk(s1, "PlaySE", s1, s2)
+            24:  load(s3, "sys_cursor")
+            25:  call(255, s1, s2, 2)
+            26:  line(-, 438)
+            27:  prepcallk(s1, "Update_StoryCommon", s0, s2)
+            28:  call(255, s1, s2, 1)
+            29:  line(-, 439)
+            30:  prepcallk(s1, "Update_StorySubMenu", s0, s2)
+            31:  call(255, s1, s2, 1)
+            32:  line(-, 442)
+            33:  getk(s1, "story_input", s0)
+            34:  getk(s1, "b0", s1)
+            35:  loadint(s2, 1)
+            36:  eq(s1, 2, s1, 0)
+            37:  jz(s1, 41)
+            38:  line(-, 444)
+            39:  loadroot(s1)
+            40:  prepcallk(s1, "PlaySE", s1, s2)
+            41:  load(s3, "sys_ok1")
+            42:  call(255, s1, s2, 2)
+            43:  line(-, 445)
+            44:  dload(s1, "func_update", s2, "Update_StoryCommon")
+            45:  get(s2, s0, s2)
+            46:  set(s255, s0, s1, s2)
+            47:  line(-, 447)
+            48:  getk(s1, "menu_state", s0)
+            49:  getk(s1, "p2", s1)
+            50:  load(s2, "menu_mode")
+            51:  loadint(s3, 2)
+            52:  set(s255, s1, s2, s3)
+            53:  line(-, 448)
+            54:  getk(s1, "menu_state", s0)
+            55:  getk(s1, "p2", s1)
+            56:  load(s2, "p_flash")
+            57:  loadint(s3, 180)
+            58:  set(s255, s1, s2, s3)
+            59:  line(-, 449)
+            60:  getk(s1, "menu_state", s0)
+            61:  getk(s1, "p2", s1)
+            62:  load(s2, "accept_flash")
+            63:  loadint(s3, 100)
+            64:  set(s255, s1, s2, s3)
+            65:  line(-, 451)
+            66:  loadroot(s1)
+            67:  getk(s1, "act", s1)
+            68:  getk(s1, "fader", s1)
+            69:  prepcallk(s1, "FadeOut", s1, s2)
+            70:  loadint(s3, 30)
+            71:  loadint(s4, 0)
+            72:  closure(s5, 0)
+            73:  prepcallk(s5, "bindenv", s5, s6)
+            74:  move(s7, s0)
+            75:  call(5, s5, s6, 2)
+            76:  loadbool(s6, 1)
+            77:  call(255, s1, s2, 5)
+            78:  jmp(-, 21)
+            79:  line(-, 463)
+            80:  getk(s1, "story_input", s0)
+            81:  getk(s1, "b1", s1)
+            82:  loadint(s2, 1)
+            83:  eq(s1, 2, s1, 0)
+            84:  jz(s1, 15)
+            85:  line(-, 465)
+            86:  loadroot(s1)
+            87:  prepcallk(s1, "PlaySE", s1, s2)
+            88:  load(s3, "sys_cancel")
+            89:  call(255, s1, s2, 2)
+            90:  line(-, 466)
+            91:  getk(s1, "menu_state", s0)
+            92:  getk(s1, "p2", s1)
+            93:  load(s2, "p_flash")
+            94:  loadint(s3, 180)
+            95:  set(s255, s1, s2, s3)
+            96:  line(-, 467)
+            97:  dload(s1, "func_update", s2, "Update_StorySelect")
+            98:  get(s2, s0, s2)
+            99:  set(s255, s0, s1, s2)
+            100:  line(-, 469)
+            101:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 6
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 15
+                nfunctions: 0
+                Literals: [
+                    0: "Story_StartBattle"
+                    1: "act"
+                    2: "BG"
+                    3: "Stop"
+                    4: "pl"
+                    5: "EndStage"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 14
+                  ]
+                Line Informations: [
+                    0: line: 455, op: 1
+                    1: line: 458, op: 3
+                    2: line: 460, op: 9
+                    3: line: 461, op: 13
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 455)
+                    1:  prepcallk(s1, "Story_StartBattle", s0, s2)
+                    2:  call(255, s1, s2, 1)
+                    3:  line(-, 458)
+                    4:  loadroot(s1)
+                    5:  getk(s1, "act", s1)
+                    6:  getk(s1, "BG", s1)
+                    7:  prepcallk(s1, "Stop", s1, s2)
+                    8:  call(255, s1, s2, 1)
+                    9:  line(-, 460)
+                    10:  getk(s1, "pl", s0)
+                    11:  prepcallk(s1, "EndStage", s1, s2)
+                    12:  call(255, s1, s2, 1)
+                    13:  line(-, 461)
+                    14:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "Render_Story"
+        nliterals: 86
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 34
+        nlineinfos: 110
+        ndefaultparams: 0
+        ninstructions: 1223
+        nfunctions: 0
+        Literals: [
+            0: "char_resource"
+            1: "len"
+            2: "char_x_2p"
+            3: "menu_state"
+            4: "p2"
+            5: "menu_mode"
+            6: "image_stand"
+            7: "image_stand2"
+            8: "image_shadow"
+            9: "image_shadow2"
+            10: "fabs"
+            11: "char_id"
+            12: "bg_2p"
+            13: "Blit"
+            14: "image_width"
+            15: "image_height"
+            16: "BLEND_ALPHA"
+            17: "accept_flash"
+            18: "resource"
+            19: "accept_bg"
+            20: "BLEND_ADD"
+            21: "center_frame"
+            22: "offset"
+            23: "name_2p"
+            24: "layout"
+            25: "Clear"
+            26: "cs_namelist1"
+            27: "subject_2p"
+            28: "moji_namelist2a"
+            29: "frame"
+            30: "cos"
+            31: "sin"
+            32: "wallpaper_02"
+            33: "x"
+            34: "y"
+            35: "story_layer"
+            36: "moji_side"
+            37: "BlitRotate"
+            38: "bg_1p"
+            39: "cursor_select_half"
+            40: "equip_cursor_y"
+            41: "cursor_select"
+            42: "save_data"
+            43: "clear_rank"
+            44: "act"
+            45: "TitleMenu"
+            46: "difficulty"
+            47: "sel_story"
+            48: "story_scroll_y"
+            49: "cursor"
+            50: "moji_storyname"
+            51: "moji_storyname_dk"
+            52: "label_index"
+            53: "story_clear"
+            54: "trophy000"
+            55: "RT_spell_1p"
+            56: "RT_spell_2p"
+            57: "cursor_y"
+            58: "arrow_u2"
+            59: "arrow_b2"
+            60: "device_id"
+            61: "icon_keyboard"
+            62: "pad_id_2p"
+            63: "visible"
+            64: "SetText"
+            65: "K\s[16]eyboard �@"
+            66: "icon_gamepad"
+            67: ""
+            68: "summary_y"
+            69: "summary_stone"
+            70: "RT_explain_2p"
+            71: "ox"
+            72: "oy"
+            73: "cs_1p"
+            74: "curtain_per"
+            75: "menu_mode_1p"
+            76: "p1"
+            77: "p_flash"
+            78: "cs_2p"
+            79: "menu_mode_2p"
+            80: "name_1p"
+            81: "subject_1p"
+            82: "menu_mode_src_x"
+            83: "cs_xxxselect"
+            84: "load_data"
+            85: "game_mode"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "offset", pos: 8, start_op: 86, end_op: 114
+            1: name: "alpha", pos: 7, start_op: 75, end_op: 114
+            2: name: "alpha", pos: 7, start_op: 141, end_op: 154
+            3: name: "scale_x", pos: 6, start_op: 66, end_op: 154
+            4: name: "src_x", pos: 7, start_op: 161, end_op: 219
+            5: name: "name_y", pos: 6, start_op: 158, end_op: 219
+            6: name: "y", pos: 5, start_op: 50, end_op: 219
+            7: name: "x", pos: 4, start_op: 48, end_op: 219
+            8: name: "img_s", pos: 3, start_op: 42, end_op: 219
+            9: name: "img", pos: 2, start_op: 27, end_op: 219
+            10: name: "i", pos: 1, start_op: 2, end_op: 221
+            11: name: "img", pos: 9, start_op: 413, end_op: 577
+            12: name: "dst_y", pos: 8, start_op: 401, end_op: 577
+            13: name: "dst_x", pos: 7, start_op: 384, end_op: 577
+            14: name: "i", pos: 6, start_op: 363, end_op: 579
+            15: name: "src_y", pos: 18, start_op: 1199, end_op: 1220
+            16: name: "target_x", pos: 17, start_op: 1158, end_op: 1220
+            17: name: "target_x", pos: 16, start_op: 1101, end_op: 1220
+            18: name: "summary_dy", pos: 15, start_op: 838, end_op: 1220
+            19: name: "summary_dx", pos: 14, start_op: 826, end_op: 1220
+            20: name: "cursor_dy", pos: 13, start_op: 715, end_op: 1220
+            21: name: "cursor_dx", pos: 12, start_op: 703, end_op: 1220
+            22: name: "offset_y", pos: 11, start_op: 691, end_op: 1220
+            23: name: "offset_x", pos: 10, start_op: 680, end_op: 1220
+            24: name: "cursor_dy", pos: 9, start_op: 647, end_op: 1220
+            25: name: "cursor_dx", pos: 8, start_op: 635, end_op: 1220
+            26: name: "offset_y", pos: 7, start_op: 623, end_op: 1220
+            27: name: "offset_x", pos: 6, start_op: 612, end_op: 1220
+            28: name: "clear_rank", pos: 5, start_op: 361, end_op: 1220
+            29: name: "equip_cursor_y", pos: 4, start_op: 326, end_op: 1220
+            30: name: "equip_cursor_x", pos: 3, start_op: 314, end_op: 1220
+            31: name: "bg_offset_y", pos: 2, start_op: 250, end_op: 1220
+            32: name: "bg_offset_x", pos: 1, start_op: 236, end_op: 1220
+            33: name: "this", pos: 0, start_op: 0, end_op: 1222
+          ]
+        Line Informations: [
+            0: line: 474, op: 1
+            1: line: 476, op: 7
+            2: line: 479, op: 12
+            3: line: 480, op: 27
+            4: line: 482, op: 42
+            5: line: 483, op: 48
+            6: line: 485, op: 50
+            7: line: 487, op: 56
+            8: line: 488, op: 66
+            9: line: 490, op: 70
+            10: line: 492, op: 73
+            11: line: 493, op: 75
+            12: line: 494, op: 79
+            13: line: 496, op: 83
+            14: line: 497, op: 86
+            15: line: 499, op: 93
+            16: line: 500, op: 94
+            17: line: 502, op: 96
+            18: line: 505, op: 115
+            19: line: 507, op: 118
+            20: line: 512, op: 135
+            21: line: 513, op: 141
+            22: line: 517, op: 155
+            23: line: 518, op: 158
+            24: line: 519, op: 161
+            25: line: 521, op: 169
+            26: line: 522, op: 176
+            27: line: 524, op: 194
+            28: line: 525, op: 201
+            29: line: 529, op: 222
+            30: line: 530, op: 236
+            31: line: 531, op: 250
+            32: line: 532, op: 256
+            33: line: 535, op: 261
+            34: line: 536, op: 275
+            35: line: 539, op: 282
+            36: line: 541, op: 302
+            37: line: 542, op: 314
+            38: line: 543, op: 326
+            39: line: 546, op: 352
+            40: line: 548, op: 361
+            41: line: 550, op: 368
+            42: line: 551, op: 384
+            43: line: 552, op: 401
+            44: line: 553, op: 413
+            45: line: 554, op: 428
+            46: line: 557, op: 435
+            47: line: 560, op: 445
+            48: line: 562, op: 452
+            49: line: 567, op: 500
+            50: line: 570, op: 517
+            51: line: 574, op: 542
+            52: line: 576, op: 571
+            53: line: 581, op: 580
+            54: line: 582, op: 594
+            55: line: 585, op: 601
+            56: line: 586, op: 612
+            57: line: 588, op: 623
+            58: line: 589, op: 635
+            59: line: 590, op: 647
+            60: line: 591, op: 662
+            61: line: 593, op: 669
+            62: line: 594, op: 680
+            63: line: 596, op: 691
+            64: line: 597, op: 703
+            65: line: 598, op: 715
+            66: line: 599, op: 730
+            67: line: 602, op: 737
+            68: line: 604, op: 746
+            69: line: 605, op: 759
+            70: line: 606, op: 764
+            71: line: 608, op: 771
+            72: line: 610, op: 779
+            73: line: 611, op: 792
+            74: line: 612, op: 797
+            75: line: 616, op: 810
+            76: line: 617, op: 814
+            77: line: 618, op: 826
+            78: line: 620, op: 838
+            79: line: 621, op: 854
+            80: line: 623, op: 861
+            81: line: 624, op: 877
+            82: line: 626, op: 884
+            83: line: 627, op: 895
+            84: line: 630, op: 904
+            85: line: 631, op: 918
+            86: line: 633, op: 932
+            87: line: 634, op: 951
+            88: line: 635, op: 957
+            89: line: 637, op: 968
+            90: line: 638, op: 982
+            91: line: 640, op: 996
+            92: line: 641, op: 1015
+            93: line: 642, op: 1021
+            94: line: 644, op: 1032
+            95: line: 645, op: 1046
+            96: line: 647, op: 1060
+            97: line: 648, op: 1074
+            98: line: 651, op: 1088
+            99: line: 653, op: 1095
+            100: line: 654, op: 1101
+            101: line: 655, op: 1114
+            102: line: 656, op: 1127
+            103: line: 658, op: 1145
+            104: line: 660, op: 1152
+            105: line: 661, op: 1158
+            106: line: 662, op: 1171
+            107: line: 664, op: 1184
+            108: line: 665, op: 1199
+            109: line: 666, op: 1221
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 474)
+            1:  loadint(s1, 0)
+            2:  getk(s2, "char_resource", s0)
+            3:  prepcallk(s2, "len", s2, s3)
+            4:  call(2, s2, s3, 1)
+            5:  jcmp(s2, 216, s1, CMP_L)
+            6:  line(-, 476)
+            7:  getk(s2, "char_x_2p", s0)
+            8:  prepcallk(s2, "len", s2, s3)
+            9:  call(2, s2, s3, 1)
+            10:  jcmp(s2, 1, s1, CMP_GE)
+            11:  jmp(-, 208)
+            12:  line(-, 479)
+            13:  getk(s2, "menu_state", s0)
+            14:  getk(s2, "p2", s2)
+            15:  getk(s2, "menu_mode", s2)
+            16:  loadint(s3, 2)
+            17:  jcmp(s3, 5, s2, CMP_L)
+            18:  getk(s3, "char_resource", s0)
+            19:  get(s3, s3, s1)
+            20:  getk(s3, "image_stand", s3)
+            21:  move(s2, s3)
+            22:  jmp(-, 4)
+            23:  getk(s3, "char_resource", s0)
+            24:  get(s3, s3, s1)
+            25:  getk(s3, "image_stand2", s3)
+            26:  move(s2, s3)
+            27:  line(-, 480)
+            28:  getk(s3, "menu_state", s0)
+            29:  getk(s3, "p2", s3)
+            30:  getk(s3, "menu_mode", s3)
+            31:  loadint(s4, 2)
+            32:  jcmp(s4, 5, s3, CMP_L)
+            33:  getk(s4, "char_resource", s0)
+            34:  get(s4, s4, s1)
+            35:  getk(s4, "image_shadow", s4)
+            36:  move(s3, s4)
+            37:  jmp(-, 4)
+            38:  getk(s4, "char_resource", s0)
+            39:  get(s4, s4, s1)
+            40:  getk(s4, "image_shadow2", s4)
+            41:  move(s3, s4)
+            42:  line(-, 482)
+            43:  getk(s4, "char_x_2p", s0)
+            44:  get(s4, s4, s1)
+            45:  neg(s4, s4)
+            46:  loadint(s5, 32)
+            47:  add(s4, s5, s4)
+            48:  line(-, 483)
+            49:  loadint(s5, 0)
+            50:  line(-, 485)
+            51:  getk(s6, "char_x_2p", s0)
+            52:  get(s6, s6, s1)
+            53:  loadint(s7, -250)
+            54:  jcmp(s7, 100, s6, CMP_GE)
+            55:  line(-, 487)
+            56:  loadfloat(s6, 1)
+            57:  prepcallk(s7, "fabs", s0, s8)
+            58:  getk(s9, "char_x_2p", s0)
+            59:  get(s9, s9, s1)
+            60:  loadfloat(s10, 640)
+            61:  div(s9, s10, s9)
+            62:  call(7, s7, s8, 2)
+            63:  loadfloat(s8, 0.6)
+            64:  mul(s7, s8, s7)
+            65:  add(s6, s7, s6)
+            66:  line(-, 488)
+            67:  loadfloat(s7, 1)
+            68:  jcmp(s7, 1, s6, CMP_L)
+            69:  loadfloat(s6, 1)
+            70:  line(-, 490)
+            71:  jz(s3, 43)
+            72:  line(-, 492)
+            73:  loadfloat(s7, 2)
+            74:  sub(s7, s6, s7)
+            75:  line(-, 493)
+            76:  loadfloat(s8, 0)
+            77:  jcmp(s8, 1, s7, CMP_L)
+            78:  loadfloat(s7, 0)
+            79:  line(-, 494)
+            80:  loadfloat(s8, 0.95)
+            81:  jcmp(s8, 1, s7, CMP_G)
+            82:  loadfloat(s7, 1)
+            83:  line(-, 496)
+            84:  loadint(s8, 24)
+            85:  mul(s8, s8, s7)
+            86:  line(-, 497)
+            87:  getk(s9, "menu_state", s0)
+            88:  getk(s9, "p2", s9)
+            89:  getk(s9, "char_id", s9)
+            90:  loadint(s10, 0)
+            91:  jcmp(s10, 4, s9, CMP_L)
+            92:  line(-, 499)
+            93:  loadfloat(s7, 0.5)
+            94:  line(-, 500)
+            95:  loadint(s8, 24)
+            96:  line(-, 502)
+            97:  getk(s9, "bg_2p", s0)
+            98:  prepcallk(s9, "Blit", s9, s10)
+            99:  getk(s11, "char_x_2p", s0)
+            100:  get(s11, s11, s1)
+            101:  loadint(s12, 32)
+            102:  add(s11, s12, s11)
+            103:  loadint(s12, 20)
+            104:  add(s11, s12, s11)
+            105:  sub(s11, s8, s11)
+            106:  add(s12, s8, s5)
+            107:  getk(s13, "image_width", s3)
+            108:  getk(s14, "image_height", s3)
+            109:  move(s15, s3)
+            110:  loadint(s16, 0)
+            111:  loadint(s17, 0)
+            112:  getk(s18, "BLEND_ALPHA", s0)
+            113:  loadfloat(s19, 1)
+            114:  call(255, s9, s10, 10)
+            115:  line(-, 505)
+            116:  jz(s2, 18)
+            117:  line(-, 507)
+            118:  getk(s7, "bg_2p", s0)
+            119:  prepcallk(s7, "Blit", s7, s8)
+            120:  getk(s9, "char_x_2p", s0)
+            121:  get(s9, s9, s1)
+            122:  loadint(s10, 32)
+            123:  add(s9, s10, s9)
+            124:  loadint(s10, 20)
+            125:  add(s9, s10, s9)
+            126:  loadint(s10, 0)
+            127:  getk(s11, "image_width", s2)
+            128:  getk(s12, "image_height", s2)
+            129:  move(s13, s2)
+            130:  loadint(s14, 0)
+            131:  loadint(s15, 0)
+            132:  getk(s16, "BLEND_ALPHA", s0)
+            133:  loadfloat(s17, 1)
+            134:  call(255, s7, s8, 10)
+            135:  line(-, 512)
+            136:  getk(s7, "menu_state", s0)
+            137:  getk(s7, "p2", s7)
+            138:  getk(s7, "accept_flash", s7)
+            139:  loadfloat(s8, 100)
+            140:  div(s7, s8, s7)
+            141:  line(-, 513)
+            142:  getk(s8, "bg_2p", s0)
+            143:  prepcallk(s8, "Blit", s8, s9)
+            144:  loadint(s10, 0)
+            145:  loadint(s11, 0)
+            146:  loadint(s12, 640)
+            147:  loadint(s13, 720)
+            148:  getk(s14, "resource", s0)
+            149:  getk(s14, "accept_bg", s14)
+            150:  loadint(s15, 0)
+            151:  loadint(s16, 0)
+            152:  getk(s17, "BLEND_ADD", s0)
+            153:  move(s18, s7)
+            154:  call(255, s8, s9, 10)
+            155:  line(-, 517)
+            156:  getk(s6, "char_x_2p", s0)
+            157:  get(s6, s6, s1)
+            158:  line(-, 518)
+            159:  loadint(s7, 1)
+            160:  add(s7, s7, s1)
+            161:  line(-, 519)
+            162:  getk(s8, "menu_state", s0)
+            163:  getk(s8, "p2", s8)
+            164:  getk(s8, "char_id", s8)
+            165:  loadint(s9, -1)
+            166:  eq(s8, 9, s8, 0)
+            167:  jz(s8, 1)
+            168:  loadint(s7, 0)
+            169:  line(-, 521)
+            170:  getk(s8, "center_frame", s0)
+            171:  getk(s8, "offset", s8)
+            172:  getk(s8, "name_2p", s8)
+            173:  getk(s8, "layout", s8)
+            174:  prepcallk(s8, "Clear", s8, s9)
+            175:  call(255, s8, s9, 1)
+            176:  line(-, 522)
+            177:  getk(s8, "center_frame", s0)
+            178:  getk(s8, "offset", s8)
+            179:  getk(s8, "name_2p", s8)
+            180:  prepcallk(s8, "Blit", s8, s9)
+            181:  loadint(s10, 0)
+            182:  loadfloat(s11, 2)
+            183:  mul(s11, s11, s6)
+            184:  loadint(s12, 72)
+            185:  loadint(s13, 360)
+            186:  getk(s14, "resource", s0)
+            187:  getk(s14, "cs_namelist1", s14)
+            188:  loadint(s15, 72)
+            189:  mul(s15, s15, s7)
+            190:  loadint(s16, 0)
+            191:  getk(s17, "BLEND_ALPHA", s0)
+            192:  loadfloat(s18, 1)
+            193:  call(255, s8, s9, 10)
+            194:  line(-, 524)
+            195:  getk(s8, "center_frame", s0)
+            196:  getk(s8, "offset", s8)
+            197:  getk(s8, "subject_2p", s8)
+            198:  getk(s8, "layout", s8)
+            199:  prepcallk(s8, "Clear", s8, s9)
+            200:  call(255, s8, s9, 1)
+            201:  line(-, 525)
+            202:  getk(s8, "center_frame", s0)
+            203:  getk(s8, "offset", s8)
+            204:  getk(s8, "subject_2p", s8)
+            205:  prepcallk(s8, "Blit", s8, s9)
+            206:  loadint(s10, 0)
+            207:  neg(s11, s6)
+            208:  loadfloat(s12, 1.5)
+            209:  mul(s11, s12, s11)
+            210:  loadint(s12, 40)
+            211:  loadint(s13, 256)
+            212:  getk(s14, "resource", s0)
+            213:  getk(s14, "moji_namelist2a", s14)
+            214:  loadint(s15, 40)
+            215:  mul(s15, s15, s7)
+            216:  loadint(s16, 0)
+            217:  getk(s17, "BLEND_ALPHA", s0)
+            218:  loadfloat(s18, 1)
+            219:  call(255, s8, s9, 10)
+            220:  pincl(s2, s1, 0, 1)
+            221:  jmp(-, -220)
+            222:  line(-, 529)
+            223:  getk(s1, "frame", s0)
+            224:  prepcallk(s2, "cos", s0, s3)
+            225:  loadfloat(s4, 75)
+            226:  loadfloat(s5, 3.1415)
+            227:  mul(s4, s5, s4)
+            228:  loadfloat(s5, 180)
+            229:  div(s4, s5, s4)
+            230:  call(2, s2, s3, 2)
+            231:  mul(s1, s2, s1)
+            232:  loadfloat(s2, 0.4)
+            233:  mul(s1, s2, s1)
+            234:  loadfloat(s2, 200)
+            235:  mod(s1, s2, s1)
+            236:  line(-, 530)
+            237:  getk(s2, "frame", s0)
+            238:  prepcallk(s3, "sin", s0, s4)
+            239:  loadfloat(s5, 75)
+            240:  loadfloat(s6, 3.1415)
+            241:  mul(s5, s6, s5)
+            242:  loadfloat(s6, 180)
+            243:  div(s5, s6, s5)
+            244:  call(3, s3, s4, 2)
+            245:  mul(s2, s3, s2)
+            246:  loadfloat(s3, 0.4)
+            247:  mul(s2, s3, s2)
+            248:  loadfloat(s3, 200)
+            249:  mod(s2, s3, s2)
+            250:  line(-, 531)
+            251:  getk(s3, "wallpaper_02", s0)
+            252:  load(s4, "x")
+            253:  loadint(s5, 200)
+            254:  sub(s5, s5, s1)
+            255:  set(s255, s3, s4, s5)
+            256:  line(-, 532)
+            257:  getk(s3, "wallpaper_02", s0)
+            258:  load(s4, "y")
+            259:  neg(s5, s2)
+            260:  set(s255, s3, s4, s5)
+            261:  line(-, 535)
+            262:  getk(s3, "story_layer", s0)
+            263:  prepcallk(s3, "Blit", s3, s4)
+            264:  loadint(s5, 100)
+            265:  loadint(s6, 0)
+            266:  loadint(s7, 64)
+            267:  loadint(s8, 384)
+            268:  getk(s9, "resource", s0)
+            269:  getk(s9, "moji_side", s9)
+            270:  loadint(s10, 0)
+            271:  loadint(s11, 0)
+            272:  getk(s12, "BLEND_ALPHA", s0)
+            273:  loadfloat(s13, 1)
+            274:  call(255, s3, s4, 10)
+            275:  line(-, 536)
+            276:  getk(s3, "story_layer", s0)
+            277:  prepcallk(s3, "BlitRotate", s3, s4)
+            278:  loadint(s5, 15)
+            279:  loadint(s6, 0)
+            280:  loadint(s7, 0)
+            281:  call(255, s3, s4, 4)
+            282:  line(-, 539)
+            283:  getk(s3, "bg_1p", s0)
+            284:  prepcallk(s3, "Blit", s3, s4)
+            285:  loadint(s5, 70)
+            286:  loadint(s6, 250)
+            287:  loadint(s7, 412)
+            288:  loadint(s8, 247)
+            289:  getk(s9, "resource", s0)
+            290:  getk(s9, "cursor_select_half", s9)
+            291:  loadint(s10, 0)
+            292:  loadint(s11, 0)
+            293:  getk(s12, "BLEND_ALPHA", s0)
+            294:  getk(s13, "menu_mode", s0)
+            295:  loadint(s14, 0)
+            296:  eq(s13, 14, s13, 0)
+            297:  jz(s13, 2)
+            298:  loadfloat(s13, 1)
+            299:  jmp(-, 1)
+            300:  loadfloat(s13, 0.5)
+            301:  call(255, s3, s4, 10)
+            302:  line(-, 541)
+            303:  prepcallk(s3, "cos", s0, s4)
+            304:  loadint(s5, 270)
+            305:  loadint(s6, 15)
+            306:  sub(s5, s6, s5)
+            307:  loadfloat(s6, 3.14159)
+            308:  mul(s5, s6, s5)
+            309:  loadfloat(s6, 180)
+            310:  div(s5, s6, s5)
+            311:  call(3, s3, s4, 2)
+            312:  getk(s4, "equip_cursor_y", s0)
+            313:  mul(s3, s4, s3)
+            314:  line(-, 542)
+            315:  prepcallk(s4, "sin", s0, s5)
+            316:  loadint(s6, 270)
+            317:  loadint(s7, 15)
+            318:  sub(s6, s7, s6)
+            319:  loadfloat(s7, 3.14159)
+            320:  mul(s6, s7, s6)
+            321:  loadfloat(s7, 180)
+            322:  div(s6, s7, s6)
+            323:  call(4, s4, s5, 2)
+            324:  getk(s5, "equip_cursor_y", s0)
+            325:  mul(s4, s5, s4)
+            326:  line(-, 543)
+            327:  getk(s5, "story_layer", s0)
+            328:  prepcallk(s5, "Blit", s5, s6)
+            329:  loadint(s7, 440)
+            330:  add(s7, s3, s7)
+            331:  loadfloat(s8, 44.5169)
+            332:  add(s7, s8, s7)
+            333:  loadint(s8, 210)
+            334:  sub(s8, s4, s8)
+            335:  loadfloat(s9, 166.139)
+            336:  sub(s8, s9, s8)
+            337:  loadint(s9, 412)
+            338:  loadint(s10, 247)
+            339:  getk(s11, "resource", s0)
+            340:  getk(s11, "cursor_select", s11)
+            341:  loadint(s12, 0)
+            342:  loadint(s13, 0)
+            343:  getk(s14, "BLEND_ALPHA", s0)
+            344:  getk(s15, "menu_mode", s0)
+            345:  loadint(s16, 1)
+            346:  eq(s15, 16, s15, 0)
+            347:  jz(s15, 2)
+            348:  loadfloat(s15, 1)
+            349:  jmp(-, 1)
+            350:  loadfloat(s15, 0.5)
+            351:  call(255, s5, s6, 10)
+            352:  line(-, 546)
+            353:  loadroot(s5)
+            354:  getk(s5, "save_data", s5)
+            355:  getk(s5, "clear_rank", s5)
+            356:  loadroot(s6)
+            357:  getk(s6, "act", s6)
+            358:  getk(s6, "TitleMenu", s6)
+            359:  getk(s6, "difficulty", s6)
+            360:  get(s5, s5, s6)
+            361:  line(-, 548)
+            362:  loadint(s6, 0)
+            363:  getk(s7, "sel_story", s0)
+            364:  prepcallk(s7, "len", s7, s8)
+            365:  call(7, s7, s8, 1)
+            366:  jcmp(s7, 213, s6, CMP_L)
+            367:  line(-, 550)
+            368:  loadint(s7, 120)
+            369:  prepcallk(s8, "cos", s0, s9)
+            370:  loadint(s10, 270)
+            371:  loadint(s11, 15)
+            372:  sub(s10, s11, s10)
+            373:  loadfloat(s11, 3.14159)
+            374:  mul(s10, s11, s10)
+            375:  loadfloat(s11, 180)
+            376:  div(s10, s11, s10)
+            377:  call(8, s8, s9, 2)
+            378:  loadfloat(s9, 72)
+            379:  mul(s9, s6, s9)
+            380:  getk(s10, "story_scroll_y", s0)
+            381:  add(s9, s10, s9)
+            382:  mul(s8, s9, s8)
+            383:  add(s7, s8, s7)
+            384:  line(-, 551)
+            385:  loadint(s8, 256)
+            386:  prepcallk(s9, "sin", s0, s10)
+            387:  loadint(s11, 270)
+            388:  loadint(s12, 15)
+            389:  sub(s11, s12, s11)
+            390:  loadfloat(s12, 3.14159)
+            391:  mul(s11, s12, s11)
+            392:  loadfloat(s12, 180)
+            393:  div(s11, s12, s11)
+            394:  call(9, s9, s10, 2)
+            395:  loadfloat(s10, 72)
+            396:  mul(s10, s6, s10)
+            397:  getk(s11, "story_scroll_y", s0)
+            398:  add(s10, s11, s10)
+            399:  mul(s9, s10, s9)
+            400:  sub(s8, s9, s8)
+            401:  line(-, 552)
+            402:  getk(s9, "sel_story", s0)
+            403:  getk(s9, "cursor", s9)
+            404:  eq(s9, 9, s6, 0)
+            405:  jz(s9, 4)
+            406:  getk(s10, "resource", s0)
+            407:  getk(s10, "moji_storyname", s10)
+            408:  move(s9, s10)
+            409:  jmp(-, 3)
+            410:  getk(s10, "resource", s0)
+            411:  getk(s10, "moji_storyname_dk", s10)
+            412:  move(s9, s10)
+            413:  line(-, 553)
+            414:  getk(s10, "story_layer", s0)
+            415:  prepcallk(s10, "Blit", s10, s11)
+            416:  dmove(s12, s7, s13, s8)
+            417:  loadint(s14, 335)
+            418:  loadint(s15, 72)
+            419:  move(s16, s9)
+            420:  loadint(s17, 0)
+            421:  getk(s18, "label_index", s0)
+            422:  get(s18, s18, s6)
+            423:  loadint(s19, 72)
+            424:  mul(s18, s19, s18)
+            425:  getk(s19, "BLEND_ALPHA", s0)
+            426:  loadfloat(s20, 1)
+            427:  call(255, s10, s11, 10)
+            428:  line(-, 554)
+            429:  getk(s10, "story_layer", s0)
+            430:  prepcallk(s10, "BlitRotate", s10, s11)
+            431:  loadint(s12, 15)
+            432:  loadint(s13, 0)
+            433:  loadint(s14, 0)
+            434:  call(255, s10, s11, 4)
+            435:  line(-, 557)
+            436:  loadroot(s10)
+            437:  getk(s10, "save_data", s10)
+            438:  getk(s10, "story_clear", s10)
+            439:  getk(s11, "label_index", s0)
+            440:  get(s11, s11, s6)
+            441:  get(s10, s10, s11)
+            442:  loadint(s11, 1)
+            443:  jcmp(s11, 134, s10, CMP_GE)
+            444:  line(-, 560)
+            445:  getk(s10, "label_index", s0)
+            446:  get(s10, s10, s6)
+            447:  get(s10, s5, s10)
+            448:  loadint(s11, 0)
+            449:  eq(s10, 11, s10, 0)
+            450:  jz(s10, 65)
+            451:  line(-, 562)
+            452:  loadroot(s10)
+            453:  getk(s10, "save_data", s10)
+            454:  getk(s10, "clear_rank", s10)
+            455:  loadint(s11, 0)
+            456:  get(s10, s10, s11)
+            457:  getk(s11, "label_index", s0)
+            458:  get(s11, s11, s6)
+            459:  get(s10, s10, s11)
+            460:  loadint(s11, 0)
+            461:  cmp(s10, s11, s10, CMP_G)
+            462:  or(s10, 35, s10)
+            463:  loadroot(s11)
+            464:  getk(s11, "save_data", s11)
+            465:  getk(s11, "clear_rank", s11)
+            466:  loadint(s12, 1)
+            467:  get(s11, s11, s12)
+            468:  getk(s12, "label_index", s0)
+            469:  get(s12, s12, s6)
+            470:  get(s11, s11, s12)
+            471:  loadint(s12, 0)
+            472:  cmp(s11, s12, s11, CMP_G)
+            473:  or(s11, 23, s11)
+            474:  loadroot(s12)
+            475:  getk(s12, "save_data", s12)
+            476:  getk(s12, "clear_rank", s12)
+            477:  loadint(s13, 2)
+            478:  get(s12, s12, s13)
+            479:  getk(s13, "label_index", s0)
+            480:  get(s13, s13, s6)
+            481:  get(s12, s12, s13)
+            482:  loadint(s13, 0)
+            483:  cmp(s12, s13, s12, CMP_G)
+            484:  or(s12, 11, s12)
+            485:  loadroot(s13)
+            486:  getk(s13, "save_data", s13)
+            487:  getk(s13, "clear_rank", s13)
+            488:  loadint(s14, 3)
+            489:  get(s13, s13, s14)
+            490:  getk(s14, "label_index", s0)
+            491:  get(s14, s14, s6)
+            492:  get(s13, s13, s14)
+            493:  loadint(s14, 0)
+            494:  cmp(s13, s14, s13, CMP_G)
+            495:  move(s12, s13)
+            496:  move(s11, s12)
+            497:  move(s10, s11)
+            498:  jz(s10, 16)
+            499:  line(-, 567)
+            500:  getk(s10, "story_layer", s0)
+            501:  prepcallk(s10, "Blit", s10, s11)
+            502:  loadint(s12, 6)
+            503:  sub(s12, s12, s7)
+            504:  loadint(s13, 33)
+            505:  add(s13, s13, s8)
+            506:  loadint(s14, 32)
+            507:  loadint(s15, 32)
+            508:  getk(s16, "resource", s0)
+            509:  getk(s16, "trophy000", s16)
+            510:  loadint(s17, 0)
+            511:  loadint(s18, 0)
+            512:  getk(s19, "BLEND_ALPHA", s0)
+            513:  loadfloat(s20, 1)
+            514:  call(255, s10, s11, 10)
+            515:  jmp(-, 26)
+            516:  line(-, 570)
+            517:  getk(s10, "story_layer", s0)
+            518:  prepcallk(s10, "Blit", s10, s11)
+            519:  loadint(s12, 6)
+            520:  sub(s12, s12, s7)
+            521:  loadint(s13, 33)
+            522:  add(s13, s13, s8)
+            523:  loadint(s14, 32)
+            524:  loadint(s15, 32)
+            525:  getk(s16, "resource", s0)
+            526:  getk(s16, "trophy000", s16)
+            527:  getk(s17, "label_index", s0)
+            528:  get(s17, s17, s6)
+            529:  get(s17, s5, s17)
+            530:  loadint(s18, 32)
+            531:  mul(s17, s18, s17)
+            532:  loadint(s18, 0)
+            533:  getk(s19, "BLEND_ALPHA", s0)
+            534:  getk(s20, "sel_story", s0)
+            535:  getk(s20, "cursor", s20)
+            536:  eq(s20, 20, s6, 0)
+            537:  jz(s20, 2)
+            538:  loadfloat(s20, 1)
+            539:  jmp(-, 1)
+            540:  loadfloat(s20, 0.5)
+            541:  call(255, s10, s11, 10)
+            542:  line(-, 574)
+            543:  getk(s10, "story_layer", s0)
+            544:  prepcallk(s10, "Blit", s10, s11)
+            545:  loadint(s12, 6)
+            546:  sub(s12, s12, s7)
+            547:  loadint(s13, 35)
+            548:  add(s12, s13, s12)
+            549:  loadint(s13, 33)
+            550:  add(s13, s13, s8)
+            551:  loadint(s14, 10)
+            552:  add(s13, s14, s13)
+            553:  loadint(s14, 256)
+            554:  loadint(s15, 22)
+            555:  getk(s16, "resource", s0)
+            556:  getk(s16, "RT_spell_1p", s16)
+            557:  loadint(s17, 0)
+            558:  getk(s18, "label_index", s0)
+            559:  get(s18, s18, s6)
+            560:  loadint(s19, 22)
+            561:  mul(s18, s19, s18)
+            562:  getk(s19, "BLEND_ALPHA", s0)
+            563:  getk(s20, "sel_story", s0)
+            564:  getk(s20, "cursor", s20)
+            565:  eq(s20, 20, s6, 0)
+            566:  jz(s20, 2)
+            567:  loadfloat(s20, 1)
+            568:  jmp(-, 1)
+            569:  loadfloat(s20, 0.5)
+            570:  call(255, s10, s11, 10)
+            571:  line(-, 576)
+            572:  getk(s10, "story_layer", s0)
+            573:  prepcallk(s10, "BlitRotate", s10, s11)
+            574:  loadint(s12, 15)
+            575:  loadint(s13, 0)
+            576:  loadint(s14, 0)
+            577:  call(255, s10, s11, 4)
+            578:  pincl(s7, s6, 0, 1)
+            579:  jmp(-, -217)
+            580:  line(-, 581)
+            581:  getk(s6, "story_layer", s0)
+            582:  prepcallk(s6, "Blit", s6, s7)
+            583:  loadint(s8, 490)
+            584:  loadint(s9, -150)
+            585:  loadint(s10, 512)
+            586:  loadint(s11, 720)
+            587:  getk(s12, "resource", s0)
+            588:  getk(s12, "RT_spell_2p", s12)
+            589:  loadint(s13, 0)
+            590:  loadint(s14, 0)
+            591:  getk(s15, "BLEND_ALPHA", s0)
+            592:  loadfloat(s16, 1)
+            593:  call(255, s6, s7, 10)
+            594:  line(-, 582)
+            595:  getk(s6, "story_layer", s0)
+            596:  prepcallk(s6, "BlitRotate", s6, s7)
+            597:  loadfloat(s8, 15)
+            598:  loadfloat(s9, 0)
+            599:  loadfloat(s10, 0)
+            600:  call(255, s6, s7, 4)
+            601:  line(-, 585)
+            602:  getk(s6, "menu_mode", s0)
+            603:  loadint(s7, 0)
+            604:  eq(s6, 7, s6, 0)
+            605:  jz(s6, 2)
+            606:  loadint(s6, 273)
+            607:  jmp(-, 4)
+            608:  loadint(s7, 660)
+            609:  add(s7, s3, s7)
+            610:  loadfloat(s8, 44.5169)
+            611:  add(s6, s8, s7)
+            612:  line(-, 586)
+            613:  getk(s7, "menu_mode", s0)
+            614:  loadint(s8, 0)
+            615:  eq(s7, 8, s7, 0)
+            616:  jz(s7, 2)
+            617:  loadint(s7, 257)
+            618:  jmp(-, 4)
+            619:  loadint(s8, 219)
+            620:  sub(s8, s4, s8)
+            621:  loadfloat(s9, 166.139)
+            622:  sub(s7, s9, s8)
+            623:  line(-, 588)
+            624:  prepcallk(s8, "cos", s0, s9)
+            625:  loadint(s10, 90)
+            626:  loadint(s11, 15)
+            627:  sub(s10, s11, s10)
+            628:  loadfloat(s11, 3.14159)
+            629:  mul(s10, s11, s10)
+            630:  loadfloat(s11, 180)
+            631:  div(s10, s11, s10)
+            632:  call(8, s8, s9, 2)
+            633:  getk(s9, "cursor_y", s0)
+            634:  mul(s8, s9, s8)
+            635:  line(-, 589)
+            636:  prepcallk(s9, "sin", s0, s10)
+            637:  loadint(s11, 90)
+            638:  loadint(s12, 15)
+            639:  sub(s11, s12, s11)
+            640:  loadfloat(s12, 3.14159)
+            641:  mul(s11, s12, s11)
+            642:  loadfloat(s12, 180)
+            643:  div(s11, s12, s11)
+            644:  call(9, s9, s10, 2)
+            645:  getk(s10, "cursor_y", s0)
+            646:  mul(s9, s10, s9)
+            647:  line(-, 590)
+            648:  getk(s10, "story_layer", s0)
+            649:  prepcallk(s10, "Blit", s10, s11)
+            650:  add(s12, s6, s8)
+            651:  neg(s13, s9)
+            652:  add(s13, s7, s13)
+            653:  loadint(s14, 38)
+            654:  loadint(s15, 40)
+            655:  getk(s16, "resource", s0)
+            656:  getk(s16, "arrow_u2", s16)
+            657:  loadint(s17, 0)
+            658:  loadint(s18, 0)
+            659:  getk(s19, "BLEND_ALPHA", s0)
+            660:  loadfloat(s20, 1)
+            661:  call(255, s10, s11, 10)
+            662:  line(-, 591)
+            663:  getk(s10, "story_layer", s0)
+            664:  prepcallk(s10, "BlitRotate", s10, s11)
+            665:  loadfloat(s12, 15)
+            666:  loadint(s13, 0)
+            667:  loadint(s14, 0)
+            668:  call(255, s10, s11, 4)
+            669:  line(-, 593)
+            670:  getk(s10, "menu_mode", s0)
+            671:  loadint(s11, 0)
+            672:  eq(s10, 11, s10, 0)
+            673:  jz(s10, 2)
+            674:  loadint(s10, 245)
+            675:  jmp(-, 4)
+            676:  loadint(s11, 614)
+            677:  add(s11, s3, s11)
+            678:  loadfloat(s12, 44.5169)
+            679:  add(s10, s12, s11)
+            680:  line(-, 594)
+            681:  getk(s11, "menu_mode", s0)
+            682:  loadint(s12, 0)
+            683:  eq(s11, 12, s11, 0)
+            684:  jz(s11, 2)
+            685:  loadint(s11, 360)
+            686:  jmp(-, 4)
+            687:  loadint(s12, 403)
+            688:  sub(s12, s4, s12)
+            689:  loadfloat(s13, 166.139)
+            690:  sub(s11, s13, s12)
+            691:  line(-, 596)
+            692:  prepcallk(s12, "cos", s0, s13)
+            693:  loadint(s14, 270)
+            694:  loadint(s15, 15)
+            695:  sub(s14, s15, s14)
+            696:  loadfloat(s15, 3.14159)
+            697:  mul(s14, s15, s14)
+            698:  loadfloat(s15, 180)
+            699:  div(s14, s15, s14)
+            700:  call(12, s12, s13, 2)
+            701:  getk(s13, "cursor_y", s0)
+            702:  mul(s12, s13, s12)
+            703:  line(-, 597)
+            704:  prepcallk(s13, "sin", s0, s14)
+            705:  loadint(s15, 270)
+            706:  loadint(s16, 15)
+            707:  sub(s15, s16, s15)
+            708:  loadfloat(s16, 3.14159)
+            709:  mul(s15, s16, s15)
+            710:  loadfloat(s16, 180)
+            711:  div(s15, s16, s15)
+            712:  call(13, s13, s14, 2)
+            713:  getk(s14, "cursor_y", s0)
+            714:  mul(s13, s14, s13)
+            715:  line(-, 598)
+            716:  getk(s14, "story_layer", s0)
+            717:  prepcallk(s14, "Blit", s14, s15)
+            718:  add(s16, s10, s12)
+            719:  neg(s17, s13)
+            720:  add(s17, s11, s17)
+            721:  loadint(s18, 38)
+            722:  loadint(s19, 40)
+            723:  getk(s20, "resource", s0)
+            724:  getk(s20, "arrow_b2", s20)
+            725:  loadint(s21, 0)
+            726:  loadint(s22, 0)
+            727:  getk(s23, "BLEND_ALPHA", s0)
+            728:  loadfloat(s24, 1)
+            729:  call(255, s14, s15, 10)
+            730:  line(-, 599)
+            731:  getk(s14, "story_layer", s0)
+            732:  prepcallk(s14, "BlitRotate", s14, s15)
+            733:  loadfloat(s16, 15)
+            734:  loadint(s17, 0)
+            735:  loadint(s18, 0)
+            736:  call(255, s14, s15, 4)
+            737:  line(-, 602)
+            738:  loadroot(s14)
+            739:  getk(s14, "act", s14)
+            740:  getk(s14, "TitleMenu", s14)
+            741:  getk(s14, "device_id", s14)
+            742:  loadint(s15, -1)
+            743:  eq(s14, 15, s14, 0)
+            744:  jz(s14, 26)
+            745:  line(-, 604)
+            746:  getk(s14, "bg_2p", s0)
+            747:  prepcallk(s14, "Blit", s14, s15)
+            748:  loadint(s16, 600)
+            749:  loadint(s17, 5)
+            750:  loadint(s18, 32)
+            751:  loadint(s19, 24)
+            752:  getk(s20, "resource", s0)
+            753:  getk(s20, "icon_keyboard", s20)
+            754:  loadint(s21, 0)
+            755:  loadint(s22, 0)
+            756:  getk(s23, "BLEND_ALPHA", s0)
+            757:  loadfloat(s24, 1)
+            758:  call(255, s14, s15, 10)
+            759:  line(-, 605)
+            760:  getk(s14, "pad_id_2p", s0)
+            761:  load(s15, "visible")
+            762:  loadbool(s16, 1)
+            763:  set(s255, s14, s15, s16)
+            764:  line(-, 606)
+            765:  getk(s14, "pad_id_2p", s0)
+            766:  getk(s14, "layout", s14)
+            767:  prepcallk(s14, "SetText", s14, s15)
+            768:  load(s16, "K\s[16]eyboard �@")
+            769:  call(255, s14, s15, 2)
+            770:  jmp(-, 39)
+            771:  line(-, 608)
+            772:  loadroot(s14)
+            773:  getk(s14, "act", s14)
+            774:  getk(s14, "TitleMenu", s14)
+            775:  getk(s14, "device_id", s14)
+            776:  loadint(s15, 0)
+            777:  jcmp(s15, 32, s14, CMP_GE)
+            778:  line(-, 610)
+            779:  getk(s14, "bg_2p", s0)
+            780:  prepcallk(s14, "Blit", s14, s15)
+            781:  loadint(s16, 600)
+            782:  loadint(s17, 5)
+            783:  loadint(s18, 32)
+            784:  loadint(s19, 24)
+            785:  getk(s20, "resource", s0)
+            786:  getk(s20, "icon_gamepad", s20)
+            787:  loadint(s21, 0)
+            788:  loadint(s22, 0)
+            789:  getk(s23, "BLEND_ALPHA", s0)
+            790:  loadfloat(s24, 1)
+            791:  call(255, s14, s15, 10)
+            792:  line(-, 611)
+            793:  getk(s14, "pad_id_2p", s0)
+            794:  load(s15, "visible")
+            795:  loadbool(s16, 1)
+            796:  set(s255, s14, s15, s16)
+            797:  line(-, 612)
+            798:  getk(s14, "pad_id_2p", s0)
+            799:  getk(s14, "layout", s14)
+            800:  prepcallk(s14, "SetText", s14, s15)
+            801:  load(s16, "")
+            802:  loadroot(s17)
+            803:  getk(s17, "act", s17)
+            804:  getk(s17, "TitleMenu", s17)
+            805:  getk(s17, "device_id", s17)
+            806:  loadint(s18, 1)
+            807:  add(s17, s18, s17)
+            808:  add(s16, s17, s16)
+            809:  call(255, s14, s15, 2)
+            810:  line(-, 616)
+            811:  load(s14, "summary_y")
+            812:  loadint(s15, -24)
+            813:  set(s255, s0, s14, s15)
+            814:  line(-, 617)
+            815:  prepcallk(s14, "cos", s0, s15)
+            816:  loadint(s16, 270)
+            817:  loadint(s17, 15)
+            818:  sub(s16, s17, s16)
+            819:  loadfloat(s17, 3.14159)
+            820:  mul(s16, s17, s16)
+            821:  loadfloat(s17, 180)
+            822:  div(s16, s17, s16)
+            823:  call(14, s14, s15, 2)
+            824:  getk(s15, "summary_y", s0)
+            825:  mul(s14, s15, s14)
+            826:  line(-, 618)
+            827:  prepcallk(s15, "sin", s0, s16)
+            828:  loadint(s17, 270)
+            829:  loadint(s18, 15)
+            830:  sub(s17, s18, s17)
+            831:  loadfloat(s18, 3.14159)
+            832:  mul(s17, s18, s17)
+            833:  loadfloat(s18, 180)
+            834:  div(s17, s18, s17)
+            835:  call(15, s15, s16, 2)
+            836:  getk(s16, "summary_y", s0)
+            837:  mul(s15, s16, s15)
+            838:  line(-, 620)
+            839:  getk(s16, "bg_1p", s0)
+            840:  prepcallk(s16, "Blit", s16, s17)
+            841:  loadint(s18, 580)
+            842:  add(s18, s14, s18)
+            843:  loadint(s19, 440)
+            844:  sub(s19, s15, s19)
+            845:  loadint(s20, 666)
+            846:  loadint(s21, 269)
+            847:  getk(s22, "resource", s0)
+            848:  getk(s22, "summary_stone", s22)
+            849:  loadint(s23, 0)
+            850:  loadint(s24, 0)
+            851:  getk(s25, "BLEND_ALPHA", s0)
+            852:  loadfloat(s26, 1)
+            853:  call(255, s16, s17, 10)
+            854:  line(-, 621)
+            855:  getk(s16, "bg_1p", s0)
+            856:  prepcallk(s16, "BlitRotate", s16, s17)
+            857:  loadint(s18, 10)
+            858:  loadint(s19, 0)
+            859:  loadint(s20, 0)
+            860:  call(255, s16, s17, 4)
+            861:  line(-, 623)
+            862:  getk(s16, "bg_1p", s0)
+            863:  prepcallk(s16, "Blit", s16, s17)
+            864:  loadint(s18, 580)
+            865:  add(s18, s14, s18)
+            866:  loadint(s19, 440)
+            867:  sub(s19, s15, s19)
+            868:  loadint(s20, 666)
+            869:  loadint(s21, 269)
+            870:  getk(s22, "resource", s0)
+            871:  getk(s22, "summary_stone", s22)
+            872:  loadint(s23, 0)
+            873:  loadint(s24, 0)
+            874:  getk(s25, "BLEND_ALPHA", s0)
+            875:  loadfloat(s26, 0.5)
+            876:  call(255, s16, s17, 10)
+            877:  line(-, 624)
+            878:  getk(s16, "bg_1p", s0)
+            879:  prepcallk(s16, "BlitRotate", s16, s17)
+            880:  loadint(s18, 10)
+            881:  loadint(s19, 0)
+            882:  loadint(s20, 0)
+            883:  call(255, s16, s17, 4)
+            884:  line(-, 626)
+            885:  getk(s16, "RT_explain_2p", s0)
+            886:  dload(s17, "x", s18, "RT_explain_2p")
+            887:  get(s18, s0, s18)
+            888:  getk(s18, "ox", s18)
+            889:  loadint(s19, 5)
+            890:  add(s18, s19, s18)
+            891:  add(s18, s14, s18)
+            892:  loadint(s19, 5)
+            893:  add(s18, s19, s18)
+            894:  set(s255, s16, s17, s18)
+            895:  line(-, 627)
+            896:  getk(s16, "RT_explain_2p", s0)
+            897:  dload(s17, "y", s18, "RT_explain_2p")
+            898:  get(s18, s0, s18)
+            899:  getk(s18, "oy", s18)
+            900:  loadint(s19, 15)
+            901:  sub(s18, s19, s18)
+            902:  sub(s18, s15, s18)
+            903:  set(s255, s16, s17, s18)
+            904:  line(-, 630)
+            905:  getk(s16, "center_frame", s0)
+            906:  getk(s16, "offset", s16)
+            907:  getk(s16, "cs_1p", s16)
+            908:  dload(s17, "x", s18, "center_frame")
+            909:  get(s18, s0, s18)
+            910:  getk(s18, "offset", s18)
+            911:  getk(s18, "cs_1p", s18)
+            912:  getk(s18, "ox", s18)
+            913:  getk(s19, "curtain_per", s0)
+            914:  loadfloat(s20, 380)
+            915:  mul(s19, s20, s19)
+            916:  add(s18, s19, s18)
+            917:  set(s255, s16, s17, s18)
+            918:  line(-, 631)
+            919:  getk(s16, "center_frame", s0)
+            920:  getk(s16, "offset", s16)
+            921:  getk(s16, "menu_mode_1p", s16)
+            922:  dload(s17, "x", s18, "center_frame")
+            923:  get(s18, s0, s18)
+            924:  getk(s18, "offset", s18)
+            925:  getk(s18, "menu_mode_1p", s18)
+            926:  getk(s18, "ox", s18)
+            927:  getk(s19, "curtain_per", s0)
+            928:  loadfloat(s20, 380)
+            929:  mul(s19, s20, s19)
+            930:  add(s18, s19, s18)
+            931:  set(s255, s16, s17, s18)
+            932:  line(-, 633)
+            933:  getk(s16, "center_frame", s0)
+            934:  getk(s16, "offset", s16)
+            935:  getk(s16, "cs_1p", s16)
+            936:  dload(s17, "x", s18, "fabs")
+            937:  prepcall(s18, s18, s0, s19)
+            938:  prepcallk(s20, "sin", s0, s21)
+            939:  getk(s22, "menu_state", s0)
+            940:  getk(s22, "p1", s22)
+            941:  getk(s22, "p_flash", s22)
+            942:  loadfloat(s23, 3.1415)
+            943:  mul(s22, s23, s22)
+            944:  loadfloat(s23, 180)
+            945:  div(s22, s23, s22)
+            946:  call(20, s20, s21, 2)
+            947:  loadint(s21, 20)
+            948:  mul(s20, s21, s20)
+            949:  call(18, s18, s19, 2)
+            950:  comparith(s16, 1048594, s17, 43)
+            951:  line(-, 634)
+            952:  getk(s16, "menu_state", s0)
+            953:  getk(s16, "p1", s16)
+            954:  load(s17, "p_flash")
+            955:  loadint(s18, 15)
+            956:  comparith(s16, 1048594, s17, 45)
+            957:  line(-, 635)
+            958:  getk(s16, "menu_state", s0)
+            959:  getk(s16, "p1", s16)
+            960:  getk(s16, "p_flash", s16)
+            961:  loadint(s17, 0)
+            962:  jcmp(s17, 5, s16, CMP_L)
+            963:  getk(s16, "menu_state", s0)
+            964:  getk(s16, "p1", s16)
+            965:  load(s17, "p_flash")
+            966:  loadint(s18, 0)
+            967:  set(s255, s16, s17, s18)
+            968:  line(-, 637)
+            969:  getk(s16, "center_frame", s0)
+            970:  getk(s16, "offset", s16)
+            971:  getk(s16, "cs_2p", s16)
+            972:  dload(s17, "x", s18, "center_frame")
+            973:  get(s18, s0, s18)
+            974:  getk(s18, "offset", s18)
+            975:  getk(s18, "cs_2p", s18)
+            976:  getk(s18, "ox", s18)
+            977:  getk(s19, "curtain_per", s0)
+            978:  loadfloat(s20, 380)
+            979:  mul(s19, s20, s19)
+            980:  sub(s18, s19, s18)
+            981:  set(s255, s16, s17, s18)
+            982:  line(-, 638)
+            983:  getk(s16, "center_frame", s0)
+            984:  getk(s16, "offset", s16)
+            985:  getk(s16, "menu_mode_2p", s16)
+            986:  dload(s17, "x", s18, "center_frame")
+            987:  get(s18, s0, s18)
+            988:  getk(s18, "offset", s18)
+            989:  getk(s18, "menu_mode_2p", s18)
+            990:  getk(s18, "ox", s18)
+            991:  getk(s19, "curtain_per", s0)
+            992:  loadfloat(s20, 380)
+            993:  mul(s19, s20, s19)
+            994:  sub(s18, s19, s18)
+            995:  set(s255, s16, s17, s18)
+            996:  line(-, 640)
+            997:  getk(s16, "center_frame", s0)
+            998:  getk(s16, "offset", s16)
+            999:  getk(s16, "cs_2p", s16)
+            1000:  dload(s17, "x", s18, "fabs")
+            1001:  prepcall(s18, s18, s0, s19)
+            1002:  prepcallk(s20, "sin", s0, s21)
+            1003:  getk(s22, "menu_state", s0)
+            1004:  getk(s22, "p2", s22)
+            1005:  getk(s22, "p_flash", s22)
+            1006:  loadfloat(s23, 3.1415)
+            1007:  mul(s22, s23, s22)
+            1008:  loadfloat(s23, 180)
+            1009:  div(s22, s23, s22)
+            1010:  call(20, s20, s21, 2)
+            1011:  loadint(s21, 20)
+            1012:  mul(s20, s21, s20)
+            1013:  call(18, s18, s19, 2)
+            1014:  comparith(s16, 1048594, s17, 45)
+            1015:  line(-, 641)
+            1016:  getk(s16, "menu_state", s0)
+            1017:  getk(s16, "p2", s16)
+            1018:  load(s17, "p_flash")
+            1019:  loadint(s18, 15)
+            1020:  comparith(s16, 1048594, s17, 45)
+            1021:  line(-, 642)
+            1022:  getk(s16, "menu_state", s0)
+            1023:  getk(s16, "p2", s16)
+            1024:  getk(s16, "p_flash", s16)
+            1025:  loadint(s17, 0)
+            1026:  jcmp(s17, 5, s16, CMP_L)
+            1027:  getk(s16, "menu_state", s0)
+            1028:  getk(s16, "p2", s16)
+            1029:  load(s17, "p_flash")
+            1030:  loadint(s18, 0)
+            1031:  set(s255, s16, s17, s18)
+            1032:  line(-, 644)
+            1033:  getk(s16, "center_frame", s0)
+            1034:  getk(s16, "offset", s16)
+            1035:  getk(s16, "name_1p", s16)
+            1036:  dload(s17, "y", s18, "center_frame")
+            1037:  get(s18, s0, s18)
+            1038:  getk(s18, "offset", s18)
+            1039:  getk(s18, "name_1p", s18)
+            1040:  getk(s18, "oy", s18)
+            1041:  getk(s19, "curtain_per", s0)
+            1042:  loadfloat(s20, 720)
+            1043:  mul(s19, s20, s19)
+            1044:  sub(s18, s19, s18)
+            1045:  set(s255, s16, s17, s18)
+            1046:  line(-, 645)
+            1047:  getk(s16, "center_frame", s0)
+            1048:  getk(s16, "offset", s16)
+            1049:  getk(s16, "subject_1p", s16)
+            1050:  dload(s17, "y", s18, "center_frame")
+            1051:  get(s18, s0, s18)
+            1052:  getk(s18, "offset", s18)
+            1053:  getk(s18, "subject_1p", s18)
+            1054:  getk(s18, "oy", s18)
+            1055:  getk(s19, "curtain_per", s0)
+            1056:  loadfloat(s20, 720)
+            1057:  mul(s19, s20, s19)
+            1058:  add(s18, s19, s18)
+            1059:  set(s255, s16, s17, s18)
+            1060:  line(-, 647)
+            1061:  getk(s16, "center_frame", s0)
+            1062:  getk(s16, "offset", s16)
+            1063:  getk(s16, "name_2p", s16)
+            1064:  dload(s17, "y", s18, "center_frame")
+            1065:  get(s18, s0, s18)
+            1066:  getk(s18, "offset", s18)
+            1067:  getk(s18, "name_2p", s18)
+            1068:  getk(s18, "oy", s18)
+            1069:  getk(s19, "curtain_per", s0)
+            1070:  loadfloat(s20, 720)
+            1071:  mul(s19, s20, s19)
+            1072:  add(s18, s19, s18)
+            1073:  set(s255, s16, s17, s18)
+            1074:  line(-, 648)
+            1075:  getk(s16, "center_frame", s0)
+            1076:  getk(s16, "offset", s16)
+            1077:  getk(s16, "subject_2p", s16)
+            1078:  dload(s17, "y", s18, "center_frame")
+            1079:  get(s18, s0, s18)
+            1080:  getk(s18, "offset", s18)
+            1081:  getk(s18, "subject_2p", s18)
+            1082:  getk(s18, "oy", s18)
+            1083:  getk(s19, "curtain_per", s0)
+            1084:  loadfloat(s20, 720)
+            1085:  mul(s19, s20, s19)
+            1086:  sub(s18, s19, s18)
+            1087:  set(s255, s16, s17, s18)
+            1088:  line(-, 651)
+            1089:  getk(s16, "center_frame", s0)
+            1090:  getk(s16, "offset", s16)
+            1091:  getk(s16, "menu_mode_1p", s16)
+            1092:  getk(s16, "layout", s16)
+            1093:  prepcallk(s16, "Clear", s16, s17)
+            1094:  call(255, s16, s17, 1)
+            1095:  line(-, 653)
+            1096:  getk(s16, "menu_state", s0)
+            1097:  getk(s16, "p1", s16)
+            1098:  getk(s16, "menu_mode", s16)
+            1099:  loadint(s17, 384)
+            1100:  mul(s16, s17, s16)
+            1101:  line(-, 654)
+            1102:  getk(s17, "menu_state", s0)
+            1103:  getk(s17, "p1", s17)
+            1104:  dload(s18, "menu_mode_src_x", s19, "menu_state")
+            1105:  get(s19, s0, s19)
+            1106:  getk(s19, "p1", s19)
+            1107:  getk(s19, "menu_mode_src_x", s19)
+            1108:  loadfloat(s20, 0.6)
+            1109:  mul(s19, s20, s19)
+            1110:  loadfloat(s20, 0.4)
+            1111:  mul(s20, s20, s16)
+            1112:  add(s19, s20, s19)
+            1113:  set(s255, s17, s18, s19)
+            1114:  line(-, 655)
+            1115:  prepcallk(s17, "fabs", s0, s18)
+            1116:  getk(s19, "menu_state", s0)
+            1117:  getk(s19, "p1", s19)
+            1118:  getk(s19, "menu_mode_src_x", s19)
+            1119:  sub(s19, s16, s19)
+            1120:  call(17, s17, s18, 2)
+            1121:  loadfloat(s18, 1)
+            1122:  jcmp(s18, 4, s17, CMP_L)
+            1123:  getk(s17, "menu_state", s0)
+            1124:  getk(s17, "p1", s17)
+            1125:  load(s18, "menu_mode_src_x")
+            1126:  set(s255, s17, s18, s16)
+            1127:  line(-, 656)
+            1128:  getk(s17, "center_frame", s0)
+            1129:  getk(s17, "offset", s17)
+            1130:  getk(s17, "menu_mode_1p", s17)
+            1131:  prepcallk(s17, "Blit", s17, s18)
+            1132:  loadint(s19, 0)
+            1133:  loadint(s20, 0)
+            1134:  loadint(s21, 384)
+            1135:  loadint(s22, 32)
+            1136:  getk(s23, "resource", s0)
+            1137:  getk(s23, "cs_xxxselect", s23)
+            1138:  getk(s24, "menu_state", s0)
+            1139:  getk(s24, "p1", s24)
+            1140:  getk(s24, "menu_mode_src_x", s24)
+            1141:  loadint(s25, 0)
+            1142:  getk(s26, "BLEND_ALPHA", s0)
+            1143:  loadfloat(s27, 1)
+            1144:  call(255, s17, s18, 10)
+            1145:  line(-, 658)
+            1146:  getk(s17, "center_frame", s0)
+            1147:  getk(s17, "offset", s17)
+            1148:  getk(s17, "menu_mode_2p", s17)
+            1149:  getk(s17, "layout", s17)
+            1150:  prepcallk(s17, "Clear", s17, s18)
+            1151:  call(255, s17, s18, 1)
+            1152:  line(-, 660)
+            1153:  getk(s17, "menu_state", s0)
+            1154:  getk(s17, "p2", s17)
+            1155:  getk(s17, "menu_mode", s17)
+            1156:  loadint(s18, 384)
+            1157:  mul(s17, s18, s17)
+            1158:  line(-, 661)
+            1159:  getk(s18, "menu_state", s0)
+            1160:  getk(s18, "p2", s18)
+            1161:  dload(s19, "menu_mode_src_x", s20, "menu_state")
+            1162:  get(s20, s0, s20)
+            1163:  getk(s20, "p2", s20)
+            1164:  getk(s20, "menu_mode_src_x", s20)
+            1165:  loadfloat(s21, 0.6)
+            1166:  mul(s20, s21, s20)
+            1167:  loadfloat(s21, 0.4)
+            1168:  mul(s21, s21, s17)
+            1169:  add(s20, s21, s20)
+            1170:  set(s255, s18, s19, s20)
+            1171:  line(-, 662)
+            1172:  prepcallk(s18, "fabs", s0, s19)
+            1173:  getk(s20, "menu_state", s0)
+            1174:  getk(s20, "p2", s20)
+            1175:  getk(s20, "menu_mode_src_x", s20)
+            1176:  sub(s20, s17, s20)
+            1177:  call(18, s18, s19, 2)
+            1178:  loadfloat(s19, 1)
+            1179:  jcmp(s19, 4, s18, CMP_L)
+            1180:  getk(s18, "menu_state", s0)
+            1181:  getk(s18, "p2", s18)
+            1182:  load(s19, "menu_mode_src_x")
+            1183:  set(s255, s18, s19, s17)
+            1184:  line(-, 664)
+            1185:  loadroot(s18)
+            1186:  getk(s18, "load_data", s18)
+            1187:  getk(s18, "game_mode", s18)
+            1188:  loadint(s19, 10)
+            1189:  eq(s18, 19, s18, 0)
+            1190:  jz(s18, 2)
+            1191:  loadint(s18, 64)
+            1192:  jmp(-, 6)
+            1193:  loadroot(s19)
+            1194:  getk(s19, "load_data", s19)
+            1195:  getk(s19, "game_mode", s19)
+            1196:  loadint(s20, 10)
+            1197:  eq(s19, 20, s19, 0)
+            1198:  move(s18, s19)
+            1199:  line(-, 665)
+            1200:  getk(s19, "center_frame", s0)
+            1201:  getk(s19, "offset", s19)
+            1202:  getk(s19, "menu_mode_2p", s19)
+            1203:  prepcallk(s19, "Blit", s19, s20)
+            1204:  loadint(s21, -120)
+            1205:  loadint(s22, 0)
+            1206:  loadint(s23, 384)
+            1207:  loadint(s24, 32)
+            1208:  getk(s25, "resource", s0)
+            1209:  getk(s25, "cs_xxxselect", s25)
+            1210:  loadint(s26, 1056)
+            1211:  loadint(s27, 15)
+            1212:  sub(s26, s27, s26)
+            1213:  getk(s27, "menu_state", s0)
+            1214:  getk(s27, "p2", s27)
+            1215:  getk(s27, "menu_mode_src_x", s27)
+            1216:  sub(s26, s27, s26)
+            1217:  move(s27, s18)
+            1218:  getk(s28, "BLEND_ALPHA", s0)
+            1219:  loadfloat(s29, 1)
+            1220:  call(255, s19, s20, 10)
+            1221:  line(-, 666)
+            1222:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 30
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "Story_StartBattle"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 0
+        Literals: [
+            0: "StopBGM"
+            1: "Story_StartBattleStartBattle2"
+            2: "act"
+            3: "BG"
+            4: "Stop"
+            5: "LoadGameData"
+            6: "Talk"
+            7: "pl"
+            8: "EndStage"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 670, op: 1
+            1: line: 672, op: 5
+            2: line: 675, op: 8
+            3: line: 678, op: 14
+            4: line: 680, op: 17
+            5: line: 681, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 670)
+            1:  loadroot(s1)
+            2:  prepcallk(s1, "StopBGM", s1, s2)
+            3:  loadint(s3, 500)
+            4:  call(255, s1, s2, 2)
+            5:  line(-, 672)
+            6:  prepcallk(s1, "Story_StartBattleStartBattle2", s0, s2)
+            7:  call(255, s1, s2, 1)
+            8:  line(-, 675)
+            9:  loadroot(s1)
+            10:  getk(s1, "act", s1)
+            11:  getk(s1, "BG", s1)
+            12:  prepcallk(s1, "Stop", s1, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 678)
+            15:  prepcallk(s1, "LoadGameData", s0, s2)
+            16:  call(255, s1, s2, 1)
+            17:  line(-, 680)
+            18:  loadroot(s1)
+            19:  getk(s1, "act", s1)
+            20:  getk(s1, "Talk", s1)
+            21:  getk(s1, "pl", s1)
+            22:  prepcallk(s1, "EndStage", s1, s2)
+            23:  call(255, s1, s2, 1)
+            24:  line(-, 681)
+            25:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "Story_StartBattleStartBattle2"
+        nliterals: 51
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 28
+        ndefaultparams: 0
+        ninstructions: 281
+        nfunctions: 0
+        Literals: [
+            0: "act"
+            1: "BattleRender"
+            2: "SetEnable"
+            3: "story"
+            4: "route_index"
+            5: "label_index"
+            6: "sel_story"
+            7: "cursor"
+            8: "load_data"
+            9: "player"
+            10: "story_id_trans"
+            11: "story_ext"
+            12: "color"
+            13: "background"
+            14: "seed"
+            15: "manbow"
+            16: "timeGetTime"
+            17: "bgm"
+            18: "device"
+            19: "TitleMenu"
+            20: "device_id"
+            21: "profile"
+            22: "save_data"
+            23: "menu_state"
+            24: "p1"
+            25: "InitProfileTable"
+            26: "name"
+            27: "COM"
+            28: "profile_index"
+            29: "p2"
+            30: "profile_set"
+            31: "sel_equip"
+            32: "difficulty"
+            33: "profile_equip"
+            34: "equip"
+            35: "spellcard"
+            36: "card_image"
+            37: "char_resource"
+            38: "char_id"
+            39: "equip_"
+            40: "a"
+            41: "b"
+            42: "c"
+            43: "image_card"
+            44: "st_texture_path"
+            45: "story_clear"
+            46: "data/system/char_select3/0/equip/a/000"
+            47: "config_data"
+            48: "last_difficulty"
+            49: "SaveSystemConfig"
+            50: "data/system/BattleStatus/spellcard1m"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 280
+          ]
+        Line Informations: [
+            0: line: 687, op: 1
+            1: line: 689, op: 7
+            2: line: 691, op: 16
+            3: line: 692, op: 30
+            4: line: 694, op: 41
+            5: line: 695, op: 49
+            6: line: 696, op: 55
+            7: line: 697, op: 64
+            8: line: 698, op: 70
+            9: line: 700, op: 83
+            10: line: 701, op: 101
+            11: line: 703, op: 109
+            12: line: 704, op: 110
+            13: line: 706, op: 124
+            14: line: 707, op: 125
+            15: line: 709, op: 126
+            16: line: 711, op: 140
+            17: line: 714, op: 188
+            18: line: 715, op: 196
+            19: line: 717, op: 221
+            20: line: 720, op: 231
+            21: line: 721, op: 237
+            22: line: 724, op: 244
+            23: line: 725, op: 252
+            24: line: 727, op: 259
+            25: line: 728, op: 268
+            26: line: 732, op: 272
+            27: line: 733, op: 279
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 687)
+            1:  loadroot(s1)
+            2:  getk(s1, "act", s1)
+            3:  getk(s1, "BattleRender", s1)
+            4:  prepcallk(s1, "SetEnable", s1, s2)
+            5:  loadbool(s3, 1)
+            6:  call(255, s1, s2, 2)
+            7:  line(-, 689)
+            8:  loadroot(s1)
+            9:  getk(s1, "story", s1)
+            10:  dload(s2, "route_index", s3, "label_index")
+            11:  get(s3, s0, s3)
+            12:  getk(s4, "sel_story", s0)
+            13:  getk(s4, "cursor", s4)
+            14:  get(s3, s3, s4)
+            15:  newslot(s255, s1, s2, s3)
+            16:  line(-, 691)
+            17:  loadroot(s1)
+            18:  getk(s1, "load_data", s1)
+            19:  load(s2, "player")
+            20:  newobj(s3, 2, 0, 1)
+            21:  getk(s4, "story_id_trans", s0)
+            22:  getk(s5, "sel_story", s0)
+            23:  getk(s5, "cursor", s5)
+            24:  get(s4, s4, s5)
+            25:  loadint(s5, 100)
+            26:  mod(s4, s5, s4)
+            27:  appendarray(s3, 4, 0)
+            28:  appendarray(s3, 1, 2)
+            29:  newslot(s255, s1, s2, s3)
+            30:  line(-, 692)
+            31:  loadroot(s1)
+            32:  getk(s1, "load_data", s1)
+            33:  dload(s2, "story_ext", s3, "story_id_trans")
+            34:  get(s3, s0, s3)
+            35:  getk(s4, "sel_story", s0)
+            36:  getk(s4, "cursor", s4)
+            37:  get(s3, s3, s4)
+            38:  loadint(s4, 100)
+            39:  div(s3, s4, s3)
+            40:  newslot(s255, s1, s2, s3)
+            41:  line(-, 694)
+            42:  loadroot(s1)
+            43:  getk(s1, "load_data", s1)
+            44:  load(s2, "color")
+            45:  newobj(s3, 2, 0, 1)
+            46:  appendarray(s3, 0, 2)
+            47:  appendarray(s3, 0, 2)
+            48:  newslot(s255, s1, s2, s3)
+            49:  line(-, 695)
+            50:  loadroot(s1)
+            51:  getk(s1, "load_data", s1)
+            52:  load(s2, "background")
+            53:  loadint(s3, 0)
+            54:  newslot(s255, s1, s2, s3)
+            55:  line(-, 696)
+            56:  loadroot(s1)
+            57:  getk(s1, "load_data", s1)
+            58:  load(s2, "seed")
+            59:  loadroot(s3)
+            60:  getk(s3, "manbow", s3)
+            61:  prepcallk(s3, "timeGetTime", s3, s4)
+            62:  call(3, s3, s4, 1)
+            63:  newslot(s255, s1, s2, s3)
+            64:  line(-, 697)
+            65:  loadroot(s1)
+            66:  getk(s1, "load_data", s1)
+            67:  load(s2, "bgm")
+            68:  loadint(s3, 0)
+            69:  newslot(s255, s1, s2, s3)
+            70:  line(-, 698)
+            71:  loadroot(s1)
+            72:  getk(s1, "load_data", s1)
+            73:  load(s2, "device")
+            74:  newobj(s3, 2, 0, 1)
+            75:  loadroot(s4)
+            76:  getk(s4, "act", s4)
+            77:  getk(s4, "TitleMenu", s4)
+            78:  getk(s4, "device_id", s4)
+            79:  appendarray(s3, 4, 0)
+            80:  loadnulls(s4, 1)
+            81:  appendarray(s3, 4, 0)
+            82:  newslot(s255, s1, s2, s3)
+            83:  line(-, 700)
+            84:  loadroot(s1)
+            85:  getk(s1, "load_data", s1)
+            86:  load(s2, "profile")
+            87:  newobj(s3, 2, 0, 1)
+            88:  loadroot(s4)
+            89:  getk(s4, "save_data", s4)
+            90:  getk(s4, "profile", s4)
+            91:  getk(s5, "menu_state", s0)
+            92:  getk(s5, "p1", s5)
+            93:  getk(s5, "profile", s5)
+            94:  get(s4, s4, s5)
+            95:  appendarray(s3, 4, 0)
+            96:  prepcallk(s4, "InitProfileTable", s0, s5)
+            97:  newobj(s6, 0, 0, 0)
+            98:  call(4, s4, s5, 2)
+            99:  appendarray(s3, 4, 0)
+            100:  newslot(s255, s1, s2, s3)
+            101:  line(-, 701)
+            102:  loadroot(s1)
+            103:  getk(s1, "load_data", s1)
+            104:  getk(s1, "profile", s1)
+            105:  loadint(s2, 1)
+            106:  get(s1, s1, s2)
+            107:  dload(s2, "name", s3, "COM")
+            108:  set(s255, s1, s2, s3)
+            109:  line(-, 703)
+            110:  line(-, 704)
+            111:  loadroot(s1)
+            112:  getk(s1, "load_data", s1)
+            113:  load(s2, "profile_index")
+            114:  newobj(s3, 2, 0, 1)
+            115:  getk(s4, "menu_state", s0)
+            116:  getk(s4, "p1", s4)
+            117:  getk(s4, "profile", s4)
+            118:  appendarray(s3, 4, 0)
+            119:  getk(s4, "menu_state", s0)
+            120:  getk(s4, "p2", s4)
+            121:  getk(s4, "profile", s4)
+            122:  appendarray(s3, 4, 0)
+            123:  newslot(s255, s1, s2, s3)
+            124:  line(-, 706)
+            125:  line(-, 707)
+            126:  line(-, 709)
+            127:  loadroot(s1)
+            128:  getk(s1, "load_data", s1)
+            129:  load(s2, "profile_set")
+            130:  newobj(s3, 2, 0, 1)
+            131:  getk(s4, "sel_equip", s0)
+            132:  getk(s4, "cursor", s4)
+            133:  appendarray(s3, 4, 0)
+            134:  loadroot(s4)
+            135:  getk(s4, "act", s4)
+            136:  getk(s4, "TitleMenu", s4)
+            137:  getk(s4, "difficulty", s4)
+            138:  appendarray(s3, 4, 0)
+            139:  newslot(s255, s1, s2, s3)
+            140:  line(-, 711)
+            141:  loadroot(s1)
+            142:  getk(s1, "load_data", s1)
+            143:  load(s2, "profile_equip")
+            144:  newobj(s3, 2, 0, 1)
+            145:  loadroot(s4)
+            146:  getk(s4, "load_data", s4)
+            147:  getk(s4, "profile", s4)
+            148:  loadint(s5, 0)
+            149:  get(s4, s4, s5)
+            150:  getk(s4, "equip", s4)
+            151:  loadroot(s5)
+            152:  getk(s5, "load_data", s5)
+            153:  getk(s5, "player", s5)
+            154:  loadint(s6, 0)
+            155:  get(s5, s5, s6)
+            156:  loadint(s6, 100)
+            157:  mod(s5, s6, s5)
+            158:  get(s4, s4, s5)
+            159:  loadroot(s5)
+            160:  getk(s5, "load_data", s5)
+            161:  getk(s5, "profile_set", s5)
+            162:  loadint(s6, 0)
+            163:  get(s5, s5, s6)
+            164:  get(s4, s4, s5)
+            165:  appendarray(s3, 4, 0)
+            166:  loadroot(s4)
+            167:  getk(s4, "load_data", s4)
+            168:  getk(s4, "profile", s4)
+            169:  loadint(s5, 1)
+            170:  get(s4, s4, s5)
+            171:  getk(s4, "equip", s4)
+            172:  loadroot(s5)
+            173:  getk(s5, "load_data", s5)
+            174:  getk(s5, "player", s5)
+            175:  loadint(s6, 1)
+            176:  get(s5, s5, s6)
+            177:  loadint(s6, 100)
+            178:  mod(s5, s6, s5)
+            179:  get(s4, s4, s5)
+            180:  loadroot(s5)
+            181:  getk(s5, "load_data", s5)
+            182:  getk(s5, "profile_set", s5)
+            183:  loadint(s6, 1)
+            184:  get(s5, s5, s6)
+            185:  get(s4, s4, s5)
+            186:  appendarray(s3, 4, 0)
+            187:  newslot(s255, s1, s2, s3)
+            188:  line(-, 714)
+            189:  loadroot(s1)
+            190:  getk(s1, "load_data", s1)
+            191:  getk(s1, "spellcard", s1)
+            192:  loadint(s2, 0)
+            193:  getk(s3, "sel_equip", s0)
+            194:  getk(s3, "cursor", s3)
+            195:  set(s255, s1, s2, s3)
+            196:  line(-, 715)
+            197:  loadroot(s1)
+            198:  getk(s1, "load_data", s1)
+            199:  getk(s1, "card_image", s1)
+            200:  loadint(s2, 0)
+            201:  getk(s3, "char_resource", s0)
+            202:  getk(s4, "menu_state", s0)
+            203:  getk(s4, "p2", s4)
+            204:  getk(s4, "char_id", s4)
+            205:  get(s3, s3, s4)
+            206:  load(s4, "equip_")
+            207:  newobj(s5, 3, 0, 1)
+            208:  appendarray(s5, 40, 1)
+            209:  appendarray(s5, 41, 1)
+            210:  appendarray(s5, 42, 1)
+            211:  getk(s6, "sel_equip", s0)
+            212:  getk(s6, "cursor", s6)
+            213:  get(s5, s5, s6)
+            214:  add(s4, s5, s4)
+            215:  get(s3, s3, s4)
+            216:  loadint(s4, 0)
+            217:  get(s3, s3, s4)
+            218:  getk(s3, "image_card", s3)
+            219:  getk(s3, "st_texture_path", s3)
+            220:  set(s255, s1, s2, s3)
+            221:  line(-, 717)
+            222:  loadroot(s1)
+            223:  getk(s1, "save_data", s1)
+            224:  getk(s1, "story_clear", s1)
+            225:  loadint(s2, 0)
+            226:  get(s1, s1, s2)
+            227:  loadint(s2, 0)
+            228:  eq(s1, 2, s1, 0)
+            229:  jz(s1, 42)
+            230:  line(-, 720)
+            231:  loadroot(s1)
+            232:  getk(s1, "load_data", s1)
+            233:  getk(s1, "spellcard", s1)
+            234:  loadint(s2, 0)
+            235:  loadint(s3, 0)
+            236:  set(s255, s1, s2, s3)
+            237:  line(-, 721)
+            238:  loadroot(s1)
+            239:  getk(s1, "load_data", s1)
+            240:  getk(s1, "card_image", s1)
+            241:  loadint(s2, 0)
+            242:  load(s3, "data/system/char_select3/0/equip/a/000")
+            243:  set(s255, s1, s2, s3)
+            244:  line(-, 724)
+            245:  loadroot(s1)
+            246:  getk(s1, "load_data", s1)
+            247:  load(s2, "profile_set")
+            248:  newobj(s3, 2, 0, 1)
+            249:  appendarray(s3, 0, 2)
+            250:  appendarray(s3, 0, 2)
+            251:  newslot(s255, s1, s2, s3)
+            252:  line(-, 725)
+            253:  loadroot(s1)
+            254:  getk(s1, "act", s1)
+            255:  getk(s1, "TitleMenu", s1)
+            256:  load(s2, "difficulty")
+            257:  loadint(s3, 0)
+            258:  set(s255, s1, s2, s3)
+            259:  line(-, 727)
+            260:  loadroot(s1)
+            261:  getk(s1, "config_data", s1)
+            262:  load(s2, "last_difficulty")
+            263:  loadroot(s3)
+            264:  getk(s3, "act", s3)
+            265:  getk(s3, "TitleMenu", s3)
+            266:  getk(s3, "difficulty", s3)
+            267:  set(s255, s1, s2, s3)
+            268:  line(-, 728)
+            269:  loadroot(s1)
+            270:  prepcallk(s1, "SaveSystemConfig", s1, s2)
+            271:  call(255, s1, s2, 1)
+            272:  line(-, 732)
+            273:  loadroot(s1)
+            274:  getk(s1, "load_data", s1)
+            275:  getk(s1, "card_image", s1)
+            276:  loadint(s2, 1)
+            277:  load(s3, "data/system/BattleStatus/spellcard1m")
+            278:  set(s255, s1, s2, s3)
+            279:  line(-, 733)
+            280:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

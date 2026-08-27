@@ -1,0 +1,245 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\battle\battle_replay.nut: 
+sourcename: ""
+name: "main"
+nliterals: 6
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 4
+nlineinfos: 7
+ndefaultparams: 0
+ninstructions: 24
+nfunctions: 3
+Literals: [
+    0: "B2"
+    1: "menu"
+    2: "Update"
+    3: "AddTask"
+    4: "Pause"
+    5: "BeginResult"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "help", pos: 3, start_op: 6, end_op: 21
+    1: name: "replay_task", pos: 2, start_op: 2, end_op: 21
+    2: name: "vargv", pos: 1, start_op: 0, end_op: 23
+    3: name: "this", pos: 0, start_op: 0, end_op: 23
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 4, op: 2
+    2: line: 5, op: 6
+    3: line: 19, op: 10
+    4: line: 22, op: 14
+    5: line: 27, op: 18
+    6: line: 31, op: 22
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  newobj(s2, 0, 0, 0)
+    2:  line(-, 4)
+    3:  newobj(s3, 2, 0, 1)
+    4:  appendarray(s3, 0, 1)
+    5:  appendarray(s3, 1, 1)
+    6:  line(-, 5)
+    7:  load(s4, "Update")
+    8:  closure(s5, 0)
+    9:  newslot(s255, s2, s4, s5)
+    10:  line(-, 19)
+    11:  prepcallk(s4, "AddTask", s0, s5)
+    12:  move(s6, s2)
+    13:  call(255, s4, s5, 2)
+    14:  line(-, 22)
+    15:  load(s4, "Pause")
+    16:  closure(s5, 1)
+    17:  newslot(s4, s0, s4, s5)
+    18:  line(-, 27)
+    19:  load(s4, "BeginResult")
+    20:  closure(s5, 2)
+    21:  newslot(s4, s0, s4, s5)
+    22:  line(-, 31)
+    23:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: null
+        nliterals: 14
+        nparameters: 1
+        noutervals: 1
+        nlocalvarinfos: 1
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 47
+        nfunctions: 0
+        Literals: [
+            0: "menu"
+            1: "help"
+            2: "Set"
+            3: "replay"
+            4: "IsFinished"
+            5: "sound"
+            6: "StopBGM"
+            7: "loop"
+            8: "EndWithFade"
+            9: "input_all"
+            10: "b1"
+            11: "PlaySE"
+            12: "pause"
+            13: "Initialize"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [
+            0: type: otLOCAL, object: 3, name: "help"
+          ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 46
+          ]
+        Line Informations: [
+            0: line: 7, op: 1
+            1: line: 8, op: 7
+            2: line: 10, op: 14
+            3: line: 11, op: 19
+            4: line: 13, op: 25
+            5: line: 15, op: 33
+            6: line: 16, op: 38
+            7: line: 18, op: 45
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 7)
+            1:  loadroot(s1)
+            2:  getk(s1, "menu", s1)
+            3:  getk(s1, "help", s1)
+            4:  prepcallk(s1, "Set", s1, s2)
+            5:  getouter(s3, 0)
+            6:  call(255, s1, s2, 2)
+            7:  line(-, 8)
+            8:  loadroot(s1)
+            9:  getk(s1, "replay", s1)
+            10:  prepcallk(s1, "IsFinished", s1, s2)
+            11:  call(1, s1, s2, 1)
+            12:  jz(s1, 12)
+            13:  line(-, 10)
+            14:  loadroot(s1)
+            15:  getk(s1, "sound", s1)
+            16:  prepcallk(s1, "StopBGM", s1, s2)
+            17:  loadint(s3, 500)
+            18:  call(255, s1, s2, 2)
+            19:  line(-, 11)
+            20:  loadroot(s1)
+            21:  getk(s1, "loop", s1)
+            22:  prepcallk(s1, "EndWithFade", s1, s2)
+            23:  call(255, s1, s2, 1)
+            24:  jmp(-, 20)
+            25:  line(-, 13)
+            26:  loadroot(s1)
+            27:  getk(s1, "input_all", s1)
+            28:  getk(s1, "b1", s1)
+            29:  loadint(s2, 1)
+            30:  eq(s1, 2, s1, 0)
+            31:  jz(s1, 13)
+            32:  line(-, 15)
+            33:  loadroot(s1)
+            34:  getk(s1, "sound", s1)
+            35:  prepcallk(s1, "PlaySE", s1, s2)
+            36:  loadint(s3, 111)
+            37:  call(255, s1, s2, 2)
+            38:  line(-, 16)
+            39:  loadroot(s1)
+            40:  getk(s1, "menu", s1)
+            41:  getk(s1, "pause", s1)
+            42:  prepcallk(s1, "Initialize", s1, s2)
+            43:  loadint(s3, 3)
+            44:  call(255, s1, s2, 2)
+            45:  line(-, 18)
+            46:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Pause"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 23, op: 0
+            1: line: 24, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 23)
+            1:  line(-, 24)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "BeginResult"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "End"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 29, op: 1
+            1: line: 31, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 29)
+            1:  prepcallk(s1, "End", s0, s2)
+            2:  call(255, s1, s2, 1)
+            3:  line(-, 31)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 7
+bgenerator: 0
+varparams: 1
+

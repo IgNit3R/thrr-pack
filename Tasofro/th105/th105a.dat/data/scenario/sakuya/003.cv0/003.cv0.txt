@@ -1,0 +1,228 @@
+## =======================================================================
+#Stage:4
+#Title:登山日和
+#Place:妖怪の山
+#Weather:曇天
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:sakuya,160,0,0,8888FF
+Character:aya,120,20,1,FF8888
+#分画面外に待機
+Action:aya,100
+#カメラ固定
+Action:sakuya,4
+#フォーカス瞬間移動
+#Action:sakuya,11
+
+#向き固定解除
+Action:sakuya,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta00.ogg
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle004.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage4.bmp,1,256,352
+Sleep:30;
+
+Face:sakuya,普
+これだけ曇っていれば快適ね\
+
+Face:sakuya,普
+紫外線も強くないし、水分も奪われにくいし……\
+
+Face:sakuya,嬉
+まさに登山日和ね……\
+
+
+#Face:sakuya,
+#Hide:1
+
+#敵キャラ天候
+Action:aya,103
+
+Face:sakuya,驚
+……\
+
+Face:sakuya,惑
+……山の天気は変わりやすい\
+
+#
+# 文登場
+#
+
+#登場モーション開始
+Action:aya,101
+
+#登場モーション終了検知
+Action:aya,102
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:aya,普
+こらこら、「いつまで経っても入山禁止」
+の立て札が見えなかったの？\
+
+# 名前のテロップ
+#Name:風雨の鴉　射命丸文
+Object:data/scenario/aya/effect/Name.bmp,2,352,304
+
+Face:sakuya,普
+見てなかった
+そんなファニーな立て札\
+
+Face:aya,怒
+さっさと帰れ@
+山は私達の物だから\
+
+Face:sakuya,惑
+これだけ天気が悪いと帰りたくなるけど……@
+ちょっと野暮用があって行きたい処があるの\
+
+Face:aya,普
+しょうがないわね@
+何処に行きたいの？\
+
+Face:sakuya,普
+山\
+
+Face:aya,普
+ここが山\
+
+Face:sakuya,惑
+山の……上？\
+
+Face:aya,惑
+ここが山の五合目\
+
+Face:sakuya,普
+いや、もっと上ね。
+山の上の上\
+
+Face:aya,汗
+何だか判らないけど、貴方は
+ここを通しては行けない気がする\
+
+PlayBgm:data/bgm/st03.ogg
+
+Face:aya,決
+徘徊するのなら麓をうろつきなさい！\
+
+
+#戦闘開始処理
+
+
+Action:sakuya,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:aya,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:aya,普
+さあ帰ってください\
+
+Face:aya,嬉
+帰って面白い事件でも起こしてね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:aya,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+#自キャラ天候
+Action:sakuya,103
+Sleep:60
+
+Face:sakuya,嬉
+風が止んだわ@
+今が山を登るチャンスね\
+
+Face:aya,負
+どうしたのですか？
+何か変ですよ？\
+
+Face:sakuya,惑
+さっき、冥界で変な光景を見ちゃったからねぇ@
+変なのが伝染ったかな？\
+
+Face:sakuya,惑
+真夏の雪……\
+
+Face:aya,普
+え？　変な光景ですか？@
+Face:aya,嬉
+冥界ですね？　行きます行きます！\
+
+Face:aya,無
+Face:sakuya,無
+
+Action:aya,52
+Action:aya,53
+
+Face:sakuya,汗
+行ってらっしゃい
+私はもっと上を目指しますから\
+
+Face:sakuya,嬉
+天気も回復したし、天狗は追っ払ったし@
+今は時が私を味方しているわ！\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30
+
+#上空移行用上空退避
+Action:sakuya,151
+
+Sleep:90
+
+#フェードアウト　黒
+Action:sakuya,160
+Sleep:60
+
+
+Stage:4,0
+
+End:
+
+
+
+
+
+## =======================================================================

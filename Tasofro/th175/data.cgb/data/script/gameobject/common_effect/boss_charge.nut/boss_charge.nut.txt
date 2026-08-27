@@ -1,0 +1,941 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\common_effect\boss_charge.nut: 
+sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+name: "main"
+nliterals: 13
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 34
+nfunctions: 9
+Literals: [
+    0: "construct"
+    1: "set_ball"
+    2: "destruct"
+    3: "message"
+    4: "lib"
+    5: "effect"
+    6: "common_message"
+    7: "interactive"
+    8: "on_hit_target"
+    9: "on_hit_ground"
+    10: "on_graze_target"
+    11: "determination"
+    12: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 33
+    1: name: "this", pos: 0, start_op: 0, end_op: 33
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 25, op: 3
+    2: line: 42, op: 6
+    3: line: 49, op: 9
+    4: line: 51, op: 15
+    5: line: 115, op: 18
+    6: line: 117, op: 21
+    7: line: 119, op: 24
+    8: line: 122, op: 27
+    9: line: 126, op: 30
+    10: line: 145, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "set_ball")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "destruct")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "message")
+    10:  loadroot(s3)
+    11:  getk(s3, "lib", s3)
+    12:  getk(s3, "effect", s3)
+    13:  getk(s3, "common_message", s3)
+    14:  newslot(s255, s0, s2, s3)
+    15:  load(s2, "interactive")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_hit_target")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_hit_ground")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "on_graze_target")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "determination")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "plot")
+    31:  closure(s3, 8)
+    32:  newslot(s2, s0, s2, s3)
+    33:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "construct"
+        nliterals: 26
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 105
+        nfunctions: 0
+        Literals: [
+            0: "set_group"
+            1: "count"
+            2: "visible"
+            3: "alpha"
+            4: "owner"
+            5: "obj"
+            6: "enemy"
+            7: "frameset"
+            8: "_composition_create_framepointer"
+            9: "resource_pool"
+            10: "fade_ball_white"
+            11: "angle"
+            12: "rand"
+            13: "check_motion"
+            14: "scale"
+            15: "x"
+            16: "cos"
+            17: "y"
+            18: "sin"
+            19: "vx"
+            20: "vy"
+            21: "prev"
+            22: "next"
+            23: "_audio_play"
+            24: "se"
+            25: "boss_charge"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "r_", pos: 1, start_op: 44, end_op: 103
+            1: name: "this", pos: 0, start_op: 0, end_op: 104
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 6, op: 3
+            3: line: 7, op: 6
+            4: line: 8, op: 9
+            5: line: 9, op: 12
+            6: line: 10, op: 16
+            7: line: 11, op: 24
+            8: line: 12, op: 27
+            9: line: 13, op: 35
+            10: line: 14, op: 38
+            11: line: 15, op: 44
+            12: line: 16, op: 54
+            13: line: 17, op: 63
+            14: line: 18, op: 74
+            15: line: 19, op: 82
+            16: line: 20, op: 92
+            17: line: 21, op: 94
+            18: line: 22, op: 97
+            19: line: 23, op: 104
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "set_group", s0, s2)
+            1:  loadint(s3, 4)
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "count")
+            4:  loadint(s2, 60)
+            5:  newslot(s255, s0, s1, s2)
+            6:  load(s1, "visible")
+            7:  loadbool(s2, 1)
+            8:  newslot(s255, s0, s1, s2)
+            9:  load(s1, "alpha")
+            10:  loadfloat(s2, 0)
+            11:  newslot(s255, s0, s1, s2)
+            12:  dload(s1, "owner", s2, "obj")
+            13:  get(s2, s0, s2)
+            14:  getk(s2, "enemy", s2)
+            15:  newslot(s255, s0, s1, s2)
+            16:  load(s1, "frameset")
+            17:  loadroot(s2)
+            18:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            19:  loadroot(s4)
+            20:  getk(s4, "resource_pool", s4)
+            21:  getk(s4, "fade_ball_white", s4)
+            22:  call(2, s2, s3, 2)
+            23:  newslot(s255, s0, s1, s2)
+            24:  load(s1, "alpha")
+            25:  loadfloat(s2, 0)
+            26:  newslot(s255, s0, s1, s2)
+            27:  dload(s1, "angle", s2, "rand")
+            28:  prepcall(s2, s2, s0, s3)
+            29:  call(2, s2, s3, 1)
+            30:  loadint(s3, 360)
+            31:  mod(s2, s3, s2)
+            32:  loadfloat(s3, 0.017453)
+            33:  mul(s2, s3, s2)
+            34:  newslot(s255, s0, s1, s2)
+            35:  load(s1, "check_motion")
+            36:  loadnulls(s2, 1)
+            37:  newslot(s255, s0, s1, s2)
+            38:  loadint(s1, 100)
+            39:  prepcallk(s2, "rand", s0, s3)
+            40:  call(2, s2, s3, 1)
+            41:  loadint(s3, 181)
+            42:  mod(s2, s3, s2)
+            43:  add(s1, s2, s1)
+            44:  load(s2, "scale")
+            45:  loadfloat(s3, 2)
+            46:  prepcallk(s4, "rand", s0, s5)
+            47:  call(4, s4, s5, 1)
+            48:  loadint(s5, 11)
+            49:  mod(s4, s5, s4)
+            50:  loadfloat(s5, 0.1)
+            51:  mul(s4, s5, s4)
+            52:  add(s3, s4, s3)
+            53:  newslot(s255, s0, s2, s3)
+            54:  dload(s2, "x", s3, "owner")
+            55:  get(s3, s0, s3)
+            56:  getk(s3, "x", s3)
+            57:  prepcallk(s4, "cos", s0, s5)
+            58:  getk(s6, "angle", s0)
+            59:  call(4, s4, s5, 2)
+            60:  mul(s4, s1, s4)
+            61:  add(s3, s4, s3)
+            62:  newslot(s255, s0, s2, s3)
+            63:  dload(s2, "y", s3, "owner")
+            64:  get(s3, s0, s3)
+            65:  getk(s3, "y", s3)
+            66:  loadint(s4, 40)
+            67:  sub(s3, s4, s3)
+            68:  prepcallk(s4, "sin", s0, s5)
+            69:  getk(s6, "angle", s0)
+            70:  call(4, s4, s5, 2)
+            71:  mul(s4, s1, s4)
+            72:  add(s3, s4, s3)
+            73:  newslot(s255, s0, s2, s3)
+            74:  dload(s2, "vx", s3, "owner")
+            75:  get(s3, s0, s3)
+            76:  getk(s3, "x", s3)
+            77:  getk(s4, "x", s0)
+            78:  sub(s3, s4, s3)
+            79:  loadfloat(s4, 0.025)
+            80:  mul(s3, s4, s3)
+            81:  newslot(s255, s0, s2, s3)
+            82:  dload(s2, "vy", s3, "owner")
+            83:  get(s3, s0, s3)
+            84:  getk(s3, "y", s3)
+            85:  loadint(s4, 40)
+            86:  sub(s3, s4, s3)
+            87:  getk(s4, "y", s0)
+            88:  sub(s3, s4, s3)
+            89:  loadfloat(s4, 0.025)
+            90:  mul(s3, s4, s3)
+            91:  newslot(s255, s0, s2, s3)
+            92:  load(s2, "prev")
+            93:  newslot(s255, s0, s2, s0)
+            94:  load(s2, "next")
+            95:  loadnulls(s3, 1)
+            96:  newslot(s255, s0, s2, s3)
+            97:  loadroot(s2)
+            98:  prepcallk(s2, "_audio_play", s2, s3)
+            99:  loadroot(s4)
+            100:  getk(s4, "se", s4)
+            101:  getk(s4, "boss_charge", s4)
+            102:  loadint(s5, 1)
+            103:  call(255, s2, s3, 3)
+            104:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "set_ball"
+        nliterals: 12
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 62
+        nfunctions: 0
+        Literals: [
+            0: "frame"
+            1: "_composition_create_framepointer"
+            2: "resource_pool"
+            3: "bullet_bubble_000"
+            4: "angle"
+            5: "rand"
+            6: "x"
+            7: "y"
+            8: "alpha"
+            9: "scale"
+            10: "prev"
+            11: "next"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 1, end_op: 60
+            1: name: "this", pos: 0, start_op: 0, end_op: 61
+          ]
+        Line Informations: [
+            0: line: 25, op: 0
+            1: line: 26, op: 0
+            2: line: 27, op: 1
+            3: line: 28, op: 9
+            4: line: 29, op: 17
+            5: line: 30, op: 27
+            6: line: 31, op: 37
+            7: line: 32, op: 40
+            8: line: 33, op: 43
+            9: line: 34, op: 45
+            10: line: 36, op: 53
+            11: line: 37, op: 56
+            12: line: 39, op: 59
+            13: line: 40, op: 61
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  newobj(s1, 0, 0, 0)
+            1:  load(s2, "frame")
+            2:  loadroot(s3)
+            3:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            4:  loadroot(s5)
+            5:  getk(s5, "resource_pool", s5)
+            6:  getk(s5, "bullet_bubble_000", s5)
+            7:  call(3, s3, s4, 2)
+            8:  newslot(s255, s1, s2, s3)
+            9:  dload(s2, "angle", s3, "rand")
+            10:  prepcall(s3, s3, s0, s4)
+            11:  call(3, s3, s4, 1)
+            12:  loadint(s4, 360)
+            13:  mod(s3, s4, s3)
+            14:  loadfloat(s4, 0.017453)
+            15:  mul(s3, s4, s3)
+            16:  newslot(s255, s1, s2, s3)
+            17:  dload(s2, "x", s3, "x")
+            18:  get(s3, s0, s3)
+            19:  loadint(s4, 256)
+            20:  add(s3, s4, s3)
+            21:  prepcallk(s4, "rand", s0, s5)
+            22:  call(4, s4, s5, 1)
+            23:  loadint(s5, 512)
+            24:  mod(s4, s5, s4)
+            25:  sub(s3, s4, s3)
+            26:  newslot(s255, s1, s2, s3)
+            27:  dload(s2, "y", s3, "y")
+            28:  get(s3, s0, s3)
+            29:  loadint(s4, 256)
+            30:  add(s3, s4, s3)
+            31:  prepcallk(s4, "rand", s0, s5)
+            32:  call(4, s4, s5, 1)
+            33:  loadint(s5, 512)
+            34:  mod(s4, s5, s4)
+            35:  sub(s3, s4, s3)
+            36:  newslot(s255, s1, s2, s3)
+            37:  load(s2, "alpha")
+            38:  loadfloat(s3, 0)
+            39:  newslot(s255, s1, s2, s3)
+            40:  load(s2, "scale")
+            41:  loadfloat(s3, 2)
+            42:  newslot(s255, s1, s2, s3)
+            43:  load(s2, "prev")
+            44:  newslot(s255, s1, s2, s0)
+            45:  getk(s2, "next", s0)
+            46:  loadnulls(s3, 1)
+            47:  eq(s2, 3, s2, 0)
+            48:  jz(s2, 4)
+            49:  load(s2, "next")
+            50:  loadnulls(s3, 1)
+            51:  newslot(s255, s1, s2, s3)
+            52:  jmp(-, 6)
+            53:  dload(s2, "next", s3, "next")
+            54:  get(s3, s0, s3)
+            55:  newslot(s255, s1, s2, s3)
+            56:  getk(s2, "next", s0)
+            57:  load(s3, "prev")
+            58:  newslot(s255, s2, s3, s1)
+            59:  load(s2, "next")
+            60:  set(s255, s0, s2, s1)
+            61:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "destruct"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "owner"
+            1: "prev"
+            2: "next"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 43, op: 0
+            1: line: 44, op: 0
+            2: line: 45, op: 3
+            3: line: 46, op: 6
+            4: line: 47, op: 9
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "owner")
+            1:  loadnulls(s2, 1)
+            2:  set(s255, s0, s1, s2)
+            3:  load(s1, "prev")
+            4:  loadnulls(s2, 1)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "next")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "interactive"
+        nliterals: 14
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 43
+        ndefaultparams: 0
+        ninstructions: 165
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "owner"
+            2: "alpha"
+            3: "scale"
+            4: "next"
+            5: "x"
+            6: "y"
+            7: "prev"
+            8: "kill"
+            9: "check_motion"
+            10: "motion"
+            11: "center_x"
+            12: "center_y"
+            13: "set_ball"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 18, end_op: 61
+            1: name: "a", pos: 4, start_op: 68, end_op: 76
+            2: name: "@INDEX@", pos: 3, start_op: 67, end_op: 76
+            3: name: "c_", pos: 1, start_op: 66, end_op: 83
+            4: name: "a_", pos: 1, start_op: 131, end_op: 163
+            5: name: "this", pos: 0, start_op: 0, end_op: 164
+          ]
+        Line Informations: [
+            0: line: 52, op: 0
+            1: line: 53, op: 0
+            2: line: 54, op: 2
+            3: line: 55, op: 11
+            4: line: 56, op: 14
+            5: line: 58, op: 17
+            6: line: 59, op: 18
+            7: line: 60, op: 21
+            8: line: 61, op: 28
+            9: line: 62, op: 35
+            10: line: 63, op: 38
+            11: line: 64, op: 41
+            12: line: 65, op: 50
+            13: line: 67, op: 54
+            14: line: 70, op: 57
+            15: line: 73, op: 63
+            16: line: 74, op: 65
+            17: line: 75, op: 66
+            18: line: 76, op: 70
+            19: line: 77, op: 74
+            20: line: 78, op: 75
+            21: line: 81, op: 77
+            22: line: 82, op: 80
+            23: line: 83, op: 83
+            24: line: 86, op: 84
+            25: line: 87, op: 91
+            26: line: 88, op: 98
+            27: line: 89, op: 101
+            28: line: 90, op: 104
+            29: line: 93, op: 112
+            30: line: 94, op: 119
+            31: line: 95, op: 122
+            32: line: 98, op: 125
+            33: line: 100, op: 130
+            34: line: 101, op: 131
+            35: line: 102, op: 134
+            36: line: 103, op: 141
+            37: line: 104, op: 148
+            38: line: 105, op: 151
+            39: line: 106, op: 154
+            40: line: 107, op: 157
+            41: line: 109, op: 161
+            42: line: 112, op: 164
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 255)
+            2:  getk(s1, "count", s0)
+            3:  loadint(s2, 0)
+            4:  cmp(s1, s2, s1, CMP_LE)
+            5:  or(s1, 4, s1)
+            6:  getk(s2, "owner", s0)
+            7:  loadnulls(s3, 1)
+            8:  eq(s2, 3, s2, 0)
+            9:  move(s1, s2)
+            10:  jz(s1, 52)
+            11:  load(s1, "alpha")
+            12:  loadfloat(s2, 0.05)
+            13:  comparith(s1, 2, s1, 45)
+            14:  load(s1, "scale")
+            15:  loadfloat(s2, 0.01)
+            16:  comparith(s1, 2, s1, 43)
+            17:  getk(s1, "next", s0)
+            18:  loadnulls(s2, 1)
+            19:  ne(s2, 2, s1, 0)
+            20:  jz(s2, 36)
+            21:  dload(s2, "x", s3, "x")
+            22:  get(s3, s1, s3)
+            23:  getk(s4, "x", s0)
+            24:  sub(s3, s4, s3)
+            25:  loadfloat(s4, 0.05)
+            26:  mul(s3, s4, s3)
+            27:  comparith(s2, 65539, s2, 45)
+            28:  dload(s2, "y", s3, "y")
+            29:  get(s3, s1, s3)
+            30:  getk(s4, "y", s0)
+            31:  sub(s3, s4, s3)
+            32:  loadfloat(s4, 0.05)
+            33:  mul(s3, s4, s3)
+            34:  comparith(s2, 65539, s2, 45)
+            35:  load(s2, "alpha")
+            36:  loadfloat(s3, 0.05)
+            37:  comparith(s2, 65539, s2, 45)
+            38:  load(s2, "scale")
+            39:  loadfloat(s3, 0.05)
+            40:  comparith(s2, 65539, s2, 45)
+            41:  getk(s2, "scale", s1)
+            42:  loadfloat(s3, 0)
+            43:  cmp(s2, s3, s2, CMP_LE)
+            44:  or(s2, 4, s2)
+            45:  getk(s3, "alpha", s1)
+            46:  loadfloat(s4, 0)
+            47:  cmp(s3, s4, s3, CMP_LE)
+            48:  move(s2, s3)
+            49:  jz(s2, 4)
+            50:  getk(s2, "prev", s1)
+            51:  dload(s3, "next", s4, "next")
+            52:  get(s4, s1, s4)
+            53:  set(s255, s2, s3, s4)
+            54:  getk(s2, "next", s1)
+            55:  move(s1, s2)
+            56:  jmp(-, -39)
+            57:  getk(s2, "alpha", s0)
+            58:  loadfloat(s3, 0)
+            59:  jcmp(s3, 2, s2, CMP_LE)
+            60:  prepcallk(s2, "kill", s0, s3)
+            61:  call(255, s2, s3, 1)
+            62:  jmp(-, 101)
+            63:  getk(s1, "check_motion", s0)
+            64:  jz(s1, 19)
+            65:  loadbool(s1, 0)
+            66:  getk(s2, "check_motion", s0)
+            67:  loadnulls(s3, 3)
+            68:  foreach(s2, 8, s3)
+            69:  postforeach(s2, 8)
+            70:  getk(s6, "owner", s0)
+            71:  getk(s6, "motion", s6)
+            72:  eq(s6, 6, s4, 0)
+            73:  jz(s6, 2)
+            74:  loadbool(s1, 1)
+            75:  jmp(-, 1)
+            76:  jmp(-, -9)
+            77:  loadbool(s2, 0)
+            78:  eq(s2, 2, s1, 0)
+            79:  jz(s2, 4)
+            80:  load(s2, "count")
+            81:  loadint(s3, 0)
+            82:  set(s255, s0, s2, s3)
+            83:  return(255, 0)
+            84:  dload(s1, "x", s2, "owner")
+            85:  get(s2, s0, s2)
+            86:  getk(s2, "x", s2)
+            87:  getk(s3, "owner", s0)
+            88:  getk(s3, "center_x", s3)
+            89:  add(s2, s3, s2)
+            90:  set(s255, s0, s1, s2)
+            91:  dload(s1, "y", s2, "owner")
+            92:  get(s2, s0, s2)
+            93:  getk(s2, "y", s2)
+            94:  getk(s3, "owner", s0)
+            95:  getk(s3, "center_y", s3)
+            96:  add(s2, s3, s2)
+            97:  set(s255, s0, s1, s2)
+            98:  getk(s1, "count", s0)
+            99:  loadint(s2, 10)
+            100:  jcmp(s2, 11, s1, CMP_G)
+            101:  load(s1, "alpha")
+            102:  loadfloat(s2, 0.01)
+            103:  comparith(s1, 2, s1, 43)
+            104:  load(s1, "scale")
+            105:  loadfloat(s2, 1)
+            106:  getk(s3, "scale", s0)
+            107:  sub(s2, s3, s2)
+            108:  loadfloat(s3, 0.05)
+            109:  mul(s2, s3, s2)
+            110:  comparith(s1, 2, s1, 43)
+            111:  jmp(-, 13)
+            112:  getk(s1, "count", s0)
+            113:  loadint(s2, 10)
+            114:  eq(s1, 2, s1, 0)
+            115:  jz(s1, 3)
+            116:  load(s1, "alpha")
+            117:  loadfloat(s2, 1)
+            118:  set(s255, s0, s1, s2)
+            119:  load(s1, "scale")
+            120:  loadfloat(s2, 0.5)
+            121:  comparith(s1, 2, s1, 43)
+            122:  load(s1, "alpha")
+            123:  loadfloat(s2, 0.1)
+            124:  comparith(s1, 2, s1, 45)
+            125:  getk(s1, "count", s0)
+            126:  loadint(s2, 10)
+            127:  jcmp(s2, 2, s1, CMP_GE)
+            128:  prepcallk(s1, "set_ball", s0, s2)
+            129:  call(255, s1, s2, 1)
+            130:  getk(s1, "next", s0)
+            131:  loadnulls(s2, 1)
+            132:  ne(s2, 2, s1, 0)
+            133:  jz(s2, 30)
+            134:  dload(s2, "x", s3, "x")
+            135:  get(s3, s1, s3)
+            136:  getk(s4, "x", s0)
+            137:  sub(s3, s4, s3)
+            138:  loadfloat(s4, 0.05)
+            139:  mul(s3, s4, s3)
+            140:  comparith(s2, 65539, s2, 45)
+            141:  dload(s2, "y", s3, "y")
+            142:  get(s3, s1, s3)
+            143:  getk(s4, "y", s0)
+            144:  sub(s3, s4, s3)
+            145:  loadfloat(s4, 0.05)
+            146:  mul(s3, s4, s3)
+            147:  comparith(s2, 65539, s2, 45)
+            148:  load(s2, "alpha")
+            149:  loadfloat(s3, 0.05)
+            150:  comparith(s2, 65539, s2, 43)
+            151:  load(s2, "scale")
+            152:  loadfloat(s3, 0.05)
+            153:  comparith(s2, 65539, s2, 45)
+            154:  getk(s2, "scale", s1)
+            155:  loadfloat(s3, 0)
+            156:  jcmp(s3, 4, s2, CMP_LE)
+            157:  getk(s2, "prev", s1)
+            158:  dload(s3, "next", s4, "next")
+            159:  get(s4, s1, s4)
+            160:  set(s255, s2, s3, s4)
+            161:  getk(s2, "next", s1)
+            162:  move(s1, s2)
+            163:  jmp(-, -33)
+            164:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "on_hit_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 115, op: 0
+            1: line: 116, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 117, op: 0
+            1: line: 118, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 119, op: 0
+            1: line: 120, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 123, op: 0
+            1: line: 124, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\common_effect\boss_charge.nut"
+        name: "plot"
+        nliterals: 12
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 52
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "next"
+            2: "layer_s0"
+            3: "plot"
+            4: "frame"
+            5: "scale"
+            6: "translate"
+            7: "x"
+            8: "y"
+            9: "blend"
+            10: "alpha"
+            11: "frameset"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 1, start_op: 5, end_op: 50
+            1: name: "this", pos: 0, start_op: 0, end_op: 51
+          ]
+        Line Informations: [
+            0: line: 127, op: 0
+            1: line: 128, op: 0
+            2: line: 129, op: 4
+            3: line: 130, op: 5
+            4: line: 131, op: 8
+            5: line: 132, op: 12
+            6: line: 133, op: 17
+            7: line: 134, op: 22
+            8: line: 135, op: 27
+            9: line: 137, op: 30
+            10: line: 139, op: 32
+            11: line: 140, op: 36
+            12: line: 141, op: 41
+            13: line: 142, op: 46
+            14: line: 145, op: 51
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "next", s0)
+            5:  loadnulls(s2, 1)
+            6:  ne(s2, 2, s1, 0)
+            7:  jz(s2, 22)
+            8:  getk(s2, "layer_s0", s0)
+            9:  prepcallk(s2, "plot", s2, s3)
+            10:  getk(s4, "frame", s1)
+            11:  call(255, s2, s3, 2)
+            12:  getk(s2, "layer_s0", s0)
+            13:  prepcallk(s2, "scale", s2, s3)
+            14:  getk(s4, "scale", s1)
+            15:  getk(s5, "scale", s1)
+            16:  call(255, s2, s3, 3)
+            17:  getk(s2, "layer_s0", s0)
+            18:  prepcallk(s2, "translate", s2, s3)
+            19:  getk(s4, "x", s1)
+            20:  getk(s5, "y", s1)
+            21:  call(255, s2, s3, 3)
+            22:  getk(s2, "layer_s0", s0)
+            23:  prepcallk(s2, "blend", s2, s3)
+            24:  loadint(s4, 2)
+            25:  getk(s5, "alpha", s1)
+            26:  call(255, s2, s3, 3)
+            27:  getk(s2, "next", s1)
+            28:  move(s1, s2)
+            29:  jmp(-, -25)
+            30:  loadnulls(s2, 1)
+            31:  move(s1, s2)
+            32:  getk(s2, "layer_s0", s0)
+            33:  prepcallk(s2, "plot", s2, s3)
+            34:  getk(s4, "frameset", s0)
+            35:  call(255, s2, s3, 2)
+            36:  getk(s2, "layer_s0", s0)
+            37:  prepcallk(s2, "scale", s2, s3)
+            38:  getk(s4, "scale", s0)
+            39:  getk(s5, "scale", s0)
+            40:  call(255, s2, s3, 3)
+            41:  getk(s2, "layer_s0", s0)
+            42:  prepcallk(s2, "translate", s2, s3)
+            43:  getk(s4, "x", s0)
+            44:  getk(s5, "y", s0)
+            45:  call(255, s2, s3, 3)
+            46:  getk(s2, "layer_s0", s0)
+            47:  prepcallk(s2, "blend", s2, s3)
+            48:  loadint(s4, 2)
+            49:  getk(s5, "alpha", s0)
+            50:  call(255, s2, s3, 3)
+            51:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

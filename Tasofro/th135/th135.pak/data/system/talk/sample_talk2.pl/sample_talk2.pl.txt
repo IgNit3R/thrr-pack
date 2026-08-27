@@ -1,0 +1,125 @@
+#========================================================================
+#	Stage:1
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+# 背景ロード
+,Function,if (!::act.BG.is_active) ::act.BG.Start(0);
+
+,SetDefaultBalloon,1
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/marisa.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-320,0,false
+,DefineObject,marisa,-320,0,true
+
+,DefineObject,reimu_label,50,320,false
+,DefineObject,marisa_label,1050,320,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,marisa,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_普1,0,0
+,ImageDef,marisa,魔理沙_普1,0,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,marisa_label,"data/system/char_def/name/name_02marisa.png",0,0,0,0
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Sleep,40
+,Show,reimu,30,-64,0	,#霊夢登場
+,Sleep,50
+
+,SetFocus,reimu,0,
+
+……見事に\.\R[壊|●●●]れているわ\
+
+,ImageDef,reimu,霊夢_汗1,0,0
+
+,Move,reimu,0,-25,25
+,Sleep,10
+
+#,GoSub,TestMessage
+#,GoSub,TestMessage
+#,GoSub,TestMessage
+#,GoSub,TestMessage
+
+これは\n掃除どころじゃないわねぇ
+
+,WaitInput
+#,Sleep,30
+
+
+,Show,marisa,30,-64,0
+,Sleep,30
+,Show,marisa_label,20,0,-64
+
+,Sleep,40
+
+,Hide,marisa_label,20,0,64
+
+,Sleep,30
+
+,SetFocus,marisa
+\s[24]いやぁ、大変だ\,2,20,-30
+
+ここのところ雨続きで\n洗濯も出来やしないぜ\,1,20,-30
+
+,ImageDef,marisa,魔理沙_驚1,20,0
+
+\s[40]……って、何だこりゃ！,0
+,WaitInput
+
+
+#,Sleep,40
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+,Move,reimu,15,25,-25
+
+,SetFocus,reimu
+
+何だこりゃっって、\n壊れても神社は神社よ
+,WaitInput
+
+
+,ClearBalloon,marisa
+,SetFocus,marisa
+\w[800]・\w[400]・\w[400]・\w[400]・,2
+,Sleep,112
+,WaitInput
+
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

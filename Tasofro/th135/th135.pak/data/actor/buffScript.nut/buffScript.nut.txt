@@ -1,0 +1,1080 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\actor\buffScript.nut: 
+sourcename: ""
+name: "main"
+nliterals: 12
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 13
+ndefaultparams: 0
+ninstructions: 50
+nfunctions: 12
+Literals: [
+    0: "BuffLoop"
+    1: "DamageBuffAjust"
+    2: "DebuffLoop"
+    3: "AtkBuffAdd"
+    4: "AtkBuffDel"
+    5: "AtkBuffSet"
+    6: "DebuffSet_Hate"
+    7: "DebuffEnd_Hate"
+    8: "DebuffSet_Hyper"
+    9: "DebuffEnd_Hyper"
+    10: "DebuffSet_Fear"
+    11: "DebuffEnd_Fear"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 49
+    1: name: "this", pos: 0, start_op: 0, end_op: 49
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 19, op: 4
+    2: line: 30, op: 8
+    3: line: 45, op: 12
+    4: line: 51, op: 16
+    5: line: 59, op: 20
+    6: line: 67, op: 24
+    7: line: 73, op: 28
+    8: line: 79, op: 32
+    9: line: 85, op: 36
+    10: line: 91, op: 40
+    11: line: 97, op: 44
+    12: line: 102, op: 48
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "BuffLoop")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 19)
+    5:  load(s2, "DamageBuffAjust")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 30)
+    9:  load(s2, "DebuffLoop")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 45)
+    13:  load(s2, "AtkBuffAdd")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 51)
+    17:  load(s2, "AtkBuffDel")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 59)
+    21:  load(s2, "AtkBuffSet")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 67)
+    25:  load(s2, "DebuffSet_Hate")
+    26:  closure(s3, 6)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 73)
+    29:  load(s2, "DebuffEnd_Hate")
+    30:  closure(s3, 7)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 79)
+    33:  load(s2, "DebuffSet_Hyper")
+    34:  closure(s3, 8)
+    35:  newslot(s2, s0, s2, s3)
+    36:  line(-, 85)
+    37:  load(s2, "DebuffEnd_Hyper")
+    38:  closure(s3, 9)
+    39:  newslot(s2, s0, s2, s3)
+    40:  line(-, 91)
+    41:  load(s2, "DebuffSet_Fear")
+    42:  closure(s3, 10)
+    43:  newslot(s2, s0, s2, s3)
+    44:  line(-, 97)
+    45:  load(s2, "DebuffEnd_Fear")
+    46:  closure(s3, 11)
+    47:  newslot(s2, s0, s2, s3)
+    48:  line(-, 102)
+    49:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "BuffLoop"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 81
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "atkBuff"
+            2: "len"
+            3: "time"
+            4: "func"
+            5: "call"
+            6: "remove"
+            7: "u"
+            8: "AtkBuffSet"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 2, start_op: 11, end_op: 71
+            1: name: "c_", pos: 1, start_op: 2, end_op: 78
+            2: name: "this", pos: 0, start_op: 0, end_op: 80
+          ]
+        Line Informations: [
+            0: line: 4, op: 1
+            1: line: 5, op: 2
+            2: line: 6, op: 9
+            3: line: 7, op: 16
+            4: line: 8, op: 28
+            5: line: 9, op: 51
+            6: line: 10, op: 52
+            7: line: 11, op: 58
+            8: line: 12, op: 60
+            9: line: 14, op: 62
+            10: line: 17, op: 72
+            11: line: 18, op: 79
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 4)
+            1:  loadbool(s1, 0)
+            2:  line(-, 5)
+            3:  getk(s2, "p", s0)
+            4:  getk(s2, "atkBuff", s2)
+            5:  prepcallk(s2, "len", s2, s3)
+            6:  call(2, s2, s3, 1)
+            7:  loadint(s3, 0)
+            8:  jcmp(s3, 63, s2, CMP_G)
+            9:  line(-, 6)
+            10:  loadint(s2, 0)
+            11:  getk(s3, "p", s0)
+            12:  getk(s3, "atkBuff", s3)
+            13:  prepcallk(s3, "len", s3, s4)
+            14:  call(3, s3, s4, 1)
+            15:  jcmp(s3, 56, s2, CMP_L)
+            16:  line(-, 7)
+            17:  getk(s3, "p", s0)
+            18:  getk(s3, "atkBuff", s3)
+            19:  get(s3, s3, s2)
+            20:  getk(s3, "time", s3)
+            21:  loadint(s4, 0)
+            22:  jcmp(s4, 5, s3, CMP_G)
+            23:  getk(s3, "p", s0)
+            24:  getk(s3, "atkBuff", s3)
+            25:  get(s3, s3, s2)
+            26:  load(s4, "time")
+            27:  pinc(s3, s3, s4, 255)
+            28:  line(-, 8)
+            29:  getk(s3, "p", s0)
+            30:  getk(s3, "atkBuff", s3)
+            31:  get(s3, s3, s2)
+            32:  getk(s3, "time", s3)
+            33:  loadint(s4, 0)
+            34:  eq(s3, 4, s3, 0)
+            35:  or(s3, 14, s3)
+            36:  getk(s4, "p", s0)
+            37:  getk(s4, "atkBuff", s4)
+            38:  get(s4, s4, s2)
+            39:  getk(s4, "func", s4)
+            40:  and(s4, 8, s4)
+            41:  getk(s5, "p", s0)
+            42:  getk(s5, "atkBuff", s5)
+            43:  get(s5, s5, s2)
+            44:  getk(s5, "func", s5)
+            45:  prepcallk(s5, "call", s5, s6)
+            46:  move(s7, s0)
+            47:  call(5, s5, s6, 2)
+            48:  move(s4, s5)
+            49:  move(s3, s4)
+            50:  jz(s3, 11)
+            51:  line(-, 9)
+            52:  line(-, 10)
+            53:  getk(s3, "p", s0)
+            54:  getk(s3, "atkBuff", s3)
+            55:  prepcallk(s3, "remove", s3, s4)
+            56:  move(s5, s2)
+            57:  call(255, s3, s4, 2)
+            58:  line(-, 11)
+            59:  loadbool(s1, 1)
+            60:  line(-, 12)
+            61:  pincl(s3, s2, 0, 255)
+            62:  line(-, 14)
+            63:  getk(s3, "p", s0)
+            64:  getk(s3, "atkBuff", s3)
+            65:  prepcallk(s3, "len", s3, s4)
+            66:  call(3, s3, s4, 1)
+            67:  loadint(s4, 0)
+            68:  jcmp(s4, 1, s3, CMP_LE)
+            69:  jmp(-, 2)
+            70:  pincl(s3, s2, 0, 1)
+            71:  jmp(-, -61)
+            72:  line(-, 17)
+            73:  jz(s1, 5)
+            74:  getk(s2, "u", s0)
+            75:  getk(s2, "AtkBuffSet", s2)
+            76:  prepcallk(s2, "call", s2, s3)
+            77:  move(s4, s0)
+            78:  call(255, s2, s3, 2)
+            79:  line(-, 18)
+            80:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "DamageBuffAjust"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 36
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "defRate"
+            2: "baseDefRate"
+            3: "atkRate"
+            4: "baseAtkRate"
+            5: "item7_defRateA"
+            6: "item7_defRateB"
+            7: "baseBuff"
+            8: "call"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 35
+          ]
+        Line Informations: [
+            0: line: 20, op: 1
+            1: line: 21, op: 6
+            2: line: 23, op: 12
+            3: line: 24, op: 18
+            4: line: 26, op: 24
+            5: line: 28, op: 33
+            6: line: 29, op: 34
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 20)
+            1:  getk(s1, "p", s0)
+            2:  dload(s2, "defRate", s3, "p")
+            3:  get(s3, s0, s3)
+            4:  getk(s3, "baseDefRate", s3)
+            5:  set(s255, s1, s2, s3)
+            6:  line(-, 21)
+            7:  getk(s1, "p", s0)
+            8:  dload(s2, "atkRate", s3, "p")
+            9:  get(s3, s0, s3)
+            10:  getk(s3, "baseAtkRate", s3)
+            11:  set(s255, s1, s2, s3)
+            12:  line(-, 23)
+            13:  getk(s1, "p", s0)
+            14:  dload(s2, "defRate", s3, "p")
+            15:  get(s3, s0, s3)
+            16:  getk(s3, "item7_defRateA", s3)
+            17:  comparith(s1, 65539, s2, 42)
+            18:  line(-, 24)
+            19:  getk(s1, "p", s0)
+            20:  dload(s2, "defRate", s3, "p")
+            21:  get(s3, s0, s3)
+            22:  getk(s3, "item7_defRateB", s3)
+            23:  comparith(s1, 65539, s2, 42)
+            24:  line(-, 26)
+            25:  getk(s1, "p", s0)
+            26:  getk(s1, "baseBuff", s1)
+            27:  jz(s1, 5)
+            28:  getk(s1, "p", s0)
+            29:  getk(s1, "baseBuff", s1)
+            30:  prepcallk(s1, "call", s1, s2)
+            31:  move(s3, s0)
+            32:  call(255, s1, s2, 2)
+            33:  line(-, 28)
+            34:  line(-, 29)
+            35:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "DebuffLoop"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 71
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_hate"
+            2: "time"
+            3: "u"
+            4: "DebuffEnd_Hate"
+            5: "call"
+            6: "debuff_fear"
+            7: "DebuffEnd_Fear"
+            8: "debuff_hyper"
+            9: "DebuffEnd_Hyper"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 70
+          ]
+        Line Informations: [
+            0: line: 32, op: 1
+            1: line: 33, op: 6
+            2: line: 34, op: 11
+            3: line: 36, op: 23
+            4: line: 37, op: 29
+            5: line: 38, op: 34
+            6: line: 40, op: 46
+            7: line: 41, op: 52
+            8: line: 42, op: 57
+            9: line: 44, op: 69
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 32)
+            1:  getk(s1, "p", s0)
+            2:  getk(s1, "debuff_hate", s1)
+            3:  getk(s1, "time", s1)
+            4:  loadint(s2, 0)
+            5:  jcmp(s2, 17, s1, CMP_G)
+            6:  line(-, 33)
+            7:  getk(s1, "p", s0)
+            8:  getk(s1, "debuff_hate", s1)
+            9:  load(s2, "time")
+            10:  pinc(s1, s1, s2, 255)
+            11:  line(-, 34)
+            12:  getk(s1, "p", s0)
+            13:  getk(s1, "debuff_hate", s1)
+            14:  getk(s1, "time", s1)
+            15:  loadint(s2, 0)
+            16:  eq(s1, 2, s1, 0)
+            17:  jz(s1, 5)
+            18:  getk(s1, "u", s0)
+            19:  getk(s1, "DebuffEnd_Hate", s1)
+            20:  prepcallk(s1, "call", s1, s2)
+            21:  move(s3, s0)
+            22:  call(255, s1, s2, 2)
+            23:  line(-, 36)
+            24:  getk(s1, "p", s0)
+            25:  getk(s1, "debuff_fear", s1)
+            26:  getk(s1, "time", s1)
+            27:  loadint(s2, 0)
+            28:  jcmp(s2, 17, s1, CMP_G)
+            29:  line(-, 37)
+            30:  getk(s1, "p", s0)
+            31:  getk(s1, "debuff_fear", s1)
+            32:  load(s2, "time")
+            33:  pinc(s1, s1, s2, 255)
+            34:  line(-, 38)
+            35:  getk(s1, "p", s0)
+            36:  getk(s1, "debuff_fear", s1)
+            37:  getk(s1, "time", s1)
+            38:  loadint(s2, 0)
+            39:  eq(s1, 2, s1, 0)
+            40:  jz(s1, 5)
+            41:  getk(s1, "u", s0)
+            42:  getk(s1, "DebuffEnd_Fear", s1)
+            43:  prepcallk(s1, "call", s1, s2)
+            44:  move(s3, s0)
+            45:  call(255, s1, s2, 2)
+            46:  line(-, 40)
+            47:  getk(s1, "p", s0)
+            48:  getk(s1, "debuff_hyper", s1)
+            49:  getk(s1, "time", s1)
+            50:  loadint(s2, 0)
+            51:  jcmp(s2, 17, s1, CMP_G)
+            52:  line(-, 41)
+            53:  getk(s1, "p", s0)
+            54:  getk(s1, "debuff_hyper", s1)
+            55:  load(s2, "time")
+            56:  pinc(s1, s1, s2, 255)
+            57:  line(-, 42)
+            58:  getk(s1, "p", s0)
+            59:  getk(s1, "debuff_hyper", s1)
+            60:  getk(s1, "time", s1)
+            61:  loadint(s2, 0)
+            62:  eq(s1, 2, s1, 0)
+            63:  jz(s1, 5)
+            64:  getk(s1, "u", s0)
+            65:  getk(s1, "DebuffEnd_Hyper", s1)
+            66:  prepcallk(s1, "call", s1, s2)
+            67:  move(s3, s0)
+            68:  call(255, s1, s2, 2)
+            69:  line(-, 44)
+            70:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "AtkBuffAdd"
+        nliterals: 10
+        nparameters: 5
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 0
+        Literals: [
+            0: "type"
+            1: "rate"
+            2: "time"
+            3: "func"
+            4: "p"
+            5: "atkBuff"
+            6: "append"
+            7: "u"
+            8: "AtkBuffSet"
+            9: "call"
+          ]
+        Parameters: [
+            0: "this"
+            1: "type_"
+            2: "rate_"
+            3: "time_"
+            4: "func_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 5, start_op: 2, end_op: 22
+            1: name: "func_", pos: 4, start_op: 0, end_op: 24
+            2: name: "time_", pos: 3, start_op: 0, end_op: 24
+            3: name: "rate_", pos: 2, start_op: 0, end_op: 24
+            4: name: "type_", pos: 1, start_op: 0, end_op: 24
+            5: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 46, op: 1
+            1: line: 47, op: 2
+            2: line: 48, op: 11
+            3: line: 49, op: 17
+            4: line: 50, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 46)
+            1:  newobj(s5, 0, 0, 0)
+            2:  line(-, 47)
+            3:  load(s6, "type")
+            4:  newslot(s255, s5, s6, s1)
+            5:  load(s6, "rate")
+            6:  newslot(s255, s5, s6, s2)
+            7:  load(s6, "time")
+            8:  newslot(s255, s5, s6, s3)
+            9:  load(s6, "func")
+            10:  newslot(s255, s5, s6, s4)
+            11:  line(-, 48)
+            12:  getk(s6, "p", s0)
+            13:  getk(s6, "atkBuff", s6)
+            14:  prepcallk(s6, "append", s6, s7)
+            15:  move(s8, s5)
+            16:  call(255, s6, s7, 2)
+            17:  line(-, 49)
+            18:  getk(s6, "u", s0)
+            19:  getk(s6, "AtkBuffSet", s6)
+            20:  prepcallk(s6, "call", s6, s7)
+            21:  move(s8, s0)
+            22:  call(255, s6, s7, 2)
+            23:  line(-, 50)
+            24:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "AtkBuffDel"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "atkBuff"
+            2: "type"
+            3: "remove"
+            4: "u"
+            5: "AtkBuffSet"
+            6: "call"
+          ]
+        Parameters: [
+            0: "this"
+            1: "type_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 4, start_op: 4, end_op: 16
+            1: name: "val", pos: 3, start_op: 3, end_op: 16
+            2: name: "type_", pos: 1, start_op: 0, end_op: 24
+            3: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 52, op: 1
+            1: line: 53, op: 6
+            2: line: 54, op: 10
+            3: line: 57, op: 17
+            4: line: 58, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 52)
+            1:  getk(s2, "p", s0)
+            2:  getk(s2, "atkBuff", s2)
+            3:  loadnulls(s3, 3)
+            4:  foreach(s2, 12, s3)
+            5:  postforeach(s2, 12)
+            6:  line(-, 53)
+            7:  getk(s6, "type", s4)
+            8:  eq(s6, 1, s6, 0)
+            9:  jz(s6, 6)
+            10:  line(-, 54)
+            11:  getk(s6, "p", s0)
+            12:  getk(s6, "atkBuff", s6)
+            13:  prepcallk(s6, "remove", s6, s7)
+            14:  move(s8, s3)
+            15:  call(255, s6, s7, 2)
+            16:  jmp(-, -13)
+            17:  line(-, 57)
+            18:  getk(s2, "u", s0)
+            19:  getk(s2, "AtkBuffSet", s2)
+            20:  prepcallk(s2, "call", s2, s3)
+            21:  move(s4, s0)
+            22:  call(255, s2, s3, 2)
+            23:  line(-, 58)
+            24:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "AtkBuffSet"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "atkRate"
+            2: "atkBuff"
+            3: "len"
+            4: "rate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 1, start_op: 7, end_op: 22
+            1: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 60, op: 1
+            1: line: 61, op: 5
+            2: line: 62, op: 12
+            3: line: 63, op: 20
+            4: line: 65, op: 23
+            5: line: 66, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 60)
+            1:  getk(s1, "p", s0)
+            2:  load(s2, "atkRate")
+            3:  loadfloat(s3, 1)
+            4:  set(s255, s1, s2, s3)
+            5:  line(-, 61)
+            6:  loadint(s1, 0)
+            7:  getk(s2, "p", s0)
+            8:  getk(s2, "atkBuff", s2)
+            9:  prepcallk(s2, "len", s2, s3)
+            10:  call(2, s2, s3, 1)
+            11:  jcmp(s2, 11, s1, CMP_L)
+            12:  line(-, 62)
+            13:  getk(s2, "p", s0)
+            14:  dload(s3, "atkRate", s4, "p")
+            15:  get(s4, s0, s4)
+            16:  getk(s4, "atkBuff", s4)
+            17:  get(s4, s4, s1)
+            18:  getk(s4, "rate", s4)
+            19:  comparith(s2, 131076, s3, 42)
+            20:  line(-, 63)
+            21:  pincl(s2, s1, 0, 1)
+            22:  jmp(-, -16)
+            23:  line(-, 65)
+            24:  line(-, 66)
+            25:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "DebuffSet_Hate"
+        nliterals: 11
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 29
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_hate"
+            2: "time"
+            3: "owner"
+            4: "object"
+            5: "SetEffect"
+            6: "x"
+            7: "y"
+            8: "direction"
+            9: "effect"
+            10: "EF_DebuffHate"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 8, end_op: 26
+            1: name: "time_", pos: 1, start_op: 0, end_op: 28
+            2: name: "this", pos: 0, start_op: 0, end_op: 28
+          ]
+        Line Informations: [
+            0: line: 68, op: 1
+            1: line: 69, op: 1
+            2: line: 70, op: 6
+            3: line: 71, op: 11
+            4: line: 72, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 68)
+            1:  line(-, 69)
+            2:  getk(s2, "p", s0)
+            3:  getk(s2, "debuff_hate", s2)
+            4:  load(s3, "time")
+            5:  set(s255, s2, s3, s1)
+            6:  line(-, 70)
+            7:  newobj(s2, 0, 0, 0)
+            8:  dload(s3, "owner", s4, "owner")
+            9:  get(s4, s0, s4)
+            10:  newslot(s255, s2, s3, s4)
+            11:  line(-, 71)
+            12:  getk(s3, "p", s0)
+            13:  getk(s3, "debuff_hate", s3)
+            14:  dload(s4, "object", s5, "SetEffect")
+            15:  prepcall(s5, s5, s0, s6)
+            16:  getk(s7, "x", s0)
+            17:  getk(s8, "y", s0)
+            18:  loadint(s9, 75)
+            19:  sub(s8, s9, s8)
+            20:  getk(s9, "direction", s0)
+            21:  loadroot(s10)
+            22:  getk(s10, "effect", s10)
+            23:  getk(s10, "EF_DebuffHate", s10)
+            24:  move(s11, s2)
+            25:  call(5, s5, s6, 6)
+            26:  set(s255, s3, s4, s5)
+            27:  line(-, 72)
+            28:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "DebuffEnd_Hate"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_hate"
+            2: "time"
+            3: "object"
+            4: "Release"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 74, op: 1
+            1: line: 75, op: 1
+            2: line: 76, op: 7
+            3: line: 77, op: 13
+            4: line: 78, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 74)
+            1:  line(-, 75)
+            2:  getk(s1, "p", s0)
+            3:  getk(s1, "debuff_hate", s1)
+            4:  load(s2, "time")
+            5:  loadint(s3, 0)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 76)
+            8:  getk(s1, "p", s0)
+            9:  getk(s1, "debuff_hate", s1)
+            10:  getk(s1, "object", s1)
+            11:  prepcallk(s1, "Release", s1, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 77)
+            14:  getk(s1, "p", s0)
+            15:  getk(s1, "debuff_hate", s1)
+            16:  load(s2, "object")
+            17:  loadnulls(s3, 1)
+            18:  set(s255, s1, s2, s3)
+            19:  line(-, 78)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "DebuffSet_Hyper"
+        nliterals: 11
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 29
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_hyper"
+            2: "time"
+            3: "owner"
+            4: "object"
+            5: "SetEffect"
+            6: "x"
+            7: "y"
+            8: "direction"
+            9: "effect"
+            10: "EF_DebuffHyper"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 8, end_op: 26
+            1: name: "time_", pos: 1, start_op: 0, end_op: 28
+            2: name: "this", pos: 0, start_op: 0, end_op: 28
+          ]
+        Line Informations: [
+            0: line: 80, op: 1
+            1: line: 81, op: 1
+            2: line: 82, op: 6
+            3: line: 83, op: 11
+            4: line: 84, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 80)
+            1:  line(-, 81)
+            2:  getk(s2, "p", s0)
+            3:  getk(s2, "debuff_hyper", s2)
+            4:  load(s3, "time")
+            5:  set(s255, s2, s3, s1)
+            6:  line(-, 82)
+            7:  newobj(s2, 0, 0, 0)
+            8:  dload(s3, "owner", s4, "owner")
+            9:  get(s4, s0, s4)
+            10:  newslot(s255, s2, s3, s4)
+            11:  line(-, 83)
+            12:  getk(s3, "p", s0)
+            13:  getk(s3, "debuff_hyper", s3)
+            14:  dload(s4, "object", s5, "SetEffect")
+            15:  prepcall(s5, s5, s0, s6)
+            16:  getk(s7, "x", s0)
+            17:  getk(s8, "y", s0)
+            18:  loadint(s9, 75)
+            19:  sub(s8, s9, s8)
+            20:  getk(s9, "direction", s0)
+            21:  loadroot(s10)
+            22:  getk(s10, "effect", s10)
+            23:  getk(s10, "EF_DebuffHyper", s10)
+            24:  move(s11, s2)
+            25:  call(5, s5, s6, 6)
+            26:  set(s255, s3, s4, s5)
+            27:  line(-, 84)
+            28:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "DebuffEnd_Hyper"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_hyper"
+            2: "time"
+            3: "object"
+            4: "Release"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 86, op: 1
+            1: line: 87, op: 1
+            2: line: 88, op: 7
+            3: line: 89, op: 13
+            4: line: 90, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 86)
+            1:  line(-, 87)
+            2:  getk(s1, "p", s0)
+            3:  getk(s1, "debuff_hyper", s1)
+            4:  load(s2, "time")
+            5:  loadint(s3, 0)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 88)
+            8:  getk(s1, "p", s0)
+            9:  getk(s1, "debuff_hyper", s1)
+            10:  getk(s1, "object", s1)
+            11:  prepcallk(s1, "Release", s1, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 89)
+            14:  getk(s1, "p", s0)
+            15:  getk(s1, "debuff_hyper", s1)
+            16:  load(s2, "object")
+            17:  loadnulls(s3, 1)
+            18:  set(s255, s1, s2, s3)
+            19:  line(-, 90)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: ""
+        name: "DebuffSet_Fear"
+        nliterals: 11
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 29
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_fear"
+            2: "time"
+            3: "owner"
+            4: "object"
+            5: "SetEffect"
+            6: "x"
+            7: "y"
+            8: "direction"
+            9: "effect"
+            10: "EF_DebuffFear"
+          ]
+        Parameters: [
+            0: "this"
+            1: "time_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 2, start_op: 8, end_op: 26
+            1: name: "time_", pos: 1, start_op: 0, end_op: 28
+            2: name: "this", pos: 0, start_op: 0, end_op: 28
+          ]
+        Line Informations: [
+            0: line: 92, op: 1
+            1: line: 93, op: 1
+            2: line: 94, op: 6
+            3: line: 95, op: 11
+            4: line: 96, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 92)
+            1:  line(-, 93)
+            2:  getk(s2, "p", s0)
+            3:  getk(s2, "debuff_fear", s2)
+            4:  load(s3, "time")
+            5:  set(s255, s2, s3, s1)
+            6:  line(-, 94)
+            7:  newobj(s2, 0, 0, 0)
+            8:  dload(s3, "owner", s4, "owner")
+            9:  get(s4, s0, s4)
+            10:  newslot(s255, s2, s3, s4)
+            11:  line(-, 95)
+            12:  getk(s3, "p", s0)
+            13:  getk(s3, "debuff_fear", s3)
+            14:  dload(s4, "object", s5, "SetEffect")
+            15:  prepcall(s5, s5, s0, s6)
+            16:  getk(s7, "x", s0)
+            17:  getk(s8, "y", s0)
+            18:  loadint(s9, 75)
+            19:  sub(s8, s9, s8)
+            20:  getk(s9, "direction", s0)
+            21:  loadroot(s10)
+            22:  getk(s10, "effect", s10)
+            23:  getk(s10, "EF_DebuffFear", s10)
+            24:  move(s11, s2)
+            25:  call(5, s5, s6, 6)
+            26:  set(s255, s3, s4, s5)
+            27:  line(-, 96)
+            28:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: ""
+        name: "DebuffEnd_Fear"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "debuff_fear"
+            2: "time"
+            3: "object"
+            4: "Release"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 98, op: 1
+            1: line: 99, op: 1
+            2: line: 100, op: 7
+            3: line: 101, op: 13
+            4: line: 102, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 98)
+            1:  line(-, 99)
+            2:  getk(s1, "p", s0)
+            3:  getk(s1, "debuff_fear", s1)
+            4:  load(s2, "time")
+            5:  loadint(s3, 0)
+            6:  set(s255, s1, s2, s3)
+            7:  line(-, 100)
+            8:  getk(s1, "p", s0)
+            9:  getk(s1, "debuff_fear", s1)
+            10:  getk(s1, "object", s1)
+            11:  prepcallk(s1, "Release", s1, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 101)
+            14:  getk(s1, "p", s0)
+            15:  getk(s1, "debuff_fear", s1)
+            16:  load(s2, "object")
+            17:  loadnulls(s3, 1)
+            18:  set(s255, s1, s2, s3)
+            19:  line(-, 102)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

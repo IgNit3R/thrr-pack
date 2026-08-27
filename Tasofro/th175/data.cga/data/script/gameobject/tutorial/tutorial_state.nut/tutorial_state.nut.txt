@@ -1,0 +1,971 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\tutorial\tutorial_state.nut: 
+sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+name: "main"
+nliterals: 4
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 5
+ndefaultparams: 0
+ninstructions: 13
+nfunctions: 4
+Literals: [
+    0: "Damage"
+    1: "KO"
+    2: "spell_wait"
+    3: "break_wait"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 12
+    1: name: "this", pos: 0, start_op: 0, end_op: 12
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 52, op: 3
+    2: line: 68, op: 6
+    3: line: 98, op: 9
+    4: line: 135, op: 12
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "Damage")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "KO")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "spell_wait")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "break_wait")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+        name: "Damage"
+        nliterals: 18
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 16
+        ndefaultparams: 0
+        ninstructions: 49
+        nfunctions: 1
+        Literals: [
+            0: "invincible_time"
+            1: "GetFront"
+            2: "push_h"
+            3: "direction_h"
+            4: "Erace_AllEnemyBullet"
+            5: "vx"
+            6: "push_x"
+            7: "vy"
+            8: "push_y"
+            9: "g"
+            10: "push_g"
+            11: "ground"
+            12: "free_map"
+            13: "flag1"
+            14: "select_motion"
+            15: "damage"
+            16: "count"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "target_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "target_", pos: 1, start_op: 0, end_op: 48
+            1: name: "this", pos: 0, start_op: 0, end_op: 48
+          ]
+        Line Informations: [
+            0: line: 2, op: 0
+            1: line: 3, op: 0
+            2: line: 4, op: 4
+            3: line: 15, op: 6
+            4: line: 16, op: 14
+            5: line: 18, op: 16
+            6: line: 20, op: 19
+            7: line: 21, op: 24
+            8: line: 22, op: 27
+            9: line: 23, op: 30
+            10: line: 24, op: 33
+            11: line: 25, op: 36
+            12: line: 27, op: 39
+            13: line: 28, op: 42
+            14: line: 29, op: 45
+            15: line: 51, op: 48
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "invincible_time", s0)
+            1:  loadint(s3, 0)
+            2:  jcmp(s3, 1, s2, CMP_G)
+            3:  return(255, 0)
+            4:  prepcallk(s2, "GetFront", s0, s3)
+            5:  call(255, s2, s3, 1)
+            6:  getk(s2, "push_h", s1)
+            7:  loadfloat(s3, 0)
+            8:  ne(s2, 3, s2, 0)
+            9:  jz(s2, 4)
+            10:  dload(s2, "direction_h", s3, "push_h")
+            11:  get(s3, s1, s3)
+            12:  set(s255, s0, s2, s3)
+            13:  jmp(-, 2)
+            14:  prepcallk(s2, "GetFront", s0, s3)
+            15:  call(255, s2, s3, 1)
+            16:  prepcallk(s2, "Erace_AllEnemyBullet", s0, s3)
+            17:  loadbool(s4, 1)
+            18:  call(255, s2, s3, 2)
+            19:  dload(s2, "vx", s3, "push_x")
+            20:  get(s3, s1, s3)
+            21:  getk(s4, "direction_h", s0)
+            22:  mul(s3, s4, s3)
+            23:  set(s255, s0, s2, s3)
+            24:  dload(s2, "vy", s3, "push_y")
+            25:  get(s3, s1, s3)
+            26:  set(s255, s0, s2, s3)
+            27:  dload(s2, "g", s3, "push_g")
+            28:  get(s3, s1, s3)
+            29:  set(s255, s0, s2, s3)
+            30:  load(s2, "ground")
+            31:  loadbool(s3, 0)
+            32:  set(s255, s0, s2, s3)
+            33:  load(s2, "free_map")
+            34:  loadbool(s3, 0)
+            35:  set(s255, s0, s2, s3)
+            36:  load(s2, "flag1")
+            37:  loadbool(s3, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  prepcallk(s2, "select_motion", s0, s3)
+            40:  load(s4, "damage")
+            41:  call(255, s2, s3, 2)
+            42:  load(s2, "count")
+            43:  loadint(s3, 0)
+            44:  set(s255, s0, s2, s3)
+            45:  load(s2, "state")
+            46:  closure(s3, 0)
+            47:  set(s255, s0, s2, s3)
+            48:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 15
+                ndefaultparams: 0
+                ninstructions: 40
+                nfunctions: 0
+                Literals: [
+                    0: "ground"
+                    1: "select_motion"
+                    2: "damage2"
+                    3: "vy"
+                    4: "VX_Brake"
+                    5: "flag1"
+                    6: "vx"
+                    7: "g"
+                    8: "count"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 39
+                  ]
+                Line Informations: [
+                    0: line: 29, op: 0
+                    1: line: 30, op: 0
+                    2: line: 32, op: 2
+                    3: line: 33, op: 5
+                    4: line: 34, op: 8
+                    5: line: 37, op: 13
+                    6: line: 38, op: 16
+                    7: line: 39, op: 18
+                    8: line: 40, op: 21
+                    9: line: 41, op: 24
+                    10: line: 42, op: 27
+                    11: line: 44, op: 30
+                    12: line: 45, op: 32
+                    13: line: 47, op: 36
+                    14: line: 50, op: 39
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "ground", s0)
+                    1:  jz(s1, 11)
+                    2:  prepcallk(s1, "select_motion", s0, s2)
+                    3:  load(s3, "damage2")
+                    4:  call(255, s1, s2, 2)
+                    5:  load(s1, "vy")
+                    6:  loadfloat(s2, 0)
+                    7:  set(s255, s0, s1, s2)
+                    8:  prepcallk(s1, "VX_Brake", s0, s2)
+                    9:  move(s3, s0)
+                    10:  loadfloat(s4, 0.5)
+                    11:  call(255, s1, s2, 3)
+                    12:  jmp(-, 26)
+                    13:  getk(s1, "vy", s0)
+                    14:  loadfloat(s2, -1)
+                    15:  jcmp(s2, 23, s1, CMP_GE)
+                    16:  getk(s1, "flag1", s0)
+                    17:  jz(s1, 12)
+                    18:  load(s1, "flag1")
+                    19:  loadbool(s2, 0)
+                    20:  set(s255, s0, s1, s2)
+                    21:  load(s1, "vx")
+                    22:  loadfloat(s2, 0.25)
+                    23:  comparith(s1, 2, s1, 42)
+                    24:  load(s1, "vy")
+                    25:  loadfloat(s2, 0.25)
+                    26:  comparith(s1, 2, s1, 42)
+                    27:  load(s1, "g")
+                    28:  loadfloat(s2, 0.05)
+                    29:  set(s255, s0, s1, s2)
+                    30:  load(s1, "count")
+                    31:  pinc(s1, s0, s1, 1)
+                    32:  getk(s1, "count", s0)
+                    33:  loadint(s2, 15)
+                    34:  jcmp(s2, 1, s1, CMP_LE)
+                    35:  jmp(-, 3)
+                    36:  load(s1, "g")
+                    37:  loadfloat(s2, 0.5)
+                    38:  set(s255, s0, s1, s2)
+                    39:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+        name: "KO"
+        nliterals: 21
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 70
+        nfunctions: 1
+        Literals: [
+            0: "lib"
+            1: "enemy"
+            2: "set_status_object"
+            3: "rand"
+            4: "Spawn_EffectMessage"
+            5: "x"
+            6: "y"
+            7: "center_y"
+            8: "smoke"
+            9: "cos"
+            10: "sin"
+            11: "frameset"
+            12: "_composition_create_framepointer"
+            13: "resource_pool"
+            14: "tutorial/invisible"
+            15: "count"
+            16: "vx"
+            17: "vy"
+            18: "g"
+            19: "clear_count"
+            20: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "target_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "v_", pos: 4, start_op: 22, end_op: 40
+            1: name: "r_", pos: 3, start_op: 16, end_op: 40
+            2: name: "i", pos: 2, start_op: 7, end_op: 43
+            3: name: "target_", pos: 1, start_op: 0, end_op: 69
+            4: name: "this", pos: 0, start_op: 0, end_op: 69
+          ]
+        Line Informations: [
+            0: line: 52, op: 0
+            1: line: 53, op: 0
+            2: line: 54, op: 6
+            3: line: 55, op: 9
+            4: line: 56, op: 16
+            5: line: 57, op: 22
+            6: line: 59, op: 44
+            7: line: 60, op: 52
+            8: line: 61, op: 55
+            9: line: 62, op: 58
+            10: line: 63, op: 61
+            11: line: 64, op: 64
+            12: line: 65, op: 66
+            13: line: 67, op: 69
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  getk(s2, "lib", s2)
+            2:  getk(s2, "enemy", s2)
+            3:  prepcallk(s2, "set_status_object", s2, s3)
+            4:  loadnulls(s4, 1)
+            5:  call(255, s2, s3, 2)
+            6:  loadint(s2, 0)
+            7:  loadint(s3, 360)
+            8:  jcmp(s3, 35, s2, CMP_L)
+            9:  prepcallk(s3, "rand", s0, s4)
+            10:  call(3, s3, s4, 1)
+            11:  loadint(s4, 25)
+            12:  mod(s3, s4, s3)
+            13:  add(s3, s3, s2)
+            14:  loadfloat(s4, 0.017453)
+            15:  mul(s3, s4, s3)
+            16:  loadint(s4, 3)
+            17:  prepcallk(s5, "rand", s0, s6)
+            18:  call(5, s5, s6, 1)
+            19:  loadint(s6, 4)
+            20:  mod(s5, s6, s5)
+            21:  add(s4, s5, s4)
+            22:  prepcallk(s5, "Spawn_EffectMessage", s0, s6)
+            23:  getk(s7, "x", s0)
+            24:  getk(s8, "y", s0)
+            25:  getk(s9, "center_y", s0)
+            26:  add(s8, s9, s8)
+            27:  load(s9, "smoke")
+            28:  loadint(s10, 1)
+            29:  newobj(s11, 2, 0, 1)
+            30:  prepcallk(s12, "cos", s0, s13)
+            31:  move(s14, s3)
+            32:  call(12, s12, s13, 2)
+            33:  mul(s12, s12, s4)
+            34:  appendarray(s11, 12, 0)
+            35:  prepcallk(s12, "sin", s0, s13)
+            36:  move(s14, s3)
+            37:  call(12, s12, s13, 2)
+            38:  mul(s12, s12, s4)
+            39:  appendarray(s11, 12, 0)
+            40:  call(255, s5, s6, 6)
+            41:  loadint(s3, 45)
+            42:  add(s2, s3, s2)
+            43:  jmp(-, -37)
+            44:  load(s2, "frameset")
+            45:  loadroot(s3)
+            46:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+            47:  loadroot(s5)
+            48:  getk(s5, "resource_pool", s5)
+            49:  getk(s5, "tutorial/invisible", s5)
+            50:  call(3, s3, s4, 2)
+            51:  set(s255, s0, s2, s3)
+            52:  load(s2, "count")
+            53:  loadint(s3, 0)
+            54:  set(s255, s0, s2, s3)
+            55:  load(s2, "vx")
+            56:  loadint(s3, 0)
+            57:  set(s255, s0, s2, s3)
+            58:  load(s2, "vy")
+            59:  loadint(s3, 0)
+            60:  set(s255, s0, s2, s3)
+            61:  load(s2, "g")
+            62:  loadint(s3, 0)
+            63:  set(s255, s0, s2, s3)
+            64:  load(s2, "clear_count")
+            65:  pinc(s2, s0, s2, 1)
+            66:  load(s2, "state")
+            67:  closure(s3, 0)
+            68:  set(s255, s0, s2, s3)
+            69:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 65, op: 0
+                    1: line: 66, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 15
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+        name: "spell_wait"
+        nliterals: 18
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 69
+        nfunctions: 1
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "vy"
+            3: "ground"
+            4: "g"
+            5: "tag"
+            6: "invincible_time"
+            7: "frameset"
+            8: "_composition_create_framepointer"
+            9: "resource_pool"
+            10: "tutorial/stand"
+            11: "rand"
+            12: "Spawn_EffectMessage"
+            13: "center_y"
+            14: "smoke"
+            15: "cos"
+            16: "sin"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "x_"
+            2: "y_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "v_", pos: 5, start_op: 43, end_op: 61
+            1: name: "r_", pos: 4, start_op: 37, end_op: 61
+            2: name: "i", pos: 3, start_op: 28, end_op: 64
+            3: name: "y_", pos: 2, start_op: 0, end_op: 68
+            4: name: "x_", pos: 1, start_op: 0, end_op: 68
+            5: name: "this", pos: 0, start_op: 0, end_op: 68
+          ]
+        Line Informations: [
+            0: line: 68, op: 0
+            1: line: 69, op: 0
+            2: line: 70, op: 2
+            3: line: 71, op: 4
+            4: line: 72, op: 7
+            5: line: 73, op: 10
+            6: line: 74, op: 13
+            7: line: 75, op: 16
+            8: line: 76, op: 19
+            9: line: 78, op: 27
+            10: line: 79, op: 30
+            11: line: 80, op: 37
+            12: line: 81, op: 43
+            13: line: 84, op: 65
+            14: line: 96, op: 68
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s3, "x")
+            1:  set(s255, s0, s3, s1)
+            2:  load(s3, "y")
+            3:  set(s255, s0, s3, s2)
+            4:  load(s3, "vy")
+            5:  loadfloat(s4, -6)
+            6:  set(s255, s0, s3, s4)
+            7:  load(s3, "ground")
+            8:  loadbool(s4, 0)
+            9:  set(s255, s0, s3, s4)
+            10:  load(s3, "g")
+            11:  loadfloat(s4, 0.5)
+            12:  set(s255, s0, s3, s4)
+            13:  load(s3, "tag")
+            14:  loadint(s4, 64)
+            15:  set(s255, s0, s3, s4)
+            16:  load(s3, "invincible_time")
+            17:  loadint(s4, -1)
+            18:  set(s255, s0, s3, s4)
+            19:  load(s3, "frameset")
+            20:  loadroot(s4)
+            21:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            22:  loadroot(s6)
+            23:  getk(s6, "resource_pool", s6)
+            24:  getk(s6, "tutorial/stand", s6)
+            25:  call(4, s4, s5, 2)
+            26:  set(s255, s0, s3, s4)
+            27:  loadint(s3, 0)
+            28:  loadint(s4, 360)
+            29:  jcmp(s4, 35, s3, CMP_L)
+            30:  prepcallk(s4, "rand", s0, s5)
+            31:  call(4, s4, s5, 1)
+            32:  loadint(s5, 25)
+            33:  mod(s4, s5, s4)
+            34:  add(s4, s4, s3)
+            35:  loadfloat(s5, 0.017453)
+            36:  mul(s4, s5, s4)
+            37:  loadint(s5, 3)
+            38:  prepcallk(s6, "rand", s0, s7)
+            39:  call(6, s6, s7, 1)
+            40:  loadint(s7, 4)
+            41:  mod(s6, s7, s6)
+            42:  add(s5, s6, s5)
+            43:  prepcallk(s6, "Spawn_EffectMessage", s0, s7)
+            44:  getk(s8, "x", s0)
+            45:  getk(s9, "y", s0)
+            46:  getk(s10, "center_y", s0)
+            47:  add(s9, s10, s9)
+            48:  load(s10, "smoke")
+            49:  loadint(s11, 1)
+            50:  newobj(s12, 2, 0, 1)
+            51:  prepcallk(s13, "cos", s0, s14)
+            52:  move(s15, s4)
+            53:  call(13, s13, s14, 2)
+            54:  mul(s13, s13, s5)
+            55:  appendarray(s12, 13, 0)
+            56:  prepcallk(s13, "sin", s0, s14)
+            57:  move(s15, s4)
+            58:  call(13, s13, s14, 2)
+            59:  mul(s13, s13, s5)
+            60:  appendarray(s12, 13, 0)
+            61:  call(255, s6, s7, 6)
+            62:  loadint(s4, 45)
+            63:  add(s3, s4, s3)
+            64:  jmp(-, -37)
+            65:  load(s3, "state")
+            66:  closure(s4, 0)
+            67:  set(s255, s0, s3, s4)
+            68:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 24
+                nfunctions: 1
+                Literals: [
+                    0: "vy"
+                    1: "ground"
+                    2: "lib"
+                    3: "enemy"
+                    4: "set_status_object"
+                    5: "common"
+                    6: "invincible_time"
+                    7: "count"
+                    8: "state"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 23
+                  ]
+                Line Informations: [
+                    0: line: 84, op: 0
+                    1: line: 85, op: 0
+                    2: line: 86, op: 3
+                    3: line: 87, op: 5
+                    4: line: 88, op: 11
+                    5: line: 89, op: 14
+                    6: line: 90, op: 17
+                    7: line: 91, op: 20
+                    8: line: 95, op: 23
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "vy", s0)
+                    1:  loadint(s2, 0)
+                    2:  jcmp(s2, 20, s1, CMP_G)
+                    3:  getk(s1, "ground", s0)
+                    4:  jz(s1, 18)
+                    5:  loadroot(s1)
+                    6:  getk(s1, "lib", s1)
+                    7:  getk(s1, "enemy", s1)
+                    8:  prepcallk(s1, "set_status_object", s1, s2)
+                    9:  load(s3, "common")
+                    10:  call(255, s1, s2, 2)
+                    11:  load(s1, "invincible_time")
+                    12:  loadint(s2, 0)
+                    13:  set(s255, s0, s1, s2)
+                    14:  load(s1, "vy")
+                    15:  loadint(s2, 0)
+                    16:  set(s255, s0, s1, s2)
+                    17:  load(s1, "count")
+                    18:  loadint(s2, 0)
+                    19:  set(s255, s0, s1, s2)
+                    20:  load(s1, "state")
+                    21:  closure(s2, 0)
+                    22:  set(s255, s0, s1, s2)
+                    23:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                        name: null
+                        nliterals: 0
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 2
+                        ndefaultparams: 0
+                        ninstructions: 1
+                        nfunctions: 0
+                        Literals: [  ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 0
+                          ]
+                        Line Informations: [
+                            0: line: 91, op: 0
+                            1: line: 92, op: 0
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 1
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 16
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+        name: "break_wait"
+        nliterals: 18
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 69
+        nfunctions: 1
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "vy"
+            3: "ground"
+            4: "g"
+            5: "tag"
+            6: "invincible_time"
+            7: "frameset"
+            8: "_composition_create_framepointer"
+            9: "resource_pool"
+            10: "tutorial/stand"
+            11: "rand"
+            12: "Spawn_EffectMessage"
+            13: "center_y"
+            14: "smoke"
+            15: "cos"
+            16: "sin"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "x_"
+            2: "y_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "v_", pos: 5, start_op: 43, end_op: 61
+            1: name: "r_", pos: 4, start_op: 37, end_op: 61
+            2: name: "i", pos: 3, start_op: 28, end_op: 64
+            3: name: "y_", pos: 2, start_op: 0, end_op: 68
+            4: name: "x_", pos: 1, start_op: 0, end_op: 68
+            5: name: "this", pos: 0, start_op: 0, end_op: 68
+          ]
+        Line Informations: [
+            0: line: 98, op: 0
+            1: line: 99, op: 0
+            2: line: 100, op: 2
+            3: line: 101, op: 4
+            4: line: 102, op: 7
+            5: line: 103, op: 10
+            6: line: 104, op: 13
+            7: line: 105, op: 16
+            8: line: 106, op: 19
+            9: line: 108, op: 27
+            10: line: 109, op: 30
+            11: line: 110, op: 37
+            12: line: 111, op: 43
+            13: line: 114, op: 65
+            14: line: 135, op: 68
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s3, "x")
+            1:  set(s255, s0, s3, s1)
+            2:  load(s3, "y")
+            3:  set(s255, s0, s3, s2)
+            4:  load(s3, "vy")
+            5:  loadfloat(s4, -6)
+            6:  set(s255, s0, s3, s4)
+            7:  load(s3, "ground")
+            8:  loadbool(s4, 0)
+            9:  set(s255, s0, s3, s4)
+            10:  load(s3, "g")
+            11:  loadfloat(s4, 0.5)
+            12:  set(s255, s0, s3, s4)
+            13:  load(s3, "tag")
+            14:  loadint(s4, 0)
+            15:  set(s255, s0, s3, s4)
+            16:  load(s3, "invincible_time")
+            17:  loadint(s4, -1)
+            18:  set(s255, s0, s3, s4)
+            19:  load(s3, "frameset")
+            20:  loadroot(s4)
+            21:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            22:  loadroot(s6)
+            23:  getk(s6, "resource_pool", s6)
+            24:  getk(s6, "tutorial/stand", s6)
+            25:  call(4, s4, s5, 2)
+            26:  set(s255, s0, s3, s4)
+            27:  loadint(s3, 0)
+            28:  loadint(s4, 360)
+            29:  jcmp(s4, 35, s3, CMP_L)
+            30:  prepcallk(s4, "rand", s0, s5)
+            31:  call(4, s4, s5, 1)
+            32:  loadint(s5, 25)
+            33:  mod(s4, s5, s4)
+            34:  add(s4, s4, s3)
+            35:  loadfloat(s5, 0.017453)
+            36:  mul(s4, s5, s4)
+            37:  loadint(s5, 3)
+            38:  prepcallk(s6, "rand", s0, s7)
+            39:  call(6, s6, s7, 1)
+            40:  loadint(s7, 4)
+            41:  mod(s6, s7, s6)
+            42:  add(s5, s6, s5)
+            43:  prepcallk(s6, "Spawn_EffectMessage", s0, s7)
+            44:  getk(s8, "x", s0)
+            45:  getk(s9, "y", s0)
+            46:  getk(s10, "center_y", s0)
+            47:  add(s9, s10, s9)
+            48:  load(s10, "smoke")
+            49:  loadint(s11, 1)
+            50:  newobj(s12, 2, 0, 1)
+            51:  prepcallk(s13, "cos", s0, s14)
+            52:  move(s15, s4)
+            53:  call(13, s13, s14, 2)
+            54:  mul(s13, s13, s5)
+            55:  appendarray(s12, 13, 0)
+            56:  prepcallk(s13, "sin", s0, s14)
+            57:  move(s15, s4)
+            58:  call(13, s13, s14, 2)
+            59:  mul(s13, s13, s5)
+            60:  appendarray(s12, 13, 0)
+            61:  call(255, s6, s7, 6)
+            62:  loadint(s4, 45)
+            63:  add(s3, s4, s3)
+            64:  jmp(-, -37)
+            65:  load(s3, "state")
+            66:  closure(s4, 0)
+            67:  set(s255, s0, s3, s4)
+            68:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 10
+                ndefaultparams: 0
+                ninstructions: 30
+                nfunctions: 1
+                Literals: [
+                    0: "vy"
+                    1: "ground"
+                    2: "invincible_time"
+                    3: "count"
+                    4: "lib"
+                    5: "enemy"
+                    6: "set_status_object"
+                    7: "common"
+                    8: "set_shield"
+                    9: "state"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 29
+                  ]
+                Line Informations: [
+                    0: line: 114, op: 0
+                    1: line: 115, op: 0
+                    2: line: 116, op: 3
+                    3: line: 117, op: 5
+                    4: line: 118, op: 8
+                    5: line: 119, op: 11
+                    6: line: 120, op: 14
+                    7: line: 121, op: 20
+                    8: line: 122, op: 26
+                    9: line: 134, op: 29
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "vy", s0)
+                    1:  loadint(s2, 0)
+                    2:  jcmp(s2, 26, s1, CMP_G)
+                    3:  getk(s1, "ground", s0)
+                    4:  jz(s1, 24)
+                    5:  load(s1, "invincible_time")
+                    6:  loadint(s2, 0)
+                    7:  set(s255, s0, s1, s2)
+                    8:  load(s1, "vy")
+                    9:  loadint(s2, 0)
+                    10:  set(s255, s0, s1, s2)
+                    11:  load(s1, "count")
+                    12:  loadint(s2, 0)
+                    13:  set(s255, s0, s1, s2)
+                    14:  loadroot(s1)
+                    15:  getk(s1, "lib", s1)
+                    16:  getk(s1, "enemy", s1)
+                    17:  prepcallk(s1, "set_status_object", s1, s2)
+                    18:  load(s3, "common")
+                    19:  call(255, s1, s2, 2)
+                    20:  loadroot(s1)
+                    21:  getk(s1, "lib", s1)
+                    22:  getk(s1, "enemy", s1)
+                    23:  prepcallk(s1, "set_shield", s1, s2)
+                    24:  loadint(s3, 5)
+                    25:  call(255, s1, s2, 2)
+                    26:  load(s1, "state")
+                    27:  closure(s2, 0)
+                    28:  set(s255, s0, s1, s2)
+                    29:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\tutorial\tutorial_state.nut"
+                        name: null
+                        nliterals: 5
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 8
+                        ndefaultparams: 0
+                        ninstructions: 24
+                        nfunctions: 0
+                        Literals: [
+                            0: "count"
+                            1: "lib"
+                            2: "enemy"
+                            3: "weak_point"
+                            4: "weak_time"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 23
+                          ]
+                        Line Informations: [
+                            0: line: 122, op: 0
+                            1: line: 123, op: 0
+                            2: line: 124, op: 2
+                            3: line: 125, op: 6
+                            4: line: 127, op: 13
+                            5: line: 128, op: 17
+                            6: line: 129, op: 20
+                            7: line: 131, op: 23
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  load(s1, "count")
+                            1:  pinc(s1, s0, s1, 1)
+                            2:  getk(s1, "count", s0)
+                            3:  loadint(s2, 60)
+                            4:  eq(s1, 2, s1, 0)
+                            5:  jz(s1, 7)
+                            6:  loadroot(s1)
+                            7:  getk(s1, "lib", s1)
+                            8:  getk(s1, "enemy", s1)
+                            9:  prepcallk(s1, "weak_point", s1, s2)
+                            10:  move(s3, s0)
+                            11:  loadint(s4, 60)
+                            12:  call(255, s1, s2, 3)
+                            13:  getk(s1, "count", s0)
+                            14:  loadint(s2, 120)
+                            15:  eq(s1, 2, s1, 0)
+                            16:  jz(s1, 6)
+                            17:  load(s1, "weak_time")
+                            18:  loadint(s2, 0)
+                            19:  set(s255, s0, s1, s2)
+                            20:  load(s1, "count")
+                            21:  loadint(s2, 0)
+                            22:  set(s255, s0, s1, s2)
+                            23:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 16
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

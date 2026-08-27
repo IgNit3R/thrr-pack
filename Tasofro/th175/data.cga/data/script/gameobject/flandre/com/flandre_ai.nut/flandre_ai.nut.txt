@@ -1,0 +1,793 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\flandre\com\flandre_ai.nut: 
+sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+name: "main"
+nliterals: 4
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 5
+ndefaultparams: 0
+ninstructions: 13
+nfunctions: 4
+Literals: [
+    0: "begin_battle"
+    1: "com_set_wait"
+    2: "com_common_interrupt"
+    3: "com_common_recover"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 12
+    1: name: "this", pos: 0, start_op: 0, end_op: 12
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 14, op: 3
+    2: line: 41, op: 6
+    3: line: 74, op: 9
+    4: line: 117, op: 12
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "begin_battle")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "com_set_wait")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "com_common_interrupt")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "com_common_recover")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+        name: "begin_battle"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "ground"
+            2: "Activate_ComRoutine"
+            3: "g"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 1, op: 0
+            1: line: 3, op: 0
+            2: line: 5, op: 4
+            3: line: 7, op: 8
+            4: line: 10, op: 11
+            5: line: 13, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "state", s0)
+            1:  loadnulls(s2, 1)
+            2:  eq(s1, 2, s1, 0)
+            3:  jz(s1, 10)
+            4:  getk(s1, "ground", s0)
+            5:  loadbool(s2, 1)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  jmp(-, 3)
+            11:  load(s1, "g")
+            12:  loadfloat(s2, 0.5)
+            13:  set(s255, s0, s1, s2)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+        name: "com_set_wait"
+        nliterals: 1
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 4
+        nfunctions: 1
+        Literals: [
+            0: "com_state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 3
+            1: name: "this", pos: 0, start_op: 0, end_op: 3
+          ]
+        Line Informations: [
+            0: line: 15, op: 0
+            1: line: 17, op: 0
+            2: line: 40, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s2, "com_state")
+            1:  closure(s3, 0)
+            2:  set(s255, s0, s2, s3)
+            3:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 11
+                ndefaultparams: 0
+                ninstructions: 32
+                nfunctions: 1
+                Literals: [
+                    0: "state"
+                    1: "ground"
+                    2: "GetFront"
+                    3: "com_state"
+                    4: "vx"
+                    5: "vy"
+                    6: "g"
+                    7: "count"
+                    8: "motion"
+                    9: "stand"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 31
+                  ]
+                Line Informations: [
+                    0: line: 18, op: 0
+                    1: line: 19, op: 0
+                    2: line: 21, op: 9
+                    3: line: 22, op: 11
+                    4: line: 23, op: 14
+                    5: line: 24, op: 17
+                    6: line: 25, op: 20
+                    7: line: 26, op: 23
+                    8: line: 27, op: 26
+                    9: line: 29, op: 28
+                    10: line: 39, op: 31
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "state", s0)
+                    1:  loadnulls(s2, 1)
+                    2:  eq(s1, 2, s1, 0)
+                    3:  and(s1, 4, s1)
+                    4:  getk(s2, "ground", s0)
+                    5:  loadbool(s3, 1)
+                    6:  eq(s2, 3, s2, 0)
+                    7:  move(s1, s2)
+                    8:  jz(s1, 22)
+                    9:  prepcallk(s1, "GetFront", s0, s2)
+                    10:  call(255, s1, s2, 1)
+                    11:  load(s1, "com_state")
+                    12:  loadnulls(s2, 1)
+                    13:  set(s255, s0, s1, s2)
+                    14:  load(s1, "vx")
+                    15:  loadfloat(s2, 0)
+                    16:  set(s255, s0, s1, s2)
+                    17:  load(s1, "vy")
+                    18:  loadint(s2, 0)
+                    19:  set(s255, s0, s1, s2)
+                    20:  load(s1, "g")
+                    21:  loadint(s2, 0)
+                    22:  set(s255, s0, s1, s2)
+                    23:  load(s1, "count")
+                    24:  loadint(s2, 0)
+                    25:  set(s255, s0, s1, s2)
+                    26:  dload(s1, "motion", s2, "stand")
+                    27:  set(s255, s0, s1, s2)
+                    28:  load(s1, "state")
+                    29:  closure(s2, 0)
+                    30:  set(s255, s0, s1, s2)
+                    31:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+                        name: null
+                        nliterals: 3
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 6
+                        ndefaultparams: 0
+                        ninstructions: 12
+                        nfunctions: 0
+                        Literals: [
+                            0: "count"
+                            1: "state"
+                            2: "Activate_ComRoutine"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 11
+                          ]
+                        Line Informations: [
+                            0: line: 30, op: 0
+                            1: line: 31, op: 0
+                            2: line: 32, op: 2
+                            3: line: 34, op: 6
+                            4: line: 35, op: 9
+                            5: line: 37, op: 11
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  load(s1, "count")
+                            1:  pinc(s1, s0, s1, 1)
+                            2:  getk(s1, "count", s0)
+                            3:  loadint(s2, 60)
+                            4:  eq(s1, 2, s1, 0)
+                            5:  jz(s1, 5)
+                            6:  load(s1, "state")
+                            7:  loadnulls(s2, 1)
+                            8:  set(s255, s0, s1, s2)
+                            9:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+                            10:  call(255, s1, s2, 1)
+                            11:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 3
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+        name: "com_common_interrupt"
+        nliterals: 10
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "count"
+            2: "motion"
+            3: "damage"
+            4: "vx"
+            5: "direction_h"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 24
+            1: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 42, op: 0
+            1: line: 43, op: 0
+            2: line: 44, op: 2
+            3: line: 45, op: 5
+            4: line: 46, op: 7
+            5: line: 47, op: 12
+            6: line: 48, op: 15
+            7: line: 49, op: 18
+            8: line: 50, op: 21
+            9: line: 73, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  load(s2, "count")
+            3:  loadint(s3, 0)
+            4:  set(s255, s0, s2, s3)
+            5:  dload(s2, "motion", s3, "damage")
+            6:  set(s255, s0, s2, s3)
+            7:  load(s2, "vx")
+            8:  loadint(s3, -3)
+            9:  getk(s4, "direction_h", s0)
+            10:  mul(s3, s4, s3)
+            11:  set(s255, s0, s2, s3)
+            12:  load(s2, "vy")
+            13:  loadfloat(s3, -6.5)
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "g")
+            16:  loadfloat(s3, 0.5)
+            17:  set(s255, s0, s2, s3)
+            18:  load(s2, "ground")
+            19:  loadbool(s3, 0)
+            20:  set(s255, s0, s2, s3)
+            21:  load(s2, "state")
+            22:  closure(s3, 0)
+            23:  set(s255, s0, s2, s3)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 17
+                ndefaultparams: 0
+                ninstructions: 62
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "vy"
+                    2: "g"
+                    3: "ground"
+                    4: "VX_Brake"
+                    5: "motion"
+                    6: "damage2"
+                    7: "Landing"
+                    8: "com_common_recover"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 61
+                  ]
+                Line Informations: [
+                    0: line: 50, op: 0
+                    1: line: 51, op: 0
+                    2: line: 52, op: 2
+                    3: line: 54, op: 5
+                    4: line: 55, op: 8
+                    5: line: 57, op: 14
+                    6: line: 58, op: 21
+                    7: line: 59, op: 28
+                    8: line: 61, op: 38
+                    9: line: 62, op: 41
+                    10: line: 63, op: 45
+                    11: line: 64, op: 49
+                    12: line: 65, op: 51
+                    13: line: 67, op: 53
+                    14: line: 68, op: 57
+                    15: line: 69, op: 60
+                    16: line: 72, op: 61
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 999)
+                    4:  jcmp(s2, 33, s1, CMP_LE)
+                    5:  getk(s1, "count", s0)
+                    6:  loadint(s2, 45)
+                    7:  jcmp(s2, 6, s1, CMP_LE)
+                    8:  getk(s1, "vy", s0)
+                    9:  loadfloat(s2, -1)
+                    10:  jcmp(s2, 3, s1, CMP_GE)
+                    11:  load(s1, "g")
+                    12:  loadfloat(s2, 0.05)
+                    13:  set(s255, s0, s1, s2)
+                    14:  getk(s1, "count", s0)
+                    15:  loadint(s2, 45)
+                    16:  eq(s1, 2, s1, 0)
+                    17:  jz(s1, 3)
+                    18:  load(s1, "g")
+                    19:  loadfloat(s2, 0.5)
+                    20:  set(s255, s0, s1, s2)
+                    21:  getk(s1, "count", s0)
+                    22:  loadint(s2, 999)
+                    23:  eq(s1, 2, s1, 0)
+                    24:  jz(s1, 3)
+                    25:  load(s1, "count")
+                    26:  loadint(s2, 998)
+                    27:  set(s255, s0, s1, s2)
+                    28:  getk(s1, "vy", s0)
+                    29:  loadfloat(s2, 0)
+                    30:  cmp(s1, s2, s1, CMP_G)
+                    31:  and(s1, 2, s1)
+                    32:  getk(s2, "ground", s0)
+                    33:  move(s1, s2)
+                    34:  jz(s1, 3)
+                    35:  load(s1, "count")
+                    36:  loadint(s2, 1000)
+                    37:  set(s255, s0, s1, s2)
+                    38:  getk(s1, "count", s0)
+                    39:  loadint(s2, 1000)
+                    40:  jcmp(s2, 20, s1, CMP_GE)
+                    41:  prepcallk(s1, "VX_Brake", s0, s2)
+                    42:  move(s3, s0)
+                    43:  loadfloat(s4, 0.25)
+                    44:  call(255, s1, s2, 3)
+                    45:  getk(s1, "count", s0)
+                    46:  loadint(s2, 1000)
+                    47:  eq(s1, 2, s1, 0)
+                    48:  jz(s1, 4)
+                    49:  dload(s1, "motion", s2, "damage2")
+                    50:  set(s255, s0, s1, s2)
+                    51:  prepcallk(s1, "Landing", s0, s2)
+                    52:  call(255, s1, s2, 1)
+                    53:  getk(s1, "count", s0)
+                    54:  loadint(s2, 1030)
+                    55:  eq(s1, 2, s1, 0)
+                    56:  jz(s1, 4)
+                    57:  prepcallk(s1, "com_common_recover", s0, s2)
+                    58:  loadnulls(s3, 1)
+                    59:  call(255, s1, s2, 2)
+                    60:  return(255, 0)
+                    61:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+        name: "com_common_recover"
+        nliterals: 18
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "lib"
+            2: "enemy"
+            3: "baria_active"
+            4: "count"
+            5: "vx"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "motion"
+            10: "jump_pre"
+            11: "flag1"
+            12: "direction_h"
+            13: "x"
+            14: "world"
+            15: "left"
+            16: "right"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 52
+            1: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 74, op: 0
+            1: line: 75, op: 0
+            2: line: 76, op: 2
+            3: line: 77, op: 8
+            4: line: 78, op: 11
+            5: line: 79, op: 14
+            6: line: 80, op: 17
+            7: line: 81, op: 20
+            8: line: 82, op: 23
+            9: line: 83, op: 25
+            10: line: 84, op: 29
+            11: line: 85, op: 39
+            12: line: 86, op: 49
+            13: line: 117, op: 52
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  loadroot(s2)
+            3:  getk(s2, "lib", s2)
+            4:  getk(s2, "enemy", s2)
+            5:  prepcallk(s2, "baria_active", s2, s3)
+            6:  move(s4, s0)
+            7:  call(255, s2, s3, 2)
+            8:  load(s2, "count")
+            9:  loadint(s3, 0)
+            10:  set(s255, s0, s2, s3)
+            11:  load(s2, "vx")
+            12:  loadint(s3, 0)
+            13:  set(s255, s0, s2, s3)
+            14:  load(s2, "vy")
+            15:  loadint(s3, 0)
+            16:  set(s255, s0, s2, s3)
+            17:  load(s2, "g")
+            18:  loadint(s3, 0)
+            19:  set(s255, s0, s2, s3)
+            20:  load(s2, "ground")
+            21:  loadbool(s3, 1)
+            22:  set(s255, s0, s2, s3)
+            23:  dload(s2, "motion", s3, "jump_pre")
+            24:  set(s255, s0, s2, s3)
+            25:  dload(s2, "flag1", s3, "direction_h")
+            26:  get(s3, s0, s3)
+            27:  neg(s3, s3)
+            28:  set(s255, s0, s2, s3)
+            29:  getk(s2, "x", s0)
+            30:  loadroot(s3)
+            31:  getk(s3, "world", s3)
+            32:  getk(s3, "left", s3)
+            33:  loadint(s4, 196)
+            34:  add(s3, s4, s3)
+            35:  jcmp(s3, 3, s2, CMP_L)
+            36:  load(s2, "flag1")
+            37:  loadint(s3, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  getk(s2, "x", s0)
+            40:  loadroot(s3)
+            41:  getk(s3, "world", s3)
+            42:  getk(s3, "right", s3)
+            43:  loadint(s4, 196)
+            44:  sub(s3, s4, s3)
+            45:  jcmp(s3, 3, s2, CMP_G)
+            46:  load(s2, "flag1")
+            47:  loadint(s3, -1)
+            48:  set(s255, s0, s2, s3)
+            49:  load(s2, "state")
+            50:  closure(s3, 0)
+            51:  set(s255, s0, s2, s3)
+            52:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\flandre\com\flandre_ai.nut"
+                name: null
+                nliterals: 18
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 25
+                ndefaultparams: 0
+                ninstructions: 120
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "motion"
+                    2: "roll"
+                    3: "vx"
+                    4: "flag1"
+                    5: "vy"
+                    6: "g"
+                    7: "ground"
+                    8: "VX_Brake"
+                    9: "direction_h"
+                    10: "x"
+                    11: "world"
+                    12: "left"
+                    13: "right"
+                    14: "landing"
+                    15: "stand"
+                    16: "state"
+                    17: "Activate_ComStack"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 119
+                  ]
+                Line Informations: [
+                    0: line: 86, op: 0
+                    1: line: 87, op: 0
+                    2: line: 88, op: 2
+                    3: line: 89, op: 5
+                    4: line: 90, op: 9
+                    5: line: 91, op: 11
+                    6: line: 92, op: 16
+                    7: line: 93, op: 19
+                    8: line: 94, op: 22
+                    9: line: 96, op: 25
+                    10: line: 97, op: 38
+                    11: line: 98, op: 65
+                    12: line: 100, op: 70
+                    13: line: 102, op: 85
+                    14: line: 103, op: 88
+                    15: line: 104, op: 92
+                    16: line: 105, op: 94
+                    17: line: 106, op: 97
+                    18: line: 107, op: 100
+                    19: line: 109, op: 103
+                    20: line: 111, op: 109
+                    21: line: 112, op: 113
+                    22: line: 113, op: 116
+                    23: line: 114, op: 118
+                    24: line: 116, op: 119
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 599)
+                    4:  jcmp(s2, 80, s1, CMP_LE)
+                    5:  getk(s1, "count", s0)
+                    6:  loadint(s2, 6)
+                    7:  eq(s1, 2, s1, 0)
+                    8:  jz(s1, 16)
+                    9:  dload(s1, "motion", s2, "roll")
+                    10:  set(s255, s0, s1, s2)
+                    11:  load(s1, "vx")
+                    12:  loadfloat(s2, -8)
+                    13:  getk(s3, "flag1", s0)
+                    14:  mul(s2, s3, s2)
+                    15:  set(s255, s0, s1, s2)
+                    16:  load(s1, "vy")
+                    17:  loadfloat(s2, -4)
+                    18:  set(s255, s0, s1, s2)
+                    19:  load(s1, "g")
+                    20:  loadfloat(s2, 0.25)
+                    21:  set(s255, s0, s1, s2)
+                    22:  load(s1, "ground")
+                    23:  loadbool(s2, 0)
+                    24:  set(s255, s0, s1, s2)
+                    25:  getk(s1, "count", s0)
+                    26:  loadint(s2, 6)
+                    27:  cmp(s1, s2, s1, CMP_GE)
+                    28:  and(s1, 4, s1)
+                    29:  getk(s2, "count", s0)
+                    30:  loadint(s3, 22)
+                    31:  cmp(s2, s3, s2, CMP_LE)
+                    32:  move(s1, s2)
+                    33:  jz(s1, 4)
+                    34:  prepcallk(s1, "VX_Brake", s0, s2)
+                    35:  move(s3, s0)
+                    36:  loadfloat(s4, 0.2)
+                    37:  call(255, s1, s2, 3)
+                    38:  getk(s1, "direction_h", s0)
+                    39:  loadint(s2, -1)
+                    40:  eq(s1, 2, s1, 0)
+                    41:  and(s1, 8, s1)
+                    42:  getk(s2, "x", s0)
+                    43:  loadroot(s3)
+                    44:  getk(s3, "world", s3)
+                    45:  getk(s3, "left", s3)
+                    46:  loadint(s4, 32)
+                    47:  add(s3, s4, s3)
+                    48:  cmp(s2, s3, s2, CMP_L)
+                    49:  move(s1, s2)
+                    50:  or(s1, 13, s1)
+                    51:  getk(s2, "direction_h", s0)
+                    52:  loadint(s3, 1)
+                    53:  eq(s2, 3, s2, 0)
+                    54:  and(s2, 8, s2)
+                    55:  getk(s3, "x", s0)
+                    56:  loadroot(s4)
+                    57:  getk(s4, "world", s4)
+                    58:  getk(s4, "right", s4)
+                    59:  loadint(s5, 32)
+                    60:  sub(s4, s5, s4)
+                    61:  cmp(s3, s4, s3, CMP_G)
+                    62:  move(s2, s3)
+                    63:  move(s1, s2)
+                    64:  jz(s1, 5)
+                    65:  dload(s1, "vx", s2, "vx")
+                    66:  get(s2, s0, s2)
+                    67:  loadfloat(s3, -0.5)
+                    68:  mul(s2, s3, s2)
+                    69:  set(s255, s0, s1, s2)
+                    70:  getk(s1, "count", s0)
+                    71:  loadint(s2, 6)
+                    72:  cmp(s1, s2, s1, CMP_G)
+                    73:  and(s1, 7, s1)
+                    74:  getk(s2, "vy", s0)
+                    75:  loadfloat(s3, 0)
+                    76:  cmp(s2, s3, s2, CMP_G)
+                    77:  and(s2, 2, s2)
+                    78:  getk(s3, "ground", s0)
+                    79:  move(s2, s3)
+                    80:  move(s1, s2)
+                    81:  jz(s1, 3)
+                    82:  load(s1, "count")
+                    83:  loadint(s2, 600)
+                    84:  set(s255, s0, s1, s2)
+                    85:  getk(s1, "count", s0)
+                    86:  loadint(s2, 600)
+                    87:  jcmp(s2, 21, s1, CMP_GE)
+                    88:  getk(s1, "count", s0)
+                    89:  loadint(s2, 600)
+                    90:  eq(s1, 2, s1, 0)
+                    91:  jz(s1, 11)
+                    92:  dload(s1, "motion", s2, "landing")
+                    93:  set(s255, s0, s1, s2)
+                    94:  load(s1, "vx")
+                    95:  loadint(s2, 0)
+                    96:  set(s255, s0, s1, s2)
+                    97:  load(s1, "vy")
+                    98:  loadint(s2, 0)
+                    99:  set(s255, s0, s1, s2)
+                    100:  load(s1, "g")
+                    101:  loadint(s2, 0)
+                    102:  set(s255, s0, s1, s2)
+                    103:  getk(s1, "count", s0)
+                    104:  loadint(s2, 606)
+                    105:  eq(s1, 2, s1, 0)
+                    106:  jz(s1, 2)
+                    107:  dload(s1, "motion", s2, "stand")
+                    108:  set(s255, s0, s1, s2)
+                    109:  getk(s1, "count", s0)
+                    110:  loadint(s2, 606)
+                    111:  eq(s1, 2, s1, 0)
+                    112:  jz(s1, 6)
+                    113:  load(s1, "state")
+                    114:  loadnulls(s2, 1)
+                    115:  set(s255, s0, s1, s2)
+                    116:  prepcallk(s1, "Activate_ComStack", s0, s2)
+                    117:  call(255, s1, s2, 1)
+                    118:  return(255, 0)
+                    119:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,104 @@
+#========================================================================
+#	Stage:1
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/ichirin.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,ichirin,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,ichirin_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,ichirin,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_驚1,0,0
+,ImageDef,ichirin,一輪_普2,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,ichirin_label,"data/system/char_def/name/name_03ichirin.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall(),	#ステージロゴ表示
+,Sleep,120
+
+,Show,reimu,30,-64,0
+
+,SetFocus,reimu
+上空にも観客が居るのね\,a11x2,20,-30
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普1,0,0
+こりゃ手を抜けないわ\,a11x2,20,-30
+,ImageDef,reimu,霊夢_汗1,0,0
+疲れるけど本気を出して\n格好良いところ見せないと\,c15x3
+,ClearBalloon,reimu
+
+,Function,GameStory_2P_In(),
+,Sleep,120
+
+,SetFocus,ichirin
+,Show,ichirin,30,-64,0
+,ImageDef,ichirin,一輪_普2,20,0
+現れたな\n暴れん坊巫女\,a11x2,20,0
+
+,ClearBalloon,ichirin
+,ImageDef,ichirin,一輪_普3,20,0
+妖怪退治の名の下に\n幻想郷を牛耳ろう\nとしていると聞く,a15x3
+,Show,ichirin_label,20,0,-64
+,WaitInput
+,Hide,ichirin_label,20,0,64
+
+,ClearBalloon,ichirin
+,ImageDef,ichirin,一輪_必1,20,0
+仏の心を持って\n成敗してくれる！,b11x2,20,0
+
+,WaitInput
+,ClearBalloon,ichirin
+,Function,"StopBGM(1000);",# BGM停止
+,Hide,reimu,30,-64,0,&
+,Hide,ichirin,30,-64,0
+,Function,"GameStory_PlayBattleBGM(103);",# 戦闘BGM再生開始
+
+,ClearBalloon,reimu
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

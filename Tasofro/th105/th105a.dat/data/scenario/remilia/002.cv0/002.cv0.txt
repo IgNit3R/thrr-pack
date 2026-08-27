@@ -1,0 +1,162 @@
+## =======================================================================
+#Stage:3
+#Title:人形逆転裁判
+#Place:大図書館
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:remilia,160,0,0,8888FF
+Character:alice,160,0,1,FF8888
+#敵画面外に待機
+Action:alice,100
+#カメラ固定
+Action:remilia,4
+
+#フォーカス瞬間移動
+#Action:remilia,11
+
+#向き固定解除
+Action:remilia,152
+
+Label:Start
+PlayBgm:data/bgm/ta08.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/remilia/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60
+
+Face:remilia,嬉
+そろそろ咲夜が第一容疑者を捕まえてくる頃かな？\
+Face:remilia,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:alice,101
+Action:alice,102
+
+Sleep:20
+
+Face:alice,惑
+ちょっ、ちょっと何よ！\
+
+# 名前のテロップ
+Object:data/scenario/alice/effect/Name.bmp,2,352,304
+
+Face:remilia,余
+あーコホン
+君がアリス君かね？\
+
+Action:alice,103
+
+Face:alice,怒
+何ふざけてるのよ！
+そうに決まってるじゃない\
+
+Face:remilia,余
+犯人はみんなそう言うんだ\
+
+Face:alice,普
+貴方の遊びに付き合ってる暇はないわ\
+
+Face:remilia,余
+一体何に忙しいのかね
+やっぱり悪い事しているのかね\
+
+#戦闘開始
+PlayBgm:data/bgm/st13.ogg
+Action:remilia,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:alice,惑
+私は地震の調査に忙しいの\
+
+Face:alice,惑
+貴方が何をしてようと構わないけど
+邪魔しないでくれる？\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:alice,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:alice,200
+#攻撃側ニュートラル移行検知
+Action:remilia,202
+
+#自キャラ天候
+Action:remilia,103
+Sleep:60
+
+Face:remilia,惑
+君は……雨を降らせたりする為に
+人形を操って……\
+
+Face:alice,負
+何よ\
+
+Face:remilia,怒
+ちょっと咲夜
+こいつの訳が無いじゃない！　次を呼んで！\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+#やられキャラ画面退場
+Action:alice,201
+
+#自キャラ基準点へ移動
+Action:remilia,150
+
+#カメラ中央あわせ
+Action:remilia,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

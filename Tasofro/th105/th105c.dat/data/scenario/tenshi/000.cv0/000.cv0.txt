@@ -1,0 +1,190 @@
+## =======================================================================
+#Stage:1
+#Title:成仏してみます？
+#Place:有頂天
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:tenshi,160,0,0,8888FF
+Character:yuyuko,160,0,1,FF8888
+
+#背景　有頂天
+Stage:5,0
+
+
+#自キャラ画面外に待機
+Action:tenshi,1
+
+#敵画面外に待機
+Action:yuyuko,100
+
+Label:Start
+#自キャラ天候
+#Action:tenshi,103
+
+Sleep:60;
+
+#PlayBgm:data/bgm/ta00.ogg
+
+#Sleep:60;
+
+#カメラ中央移動
+Action:tenshi,2
+
+#登場
+Action:tenshi,50
+Action:tenshi,51
+
+Face:tenshi,惑
+はぁあ\
+
+Face:tenshi,普
+折角建て直した神社も壊されちゃったし
+再再建はあの小鬼に持っていかれちゃうし\
+
+Face:tenshi,惑
+最近ついてないなぁ\
+
+Face:tenshi,
+Hide:1
+Sleep:30
+
+
+# 敵登場
+Action:yuyuko,101
+
+#ステージタイトル表示
+Object:data/scenario/tenshi/effect/StageTitle001.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage1.bmp,1,256,352
+
+#
+Action:yuyuko,102
+PlayBgm:data/bgm/ta05.ogg
+
+
+Face:yuyuko,普
+お待たせ\
+
+Face:tenshi,驚
+はい？
+何で貴方がここに？\
+
+# 名前のテロップ
+Object:data/scenario/yuyuko/effect/Name.bmp,2,352,304
+
+Face:yuyuko,嬉
+呼ばれたから来たわ？\
+
+Face:tenshi,惑
+誰が呼んだの……
+ってもしかして\
+
+Face:yuyuko,余
+今日は神社の起工記念の宴会をここでやるって
+誘われちゃった\
+
+Face:tenshi,怒
+やっぱりあの小鬼の仕業ですか……
+でも今は神社に行って居ないはずですけど\
+
+Face:yuyuko,驚
+ちょっと早く来ちゃったからかな
+待ち合わせの時間までまだ半日位あるし\
+
+Face:tenshi,汗
+もうしょうがないですわねぇ\
+
+Face:tenshi,嬉
+そうだ、時間があるのなら私と暇潰しをしない？\
+
+Face:yuyuko,余
+暇なのは貴方だけの様な気もするけどね\
+
+#戦闘開始処理
+
+PlayBgm:data/bgm/st16.ogg
+Action:tenshi,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:yuyuko,余
+まだ宴会まで時間があるからその辺を見てきていい？\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:yuyuko,200
+#攻撃側ニュートラル移行検知
+Action:tenshi,202
+
+Face:tenshi,余
+そんなに簡単に天界に人を入れちゃいけないん
+だけどねぇ\
+
+Face:yuyuko,負
+大丈夫
+亡霊だから\
+
+Face:tenshi,普
+天界は成仏した霊が住む処
+貴方も成仏してみます？\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+#やられキャラ画面退場
+Action:yuyuko,201
+
+#自キャラ基準点へ移動
+Action:tenshi,150
+
+#カメラ中央あわせ
+Action:tenshi,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

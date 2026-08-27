@@ -1,0 +1,212 @@
+## =======================================================================
+#Stage:1
+#Title:緋色の霧雨
+#Place:神社
+#Weather:快晴
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+
+Action:reimu,103
+
+# -------------------------------------------------------
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Character:reimu,160,0,0,8888FF
+Character:marisa,160,0,1,FF8888
+
+#背景倒壊神社
+Stage:0,0
+
+#敵画面外に待機
+Action:marisa,100
+
+Bgm:data/bgm/ta00.ogg
+
+#カメラ上空
+Action:reimu,1
+
+Label:Start
+#自分天候
+Action:reimu,103
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/reimu/effect/StageTitle001.bmp,0,256,-32
+Sleep:30;
+Object:data/scenario/effect/Stage1.bmp,1,256,352
+Sleep:30;
+
+Action:reimu,2
+
+# -------------------------------------------------------
+# -------------------------------------------------------
+# 会話開始
+Face:reimu,普
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+……\
+
+Face:reimu,汗
+……見事に壊れているわ\
+
+これは掃除どころじゃないわねぇ\
+
+Face:reimu,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+Action:marisa,101
+Action:marisa,102
+
+Face:marisa,惑
+いやぁ、大変だ
+ここのところ<accent>雨続き</accent>で洗濯も出来やしないぜ\
+
+# -------------------------------------------------------
+# 名前のテロップ
+#Name:霧雨の魔法使い　霧雨魔理沙
+Object:data/scenario/marisa/effect/Name.bmp,2,352,304
+
+Face:marisa,驚
+……って、何だこりゃ\
+
+Face:reimu,普
+何だこりゃって、壊れても神社は神社よ\
+
+あんたの家は大丈夫だったの？@
+今朝の大地震\
+
+Face:marisa,普
+はぁ？
+地震だぁ？\
+
+そんなもん気付かなかったぜ\
+
+Hide:1
+
+#敵天候
+Action:marisa,103
+Sleep:60
+
+Face:reimu,惑
+ああもう、天気までも悪くなっちゃって\
+
+Face:marisa,惑
+仕様が無いな
+ここのところ<accent>雨続き</accent>だったし\
+
+Face:reimu,普
+さっきから雨続きって、ここのところ
+日照り続きだったわよ？\
+
+Face:reimu,汗
+今朝の地震の事だって、滅茶苦茶大きかったわよ？
+気が付かない訳が無いじゃない\
+
+Face:marisa,惑
+と言われてもなぁ\
+
+
+Face:reimu,普
+なんか変ね
+異変の香りがするなぁ\
+
+Face:marisa,普
+おう奇遇だね
+私もそう思っていたところだ\
+
+Face:reimu,決
+それに空の雲の色……\
+
+Face:reimu,
+
+PlayBgm:data/bgm/st00.ogg
+
+Action:reimu,3
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:marisa,嬉
+じゃ、霊夢はそこで大人しく寝てるんだな
+この異変調査は私に任せろよ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:marisa,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:marisa,200
+#攻撃側ニュートラル移行検知
+Action:reimu,202
+
+#自分天候
+Action:reimu,103
+Sleep:60;
+
+Face:reimu,余
+じゃ、魔理沙はそこで大人しく神社を直しててよ
+異変は私が解決するから\
+
+Face:marisa,負
+何だよ
+お前だって私が来たから異常に気付いたんじゃないか\
+
+Face:reimu,嬉
+異変は早期発見に限る\
+
+Face:reimu,普
+ちょっとでもおかしな事を見つけたら
+すぐに出発するのが、巫女の役目よ\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:1,120
+
+#やられキャラ画面退場
+Action:marisa,201
+
+#自キャラ基準点へ移動
+Action:reimu,150
+
+#カメラ中央あわせ
+Action:reimu,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,195 @@
+## =======================================================================
+#Stage:2
+#Title:
+#Place:白玉楼の雪庭
+#Weather:快晴
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:alice,160,0,0,8888FF
+Character:youmu,160,0,1,FF8888
+#敵画面外に待機
+Action:youmu,100
+#カメラ固定
+Action:alice,4
+
+#フォーカス瞬間移動
+#Action:alice,11
+
+#向き固定解除
+Action:alice,152
+
+Label:Start
+PlayBgm:data/bgm/ta04.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/alice/effect/StageTitle002.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:60
+
+Face:alice,驚
+うひゃあ\
+
+Face:alice,普
+これはまた雹なんて比じゃない異常気象ねぇ\
+
+
+Face:alice,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:youmu,101
+Action:youmu,102
+
+Sleep:20
+
+Face:youmu,普
+おっと、勝手に上がり込んで……\
+
+# 名前のテロップ
+Object:data/scenario/youmu/effect/Name.bmp,2,352,304
+
+Face:alice,余
+神社だけでなく、白玉楼も大変な事になっている
+って聞いたから\
+
+Face:alice,驚
+地震で倒壊したのかと思ったら……
+こんな大雪だなんて、真夏に……\
+
+Face:youmu,余
+だけど、無断進入はいけないよ？\
+
+Hide:1
+
+#敵天候
+Action:youmu,103
+Sleep:60
+
+Face:alice,余
+貴方も地震には気を付けなさい\
+
+Face:alice,普
+これらの異変は地震の予兆かもしれないわ\
+
+Face:youmu,普
+地震？\
+
+Face:alice,決
+ちょっと調査させて貰うわよ？\
+
+Face:youmu,汗
+いや駄目だって\
+
+Face:youmu,普
+どんな理由であれ
+屋敷には勝手に入らせないからね\
+
+#戦闘開始
+PlayBgm:data/bgm/st14.ogg
+Action:alice,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:youmu,惑
+真夏の雪と地震なんて、
+何の関係があるのかな\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:youmu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:youmu,200
+#攻撃側ニュートラル移行検知
+Action:alice,202
+
+#自キャラ天候
+Action:alice,103
+Sleep:60
+
+Face:alice,余
+これもみんなの為だからね\
+
+Face:youmu,負
+何を見て地震が起こると……\
+
+Face:alice,普
+降り止まない雹、緋色の雲、
+異常な天候は地震の前触れだったりするの\
+
+Face:alice,普
+事実、神社は地震で倒壊していたわ\
+
+Face:youmu,負
+え？\
+
+Face:youmu,負
+全く気付かなかったけど……
+神社が倒壊するような地震って大きい筈なのに\
+
+Face:alice,惑
+ん？　それもそうねぇ……\
+
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:14,120
+
+#やられキャラ画面退場
+Action:youmu,201
+
+#自キャラ基準点へ移動
+Action:alice,150
+
+#カメラ中央あわせ
+Action:alice,4
+
+Sleep:120
+
+End:
+
+
+
+
+
+## =======================================================================

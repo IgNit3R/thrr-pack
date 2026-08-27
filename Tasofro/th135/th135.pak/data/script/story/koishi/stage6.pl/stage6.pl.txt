@@ -1,0 +1,113 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/koishi.csv"
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+
+#フェイス画像
+,DefineObject,koishi,-360,0,false
+,DefineObject,mamizou,-360,0,true
+
+#肩書き
+,DefineObject,koishi_label,50,360,false
+,DefineObject,mamizou_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,koishi_label,"data/system/char_def/name/name_07koishi.png",0,0,0,0
+,ImageFile,mamizou_label,"data/system/char_def/name/name_09mamizou.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+,Function,GameStory_2P_InSpecial(),
+,Sleep,120
+
+#Stage6 「ムーンサイドフェスティバル」
+# 場所：狸の野原
+#
+
+#0１２３４５６７８９０１２３４
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+,Show,mamizou,30,-64,0
+,ImageDef,koishi,こいし_驚1,0,0
+,Show,koishi,30,-64,0
+,SetFocus,koishi
+よーし\n巫女の次は貴方ね！\,a11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,mamizou,マミゾウ_汗2,0,0
+,SetFocus,mamizou
+お　おう,a05x2,0,0
+,Show,mamizou_label,20,0,-64
+,WaitInput
+,ClearBalloon,mamizou
+,Hide,mamizou_label,20,0,64
+# 名前テロップ
+# いつも驚きを提供する化け狸　二ッ岩マミゾウ
+
+,ImageDef,koishi,こいし_嬉1,0,0
+,SetFocus,koishi
+今度も勝っちゃうよ！\,a11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,mamizou,マミゾウ_汗1,0,0
+,SetFocus,mamizou
+何という\n化かし甲斐の無い奴じゃ\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_普3,0,0
+こいつの目には何が\n映っとるんじゃろな\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,koishi,こいし_惑1,0,0
+,SetFocus,koishi
+どうしたの？\n怖じ気づいたの？\,a11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+,SetFocus,mamizou
+まさかまさか\,c05x2,0,0
+,ClearBalloon,mamizou
+
+# -------------------------------
+
+,Hide,mamizou,30,-64,0,&
+,Hide,koishi,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobIn();"
+,Sleep,150
+
+# 二人の絵が消える
+#
+# 背景に狸が集まって来る（移動が面倒なら、突如煙を出して出現しても
+
+
+,ImageDef,mamizou,マミゾウ_選1,0,0
+,Show,mamizou,30,-64,0,&
+,Show,koishi,30,-64,0
+さあ　本番じゃて\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_決1,0,0
+さっきの巫女のようには\n行かんぞ？\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,koishi,30,-64,0,&
+,Hide,mamizou,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(110);",# 戦闘BGM再生開始
+
+
+
+,Function,"RoundStory_Ready();"
+
+,End

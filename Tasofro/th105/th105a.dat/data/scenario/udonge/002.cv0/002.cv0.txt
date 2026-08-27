@@ -1,0 +1,221 @@
+## =======================================================================
+#Stage:3
+#Title:不可思議な落成式
+#Place:壊れた神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:udonge,160,0,0,8888FF
+Character:yukari,160,0,1,FF8888
+Character:tenshi,160,0,2,FF8888
+
+#カメラ固定
+Action:udonge,4
+
+#フォーカス瞬間移動
+#Action:udonge,11
+
+#敵フィールド端で待機
+Action:yukari,100
+
+#向き固定解除
+Action:udonge,152
+
+Label:Start
+PlayBgm:data/bgm/ta07.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/udonge/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+
+Face:udonge,驚
+……\
+
+Face:udonge,汗
+……あれ？\
+
+Face:udonge,余
+なんだ、あの亡霊に一杯食わされたわ
+神社、直ってなんかないじゃないの\
+
+Sleep:30
+
+Face:udonge,無
+Face:yukari,無
+もう遅いね\
+
+Face:udonge,驚
+！？\
+
+#敵登場
+Action:yukari,101
+Action:yukari,102
+Sleep:60
+Face:yukari,普
+神社の落成式は終わったわ\
+
+Face:udonge,汗
+落成式って……落成したらやるもんじゃないの？\
+
+
+# 名前のテロップ
+Object:data/scenario/yukari/effect/Name.bmp,2,352,304
+
+Face:yukari,余
+細かい事は気にしない
+で、何をしに来たの？　いまさら\
+
+Face:udonge,怒
+ちょっと調べ物があって……\
+
+Face:yukari,嬉
+何かしら？\
+
+Face:udonge,惑
+地震で壊れたっていう神社の事なんだけど\
+
+Face:yukari,決
+だーめ\
+
+Face:udonge,驚
+え？\
+
+Face:yukari,決
+調べさせないわ
+私の神社\
+
+PlayBgm:data/bgm/st18.ogg
+
+Action:udonge,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:yukari,普
+天人が仕掛けた要石\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:yukari,嬉
+それは鬼達が調査する事になっています
+宇宙人の貴方が出る幕ではない\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:udonge,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:yukari,200
+#攻撃側ニュートラル移行検知
+Action:udonge,202
+
+#自天候
+Face:udonge,怒
+何よ、調べても良いじゃないの
+どうも神社の倒壊は腑に落ちないのよ\
+
+Face:yukari,負
+神社は貴方の出る幕ではない\
+
+Face:udonge,怒
+でも、地震が……\
+
+Hide:1
+
+#二番手登場
+FadeBgm:200,0
+Action:tenshi,105
+
+#105終了検知
+Action:tenshi,106
+
+Face:tenshi,負
+あいたたた……\
+
+Face:udonge,驚
+あ、天人様……！？\
+
+Face:tenshi,負
+あーあ、神社が壊れちゃった\
+
+Face:udonge,惑
+？\
+
+Face:udonge,惑
+あ、聞いたわよ？
+神社は貴方が壊したんだって？\
+
+Face:tenshi,負
+まーね
+でもそれも昔の話\
+
+Face:udonge,惑
+？？？　まあいいわ
+貴方には聞きたい事が山ほどあるの\
+
+Hide:1
+
+Sleep:10
+
+#やられキャラ画面退場
+Action:yukari,201
+
+#ステージ間調整自キャラ
+Action:udonge,150
+Sleep:15
+
+#ステージ間調整敵
+Action:tenshi,110
+#CrossFadeBgm:data/bgm/st05.ogg,2000,0
+
+#カメラ中央あわせ
+Action:udonge,4
+
+#ステージ間調整敵　終了検知
+Action:tenshi,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

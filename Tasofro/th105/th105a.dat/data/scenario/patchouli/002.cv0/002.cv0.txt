@@ -1,0 +1,150 @@
+## =======================================================================
+#Stage:3
+#Title:霧雨の神社
+#Place:博麗神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:patchouli,160,0,0,8888FF
+Character:marisa,160,0,1,FF8888
+
+#敵画面外待機初期化
+Action:marisa,100
+#カメラ固定
+Action:patchouli,4
+
+#向き固定解除
+Action:patchouli,152
+
+Label:Start
+
+Sleep:30
+#ステージタイトル表示
+Object:data/scenario/patchouli/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+
+#登場終了検知
+Action:marisa,101
+Action:marisa,102
+
+
+# 名前のテロップ
+Object:data/scenario/marisa/effect/Name.bmp,2,352,304
+
+Face:marisa,驚
+お？
+珍しい顔だな\
+
+Face:patchouli,普
+霧雨、じとじととした暗い天気
+困ったもんね\
+
+
+
+#Hide:1
+#Sleep:10
+Face:marisa,驚
+何だ？
+霊夢が何かやらかしたのか？\
+
+Face:patchouli,決
+やらかさないからけしかけてみたの
+ついでに貴方にもけしかけてみるか\
+
+
+#戦闘開始処理
+Action:patchouli,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:marisa,余
+何の話だ？
+取り敢えず、雨が気持ち悪いから神社に入るぜ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:marisa,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:marisa,200
+#攻撃側ニュートラル移行検知
+Action:patchouli,202
+
+#自キャラ天候
+Action:patchouli,103
+Sleep:60
+
+Face:patchouli,余
+こんなにも判りやすい変化が出ているというのに
+自分の周りばかり見ていると気付かないものか\
+
+Face:marisa,負
+何の話だ？
+取り敢えず、雨が気持ち悪いから神社に入るぜ\
+
+Face:patchouli,普
+本当にしょうがない
+自分で確かめてくるしか無いか……\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30;
+
+#上空移行用上空退避
+Action:patchouli,151
+
+Sleep:90;
+
+#フェードアウト　黒
+Action:patchouli,160
+Sleep:60;
+
+
+Stage:4,0
+
+
+End:
+
+
+
+
+
+## =======================================================================

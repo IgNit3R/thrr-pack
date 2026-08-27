@@ -1,0 +1,142 @@
+#========================================================================
+#	Stage:5
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/miko.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,miko,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,miko_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,miko,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_普2,0,0
+,ImageDef,miko,神子_決1,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,miko_label,"data/system/char_def/name/name_06miko.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall(),	#ステージロゴ表示
+,Sleep,150
+
+,Show,reimu,30,-64,0
+,Show,miko,30,-64,0
+
+,SetFocus,miko
+よく来たな\,a05x2,20,-30
+,ClearBalloon,miko
+
+,ImageDef,miko,神子_必1,20,0
+どうだ\n聞こえるかい？\n我を称える観客の声が,a15x3,20,-30
+,Show,miko_label,20,0,-64
+,WaitInput
+,ClearBalloon,miko
+,Hide,miko_label,20,0,64
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_汗1,0,0
+何この……\n圧倒的なアウェイ感,c11x2
+,WaitInput
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_必1,0,0
+って\,a05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_怒1,0,0
+さっきまでみんな\n私を支持していたのに\,b11x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_必1,0,0
+一体何をしたの？\,b11x2
+,ClearBalloon,reimu
+
+,SetFocus,miko
+,ImageDef,miko,神子_余1,0,0
+くっくっく,c05x2,20,-30
+,WaitInput
+,ClearBalloon,miko
+
+,ImageDef,miko,神子_普1,20,0
+真に移ろいやすいは人の心\,a11x2,20,0
+,ClearBalloon,miko
+
+さっきまで信じていた物が\nあっという間に崩れ去る\,a11x2,20,0
+,ClearBalloon,miko
+
+,ImageDef,miko,神子_必1,20,0
+まるで蜃気楼のように……\nそう思わんかね\,c11x2,20,0
+,ClearBalloon,miko
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_汗1,0,0
+なんてこと\n観客が全員敵に見えるわ……,a15x3,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+味方が居ない\nだけならともかく\,a11x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普2,0,0
+相手の味方だらけの中で\n挑むのがこんなにも\nやりづらいなんて\,a15x3
+,ClearBalloon,reimu
+
+,SetFocus,miko
+,ImageDef,miko,神子_余1,0,0
+フォッフォッフォ,a11x2,20,-30
+,WaitInput
+,ClearBalloon,miko
+
+,ImageDef,miko,神子_決1,0,0
+さあ始めるぞい\n最強の宗教家を決める闘いを\,b15x3,20,-30
+,ClearBalloon,miko
+
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,reimu,30,-64,0,&
+,Hide,miko,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(109);",# 戦闘BGM再生開始
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

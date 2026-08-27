@@ -1,0 +1,226 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\reimu\reimu.nut: 
+sourcename: ""
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 32
+nfunctions: 3
+Literals: [
+    0: "ReimuStatus"
+    1: "BattleStatus"
+    2: "ex_f"
+    3: "ex_f_max"
+    4: "ex_b"
+    5: "ex_b_max"
+    6: "Reimu_BottomDraw"
+    7: "Reimu_BottomDraw_Left"
+    8: "Reimu_BottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 31
+    1: name: "this", pos: 0, start_op: 0, end_op: 31
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 10, op: 17
+    2: line: 13, op: 18
+    3: line: 31, op: 22
+    4: line: 36, op: 26
+    5: line: 40, op: 30
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "ReimuStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "ex_f")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f_max")
+    8:  loadint(s5, 320)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_b")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b_max")
+    14:  loadint(s5, 320)
+    15:  newslota(0, s3, s4, s5)
+    16:  newslot(s2, s0, s2, s3)
+    17:  line(-, 10)
+    18:  line(-, 13)
+    19:  load(s2, "Reimu_BottomDraw")
+    20:  closure(s3, 0)
+    21:  newslot(s2, s0, s2, s3)
+    22:  line(-, 31)
+    23:  load(s2, "Reimu_BottomDraw_Left")
+    24:  closure(s3, 1)
+    25:  newslot(s2, s0, s2, s3)
+    26:  line(-, 36)
+    27:  load(s2, "Reimu_BottomDraw_Right")
+    28:  closure(s3, 2)
+    29:  newslot(s2, s0, s2, s3)
+    30:  line(-, 40)
+    31:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Reimu_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 35
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "name"
+            2: "ReimuStatus"
+            3: "player_id"
+            4: "Reimu_BottomDraw_Left"
+            5: "Reimu_BottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 34
+          ]
+        Line Informations: [
+            0: line: 16, op: 1
+            1: line: 17, op: 7
+            2: line: 20, op: 14
+            3: line: 22, op: 21
+            4: line: 24, op: 24
+            5: line: 26, op: 31
+            6: line: 28, op: 33
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 16)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "name", s1)
+            3:  loadint(s2, 0)
+            4:  ne(s1, 2, s1, 0)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 17)
+            8:  getk(s1, "status", s0)
+            9:  getk(s2, "ReimuStatus", s0)
+            10:  instanceof(s1, s2, s1)
+            11:  not(s1, s1)
+            12:  jz(s1, 1)
+            13:  return(255, 0)
+            14:  line(-, 20)
+            15:  getk(s1, "status", s0)
+            16:  getk(s1, "player_id", s1)
+            17:  loadint(s2, 0)
+            18:  eq(s1, 2, s1, 0)
+            19:  jz(s1, 4)
+            20:  line(-, 22)
+            21:  prepcallk(s1, "Reimu_BottomDraw_Left", s0, s2)
+            22:  call(255, s1, s2, 1)
+            23:  jmp(-, 9)
+            24:  line(-, 24)
+            25:  getk(s1, "status", s0)
+            26:  getk(s1, "player_id", s1)
+            27:  loadint(s2, 1)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 3)
+            30:  line(-, 26)
+            31:  prepcallk(s1, "Reimu_BottomDraw_Right", s0, s2)
+            32:  call(255, s1, s2, 1)
+            33:  line(-, 28)
+            34:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Reimu_BottomDraw_Left"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 32, op: 0
+            1: line: 33, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 32)
+            1:  line(-, 33)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Reimu_BottomDraw_Right"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 37, op: 0
+            1: line: 38, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 37)
+            1:  line(-, 38)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

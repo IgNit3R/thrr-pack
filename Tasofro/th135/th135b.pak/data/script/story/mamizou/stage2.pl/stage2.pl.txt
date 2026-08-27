@@ -1,0 +1,90 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+
+#フェイス画像
+,DefineObject,mamizou,-360,0,false
+,DefineObject,futo,-360,0,true
+
+#肩書き
+,DefineObject,mamizou_label,50,360,false
+,DefineObject,futo_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,mamizou_label,"data/system/char_def/name/name_08mamizou.png",0,0,0,0
+,ImageFile,futo_label,"data/system/char_def/name/name_05futo.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+,Function,GameStory_1P_InSpecial(),
+,Sleep,120
+
+#Stage2 「新しい希望の面」
+# 場所：夢殿大祀廟
+
+# マミゾウの絵を出さないで
+,ImageDef,mamizou,マミゾウ_普2,0,0
+
+,ImageDef,futo,布都_驚1,0,0
+,Show,futo,30,-64,0
+,SetFocus,futo
+おやお主は……,a11x2,0,0
+
+,Show,futo_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,futo_label,20,0,64
+
+# 名前テロップ
+# 龍脈を司る風水師　　　物部布都
+
+,Show,mamizou,30,-64,0
+,ImageDef,mamizou,マミゾウ_普2,0,0
+,SetFocus,mamizou
+あれからどうなったのか\n知りたくてのう\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,futo,布都_惑1,0,0
+,SetFocus,futo
+どう……って\,a05x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,mamizou,マミゾウ_普3,0,0
+,SetFocus,mamizou
+面霊気のことじゃよ\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,futo,布都_普3,0,0
+,SetFocus,futo
+む\nその話か\,a05x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,futo,布都_普2,0,0
+しかし　その前にやらねば\nならぬ事があるだろう？\,a11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,mamizou,マミゾウ_決1,0,0
+,SetFocus,mamizou
+構わんぞい\,a05x2,0,0
+
+,ClearBalloon,mamizou
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,mamizou,30,-64,0,&
+,Hide,futo,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(105);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

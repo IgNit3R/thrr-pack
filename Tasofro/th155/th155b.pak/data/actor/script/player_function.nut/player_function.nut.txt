@@ -1,0 +1,962 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\script\player_function.nut: 
+sourcename: ""
+name: "main"
+nliterals: 3
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 4
+ndefaultparams: 0
+ninstructions: 16
+nfunctions: 3
+Literals: [
+    0: "Reset_PlayerCommon"
+    1: "AI_PlayerCommon"
+    2: "Test_Motion"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 15
+    1: name: "this", pos: 0, start_op: 0, end_op: 15
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 250, op: 5
+    2: line: 296, op: 9
+    3: line: 297, op: 14
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "Reset_PlayerCommon")
+    2:  loadbool(s3, 0)
+    3:  closure(s3, 0)
+    4:  newslot(s2, s0, s2, s3)
+    5:  line(-, 250)
+    6:  load(s2, "AI_PlayerCommon")
+    7:  closure(s3, 1)
+    8:  newslot(s2, s0, s2, s3)
+    9:  line(-, 296)
+    10:  load(s2, "Test_Motion")
+    11:  loadbool(s3, 0)
+    12:  closure(s3, 2)
+    13:  newslot(s2, s0, s2, s3)
+    14:  line(-, 297)
+    15:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Reset_PlayerCommon"
+        nliterals: 111
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 105
+        ndefaultparams: 1
+        ninstructions: 441
+        nfunctions: 0
+        Literals: [
+            0: "spellBaria"
+            1: "spellBack"
+            2: "guardEffect"
+            3: "grazeEffect"
+            4: "spellBackTime"
+            5: "spellEndFunc"
+            6: "autoCamera"
+            7: "cameraPos"
+            8: "Vector3"
+            9: "DrawActorPriority"
+            10: "isVisible"
+            11: "masterAlpha"
+            12: "masterRed"
+            13: "masterGreen"
+            14: "masterBlue"
+            15: "alpha"
+            16: "red"
+            17: "green"
+            18: "blue"
+            19: "rz"
+            20: "sx"
+            21: "sy"
+            22: "isActive"
+            23: "func"
+            24: "baria"
+            25: "guardBaria"
+            26: "guardBariaCount"
+            27: "ResetSpeed"
+            28: "event_getAttack"
+            29: "event_getDamage"
+            30: "event_motionEnd"
+            31: "event_defeat"
+            32: "pEvent_getDamage"
+            33: "lavelClearEvent"
+            34: "debuff_hate"
+            35: "Debuff"
+            36: "debuff_fear"
+            37: "debuff_hyper"
+            38: "debuff_animal"
+            39: "debuff_poison"
+            40: "BuffReset"
+            41: "count"
+            42: "flag1"
+            43: "flag2"
+            44: "flag3"
+            45: "flag4"
+            46: "flag5"
+            47: "enableKO"
+            48: "centerStop"
+            49: "centerStopCheck"
+            50: "dashCount"
+            51: "slideCount"
+            52: "airSlide"
+            53: "change_reserve"
+            54: "hyouiAura"
+            55: "Release"
+            56: "invinBoss"
+            57: "invin"
+            58: "invinGrab"
+            59: "invinObject"
+            60: "graze"
+            61: "grazeCount"
+            62: "armor"
+            63: "force_counter"
+            64: "hitStopTime"
+            65: "damageStopTime"
+            66: "autoGuardCount"
+            67: "forceBariaCount"
+            68: "disableDash"
+            69: "disableGuard"
+            70: "stanCount"
+            71: "stanBossCount"
+            72: "endure"
+            73: "endureCount"
+            74: "freeMap"
+            75: "collisionFree"
+            76: "enableStandUp"
+            77: "HitReset"
+            78: "attackTarget"
+            79: "vf"
+            80: "va"
+            81: "vfBaria"
+            82: "atkRate"
+            83: "defRate"
+            84: "baseAtkRate"
+            85: "baseDefRate"
+            86: "shield_rate"
+            87: "shotGuardRate"
+            88: "shotGuardCount"
+            89: "atkBuff"
+            90: "option"
+            91: "linkObject"
+            92: "afterImage"
+            93: "occultAura"
+            94: "shield_body"
+            95: "shield"
+            96: "shot_actor"
+            97: "manbow"
+            98: "Actor2DProcGroup"
+            99: "koExp"
+            100: "ko_slave"
+            101: "resetFunc"
+            102: "call"
+            103: "SetUpdateFunction"
+            104: "Update_Normal"
+            105: "SetEndMotionCallbackFunction"
+            106: "EndtoFreeMove"
+            107: "Stand_Init"
+            108: "rx"
+            109: "ry"
+            110: "FitBoxfromSprite"
+          ]
+        Parameters: [
+            0: "this"
+            1: "round_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "round_", pos: 1, start_op: 0, end_op: 440
+            1: name: "this", pos: 0, start_op: 0, end_op: 440
+          ]
+        Line Informations: [
+            0: line: 5, op: 1
+            1: line: 6, op: 4
+            2: line: 7, op: 8
+            3: line: 8, op: 12
+            4: line: 9, op: 16
+            5: line: 10, op: 20
+            6: line: 16, op: 24
+            7: line: 17, op: 28
+            8: line: 20, op: 33
+            9: line: 21, op: 37
+            10: line: 22, op: 41
+            11: line: 23, op: 45
+            12: line: 24, op: 49
+            13: line: 25, op: 53
+            14: line: 27, op: 57
+            15: line: 28, op: 61
+            16: line: 29, op: 65
+            17: line: 30, op: 69
+            18: line: 31, op: 73
+            19: line: 32, op: 77
+            20: line: 35, op: 82
+            21: line: 36, op: 86
+            22: line: 37, op: 90
+            23: line: 38, op: 94
+            24: line: 39, op: 98
+            25: line: 40, op: 102
+            26: line: 43, op: 105
+            27: line: 44, op: 109
+            28: line: 45, op: 113
+            29: line: 46, op: 117
+            30: line: 48, op: 121
+            31: line: 50, op: 125
+            32: line: 53, op: 129
+            33: line: 54, op: 134
+            34: line: 55, op: 139
+            35: line: 56, op: 144
+            36: line: 57, op: 149
+            37: line: 58, op: 154
+            38: line: 61, op: 157
+            39: line: 62, op: 161
+            40: line: 63, op: 165
+            41: line: 64, op: 169
+            42: line: 65, op: 173
+            43: line: 66, op: 177
+            44: line: 68, op: 181
+            45: line: 69, op: 185
+            46: line: 70, op: 189
+            47: line: 88, op: 193
+            48: line: 89, op: 197
+            49: line: 90, op: 201
+            50: line: 107, op: 205
+            51: line: 108, op: 209
+            52: line: 109, op: 215
+            53: line: 112, op: 219
+            54: line: 113, op: 223
+            55: line: 114, op: 227
+            56: line: 115, op: 231
+            57: line: 116, op: 235
+            58: line: 117, op: 239
+            59: line: 118, op: 243
+            60: line: 119, op: 247
+            61: line: 120, op: 251
+            62: line: 121, op: 255
+            63: line: 124, op: 259
+            64: line: 125, op: 263
+            65: line: 126, op: 267
+            66: line: 127, op: 271
+            67: line: 129, op: 275
+            68: line: 130, op: 279
+            69: line: 131, op: 283
+            70: line: 132, op: 287
+            71: line: 133, op: 291
+            72: line: 134, op: 295
+            73: line: 135, op: 299
+            74: line: 137, op: 303
+            75: line: 138, op: 306
+            76: line: 141, op: 310
+            77: line: 142, op: 315
+            78: line: 143, op: 320
+            79: line: 146, op: 325
+            80: line: 147, op: 329
+            81: line: 150, op: 333
+            82: line: 151, op: 337
+            83: line: 152, op: 341
+            84: line: 155, op: 345
+            85: line: 156, op: 349
+            86: line: 162, op: 353
+            87: line: 180, op: 357
+            88: line: 181, op: 361
+            89: line: 182, op: 365
+            90: line: 183, op: 369
+            91: line: 185, op: 373
+            92: line: 186, op: 377
+            93: line: 187, op: 381
+            94: line: 228, op: 388
+            95: line: 229, op: 392
+            96: line: 230, op: 396
+            97: line: 238, op: 400
+            98: line: 240, op: 407
+            99: line: 241, op: 411
+            100: line: 244, op: 415
+            101: line: 245, op: 421
+            102: line: 246, op: 431
+            103: line: 247, op: 436
+            104: line: 248, op: 439
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 5)
+            1:  load(s2, "spellBaria")
+            2:  loadnulls(s3, 1)
+            3:  set(s255, s0, s2, s3)
+            4:  line(-, 6)
+            5:  load(s2, "spellBack")
+            6:  loadnulls(s3, 1)
+            7:  set(s255, s0, s2, s3)
+            8:  line(-, 7)
+            9:  load(s2, "guardEffect")
+            10:  loadnulls(s3, 1)
+            11:  set(s255, s0, s2, s3)
+            12:  line(-, 8)
+            13:  load(s2, "grazeEffect")
+            14:  newobj(s3, 0, 0, 1)
+            15:  set(s255, s0, s2, s3)
+            16:  line(-, 9)
+            17:  load(s2, "spellBackTime")
+            18:  loadint(s3, 0)
+            19:  set(s255, s0, s2, s3)
+            20:  line(-, 10)
+            21:  load(s2, "spellEndFunc")
+            22:  loadnulls(s3, 1)
+            23:  set(s255, s0, s2, s3)
+            24:  line(-, 16)
+            25:  load(s2, "autoCamera")
+            26:  loadbool(s3, 1)
+            27:  set(s255, s0, s2, s3)
+            28:  line(-, 17)
+            29:  dload(s2, "cameraPos", s3, "Vector3")
+            30:  prepcall(s3, s3, s0, s4)
+            31:  call(3, s3, s4, 1)
+            32:  set(s255, s0, s2, s3)
+            33:  line(-, 20)
+            34:  prepcallk(s2, "DrawActorPriority", s0, s3)
+            35:  loadint(s4, 190)
+            36:  call(255, s2, s3, 2)
+            37:  line(-, 21)
+            38:  load(s2, "isVisible")
+            39:  loadbool(s3, 1)
+            40:  set(s255, s0, s2, s3)
+            41:  line(-, 22)
+            42:  load(s2, "masterAlpha")
+            43:  loadfloat(s3, 1)
+            44:  set(s255, s0, s2, s3)
+            45:  line(-, 23)
+            46:  load(s2, "masterRed")
+            47:  loadfloat(s3, 1)
+            48:  set(s255, s0, s2, s3)
+            49:  line(-, 24)
+            50:  load(s2, "masterGreen")
+            51:  loadfloat(s3, 1)
+            52:  set(s255, s0, s2, s3)
+            53:  line(-, 25)
+            54:  load(s2, "masterBlue")
+            55:  loadfloat(s3, 1)
+            56:  set(s255, s0, s2, s3)
+            57:  line(-, 27)
+            58:  load(s2, "alpha")
+            59:  loadfloat(s3, 1)
+            60:  set(s255, s0, s2, s3)
+            61:  line(-, 28)
+            62:  load(s2, "red")
+            63:  loadfloat(s3, 1)
+            64:  set(s255, s0, s2, s3)
+            65:  line(-, 29)
+            66:  load(s2, "green")
+            67:  loadfloat(s3, 1)
+            68:  set(s255, s0, s2, s3)
+            69:  line(-, 30)
+            70:  load(s2, "blue")
+            71:  loadfloat(s3, 1)
+            72:  set(s255, s0, s2, s3)
+            73:  line(-, 31)
+            74:  load(s2, "rz")
+            75:  loadfloat(s3, 0)
+            76:  set(s255, s0, s2, s3)
+            77:  line(-, 32)
+            78:  dload(s2, "sx", s3, "sy")
+            79:  loadfloat(s4, 1)
+            80:  set(s3, s0, s3, s4)
+            81:  set(s255, s0, s2, s3)
+            82:  line(-, 35)
+            83:  load(s2, "isActive")
+            84:  loadbool(s3, 1)
+            85:  set(s255, s0, s2, s3)
+            86:  line(-, 36)
+            87:  load(s2, "func")
+            88:  loadnulls(s3, 1)
+            89:  set(s255, s0, s2, s3)
+            90:  line(-, 37)
+            91:  load(s2, "baria")
+            92:  loadbool(s3, 0)
+            93:  set(s255, s0, s2, s3)
+            94:  line(-, 38)
+            95:  load(s2, "guardBaria")
+            96:  loadbool(s3, 0)
+            97:  set(s255, s0, s2, s3)
+            98:  line(-, 39)
+            99:  load(s2, "guardBariaCount")
+            100:  loadint(s3, 0)
+            101:  set(s255, s0, s2, s3)
+            102:  line(-, 40)
+            103:  prepcallk(s2, "ResetSpeed", s0, s3)
+            104:  call(255, s2, s3, 1)
+            105:  line(-, 43)
+            106:  load(s2, "event_getAttack")
+            107:  loadnulls(s3, 1)
+            108:  set(s255, s0, s2, s3)
+            109:  line(-, 44)
+            110:  load(s2, "event_getDamage")
+            111:  loadnulls(s3, 1)
+            112:  set(s255, s0, s2, s3)
+            113:  line(-, 45)
+            114:  load(s2, "event_motionEnd")
+            115:  loadnulls(s3, 1)
+            116:  set(s255, s0, s2, s3)
+            117:  line(-, 46)
+            118:  load(s2, "event_defeat")
+            119:  loadnulls(s3, 1)
+            120:  set(s255, s0, s2, s3)
+            121:  line(-, 48)
+            122:  load(s2, "pEvent_getDamage")
+            123:  loadnulls(s3, 1)
+            124:  set(s255, s0, s2, s3)
+            125:  line(-, 50)
+            126:  load(s2, "lavelClearEvent")
+            127:  loadnulls(s3, 1)
+            128:  set(s255, s0, s2, s3)
+            129:  line(-, 53)
+            130:  dload(s2, "debuff_hate", s3, "Debuff")
+            131:  prepcall(s3, s3, s0, s4)
+            132:  call(3, s3, s4, 1)
+            133:  set(s255, s0, s2, s3)
+            134:  line(-, 54)
+            135:  dload(s2, "debuff_fear", s3, "Debuff")
+            136:  prepcall(s3, s3, s0, s4)
+            137:  call(3, s3, s4, 1)
+            138:  set(s255, s0, s2, s3)
+            139:  line(-, 55)
+            140:  dload(s2, "debuff_hyper", s3, "Debuff")
+            141:  prepcall(s3, s3, s0, s4)
+            142:  call(3, s3, s4, 1)
+            143:  set(s255, s0, s2, s3)
+            144:  line(-, 56)
+            145:  dload(s2, "debuff_animal", s3, "Debuff")
+            146:  prepcall(s3, s3, s0, s4)
+            147:  call(3, s3, s4, 1)
+            148:  set(s255, s0, s2, s3)
+            149:  line(-, 57)
+            150:  dload(s2, "debuff_poison", s3, "Debuff")
+            151:  prepcall(s3, s3, s0, s4)
+            152:  call(3, s3, s4, 1)
+            153:  set(s255, s0, s2, s3)
+            154:  line(-, 58)
+            155:  prepcallk(s2, "BuffReset", s0, s3)
+            156:  call(255, s2, s3, 1)
+            157:  line(-, 61)
+            158:  load(s2, "count")
+            159:  loadint(s3, 0)
+            160:  set(s255, s0, s2, s3)
+            161:  line(-, 62)
+            162:  load(s2, "flag1")
+            163:  loadint(s3, 0)
+            164:  set(s255, s0, s2, s3)
+            165:  line(-, 63)
+            166:  load(s2, "flag2")
+            167:  loadint(s3, 0)
+            168:  set(s255, s0, s2, s3)
+            169:  line(-, 64)
+            170:  load(s2, "flag3")
+            171:  loadint(s3, 0)
+            172:  set(s255, s0, s2, s3)
+            173:  line(-, 65)
+            174:  load(s2, "flag4")
+            175:  loadint(s3, 0)
+            176:  set(s255, s0, s2, s3)
+            177:  line(-, 66)
+            178:  load(s2, "flag5")
+            179:  loadint(s3, 0)
+            180:  set(s255, s0, s2, s3)
+            181:  line(-, 68)
+            182:  load(s2, "enableKO")
+            183:  loadbool(s3, 1)
+            184:  set(s255, s0, s2, s3)
+            185:  line(-, 69)
+            186:  load(s2, "centerStop")
+            187:  loadint(s3, 0)
+            188:  set(s255, s0, s2, s3)
+            189:  line(-, 70)
+            190:  load(s2, "centerStopCheck")
+            191:  loadint(s3, 0)
+            192:  set(s255, s0, s2, s3)
+            193:  line(-, 88)
+            194:  load(s2, "dashCount")
+            195:  loadint(s3, 0)
+            196:  set(s255, s0, s2, s3)
+            197:  line(-, 89)
+            198:  load(s2, "slideCount")
+            199:  loadint(s3, 0)
+            200:  set(s255, s0, s2, s3)
+            201:  line(-, 90)
+            202:  load(s2, "airSlide")
+            203:  loadbool(s3, 0)
+            204:  set(s255, s0, s2, s3)
+            205:  line(-, 107)
+            206:  load(s2, "change_reserve")
+            207:  loadbool(s3, 0)
+            208:  set(s255, s0, s2, s3)
+            209:  line(-, 108)
+            210:  getk(s2, "hyouiAura", s0)
+            211:  jz(s2, 3)
+            212:  getk(s2, "hyouiAura", s0)
+            213:  prepcallk(s2, "Release", s2, s3)
+            214:  call(255, s2, s3, 1)
+            215:  line(-, 109)
+            216:  load(s2, "hyouiAura")
+            217:  loadnulls(s3, 1)
+            218:  set(s255, s0, s2, s3)
+            219:  line(-, 112)
+            220:  load(s2, "invinBoss")
+            221:  loadint(s3, 0)
+            222:  set(s255, s0, s2, s3)
+            223:  line(-, 113)
+            224:  load(s2, "invin")
+            225:  loadint(s3, 0)
+            226:  set(s255, s0, s2, s3)
+            227:  line(-, 114)
+            228:  load(s2, "invinGrab")
+            229:  loadint(s3, 0)
+            230:  set(s255, s0, s2, s3)
+            231:  line(-, 115)
+            232:  load(s2, "invinObject")
+            233:  loadint(s3, 0)
+            234:  set(s255, s0, s2, s3)
+            235:  line(-, 116)
+            236:  load(s2, "graze")
+            237:  loadint(s3, 0)
+            238:  set(s255, s0, s2, s3)
+            239:  line(-, 117)
+            240:  load(s2, "grazeCount")
+            241:  loadint(s3, 0)
+            242:  set(s255, s0, s2, s3)
+            243:  line(-, 118)
+            244:  load(s2, "armor")
+            245:  loadint(s3, 0)
+            246:  set(s255, s0, s2, s3)
+            247:  line(-, 119)
+            248:  load(s2, "force_counter")
+            249:  loadint(s3, 0)
+            250:  set(s255, s0, s2, s3)
+            251:  line(-, 120)
+            252:  load(s2, "hitStopTime")
+            253:  loadint(s3, 0)
+            254:  set(s255, s0, s2, s3)
+            255:  line(-, 121)
+            256:  load(s2, "damageStopTime")
+            257:  loadint(s3, 0)
+            258:  set(s255, s0, s2, s3)
+            259:  line(-, 124)
+            260:  load(s2, "autoGuardCount")
+            261:  loadint(s3, 0)
+            262:  set(s255, s0, s2, s3)
+            263:  line(-, 125)
+            264:  load(s2, "forceBariaCount")
+            265:  loadint(s3, 0)
+            266:  set(s255, s0, s2, s3)
+            267:  line(-, 126)
+            268:  load(s2, "disableDash")
+            269:  loadint(s3, 0)
+            270:  set(s255, s0, s2, s3)
+            271:  line(-, 127)
+            272:  load(s2, "disableGuard")
+            273:  loadint(s3, 0)
+            274:  set(s255, s0, s2, s3)
+            275:  line(-, 129)
+            276:  load(s2, "stanCount")
+            277:  loadint(s3, 0)
+            278:  set(s255, s0, s2, s3)
+            279:  line(-, 130)
+            280:  load(s2, "stanBossCount")
+            281:  loadint(s3, 0)
+            282:  set(s255, s0, s2, s3)
+            283:  line(-, 131)
+            284:  load(s2, "endure")
+            285:  loadint(s3, 0)
+            286:  set(s255, s0, s2, s3)
+            287:  line(-, 132)
+            288:  load(s2, "endureCount")
+            289:  loadint(s3, 0)
+            290:  set(s255, s0, s2, s3)
+            291:  line(-, 133)
+            292:  load(s2, "freeMap")
+            293:  loadbool(s3, 0)
+            294:  set(s255, s0, s2, s3)
+            295:  line(-, 134)
+            296:  load(s2, "collisionFree")
+            297:  loadbool(s3, 0)
+            298:  set(s255, s0, s2, s3)
+            299:  line(-, 135)
+            300:  load(s2, "enableStandUp")
+            301:  loadbool(s3, 1)
+            302:  set(s255, s0, s2, s3)
+            303:  line(-, 137)
+            304:  prepcallk(s2, "HitReset", s0, s3)
+            305:  call(255, s2, s3, 1)
+            306:  line(-, 138)
+            307:  load(s2, "attackTarget")
+            308:  loadnulls(s3, 1)
+            309:  set(s255, s0, s2, s3)
+            310:  line(-, 141)
+            311:  dload(s2, "vf", s3, "Vector3")
+            312:  prepcall(s3, s3, s0, s4)
+            313:  call(3, s3, s4, 1)
+            314:  set(s255, s0, s2, s3)
+            315:  line(-, 142)
+            316:  dload(s2, "va", s3, "Vector3")
+            317:  prepcall(s3, s3, s0, s4)
+            318:  call(3, s3, s4, 1)
+            319:  set(s255, s0, s2, s3)
+            320:  line(-, 143)
+            321:  dload(s2, "vfBaria", s3, "Vector3")
+            322:  prepcall(s3, s3, s0, s4)
+            323:  call(3, s3, s4, 1)
+            324:  set(s255, s0, s2, s3)
+            325:  line(-, 146)
+            326:  load(s2, "atkRate")
+            327:  loadfloat(s3, 1)
+            328:  set(s255, s0, s2, s3)
+            329:  line(-, 147)
+            330:  load(s2, "defRate")
+            331:  loadfloat(s3, 1)
+            332:  set(s255, s0, s2, s3)
+            333:  line(-, 150)
+            334:  load(s2, "baseAtkRate")
+            335:  loadfloat(s3, 1)
+            336:  set(s255, s0, s2, s3)
+            337:  line(-, 151)
+            338:  load(s2, "baseDefRate")
+            339:  loadfloat(s3, 1)
+            340:  set(s255, s0, s2, s3)
+            341:  line(-, 152)
+            342:  load(s2, "shield_rate")
+            343:  loadint(s3, 1)
+            344:  set(s255, s0, s2, s3)
+            345:  line(-, 155)
+            346:  load(s2, "shotGuardRate")
+            347:  loadfloat(s3, 1)
+            348:  set(s255, s0, s2, s3)
+            349:  line(-, 156)
+            350:  load(s2, "shotGuardCount")
+            351:  loadint(s3, 0)
+            352:  set(s255, s0, s2, s3)
+            353:  line(-, 162)
+            354:  load(s2, "atkBuff")
+            355:  newobj(s3, 0, 0, 1)
+            356:  set(s255, s0, s2, s3)
+            357:  line(-, 180)
+            358:  load(s2, "option")
+            359:  newobj(s3, 0, 0, 1)
+            360:  set(s255, s0, s2, s3)
+            361:  line(-, 181)
+            362:  load(s2, "linkObject")
+            363:  newobj(s3, 0, 0, 1)
+            364:  set(s255, s0, s2, s3)
+            365:  line(-, 182)
+            366:  load(s2, "afterImage")
+            367:  loadnulls(s3, 1)
+            368:  set(s255, s0, s2, s3)
+            369:  line(-, 183)
+            370:  load(s2, "occultAura")
+            371:  loadnulls(s3, 1)
+            372:  set(s255, s0, s2, s3)
+            373:  line(-, 185)
+            374:  load(s2, "shield_body")
+            375:  loadnulls(s3, 1)
+            376:  set(s255, s0, s2, s3)
+            377:  line(-, 186)
+            378:  load(s2, "shield")
+            379:  loadnulls(s3, 1)
+            380:  set(s255, s0, s2, s3)
+            381:  line(-, 187)
+            382:  load(s2, "shot_actor")
+            383:  loadroot(s3)
+            384:  getk(s3, "manbow", s3)
+            385:  prepcallk(s3, "Actor2DProcGroup", s3, s4)
+            386:  call(3, s3, s4, 1)
+            387:  set(s255, s0, s2, s3)
+            388:  line(-, 228)
+            389:  load(s2, "koExp")
+            390:  loadbool(s3, 0)
+            391:  set(s255, s0, s2, s3)
+            392:  line(-, 229)
+            393:  load(s2, "ko_slave")
+            394:  loadbool(s3, 0)
+            395:  set(s255, s0, s2, s3)
+            396:  line(-, 230)
+            397:  load(s2, "disableDash")
+            398:  loadint(s3, 0)
+            399:  set(s255, s0, s2, s3)
+            400:  line(-, 238)
+            401:  getk(s2, "resetFunc", s0)
+            402:  jz(s2, 4)
+            403:  getk(s2, "resetFunc", s0)
+            404:  prepcallk(s2, "call", s2, s3)
+            405:  move(s4, s0)
+            406:  call(255, s2, s3, 2)
+            407:  line(-, 240)
+            408:  prepcallk(s2, "SetUpdateFunction", s0, s3)
+            409:  getk(s4, "Update_Normal", s0)
+            410:  call(255, s2, s3, 2)
+            411:  line(-, 241)
+            412:  prepcallk(s2, "SetEndMotionCallbackFunction", s0, s3)
+            413:  getk(s4, "EndtoFreeMove", s0)
+            414:  call(255, s2, s3, 2)
+            415:  line(-, 244)
+            416:  getk(s2, "Stand_Init", s0)
+            417:  prepcallk(s2, "call", s2, s3)
+            418:  move(s4, s0)
+            419:  loadnulls(s5, 1)
+            420:  call(255, s2, s3, 3)
+            421:  line(-, 245)
+            422:  load(s2, "rx")
+            423:  loadfloat(s3, 0)
+            424:  set(s255, s0, s2, s3)
+            425:  load(s2, "ry")
+            426:  loadfloat(s3, 0)
+            427:  set(s255, s0, s2, s3)
+            428:  load(s2, "rz")
+            429:  loadfloat(s3, 0)
+            430:  set(s255, s0, s2, s3)
+            431:  line(-, 246)
+            432:  dload(s2, "sx", s3, "sy")
+            433:  loadfloat(s4, 1)
+            434:  set(s3, s0, s3, s4)
+            435:  set(s255, s0, s2, s3)
+            436:  line(-, 247)
+            437:  prepcallk(s2, "FitBoxfromSprite", s0, s3)
+            438:  call(255, s2, s3, 1)
+            439:  line(-, 248)
+            440:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "AI_PlayerCommon"
+        nliterals: 34
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 22
+        ndefaultparams: 0
+        ninstructions: 91
+        nfunctions: 0
+        Literals: [
+            0: "vf"
+            1: "Vector3"
+            2: "va"
+            3: "vfBaria"
+            4: "SetContactTestCallbackFunction"
+            5: "StoreActorData"
+            6: "hitOwner"
+            7: "weakref"
+            8: "hitTarget"
+            9: "owner"
+            10: "actorType"
+            11: "hitAction"
+            12: "PlayerhitAction_Normal"
+            13: "guardAction"
+            14: "PlayerGuardAction_Normal"
+            15: "justGuardAction"
+            16: "PlayerGuardAction_Just"
+            17: "enableJustGuard"
+            18: "guardMissAction"
+            19: "PlayerMissGuardAction_Normal"
+            20: "guardCrashAction"
+            21: "PlayerGuardCrashAction_Normal"
+            22: "colorFunction"
+            23: "CommonColorUpdate"
+            24: "func_beginDemo"
+            25: "CommonBegin"
+            26: "func_beginDemoSkip"
+            27: "CommonBeginBattleSkip"
+            28: "func_timeDemo"
+            29: "CommonWin"
+            30: "func_winDemo"
+            31: "spellList"
+            32: "SetEndTakeCallbackFunction"
+            33: "KeyActionCheck"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 90
+          ]
+        Line Informations: [
+            0: line: 259, op: 1
+            1: line: 260, op: 5
+            2: line: 261, op: 10
+            3: line: 263, op: 15
+            4: line: 265, op: 19
+            5: line: 266, op: 24
+            6: line: 270, op: 28
+            7: line: 271, op: 33
+            8: line: 275, op: 37
+            9: line: 276, op: 41
+            10: line: 277, op: 45
+            11: line: 278, op: 49
+            12: line: 280, op: 53
+            13: line: 281, op: 57
+            14: line: 283, op: 61
+            15: line: 284, op: 65
+            16: line: 285, op: 69
+            17: line: 286, op: 73
+            18: line: 287, op: 77
+            19: line: 289, op: 81
+            20: line: 292, op: 85
+            21: line: 295, op: 89
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 259)
+            1:  dload(s1, "vf", s2, "Vector3")
+            2:  prepcall(s2, s2, s0, s3)
+            3:  call(2, s2, s3, 1)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 260)
+            6:  dload(s1, "va", s2, "Vector3")
+            7:  prepcall(s2, s2, s0, s3)
+            8:  call(2, s2, s3, 1)
+            9:  set(s255, s0, s1, s2)
+            10:  line(-, 261)
+            11:  dload(s1, "vfBaria", s2, "Vector3")
+            12:  prepcall(s2, s2, s0, s3)
+            13:  call(2, s2, s3, 1)
+            14:  set(s255, s0, s1, s2)
+            15:  line(-, 263)
+            16:  prepcallk(s1, "SetContactTestCallbackFunction", s0, s2)
+            17:  getk(s3, "StoreActorData", s0)
+            18:  call(255, s1, s2, 2)
+            19:  line(-, 265)
+            20:  dload(s1, "hitOwner", s2, "weakref")
+            21:  prepcall(s2, s2, s0, s3)
+            22:  call(2, s2, s3, 1)
+            23:  set(s255, s0, s1, s2)
+            24:  line(-, 266)
+            25:  load(s1, "hitTarget")
+            26:  newobj(s2, 0, 0, 0)
+            27:  set(s255, s0, s1, s2)
+            28:  line(-, 270)
+            29:  dload(s1, "owner", s2, "weakref")
+            30:  prepcall(s2, s2, s0, s3)
+            31:  call(2, s2, s3, 1)
+            32:  set(s255, s0, s1, s2)
+            33:  line(-, 271)
+            34:  load(s1, "actorType")
+            35:  loadint(s2, 1)
+            36:  set(s255, s0, s1, s2)
+            37:  line(-, 275)
+            38:  dload(s1, "hitAction", s2, "PlayerhitAction_Normal")
+            39:  get(s2, s0, s2)
+            40:  set(s255, s0, s1, s2)
+            41:  line(-, 276)
+            42:  dload(s1, "guardAction", s2, "PlayerGuardAction_Normal")
+            43:  get(s2, s0, s2)
+            44:  set(s255, s0, s1, s2)
+            45:  line(-, 277)
+            46:  dload(s1, "justGuardAction", s2, "PlayerGuardAction_Just")
+            47:  get(s2, s0, s2)
+            48:  set(s255, s0, s1, s2)
+            49:  line(-, 278)
+            50:  load(s1, "enableJustGuard")
+            51:  loadbool(s2, 1)
+            52:  set(s255, s0, s1, s2)
+            53:  line(-, 280)
+            54:  dload(s1, "guardMissAction", s2, "PlayerMissGuardAction_Normal")
+            55:  get(s2, s0, s2)
+            56:  set(s255, s0, s1, s2)
+            57:  line(-, 281)
+            58:  dload(s1, "guardCrashAction", s2, "PlayerGuardCrashAction_Normal")
+            59:  get(s2, s0, s2)
+            60:  set(s255, s0, s1, s2)
+            61:  line(-, 283)
+            62:  dload(s1, "colorFunction", s2, "CommonColorUpdate")
+            63:  get(s2, s0, s2)
+            64:  set(s255, s0, s1, s2)
+            65:  line(-, 284)
+            66:  dload(s1, "func_beginDemo", s2, "CommonBegin")
+            67:  get(s2, s0, s2)
+            68:  set(s255, s0, s1, s2)
+            69:  line(-, 285)
+            70:  dload(s1, "func_beginDemoSkip", s2, "CommonBeginBattleSkip")
+            71:  get(s2, s0, s2)
+            72:  set(s255, s0, s1, s2)
+            73:  line(-, 286)
+            74:  dload(s1, "func_timeDemo", s2, "CommonWin")
+            75:  get(s2, s0, s2)
+            76:  set(s255, s0, s1, s2)
+            77:  line(-, 287)
+            78:  dload(s1, "func_winDemo", s2, "CommonWin")
+            79:  get(s2, s0, s2)
+            80:  set(s255, s0, s1, s2)
+            81:  line(-, 289)
+            82:  load(s1, "spellList")
+            83:  newobj(s2, 0, 0, 1)
+            84:  set(s255, s0, s1, s2)
+            85:  line(-, 292)
+            86:  prepcallk(s1, "SetEndTakeCallbackFunction", s0, s2)
+            87:  getk(s3, "KeyActionCheck", s0)
+            88:  call(255, s1, s2, 2)
+            89:  line(-, 295)
+            90:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Test_Motion"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 1
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "force_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "force_", pos: 1, start_op: 0, end_op: 2
+            1: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 296, op: 0
+            1: line: 297, op: 1
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 296)
+            1:  line(-, 297)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

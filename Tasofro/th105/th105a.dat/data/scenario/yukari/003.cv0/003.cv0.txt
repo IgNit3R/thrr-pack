@@ -1,0 +1,235 @@
+## =======================================================================
+#Stage:4
+#Title:跡取り娘の行方
+#Place:玄海雲
+#Weather:台風
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+Character:yukari,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#分画面外に待機
+Action:iku,100
+#カメラ固定
+Action:yukari,4
+
+#Action:iku,133
+#フォーカス瞬間移動
+#Action:yukari,11
+
+#向き固定解除
+Action:yukari,152
+
+Label:Start
+
+Sleep:30;
+
+#自分登場
+Action:yukari,50
+Action:yukari,51
+
+PlayBgm:data/bgm/ta00.ogg
+
+#ステージタイトル表示
+Object:data/scenario/yukari/effect/StageTitle004.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage4.bmp,1,256,352
+Sleep:60
+
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+Face:yukari,普
+……何処にもいない\
+
+Face:yukari,余
+天界は贅沢に土地を使い過ぎている\
+
+Face:yukari,普
+天界は飽和状態で成仏は禁止、だなんて大嘘ね@
+ただ単に、狭くなるのが嫌なだけ……\
+
+Face:yukari,普
+天人は世俗を捨てた者ってのも大嘘@
+本当は最もずる賢い人間の巣窟\
+
+Face:yukari,
+Hide:1
+Sleep:30
+
+# 敵登場
+Action:iku,101
+Action:iku,102
+
+Sleep:20
+
+Face:iku,惑
+あら、地上に這い蹲っている妖怪？\
+
+Face:yukari,普
+貴方は……@
+龍宮の使いね\
+
+# 名前のテロップ
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Face:iku,驚
+ええそうですが\
+
+Face:yukari,普
+今日は何のお使いかしら？
+まさか、地震の伝達？\
+
+Face:iku,普
+いいえ、地震に関しては危険は殆ど無くなりました
+比那名居の<ruby そうりょうむすめ>総領娘</ruby>様が神社に要石を挿し込んだそうで\
+
+Face:iku,余
+で、私達は普段は天界に住んでいますから
+ここに居ても何の不思議もありませんが……\
+
+Face:iku,普
+地上の妖怪が居る事が不自然です\
+
+Face:yukari,普
+私はある天人を探しているの\
+
+Face:yukari,余
+比那名居　天子\
+
+Face:iku,惑
+総領娘様ですか？@
+どのような用件でしょう？\
+
+Face:yukari,余
+ちょっと亡き者にしようと\
+
+Face:iku,驚
+あらあら@
+それはまた物騒な\
+
+PlayBgm:data/bgm/st04.ogg
+
+Face:yukari,決
+さあ、何処にいる？\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:iku,普
+そうですねぇ@
+総領娘様なら今は地上に降りていると思います\
+
+Face:yukari,惑
+あれ？
+霊夢が言っている事と食い違っているわね\
+
+Face:iku,汗
+ここだけの話、自由すぎてあのお方には
+手を焼いているのですよ。天人の間でも\
+
+Face:yukari,余
+本当は隠しているんでしょ？\
+
+Face:iku,普
+本当に居ないと思いますが……\
+
+#戦闘開始処理
+
+Action:yukari,3
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,普
+総領娘様にお灸を据えるのなら
+是非やって下さいまし\
+
+Face:iku,余
+あ、勿論私が言った事は内緒ですよ？\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yukari,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:yukari,202
+
+Face:yukari,余
+さあ居場所を教えなさい\
+
+Face:iku,負
+いえ、本当に居ないのです\
+
+Face:yukari,汗
+ふむ
+時間と体力の無駄だったみたいね\
+
+Face:iku,普
+もし総領娘様にお灸を据えるつもりでしたら
+是非やって下さいまし\
+
+Face:iku,余
+あ、勿論私が言ったって事は内緒ですよ？\
+
+Face:yukari,余
+さっき言ったでしょ？
+お灸を据えるんじゃなくて亡き者にするの\
+
+
+Hide:1
+#紫画面外へ隙間退避
+Action:yukari,155
+#紫画面外へ隙間退避完了確認
+Action:yukari,156
+
+Face:iku,無
+Face:yukari,無
+
+はぁ時間の無駄。時間の無駄\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:0,120
+
+#やられキャラ画面退場
+Action:iku,201
+
+#カメラ中央あわせ
+Action:yukari,4
+
+Sleep:120;
+
+End:
+
+
+## =======================================================================

@@ -1,0 +1,3810 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\system\component\network.nut: 
+sourcename: ""
+name: "main"
+nliterals: 28
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 29
+ndefaultparams: 0
+ninstructions: 140
+nfunctions: 13
+Literals: [
+    0: "network"
+    1: "server_profile"
+    2: "client_profile"
+    3: "rand_seed"
+    4: "network_inst"
+    5: "network_input_initialized"
+    6: "network_is_client"
+    7: "network_allow_watch"
+    8: "network_is_watch"
+    9: "network_is_parent_vs"
+    10: "network_history"
+    11: "network_history_load_count"
+    12: "network_client_num"
+    13: "hidden_char"
+    14: "AddpendNetworkHistory"
+    15: "SaveNetworkHistory"
+    16: "LoadNetworkHistory"
+    17: "GetHostName"
+    18: "GetHostPort"
+    19: "GetIPAddress"
+    20: "ResetNetworkInput"
+    21: "net_frame"
+    22: "SyncNetworkInput"
+    23: "StartupServer"
+    24: "StartupClient"
+    25: "DisconnectNetwork"
+    26: "BeginStreaming"
+    27: "SaveOpponentIcon"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 139
+    1: name: "this", pos: 0, start_op: 0, end_op: 139
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 3, op: 5
+    2: line: 4, op: 11
+    3: line: 5, op: 17
+    4: line: 7, op: 23
+    5: line: 8, op: 28
+    6: line: 9, op: 33
+    7: line: 10, op: 38
+    8: line: 11, op: 43
+    9: line: 12, op: 48
+    10: line: 13, op: 53
+    11: line: 14, op: 58
+    12: line: 15, op: 63
+    13: line: 16, op: 68
+    14: line: 18, op: 74
+    15: line: 47, op: 79
+    16: line: 63, op: 84
+    17: line: 102, op: 89
+    18: line: 112, op: 93
+    19: line: 122, op: 97
+    20: line: 130, op: 101
+    21: line: 135, op: 106
+    22: line: 136, op: 111
+    23: line: 197, op: 116
+    24: line: 340, op: 120
+    25: line: 557, op: 124
+    26: line: 605, op: 128
+    27: line: 639, op: 133
+    28: line: 657, op: 138
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  loadroot(s2)
+    2:  load(s3, "network")
+    3:  newobj(s4, 0, 0, 0)
+    4:  newslot(s255, s2, s3, s4)
+    5:  line(-, 3)
+    6:  loadroot(s2)
+    7:  getk(s2, "network", s2)
+    8:  load(s3, "server_profile")
+    9:  loadnulls(s4, 1)
+    10:  newslot(s255, s2, s3, s4)
+    11:  line(-, 4)
+    12:  loadroot(s2)
+    13:  getk(s2, "network", s2)
+    14:  load(s3, "client_profile")
+    15:  loadnulls(s4, 1)
+    16:  newslot(s255, s2, s3, s4)
+    17:  line(-, 5)
+    18:  loadroot(s2)
+    19:  getk(s2, "network", s2)
+    20:  load(s3, "rand_seed")
+    21:  loadint(s4, 0)
+    22:  newslot(s255, s2, s3, s4)
+    23:  line(-, 7)
+    24:  loadroot(s2)
+    25:  load(s3, "network_inst")
+    26:  loadnulls(s4, 1)
+    27:  newslot(s255, s2, s3, s4)
+    28:  line(-, 8)
+    29:  loadroot(s2)
+    30:  load(s3, "network_input_initialized")
+    31:  loadbool(s4, 0)
+    32:  newslot(s255, s2, s3, s4)
+    33:  line(-, 9)
+    34:  loadroot(s2)
+    35:  load(s3, "network_is_client")
+    36:  loadbool(s4, 0)
+    37:  newslot(s255, s2, s3, s4)
+    38:  line(-, 10)
+    39:  loadroot(s2)
+    40:  load(s3, "network_allow_watch")
+    41:  loadbool(s4, 0)
+    42:  newslot(s255, s2, s3, s4)
+    43:  line(-, 11)
+    44:  loadroot(s2)
+    45:  load(s3, "network_is_watch")
+    46:  loadbool(s4, 0)
+    47:  newslot(s255, s2, s3, s4)
+    48:  line(-, 12)
+    49:  loadroot(s2)
+    50:  load(s3, "network_is_parent_vs")
+    51:  loadbool(s4, 0)
+    52:  newslot(s255, s2, s3, s4)
+    53:  line(-, 13)
+    54:  loadroot(s2)
+    55:  load(s3, "network_history")
+    56:  newobj(s4, 0, 0, 1)
+    57:  newslot(s255, s2, s3, s4)
+    58:  line(-, 14)
+    59:  loadroot(s2)
+    60:  load(s3, "network_history_load_count")
+    61:  loadint(s4, 0)
+    62:  newslot(s255, s2, s3, s4)
+    63:  line(-, 15)
+    64:  loadroot(s2)
+    65:  load(s3, "network_client_num")
+    66:  loadint(s4, 0)
+    67:  newslot(s255, s2, s3, s4)
+    68:  line(-, 16)
+    69:  loadroot(s2)
+    70:  getk(s2, "network", s2)
+    71:  load(s3, "hidden_char")
+    72:  loadint(s4, 0)
+    73:  newslot(s255, s2, s3, s4)
+    74:  line(-, 18)
+    75:  loadroot(s2)
+    76:  load(s3, "AddpendNetworkHistory")
+    77:  closure(s4, 0)
+    78:  newslot(s255, s2, s3, s4)
+    79:  line(-, 47)
+    80:  loadroot(s2)
+    81:  load(s3, "SaveNetworkHistory")
+    82:  closure(s4, 1)
+    83:  newslot(s255, s2, s3, s4)
+    84:  line(-, 63)
+    85:  loadroot(s2)
+    86:  load(s3, "LoadNetworkHistory")
+    87:  closure(s4, 2)
+    88:  newslot(s255, s2, s3, s4)
+    89:  line(-, 102)
+    90:  load(s2, "GetHostName")
+    91:  closure(s3, 3)
+    92:  newslot(s2, s0, s2, s3)
+    93:  line(-, 112)
+    94:  load(s2, "GetHostPort")
+    95:  closure(s3, 4)
+    96:  newslot(s2, s0, s2, s3)
+    97:  line(-, 122)
+    98:  load(s2, "GetIPAddress")
+    99:  closure(s3, 5)
+    100:  newslot(s2, s0, s2, s3)
+    101:  line(-, 130)
+    102:  loadroot(s2)
+    103:  load(s3, "ResetNetworkInput")
+    104:  closure(s4, 6)
+    105:  newslot(s255, s2, s3, s4)
+    106:  line(-, 135)
+    107:  loadroot(s2)
+    108:  load(s3, "net_frame")
+    109:  loadint(s4, 0)
+    110:  newslot(s255, s2, s3, s4)
+    111:  line(-, 136)
+    112:  loadroot(s2)
+    113:  load(s3, "SyncNetworkInput")
+    114:  closure(s4, 7)
+    115:  newslot(s255, s2, s3, s4)
+    116:  line(-, 197)
+    117:  load(s2, "StartupServer")
+    118:  closure(s3, 8)
+    119:  newslot(s2, s0, s2, s3)
+    120:  line(-, 340)
+    121:  load(s2, "StartupClient")
+    122:  closure(s3, 9)
+    123:  newslot(s2, s0, s2, s3)
+    124:  line(-, 557)
+    125:  load(s2, "DisconnectNetwork")
+    126:  closure(s3, 10)
+    127:  newslot(s2, s0, s2, s3)
+    128:  line(-, 605)
+    129:  loadroot(s2)
+    130:  load(s3, "BeginStreaming")
+    131:  closure(s4, 11)
+    132:  newslot(s255, s2, s3, s4)
+    133:  line(-, 639)
+    134:  loadroot(s2)
+    135:  load(s3, "SaveOpponentIcon")
+    136:  closure(s4, 12)
+    137:  newslot(s255, s2, s3, s4)
+    138:  line(-, 657)
+    139:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: null
+        nliterals: 9
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 76
+        nfunctions: 0
+        Literals: [
+            0: "network_history_load_count"
+            1: "LoadNetworkHistory"
+            2: ""
+            3: ":"
+            4: "network_history"
+            5: "len"
+            6: "remove"
+            7: "insert"
+            8: "SaveNetworkHistory"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_host"
+            2: "_port"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 4, start_op: 23, end_op: 39
+            1: name: "line", pos: 3, start_op: 16, end_op: 73
+            2: name: "_port", pos: 2, start_op: 0, end_op: 75
+            3: name: "_host", pos: 1, start_op: 0, end_op: 75
+            4: name: "this", pos: 0, start_op: 0, end_op: 75
+          ]
+        Line Informations: [
+            0: line: 20, op: 1
+            1: line: 22, op: 7
+            2: line: 25, op: 10
+            3: line: 27, op: 16
+            4: line: 29, op: 26
+            5: line: 31, op: 32
+            6: line: 32, op: 37
+            7: line: 36, op: 40
+            8: line: 38, op: 51
+            9: line: 40, op: 59
+            10: line: 43, op: 70
+            11: line: 44, op: 74
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 20)
+            1:  loadroot(s3)
+            2:  getk(s3, "network_history_load_count", s3)
+            3:  loadint(s4, 0)
+            4:  eq(s3, 4, s3, 0)
+            5:  jz(s3, 4)
+            6:  line(-, 22)
+            7:  loadroot(s3)
+            8:  prepcallk(s3, "LoadNetworkHistory", s3, s4)
+            9:  call(255, s3, s4, 1)
+            10:  line(-, 25)
+            11:  load(s3, "")
+            12:  add(s3, s1, s3)
+            13:  load(s4, ":")
+            14:  add(s3, s4, s3)
+            15:  add(s3, s2, s3)
+            16:  line(-, 27)
+            17:  loadroot(s4)
+            18:  getk(s4, "network_history", s4)
+            19:  prepcallk(s4, "len", s4, s5)
+            20:  call(4, s4, s5, 1)
+            21:  loadint(s5, 1)
+            22:  sub(s4, s5, s4)
+            23:  loadint(s5, 0)
+            24:  jcmp(s5, 15, s4, CMP_GE)
+            25:  line(-, 29)
+            26:  loadroot(s5)
+            27:  getk(s5, "network_history", s5)
+            28:  get(s5, s5, s4)
+            29:  eq(s5, 3, s5, 0)
+            30:  jz(s5, 7)
+            31:  line(-, 31)
+            32:  loadroot(s5)
+            33:  getk(s5, "network_history", s5)
+            34:  prepcallk(s5, "remove", s5, s6)
+            35:  move(s7, s4)
+            36:  call(255, s5, s6, 2)
+            37:  line(-, 32)
+            38:  pincl(s5, s4, 0, 255)
+            39:  jmp(-, -17)
+            40:  line(-, 36)
+            41:  loadroot(s4)
+            42:  getk(s4, "network_history", s4)
+            43:  prepcallk(s4, "insert", s4, s5)
+            44:  loadint(s6, 0)
+            45:  load(s7, "")
+            46:  add(s7, s1, s7)
+            47:  load(s8, ":")
+            48:  add(s7, s8, s7)
+            49:  add(s7, s2, s7)
+            50:  call(255, s4, s5, 3)
+            51:  line(-, 38)
+            52:  loadroot(s4)
+            53:  getk(s4, "network_history", s4)
+            54:  prepcallk(s4, "len", s4, s5)
+            55:  call(4, s4, s5, 1)
+            56:  loadint(s5, 22)
+            57:  jcmp(s5, 12, s4, CMP_G)
+            58:  line(-, 40)
+            59:  loadroot(s4)
+            60:  getk(s4, "network_history", s4)
+            61:  prepcallk(s4, "remove", s4, s5)
+            62:  loadroot(s6)
+            63:  getk(s6, "network_history", s6)
+            64:  prepcallk(s6, "len", s6, s7)
+            65:  call(6, s6, s7, 1)
+            66:  loadint(s7, 1)
+            67:  sub(s6, s7, s6)
+            68:  call(255, s4, s5, 2)
+            69:  jmp(-, -18)
+            70:  line(-, 43)
+            71:  loadroot(s4)
+            72:  prepcallk(s4, "SaveNetworkHistory", s4, s5)
+            73:  call(255, s4, s5, 1)
+            74:  line(-, 44)
+            75:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: null
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 0
+        Literals: [
+            0: "libact"
+            1: "CSV"
+            2: "network_history"
+            3: "len"
+            4: "Set"
+            5: "Save"
+            6: "network_history.txt"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "i", pos: 2, start_op: 8, end_op: 23
+            1: name: "csv", pos: 1, start_op: 6, end_op: 27
+            2: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 49, op: 1
+            1: line: 51, op: 1
+            2: line: 52, op: 6
+            3: line: 54, op: 11
+            4: line: 56, op: 16
+            5: line: 59, op: 24
+            6: line: 60, op: 28
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 49)
+            1:  line(-, 51)
+            2:  loadroot(s1)
+            3:  getk(s1, "libact", s1)
+            4:  prepcallk(s1, "CSV", s1, s2)
+            5:  call(1, s1, s2, 1)
+            6:  line(-, 52)
+            7:  loadint(s2, 0)
+            8:  loadint(s3, 22)
+            9:  jcmp(s3, 14, s2, CMP_L)
+            10:  line(-, 54)
+            11:  getk(s3, "network_history", s0)
+            12:  prepcallk(s3, "len", s3, s4)
+            13:  call(3, s3, s4, 1)
+            14:  jcmp(s3, 7, s2, CMP_L)
+            15:  line(-, 56)
+            16:  prepcallk(s3, "Set", s1, s4)
+            17:  loadint(s5, 0)
+            18:  move(s6, s2)
+            19:  getk(s7, "network_history", s0)
+            20:  get(s7, s7, s2)
+            21:  call(255, s3, s4, 4)
+            22:  pincl(s3, s2, 0, 1)
+            23:  jmp(-, -16)
+            24:  line(-, 59)
+            25:  prepcallk(s2, "Save", s1, s3)
+            26:  load(s4, "network_history.txt")
+            27:  call(255, s2, s3, 2)
+            28:  line(-, 60)
+            29:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: null
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 13
+        ndefaultparams: 0
+        ninstructions: 50
+        nfunctions: 0
+        Literals: [
+            0: "network_history_load_count"
+            1: "network_history"
+            2: "clear"
+            3: "file"
+            4: "network_history.txt"
+            5: "r"
+            6: ""
+            7: "eos"
+            8: "readn"
+            9: "append"
+            10: "format"
+            11: "%c"
+            12: "close"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "c", pos: 4, start_op: 24, end_op: 42
+            1: name: "str", pos: 3, start_op: 16, end_op: 44
+            2: name: "i", pos: 2, start_op: 15, end_op: 44
+            3: name: "file_temp", pos: 1, start_op: 13, end_op: 47
+            4: name: "this", pos: 0, start_op: 0, end_op: 49
+          ]
+        Line Informations: [
+            0: line: 65, op: 1
+            1: line: 66, op: 1
+            2: line: 68, op: 5
+            3: line: 70, op: 9
+            4: line: 72, op: 13
+            5: line: 74, op: 21
+            6: line: 75, op: 24
+            7: line: 77, op: 29
+            8: line: 78, op: 33
+            9: line: 79, op: 34
+            10: line: 81, op: 38
+            11: line: 85, op: 45
+            12: line: 100, op: 48
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 65)
+            1:  line(-, 66)
+            2:  loadroot(s1)
+            3:  load(s2, "network_history_load_count")
+            4:  pinc(s1, s1, s2, 1)
+            5:  line(-, 68)
+            6:  getk(s1, "network_history", s0)
+            7:  prepcallk(s1, "clear", s1, s2)
+            8:  call(255, s1, s2, 1)
+            9:  line(-, 70)
+            10:  prepcallk(s1, "file", s0, s2)
+            11:  dload(s3, "network_history.txt", s4, "r")
+            12:  call(1, s1, s2, 3)
+            13:  line(-, 72)
+            14:  loadint(s2, 0)
+            15:  load(s3, "")
+            16:  prepcallk(s4, "eos", s1, s5)
+            17:  call(4, s4, s5, 1)
+            18:  not(s4, s4)
+            19:  jz(s4, 25)
+            20:  line(-, 74)
+            21:  prepcallk(s4, "readn", s1, s5)
+            22:  loadint(s6, 99)
+            23:  call(4, s4, s5, 2)
+            24:  line(-, 75)
+            25:  loadint(s5, 10)
+            26:  eq(s5, 5, s4, 0)
+            27:  jz(s5, 9)
+            28:  line(-, 77)
+            29:  getk(s5, "network_history", s0)
+            30:  prepcallk(s5, "append", s5, s6)
+            31:  move(s7, s3)
+            32:  call(255, s5, s6, 2)
+            33:  line(-, 78)
+            34:  line(-, 79)
+            35:  load(s3, "")
+            36:  jmp(-, 6)
+            37:  line(-, 81)
+            38:  prepcallk(s5, "format", s0, s6)
+            39:  load(s7, "%c")
+            40:  move(s8, s4)
+            41:  call(5, s5, s6, 3)
+            42:  add(s3, s5, s3)
+            43:  pincl(s4, s2, 0, 1)
+            44:  jmp(-, -29)
+            45:  line(-, 85)
+            46:  prepcallk(s2, "close", s1, s3)
+            47:  call(255, s2, s3, 1)
+            48:  line(-, 100)
+            49:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "GetHostName"
+        nliterals: 3
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 18
+        nfunctions: 0
+        Literals: [
+            0: "find"
+            1: ":"
+            2: "slice"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_str"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "delimit_pos", pos: 2, start_op: 4, end_op: 15
+            1: name: "_str", pos: 1, start_op: 0, end_op: 17
+            2: name: "this", pos: 0, start_op: 0, end_op: 17
+          ]
+        Line Informations: [
+            0: line: 104, op: 1
+            1: line: 105, op: 4
+            2: line: 107, op: 9
+            3: line: 109, op: 14
+            4: line: 110, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 104)
+            1:  prepcallk(s2, "find", s1, s3)
+            2:  load(s4, ":")
+            3:  call(2, s2, s3, 2)
+            4:  line(-, 105)
+            5:  loadnulls(s3, 1)
+            6:  ne(s3, 3, s2, 0)
+            7:  jz(s3, 6)
+            8:  line(-, 107)
+            9:  prepcallk(s3, "slice", s1, s4)
+            10:  loadint(s5, 0)
+            11:  move(s6, s2)
+            12:  tailcall(3, s3, s4, 3)
+            13:  return(1, 3)
+            14:  line(-, 109)
+            15:  return(1, 1)
+            16:  line(-, 110)
+            17:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "GetHostPort"
+        nliterals: 3
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 19
+        nfunctions: 0
+        Literals: [
+            0: "find"
+            1: ":"
+            2: "slice"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_str"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "delimit_pos", pos: 2, start_op: 4, end_op: 16
+            1: name: "_str", pos: 1, start_op: 0, end_op: 18
+            2: name: "this", pos: 0, start_op: 0, end_op: 18
+          ]
+        Line Informations: [
+            0: line: 114, op: 1
+            1: line: 115, op: 4
+            2: line: 117, op: 9
+            3: line: 119, op: 14
+            4: line: 120, op: 17
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 114)
+            1:  prepcallk(s2, "find", s1, s3)
+            2:  load(s4, ":")
+            3:  call(2, s2, s3, 2)
+            4:  line(-, 115)
+            5:  loadnulls(s3, 1)
+            6:  ne(s3, 3, s2, 0)
+            7:  jz(s3, 6)
+            8:  line(-, 117)
+            9:  prepcallk(s3, "slice", s1, s4)
+            10:  loadint(s5, 1)
+            11:  add(s5, s5, s2)
+            12:  tailcall(3, s3, s4, 2)
+            13:  return(1, 3)
+            14:  line(-, 119)
+            15:  loadnulls(s3, 1)
+            16:  return(1, 3)
+            17:  line(-, 120)
+            18:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "GetIPAddress"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 22
+        nfunctions: 0
+        Literals: [
+            0: "regexp"
+            1: "\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}"
+            2: "search"
+            3: ""
+            4: "slice"
+            5: "begin"
+            6: "end"
+          ]
+        Parameters: [
+            0: "this"
+            1: "text"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "ret", pos: 3, start_op: 8, end_op: 19
+            1: name: "ex", pos: 2, start_op: 4, end_op: 19
+            2: name: "text", pos: 1, start_op: 0, end_op: 21
+            3: name: "this", pos: 0, start_op: 0, end_op: 21
+          ]
+        Line Informations: [
+            0: line: 124, op: 1
+            1: line: 125, op: 4
+            2: line: 126, op: 8
+            3: line: 127, op: 14
+            4: line: 128, op: 20
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 124)
+            1:  prepcallk(s2, "regexp", s0, s3)
+            2:  load(s4, "\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d{1,5}")
+            3:  call(2, s2, s3, 2)
+            4:  line(-, 125)
+            5:  prepcallk(s3, "search", s2, s4)
+            6:  move(s5, s1)
+            7:  call(3, s3, s4, 2)
+            8:  line(-, 126)
+            9:  loadnulls(s4, 1)
+            10:  eq(s4, 4, s3, 0)
+            11:  jz(s4, 2)
+            12:  load(s4, "")
+            13:  return(1, 4)
+            14:  line(-, 127)
+            15:  prepcallk(s4, "slice", s1, s5)
+            16:  getk(s6, "begin", s3)
+            17:  getk(s7, "end", s3)
+            18:  tailcall(4, s4, s5, 3)
+            19:  return(1, 4)
+            20:  line(-, 128)
+            21:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: null
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 7
+        nfunctions: 0
+        Literals: [
+            0: "network_input_initialized"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 6
+          ]
+        Line Informations: [
+            0: line: 132, op: 1
+            1: line: 133, op: 5
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 132)
+            1:  loadroot(s1)
+            2:  load(s2, "network_input_initialized")
+            3:  loadbool(s3, 0)
+            4:  set(s255, s1, s2, s3)
+            5:  line(-, 133)
+            6:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: null
+        nliterals: 22
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 30
+        ndefaultparams: 0
+        ninstructions: 183
+        nfunctions: 0
+        Literals: [
+            0: "network_inst"
+            1: "network_input_initialized"
+            2: "BeginSyncInput"
+            3: "input_local"
+            4: "all"
+            5: "input_key"
+            6: "manbow"
+            7: "InputSingle"
+            8: "input_all"
+            9: "InputMulti"
+            10: "input_joy"
+            11: "device"
+            12: "input_joy_all"
+            13: "Append"
+            14: "network_is_client"
+            15: "NetworkClient"
+            16: "input_network"
+            17: "Update"
+            18: "SyncInput"
+            19: "UpdateWorld"
+            20: "libact_netsync"
+            21: "NetworkServer"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 182
+          ]
+        Line Informations: [
+            0: line: 138, op: 1
+            1: line: 140, op: 5
+            2: line: 142, op: 10
+            3: line: 143, op: 10
+            4: line: 145, op: 18
+            5: line: 146, op: 26
+            6: line: 148, op: 34
+            7: line: 150, op: 49
+            8: line: 151, op: 57
+            9: line: 152, op: 66
+            10: line: 154, op: 75
+            11: line: 155, op: 82
+            12: line: 157, op: 87
+            13: line: 159, op: 96
+            14: line: 163, op: 101
+            15: line: 164, op: 107
+            16: line: 167, op: 115
+            17: line: 170, op: 123
+            18: line: 172, op: 131
+            19: line: 173, op: 135
+            20: line: 174, op: 139
+            21: line: 177, op: 145
+            22: line: 179, op: 149
+            23: line: 182, op: 157
+            24: line: 184, op: 162
+            25: line: 185, op: 166
+            26: line: 186, op: 170
+            27: line: 188, op: 175
+            28: line: 192, op: 178
+            29: line: 193, op: 181
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 138)
+            1:  loadroot(s1)
+            2:  getk(s1, "network_inst", s1)
+            3:  jz(s1, 174)
+            4:  line(-, 140)
+            5:  loadroot(s1)
+            6:  getk(s1, "network_input_initialized", s1)
+            7:  not(s1, s1)
+            8:  jz(s1, 92)
+            9:  line(-, 142)
+            10:  line(-, 143)
+            11:  getk(s1, "network_inst", s0)
+            12:  prepcallk(s1, "BeginSyncInput", s1, s2)
+            13:  loadroot(s3)
+            14:  getk(s3, "input_local", s3)
+            15:  getk(s3, "all", s3)
+            16:  loadint(s4, 2)
+            17:  call(255, s1, s2, 3)
+            18:  line(-, 145)
+            19:  loadroot(s1)
+            20:  load(s2, "input_key")
+            21:  loadroot(s3)
+            22:  getk(s3, "manbow", s3)
+            23:  prepcallk(s3, "InputSingle", s3, s4)
+            24:  call(3, s3, s4, 1)
+            25:  newslot(s255, s1, s2, s3)
+            26:  line(-, 146)
+            27:  loadroot(s1)
+            28:  load(s2, "input_all")
+            29:  loadroot(s3)
+            30:  getk(s3, "manbow", s3)
+            31:  prepcallk(s3, "InputMulti", s3, s4)
+            32:  call(3, s3, s4, 1)
+            33:  newslot(s255, s1, s2, s3)
+            34:  line(-, 148)
+            35:  loadroot(s1)
+            36:  load(s2, "input_joy")
+            37:  newobj(s3, 2, 0, 1)
+            38:  getk(s4, "network_inst", s0)
+            39:  getk(s4, "device", s4)
+            40:  loadint(s5, 0)
+            41:  get(s4, s4, s5)
+            42:  appendarray(s3, 4, 0)
+            43:  getk(s4, "network_inst", s0)
+            44:  getk(s4, "device", s4)
+            45:  loadint(s5, 1)
+            46:  get(s4, s4, s5)
+            47:  appendarray(s3, 4, 0)
+            48:  newslot(s255, s1, s2, s3)
+            49:  line(-, 150)
+            50:  loadroot(s1)
+            51:  load(s2, "input_joy_all")
+            52:  loadroot(s3)
+            53:  getk(s3, "manbow", s3)
+            54:  prepcallk(s3, "InputMulti", s3, s4)
+            55:  call(3, s3, s4, 1)
+            56:  newslot(s255, s1, s2, s3)
+            57:  line(-, 151)
+            58:  loadroot(s1)
+            59:  getk(s1, "input_joy_all", s1)
+            60:  prepcallk(s1, "Append", s1, s2)
+            61:  loadroot(s3)
+            62:  getk(s3, "input_joy", s3)
+            63:  loadint(s4, 0)
+            64:  get(s3, s3, s4)
+            65:  call(255, s1, s2, 2)
+            66:  line(-, 152)
+            67:  loadroot(s1)
+            68:  getk(s1, "input_joy_all", s1)
+            69:  prepcallk(s1, "Append", s1, s2)
+            70:  loadroot(s3)
+            71:  getk(s3, "input_joy", s3)
+            72:  loadint(s4, 1)
+            73:  get(s3, s3, s4)
+            74:  call(255, s1, s2, 2)
+            75:  line(-, 154)
+            76:  loadroot(s1)
+            77:  getk(s1, "input_all", s1)
+            78:  prepcallk(s1, "Append", s1, s2)
+            79:  loadroot(s3)
+            80:  getk(s3, "input_joy_all", s3)
+            81:  call(255, s1, s2, 2)
+            82:  line(-, 155)
+            83:  loadroot(s1)
+            84:  load(s2, "network_input_initialized")
+            85:  loadbool(s3, 1)
+            86:  set(s255, s1, s2, s3)
+            87:  line(-, 157)
+            88:  loadroot(s1)
+            89:  dload(s2, "network_is_client", s3, "network_inst")
+            90:  get(s3, s0, s3)
+            91:  loadroot(s4)
+            92:  getk(s4, "manbow", s4)
+            93:  getk(s4, "NetworkClient", s4)
+            94:  instanceof(s3, s4, s3)
+            95:  newslot(s255, s1, s2, s3)
+            96:  line(-, 159)
+            97:  loadroot(s1)
+            98:  load(s2, "input_network")
+            99:  loadnulls(s3, 1)
+            100:  newslot(s255, s1, s2, s3)
+            101:  line(-, 163)
+            102:  loadroot(s1)
+            103:  getk(s1, "input_local", s1)
+            104:  getk(s1, "all", s1)
+            105:  prepcallk(s1, "Update", s1, s2)
+            106:  call(255, s1, s2, 1)
+            107:  line(-, 164)
+            108:  loadroot(s1)
+            109:  getk(s1, "input_network", s1)
+            110:  jz(s1, 4)
+            111:  loadroot(s1)
+            112:  getk(s1, "input_network", s1)
+            113:  prepcallk(s1, "Update", s1, s2)
+            114:  call(255, s1, s2, 1)
+            115:  line(-, 167)
+            116:  getk(s1, "network_inst", s0)
+            117:  loadroot(s2)
+            118:  getk(s2, "manbow", s2)
+            119:  getk(s2, "NetworkClient", s2)
+            120:  instanceof(s1, s2, s1)
+            121:  jz(s1, 27)
+            122:  line(-, 170)
+            123:  getk(s1, "network_inst", s0)
+            124:  and(s1, 4, s1)
+            125:  getk(s2, "network_inst", s0)
+            126:  prepcallk(s2, "SyncInput", s2, s3)
+            127:  call(2, s2, s3, 1)
+            128:  move(s1, s2)
+            129:  jz(s1, 15)
+            130:  line(-, 172)
+            131:  loadroot(s1)
+            132:  getk(s1, "input_all", s1)
+            133:  prepcallk(s1, "Update", s1, s2)
+            134:  call(255, s1, s2, 1)
+            135:  line(-, 173)
+            136:  loadroot(s1)
+            137:  prepcallk(s1, "UpdateWorld", s1, s2)
+            138:  call(255, s1, s2, 1)
+            139:  line(-, 174)
+            140:  loadroot(s1)
+            141:  getk(s1, "libact_netsync", s1)
+            142:  prepcallk(s1, "Update", s1, s2)
+            143:  call(255, s1, s2, 1)
+            144:  jmp(-, -22)
+            145:  line(-, 177)
+            146:  loadbool(s1, 1)
+            147:  return(1, 1)
+            148:  jmp(-, 29)
+            149:  line(-, 179)
+            150:  getk(s1, "network_inst", s0)
+            151:  loadroot(s2)
+            152:  getk(s2, "manbow", s2)
+            153:  getk(s2, "NetworkServer", s2)
+            154:  instanceof(s1, s2, s1)
+            155:  jz(s1, 22)
+            156:  line(-, 182)
+            157:  getk(s1, "network_inst", s0)
+            158:  prepcallk(s1, "SyncInput", s1, s2)
+            159:  call(1, s1, s2, 1)
+            160:  jz(s1, 17)
+            161:  line(-, 184)
+            162:  loadroot(s1)
+            163:  getk(s1, "input_all", s1)
+            164:  prepcallk(s1, "Update", s1, s2)
+            165:  call(255, s1, s2, 1)
+            166:  line(-, 185)
+            167:  loadroot(s1)
+            168:  prepcallk(s1, "UpdateWorld", s1, s2)
+            169:  call(255, s1, s2, 1)
+            170:  line(-, 186)
+            171:  loadroot(s1)
+            172:  getk(s1, "libact_netsync", s1)
+            173:  prepcallk(s1, "Update", s1, s2)
+            174:  call(255, s1, s2, 1)
+            175:  line(-, 188)
+            176:  loadbool(s1, 1)
+            177:  return(1, 1)
+            178:  line(-, 192)
+            179:  loadbool(s1, 1)
+            180:  return(1, 1)
+            181:  line(-, 193)
+            182:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "StartupServer"
+        nliterals: 35
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 21
+        ndefaultparams: 0
+        ninstructions: 190
+        nfunctions: 3
+        Literals: [
+            0: "mb_server"
+            1: "manbow"
+            2: "NetworkServer"
+            3: "ConnectRequest"
+            4: "bindenv"
+            5: "DisconnectChild"
+            6: "ReceiveFromChild"
+            7: "save_data"
+            8: "profile"
+            9: "icon"
+            10: ""
+            11: "name"
+            12: "icon_dump"
+            13: "act"
+            14: "ProfileIcon"
+            15: "icon_table"
+            16: "DumpBase64"
+            17: "resource"
+            18: "main_icon"
+            19: "network"
+            20: "client_profile"
+            21: "server_profile"
+            22: "network_client_num"
+            23: "GetPrivateProfileInt"
+            24: "server_watch_num"
+            25: "config.ini"
+            26: "hidden_char"
+            27: "enable_mamizo"
+            28: "enable_kokoro"
+            29: "enable_stage_tanuki1"
+            30: "enable_stage_tanuki2"
+            31: "enable_stage_kokoro"
+            32: "Init"
+            33: "config_data"
+            34: "network_hosting_port"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "icon_name", pos: 2, start_op: 49, end_op: 187
+            1: name: "profile", pos: 1, start_op: 40, end_op: 187
+            2: name: "this", pos: 0, start_op: 0, end_op: 189
+          ]
+        Line Informations: [
+            0: line: 200, op: 1
+            1: line: 201, op: 8
+            2: line: 212, op: 9
+            3: line: 285, op: 17
+            4: line: 296, op: 25
+            5: line: 313, op: 33
+            6: line: 314, op: 40
+            7: line: 315, op: 49
+            8: line: 317, op: 52
+            9: line: 319, op: 60
+            10: line: 321, op: 71
+            11: line: 324, op: 77
+            12: line: 325, op: 83
+            13: line: 327, op: 88
+            14: line: 328, op: 99
+            15: line: 329, op: 109
+            16: line: 330, op: 118
+            17: line: 333, op: 123
+            18: line: 335, op: 177
+            19: line: 337, op: 178
+            20: line: 338, op: 188
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 200)
+            1:  loadroot(s1)
+            2:  load(s2, "mb_server")
+            3:  loadroot(s3)
+            4:  getk(s3, "manbow", s3)
+            5:  prepcallk(s3, "NetworkServer", s3, s4)
+            6:  call(3, s3, s4, 1)
+            7:  newslot(s255, s1, s2, s3)
+            8:  line(-, 201)
+            9:  line(-, 212)
+            10:  getk(s1, "mb_server", s0)
+            11:  load(s2, "ConnectRequest")
+            12:  closure(s3, 0)
+            13:  prepcallk(s3, "bindenv", s3, s4)
+            14:  move(s5, s0)
+            15:  call(3, s3, s4, 2)
+            16:  set(s255, s1, s2, s3)
+            17:  line(-, 285)
+            18:  getk(s1, "mb_server", s0)
+            19:  load(s2, "DisconnectChild")
+            20:  closure(s3, 1)
+            21:  prepcallk(s3, "bindenv", s3, s4)
+            22:  move(s5, s0)
+            23:  call(3, s3, s4, 2)
+            24:  set(s255, s1, s2, s3)
+            25:  line(-, 296)
+            26:  getk(s1, "mb_server", s0)
+            27:  load(s2, "ReceiveFromChild")
+            28:  closure(s3, 2)
+            29:  prepcallk(s3, "bindenv", s3, s4)
+            30:  move(s5, s0)
+            31:  call(3, s3, s4, 2)
+            32:  set(s255, s1, s2, s3)
+            33:  line(-, 313)
+            34:  loadroot(s1)
+            35:  getk(s1, "save_data", s1)
+            36:  getk(s1, "profile", s1)
+            37:  getk(s2, "profile", s0)
+            38:  get(s1, s1, s2)
+            39:  clone(s1, s1)
+            40:  line(-, 314)
+            41:  getk(s2, "icon", s1)
+            42:  ne(s2, 10, s2, 255)
+            43:  jz(s2, 3)
+            44:  getk(s3, "icon", s1)
+            45:  move(s2, s3)
+            46:  jmp(-, 2)
+            47:  getk(s3, "name", s1)
+            48:  move(s2, s3)
+            49:  line(-, 315)
+            50:  dload(s3, "icon_dump", s4, "")
+            51:  newslot(s255, s1, s3, s4)
+            52:  line(-, 317)
+            53:  loadroot(s3)
+            54:  getk(s3, "act", s3)
+            55:  getk(s3, "ProfileIcon", s3)
+            56:  getk(s3, "icon_table", s3)
+            57:  exists(s3, s3, s2)
+            58:  jz(s3, 11)
+            59:  line(-, 319)
+            60:  load(s3, "icon_dump")
+            61:  loadroot(s4)
+            62:  getk(s4, "act", s4)
+            63:  getk(s4, "ProfileIcon", s4)
+            64:  getk(s4, "icon_table", s4)
+            65:  get(s4, s4, s2)
+            66:  prepcallk(s4, "DumpBase64", s4, s5)
+            67:  call(4, s4, s5, 1)
+            68:  set(s255, s1, s3, s4)
+            69:  jmp(-, 7)
+            70:  line(-, 321)
+            71:  dload(s3, "icon_dump", s4, "resource")
+            72:  get(s4, s0, s4)
+            73:  getk(s4, "main_icon", s4)
+            74:  prepcallk(s4, "DumpBase64", s4, s5)
+            75:  call(4, s4, s5, 1)
+            76:  set(s255, s1, s3, s4)
+            77:  line(-, 324)
+            78:  loadroot(s3)
+            79:  getk(s3, "network", s3)
+            80:  load(s4, "client_profile")
+            81:  loadnulls(s5, 1)
+            82:  set(s255, s3, s4, s5)
+            83:  line(-, 325)
+            84:  loadroot(s3)
+            85:  getk(s3, "network", s3)
+            86:  load(s4, "server_profile")
+            87:  set(s255, s3, s4, s1)
+            88:  line(-, 327)
+            89:  loadroot(s3)
+            90:  load(s4, "network_client_num")
+            91:  loadroot(s5)
+            92:  getk(s5, "manbow", s5)
+            93:  prepcallk(s5, "GetPrivateProfileInt", s5, s6)
+            94:  dload(s7, "network", s8, "server_watch_num")
+            95:  loadint(s9, 1)
+            96:  load(s10, "config.ini")
+            97:  call(5, s5, s6, 5)
+            98:  set(s255, s3, s4, s5)
+            99:  line(-, 328)
+            100:  loadroot(s3)
+            101:  getk(s3, "network_client_num", s3)
+            102:  loadint(s4, 0)
+            103:  jcmp(s4, 5, s3, CMP_L)
+            104:  loadroot(s3)
+            105:  load(s4, "network_client_num")
+            106:  loadint(s5, 0)
+            107:  set(s255, s3, s4, s5)
+            108:  jmp(-, 9)
+            109:  line(-, 329)
+            110:  loadroot(s3)
+            111:  getk(s3, "network_client_num", s3)
+            112:  loadint(s4, 4)
+            113:  jcmp(s4, 4, s3, CMP_G)
+            114:  loadroot(s3)
+            115:  load(s4, "network_client_num")
+            116:  loadint(s5, 4)
+            117:  set(s255, s3, s4, s5)
+            118:  line(-, 330)
+            119:  loadroot(s3)
+            120:  load(s4, "network_client_num")
+            121:  loadint(s5, 1)
+            122:  comparith(s3, 196613, s4, 43)
+            123:  line(-, 333)
+            124:  loadroot(s3)
+            125:  getk(s3, "network", s3)
+            126:  load(s4, "hidden_char")
+            127:  loadroot(s5)
+            128:  getk(s5, "save_data", s5)
+            129:  getk(s5, "enable_mamizo", s5)
+            130:  jz(s5, 4)
+            131:  loadint(s6, 1)
+            132:  loadint(s7, 0)
+            133:  bitw(s5, s7, s6, BW_SHIFTL)
+            134:  jmp(-, 1)
+            135:  loadint(s5, 0)
+            136:  loadroot(s6)
+            137:  getk(s6, "save_data", s6)
+            138:  getk(s6, "enable_kokoro", s6)
+            139:  jz(s6, 4)
+            140:  loadint(s7, 1)
+            141:  loadint(s8, 1)
+            142:  bitw(s6, s8, s7, BW_SHIFTL)
+            143:  jmp(-, 1)
+            144:  loadint(s6, 0)
+            145:  bitw(s5, s6, s5, BW_OR)
+            146:  loadroot(s6)
+            147:  getk(s6, "save_data", s6)
+            148:  getk(s6, "enable_stage_tanuki1", s6)
+            149:  jz(s6, 4)
+            150:  loadint(s7, 1)
+            151:  loadint(s8, 2)
+            152:  bitw(s6, s8, s7, BW_SHIFTL)
+            153:  jmp(-, 1)
+            154:  loadint(s6, 0)
+            155:  bitw(s5, s6, s5, BW_OR)
+            156:  loadroot(s6)
+            157:  getk(s6, "save_data", s6)
+            158:  getk(s6, "enable_stage_tanuki2", s6)
+            159:  jz(s6, 4)
+            160:  loadint(s7, 1)
+            161:  loadint(s8, 3)
+            162:  bitw(s6, s8, s7, BW_SHIFTL)
+            163:  jmp(-, 1)
+            164:  loadint(s6, 0)
+            165:  bitw(s5, s6, s5, BW_OR)
+            166:  loadroot(s6)
+            167:  getk(s6, "save_data", s6)
+            168:  getk(s6, "enable_stage_kokoro", s6)
+            169:  jz(s6, 4)
+            170:  loadint(s7, 1)
+            171:  loadint(s8, 4)
+            172:  bitw(s6, s8, s7, BW_SHIFTL)
+            173:  jmp(-, 1)
+            174:  loadint(s6, 0)
+            175:  bitw(s5, s6, s5, BW_OR)
+            176:  set(s255, s3, s4, s5)
+            177:  line(-, 335)
+            178:  line(-, 337)
+            179:  getk(s3, "mb_server", s0)
+            180:  prepcallk(s3, "Init", s3, s4)
+            181:  loadroot(s5)
+            182:  getk(s5, "config_data", s5)
+            183:  getk(s5, "network_hosting_port", s5)
+            184:  loadroot(s6)
+            185:  getk(s6, "network_client_num", s6)
+            186:  tailcall(3, s3, s4, 3)
+            187:  return(1, 3)
+            188:  line(-, 338)
+            189:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 36
+                nparameters: 5
+                noutervals: 0
+                nlocalvarinfos: 5
+                nlineinfos: 32
+                ndefaultparams: 0
+                ninstructions: 226
+                nfunctions: 1
+                Literals: [
+                    0: "version"
+                    1: "GetVersion"
+                    2: "is_watch"
+                    3: "config_data"
+                    4: "network_open_mode"
+                    5: "is_vs"
+                    6: "network_inst"
+                    7: "mb_server"
+                    8: "network_input_initialized"
+                    9: "network"
+                    10: "rand_seed"
+                    11: "libact"
+                    12: "timeGetTime"
+                    13: "hidden_char"
+                    14: "save_data"
+                    15: "enable_mamizo"
+                    16: "enable_kokoro"
+                    17: "enable_stage_tanuki1"
+                    18: "enable_stage_tanuki2"
+                    19: "enable_stage_kokoro"
+                    20: "BeginNetworkMode"
+                    21: "profile"
+                    22: "server_profile"
+                    23: "enable_watch"
+                    24: "sig"
+                    25: "VERSION_SIG"
+                    26: "system_log"
+                    27: "Warn"
+                    28: "�ڑ����̃\�t�g�E�F�A�o�[�W�������قȂ�܂�
+"
+                    29: "client_profile"
+                    30: "act"
+                    31: "fader"
+                    32: "FadeOut"
+                    33: "bindenv"
+                    34: "PlaySE"
+                    35: "connect_complete"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "id"
+                    2: "context"
+                    3: "table_src"
+                    4: "table_dst"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "table_dst", pos: 4, start_op: 0, end_op: 225
+                    1: name: "table_src", pos: 3, start_op: 0, end_op: 225
+                    2: name: "context", pos: 2, start_op: 0, end_op: 225
+                    3: name: "id", pos: 1, start_op: 0, end_op: 225
+                    4: name: "this", pos: 0, start_op: 0, end_op: 225
+                  ]
+                Line Informations: [
+                    0: line: 214, op: 1
+                    1: line: 216, op: 1
+                    2: line: 217, op: 8
+                    3: line: 219, op: 16
+                    4: line: 220, op: 23
+                    5: line: 222, op: 27
+                    6: line: 224, op: 30
+                    7: line: 225, op: 38
+                    8: line: 226, op: 42
+                    9: line: 227, op: 46
+                    10: line: 229, op: 49
+                    11: line: 233, op: 54
+                    12: line: 236, op: 58
+                    13: line: 237, op: 63
+                    14: line: 238, op: 68
+                    15: line: 240, op: 77
+                    16: line: 241, op: 131
+                    17: line: 242, op: 141
+                    18: line: 244, op: 147
+                    19: line: 246, op: 152
+                    20: line: 247, op: 158
+                    21: line: 248, op: 164
+                    22: line: 249, op: 172
+                    23: line: 251, op: 176
+                    24: line: 252, op: 183
+                    25: line: 254, op: 191
+                    26: line: 255, op: 196
+                    27: line: 259, op: 199
+                    28: line: 261, op: 205
+                    29: line: 277, op: 217
+                    30: line: 279, op: 221
+                    31: line: 280, op: 224
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 214)
+                    1:  line(-, 216)
+                    2:  load(s5, "version")
+                    3:  exists(s5, s3, s5)
+                    4:  not(s5, s5)
+                    5:  jz(s5, 2)
+                    6:  loadbool(s5, 0)
+                    7:  return(1, 5)
+                    8:  line(-, 217)
+                    9:  getk(s5, "version", s3)
+                    10:  prepcallk(s6, "GetVersion", s0, s7)
+                    11:  call(6, s6, s7, 1)
+                    12:  ne(s5, 6, s5, 0)
+                    13:  jz(s5, 2)
+                    14:  loadbool(s5, 0)
+                    15:  return(1, 5)
+                    16:  line(-, 219)
+                    17:  load(s5, "is_watch")
+                    18:  exists(s5, s3, s5)
+                    19:  not(s5, s5)
+                    20:  jz(s5, 2)
+                    21:  loadbool(s5, 0)
+                    22:  return(1, 5)
+                    23:  line(-, 220)
+                    24:  loadint(s5, 0)
+                    25:  jcmp(s5, 27, s1, CMP_G)
+                    26:  line(-, 222)
+                    27:  getk(s5, "is_watch", s3)
+                    28:  jz(s5, 20)
+                    29:  line(-, 224)
+                    30:  loadroot(s5)
+                    31:  getk(s5, "config_data", s5)
+                    32:  getk(s5, "network_open_mode", s5)
+                    33:  loadint(s6, 1)
+                    34:  eq(s5, 6, s5, 0)
+                    35:  jz(s5, 2)
+                    36:  loadbool(s5, 0)
+                    37:  return(1, 5)
+                    38:  line(-, 225)
+                    39:  load(s5, "is_watch")
+                    40:  loadbool(s6, 1)
+                    41:  newslot(s255, s4, s5, s6)
+                    42:  line(-, 226)
+                    43:  load(s5, "is_vs")
+                    44:  loadbool(s6, 1)
+                    45:  newslot(s255, s4, s5, s6)
+                    46:  line(-, 227)
+                    47:  loadbool(s5, 1)
+                    48:  return(1, 5)
+                    49:  line(-, 229)
+                    50:  loadbool(s5, 0)
+                    51:  return(1, 5)
+                    52:  jmp(-, 5)
+                    53:  line(-, 233)
+                    54:  getk(s5, "is_watch", s3)
+                    55:  jz(s5, 2)
+                    56:  loadbool(s5, 0)
+                    57:  return(1, 5)
+                    58:  line(-, 236)
+                    59:  loadroot(s5)
+                    60:  dload(s6, "network_inst", s7, "mb_server")
+                    61:  get(s7, s0, s7)
+                    62:  set(s255, s5, s6, s7)
+                    63:  line(-, 237)
+                    64:  loadroot(s5)
+                    65:  load(s6, "network_input_initialized")
+                    66:  loadbool(s7, 0)
+                    67:  set(s255, s5, s6, s7)
+                    68:  line(-, 238)
+                    69:  loadroot(s5)
+                    70:  getk(s5, "network", s5)
+                    71:  load(s6, "rand_seed")
+                    72:  loadroot(s7)
+                    73:  getk(s7, "libact", s7)
+                    74:  prepcallk(s7, "timeGetTime", s7, s8)
+                    75:  call(7, s7, s8, 1)
+                    76:  set(s255, s5, s6, s7)
+                    77:  line(-, 240)
+                    78:  loadroot(s5)
+                    79:  getk(s5, "network", s5)
+                    80:  load(s6, "hidden_char")
+                    81:  loadroot(s7)
+                    82:  getk(s7, "save_data", s7)
+                    83:  getk(s7, "enable_mamizo", s7)
+                    84:  jz(s7, 4)
+                    85:  loadint(s8, 1)
+                    86:  loadint(s9, 0)
+                    87:  bitw(s7, s9, s8, BW_SHIFTL)
+                    88:  jmp(-, 1)
+                    89:  loadint(s7, 0)
+                    90:  loadroot(s8)
+                    91:  getk(s8, "save_data", s8)
+                    92:  getk(s8, "enable_kokoro", s8)
+                    93:  jz(s8, 4)
+                    94:  loadint(s9, 1)
+                    95:  loadint(s10, 1)
+                    96:  bitw(s8, s10, s9, BW_SHIFTL)
+                    97:  jmp(-, 1)
+                    98:  loadint(s8, 0)
+                    99:  bitw(s7, s8, s7, BW_OR)
+                    100:  loadroot(s8)
+                    101:  getk(s8, "save_data", s8)
+                    102:  getk(s8, "enable_stage_tanuki1", s8)
+                    103:  jz(s8, 4)
+                    104:  loadint(s9, 1)
+                    105:  loadint(s10, 2)
+                    106:  bitw(s8, s10, s9, BW_SHIFTL)
+                    107:  jmp(-, 1)
+                    108:  loadint(s8, 0)
+                    109:  bitw(s7, s8, s7, BW_OR)
+                    110:  loadroot(s8)
+                    111:  getk(s8, "save_data", s8)
+                    112:  getk(s8, "enable_stage_tanuki2", s8)
+                    113:  jz(s8, 4)
+                    114:  loadint(s9, 1)
+                    115:  loadint(s10, 3)
+                    116:  bitw(s8, s10, s9, BW_SHIFTL)
+                    117:  jmp(-, 1)
+                    118:  loadint(s8, 0)
+                    119:  bitw(s7, s8, s7, BW_OR)
+                    120:  loadroot(s8)
+                    121:  getk(s8, "save_data", s8)
+                    122:  getk(s8, "enable_stage_kokoro", s8)
+                    123:  jz(s8, 4)
+                    124:  loadint(s9, 1)
+                    125:  loadint(s10, 4)
+                    126:  bitw(s8, s10, s9, BW_SHIFTL)
+                    127:  jmp(-, 1)
+                    128:  loadint(s8, 0)
+                    129:  bitw(s7, s8, s7, BW_OR)
+                    130:  set(s255, s5, s6, s7)
+                    131:  line(-, 241)
+                    132:  loadroot(s5)
+                    133:  getk(s5, "network", s5)
+                    134:  load(s6, "hidden_char")
+                    135:  loadroot(s7)
+                    136:  getk(s7, "network", s7)
+                    137:  getk(s7, "hidden_char", s7)
+                    138:  getk(s8, "hidden_char", s3)
+                    139:  bitw(s7, s8, s7, BW_AND)
+                    140:  set(s255, s5, s6, s7)
+                    141:  line(-, 242)
+                    142:  load(s5, "hidden_char")
+                    143:  loadroot(s6)
+                    144:  getk(s6, "network", s6)
+                    145:  getk(s6, "hidden_char", s6)
+                    146:  newslot(s255, s4, s5, s6)
+                    147:  line(-, 244)
+                    148:  loadroot(s5)
+                    149:  getk(s5, "libact", s5)
+                    150:  prepcallk(s5, "BeginNetworkMode", s5, s6)
+                    151:  call(255, s5, s6, 1)
+                    152:  line(-, 246)
+                    153:  load(s5, "profile")
+                    154:  loadroot(s6)
+                    155:  getk(s6, "network", s6)
+                    156:  getk(s6, "server_profile", s6)
+                    157:  newslot(s255, s4, s5, s6)
+                    158:  line(-, 247)
+                    159:  load(s5, "rand_seed")
+                    160:  loadroot(s6)
+                    161:  getk(s6, "network", s6)
+                    162:  getk(s6, "rand_seed", s6)
+                    163:  newslot(s255, s4, s5, s6)
+                    164:  line(-, 248)
+                    165:  load(s5, "enable_watch")
+                    166:  loadroot(s6)
+                    167:  getk(s6, "config_data", s6)
+                    168:  getk(s6, "network_open_mode", s6)
+                    169:  loadint(s7, 0)
+                    170:  eq(s6, 7, s6, 0)
+                    171:  newslot(s255, s4, s5, s6)
+                    172:  line(-, 249)
+                    173:  load(s5, "is_vs")
+                    174:  loadbool(s6, 1)
+                    175:  newslot(s255, s4, s5, s6)
+                    176:  line(-, 251)
+                    177:  load(s5, "profile")
+                    178:  exists(s5, s3, s5)
+                    179:  not(s5, s5)
+                    180:  jz(s5, 2)
+                    181:  loadbool(s5, 0)
+                    182:  return(1, 5)
+                    183:  line(-, 252)
+                    184:  getk(s5, "profile", s3)
+                    185:  getk(s5, "sig", s5)
+                    186:  loadroot(s6)
+                    187:  getk(s6, "VERSION_SIG", s6)
+                    188:  ne(s5, 6, s5, 0)
+                    189:  jz(s5, 9)
+                    190:  line(-, 254)
+                    191:  loadroot(s5)
+                    192:  getk(s5, "system_log", s5)
+                    193:  prepcallk(s5, "Warn", s5, s6)
+                    194:  load(s7, "�ڑ����̃\�t�g�E�F�A�o�[�W�������قȂ�܂�
+")
+                    195:  call(255, s5, s6, 2)
+                    196:  line(-, 255)
+                    197:  loadbool(s5, 0)
+                    198:  return(1, 5)
+                    199:  line(-, 259)
+                    200:  loadroot(s5)
+                    201:  getk(s5, "network", s5)
+                    202:  dload(s6, "client_profile", s7, "profile")
+                    203:  get(s7, s3, s7)
+                    204:  set(s255, s5, s6, s7)
+                    205:  line(-, 261)
+                    206:  loadroot(s5)
+                    207:  getk(s5, "act", s5)
+                    208:  getk(s5, "fader", s5)
+                    209:  prepcallk(s5, "FadeOut", s5, s6)
+                    210:  loadint(s7, 30)
+                    211:  loadint(s8, 0)
+                    212:  closure(s9, 0)
+                    213:  prepcallk(s9, "bindenv", s9, s10)
+                    214:  move(s11, s0)
+                    215:  call(9, s9, s10, 2)
+                    216:  call(255, s5, s6, 4)
+                    217:  line(-, 277)
+                    218:  prepcallk(s5, "PlaySE", s0, s6)
+                    219:  load(s7, "connect_complete")
+                    220:  call(255, s5, s6, 2)
+                    221:  line(-, 279)
+                    222:  loadbool(s5, 1)
+                    223:  return(1, 5)
+                    224:  line(-, 280)
+                    225:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 15
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 8
+                        ndefaultparams: 0
+                        ninstructions: 46
+                        nfunctions: 0
+                        Literals: [
+                            0: "act"
+                            1: "BG"
+                            2: "Stop"
+                            3: "load_data"
+                            4: "game_mode"
+                            5: "CharSelect2"
+                            6: "SetMode"
+                            7: "Resume"
+                            8: "fader"
+                            9: "FadeIn"
+                            10: "srand"
+                            11: "network"
+                            12: "rand_seed"
+                            13: "thisAct"
+                            14: "Suspend"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 45
+                          ]
+                        Line Informations: [
+                            0: line: 264, op: 1
+                            1: line: 266, op: 6
+                            2: line: 267, op: 12
+                            3: line: 268, op: 19
+                            4: line: 270, op: 25
+                            5: line: 272, op: 34
+                            6: line: 274, op: 40
+                            7: line: 275, op: 44
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 264)
+                            1:  loadroot(s1)
+                            2:  getk(s1, "act", s1)
+                            3:  getk(s1, "BG", s1)
+                            4:  prepcallk(s1, "Stop", s1, s2)
+                            5:  call(255, s1, s2, 1)
+                            6:  line(-, 266)
+                            7:  loadroot(s1)
+                            8:  getk(s1, "load_data", s1)
+                            9:  load(s2, "game_mode")
+                            10:  loadint(s3, 1)
+                            11:  set(s255, s1, s2, s3)
+                            12:  line(-, 267)
+                            13:  loadroot(s1)
+                            14:  getk(s1, "act", s1)
+                            15:  getk(s1, "CharSelect2", s1)
+                            16:  prepcallk(s1, "SetMode", s1, s2)
+                            17:  loadint(s3, 2)
+                            18:  call(255, s1, s2, 2)
+                            19:  line(-, 268)
+                            20:  loadroot(s1)
+                            21:  getk(s1, "act", s1)
+                            22:  getk(s1, "CharSelect2", s1)
+                            23:  prepcallk(s1, "Resume", s1, s2)
+                            24:  call(255, s1, s2, 1)
+                            25:  line(-, 270)
+                            26:  loadroot(s1)
+                            27:  getk(s1, "act", s1)
+                            28:  getk(s1, "fader", s1)
+                            29:  prepcallk(s1, "FadeIn", s1, s2)
+                            30:  loadint(s3, 30)
+                            31:  loadint(s4, 0)
+                            32:  loadnulls(s5, 1)
+                            33:  call(255, s1, s2, 4)
+                            34:  line(-, 272)
+                            35:  prepcallk(s1, "srand", s0, s2)
+                            36:  loadroot(s3)
+                            37:  getk(s3, "network", s3)
+                            38:  getk(s3, "rand_seed", s3)
+                            39:  call(255, s1, s2, 2)
+                            40:  line(-, 274)
+                            41:  getk(s1, "thisAct", s0)
+                            42:  prepcallk(s1, "Suspend", s1, s2)
+                            43:  call(255, s1, s2, 1)
+                            44:  line(-, 275)
+                            45:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 6
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 12
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 1
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 10
+                nfunctions: 0
+                Literals: [
+                    0: "DisconnectNetwork"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "id"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "id", pos: 1, start_op: 0, end_op: 9
+                    1: name: "this", pos: 0, start_op: 0, end_op: 9
+                  ]
+                Line Informations: [
+                    0: line: 287, op: 1
+                    1: line: 288, op: 1
+                    2: line: 289, op: 5
+                    3: line: 290, op: 8
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 287)
+                    1:  line(-, 288)
+                    2:  loadint(s2, 0)
+                    3:  eq(s2, 2, s1, 0)
+                    4:  jz(s2, 3)
+                    5:  line(-, 289)
+                    6:  prepcallk(s2, "DisconnectNetwork", s0, s3)
+                    7:  call(255, s2, s3, 1)
+                    8:  line(-, 290)
+                    9:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 3
+                noutervals: 0
+                nlocalvarinfos: 4
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 34
+                nfunctions: 0
+                Literals: [
+                    0: "message"
+                    1: "act"
+                    2: "CharSelect2"
+                    3: "network_pear_ready"
+                    4: "network_profile"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "id"
+                    2: "table"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_e", pos: 3, start_op: 31, end_op: 31
+                    1: name: "table", pos: 2, start_op: 0, end_op: 33
+                    2: name: "id", pos: 1, start_op: 0, end_op: 33
+                    3: name: "this", pos: 0, start_op: 0, end_op: 33
+                  ]
+                Line Informations: [
+                    0: line: 298, op: 1
+                    1: line: 299, op: 2
+                    2: line: 301, op: 3
+                    3: line: 304, op: 8
+                    4: line: 305, op: 15
+                    5: line: 307, op: 21
+                    6: line: 308, op: 27
+                    7: line: 310, op: 31
+                    8: line: 311, op: 32
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 298)
+                    1:  pushtrap(3, 29)
+                    2:  line(-, 299)
+                    3:  line(-, 301)
+                    4:  getk(s3, "message", s2)
+                    5:  loadint(s4, 0)
+                    6:  eq(s4, 4, s3, 0)
+                    7:  jz(s4, 10)
+                    8:  line(-, 304)
+                    9:  loadroot(s4)
+                    10:  getk(s4, "act", s4)
+                    11:  getk(s4, "CharSelect2", s4)
+                    12:  load(s5, "network_pear_ready")
+                    13:  loadbool(s6, 1)
+                    14:  newslot(s255, s4, s5, s6)
+                    15:  line(-, 305)
+                    16:  jmp(-, 12)
+                    17:  jmp(-, 3)
+                    18:  loadint(s4, 1)
+                    19:  eq(s4, 4, s3, 0)
+                    20:  jz(s4, 8)
+                    21:  line(-, 307)
+                    22:  loadroot(s4)
+                    23:  getk(s4, "act", s4)
+                    24:  getk(s4, "CharSelect2", s4)
+                    25:  load(s5, "network_profile")
+                    26:  newslot(s255, s4, s5, s2)
+                    27:  line(-, 308)
+                    28:  jmp(-, 0)
+                    29:  poptrap(1)
+                    30:  jmp(-, 1)
+                    31:  line(-, 310)
+                    32:  line(-, 311)
+                    33:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 7
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 11
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "StartupClient"
+        nliterals: 49
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 34
+        ndefaultparams: 0
+        ninstructions: 266
+        nfunctions: 5
+        Literals: [
+            0: "mb_client"
+            1: "manbow"
+            2: "NetworkClient"
+            3: "network_client_num"
+            4: "GetPrivateProfileInt"
+            5: "network"
+            6: "client_watch_num"
+            7: "config.ini"
+            8: "client_num"
+            9: "Init"
+            10: "config_data"
+            11: "network_hosting_port"
+            12: "network_inst"
+            13: "act"
+            14: "NetworkVS"
+            15: "ShowConnectionFailed"
+            16: "ConnectRequest"
+            17: "ConnectComplete"
+            18: "bindenv"
+            19: "ConnectReject"
+            20: "DisconnectParent"
+            21: "ReceiveFromParent"
+            22: "save_data"
+            23: "profile"
+            24: "icon"
+            25: ""
+            26: "name"
+            27: "icon_dump"
+            28: "ProfileIcon"
+            29: "icon_table"
+            30: "DumpBase64"
+            31: "resource"
+            32: "main_icon"
+            33: "version"
+            34: "GetVersion"
+            35: "is_watch"
+            36: "network_watch_mode"
+            37: "client_profile"
+            38: "server_profile"
+            39: "hidden_char"
+            40: "enable_mamizo"
+            41: "enable_kokoro"
+            42: "enable_stage_tanuki1"
+            43: "enable_stage_tanuki2"
+            44: "enable_stage_kokoro"
+            45: "AddpendNetworkHistory"
+            46: "network_target_host"
+            47: "network_target_port"
+            48: "Connect"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "connect_param", pos: 3, start_op: 150, end_op: 263
+            1: name: "icon_name", pos: 2, start_op: 120, end_op: 263
+            2: name: "profile", pos: 1, start_op: 111, end_op: 263
+            3: name: "this", pos: 0, start_op: 0, end_op: 265
+          ]
+        Line Informations: [
+            0: line: 343, op: 1
+            1: line: 344, op: 8
+            2: line: 346, op: 19
+            3: line: 347, op: 28
+            4: line: 348, op: 36
+            5: line: 350, op: 37
+            6: line: 352, op: 49
+            7: line: 353, op: 53
+            8: line: 354, op: 58
+            9: line: 355, op: 64
+            10: line: 359, op: 66
+            11: line: 368, op: 67
+            12: line: 385, op: 72
+            13: line: 459, op: 80
+            14: line: 479, op: 88
+            15: line: 502, op: 96
+            16: line: 525, op: 104
+            17: line: 526, op: 111
+            18: line: 527, op: 120
+            19: line: 529, op: 123
+            20: line: 531, op: 131
+            21: line: 533, op: 142
+            22: line: 536, op: 148
+            23: line: 537, op: 150
+            24: line: 538, op: 156
+            25: line: 539, op: 164
+            26: line: 540, op: 168
+            27: line: 542, op: 171
+            28: line: 543, op: 176
+            29: line: 544, op: 182
+            30: line: 545, op: 236
+            31: line: 547, op: 242
+            32: line: 550, op: 252
+            33: line: 555, op: 264
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 343)
+            1:  loadroot(s1)
+            2:  load(s2, "mb_client")
+            3:  loadroot(s3)
+            4:  getk(s3, "manbow", s3)
+            5:  prepcallk(s3, "NetworkClient", s3, s4)
+            6:  call(3, s3, s4, 1)
+            7:  newslot(s255, s1, s2, s3)
+            8:  line(-, 344)
+            9:  loadroot(s1)
+            10:  load(s2, "network_client_num")
+            11:  loadroot(s3)
+            12:  getk(s3, "manbow", s3)
+            13:  prepcallk(s3, "GetPrivateProfileInt", s3, s4)
+            14:  dload(s5, "network", s6, "client_watch_num")
+            15:  loadint(s7, 3)
+            16:  load(s8, "config.ini")
+            17:  call(3, s3, s4, 5)
+            18:  set(s255, s1, s2, s3)
+            19:  line(-, 346)
+            20:  loadroot(s1)
+            21:  getk(s1, "network_client_num", s1)
+            22:  loadint(s2, 0)
+            23:  jcmp(s2, 4, s1, CMP_L)
+            24:  load(s1, "client_num")
+            25:  loadint(s2, 0)
+            26:  set(s255, s0, s1, s2)
+            27:  jmp(-, 8)
+            28:  line(-, 347)
+            29:  loadroot(s1)
+            30:  getk(s1, "network_client_num", s1)
+            31:  loadint(s2, 4)
+            32:  jcmp(s2, 3, s1, CMP_G)
+            33:  load(s1, "client_num")
+            34:  loadint(s2, 4)
+            35:  set(s255, s0, s1, s2)
+            36:  line(-, 348)
+            37:  line(-, 350)
+            38:  getk(s1, "mb_client", s0)
+            39:  prepcallk(s1, "Init", s1, s2)
+            40:  loadroot(s3)
+            41:  getk(s3, "config_data", s3)
+            42:  getk(s3, "network_hosting_port", s3)
+            43:  loadroot(s4)
+            44:  getk(s4, "network_client_num", s4)
+            45:  call(1, s1, s2, 3)
+            46:  not(s1, s1)
+            47:  jz(s1, 18)
+            48:  line(-, 352)
+            49:  loadroot(s1)
+            50:  load(s2, "network_inst")
+            51:  loadnulls(s3, 1)
+            52:  newslot(s255, s1, s2, s3)
+            53:  line(-, 353)
+            54:  loadroot(s1)
+            55:  load(s2, "mb_client")
+            56:  loadnulls(s3, 1)
+            57:  set(s255, s1, s2, s3)
+            58:  line(-, 354)
+            59:  loadroot(s1)
+            60:  getk(s1, "act", s1)
+            61:  getk(s1, "NetworkVS", s1)
+            62:  prepcallk(s1, "ShowConnectionFailed", s1, s2)
+            63:  call(255, s1, s2, 1)
+            64:  line(-, 355)
+            65:  return(255, 0)
+            66:  line(-, 359)
+            67:  line(-, 368)
+            68:  getk(s1, "mb_client", s0)
+            69:  load(s2, "ConnectRequest")
+            70:  closure(s3, 0)
+            71:  set(s255, s1, s2, s3)
+            72:  line(-, 385)
+            73:  getk(s1, "mb_client", s0)
+            74:  load(s2, "ConnectComplete")
+            75:  closure(s3, 1)
+            76:  prepcallk(s3, "bindenv", s3, s4)
+            77:  move(s5, s0)
+            78:  call(3, s3, s4, 2)
+            79:  set(s255, s1, s2, s3)
+            80:  line(-, 459)
+            81:  getk(s1, "mb_client", s0)
+            82:  load(s2, "ConnectReject")
+            83:  closure(s3, 2)
+            84:  prepcallk(s3, "bindenv", s3, s4)
+            85:  move(s5, s0)
+            86:  call(3, s3, s4, 2)
+            87:  set(s255, s1, s2, s3)
+            88:  line(-, 479)
+            89:  getk(s1, "mb_client", s0)
+            90:  load(s2, "DisconnectParent")
+            91:  closure(s3, 3)
+            92:  prepcallk(s3, "bindenv", s3, s4)
+            93:  move(s5, s0)
+            94:  call(3, s3, s4, 2)
+            95:  set(s255, s1, s2, s3)
+            96:  line(-, 502)
+            97:  getk(s1, "mb_client", s0)
+            98:  load(s2, "ReceiveFromParent")
+            99:  closure(s3, 4)
+            100:  prepcallk(s3, "bindenv", s3, s4)
+            101:  move(s5, s0)
+            102:  call(3, s3, s4, 2)
+            103:  set(s255, s1, s2, s3)
+            104:  line(-, 525)
+            105:  loadroot(s1)
+            106:  getk(s1, "save_data", s1)
+            107:  getk(s1, "profile", s1)
+            108:  getk(s2, "profile", s0)
+            109:  get(s1, s1, s2)
+            110:  clone(s1, s1)
+            111:  line(-, 526)
+            112:  getk(s2, "icon", s1)
+            113:  ne(s2, 25, s2, 255)
+            114:  jz(s2, 3)
+            115:  getk(s3, "icon", s1)
+            116:  move(s2, s3)
+            117:  jmp(-, 2)
+            118:  getk(s3, "name", s1)
+            119:  move(s2, s3)
+            120:  line(-, 527)
+            121:  dload(s3, "icon_dump", s4, "")
+            122:  newslot(s255, s1, s3, s4)
+            123:  line(-, 529)
+            124:  loadroot(s3)
+            125:  getk(s3, "act", s3)
+            126:  getk(s3, "ProfileIcon", s3)
+            127:  getk(s3, "icon_table", s3)
+            128:  exists(s3, s3, s2)
+            129:  jz(s3, 11)
+            130:  line(-, 531)
+            131:  load(s3, "icon_dump")
+            132:  loadroot(s4)
+            133:  getk(s4, "act", s4)
+            134:  getk(s4, "ProfileIcon", s4)
+            135:  getk(s4, "icon_table", s4)
+            136:  get(s4, s4, s2)
+            137:  prepcallk(s4, "DumpBase64", s4, s5)
+            138:  call(4, s4, s5, 1)
+            139:  set(s255, s1, s3, s4)
+            140:  jmp(-, 7)
+            141:  line(-, 533)
+            142:  dload(s3, "icon_dump", s4, "resource")
+            143:  get(s4, s0, s4)
+            144:  getk(s4, "main_icon", s4)
+            145:  prepcallk(s4, "DumpBase64", s4, s5)
+            146:  call(4, s4, s5, 1)
+            147:  set(s255, s1, s3, s4)
+            148:  line(-, 536)
+            149:  newobj(s3, 0, 0, 0)
+            150:  line(-, 537)
+            151:  load(s4, "version")
+            152:  loadroot(s5)
+            153:  prepcallk(s5, "GetVersion", s5, s6)
+            154:  call(5, s5, s6, 1)
+            155:  newslot(s255, s3, s4, s5)
+            156:  line(-, 538)
+            157:  load(s4, "is_watch")
+            158:  loadroot(s5)
+            159:  getk(s5, "config_data", s5)
+            160:  getk(s5, "network_watch_mode", s5)
+            161:  loadint(s6, 1)
+            162:  eq(s5, 6, s5, 0)
+            163:  newslot(s255, s3, s4, s5)
+            164:  line(-, 539)
+            165:  getk(s4, "is_watch", s3)
+            166:  not(s4, s4)
+            167:  jz(s4, 3)
+            168:  line(-, 540)
+            169:  load(s4, "profile")
+            170:  newslot(s255, s3, s4, s1)
+            171:  line(-, 542)
+            172:  loadroot(s4)
+            173:  getk(s4, "network", s4)
+            174:  load(s5, "client_profile")
+            175:  set(s255, s4, s5, s1)
+            176:  line(-, 543)
+            177:  loadroot(s4)
+            178:  getk(s4, "network", s4)
+            179:  load(s5, "server_profile")
+            180:  loadnulls(s6, 1)
+            181:  set(s255, s4, s5, s6)
+            182:  line(-, 544)
+            183:  loadroot(s4)
+            184:  getk(s4, "network", s4)
+            185:  load(s5, "hidden_char")
+            186:  loadroot(s6)
+            187:  getk(s6, "save_data", s6)
+            188:  getk(s6, "enable_mamizo", s6)
+            189:  jz(s6, 4)
+            190:  loadint(s7, 1)
+            191:  loadint(s8, 0)
+            192:  bitw(s6, s8, s7, BW_SHIFTL)
+            193:  jmp(-, 1)
+            194:  loadint(s6, 0)
+            195:  loadroot(s7)
+            196:  getk(s7, "save_data", s7)
+            197:  getk(s7, "enable_kokoro", s7)
+            198:  jz(s7, 4)
+            199:  loadint(s8, 1)
+            200:  loadint(s9, 1)
+            201:  bitw(s7, s9, s8, BW_SHIFTL)
+            202:  jmp(-, 1)
+            203:  loadint(s7, 0)
+            204:  bitw(s6, s7, s6, BW_OR)
+            205:  loadroot(s7)
+            206:  getk(s7, "save_data", s7)
+            207:  getk(s7, "enable_stage_tanuki1", s7)
+            208:  jz(s7, 4)
+            209:  loadint(s8, 1)
+            210:  loadint(s9, 2)
+            211:  bitw(s7, s9, s8, BW_SHIFTL)
+            212:  jmp(-, 1)
+            213:  loadint(s7, 0)
+            214:  bitw(s6, s7, s6, BW_OR)
+            215:  loadroot(s7)
+            216:  getk(s7, "save_data", s7)
+            217:  getk(s7, "enable_stage_tanuki2", s7)
+            218:  jz(s7, 4)
+            219:  loadint(s8, 1)
+            220:  loadint(s9, 3)
+            221:  bitw(s7, s9, s8, BW_SHIFTL)
+            222:  jmp(-, 1)
+            223:  loadint(s7, 0)
+            224:  bitw(s6, s7, s6, BW_OR)
+            225:  loadroot(s7)
+            226:  getk(s7, "save_data", s7)
+            227:  getk(s7, "enable_stage_kokoro", s7)
+            228:  jz(s7, 4)
+            229:  loadint(s8, 1)
+            230:  loadint(s9, 4)
+            231:  bitw(s7, s9, s8, BW_SHIFTL)
+            232:  jmp(-, 1)
+            233:  loadint(s7, 0)
+            234:  bitw(s6, s7, s6, BW_OR)
+            235:  set(s255, s4, s5, s6)
+            236:  line(-, 545)
+            237:  load(s4, "hidden_char")
+            238:  loadroot(s5)
+            239:  getk(s5, "network", s5)
+            240:  getk(s5, "hidden_char", s5)
+            241:  newslot(s255, s3, s4, s5)
+            242:  line(-, 547)
+            243:  loadroot(s4)
+            244:  prepcallk(s4, "AddpendNetworkHistory", s4, s5)
+            245:  loadroot(s6)
+            246:  getk(s6, "config_data", s6)
+            247:  getk(s6, "network_target_host", s6)
+            248:  loadroot(s7)
+            249:  getk(s7, "config_data", s7)
+            250:  getk(s7, "network_target_port", s7)
+            251:  call(255, s4, s5, 3)
+            252:  line(-, 550)
+            253:  getk(s4, "mb_client", s0)
+            254:  prepcallk(s4, "Connect", s4, s5)
+            255:  loadroot(s6)
+            256:  getk(s6, "config_data", s6)
+            257:  getk(s6, "network_target_host", s6)
+            258:  loadroot(s7)
+            259:  getk(s7, "config_data", s7)
+            260:  getk(s7, "network_target_port", s7)
+            261:  move(s8, s3)
+            262:  tailcall(4, s4, s5, 4)
+            263:  return(1, 4)
+            264:  line(-, 555)
+            265:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 6
+                nparameters: 5
+                noutervals: 0
+                nlocalvarinfos: 5
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 44
+                nfunctions: 0
+                Literals: [
+                    0: "version"
+                    1: "GetVersion"
+                    2: "is_watch"
+                    3: "network_allow_watch"
+                    4: "is_vs"
+                    5: "network_is_watch"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "id"
+                    2: "context"
+                    3: "table_src"
+                    4: "table_dst"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "table_dst", pos: 4, start_op: 0, end_op: 43
+                    1: name: "table_src", pos: 3, start_op: 0, end_op: 43
+                    2: name: "context", pos: 2, start_op: 0, end_op: 43
+                    3: name: "id", pos: 1, start_op: 0, end_op: 43
+                    4: name: "this", pos: 0, start_op: 0, end_op: 43
+                  ]
+                Line Informations: [
+                    0: line: 370, op: 1
+                    1: line: 372, op: 1
+                    2: line: 373, op: 8
+                    3: line: 376, op: 16
+                    4: line: 377, op: 22
+                    5: line: 379, op: 29
+                    6: line: 380, op: 33
+                    7: line: 382, op: 39
+                    8: line: 383, op: 42
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 370)
+                    1:  line(-, 372)
+                    2:  load(s5, "version")
+                    3:  exists(s5, s3, s5)
+                    4:  not(s5, s5)
+                    5:  jz(s5, 2)
+                    6:  loadbool(s5, 0)
+                    7:  return(1, 5)
+                    8:  line(-, 373)
+                    9:  getk(s5, "version", s3)
+                    10:  prepcallk(s6, "GetVersion", s0, s7)
+                    11:  call(6, s6, s7, 1)
+                    12:  ne(s5, 6, s5, 0)
+                    13:  jz(s5, 2)
+                    14:  loadbool(s5, 0)
+                    15:  return(1, 5)
+                    16:  line(-, 376)
+                    17:  getk(s5, "is_watch", s3)
+                    18:  not(s5, s5)
+                    19:  jz(s5, 2)
+                    20:  loadbool(s5, 0)
+                    21:  return(1, 5)
+                    22:  line(-, 377)
+                    23:  loadroot(s5)
+                    24:  getk(s5, "network_allow_watch", s5)
+                    25:  not(s5, s5)
+                    26:  jz(s5, 2)
+                    27:  loadbool(s5, 0)
+                    28:  return(1, 5)
+                    29:  line(-, 379)
+                    30:  load(s5, "is_watch")
+                    31:  loadbool(s6, 1)
+                    32:  newslot(s255, s4, s5, s6)
+                    33:  line(-, 380)
+                    34:  load(s5, "is_vs")
+                    35:  loadroot(s6)
+                    36:  getk(s6, "network_is_watch", s6)
+                    37:  not(s6, s6)
+                    38:  newslot(s255, s4, s5, s6)
+                    39:  line(-, 382)
+                    40:  loadbool(s5, 1)
+                    41:  return(1, 5)
+                    42:  line(-, 383)
+                    43:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 28
+                nparameters: 4
+                noutervals: 0
+                nlocalvarinfos: 4
+                nlineinfos: 26
+                ndefaultparams: 0
+                ninstructions: 139
+                nfunctions: 2
+                Literals: [
+                    0: "is_vs"
+                    1: "network_is_parent_vs"
+                    2: "network_is_watch"
+                    3: "network_inst"
+                    4: "is_watch"
+                    5: "network_allow_watch"
+                    6: "mb_client"
+                    7: "act"
+                    8: "fader_nosync"
+                    9: "FadeOut"
+                    10: "bindenv"
+                    11: "enable_watch"
+                    12: "network"
+                    13: "server_profile"
+                    14: "profile"
+                    15: "rand_seed"
+                    16: "srand"
+                    17: "network_input_initialized"
+                    18: "hidden_char"
+                    19: "libact"
+                    20: "BeginNetworkMode"
+                    21: "sig"
+                    22: "VERSION_SIG"
+                    23: "system_log"
+                    24: "Warn"
+                    25: "�ڑ���̃\�t�g�E�F�A�o�[�W�������قȂ�܂�
+"
+                    26: "DisconnectNetwork"
+                    27: "fader"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "id"
+                    2: "context"
+                    3: "_reply_table"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_reply_table", pos: 3, start_op: 0, end_op: 138
+                    1: name: "context", pos: 2, start_op: 0, end_op: 138
+                    2: name: "id", pos: 1, start_op: 0, end_op: 138
+                    3: name: "this", pos: 0, start_op: 0, end_op: 138
+                  ]
+                Line Informations: [
+                    0: line: 387, op: 1
+                    1: line: 388, op: 1
+                    2: line: 389, op: 5
+                    3: line: 391, op: 10
+                    4: line: 394, op: 19
+                    5: line: 396, op: 24
+                    6: line: 397, op: 24
+                    7: line: 398, op: 29
+                    8: line: 399, op: 34
+                    9: line: 403, op: 39
+                    10: line: 413, op: 51
+                    11: line: 416, op: 53
+                    12: line: 417, op: 58
+                    13: line: 419, op: 63
+                    14: line: 420, op: 69
+                    15: line: 421, op: 75
+                    16: line: 423, op: 81
+                    17: line: 424, op: 86
+                    18: line: 426, op: 91
+                    19: line: 428, op: 101
+                    20: line: 430, op: 106
+                    21: line: 432, op: 114
+                    22: line: 434, op: 119
+                    23: line: 435, op: 122
+                    24: line: 438, op: 125
+                    25: line: 453, op: 137
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 387)
+                    1:  line(-, 388)
+                    2:  load(s4, "is_vs")
+                    3:  exists(s4, s3, s4)
+                    4:  jz(s4, 5)
+                    5:  line(-, 389)
+                    6:  loadroot(s4)
+                    7:  dload(s5, "network_is_parent_vs", s6, "is_vs")
+                    8:  get(s6, s3, s6)
+                    9:  set(s255, s4, s5, s6)
+                    10:  line(-, 391)
+                    11:  loadroot(s4)
+                    12:  getk(s4, "network_is_watch", s4)
+                    13:  and(s4, 3, s4)
+                    14:  loadroot(s5)
+                    15:  getk(s5, "network_inst", s5)
+                    16:  move(s4, s5)
+                    17:  jz(s4, 1)
+                    18:  return(255, 0)
+                    19:  line(-, 394)
+                    20:  load(s4, "is_watch")
+                    21:  exists(s4, s3, s4)
+                    22:  jz(s4, 30)
+                    23:  line(-, 396)
+                    24:  line(-, 397)
+                    25:  loadroot(s4)
+                    26:  load(s5, "network_allow_watch")
+                    27:  loadbool(s6, 1)
+                    28:  set(s255, s4, s5, s6)
+                    29:  line(-, 398)
+                    30:  loadroot(s4)
+                    31:  load(s5, "network_is_watch")
+                    32:  loadbool(s6, 1)
+                    33:  set(s255, s4, s5, s6)
+                    34:  line(-, 399)
+                    35:  loadroot(s4)
+                    36:  dload(s5, "network_inst", s6, "mb_client")
+                    37:  get(s6, s0, s6)
+                    38:  set(s255, s4, s5, s6)
+                    39:  line(-, 403)
+                    40:  loadroot(s4)
+                    41:  getk(s4, "act", s4)
+                    42:  getk(s4, "fader_nosync", s4)
+                    43:  prepcallk(s4, "FadeOut", s4, s5)
+                    44:  loadint(s6, 30)
+                    45:  loadint(s7, 0)
+                    46:  closure(s8, 0)
+                    47:  prepcallk(s8, "bindenv", s8, s9)
+                    48:  move(s10, s0)
+                    49:  call(8, s8, s9, 2)
+                    50:  call(255, s4, s5, 4)
+                    51:  line(-, 413)
+                    52:  return(255, 0)
+                    53:  line(-, 416)
+                    54:  loadroot(s4)
+                    55:  load(s5, "network_is_watch")
+                    56:  loadbool(s6, 0)
+                    57:  set(s255, s4, s5, s6)
+                    58:  line(-, 417)
+                    59:  loadroot(s4)
+                    60:  dload(s5, "network_allow_watch", s6, "enable_watch")
+                    61:  get(s6, s3, s6)
+                    62:  set(s255, s4, s5, s6)
+                    63:  line(-, 419)
+                    64:  loadroot(s4)
+                    65:  getk(s4, "network", s4)
+                    66:  dload(s5, "server_profile", s6, "profile")
+                    67:  get(s6, s3, s6)
+                    68:  set(s255, s4, s5, s6)
+                    69:  line(-, 420)
+                    70:  loadroot(s4)
+                    71:  getk(s4, "network", s4)
+                    72:  dload(s5, "rand_seed", s6, "rand_seed")
+                    73:  get(s6, s3, s6)
+                    74:  set(s255, s4, s5, s6)
+                    75:  line(-, 421)
+                    76:  prepcallk(s4, "srand", s0, s5)
+                    77:  loadroot(s6)
+                    78:  getk(s6, "network", s6)
+                    79:  getk(s6, "rand_seed", s6)
+                    80:  call(255, s4, s5, 2)
+                    81:  line(-, 423)
+                    82:  loadroot(s4)
+                    83:  dload(s5, "network_inst", s6, "mb_client")
+                    84:  get(s6, s0, s6)
+                    85:  set(s255, s4, s5, s6)
+                    86:  line(-, 424)
+                    87:  loadroot(s4)
+                    88:  load(s5, "network_input_initialized")
+                    89:  loadbool(s6, 0)
+                    90:  set(s255, s4, s5, s6)
+                    91:  line(-, 426)
+                    92:  loadroot(s4)
+                    93:  getk(s4, "network", s4)
+                    94:  load(s5, "hidden_char")
+                    95:  loadroot(s6)
+                    96:  getk(s6, "network", s6)
+                    97:  getk(s6, "hidden_char", s6)
+                    98:  getk(s7, "hidden_char", s3)
+                    99:  bitw(s6, s7, s6, BW_AND)
+                    100:  set(s255, s4, s5, s6)
+                    101:  line(-, 428)
+                    102:  loadroot(s4)
+                    103:  getk(s4, "libact", s4)
+                    104:  prepcallk(s4, "BeginNetworkMode", s4, s5)
+                    105:  call(255, s4, s5, 1)
+                    106:  line(-, 430)
+                    107:  getk(s4, "profile", s3)
+                    108:  getk(s4, "sig", s4)
+                    109:  loadroot(s5)
+                    110:  getk(s5, "VERSION_SIG", s5)
+                    111:  ne(s4, 5, s4, 0)
+                    112:  jz(s4, 12)
+                    113:  line(-, 432)
+                    114:  loadroot(s4)
+                    115:  getk(s4, "system_log", s4)
+                    116:  prepcallk(s4, "Warn", s4, s5)
+                    117:  load(s6, "�ڑ���̃\�t�g�E�F�A�o�[�W�������قȂ�܂�
+")
+                    118:  call(255, s4, s5, 2)
+                    119:  line(-, 434)
+                    120:  prepcallk(s4, "DisconnectNetwork", s0, s5)
+                    121:  call(255, s4, s5, 1)
+                    122:  line(-, 435)
+                    123:  loadbool(s4, 0)
+                    124:  return(1, 4)
+                    125:  line(-, 438)
+                    126:  loadroot(s4)
+                    127:  getk(s4, "act", s4)
+                    128:  getk(s4, "fader", s4)
+                    129:  prepcallk(s4, "FadeOut", s4, s5)
+                    130:  loadint(s6, 30)
+                    131:  loadint(s7, 0)
+                    132:  closure(s8, 1)
+                    133:  prepcallk(s8, "bindenv", s8, s9)
+                    134:  move(s10, s0)
+                    135:  call(8, s8, s9, 2)
+                    136:  call(255, s4, s5, 4)
+                    137:  line(-, 453)
+                    138:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 10
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 6
+                        ndefaultparams: 0
+                        ninstructions: 30
+                        nfunctions: 0
+                        Literals: [
+                            0: "act"
+                            1: "BG"
+                            2: "Stop"
+                            3: "fader_nosync"
+                            4: "FadeIn"
+                            5: "libact"
+                            6: "BeginNetworkMode"
+                            7: "BeginStreaming"
+                            8: "thisAct"
+                            9: "Suspend"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 29
+                          ]
+                        Line Informations: [
+                            0: line: 406, op: 1
+                            1: line: 407, op: 6
+                            2: line: 408, op: 15
+                            3: line: 409, op: 20
+                            4: line: 411, op: 24
+                            5: line: 412, op: 28
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 406)
+                            1:  loadroot(s1)
+                            2:  getk(s1, "act", s1)
+                            3:  getk(s1, "BG", s1)
+                            4:  prepcallk(s1, "Stop", s1, s2)
+                            5:  call(255, s1, s2, 1)
+                            6:  line(-, 407)
+                            7:  loadroot(s1)
+                            8:  getk(s1, "act", s1)
+                            9:  getk(s1, "fader_nosync", s1)
+                            10:  prepcallk(s1, "FadeIn", s1, s2)
+                            11:  loadint(s3, 30)
+                            12:  loadint(s4, 0)
+                            13:  loadnulls(s5, 1)
+                            14:  call(255, s1, s2, 4)
+                            15:  line(-, 408)
+                            16:  loadroot(s1)
+                            17:  getk(s1, "libact", s1)
+                            18:  prepcallk(s1, "BeginNetworkMode", s1, s2)
+                            19:  call(255, s1, s2, 1)
+                            20:  line(-, 409)
+                            21:  loadroot(s1)
+                            22:  prepcallk(s1, "BeginStreaming", s1, s2)
+                            23:  call(255, s1, s2, 1)
+                            24:  line(-, 411)
+                            25:  getk(s1, "thisAct", s0)
+                            26:  prepcallk(s1, "Suspend", s1, s2)
+                            27:  call(255, s1, s2, 1)
+                            28:  line(-, 412)
+                            29:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 6
+                        bgenerator: 0
+                        varparams: 0
+
+                    1: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 15
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 8
+                        ndefaultparams: 0
+                        ninstructions: 46
+                        nfunctions: 0
+                        Literals: [
+                            0: "act"
+                            1: "BG"
+                            2: "Stop"
+                            3: "load_data"
+                            4: "game_mode"
+                            5: "CharSelect2"
+                            6: "SetMode"
+                            7: "Resume"
+                            8: "fader"
+                            9: "FadeIn"
+                            10: "srand"
+                            11: "network"
+                            12: "rand_seed"
+                            13: "thisAct"
+                            14: "Suspend"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 45
+                          ]
+                        Line Informations: [
+                            0: line: 441, op: 1
+                            1: line: 443, op: 6
+                            2: line: 444, op: 12
+                            3: line: 445, op: 19
+                            4: line: 447, op: 25
+                            5: line: 449, op: 34
+                            6: line: 451, op: 40
+                            7: line: 452, op: 44
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 441)
+                            1:  loadroot(s1)
+                            2:  getk(s1, "act", s1)
+                            3:  getk(s1, "BG", s1)
+                            4:  prepcallk(s1, "Stop", s1, s2)
+                            5:  call(255, s1, s2, 1)
+                            6:  line(-, 443)
+                            7:  loadroot(s1)
+                            8:  getk(s1, "load_data", s1)
+                            9:  load(s2, "game_mode")
+                            10:  loadint(s3, 1)
+                            11:  set(s255, s1, s2, s3)
+                            12:  line(-, 444)
+                            13:  loadroot(s1)
+                            14:  getk(s1, "act", s1)
+                            15:  getk(s1, "CharSelect2", s1)
+                            16:  prepcallk(s1, "SetMode", s1, s2)
+                            17:  loadint(s3, 2)
+                            18:  call(255, s1, s2, 2)
+                            19:  line(-, 445)
+                            20:  loadroot(s1)
+                            21:  getk(s1, "act", s1)
+                            22:  getk(s1, "CharSelect2", s1)
+                            23:  prepcallk(s1, "Resume", s1, s2)
+                            24:  call(255, s1, s2, 1)
+                            25:  line(-, 447)
+                            26:  loadroot(s1)
+                            27:  getk(s1, "act", s1)
+                            28:  getk(s1, "fader", s1)
+                            29:  prepcallk(s1, "FadeIn", s1, s2)
+                            30:  loadint(s3, 30)
+                            31:  loadint(s4, 0)
+                            32:  loadnulls(s5, 1)
+                            33:  call(255, s1, s2, 4)
+                            34:  line(-, 449)
+                            35:  prepcallk(s1, "srand", s0, s2)
+                            36:  loadroot(s3)
+                            37:  getk(s3, "network", s3)
+                            38:  getk(s3, "rand_seed", s3)
+                            39:  call(255, s1, s2, 2)
+                            40:  line(-, 451)
+                            41:  getk(s1, "thisAct", s0)
+                            42:  prepcallk(s1, "Suspend", s1, s2)
+                            43:  call(255, s1, s2, 1)
+                            44:  line(-, 452)
+                            45:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 6
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 11
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: ""
+                name: null
+                nliterals: 8
+                nparameters: 3
+                noutervals: 0
+                nlocalvarinfos: 3
+                nlineinfos: 8
+                ndefaultparams: 0
+                ninstructions: 34
+                nfunctions: 0
+                Literals: [
+                    0: "libact"
+                    1: "EndNetworkMode"
+                    2: "network_inst"
+                    3: "mb_client"
+                    4: "act"
+                    5: "NetworkVS"
+                    6: "Resume"
+                    7: "ShowConnectionFailed"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "context"
+                    2: "table"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "table", pos: 2, start_op: 0, end_op: 33
+                    1: name: "context", pos: 1, start_op: 0, end_op: 33
+                    2: name: "this", pos: 0, start_op: 0, end_op: 33
+                  ]
+                Line Informations: [
+                    0: line: 462, op: 1
+                    1: line: 469, op: 4
+                    2: line: 470, op: 5
+                    3: line: 471, op: 10
+                    4: line: 472, op: 15
+                    5: line: 473, op: 20
+                    6: line: 474, op: 26
+                    7: line: 475, op: 32
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 462)
+                    1:  loadint(s3, 1)
+                    2:  eq(s3, 3, s1, 0)
+                    3:  jz(s3, 0)
+                    4:  line(-, 469)
+                    5:  line(-, 470)
+                    6:  loadroot(s3)
+                    7:  getk(s3, "libact", s3)
+                    8:  prepcallk(s3, "EndNetworkMode", s3, s4)
+                    9:  call(255, s3, s4, 1)
+                    10:  line(-, 471)
+                    11:  loadroot(s3)
+                    12:  load(s4, "network_inst")
+                    13:  loadnulls(s5, 1)
+                    14:  newslot(s255, s3, s4, s5)
+                    15:  line(-, 472)
+                    16:  loadroot(s3)
+                    17:  load(s4, "mb_client")
+                    18:  loadnulls(s5, 1)
+                    19:  set(s255, s3, s4, s5)
+                    20:  line(-, 473)
+                    21:  loadroot(s3)
+                    22:  getk(s3, "act", s3)
+                    23:  getk(s3, "NetworkVS", s3)
+                    24:  prepcallk(s3, "Resume", s3, s4)
+                    25:  call(255, s3, s4, 1)
+                    26:  line(-, 474)
+                    27:  loadroot(s3)
+                    28:  getk(s3, "act", s3)
+                    29:  getk(s3, "NetworkVS", s3)
+                    30:  prepcallk(s3, "ShowConnectionFailed", s3, s4)
+                    31:  call(255, s3, s4, 1)
+                    32:  line(-, 475)
+                    33:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+            3: 
+                sourcename: ""
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 3
+                nlineinfos: 12
+                ndefaultparams: 0
+                ninstructions: 48
+                nfunctions: 0
+                Literals: [
+                    0: "network_is_parent_vs"
+                    1: "message"
+                    2: "network_client_num"
+                    3: "network_inst"
+                    4: "SendToChild"
+                    5: "DisconnectNetwork"
+                    6: "network_is_watch"
+                    7: "Reconnect"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "i", pos: 2, start_op: 13, end_op: 22
+                    1: name: "t", pos: 1, start_op: 7, end_op: 27
+                    2: name: "this", pos: 0, start_op: 0, end_op: 47
+                  ]
+                Line Informations: [
+                    0: line: 481, op: 1
+                    1: line: 482, op: 1
+                    2: line: 484, op: 6
+                    3: line: 485, op: 7
+                    4: line: 486, op: 11
+                    5: line: 487, op: 23
+                    6: line: 488, op: 26
+                    7: line: 491, op: 28
+                    8: line: 493, op: 37
+                    9: line: 494, op: 41
+                    10: line: 496, op: 43
+                    11: line: 497, op: 46
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 481)
+                    1:  line(-, 482)
+                    2:  loadroot(s1)
+                    3:  getk(s1, "network_is_parent_vs", s1)
+                    4:  jz(s1, 23)
+                    5:  line(-, 484)
+                    6:  newobj(s1, 0, 0, 0)
+                    7:  line(-, 485)
+                    8:  load(s2, "message")
+                    9:  loadint(s3, 2)
+                    10:  newslot(s255, s1, s2, s3)
+                    11:  line(-, 486)
+                    12:  loadint(s2, 0)
+                    13:  loadroot(s3)
+                    14:  getk(s3, "network_client_num", s3)
+                    15:  jcmp(s3, 7, s2, CMP_L)
+                    16:  loadroot(s3)
+                    17:  getk(s3, "network_inst", s3)
+                    18:  prepcallk(s3, "SendToChild", s3, s4)
+                    19:  dmove(s5, s2, s6, s1)
+                    20:  call(255, s3, s4, 3)
+                    21:  pincl(s3, s2, 0, 1)
+                    22:  jmp(-, -10)
+                    23:  line(-, 487)
+                    24:  prepcallk(s2, "DisconnectNetwork", s0, s3)
+                    25:  call(255, s2, s3, 1)
+                    26:  line(-, 488)
+                    27:  return(255, 0)
+                    28:  line(-, 491)
+                    29:  loadroot(s1)
+                    30:  getk(s1, "network_is_watch", s1)
+                    31:  and(s1, 3, s1)
+                    32:  loadroot(s2)
+                    33:  getk(s2, "network_inst", s2)
+                    34:  move(s1, s2)
+                    35:  jz(s1, 7)
+                    36:  line(-, 493)
+                    37:  loadroot(s1)
+                    38:  getk(s1, "network_inst", s1)
+                    39:  prepcallk(s1, "Reconnect", s1, s2)
+                    40:  call(255, s1, s2, 1)
+                    41:  line(-, 494)
+                    42:  return(255, 0)
+                    43:  line(-, 496)
+                    44:  prepcallk(s1, "DisconnectNetwork", s0, s2)
+                    45:  call(255, s1, s2, 1)
+                    46:  line(-, 497)
+                    47:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 7
+                bgenerator: 0
+                varparams: 0
+
+            4: 
+                sourcename: ""
+                name: null
+                nliterals: 10
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 5
+                nlineinfos: 14
+                ndefaultparams: 0
+                ninstructions: 66
+                nfunctions: 0
+                Literals: [
+                    0: "message"
+                    1: "act"
+                    2: "CharSelect2"
+                    3: "network_pear_ready"
+                    4: "network_profile"
+                    5: "rand_seed"
+                    6: "network_client_num"
+                    7: "network_inst"
+                    8: "SendToChild"
+                    9: "DisconnectNetwork"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "table"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "i", pos: 4, start_op: 48, end_op: 57
+                    1: name: "t", pos: 3, start_op: 42, end_op: 60
+                    2: name: "_e", pos: 2, start_op: 63, end_op: 63
+                    3: name: "table", pos: 1, start_op: 0, end_op: 65
+                    4: name: "this", pos: 0, start_op: 0, end_op: 65
+                  ]
+                Line Informations: [
+                    0: line: 504, op: 1
+                    1: line: 505, op: 1
+                    2: line: 506, op: 3
+                    3: line: 509, op: 8
+                    4: line: 510, op: 15
+                    5: line: 512, op: 21
+                    6: line: 513, op: 27
+                    7: line: 514, op: 34
+                    8: line: 516, op: 40
+                    9: line: 517, op: 42
+                    10: line: 518, op: 46
+                    11: line: 519, op: 58
+                    12: line: 521, op: 63
+                    13: line: 522, op: 64
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 504)
+                    1:  line(-, 505)
+                    2:  pushtrap(2, 60)
+                    3:  line(-, 506)
+                    4:  getk(s2, "message", s1)
+                    5:  loadint(s3, 0)
+                    6:  eq(s3, 3, s2, 0)
+                    7:  jz(s3, 10)
+                    8:  line(-, 509)
+                    9:  loadroot(s3)
+                    10:  getk(s3, "act", s3)
+                    11:  getk(s3, "CharSelect2", s3)
+                    12:  load(s4, "network_pear_ready")
+                    13:  loadbool(s5, 1)
+                    14:  newslot(s255, s3, s4, s5)
+                    15:  line(-, 510)
+                    16:  jmp(-, 44)
+                    17:  jmp(-, 3)
+                    18:  loadint(s3, 1)
+                    19:  eq(s3, 3, s2, 0)
+                    20:  jz(s3, 16)
+                    21:  line(-, 512)
+                    22:  loadroot(s3)
+                    23:  getk(s3, "act", s3)
+                    24:  getk(s3, "CharSelect2", s3)
+                    25:  load(s4, "network_profile")
+                    26:  newslot(s255, s3, s4, s1)
+                    27:  line(-, 513)
+                    28:  loadroot(s3)
+                    29:  getk(s3, "act", s3)
+                    30:  getk(s3, "CharSelect2", s3)
+                    31:  dload(s4, "rand_seed", s5, "rand_seed")
+                    32:  get(s5, s1, s5)
+                    33:  set(s255, s3, s4, s5)
+                    34:  line(-, 514)
+                    35:  jmp(-, 25)
+                    36:  jmp(-, 3)
+                    37:  loadint(s3, 2)
+                    38:  eq(s3, 3, s2, 0)
+                    39:  jz(s3, 21)
+                    40:  line(-, 516)
+                    41:  newobj(s3, 0, 0, 0)
+                    42:  line(-, 517)
+                    43:  load(s4, "message")
+                    44:  loadint(s5, 2)
+                    45:  newslot(s255, s3, s4, s5)
+                    46:  line(-, 518)
+                    47:  loadint(s4, 0)
+                    48:  loadroot(s5)
+                    49:  getk(s5, "network_client_num", s5)
+                    50:  jcmp(s5, 7, s4, CMP_L)
+                    51:  loadroot(s5)
+                    52:  getk(s5, "network_inst", s5)
+                    53:  prepcallk(s5, "SendToChild", s5, s6)
+                    54:  dmove(s7, s4, s8, s3)
+                    55:  call(255, s5, s6, 3)
+                    56:  pincl(s5, s4, 0, 1)
+                    57:  jmp(-, -10)
+                    58:  line(-, 519)
+                    59:  prepcallk(s4, "DisconnectNetwork", s0, s5)
+                    60:  call(255, s4, s5, 1)
+                    61:  poptrap(1)
+                    62:  jmp(-, 1)
+                    63:  line(-, 521)
+                    64:  line(-, 522)
+                    65:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 9
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: ""
+        name: "DisconnectNetwork"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 63
+        nfunctions: 1
+        Literals: [
+            0: "network_inst"
+            1: "act"
+            2: "fader"
+            3: "Clear"
+            4: "libact"
+            5: "EndNetworkMode"
+            6: "ResetNetworkInput"
+            7: "mb_server"
+            8: "getroottable"
+            9: "mb_client"
+            10: "StopBGM"
+            11: "FadeOut"
+            12: "bindenv"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 62
+          ]
+        Line Informations: [
+            0: line: 559, op: 1
+            1: line: 561, op: 5
+            2: line: 564, op: 10
+            3: line: 565, op: 15
+            4: line: 566, op: 19
+            5: line: 567, op: 24
+            6: line: 568, op: 34
+            7: line: 571, op: 44
+            8: line: 575, op: 49
+            9: line: 603, op: 61
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 559)
+            1:  loadroot(s1)
+            2:  getk(s1, "network_inst", s1)
+            3:  jz(s1, 57)
+            4:  line(-, 561)
+            5:  loadroot(s1)
+            6:  getk(s1, "act", s1)
+            7:  getk(s1, "fader", s1)
+            8:  prepcallk(s1, "Clear", s1, s2)
+            9:  call(255, s1, s2, 1)
+            10:  line(-, 564)
+            11:  loadroot(s1)
+            12:  getk(s1, "libact", s1)
+            13:  prepcallk(s1, "EndNetworkMode", s1, s2)
+            14:  call(255, s1, s2, 1)
+            15:  line(-, 565)
+            16:  loadroot(s1)
+            17:  prepcallk(s1, "ResetNetworkInput", s1, s2)
+            18:  call(255, s1, s2, 1)
+            19:  line(-, 566)
+            20:  loadroot(s1)
+            21:  load(s2, "network_inst")
+            22:  loadnulls(s3, 1)
+            23:  set(s255, s1, s2, s3)
+            24:  line(-, 567)
+            25:  dload(s1, "mb_server", s2, "getroottable")
+            26:  prepcall(s2, s2, s0, s3)
+            27:  call(2, s2, s3, 1)
+            28:  exists(s1, s2, s1)
+            29:  jz(s1, 4)
+            30:  loadroot(s1)
+            31:  load(s2, "mb_server")
+            32:  loadnulls(s3, 1)
+            33:  set(s255, s1, s2, s3)
+            34:  line(-, 568)
+            35:  dload(s1, "mb_client", s2, "getroottable")
+            36:  prepcall(s2, s2, s0, s3)
+            37:  call(2, s2, s3, 1)
+            38:  exists(s1, s2, s1)
+            39:  jz(s1, 4)
+            40:  loadroot(s1)
+            41:  load(s2, "mb_client")
+            42:  loadnulls(s3, 1)
+            43:  set(s255, s1, s2, s3)
+            44:  line(-, 571)
+            45:  loadroot(s1)
+            46:  prepcallk(s1, "StopBGM", s1, s2)
+            47:  loadint(s3, 500)
+            48:  call(255, s1, s2, 2)
+            49:  line(-, 575)
+            50:  loadroot(s1)
+            51:  getk(s1, "act", s1)
+            52:  getk(s1, "fader", s1)
+            53:  prepcallk(s1, "FadeOut", s1, s2)
+            54:  loadint(s3, 30)
+            55:  loadint(s4, 0)
+            56:  closure(s5, 0)
+            57:  prepcallk(s5, "bindenv", s5, s6)
+            58:  move(s7, s0)
+            59:  call(5, s5, s6, 2)
+            60:  call(255, s1, s2, 4)
+            61:  line(-, 603)
+            62:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 21
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 14
+                ndefaultparams: 0
+                ninstructions: 93
+                nfunctions: 0
+                Literals: [
+                    0: "act"
+                    1: "fader_nosync"
+                    2: "Clear"
+                    3: "ClearGameData"
+                    4: "BG"
+                    5: "Stop"
+                    6: "Start"
+                    7: "Profile"
+                    8: "Suspend"
+                    9: "BattleStatus"
+                    10: "pl"
+                    11: "EndStage"
+                    12: "Pause"
+                    13: "CharSelect2"
+                    14: "StageSelect"
+                    15: "ProfileSelect"
+                    16: "NetworkVS"
+                    17: "Resume"
+                    18: "ShowDisconnect"
+                    19: "fader"
+                    20: "FadeIn"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 92
+                  ]
+                Line Informations: [
+                    0: line: 578, op: 1
+                    1: line: 583, op: 6
+                    2: line: 585, op: 9
+                    3: line: 586, op: 15
+                    4: line: 589, op: 22
+                    5: line: 590, op: 28
+                    6: line: 591, op: 35
+                    7: line: 592, op: 41
+                    8: line: 593, op: 52
+                    9: line: 594, op: 63
+                    10: line: 597, op: 70
+                    11: line: 598, op: 76
+                    12: line: 600, op: 82
+                    13: line: 601, op: 91
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 578)
+                    1:  loadroot(s1)
+                    2:  getk(s1, "act", s1)
+                    3:  getk(s1, "fader_nosync", s1)
+                    4:  prepcallk(s1, "Clear", s1, s2)
+                    5:  call(255, s1, s2, 1)
+                    6:  line(-, 583)
+                    7:  prepcallk(s1, "ClearGameData", s0, s2)
+                    8:  call(255, s1, s2, 1)
+                    9:  line(-, 585)
+                    10:  loadroot(s1)
+                    11:  getk(s1, "act", s1)
+                    12:  getk(s1, "BG", s1)
+                    13:  prepcallk(s1, "Stop", s1, s2)
+                    14:  call(255, s1, s2, 1)
+                    15:  line(-, 586)
+                    16:  loadroot(s1)
+                    17:  getk(s1, "act", s1)
+                    18:  getk(s1, "BG", s1)
+                    19:  prepcallk(s1, "Start", s1, s2)
+                    20:  loadint(s3, 0)
+                    21:  call(255, s1, s2, 2)
+                    22:  line(-, 589)
+                    23:  loadroot(s1)
+                    24:  getk(s1, "act", s1)
+                    25:  getk(s1, "Profile", s1)
+                    26:  prepcallk(s1, "Suspend", s1, s2)
+                    27:  call(255, s1, s2, 1)
+                    28:  line(-, 590)
+                    29:  loadroot(s1)
+                    30:  getk(s1, "act", s1)
+                    31:  getk(s1, "BattleStatus", s1)
+                    32:  getk(s1, "pl", s1)
+                    33:  prepcallk(s1, "EndStage", s1, s2)
+                    34:  call(255, s1, s2, 1)
+                    35:  line(-, 591)
+                    36:  loadroot(s1)
+                    37:  getk(s1, "act", s1)
+                    38:  getk(s1, "Pause", s1)
+                    39:  prepcallk(s1, "Suspend", s1, s2)
+                    40:  call(255, s1, s2, 1)
+                    41:  line(-, 592)
+                    42:  load(s1, "CharSelect2")
+                    43:  loadroot(s2)
+                    44:  getk(s2, "act", s2)
+                    45:  exists(s1, s2, s1)
+                    46:  jz(s1, 5)
+                    47:  loadroot(s1)
+                    48:  getk(s1, "act", s1)
+                    49:  getk(s1, "CharSelect2", s1)
+                    50:  prepcallk(s1, "Suspend", s1, s2)
+                    51:  call(255, s1, s2, 1)
+                    52:  line(-, 593)
+                    53:  load(s1, "StageSelect")
+                    54:  loadroot(s2)
+                    55:  getk(s2, "act", s2)
+                    56:  exists(s1, s2, s1)
+                    57:  jz(s1, 5)
+                    58:  loadroot(s1)
+                    59:  getk(s1, "act", s1)
+                    60:  getk(s1, "StageSelect", s1)
+                    61:  prepcallk(s1, "Suspend", s1, s2)
+                    62:  call(255, s1, s2, 1)
+                    63:  line(-, 594)
+                    64:  loadroot(s1)
+                    65:  getk(s1, "act", s1)
+                    66:  getk(s1, "ProfileSelect", s1)
+                    67:  getk(s1, "pl", s1)
+                    68:  prepcallk(s1, "EndStage", s1, s2)
+                    69:  call(255, s1, s2, 1)
+                    70:  line(-, 597)
+                    71:  loadroot(s1)
+                    72:  getk(s1, "act", s1)
+                    73:  getk(s1, "NetworkVS", s1)
+                    74:  prepcallk(s1, "Resume", s1, s2)
+                    75:  call(255, s1, s2, 1)
+                    76:  line(-, 598)
+                    77:  loadroot(s1)
+                    78:  getk(s1, "act", s1)
+                    79:  getk(s1, "NetworkVS", s1)
+                    80:  prepcallk(s1, "ShowDisconnect", s1, s2)
+                    81:  call(255, s1, s2, 1)
+                    82:  line(-, 600)
+                    83:  loadroot(s1)
+                    84:  getk(s1, "act", s1)
+                    85:  getk(s1, "fader", s1)
+                    86:  prepcallk(s1, "FadeIn", s1, s2)
+                    87:  loadint(s3, 30)
+                    88:  loadint(s4, 0)
+                    89:  loadnulls(s5, 1)
+                    90:  call(255, s1, s2, 4)
+                    91:  line(-, 601)
+                    92:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: ""
+        name: null
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 2
+        Literals: [
+            0: "act"
+            1: "NetworkWaiting"
+            2: "pl"
+            3: "IsActive"
+            4: "BeginStage"
+            5: "network_inst"
+            6: "BeginStreamingPlay"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 607, op: 1
+            1: line: 608, op: 1
+            2: line: 610, op: 17
+            3: line: 636, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 607)
+            1:  line(-, 608)
+            2:  loadroot(s1)
+            3:  getk(s1, "act", s1)
+            4:  getk(s1, "NetworkWaiting", s1)
+            5:  getk(s1, "pl", s1)
+            6:  prepcallk(s1, "IsActive", s1, s2)
+            7:  call(1, s1, s2, 1)
+            8:  not(s1, s1)
+            9:  jz(s1, 7)
+            10:  loadroot(s1)
+            11:  getk(s1, "act", s1)
+            12:  getk(s1, "NetworkWaiting", s1)
+            13:  getk(s1, "pl", s1)
+            14:  prepcallk(s1, "BeginStage", s1, s2)
+            15:  loadint(s3, 0)
+            16:  call(255, s1, s2, 2)
+            17:  line(-, 610)
+            18:  loadroot(s1)
+            19:  getk(s1, "network_inst", s1)
+            20:  prepcallk(s1, "BeginStreamingPlay", s1, s2)
+            21:  closure(s3, 0)
+            22:  closure(s4, 1)
+            23:  call(255, s1, s2, 3)
+            24:  line(-, 636)
+            25:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 27
+                nfunctions: 1
+                Literals: [
+                    0: "replay"
+                    1: "GetHeader"
+                    2: "network_inst"
+                    3: "recorder"
+                    4: "LoadGameData"
+                    5: "act"
+                    6: "fader_nosync"
+                    7: "FadeOut"
+                    8: "bindenv"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 26
+                  ]
+                Line Informations: [
+                    0: line: 613, op: 1
+                    1: line: 614, op: 1
+                    2: line: 615, op: 9
+                    3: line: 616, op: 13
+                    4: line: 622, op: 25
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 613)
+                    1:  line(-, 614)
+                    2:  loadroot(s1)
+                    3:  getk(s1, "replay", s1)
+                    4:  prepcallk(s1, "GetHeader", s1, s2)
+                    5:  loadroot(s3)
+                    6:  getk(s3, "network_inst", s3)
+                    7:  getk(s3, "recorder", s3)
+                    8:  call(255, s1, s2, 2)
+                    9:  line(-, 615)
+                    10:  loadroot(s1)
+                    11:  prepcallk(s1, "LoadGameData", s1, s2)
+                    12:  call(255, s1, s2, 1)
+                    13:  line(-, 616)
+                    14:  loadroot(s1)
+                    15:  getk(s1, "act", s1)
+                    16:  getk(s1, "fader_nosync", s1)
+                    17:  prepcallk(s1, "FadeOut", s1, s2)
+                    18:  loadint(s3, 30)
+                    19:  loadint(s4, 0)
+                    20:  closure(s5, 0)
+                    21:  prepcallk(s5, "bindenv", s5, s6)
+                    22:  move(s7, s0)
+                    23:  call(5, s5, s6, 2)
+                    24:  call(255, s1, s2, 4)
+                    25:  line(-, 622)
+                    26:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 6
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 3
+                        ndefaultparams: 0
+                        ninstructions: 18
+                        nfunctions: 0
+                        Literals: [
+                            0: "act"
+                            1: "NetworkWaiting"
+                            2: "pl"
+                            3: "EndStage"
+                            4: "fader_nosync"
+                            5: "FadeIn"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 17
+                          ]
+                        Line Informations: [
+                            0: line: 619, op: 1
+                            1: line: 620, op: 7
+                            2: line: 621, op: 16
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 619)
+                            1:  loadroot(s1)
+                            2:  getk(s1, "act", s1)
+                            3:  getk(s1, "NetworkWaiting", s1)
+                            4:  getk(s1, "pl", s1)
+                            5:  prepcallk(s1, "EndStage", s1, s2)
+                            6:  call(255, s1, s2, 1)
+                            7:  line(-, 620)
+                            8:  loadroot(s1)
+                            9:  getk(s1, "act", s1)
+                            10:  getk(s1, "fader_nosync", s1)
+                            11:  prepcallk(s1, "FadeIn", s1, s2)
+                            12:  loadint(s3, 30)
+                            13:  loadint(s4, 0)
+                            14:  loadnulls(s5, 1)
+                            15:  call(255, s1, s2, 4)
+                            16:  line(-, 621)
+                            17:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 6
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 4
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 14
+                nfunctions: 1
+                Literals: [
+                    0: "act"
+                    1: "fader_nosync"
+                    2: "FadeOut"
+                    3: "bindenv"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 13
+                  ]
+                Line Informations: [
+                    0: line: 625, op: 1
+                    1: line: 634, op: 12
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 625)
+                    1:  loadroot(s1)
+                    2:  getk(s1, "act", s1)
+                    3:  getk(s1, "fader_nosync", s1)
+                    4:  prepcallk(s1, "FadeOut", s1, s2)
+                    5:  loadint(s3, 60)
+                    6:  loadint(s4, 0)
+                    7:  closure(s5, 0)
+                    8:  prepcallk(s5, "bindenv", s5, s6)
+                    9:  move(s7, s0)
+                    10:  call(5, s5, s6, 2)
+                    11:  call(255, s1, s2, 4)
+                    12:  line(-, 634)
+                    13:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 8
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 6
+                        ndefaultparams: 0
+                        ninstructions: 28
+                        nfunctions: 0
+                        Literals: [
+                            0: "ClearGameData"
+                            1: "BeginStreaming"
+                            2: "act"
+                            3: "NetworkWaiting"
+                            4: "pl"
+                            5: "BeginStage"
+                            6: "fader_nosync"
+                            7: "FadeIn"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 27
+                          ]
+                        Line Informations: [
+                            0: line: 628, op: 1
+                            1: line: 629, op: 4
+                            2: line: 630, op: 5
+                            3: line: 631, op: 9
+                            4: line: 632, op: 17
+                            5: line: 633, op: 26
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 628)
+                            1:  loadroot(s1)
+                            2:  prepcallk(s1, "ClearGameData", s1, s2)
+                            3:  call(255, s1, s2, 1)
+                            4:  line(-, 629)
+                            5:  line(-, 630)
+                            6:  loadroot(s1)
+                            7:  prepcallk(s1, "BeginStreaming", s1, s2)
+                            8:  call(255, s1, s2, 1)
+                            9:  line(-, 631)
+                            10:  loadroot(s1)
+                            11:  getk(s1, "act", s1)
+                            12:  getk(s1, "NetworkWaiting", s1)
+                            13:  getk(s1, "pl", s1)
+                            14:  prepcallk(s1, "BeginStage", s1, s2)
+                            15:  loadint(s3, 0)
+                            16:  call(255, s1, s2, 2)
+                            17:  line(-, 632)
+                            18:  loadroot(s1)
+                            19:  getk(s1, "act", s1)
+                            20:  getk(s1, "fader_nosync", s1)
+                            21:  prepcallk(s1, "FadeIn", s1, s2)
+                            22:  loadint(s3, 30)
+                            23:  loadint(s4, 0)
+                            24:  loadnulls(s5, 1)
+                            25:  call(255, s1, s2, 4)
+                            26:  line(-, 633)
+                            27:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 6
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    12: 
+        sourcename: ""
+        name: null
+        nliterals: 17
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 76
+        nfunctions: 0
+        Literals: [
+            0: "network_inst"
+            1: "network_is_client"
+            2: "load_data"
+            3: "profile"
+            4: "icon_dump"
+            5: ""
+            6: "act"
+            7: "ProfileIcon"
+            8: "pl"
+            9: "CreateResource"
+            10: "ImageResource"
+            11: "RestoreBase64"
+            12: "SaveTexture"
+            13: "./��񒸑Ւ�/"
+            14: "name"
+            15: ".bmp"
+            16: "DeleteResource"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "ret", pos: 3, start_op: 64, end_op: 73
+            1: name: "icon_res", pos: 2, start_op: 51, end_op: 73
+            2: name: "profile", pos: 1, start_op: 23, end_op: 73
+            3: name: "this", pos: 0, start_op: 0, end_op: 75
+          ]
+        Line Informations: [
+            0: line: 641, op: 1
+            1: line: 643, op: 8
+            2: line: 645, op: 23
+            3: line: 647, op: 43
+            4: line: 648, op: 51
+            5: line: 650, op: 55
+            6: line: 652, op: 64
+            7: line: 654, op: 72
+            8: line: 655, op: 74
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 641)
+            1:  loadroot(s1)
+            2:  getk(s1, "network_inst", s1)
+            3:  loadnulls(s2, 1)
+            4:  eq(s1, 2, s1, 0)
+            5:  jz(s1, 2)
+            6:  loadbool(s1, 0)
+            7:  return(1, 1)
+            8:  line(-, 643)
+            9:  loadroot(s1)
+            10:  getk(s1, "network_is_client", s1)
+            11:  jz(s1, 6)
+            12:  loadroot(s2)
+            13:  getk(s2, "load_data", s2)
+            14:  getk(s2, "profile", s2)
+            15:  loadint(s3, 0)
+            16:  get(s1, s2, s3)
+            17:  jmp(-, 5)
+            18:  loadroot(s2)
+            19:  getk(s2, "load_data", s2)
+            20:  getk(s2, "profile", s2)
+            21:  loadint(s3, 1)
+            22:  get(s1, s2, s3)
+            23:  line(-, 645)
+            24:  loadnulls(s2, 1)
+            25:  eq(s2, 2, s1, 0)
+            26:  or(s2, 13, s2)
+            27:  load(s3, "icon_dump")
+            28:  exists(s3, s1, s3)
+            29:  not(s3, s3)
+            30:  or(s3, 8, s3)
+            31:  getk(s4, "icon_dump", s1)
+            32:  loadnulls(s5, 1)
+            33:  eq(s4, 5, s4, 0)
+            34:  or(s4, 3, s4)
+            35:  getk(s5, "icon_dump", s1)
+            36:  eq(s5, 5, s5, 255)
+            37:  move(s4, s5)
+            38:  move(s3, s4)
+            39:  move(s2, s3)
+            40:  jz(s2, 2)
+            41:  loadbool(s2, 0)
+            42:  return(1, 2)
+            43:  line(-, 647)
+            44:  loadroot(s2)
+            45:  getk(s2, "act", s2)
+            46:  getk(s2, "ProfileIcon", s2)
+            47:  getk(s2, "pl", s2)
+            48:  prepcallk(s2, "CreateResource", s2, s3)
+            49:  load(s4, "ImageResource")
+            50:  call(2, s2, s3, 2)
+            51:  line(-, 648)
+            52:  prepcallk(s3, "RestoreBase64", s2, s4)
+            53:  getk(s5, "icon_dump", s1)
+            54:  call(255, s3, s4, 2)
+            55:  line(-, 650)
+            56:  prepcallk(s3, "SaveTexture", s2, s4)
+            57:  dload(s5, "./��񒸑Ւ�/", s6, "name")
+            58:  get(s6, s1, s6)
+            59:  add(s5, s6, s5)
+            60:  load(s6, ".bmp")
+            61:  add(s5, s6, s5)
+            62:  loadint(s6, 0)
+            63:  call(3, s3, s4, 3)
+            64:  line(-, 652)
+            65:  loadroot(s4)
+            66:  getk(s4, "act", s4)
+            67:  getk(s4, "ProfileIcon", s4)
+            68:  getk(s4, "pl", s4)
+            69:  prepcallk(s4, "DeleteResource", s4, s5)
+            70:  move(s6, s2)
+            71:  call(255, s4, s5, 2)
+            72:  line(-, 654)
+            73:  return(1, 3)
+            74:  line(-, 655)
+            75:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

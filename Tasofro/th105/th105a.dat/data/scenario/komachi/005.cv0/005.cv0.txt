@@ -1,0 +1,152 @@
+## =======================================================================
+#Stage:6
+#Title:有頂天の頭上華萎
+#Place:壊れた神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:komachi,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#カメラ固定
+Action:komachi,4
+#フォーカス瞬間移動
+#Action:komachi,11
+
+#向き固定解除
+Action:komachi,152
+
+Label:Start
+
+#Sleep:30;
+PlayBgm:data/bgm/st05.ogg
+
+#ステージタイトル表示
+Object:data/scenario/komachi/effect/StageTitle006.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Sleep:60;
+
+Face:tenshi,普
+死神のお迎えに惑わされる様な迷いはない\
+
+Face:komachi,惑
+ま、お迎えは管轄外なんだけどねー
+あたいはただのしがない船頭で\
+
+Face:tenshi,惑
+船頭？
+もしかして三途の渡し？\
+
+Face:komachi,驚
+そそ、あたいは勝手に人を殺したりはしないよ\
+
+Face:komachi,惑
+でもね
+気質を……幽霊を斬ったりされると困るんだなぁ\
+
+Face:tenshi,余
+ほう\
+
+Face:komachi,惑
+聞いたよ、お前さんの仕業だって？
+幽霊を天の気に変えていたのは\
+
+Face:komachi,余
+幽霊が河を渡らないと、あたいが目を付けられるんだ
+困るんだよねぇ\
+
+
+Face:tenshi,嬉
+これは面白いわ
+ただでさえ定期的に迎えに来る死神と闘うのがー\
+
+Face:tenshi,嬉
+数少ない楽しみだったのに
+船頭とも闘えるなんて\
+
+Face:komachi,決
+<ruby あたい>死神</ruby>を舐めない方が身の為だ
+天人は死神を恐れているんだろう？\
+
+Face:tenshi,普
+天人が恐れるのは五衰を与えられる事\
+
+Face:tenshi,惑
+死神はそのうちの一つ<ruby ずじょうかい>頭上華萎</ruby>
+すなわち頭上の花を<ruby しお>萎</ruby>れさせてくる\
+
+Face:tenshi,決
+でも、五衰の一つ、<ruby いまをたのしめないこと>不楽本座</ruby>は
+死神のお陰で私には効きそうもない！\
+
+#戦闘開始処理
+Action:komachi,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:tenshi,普
+所詮は船頭\
+
+Face:tenshi,余
+不思議な精神攻撃を行ってくるお迎えとは違うのね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　神社へ
+Action:tenshi,182
+#天候初期化
+Action:tenshi,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:komachi,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

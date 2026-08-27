@@ -1,0 +1,862 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut: 
+sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+name: "main"
+nliterals: 13
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 34
+nfunctions: 9
+Literals: [
+    0: "construct"
+    1: "destruct"
+    2: "message"
+    3: "lib"
+    4: "shot"
+    5: "common_message"
+    6: "interactive"
+    7: "kill_move"
+    8: "determination"
+    9: "plot"
+    10: "on_hit_target"
+    11: "on_hit_ground"
+    12: "on_graze_target"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 33
+    1: name: "this", pos: 0, start_op: 0, end_op: 33
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 72, op: 3
+    2: line: 80, op: 6
+    3: line: 82, op: 12
+    4: line: 88, op: 15
+    5: line: 91, op: 18
+    6: line: 95, op: 21
+    7: line: 110, op: 24
+    8: line: 122, op: 27
+    9: line: 124, op: 30
+    10: line: 125, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "destruct")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "message")
+    7:  loadroot(s3)
+    8:  getk(s3, "lib", s3)
+    9:  getk(s3, "shot", s3)
+    10:  getk(s3, "common_message", s3)
+    11:  newslot(s255, s0, s2, s3)
+    12:  load(s2, "interactive")
+    13:  closure(s3, 2)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "kill_move")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "determination")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "plot")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "on_hit_target")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_hit_ground")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "on_graze_target")
+    31:  closure(s3, 8)
+    32:  newslot(s2, s0, s2, s3)
+    33:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "construct"
+        nliterals: 28
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 22
+        ndefaultparams: 0
+        ninstructions: 87
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "attack_power"
+            2: "attack_baria"
+            3: "push_x"
+            4: "push_y"
+            5: "push_g"
+            6: "_audio_play"
+            7: "se"
+            8: "jyoon_expload"
+            9: "count"
+            10: "scale"
+            11: "scale2"
+            12: "alpha"
+            13: "alpha2"
+            14: "direction_h"
+            15: "obj"
+            16: "player"
+            17: "t_scale"
+            18: "frameset"
+            19: "_composition_create_framepointer"
+            20: "resource_pool"
+            21: "player_jyoon/expload_000"
+            22: "frameset2"
+            23: "player_jyoon/expload_001"
+            24: "maskbits"
+            25: "state"
+            26: "h_entity"
+            27: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 86
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 5, op: 0
+            2: line: 6, op: 3
+            3: line: 7, op: 6
+            4: line: 8, op: 9
+            5: line: 9, op: 12
+            6: line: 10, op: 15
+            7: line: 13, op: 18
+            8: line: 16, op: 25
+            9: line: 17, op: 28
+            10: line: 18, op: 31
+            11: line: 19, op: 34
+            12: line: 20, op: 37
+            13: line: 21, op: 40
+            14: line: 22, op: 45
+            15: line: 24, op: 48
+            16: line: 25, op: 56
+            17: line: 26, op: 64
+            18: line: 27, op: 67
+            19: line: 62, op: 70
+            20: line: 64, op: 70
+            21: line: 70, op: 86
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "attack_power")
+            4:  loadint(s2, 10)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "attack_baria")
+            7:  loadint(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "push_x")
+            10:  loadfloat(s2, -0)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "push_y")
+            13:  loadfloat(s2, -15)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "push_g")
+            16:  loadfloat(s2, 0.75)
+            17:  set(s255, s0, s1, s2)
+            18:  loadroot(s1)
+            19:  prepcallk(s1, "_audio_play", s1, s2)
+            20:  loadroot(s3)
+            21:  getk(s3, "se", s3)
+            22:  getk(s3, "jyoon_expload", s3)
+            23:  loadint(s4, 1)
+            24:  call(255, s1, s2, 3)
+            25:  load(s1, "count")
+            26:  loadint(s2, 0)
+            27:  newslot(s255, s0, s1, s2)
+            28:  load(s1, "scale")
+            29:  loadfloat(s2, 1)
+            30:  newslot(s255, s0, s1, s2)
+            31:  load(s1, "scale2")
+            32:  loadfloat(s2, 1)
+            33:  newslot(s255, s0, s1, s2)
+            34:  load(s1, "alpha")
+            35:  loadfloat(s2, 1)
+            36:  newslot(s255, s0, s1, s2)
+            37:  load(s1, "alpha2")
+            38:  loadfloat(s2, 0)
+            39:  newslot(s255, s0, s1, s2)
+            40:  dload(s1, "direction_h", s2, "obj")
+            41:  get(s2, s0, s2)
+            42:  getk(s2, "player", s2)
+            43:  getk(s2, "direction_h", s2)
+            44:  newslot(s255, s0, s1, s2)
+            45:  load(s1, "t_scale")
+            46:  loadfloat(s2, 1)
+            47:  newslot(s255, s0, s1, s2)
+            48:  load(s1, "frameset")
+            49:  loadroot(s2)
+            50:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            51:  loadroot(s4)
+            52:  getk(s4, "resource_pool", s4)
+            53:  getk(s4, "player_jyoon/expload_000", s4)
+            54:  call(2, s2, s3, 2)
+            55:  newslot(s255, s0, s1, s2)
+            56:  load(s1, "frameset2")
+            57:  loadroot(s2)
+            58:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            59:  loadroot(s4)
+            60:  getk(s4, "resource_pool", s4)
+            61:  getk(s4, "player_jyoon/expload_001", s4)
+            62:  call(2, s2, s3, 2)
+            63:  newslot(s255, s0, s1, s2)
+            64:  load(s1, "maskbits")
+            65:  loadint(s2, 8)
+            66:  newslot(s255, s0, s1, s2)
+            67:  load(s1, "state")
+            68:  closure(s2, 0)
+            69:  newslot(s255, s0, s1, s2)
+            70:  load(s1, "h_entity")
+            71:  loadroot(s2)
+            72:  prepcallk(s2, "_vspace_regist", s2, s3)
+            73:  move(s4, s0)
+            74:  loadint(s5, 1)
+            75:  loadint(s6, 2)
+            76:  bitw(s5, s6, s5, BW_OR)
+            77:  loadint(s6, 8)
+            78:  bitw(s5, s6, s5, BW_OR)
+            79:  loadint(s6, 64)
+            80:  bitw(s5, s6, s5, BW_OR)
+            81:  loadint(s6, 128)
+            82:  bitw(s5, s6, s5, BW_OR)
+            83:  loadint(s6, 0)
+            84:  call(2, s2, s3, 4)
+            85:  newslot(s255, s0, s1, s2)
+            86:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+                name: null
+                nliterals: 17
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 3
+                nlineinfos: 22
+                ndefaultparams: 0
+                ninstructions: 95
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "_liquid_kill"
+                    2: "x"
+                    3: "y"
+                    4: "lib"
+                    5: "session_data"
+                    6: "catch_water"
+                    7: "total_catch_water"
+                    8: "Spawn_BulletMessage"
+                    9: "p_jyoon_ground_fire"
+                    10: "alpha2"
+                    11: "_vspace_unregist"
+                    12: "h_entity"
+                    13: "scale"
+                    14: "alpha"
+                    15: "scale2"
+                    16: "kill_move"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "i", pos: 2, start_op: 29, end_op: 53
+                    1: name: "c2_", pos: 1, start_op: 18, end_op: 53
+                    2: name: "this", pos: 0, start_op: 0, end_op: 94
+                  ]
+                Line Informations: [
+                    0: line: 27, op: 0
+                    1: line: 28, op: 0
+                    2: line: 29, op: 2
+                    3: line: 31, op: 6
+                    4: line: 32, op: 18
+                    5: line: 33, op: 23
+                    6: line: 34, op: 28
+                    7: line: 35, op: 31
+                    8: line: 36, op: 33
+                    9: line: 39, op: 43
+                    10: line: 48, op: 54
+                    11: line: 49, op: 58
+                    12: line: 50, op: 61
+                    13: line: 51, op: 65
+                    14: line: 53, op: 68
+                    15: line: 54, op: 71
+                    16: line: 55, op: 74
+                    17: line: 56, op: 77
+                    18: line: 58, op: 83
+                    19: line: 59, op: 86
+                    20: line: 60, op: 89
+                    21: line: 62, op: 94
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 3)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 48)
+                    6:  loadroot(s1)
+                    7:  prepcallk(s1, "_liquid_kill", s1, s2)
+                    8:  getk(s3, "x", s0)
+                    9:  loadint(s4, 64)
+                    10:  sub(s3, s4, s3)
+                    11:  getk(s4, "y", s0)
+                    12:  loadint(s5, 32)
+                    13:  sub(s4, s5, s4)
+                    14:  loadint(s5, 128)
+                    15:  loadint(s6, 48)
+                    16:  loadint(s7, 4)
+                    17:  call(1, s1, s2, 6)
+                    18:  loadroot(s2)
+                    19:  getk(s2, "lib", s2)
+                    20:  getk(s2, "session_data", s2)
+                    21:  load(s3, "catch_water")
+                    22:  comparith(s2, 131073, s3, 43)
+                    23:  loadroot(s2)
+                    24:  getk(s2, "lib", s2)
+                    25:  getk(s2, "session_data", s2)
+                    26:  load(s3, "total_catch_water")
+                    27:  comparith(s2, 131073, s3, 43)
+                    28:  loadint(s2, -1)
+                    29:  loadint(s3, 2)
+                    30:  jcmp(s3, 23, s2, CMP_L)
+                    31:  loadint(s3, 12)
+                    32:  jcmp(s3, 10, s1, CMP_G)
+                    33:  prepcallk(s3, "Spawn_BulletMessage", s0, s4)
+                    34:  getk(s5, "x", s0)
+                    35:  loadint(s6, 48)
+                    36:  mul(s6, s2, s6)
+                    37:  add(s5, s6, s5)
+                    38:  getk(s6, "y", s0)
+                    39:  load(s7, "p_jyoon_ground_fire")
+                    40:  loadint(s8, 1)
+                    41:  call(255, s3, s4, 5)
+                    42:  jmp(-, 9)
+                    43:  prepcallk(s3, "Spawn_BulletMessage", s0, s4)
+                    44:  getk(s5, "x", s0)
+                    45:  loadint(s6, 48)
+                    46:  mul(s6, s2, s6)
+                    47:  add(s5, s6, s5)
+                    48:  getk(s6, "y", s0)
+                    49:  load(s7, "p_jyoon_ground_fire")
+                    50:  loadint(s8, 2)
+                    51:  call(255, s3, s4, 5)
+                    52:  pincl(s3, s2, 0, 1)
+                    53:  jmp(-, -25)
+                    54:  getk(s1, "count", s0)
+                    55:  loadint(s2, 12)
+                    56:  eq(s1, 2, s1, 0)
+                    57:  jz(s1, 10)
+                    58:  load(s1, "alpha2")
+                    59:  loadfloat(s2, 1)
+                    60:  set(s255, s0, s1, s2)
+                    61:  loadroot(s1)
+                    62:  prepcallk(s1, "_vspace_unregist", s1, s2)
+                    63:  getk(s3, "h_entity", s0)
+                    64:  call(255, s1, s2, 2)
+                    65:  load(s1, "h_entity")
+                    66:  loadnulls(s2, 1)
+                    67:  set(s255, s0, s1, s2)
+                    68:  getk(s1, "count", s0)
+                    69:  loadint(s2, 12)
+                    70:  jcmp(s2, 23, s1, CMP_GE)
+                    71:  load(s1, "scale")
+                    72:  loadfloat(s2, 0.0025)
+                    73:  comparith(s1, 2, s1, 43)
+                    74:  load(s1, "alpha")
+                    75:  loadfloat(s2, 0.1)
+                    76:  comparith(s1, 2, s1, 45)
+                    77:  getk(s1, "alpha", s0)
+                    78:  loadfloat(s2, 0)
+                    79:  jcmp(s2, 3, s1, CMP_LE)
+                    80:  load(s1, "alpha")
+                    81:  loadfloat(s2, 0)
+                    82:  set(s255, s0, s1, s2)
+                    83:  load(s1, "alpha2")
+                    84:  loadfloat(s2, 0.015)
+                    85:  comparith(s1, 2, s1, 45)
+                    86:  load(s1, "scale2")
+                    87:  loadfloat(s2, 0.0025)
+                    88:  comparith(s1, 2, s1, 43)
+                    89:  getk(s1, "alpha2", s0)
+                    90:  loadfloat(s2, 0)
+                    91:  jcmp(s2, 2, s1, CMP_LE)
+                    92:  prepcallk(s1, "kill_move", s0, s2)
+                    93:  call(255, s1, s2, 1)
+                    94:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 9
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "destruct"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "_vspace_unregist"
+            2: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 73, op: 0
+            1: line: 74, op: 0
+            2: line: 76, op: 3
+            3: line: 77, op: 7
+            4: line: 78, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            5:  getk(s3, "h_entity", s0)
+            6:  call(255, s1, s2, 2)
+            7:  load(s1, "h_entity")
+            8:  loadnulls(s2, 1)
+            9:  set(s255, s0, s1, s2)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "interactive"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "state"
+            3: "_vspace_commit"
+            4: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 83, op: 0
+            1: line: 84, op: 0
+            2: line: 85, op: 3
+            3: line: 86, op: 5
+            4: line: 87, op: 9
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  prepcallk(s1, "state", s0, s2)
+            4:  call(255, s1, s2, 1)
+            5:  loadroot(s1)
+            6:  prepcallk(s1, "_vspace_commit", s1, s2)
+            7:  getk(s3, "h_entity", s0)
+            8:  call(255, s1, s2, 2)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "kill_move"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [
+            0: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 88, op: 0
+            1: line: 89, op: 0
+            2: line: 90, op: 2
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "kill", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 92, op: 0
+            1: line: 93, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "plot"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 43
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s1"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "translate"
+            6: "x"
+            7: "y"
+            8: "blend"
+            9: "alpha"
+            10: "frameset2"
+            11: "scale2"
+            12: "alpha2"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 42
+          ]
+        Line Informations: [
+            0: line: 96, op: 0
+            1: line: 97, op: 0
+            2: line: 99, op: 4
+            3: line: 100, op: 8
+            4: line: 101, op: 13
+            5: line: 102, op: 18
+            6: line: 104, op: 23
+            7: line: 105, op: 27
+            8: line: 106, op: 32
+            9: line: 107, op: 37
+            10: line: 108, op: 42
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s1", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s1", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "scale", s0)
+            11:  getk(s4, "scale", s0)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s1", s0)
+            14:  prepcallk(s1, "translate", s1, s2)
+            15:  getk(s3, "x", s0)
+            16:  getk(s4, "y", s0)
+            17:  call(255, s1, s2, 3)
+            18:  getk(s1, "layer_s1", s0)
+            19:  prepcallk(s1, "blend", s1, s2)
+            20:  loadint(s3, 1)
+            21:  getk(s4, "alpha", s0)
+            22:  call(255, s1, s2, 3)
+            23:  getk(s1, "layer_s1", s0)
+            24:  prepcallk(s1, "plot", s1, s2)
+            25:  getk(s3, "frameset2", s0)
+            26:  call(255, s1, s2, 2)
+            27:  getk(s1, "layer_s1", s0)
+            28:  prepcallk(s1, "scale", s1, s2)
+            29:  getk(s3, "scale2", s0)
+            30:  getk(s4, "scale2", s0)
+            31:  call(255, s1, s2, 3)
+            32:  getk(s1, "layer_s1", s0)
+            33:  prepcallk(s1, "translate", s1, s2)
+            34:  getk(s3, "x", s0)
+            35:  getk(s4, "y", s0)
+            36:  call(255, s1, s2, 3)
+            37:  getk(s1, "layer_s1", s0)
+            38:  prepcallk(s1, "blend", s1, s2)
+            39:  loadint(s3, 1)
+            40:  getk(s4, "alpha2", s0)
+            41:  call(255, s1, s2, 3)
+            42:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "on_hit_target"
+        nliterals: 16
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 48
+        nfunctions: 0
+        Literals: [
+            0: "invincible_time"
+            1: "hit_id"
+            2: "hit_object"
+            3: "h_entity"
+            4: "on_hit_damage_reaction"
+            5: "object_pool"
+            6: "limit_group"
+            7: "_audio_play"
+            8: "se"
+            9: "hit_impactB"
+            10: "Spawn_CountSprite"
+            11: "x"
+            12: "hit_x"
+            13: "y"
+            14: "hit_y"
+            15: "hit_flash"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 47
+            1: name: "this", pos: 0, start_op: 0, end_op: 47
+          ]
+        Line Informations: [
+            0: line: 110, op: 0
+            1: line: 111, op: 0
+            2: line: 112, op: 14
+            3: line: 113, op: 19
+            4: line: 115, op: 22
+            5: line: 119, op: 30
+            6: line: 120, op: 37
+            7: line: 121, op: 47
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "invincible_time", s1)
+            1:  loadint(s3, 0)
+            2:  ne(s2, 3, s2, 0)
+            3:  or(s2, 8, s2)
+            4:  getk(s3, "hit_id", s1)
+            5:  getk(s4, "hit_object", s0)
+            6:  bitw(s3, s4, s3, BW_AND)
+            7:  or(s3, 3, s3)
+            8:  getk(s4, "h_entity", s0)
+            9:  not(s4, s4)
+            10:  move(s3, s4)
+            11:  move(s2, s3)
+            12:  jz(s2, 1)
+            13:  return(255, 0)
+            14:  dload(s2, "hit_object", s3, "hit_object")
+            15:  get(s3, s0, s3)
+            16:  getk(s4, "hit_id", s1)
+            17:  bitw(s3, s4, s3, BW_OR)
+            18:  set(s255, s0, s2, s3)
+            19:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+            20:  move(s4, s0)
+            21:  call(255, s2, s3, 2)
+            22:  loadroot(s2)
+            23:  getk(s2, "object_pool", s2)
+            24:  prepcallk(s2, "limit_group", s2, s3)
+            25:  loadint(s4, 5)
+            26:  loadint(s5, 8)
+            27:  loadint(s6, 16)
+            28:  bitw(s5, s6, s5, BW_OR)
+            29:  call(255, s2, s3, 3)
+            30:  loadroot(s2)
+            31:  prepcallk(s2, "_audio_play", s2, s3)
+            32:  loadroot(s4)
+            33:  getk(s4, "se", s4)
+            34:  getk(s4, "hit_impactB", s4)
+            35:  loadint(s5, 1)
+            36:  call(255, s2, s3, 3)
+            37:  prepcallk(s2, "Spawn_CountSprite", s0, s3)
+            38:  getk(s4, "x", s1)
+            39:  getk(s5, "hit_x", s1)
+            40:  add(s4, s5, s4)
+            41:  getk(s5, "y", s1)
+            42:  getk(s6, "hit_y", s1)
+            43:  add(s5, s6, s5)
+            44:  load(s6, "hit_flash")
+            45:  loadint(s7, 20)
+            46:  call(255, s2, s3, 5)
+            47:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 122, op: 0
+            1: line: 123, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\jyoon\object_player\p_jyoon_expload.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 124, op: 0
+            1: line: 125, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,988 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\shion\shion_enemy_state.nut: 
+sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+name: "main"
+nliterals: 3
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 4
+ndefaultparams: 0
+ninstructions: 10
+nfunctions: 3
+Literals: [
+    0: "Damage"
+    1: "KO"
+    2: "Dead"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 9
+    1: name: "this", pos: 0, start_op: 0, end_op: 9
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 68, op: 3
+    2: line: 111, op: 6
+    3: line: 154, op: 9
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "Damage")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "KO")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "Dead")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+        name: "Damage"
+        nliterals: 23
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 60
+        nfunctions: 1
+        Literals: [
+            0: "invincible_time"
+            1: "GetFront"
+            2: "Reset_ComStack"
+            3: "DamegeReset_ComStack"
+            4: "angle"
+            5: "flutter"
+            6: "y"
+            7: "push_h"
+            8: "direction_h"
+            9: "Erace_AllEnemyBullet"
+            10: "vx"
+            11: "push_x"
+            12: "vy"
+            13: "push_y"
+            14: "g"
+            15: "push_g"
+            16: "ground"
+            17: "free_map"
+            18: "flag1"
+            19: "select_motion"
+            20: "damage"
+            21: "count"
+            22: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "target_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "target_", pos: 1, start_op: 0, end_op: 59
+            1: name: "this", pos: 0, start_op: 0, end_op: 59
+          ]
+        Line Informations: [
+            0: line: 2, op: 0
+            1: line: 3, op: 0
+            2: line: 4, op: 4
+            3: line: 5, op: 6
+            4: line: 6, op: 8
+            5: line: 7, op: 10
+            6: line: 8, op: 13
+            7: line: 10, op: 17
+            8: line: 11, op: 25
+            9: line: 13, op: 27
+            10: line: 15, op: 30
+            11: line: 16, op: 35
+            12: line: 17, op: 38
+            13: line: 18, op: 41
+            14: line: 19, op: 44
+            15: line: 20, op: 47
+            16: line: 22, op: 50
+            17: line: 23, op: 53
+            18: line: 24, op: 56
+            19: line: 67, op: 59
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "invincible_time", s0)
+            1:  loadint(s3, 0)
+            2:  jcmp(s3, 1, s2, CMP_G)
+            3:  return(255, 0)
+            4:  prepcallk(s2, "GetFront", s0, s3)
+            5:  call(255, s2, s3, 1)
+            6:  prepcallk(s2, "Reset_ComStack", s0, s3)
+            7:  call(255, s2, s3, 1)
+            8:  prepcallk(s2, "DamegeReset_ComStack", s0, s3)
+            9:  call(255, s2, s3, 1)
+            10:  load(s2, "angle")
+            11:  loadfloat(s3, 0)
+            12:  set(s255, s0, s2, s3)
+            13:  getk(s2, "flutter", s0)
+            14:  load(s3, "y")
+            15:  loadint(s4, 0)
+            16:  set(s255, s2, s3, s4)
+            17:  getk(s2, "push_h", s1)
+            18:  loadfloat(s3, 0)
+            19:  ne(s2, 3, s2, 0)
+            20:  jz(s2, 4)
+            21:  dload(s2, "direction_h", s3, "push_h")
+            22:  get(s3, s1, s3)
+            23:  set(s255, s0, s2, s3)
+            24:  jmp(-, 2)
+            25:  prepcallk(s2, "GetFront", s0, s3)
+            26:  call(255, s2, s3, 1)
+            27:  prepcallk(s2, "Erace_AllEnemyBullet", s0, s3)
+            28:  loadbool(s4, 1)
+            29:  call(255, s2, s3, 2)
+            30:  dload(s2, "vx", s3, "push_x")
+            31:  get(s3, s1, s3)
+            32:  getk(s4, "direction_h", s0)
+            33:  mul(s3, s4, s3)
+            34:  set(s255, s0, s2, s3)
+            35:  dload(s2, "vy", s3, "push_y")
+            36:  get(s3, s1, s3)
+            37:  set(s255, s0, s2, s3)
+            38:  dload(s2, "g", s3, "push_g")
+            39:  get(s3, s1, s3)
+            40:  set(s255, s0, s2, s3)
+            41:  load(s2, "ground")
+            42:  loadbool(s3, 0)
+            43:  set(s255, s0, s2, s3)
+            44:  load(s2, "free_map")
+            45:  loadbool(s3, 0)
+            46:  set(s255, s0, s2, s3)
+            47:  load(s2, "flag1")
+            48:  loadbool(s3, 1)
+            49:  set(s255, s0, s2, s3)
+            50:  prepcallk(s2, "select_motion", s0, s3)
+            51:  load(s4, "damage")
+            52:  call(255, s2, s3, 2)
+            53:  load(s2, "count")
+            54:  loadint(s3, 0)
+            55:  set(s255, s0, s2, s3)
+            56:  load(s2, "state")
+            57:  closure(s3, 0)
+            58:  set(s255, s0, s2, s3)
+            59:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+                name: null
+                nliterals: 19
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 32
+                ndefaultparams: 0
+                ninstructions: 96
+                nfunctions: 0
+                Literals: [
+                    0: "ground"
+                    1: "select_motion"
+                    2: "damage2"
+                    3: "vy"
+                    4: "VX_Brake"
+                    5: "flag1"
+                    6: "vx"
+                    7: "g"
+                    8: "count"
+                    9: "damage_time"
+                    10: "stun_flash"
+                    11: "invincible_time"
+                    12: "com_combo_end"
+                    13: "break_life"
+                    14: "break_max"
+                    15: "baria_life"
+                    16: "baria_cycle_time"
+                    17: "state"
+                    18: "Activate_ComStack"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 95
+                  ]
+                Line Informations: [
+                    0: line: 24, op: 0
+                    1: line: 25, op: 0
+                    2: line: 27, op: 2
+                    3: line: 28, op: 5
+                    4: line: 29, op: 8
+                    5: line: 32, op: 13
+                    6: line: 33, op: 16
+                    7: line: 34, op: 18
+                    8: line: 35, op: 21
+                    9: line: 36, op: 24
+                    10: line: 37, op: 27
+                    11: line: 39, op: 30
+                    12: line: 40, op: 32
+                    13: line: 42, op: 36
+                    14: line: 45, op: 39
+                    15: line: 46, op: 41
+                    16: line: 47, op: 50
+                    17: line: 48, op: 53
+                    18: line: 49, op: 56
+                    19: line: 50, op: 59
+                    20: line: 51, op: 62
+                    21: line: 52, op: 64
+                    22: line: 53, op: 66
+                    23: line: 54, op: 69
+                    24: line: 55, op: 72
+                    25: line: 56, op: 75
+                    26: line: 57, op: 81
+                    27: line: 58, op: 84
+                    28: line: 59, op: 87
+                    29: line: 61, op: 90
+                    30: line: 62, op: 93
+                    31: line: 66, op: 95
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "ground", s0)
+                    1:  jz(s1, 11)
+                    2:  prepcallk(s1, "select_motion", s0, s2)
+                    3:  load(s3, "damage2")
+                    4:  call(255, s1, s2, 2)
+                    5:  load(s1, "vy")
+                    6:  loadfloat(s2, 0)
+                    7:  set(s255, s0, s1, s2)
+                    8:  prepcallk(s1, "VX_Brake", s0, s2)
+                    9:  move(s3, s0)
+                    10:  loadfloat(s4, 0.5)
+                    11:  call(255, s1, s2, 3)
+                    12:  jmp(-, 26)
+                    13:  getk(s1, "vy", s0)
+                    14:  loadfloat(s2, -1)
+                    15:  jcmp(s2, 23, s1, CMP_GE)
+                    16:  getk(s1, "flag1", s0)
+                    17:  jz(s1, 12)
+                    18:  load(s1, "flag1")
+                    19:  loadbool(s2, 0)
+                    20:  set(s255, s0, s1, s2)
+                    21:  load(s1, "vx")
+                    22:  loadfloat(s2, 0.25)
+                    23:  comparith(s1, 2, s1, 42)
+                    24:  load(s1, "vy")
+                    25:  loadfloat(s2, 0.25)
+                    26:  comparith(s1, 2, s1, 42)
+                    27:  load(s1, "g")
+                    28:  loadfloat(s2, 0.05)
+                    29:  set(s255, s0, s1, s2)
+                    30:  load(s1, "count")
+                    31:  pinc(s1, s0, s1, 1)
+                    32:  getk(s1, "count", s0)
+                    33:  loadint(s2, 15)
+                    34:  jcmp(s2, 1, s1, CMP_LE)
+                    35:  jmp(-, 3)
+                    36:  load(s1, "g")
+                    37:  loadfloat(s2, 0.5)
+                    38:  set(s255, s0, s1, s2)
+                    39:  load(s1, "damage_time")
+                    40:  pinc(s1, s0, s1, 255)
+                    41:  getk(s1, "damage_time", s0)
+                    42:  loadint(s2, 10)
+                    43:  mod(s1, s2, s1)
+                    44:  loadint(s2, 6)
+                    45:  jcmp(s2, 4, s1, CMP_GE)
+                    46:  load(s1, "stun_flash")
+                    47:  loadint(s2, 2)
+                    48:  set(s255, s0, s1, s2)
+                    49:  jmp(-, 3)
+                    50:  load(s1, "stun_flash")
+                    51:  loadint(s2, 0)
+                    52:  set(s255, s0, s1, s2)
+                    53:  getk(s1, "damage_time", s0)
+                    54:  loadint(s2, 0)
+                    55:  jcmp(s2, 39, s1, CMP_LE)
+                    56:  load(s1, "stun_flash")
+                    57:  loadint(s2, 0)
+                    58:  set(s255, s0, s1, s2)
+                    59:  load(s1, "invincible_time")
+                    60:  loadint(s2, 3)
+                    61:  set(s255, s0, s1, s2)
+                    62:  getk(s1, "ground", s0)
+                    63:  jz(s1, 31)
+                    64:  load(s1, "count")
+                    65:  pinc(s1, s0, s1, 1)
+                    66:  getk(s1, "count", s0)
+                    67:  loadint(s2, 60)
+                    68:  jcmp(s2, 26, s1, CMP_GE)
+                    69:  prepcallk(s1, "com_combo_end", s0, s2)
+                    70:  loadnulls(s3, 1)
+                    71:  call(255, s1, s2, 2)
+                    72:  load(s1, "damage_time")
+                    73:  loadint(s2, 0)
+                    74:  set(s255, s0, s1, s2)
+                    75:  getk(s1, "break_life", s0)
+                    76:  loadint(s2, 0)
+                    77:  jcmp(s2, 3, s1, CMP_LE)
+                    78:  dload(s1, "break_life", s2, "break_max")
+                    79:  get(s2, s0, s2)
+                    80:  set(s255, s0, s1, s2)
+                    81:  getk(s1, "baria_life", s0)
+                    82:  loadint(s2, 0)
+                    83:  jcmp(s2, 6, s1, CMP_LE)
+                    84:  load(s1, "baria_life")
+                    85:  loadint(s2, 4)
+                    86:  set(s255, s0, s1, s2)
+                    87:  load(s1, "baria_cycle_time")
+                    88:  loadint(s2, 120)
+                    89:  set(s255, s0, s1, s2)
+                    90:  load(s1, "state")
+                    91:  loadnulls(s2, 1)
+                    92:  set(s255, s0, s1, s2)
+                    93:  prepcallk(s1, "Activate_ComStack", s0, s2)
+                    94:  call(255, s1, s2, 1)
+                    95:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+        name: "KO"
+        nliterals: 31
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 22
+        ndefaultparams: 0
+        ninstructions: 79
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "com_combo_end"
+            2: "Boss_KO_Reset"
+            3: "lib"
+            4: "enemy"
+            5: "ko_event"
+            6: "Com_KO_Event"
+            7: "object_pool"
+            8: "limit_group"
+            9: "_audio_play"
+            10: "se"
+            11: "boss_ko"
+            12: "camera"
+            13: "vibration"
+            14: "count"
+            15: "ground"
+            16: "angle"
+            17: "flutter"
+            18: "y"
+            19: "select_motion"
+            20: "ko"
+            21: "vx"
+            22: "direction_h"
+            23: "vy"
+            24: "g"
+            25: "obj"
+            26: "player"
+            27: "enable_input"
+            28: "invincible_time"
+            29: "Erace_AllEnemyBullet"
+            30: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "target_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "target_", pos: 1, start_op: 0, end_op: 78
+            1: name: "this", pos: 0, start_op: 0, end_op: 78
+          ]
+        Line Informations: [
+            0: line: 68, op: 0
+            1: line: 69, op: 0
+            2: line: 70, op: 2
+            3: line: 71, op: 5
+            4: line: 72, op: 8
+            5: line: 73, op: 13
+            6: line: 74, op: 15
+            7: line: 75, op: 23
+            8: line: 76, op: 30
+            9: line: 77, op: 35
+            10: line: 78, op: 38
+            11: line: 79, op: 41
+            12: line: 80, op: 44
+            13: line: 81, op: 48
+            14: line: 82, op: 51
+            15: line: 83, op: 56
+            16: line: 84, op: 59
+            17: line: 85, op: 62
+            18: line: 86, op: 67
+            19: line: 87, op: 72
+            20: line: 88, op: 75
+            21: line: 110, op: 78
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  prepcallk(s2, "com_combo_end", s0, s3)
+            3:  loadnulls(s4, 1)
+            4:  call(255, s2, s3, 2)
+            5:  prepcallk(s2, "Boss_KO_Reset", s0, s3)
+            6:  move(s4, s0)
+            7:  call(255, s2, s3, 2)
+            8:  loadroot(s2)
+            9:  getk(s2, "lib", s2)
+            10:  getk(s2, "enemy", s2)
+            11:  prepcallk(s2, "ko_event", s2, s3)
+            12:  call(255, s2, s3, 1)
+            13:  prepcallk(s2, "Com_KO_Event", s0, s3)
+            14:  call(255, s2, s3, 1)
+            15:  loadroot(s2)
+            16:  getk(s2, "object_pool", s2)
+            17:  prepcallk(s2, "limit_group", s2, s3)
+            18:  loadint(s4, 60)
+            19:  loadint(s5, 8)
+            20:  loadint(s6, 16)
+            21:  bitw(s5, s6, s5, BW_OR)
+            22:  call(255, s2, s3, 3)
+            23:  loadroot(s2)
+            24:  prepcallk(s2, "_audio_play", s2, s3)
+            25:  loadroot(s4)
+            26:  getk(s4, "se", s4)
+            27:  getk(s4, "boss_ko", s4)
+            28:  loadint(s5, 1)
+            29:  call(255, s2, s3, 3)
+            30:  loadroot(s2)
+            31:  getk(s2, "camera", s2)
+            32:  prepcallk(s2, "vibration", s2, s3)
+            33:  loadint(s4, 15)
+            34:  call(255, s2, s3, 2)
+            35:  load(s2, "count")
+            36:  loadint(s3, 0)
+            37:  set(s255, s0, s2, s3)
+            38:  load(s2, "ground")
+            39:  loadbool(s3, 0)
+            40:  set(s255, s0, s2, s3)
+            41:  load(s2, "angle")
+            42:  loadfloat(s3, 0)
+            43:  set(s255, s0, s2, s3)
+            44:  getk(s2, "flutter", s0)
+            45:  load(s3, "y")
+            46:  loadint(s4, 0)
+            47:  set(s255, s2, s3, s4)
+            48:  prepcallk(s2, "select_motion", s0, s3)
+            49:  load(s4, "ko")
+            50:  call(255, s2, s3, 2)
+            51:  load(s2, "vx")
+            52:  loadfloat(s3, -5)
+            53:  getk(s4, "direction_h", s0)
+            54:  mul(s3, s4, s3)
+            55:  set(s255, s0, s2, s3)
+            56:  load(s2, "vy")
+            57:  loadfloat(s3, -4)
+            58:  set(s255, s0, s2, s3)
+            59:  load(s2, "g")
+            60:  loadfloat(s3, 0.25)
+            61:  set(s255, s0, s2, s3)
+            62:  getk(s2, "obj", s0)
+            63:  getk(s2, "player", s2)
+            64:  load(s3, "enable_input")
+            65:  loadbool(s4, 0)
+            66:  set(s255, s2, s3, s4)
+            67:  getk(s2, "obj", s0)
+            68:  getk(s2, "player", s2)
+            69:  load(s3, "invincible_time")
+            70:  loadint(s4, -1)
+            71:  set(s255, s2, s3, s4)
+            72:  prepcallk(s2, "Erace_AllEnemyBullet", s0, s3)
+            73:  loadbool(s4, 1)
+            74:  call(255, s2, s3, 2)
+            75:  load(s2, "state")
+            76:  closure(s3, 0)
+            77:  set(s255, s0, s2, s3)
+            78:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+                name: null
+                nliterals: 7
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 21
+                nfunctions: 1
+                Literals: [
+                    0: "VX_Brake"
+                    1: "vy"
+                    2: "ground"
+                    3: "select_motion"
+                    4: "ko2"
+                    5: "count"
+                    6: "state"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 20
+                  ]
+                Line Informations: [
+                    0: line: 88, op: 0
+                    1: line: 89, op: 0
+                    2: line: 90, op: 4
+                    3: line: 91, op: 11
+                    4: line: 92, op: 14
+                    5: line: 93, op: 17
+                    6: line: 109, op: 20
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  prepcallk(s1, "VX_Brake", s0, s2)
+                    1:  move(s3, s0)
+                    2:  loadfloat(s4, 0.1)
+                    3:  call(255, s1, s2, 3)
+                    4:  getk(s1, "vy", s0)
+                    5:  loadint(s2, 0)
+                    6:  cmp(s1, s2, s1, CMP_G)
+                    7:  and(s1, 2, s1)
+                    8:  getk(s2, "ground", s0)
+                    9:  move(s1, s2)
+                    10:  jz(s1, 9)
+                    11:  prepcallk(s1, "select_motion", s0, s2)
+                    12:  load(s3, "ko2")
+                    13:  call(255, s1, s2, 2)
+                    14:  load(s1, "count")
+                    15:  loadint(s2, 0)
+                    16:  set(s255, s0, s1, s2)
+                    17:  load(s1, "state")
+                    18:  closure(s2, 0)
+                    19:  set(s255, s0, s1, s2)
+                    20:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+                        name: null
+                        nliterals: 10
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 35
+                        nfunctions: 0
+                        Literals: [
+                            0: "VX_Brake"
+                            1: "count"
+                            2: "state"
+                            3: "obj"
+                            4: "player"
+                            5: "enable_input"
+                            6: "invincible_time"
+                            7: "com_list"
+                            8: "remove"
+                            9: "call"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 34
+                          ]
+                        Line Informations: [
+                            0: line: 93, op: 0
+                            1: line: 94, op: 0
+                            2: line: 95, op: 4
+                            3: line: 96, op: 6
+                            4: line: 97, op: 10
+                            5: line: 98, op: 13
+                            6: line: 99, op: 18
+                            7: line: 100, op: 23
+                            8: line: 105, op: 27
+                            9: line: 107, op: 34
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  prepcallk(s1, "VX_Brake", s0, s2)
+                            1:  move(s3, s0)
+                            2:  loadfloat(s4, 0.25)
+                            3:  call(255, s1, s2, 3)
+                            4:  load(s1, "count")
+                            5:  pinc(s1, s0, s1, 1)
+                            6:  getk(s1, "count", s0)
+                            7:  loadint(s2, 120)
+                            8:  eq(s1, 2, s1, 0)
+                            9:  jz(s1, 24)
+                            10:  load(s1, "state")
+                            11:  loadnulls(s2, 1)
+                            12:  set(s255, s0, s1, s2)
+                            13:  getk(s1, "obj", s0)
+                            14:  getk(s1, "player", s1)
+                            15:  load(s2, "enable_input")
+                            16:  loadbool(s3, 1)
+                            17:  set(s255, s1, s2, s3)
+                            18:  getk(s1, "obj", s0)
+                            19:  getk(s1, "player", s1)
+                            20:  load(s2, "invincible_time")
+                            21:  loadint(s3, 0)
+                            22:  set(s255, s1, s2, s3)
+                            23:  getk(s1, "com_list", s0)
+                            24:  prepcallk(s1, "remove", s1, s2)
+                            25:  loadint(s3, 0)
+                            26:  call(255, s1, s2, 2)
+                            27:  getk(s1, "com_list", s0)
+                            28:  loadint(s2, 0)
+                            29:  get(s1, s1, s2)
+                            30:  prepcallk(s1, "call", s1, s2)
+                            31:  move(s3, s0)
+                            32:  loadnulls(s4, 1)
+                            33:  call(255, s1, s2, 3)
+                            34:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+        name: "Dead"
+        nliterals: 28
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 73
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "lib"
+            2: "enemy"
+            3: "dead_event"
+            4: "camera"
+            5: "setmode"
+            6: "count"
+            7: "g"
+            8: "vx"
+            9: "direction_h"
+            10: "vy"
+            11: "ground"
+            12: "angle"
+            13: "flutter"
+            14: "y"
+            15: "select_motion"
+            16: "dead"
+            17: "_audio_play"
+            18: "se"
+            19: "dead_boss"
+            20: "obj"
+            21: "player"
+            22: "enable_input"
+            23: "invincible_time"
+            24: "object_pool"
+            25: "limit_group"
+            26: "Erace_AllEnemyBullet"
+            27: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "target_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "target_", pos: 1, start_op: 0, end_op: 72
+            1: name: "this", pos: 0, start_op: 0, end_op: 72
+          ]
+        Line Informations: [
+            0: line: 111, op: 0
+            1: line: 112, op: 0
+            2: line: 114, op: 2
+            3: line: 115, op: 7
+            4: line: 117, op: 12
+            5: line: 118, op: 15
+            6: line: 119, op: 18
+            7: line: 120, op: 22
+            8: line: 121, op: 25
+            9: line: 122, op: 28
+            10: line: 123, op: 31
+            11: line: 124, op: 34
+            12: line: 125, op: 38
+            13: line: 126, op: 41
+            14: line: 127, op: 48
+            15: line: 128, op: 53
+            16: line: 129, op: 58
+            17: line: 130, op: 66
+            18: line: 131, op: 69
+            19: line: 154, op: 72
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  loadroot(s2)
+            3:  getk(s2, "lib", s2)
+            4:  getk(s2, "enemy", s2)
+            5:  prepcallk(s2, "dead_event", s2, s3)
+            6:  call(255, s2, s3, 1)
+            7:  loadroot(s2)
+            8:  getk(s2, "camera", s2)
+            9:  prepcallk(s2, "setmode", s2, s3)
+            10:  loadint(s4, 2)
+            11:  call(255, s2, s3, 2)
+            12:  load(s2, "count")
+            13:  loadint(s3, 0)
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "g")
+            16:  loadfloat(s3, 0)
+            17:  set(s255, s0, s2, s3)
+            18:  dload(s2, "vx", s3, "direction_h")
+            19:  get(s3, s0, s3)
+            20:  neg(s3, s3)
+            21:  set(s255, s0, s2, s3)
+            22:  load(s2, "vy")
+            23:  loadfloat(s3, -1.25)
+            24:  set(s255, s0, s2, s3)
+            25:  load(s2, "g")
+            26:  loadfloat(s3, 0.01)
+            27:  set(s255, s0, s2, s3)
+            28:  load(s2, "ground")
+            29:  loadbool(s3, 0)
+            30:  set(s255, s0, s2, s3)
+            31:  load(s2, "angle")
+            32:  loadfloat(s3, 0)
+            33:  set(s255, s0, s2, s3)
+            34:  getk(s2, "flutter", s0)
+            35:  load(s3, "y")
+            36:  loadint(s4, 0)
+            37:  set(s255, s2, s3, s4)
+            38:  prepcallk(s2, "select_motion", s0, s3)
+            39:  load(s4, "dead")
+            40:  call(255, s2, s3, 2)
+            41:  loadroot(s2)
+            42:  prepcallk(s2, "_audio_play", s2, s3)
+            43:  loadroot(s4)
+            44:  getk(s4, "se", s4)
+            45:  getk(s4, "dead_boss", s4)
+            46:  loadint(s5, 1)
+            47:  call(255, s2, s3, 3)
+            48:  getk(s2, "obj", s0)
+            49:  getk(s2, "player", s2)
+            50:  load(s3, "enable_input")
+            51:  loadbool(s4, 0)
+            52:  set(s255, s2, s3, s4)
+            53:  getk(s2, "obj", s0)
+            54:  getk(s2, "player", s2)
+            55:  load(s3, "invincible_time")
+            56:  loadint(s4, -1)
+            57:  set(s255, s2, s3, s4)
+            58:  loadroot(s2)
+            59:  getk(s2, "object_pool", s2)
+            60:  prepcallk(s2, "limit_group", s2, s3)
+            61:  loadint(s4, 60)
+            62:  loadint(s5, 8)
+            63:  loadint(s6, 16)
+            64:  bitw(s5, s6, s5, BW_OR)
+            65:  call(255, s2, s3, 3)
+            66:  prepcallk(s2, "Erace_AllEnemyBullet", s0, s3)
+            67:  loadbool(s4, 1)
+            68:  call(255, s2, s3, 2)
+            69:  load(s2, "state")
+            70:  closure(s3, 0)
+            71:  set(s255, s0, s2, s3)
+            72:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\shion\shion_enemy_state.nut"
+                name: null
+                nliterals: 25
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 20
+                ndefaultparams: 0
+                ninstructions: 79
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "_audio_play"
+                    2: "se"
+                    3: "dead_boss_pre"
+                    4: "Spawn_Effect"
+                    5: "x"
+                    6: "y"
+                    7: "boss_dead"
+                    8: "frameset"
+                    9: "_composition_create_framepointer"
+                    10: "resource_pool"
+                    11: "shion/dead_shadow"
+                    12: "direction_h"
+                    13: "com_combo_end"
+                    14: "camera"
+                    15: "vibration"
+                    16: "dead_boss2"
+                    17: "select_motion"
+                    18: "invisible"
+                    19: "ground"
+                    20: "vx"
+                    21: "vy"
+                    22: "g"
+                    23: "Spawn_Fade"
+                    24: "enable_demo"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_a", pos: 1, start_op: 18, end_op: 28
+                    1: name: "this", pos: 0, start_op: 0, end_op: 78
+                  ]
+                Line Informations: [
+                    0: line: 131, op: 0
+                    1: line: 132, op: 0
+                    2: line: 133, op: 2
+                    3: line: 134, op: 6
+                    4: line: 135, op: 13
+                    5: line: 136, op: 18
+                    6: line: 137, op: 26
+                    7: line: 139, op: 29
+                    8: line: 140, op: 33
+                    9: line: 141, op: 36
+                    10: line: 142, op: 41
+                    11: line: 143, op: 48
+                    12: line: 144, op: 51
+                    13: line: 145, op: 54
+                    14: line: 146, op: 57
+                    15: line: 147, op: 60
+                    16: line: 148, op: 63
+                    17: line: 150, op: 71
+                    18: line: 151, op: 75
+                    19: line: 153, op: 78
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 1)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 23)
+                    6:  loadroot(s1)
+                    7:  prepcallk(s1, "_audio_play", s1, s2)
+                    8:  loadroot(s3)
+                    9:  getk(s3, "se", s3)
+                    10:  getk(s3, "dead_boss_pre", s3)
+                    11:  loadint(s4, 1)
+                    12:  call(255, s1, s2, 3)
+                    13:  prepcallk(s1, "Spawn_Effect", s0, s2)
+                    14:  getk(s3, "x", s0)
+                    15:  getk(s4, "y", s0)
+                    16:  load(s5, "boss_dead")
+                    17:  call(1, s1, s2, 4)
+                    18:  load(s2, "frameset")
+                    19:  loadroot(s3)
+                    20:  prepcallk(s3, "_composition_create_framepointer", s3, s4)
+                    21:  loadroot(s5)
+                    22:  getk(s5, "resource_pool", s5)
+                    23:  getk(s5, "shion/dead_shadow", s5)
+                    24:  call(3, s3, s4, 2)
+                    25:  set(s255, s1, s2, s3)
+                    26:  dload(s2, "direction_h", s3, "direction_h")
+                    27:  get(s3, s0, s3)
+                    28:  set(s255, s1, s2, s3)
+                    29:  getk(s1, "count", s0)
+                    30:  loadint(s2, 180)
+                    31:  eq(s1, 2, s1, 0)
+                    32:  jz(s1, 38)
+                    33:  prepcallk(s1, "com_combo_end", s0, s2)
+                    34:  loadnulls(s3, 1)
+                    35:  call(255, s1, s2, 2)
+                    36:  loadroot(s1)
+                    37:  getk(s1, "camera", s1)
+                    38:  prepcallk(s1, "vibration", s1, s2)
+                    39:  loadint(s3, 15)
+                    40:  call(255, s1, s2, 2)
+                    41:  loadroot(s1)
+                    42:  prepcallk(s1, "_audio_play", s1, s2)
+                    43:  loadroot(s3)
+                    44:  getk(s3, "se", s3)
+                    45:  getk(s3, "dead_boss2", s3)
+                    46:  loadint(s4, 1)
+                    47:  call(255, s1, s2, 3)
+                    48:  prepcallk(s1, "select_motion", s0, s2)
+                    49:  load(s3, "invisible")
+                    50:  call(255, s1, s2, 2)
+                    51:  load(s1, "ground")
+                    52:  loadbool(s2, 0)
+                    53:  set(s255, s0, s1, s2)
+                    54:  load(s1, "vx")
+                    55:  loadint(s2, 0)
+                    56:  set(s255, s0, s1, s2)
+                    57:  load(s1, "vy")
+                    58:  loadint(s2, 0)
+                    59:  set(s255, s0, s1, s2)
+                    60:  load(s1, "g")
+                    61:  loadint(s2, 0)
+                    62:  set(s255, s0, s1, s2)
+                    63:  prepcallk(s1, "Spawn_Fade", s0, s2)
+                    64:  loadint(s3, 2)
+                    65:  loadint(s4, 5)
+                    66:  loadint(s5, 180)
+                    67:  loadfloat(s6, 1)
+                    68:  loadfloat(s7, 1)
+                    69:  loadfloat(s8, 1)
+                    70:  call(255, s1, s2, 7)
+                    71:  getk(s1, "count", s0)
+                    72:  loadint(s2, 300)
+                    73:  eq(s1, 2, s1, 0)
+                    74:  jz(s1, 3)
+                    75:  load(s1, "enable_demo")
+                    76:  loadbool(s2, 1)
+                    77:  set(s255, s0, s1, s2)
+                    78:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 9
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

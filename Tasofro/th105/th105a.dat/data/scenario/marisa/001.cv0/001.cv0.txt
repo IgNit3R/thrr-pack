@@ -1,0 +1,260 @@
+## =======================================================================
+#Stage:2
+#Title:お天道様は何処に
+#Place:魔法の森
+#Weather:霧雨
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:marisa,160,0,0,8888FF
+Character:reimu,160,0,1,FF8888
+Character:udonge,160,0,2,FF8888
+
+#敵キャラ画面外に待機
+Action:reimu,100
+#カメラ固定
+Action:marisa,4
+
+#フォーカス瞬間移動
+#Action:marisa,11
+
+#向き固定解除
+Action:marisa,152
+
+Label:Start
+
+Bgm:data/bgm/ta00.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/marisa/effect/StageTitle002.bmp,0,256,-32
+Sleep:30;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:30
+
+# 普、嬉、余、汗、驚、怒、決、惑、負
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:marisa,普
+雨乞いはよく聞くけど
+その反対はどうすればいいんだ？\
+
+Face:marisa,余
+まさか照る照る坊主なんて迷信を信じる訳にも
+行かないし\
+
+Face:marisa,
+Hide:1
+Sleep:30
+
+#
+# 霊夢登場
+#
+Action:reimu,101
+Action:reimu,102
+
+Sleep:20
+
+Face:reimu,普
+居るかしら？\
+
+# 名前のテロップ
+Object:data/scenario/reimu/effect/Name.bmp,2,352,304
+
+Face:marisa,普
+今は居ないぜ\
+
+Hide:1
+# 快晴
+Action:reimu,103
+Sleep:50
+
+
+Face:reimu,汗
+そう、って目の前に居るじゃない\
+
+Face:marisa,驚
+おお？
+私はお天道様はここには居ないと言ったんだが\
+
+Face:marisa,驚
+お前が来たらあっさりと晴れたな\
+
+Face:reimu,普
+最近は<accent>日照り続き</accent>だからね\
+
+Face:reimu,惑
+このままじゃ植物だって枯れちゃうわよ\
+
+Face:marisa,怒
+この森を見てみろよ
+雨続きでこのままじゃ森が腐っちまうぜ\
+
+Face:reimu,怒
+そんな事知らないわよ\
+
+Face:marisa,普
+そうか、判ったぜ\
+
+Face:marisa,決
+お前がお天道様だろ
+お前がサボっているから天気が悪いんだな？\
+
+Face:marisa,
+
+#戦闘開始
+PlayBgm:data/bgm/st01.ogg
+Action:marisa,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:reimu,怒
+何言ってるのよ\
+
+Face:reimu,普通
+私は地震の被害を見に来ただけなのに\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:reimu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:reimu,200
+#攻撃側ニュートラル移行検知
+Action:marisa,202
+
+#自キャラ天候に変化
+#Action:marisa,103
+#Sleep:60
+
+Face:reimu,負
+何で闘うのか判らないけど……
+今朝の地震は大丈夫だったの？\
+
+Face:marisa,普
+地震？
+特に何も感じなかったぜ\
+
+Face:reimu,負
+そんな筈は……
+だって神社が壊れる位の地震だったのに\
+
+Face:reimu,
+
+Hide:1
+
+# 三番手登場
+Action:udonge,105
+
+#Weather:晴嵐
+Action:udonge,103
+
+#登場終了検知
+Action:udonge,106
+
+
+Face:udonge,普
+そこの魔法使いは何も判っていない\
+
+Face:marisa,驚
+なんだなんだ？
+今日はこの店始めて以来の千客万来だな\
+
+# 名前のテロップ
+Object:data/scenario/Udonge/effect/Name.bmp,2,352,304
+
+Face:udonge,惑
+店なんてやってたの？\
+
+Face:marisa,惑
+実はやっていたんだけどな
+最近は不景気でねぇ\
+
+Face:udonge,普
+それはともかく、今恐ろしい事が起きようとしている
+のに、貴方と来たら\
+
+Face:marisa,普
+さっきまで晴れてたのに天気がおかしくなってきたぜ
+恐ろしい事ってこれか？\
+
+Face:udonge,余
+違う違う、地震の事よ\
+
+Face:reimu,負
+地震ならもう起きたけどね
+今日の朝一に\
+
+Face:udonge,惑
+え？　今朝は何にも感じなかったけど……\
+
+Face:udonge,普
+ま、起きるとしたらそんなに
+小さな地震じゃないと思うんだけど\
+
+
+Face:marisa,普
+何でそんな事が判るんだよ\
+
+Face:udonge,普
+ふん、付いてきなさい\
+
+Hide:1
+
+Sleep:10
+
+#やられキャラ画面退場
+Action:reimu,201
+
+#ステージ間調整自キャラ
+Action:marisa,150
+Sleep:15
+
+#ステージ間調整敵
+Action:udonge,110
+Stage:2,120
+CrossFadeBgm:data/bgm/st02.ogg,2000,1
+
+#カメラ中央あわせ
+Action:marisa,4
+
+#敵移動終了検知
+Action:udonge,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,299 @@
+#========================================================================
+#	董子：ステージ4　試作
+#	場所：
+#   スレイブ：ドレミー　敵チーム：紫
+#	ステージタイトル
+#	   「」
+#========================================================================
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+,Function,"::battle.Enable_win_demo(false)"#勝利ポーズ演出無し
+
+#フェイス画像参照の定義
+#1Pmaster
+,LoadImageDef,usami,"data/event/pic/usami/face.pat"#名前,ソースファイル名
+,DefineObject,usami,usami,1p,240,0,false#名前,グループ名,x,y,反転
+
+#1Pslave
+,LoadImageDef,doremy,"data/event/pic/doremy/face.pat"#名前,ソースファイル名
+,DefineObject,doremy2,doremy,1p,240,0,false#名前,グループ名,x,y,反転
+
+#2Pmaster
+,LoadImageDef,yukari,"data/event/pic/yukari/face.pat"
+,DefineObject,yukari,yukari,2p,1040,0,true
+
+#肩書データロード（肩書内容の指定がある場合、ここに描き込んでもらえれば対応します）
+,DefineObject,yukari_name,yukari,name,920,0,false
+
+
+,Return
+# =========================================================
+
+# 本編
+# -------------------------------------------------------
+
+# ********************************************
+# ********************************************
+
+:main_1
+
+,LoadAnimation,"data/actor/story_title/usami/title4.pat"#ステージタイトル画像読み込み
+,LoadAnimation,"data/actor/story_name/yukari/name.pat"#敵肩書画像読み込み
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Function,"::battle.team[1].current.Wait_Outside()"#敵を非表示待機
+
+#開始カメラ演出
+,Function,"::battle.BeginCamera()"#カメラ演出、ステージインを開始
+,Sleep,2,#ウェイト命令
+,Function,"::graphics.FadeIn(60)"#画面がフェードイン
+
+,Function,"::sound.PlayBGM(407)",# 指定BGM再生開始
+
+#初期表情設定
+#,ImageDef,設定対象,表情内容,表示座標補正X,表示座標補正Y
+,ImageDef,usami,普1,0,0
+,ImageDef,doremy2,普1,0,0
+,ImageDef,yukari,普1,0,0
+
+
+#Xフレームの待機処理（sleepと異なりスキップ操作で飛ばせない）
+,Sleep,60#スリープ命令　指定数値フレーム待ちます
+
+#タイトルコール出現(現在未実装)
+,Function,"::battle.Show_StageTitle()"#タイトルコール出現
+,Sleep,150
+
+,Show,usami,-1280,	#対象フェイス表示開始
+#,Show,フェイス表示開始対象,表示開始時のX座標補正（ここをスタートに定位置へ移動してくる）,
+
+,SetFocus,usami		,	#発言キャラを指定
+#会話テキスト、\nで改行、末尾\でキー入力を待ちます\,吹き出し指定,表示座標補正X,表示座標補正Y
+,ImageDef,usami,汗1,0,0
+あいたたた\n誰かに掴まれたような\,c,0,0
+,ClearBalloon,usami#対象の吹き出し消去
+
+# =====
+,Hide,usami,-1280, &
+,Function,"::battle.team[0].current.Team_Change_Slave(null)",		# スレイブに入れ替わる
+
+#ここでこういう演出が欲しい、という注文があったらガンガン本文に注釈文挟んでください
+#可能な限り対応しますぞ
+
+,Show,doremy2,-1280,	#対象フェイス表示開始
+,SetFocus,doremy2		,#発言中キャラを指定
+,ImageDef,doremy2,驚1,0,0
+ここは、現の世界ね\n強制的に夢の中から\n引っ張り出されたようね\,a,0,0
+,ClearBalloon,doremy2
+
+# =====
+,Hide,doremy2,-1280, &
+,Function,"::battle.team[0].current.Team_Change_Master(null)",		# マスターに入れ替わる
+
+,SetFocus,usami		,	#発言キャラを指定
+,ImageDef,usami,驚1,0,0
+え？　いつもの幻想郷？\nやったあ\,a,0,0
+,ClearBalloon,usami#吹き出し消去
+
+,Hide,usami,-1280,
+,Hide,doremy2,-1280,
+,Function,"::battle.team[1].current.StageIn_Special()"#実行チームが画面上から出現
+,Sleep,90#スリープ命令　指定数値フレーム待ちます
+
+,Show,yukari,-1280,&	#対象フェイス表示開始
+,SetFocus,yukari		,#発言中キャラを指定
+,ImageDef,yukari,普2,0,0
+こんにちは\,a,0,0
+,ClearBalloon,yukari
+
+,SetFocus,usami		,	#発言キャラを指定
+,ImageDef,usami,普1,0,0
+こんばんは\n貴方は？\,a,0,0
+,ClearBalloon,usami#吹き出し消去
+
+,Function,"::battle.Show_EnemyName()",
+,SetFocus,yukari		,#発言中キャラを指定
+,ImageDef,yukari,普1,0,0
+私は八雲紫\n貴方に救いの手を\n差しのばしに来ました\,a,0,0
+,ClearBalloon,yukari
+
+,SetFocus,usami,	#発言中キャラを指定
+,ImageDef,usami,嬉1,0,0
+不思議の世界から\n連れ出してくれたのね\n助かったわー、ありがとねー\,a,0,0
+,ClearBalloon,usami
+
+,Hide,usami,-1280,
+,Function,"::battle.team[0].current.Team_Change_Slave(null)",#スレイブに入れ替わる
+,Sleep,30#スリープ命令　指定数値フレーム待ちます
+
+,SetFocus,doremy2,	#発言中キャラを指定
+,ImageDef,doremy2,怒1,0,0
+#0１２３４５６７８９０１２３４
+困ります\n夢の世界に無断で干渉するなんて\nルール違反です\,a,0,0
+,ClearBalloon,doremy2
+
+,SetFocus,yukari		,#発言中キャラを指定
+,ImageDef,yukari,怒1,0,0
+あら、夢の住人が幻想郷で暴れる\nのはルール違反じゃなくて？\,a,0,0
+,ImageDef,yukari,余1,0,0
+夢の世界の菫子が\nこちらで大暴れしていたのにねぇ\,a,0,0
+,ClearBalloon,yukari
+
+,SetFocus,yukari		,#発言中キャラを指定
+,ImageDef,yukari,余1,0,0
+私は、この暴れん坊を\n外の世界に送り返す為に\n夢の世界から連れ出したのよ\,a,0,0
+,ClearBalloon,yukari
+
+# =====
+,Hide,doremy2,-1280, &
+,Function,"::battle.team[0].current.Team_Change_Master(null)",		# マスターに入れ替わる
+
+,SetFocus,usami		,	#発言キャラを指定
+,ImageDef,usami,汗1,0,0
+ええ？　外の世界に？\n折角幻想郷に戻って来たのにー\,a,0,0
+,ClearBalloon,usami#吹き出し消去
+
+,Function,"::sound.StopBGM(1000)",# BGM停止 1000=一秒掛けてフェードアウト
+
+,Sleep,60
+
+,Function,"::sound.PlayBGM(318)",# 指定BGM再生開始
+
+,SetFocus,yukari		,#発言中キャラを指定
+,ImageDef,yukari,決1,0,0
+問答無用！\nさっさと消えよ！\,b,0,0
+,ClearBalloon,yukari
+
+
+#全員フェイス撤去
+,Hide,usami,-1280,&	#　&でつなぐと「処理を終えたら次へ進む」系の命令を同時に実行可能
+,Hide,doremy2,-1280,&　#これは四人分のフェイス画像を同時に1280ドット外へ向けて撤収させています
+,Hide,yukari,-1280,&　#　&でつながない場合、一人ずつフェイス画像が撤収していきます
+
+
+,Sleep,60#スリープ命令　指定数値フレーム待ちます
+
+,Function,"::battle.Battle_Ready()",# 対戦開始命令
+
+,End	#会話イベントを終了
+
+
+
+# -------------------------------------------------------
+# プレイヤー敗北
+# -------------------------------------------------------
+:lose
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+#初期表情設定
+,ImageDef,usami,負1,0,0
+,ImageDef,doremy2,負1,0,0
+,ImageDef,yukari,普1,0,0
+
+,Show,usami,-1280	,&#フェイス表示開始(現在フェイスの表示がSetFocusと紐づけられているため、顔の同時出現ができないため、今後対応します
+,Show,yukari,-1280	,&#フェイス表示開始
+,SetFocus,usami
+
+,SetFocus,yukari
+夢の世界の菫子なら\n外の世界に送り返したわ\,a,0,0
+,ClearBalloon,yukari
+
+,Hide,usami,-1280,&	#　&でつなぐと「処理を終えたら次へ進む」系の命令を同時に実行可能
+,Hide,doremy2,-1280,&　#これは四人分のフェイス画像を同時に1280ドット外へ向けて撤収させています
+,Hide,yukari,-1280,&　#　&でつながない場合、一人ずつフェイス画像が撤収していきます
+
+,Sleep,30
+
+,Function,"::battle.Continue()",# 対戦開始命令
+
+,End
+
+# -------------------------------------------------------
+# プレイヤー勝利
+# -------------------------------------------------------
+:win
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Function,"if(::battle.team[0].current == ::battle.team[0].slave )::battle.team[0].current.Team_Change_Slave(null)",
+
+#初期表情設定
+,ImageDef,usami,嬉1,0,0
+,ImageDef,doremy2,余1,0,0
+,ImageDef,yukari,普1,0,0
+
+,Show,usami,-1280	,&#フェイス表示開始
+,Show,yukari,-1280	,&#フェイス表示開始
+#,Show,koishi,-1280	,#フェイス表示開始
+
+# =====
+,Hide,usami,-1280, &
+,Function,"::battle.team[0].current.Team_Change_Slave(null)",		# スレイブに入れ替わる
+
+,SetFocus,yukari
+,Show,doremy2,-1280,	#対象フェイス表示開始
+,SetFocus,doremy2		,#発言中キャラを指定
+,ImageDef,doremy2,怒1,0,0
+#0１２３４５６７８９０１２３４
+どのような理由であれ\n夢の世界に干渉されるのは\n困ります\,a,0,0
+,ImageDef,doremy2,普1,0,0
+夢の菫子の暴走も\n大元は現の住人が原因です\,a,0,0
+,ImageDef,doremy2,怒1,0,0
+そっちを処理するのが\n先じゃないですか\,a,0,0
+,ClearBalloon,doremy2
+
+,SetFocus,yukari
+,ImageDef,yukari,驚1,0,0
+え？それは\nどういう意味です？\,a,0,0
+,ClearBalloon,yukari
+
+,SetFocus,doremy2		,#発言中キャラを指定
+,ImageDef,doremy2,惑1,0,0
+夢の住人の暴走は\n完全憑依異変が原因なのです\,a,0,0
+#0１２３４５６７８９０１２３４
+,ImageDef,doremy2,普2,0,0
+それを解決しない限り\n夢の世界は現の世界に\n影響を及ぼし続けるでしょう\,a,0,0
+,ClearBalloon,doremy2
+
+,SetFocus,yukari
+,ImageDef,yukari,惑1,0,0
+その話詳しく教えて下さい\,a,0,0
+,ClearBalloon,yukari
+
+,SetFocus,doremy2		,#発言中キャラを指定
+,ImageDef,doremy2,敵1,0,0
+#0１２３４５６７８９０１２３４
+完全憑依している間\nマスターの夢を追いだして\nスレイブが夢の世界に留まります\,a,0,0
+追い出された夢の住人が\n現の世界で暴走するのです\,a,0,0
+,ClearBalloon,doremy2
+
+,SetFocus,yukari
+,ImageDef,yukari,普2,0,0
+#0１２３４５６７８９０１２３４
+完全憑依にそんな副作用が……\n大変勉強になりました\,c,0,0
+,ClearBalloon,yukari
+
+,SetFocus,doremy2		,#発言中キャラを指定
+,ImageDef,doremy2,汗1,0,0
+しかし\R[菫子|このこ]の状況は\n殊更に複雑な様です\,a,0,0
+,ImageDef,doremy2,惑1,0,0
+完全憑依異変だけでなく\nある都市伝説も影響して\nいるようです\,a,0,0
+,ImageDef,doremy2,決1,0,0
+丁度良いです\n夢の世界の菫子は\n何処にいるか判りますか？\,a,0,0
+,ClearBalloon,doremy2
+
+,SetFocus,yukari
+,ImageDef,yukari,嬉1,0,0
+それなら……\,a,0,0
+,ClearBalloon,yukari
+
+,Function,"::sound.StopBGM(1500);"
+,Function,"::battle.Go_NextStage();"
+
+,Hide,usami,-1280,&	#　&でつなぐと「処理を終えたら次へ進む」系の命令を同時に実行可能
+,Hide,doremy2,-1280,&　#これは四人分のフェイス画像を同時に1280ドット外へ向けて撤収させています
+,Hide,yukari,-1280,&　#　&でつながない場合、一人ずつフェイス画像が撤収していきます
+
+,Sleep,60
+
+,End

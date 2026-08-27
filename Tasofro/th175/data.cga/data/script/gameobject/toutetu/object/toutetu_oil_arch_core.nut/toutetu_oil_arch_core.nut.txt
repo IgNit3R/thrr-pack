@@ -1,0 +1,776 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut: 
+sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+name: "main"
+nliterals: 11
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 8
+ndefaultparams: 0
+ninstructions: 27
+nfunctions: 5
+Literals: [
+    0: "_exec"
+    1: "data/script/gameobject/common_shot/oil_bubble_big.nut"
+    2: "message"
+    3: "update_bound"
+    4: "update_arch"
+    5: "on_hit_target"
+    6: "lib"
+    7: "shot"
+    8: "on_hit_enemyshot"
+    9: "on_hit_ground"
+    10: "on_graze_spread"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 26
+    1: name: "this", pos: 0, start_op: 0, end_op: 26
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 4, op: 5
+    2: line: 33, op: 8
+    3: line: 72, op: 11
+    4: line: 105, op: 14
+    5: line: 107, op: 20
+    6: line: 110, op: 23
+    7: line: 115, op: 26
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  loadroot(s2)
+    1:  prepcallk(s2, "_exec", s2, s3)
+    2:  load(s4, "data/script/gameobject/common_shot/oil_bubble_big.nut")
+    3:  move(s5, s0)
+    4:  call(255, s2, s3, 3)
+    5:  load(s2, "message")
+    6:  closure(s3, 0)
+    7:  newslot(s2, s0, s2, s3)
+    8:  load(s2, "update_bound")
+    9:  closure(s3, 1)
+    10:  newslot(s2, s0, s2, s3)
+    11:  load(s2, "update_arch")
+    12:  closure(s3, 2)
+    13:  newslot(s2, s0, s2, s3)
+    14:  load(s2, "on_hit_target")
+    15:  loadroot(s3)
+    16:  getk(s3, "lib", s3)
+    17:  getk(s3, "shot", s3)
+    18:  getk(s3, "on_hit_enemyshot", s3)
+    19:  newslot(s255, s0, s2, s3)
+    20:  load(s2, "on_hit_ground")
+    21:  closure(s3, 3)
+    22:  newslot(s2, s0, s2, s3)
+    23:  load(s2, "on_graze_spread")
+    24:  closure(s3, 4)
+    25:  newslot(s2, s0, s2, s3)
+    26:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+        name: "message"
+        nliterals: 12
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 24
+        ndefaultparams: 0
+        ninstructions: 77
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "enable_erace"
+            3: "shot_group"
+            4: "bound"
+            5: "state"
+            6: "update_bound"
+            7: "vx"
+            8: "vy"
+            9: "g"
+            10: "keep_y"
+            11: "update_arch"
+          ]
+        Parameters: [
+            0: "this"
+            1: "id_"
+            2: "param_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "param_", pos: 2, start_op: 0, end_op: 76
+            1: name: "id_", pos: 1, start_op: 0, end_op: 76
+            2: name: "this", pos: 0, start_op: 0, end_op: 76
+          ]
+        Line Informations: [
+            0: line: 4, op: 0
+            1: line: 5, op: 0
+            2: line: 7, op: 3
+            3: line: 8, op: 7
+            4: line: 9, op: 11
+            5: line: 11, op: 16
+            6: line: 12, op: 19
+            7: line: 13, op: 22
+            8: line: 14, op: 25
+            9: line: 15, op: 28
+            10: line: 16, op: 32
+            11: line: 17, op: 36
+            12: line: 18, op: 39
+            13: line: 19, op: 42
+            14: line: 20, op: 46
+            15: line: 22, op: 51
+            16: line: 23, op: 54
+            17: line: 24, op: 58
+            18: line: 25, op: 62
+            19: line: 26, op: 65
+            20: line: 27, op: 68
+            21: line: 28, op: 71
+            22: line: 29, op: 75
+            23: line: 31, op: 76
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 64)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 1)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 32)
+            16:  load(s3, "enable_erace")
+            17:  loadbool(s4, 0)
+            18:  set(s255, s0, s3, s4)
+            19:  load(s3, "shot_group")
+            20:  loadint(s4, 1)
+            21:  newslot(s255, s0, s3, s4)
+            22:  load(s3, "bound")
+            23:  loadint(s4, 0)
+            24:  newslot(s255, s0, s3, s4)
+            25:  dload(s3, "state", s4, "update_bound")
+            26:  get(s4, s0, s4)
+            27:  newslot(s255, s0, s3, s4)
+            28:  load(s3, "vx")
+            29:  loadint(s4, 0)
+            30:  get(s4, s2, s4)
+            31:  set(s255, s0, s3, s4)
+            32:  load(s3, "vy")
+            33:  loadint(s4, 1)
+            34:  get(s4, s2, s4)
+            35:  set(s255, s0, s3, s4)
+            36:  load(s3, "g")
+            37:  loadfloat(s4, 0.1)
+            38:  set(s255, s0, s3, s4)
+            39:  dload(s3, "keep_y", s4, "y")
+            40:  get(s4, s0, s4)
+            41:  newslot(s255, s0, s3, s4)
+            42:  load(s3, "shot_group")
+            43:  loadint(s4, 2)
+            44:  get(s4, s2, s4)
+            45:  newslot(s255, s0, s3, s4)
+            46:  jmp(-, 29)
+            47:  jmp(-, 3)
+            48:  loadint(s3, 2)
+            49:  eq(s3, 3, s1, 0)
+            50:  jz(s3, 25)
+            51:  dload(s3, "state", s4, "update_arch")
+            52:  get(s4, s0, s4)
+            53:  newslot(s255, s0, s3, s4)
+            54:  load(s3, "vx")
+            55:  loadint(s4, 0)
+            56:  get(s4, s2, s4)
+            57:  set(s255, s0, s3, s4)
+            58:  load(s3, "vy")
+            59:  loadint(s4, 1)
+            60:  get(s4, s2, s4)
+            61:  set(s255, s0, s3, s4)
+            62:  load(s3, "g")
+            63:  loadfloat(s4, 0.05)
+            64:  set(s255, s0, s3, s4)
+            65:  dload(s3, "keep_y", s4, "y")
+            66:  get(s4, s0, s4)
+            67:  newslot(s255, s0, s3, s4)
+            68:  load(s3, "bound")
+            69:  loadint(s4, 0)
+            70:  newslot(s255, s0, s3, s4)
+            71:  load(s3, "shot_group")
+            72:  loadint(s4, 2)
+            73:  get(s4, s2, s4)
+            74:  newslot(s255, s0, s3, s4)
+            75:  jmp(-, 0)
+            76:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+        name: "update_bound"
+        nliterals: 31
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 26
+        ndefaultparams: 0
+        ninstructions: 182
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "scale"
+            2: "scale_x"
+            3: "scale_y"
+            4: "angle"
+            5: "vy"
+            6: "g"
+            7: "x"
+            8: "vx"
+            9: "y"
+            10: "_vspace_commit"
+            11: "h_entity"
+            12: "stage"
+            13: "draw"
+            14: "message"
+            15: "rand"
+            16: "Spawn_GroupBulletMessage"
+            17: "toutetu_oil_bubble_floatsplash"
+            18: "shot_group"
+            19: "_audio_play"
+            20: "se"
+            21: "boss_shot"
+            22: "world"
+            23: "right"
+            24: "left"
+            25: "keep_y"
+            26: "bound"
+            27: "obj"
+            28: "enemy"
+            29: "com_flag"
+            30: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 181
+          ]
+        Line Informations: [
+            0: line: 33, op: 0
+            1: line: 34, op: 0
+            2: line: 37, op: 2
+            3: line: 38, op: 5
+            4: line: 39, op: 11
+            5: line: 40, op: 15
+            6: line: 41, op: 18
+            7: line: 43, op: 21
+            8: line: 44, op: 24
+            9: line: 45, op: 27
+            10: line: 47, op: 31
+            11: line: 48, op: 37
+            12: line: 52, op: 68
+            13: line: 55, op: 93
+            14: line: 56, op: 106
+            15: line: 57, op: 133
+            16: line: 58, op: 142
+            17: line: 59, op: 145
+            18: line: 60, op: 147
+            19: line: 61, op: 150
+            20: line: 62, op: 154
+            21: line: 63, op: 159
+            22: line: 64, op: 171
+            23: line: 67, op: 178
+            24: line: 68, op: 180
+            25: line: 71, op: 181
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  load(s1, "scale")
+            3:  loadfloat(s2, 0.15)
+            4:  comparith(s1, 2, s1, 43)
+            5:  getk(s1, "scale", s0)
+            6:  loadfloat(s2, 1)
+            7:  jcmp(s2, 3, s1, CMP_G)
+            8:  load(s1, "scale")
+            9:  loadfloat(s2, 1)
+            10:  set(s255, s0, s1, s2)
+            11:  dload(s1, "scale_x", s2, "scale_y")
+            12:  getk(s3, "scale", s0)
+            13:  set(s2, s0, s2, s3)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "angle")
+            16:  loadfloat(s2, 0.10472)
+            17:  comparith(s1, 2, s1, 43)
+            18:  dload(s1, "vy", s2, "g")
+            19:  get(s2, s0, s2)
+            20:  comparith(s1, 2, s1, 43)
+            21:  dload(s1, "x", s2, "vx")
+            22:  get(s2, s0, s2)
+            23:  comparith(s1, 2, s1, 43)
+            24:  dload(s1, "y", s2, "vy")
+            25:  get(s2, s0, s2)
+            26:  comparith(s1, 2, s1, 43)
+            27:  loadroot(s1)
+            28:  prepcallk(s1, "_vspace_commit", s1, s2)
+            29:  getk(s3, "h_entity", s0)
+            30:  call(255, s1, s2, 2)
+            31:  getk(s1, "count", s0)
+            32:  loadint(s2, 3)
+            33:  bitw(s1, s2, s1, BW_AND)
+            34:  loadint(s2, 3)
+            35:  eq(s1, 2, s1, 0)
+            36:  jz(s1, 56)
+            37:  getk(s1, "stage", s0)
+            38:  getk(s1, "draw", s1)
+            39:  prepcallk(s1, "message", s1, s2)
+            40:  loadint(s3, 8)
+            41:  newobj(s4, 9, 0, 1)
+            42:  getk(s5, "x", s0)
+            43:  appendarray(s4, 5, 0)
+            44:  getk(s5, "y", s0)
+            45:  appendarray(s4, 5, 0)
+            46:  loadfloat(s5, 1.5708)
+            47:  neg(s5, s5)
+            48:  appendarray(s4, 5, 0)
+            49:  appendarray(s4, 1065353216, 3)
+            50:  appendarray(s4, 2, 2)
+            51:  appendarray(s4, 1036831949, 3)
+            52:  loadint(s5, 6)
+            53:  prepcallk(s6, "rand", s0, s7)
+            54:  call(6, s6, s7, 1)
+            55:  loadint(s7, 13)
+            56:  mod(s6, s7, s6)
+            57:  sub(s5, s6, s5)
+            58:  appendarray(s4, 5, 0)
+            59:  loadint(s5, -6)
+            60:  prepcallk(s6, "rand", s0, s7)
+            61:  call(6, s6, s7, 1)
+            62:  loadint(s7, 6)
+            63:  mod(s6, s7, s6)
+            64:  sub(s5, s6, s5)
+            65:  appendarray(s4, 5, 0)
+            66:  appendarray(s4, 1056964608, 3)
+            67:  call(255, s1, s2, 3)
+            68:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            69:  getk(s3, "x", s0)
+            70:  loadint(s4, 48)
+            71:  sub(s3, s4, s3)
+            72:  prepcallk(s4, "rand", s0, s5)
+            73:  call(4, s4, s5, 1)
+            74:  loadint(s5, 96)
+            75:  mod(s4, s5, s4)
+            76:  add(s3, s4, s3)
+            77:  getk(s4, "y", s0)
+            78:  loadint(s5, 48)
+            79:  sub(s4, s5, s4)
+            80:  prepcallk(s5, "rand", s0, s6)
+            81:  call(5, s5, s6, 1)
+            82:  loadint(s6, 96)
+            83:  mod(s5, s6, s5)
+            84:  add(s4, s5, s4)
+            85:  dload(s5, "toutetu_oil_bubble_floatsplash", s6, "shot_group")
+            86:  get(s6, s0, s6)
+            87:  loadint(s7, 8192)
+            88:  newobj(s8, 3, 0, 1)
+            89:  appendarray(s8, 0, 2)
+            90:  appendarray(s8, 0, 2)
+            91:  appendarray(s8, 60, 2)
+            92:  call(255, s1, s2, 7)
+            93:  getk(s1, "count", s0)
+            94:  loadint(s2, 6)
+            95:  mod(s1, s2, s1)
+            96:  loadint(s2, 1)
+            97:  eq(s1, 2, s1, 0)
+            98:  jz(s1, 7)
+            99:  loadroot(s1)
+            100:  prepcallk(s1, "_audio_play", s1, s2)
+            101:  loadroot(s3)
+            102:  getk(s3, "se", s3)
+            103:  getk(s3, "boss_shot", s3)
+            104:  loadint(s4, 1)
+            105:  call(255, s1, s2, 3)
+            106:  getk(s1, "vx", s0)
+            107:  loadfloat(s2, 0)
+            108:  cmp(s1, s2, s1, CMP_G)
+            109:  and(s1, 6, s1)
+            110:  getk(s2, "x", s0)
+            111:  loadroot(s3)
+            112:  getk(s3, "world", s3)
+            113:  getk(s3, "right", s3)
+            114:  cmp(s2, s3, s2, CMP_G)
+            115:  move(s1, s2)
+            116:  or(s1, 11, s1)
+            117:  getk(s2, "vx", s0)
+            118:  loadfloat(s3, 0)
+            119:  cmp(s2, s3, s2, CMP_L)
+            120:  and(s2, 6, s2)
+            121:  getk(s3, "x", s0)
+            122:  loadroot(s4)
+            123:  getk(s4, "world", s4)
+            124:  getk(s4, "left", s4)
+            125:  cmp(s3, s4, s3, CMP_L)
+            126:  move(s2, s3)
+            127:  move(s1, s2)
+            128:  jz(s1, 4)
+            129:  dload(s1, "vx", s2, "vx")
+            130:  get(s2, s0, s2)
+            131:  neg(s2, s2)
+            132:  set(s255, s0, s1, s2)
+            133:  getk(s1, "vy", s0)
+            134:  loadfloat(s2, 0)
+            135:  cmp(s1, s2, s1, CMP_G)
+            136:  and(s1, 4, s1)
+            137:  getk(s2, "y", s0)
+            138:  getk(s3, "keep_y", s0)
+            139:  cmp(s2, s3, s2, CMP_GE)
+            140:  move(s1, s2)
+            141:  jz(s1, 39)
+            142:  dload(s1, "y", s2, "keep_y")
+            143:  get(s2, s0, s2)
+            144:  set(s255, s0, s1, s2)
+            145:  load(s1, "bound")
+            146:  pinc(s1, s0, s1, 1)
+            147:  getk(s1, "bound", s0)
+            148:  loadint(s2, 1)
+            149:  jcmp(s2, 28, s1, CMP_LE)
+            150:  dload(s1, "vy", s2, "vy")
+            151:  get(s2, s0, s2)
+            152:  neg(s2, s2)
+            153:  set(s255, s0, s1, s2)
+            154:  getk(s1, "obj", s0)
+            155:  getk(s1, "enemy", s1)
+            156:  getk(s1, "com_flag", s1)
+            157:  load(s2, "shot_group")
+            158:  pinc(s1, s1, s2, 1)
+            159:  getk(s1, "obj", s0)
+            160:  getk(s1, "enemy", s1)
+            161:  getk(s1, "com_flag", s1)
+            162:  getk(s1, "shot_group", s1)
+            163:  loadint(s2, 11)
+            164:  jcmp(s2, 6, s1, CMP_GE)
+            165:  getk(s1, "obj", s0)
+            166:  getk(s1, "enemy", s1)
+            167:  getk(s1, "com_flag", s1)
+            168:  load(s2, "shot_group")
+            169:  loadint(s3, 1)
+            170:  set(s255, s1, s2, s3)
+            171:  dload(s1, "shot_group", s2, "obj")
+            172:  get(s2, s0, s2)
+            173:  getk(s2, "enemy", s2)
+            174:  getk(s2, "com_flag", s2)
+            175:  getk(s2, "shot_group", s2)
+            176:  set(s255, s0, s1, s2)
+            177:  jmp(-, 3)
+            178:  prepcallk(s1, "kill_move", s0, s2)
+            179:  call(255, s1, s2, 1)
+            180:  return(255, 0)
+            181:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+        name: "update_arch"
+        nliterals: 22
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 126
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "scale"
+            2: "angle"
+            3: "vy"
+            4: "g"
+            5: "x"
+            6: "vx"
+            7: "y"
+            8: "_vspace_commit"
+            9: "h_entity"
+            10: "stage"
+            11: "draw"
+            12: "message"
+            13: "rand"
+            14: "Spawn_GroupBulletMessage"
+            15: "toutetu_oil_bubble_floatsplash"
+            16: "shot_group"
+            17: "world"
+            18: "right"
+            19: "left"
+            20: "keep_y"
+            21: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 125
+          ]
+        Line Informations: [
+            0: line: 72, op: 0
+            1: line: 73, op: 0
+            2: line: 76, op: 2
+            3: line: 77, op: 5
+            4: line: 79, op: 11
+            5: line: 80, op: 14
+            6: line: 82, op: 17
+            7: line: 83, op: 20
+            8: line: 84, op: 23
+            9: line: 86, op: 27
+            10: line: 88, op: 33
+            11: line: 93, op: 61
+            12: line: 98, op: 86
+            13: line: 99, op: 113
+            14: line: 100, op: 122
+            15: line: 101, op: 124
+            16: line: 103, op: 125
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  load(s1, "scale")
+            3:  loadfloat(s2, 0.05)
+            4:  comparith(s1, 2, s1, 43)
+            5:  getk(s1, "scale", s0)
+            6:  loadfloat(s2, 1)
+            7:  jcmp(s2, 3, s1, CMP_G)
+            8:  load(s1, "scale")
+            9:  loadfloat(s2, 1)
+            10:  set(s255, s0, s1, s2)
+            11:  load(s1, "angle")
+            12:  loadfloat(s2, 0.034907)
+            13:  comparith(s1, 2, s1, 43)
+            14:  dload(s1, "vy", s2, "g")
+            15:  get(s2, s0, s2)
+            16:  comparith(s1, 2, s1, 43)
+            17:  dload(s1, "x", s2, "vx")
+            18:  get(s2, s0, s2)
+            19:  comparith(s1, 2, s1, 43)
+            20:  dload(s1, "y", s2, "vy")
+            21:  get(s2, s0, s2)
+            22:  comparith(s1, 2, s1, 43)
+            23:  loadroot(s1)
+            24:  prepcallk(s1, "_vspace_commit", s1, s2)
+            25:  getk(s3, "h_entity", s0)
+            26:  call(255, s1, s2, 2)
+            27:  getk(s1, "count", s0)
+            28:  loadint(s2, 6)
+            29:  mod(s1, s2, s1)
+            30:  loadint(s2, 1)
+            31:  eq(s1, 2, s1, 0)
+            32:  jz(s1, 53)
+            33:  getk(s1, "stage", s0)
+            34:  getk(s1, "draw", s1)
+            35:  prepcallk(s1, "message", s1, s2)
+            36:  loadint(s3, 4)
+            37:  newobj(s4, 6, 0, 1)
+            38:  getk(s5, "x", s0)
+            39:  appendarray(s4, 5, 0)
+            40:  getk(s5, "y", s0)
+            41:  appendarray(s4, 5, 0)
+            42:  prepcallk(s5, "rand", s0, s6)
+            43:  call(5, s5, s6, 1)
+            44:  loadint(s6, 360)
+            45:  mod(s5, s6, s5)
+            46:  loadfloat(s6, 0.017453)
+            47:  mul(s5, s6, s5)
+            48:  appendarray(s4, 5, 0)
+            49:  loadfloat(s5, 2)
+            50:  prepcallk(s6, "rand", s0, s7)
+            51:  call(6, s6, s7, 1)
+            52:  loadint(s7, 6)
+            53:  mod(s6, s7, s6)
+            54:  loadfloat(s7, 0.1)
+            55:  mul(s6, s7, s6)
+            56:  add(s5, s6, s5)
+            57:  appendarray(s4, 5, 0)
+            58:  appendarray(s4, 16, 2)
+            59:  appendarray(s4, 1008981770, 3)
+            60:  call(255, s1, s2, 3)
+            61:  prepcallk(s1, "Spawn_GroupBulletMessage", s0, s2)
+            62:  getk(s3, "x", s0)
+            63:  loadint(s4, 24)
+            64:  sub(s3, s4, s3)
+            65:  prepcallk(s4, "rand", s0, s5)
+            66:  call(4, s4, s5, 1)
+            67:  loadint(s5, 48)
+            68:  mod(s4, s5, s4)
+            69:  add(s3, s4, s3)
+            70:  getk(s4, "y", s0)
+            71:  loadint(s5, 24)
+            72:  sub(s4, s5, s4)
+            73:  prepcallk(s5, "rand", s0, s6)
+            74:  call(5, s5, s6, 1)
+            75:  loadint(s6, 48)
+            76:  mod(s5, s6, s5)
+            77:  add(s4, s5, s4)
+            78:  dload(s5, "toutetu_oil_bubble_floatsplash", s6, "shot_group")
+            79:  get(s6, s0, s6)
+            80:  loadint(s7, 8192)
+            81:  newobj(s8, 3, 0, 1)
+            82:  appendarray(s8, 0, 2)
+            83:  appendarray(s8, 0, 2)
+            84:  appendarray(s8, 60, 2)
+            85:  call(255, s1, s2, 7)
+            86:  getk(s1, "vx", s0)
+            87:  loadfloat(s2, 0)
+            88:  cmp(s1, s2, s1, CMP_G)
+            89:  and(s1, 6, s1)
+            90:  getk(s2, "x", s0)
+            91:  loadroot(s3)
+            92:  getk(s3, "world", s3)
+            93:  getk(s3, "right", s3)
+            94:  cmp(s2, s3, s2, CMP_G)
+            95:  move(s1, s2)
+            96:  or(s1, 11, s1)
+            97:  getk(s2, "vx", s0)
+            98:  loadfloat(s3, 0)
+            99:  cmp(s2, s3, s2, CMP_L)
+            100:  and(s2, 6, s2)
+            101:  getk(s3, "x", s0)
+            102:  loadroot(s4)
+            103:  getk(s4, "world", s4)
+            104:  getk(s4, "left", s4)
+            105:  cmp(s3, s4, s3, CMP_L)
+            106:  move(s2, s3)
+            107:  move(s1, s2)
+            108:  jz(s1, 4)
+            109:  dload(s1, "vx", s2, "vx")
+            110:  get(s2, s0, s2)
+            111:  neg(s2, s2)
+            112:  set(s255, s0, s1, s2)
+            113:  getk(s1, "vy", s0)
+            114:  loadfloat(s2, 0)
+            115:  cmp(s1, s2, s1, CMP_G)
+            116:  and(s1, 4, s1)
+            117:  getk(s2, "y", s0)
+            118:  getk(s3, "keep_y", s0)
+            119:  cmp(s2, s3, s2, CMP_GE)
+            120:  move(s1, s2)
+            121:  jz(s1, 3)
+            122:  prepcallk(s1, "kill_move", s0, s2)
+            123:  call(255, s1, s2, 1)
+            124:  return(255, 0)
+            125:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 10
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 107, op: 0
+            1: line: 108, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_oil_arch_core.nut"
+        name: "on_graze_spread"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "Create_Water"
+            2: "x"
+            3: "y"
+            4: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 9
+            1: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 110, op: 0
+            1: line: 111, op: 0
+            2: line: 112, op: 2
+            3: line: 113, op: 7
+            4: line: 115, op: 9
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "h_entity", s0)
+            1:  jz(s2, 7)
+            2:  prepcallk(s2, "Create_Water", s0, s3)
+            3:  getk(s4, "x", s0)
+            4:  getk(s5, "y", s0)
+            5:  loadint(s6, 1)
+            6:  call(255, s2, s3, 4)
+            7:  prepcallk(s2, "kill_move", s0, s3)
+            8:  call(255, s2, s3, 1)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

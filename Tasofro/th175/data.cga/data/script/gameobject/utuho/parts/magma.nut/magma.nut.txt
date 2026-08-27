@@ -1,0 +1,875 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\utuho\parts\magma.nut: 
+sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 10
+ndefaultparams: 0
+ninstructions: 28
+nfunctions: 9
+Literals: [
+    0: "construct"
+    1: "destruct"
+    2: "interactive"
+    3: "determination"
+    4: "plot"
+    5: "message"
+    6: "on_graze_target"
+    7: "on_graze_spread"
+    8: "kill_move"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 27
+    1: name: "this", pos: 0, start_op: 0, end_op: 27
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 49, op: 3
+    2: line: 59, op: 6
+    3: line: 90, op: 9
+    4: line: 94, op: 12
+    5: line: 106, op: 15
+    6: line: 126, op: 18
+    7: line: 160, op: 21
+    8: line: 165, op: 24
+    9: line: 168, op: 27
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "destruct")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "interactive")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "determination")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "plot")
+    13:  closure(s3, 4)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "message")
+    16:  closure(s3, 5)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "on_graze_target")
+    19:  closure(s3, 6)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_graze_spread")
+    22:  closure(s3, 7)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "kill_move")
+    25:  closure(s3, 8)
+    26:  newslot(s2, s0, s2, s3)
+    27:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "construct"
+        nliterals: 28
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 26
+        ndefaultparams: 0
+        ninstructions: 106
+        nfunctions: 0
+        Literals: [
+            0: "resource"
+            1: "image"
+            2: "_composition_create_resource"
+            3: "data/sprite/utuho/bullet_ball_2.gif"
+            4: "img_liquid_particle"
+            5: "data/resource/liquid_particle.png"
+            6: "lib"
+            7: "default_proc"
+            8: "setup"
+            9: "movable"
+            10: "init_shot_object"
+            11: "attack_power"
+            12: "scale"
+            13: "max_vx"
+            14: "min_vx"
+            15: "max_vy"
+            16: "min_vy"
+            17: "vvx"
+            18: "vvy"
+            19: "frame"
+            20: "frameset"
+            21: "_composition_create_framepointer"
+            22: "maskbits"
+            23: "h_entity"
+            24: "_vspace_regist"
+            25: "get_handle"
+            26: "base_class"
+            27: "instance_count"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "base_class", pos: 1, start_op: 96, end_op: 104
+            1: name: "this", pos: 0, start_op: 0, end_op: 105
+          ]
+        Line Informations: [
+            0: line: 5, op: 0
+            1: line: 7, op: 0
+            2: line: 8, op: 3
+            3: line: 9, op: 10
+            4: line: 12, op: 17
+            5: line: 13, op: 23
+            6: line: 15, op: 29
+            7: line: 16, op: 32
+            8: line: 18, op: 35
+            9: line: 20, op: 38
+            10: line: 21, op: 41
+            11: line: 22, op: 44
+            12: line: 23, op: 47
+            13: line: 25, op: 50
+            14: line: 26, op: 53
+            15: line: 28, op: 56
+            16: line: 31, op: 59
+            17: line: 32, op: 66
+            18: line: 34, op: 70
+            19: line: 36, op: 74
+            20: line: 38, op: 77
+            21: line: 41, op: 93
+            22: line: 42, op: 96
+            23: line: 44, op: 100
+            24: line: 46, op: 103
+            25: line: 47, op: 105
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "resource")
+            1:  newobj(s2, 0, 0, 0)
+            2:  newslot(s255, s0, s1, s2)
+            3:  getk(s1, "resource", s0)
+            4:  load(s2, "image")
+            5:  loadroot(s3)
+            6:  prepcallk(s3, "_composition_create_resource", s3, s4)
+            7:  load(s5, "data/sprite/utuho/bullet_ball_2.gif")
+            8:  call(3, s3, s4, 2)
+            9:  newslot(s255, s1, s2, s3)
+            10:  getk(s1, "resource", s0)
+            11:  load(s2, "img_liquid_particle")
+            12:  loadroot(s3)
+            13:  prepcallk(s3, "_composition_create_resource", s3, s4)
+            14:  load(s5, "data/resource/liquid_particle.png")
+            15:  call(3, s3, s4, 2)
+            16:  newslot(s255, s1, s2, s3)
+            17:  loadroot(s1)
+            18:  getk(s1, "lib", s1)
+            19:  getk(s1, "default_proc", s1)
+            20:  prepcallk(s1, "setup", s1, s2)
+            21:  move(s3, s0)
+            22:  call(255, s1, s2, 2)
+            23:  loadroot(s1)
+            24:  getk(s1, "lib", s1)
+            25:  getk(s1, "movable", s1)
+            26:  prepcallk(s1, "setup", s1, s2)
+            27:  move(s3, s0)
+            28:  call(255, s1, s2, 2)
+            29:  prepcallk(s1, "init_shot_object", s0, s2)
+            30:  move(s3, s0)
+            31:  call(255, s1, s2, 2)
+            32:  load(s1, "attack_power")
+            33:  loadint(s2, 1)
+            34:  set(s255, s0, s1, s2)
+            35:  load(s1, "scale")
+            36:  loadfloat(s2, 1)
+            37:  newslot(s255, s0, s1, s2)
+            38:  load(s1, "max_vx")
+            39:  loadfloat(s2, 100)
+            40:  newslot(s255, s0, s1, s2)
+            41:  load(s1, "min_vx")
+            42:  loadfloat(s2, -100)
+            43:  newslot(s255, s0, s1, s2)
+            44:  load(s1, "max_vy")
+            45:  loadfloat(s2, 100)
+            46:  newslot(s255, s0, s1, s2)
+            47:  load(s1, "min_vy")
+            48:  loadfloat(s2, -100)
+            49:  newslot(s255, s0, s1, s2)
+            50:  load(s1, "vvx")
+            51:  loadfloat(s2, 0)
+            52:  set(s255, s0, s1, s2)
+            53:  load(s1, "vvy")
+            54:  loadfloat(s2, 0)
+            55:  set(s255, s0, s1, s2)
+            56:  load(s1, "frame")
+            57:  loadint(s2, 0)
+            58:  newslot(s255, s0, s1, s2)
+            59:  load(s1, "frameset")
+            60:  loadroot(s2)
+            61:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            62:  getk(s4, "resource", s0)
+            63:  getk(s4, "image", s4)
+            64:  call(2, s2, s3, 2)
+            65:  set(s255, s0, s1, s2)
+            66:  getk(s1, "frameset", s0)
+            67:  loadnulls(s2, 1)
+            68:  eq(s1, 2, s1, 0)
+            69:  jz(s1, 4)
+            70:  dload(s1, "frameset", s2, "resource")
+            71:  get(s2, s0, s2)
+            72:  getk(s2, "image", s2)
+            73:  set(s255, s0, s1, s2)
+            74:  load(s1, "maskbits")
+            75:  loadint(s2, 4)
+            76:  set(s255, s0, s1, s2)
+            77:  load(s1, "h_entity")
+            78:  loadroot(s2)
+            79:  prepcallk(s2, "_vspace_regist", s2, s3)
+            80:  move(s4, s0)
+            81:  loadint(s5, 1)
+            82:  loadint(s6, 2)
+            83:  bitw(s5, s6, s5, BW_OR)
+            84:  loadint(s6, 8)
+            85:  bitw(s5, s6, s5, BW_OR)
+            86:  loadint(s6, 64)
+            87:  bitw(s5, s6, s5, BW_OR)
+            88:  loadint(s6, 128)
+            89:  bitw(s5, s6, s5, BW_OR)
+            90:  loadint(s6, 0)
+            91:  call(2, s2, s3, 4)
+            92:  newslot(s255, s0, s1, s2)
+            93:  prepcallk(s1, "get_handle", s0, s2)
+            94:  call(1, s1, s2, 1)
+            95:  getk(s1, "base_class", s1)
+            96:  load(s2, "instance_count")
+            97:  exists(s2, s1, s2)
+            98:  not(s2, s2)
+            99:  jz(s2, 3)
+            100:  load(s2, "instance_count")
+            101:  loadint(s3, 0)
+            102:  newslot(s255, s1, s2, s3)
+            103:  load(s2, "instance_count")
+            104:  pinc(s2, s1, s2, 1)
+            105:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "destruct"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 18
+        nfunctions: 0
+        Literals: [
+            0: "resource"
+            1: "_vspace_unregist"
+            2: "h_entity"
+            3: "visible"
+            4: "get_handle"
+            5: "base_class"
+            6: "instance_count"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 17
+          ]
+        Line Informations: [
+            0: line: 50, op: 0
+            1: line: 51, op: 0
+            2: line: 52, op: 2
+            3: line: 54, op: 6
+            4: line: 55, op: 9
+            5: line: 56, op: 12
+            6: line: 57, op: 17
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "resource")
+            1:  delete(s1, s0, s1)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "visible")
+            10:  loadbool(s2, 0)
+            11:  set(s255, s0, s1, s2)
+            12:  prepcallk(s1, "get_handle", s0, s2)
+            13:  call(1, s1, s2, 1)
+            14:  getk(s1, "base_class", s1)
+            15:  load(s2, "instance_count")
+            16:  pinc(s1, s1, s2, 255)
+            17:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "interactive"
+        nliterals: 24
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 95
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "lib"
+            3: "movable"
+            4: "_vspace_commit"
+            5: "h_entity"
+            6: "vx"
+            7: "vvx"
+            8: "min_vx"
+            9: "max_vx"
+            10: "vy"
+            11: "vvy"
+            12: "min_vy"
+            13: "max_vy"
+            14: "frame"
+            15: "x"
+            16: "world"
+            17: "left"
+            18: "right"
+            19: "y"
+            20: "top"
+            21: "bottom"
+            22: "message"
+            23: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 94
+          ]
+        Line Informations: [
+            0: line: 60, op: 0
+            1: line: 61, op: 0
+            2: line: 64, op: 5
+            3: line: 65, op: 11
+            4: line: 68, op: 15
+            5: line: 69, op: 18
+            6: line: 70, op: 25
+            7: line: 72, op: 31
+            8: line: 73, op: 34
+            9: line: 74, op: 41
+            10: line: 77, op: 47
+            11: line: 79, op: 50
+            12: line: 81, op: 85
+            13: line: 82, op: 89
+            14: line: 83, op: 91
+            15: line: 87, op: 92
+            16: line: 88, op: 94
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  jz(s1, 3)
+            2:  getk(s1, "frameset", s0)
+            3:  prepcallk(s1, "step", s1, s2)
+            4:  call(255, s1, s2, 1)
+            5:  loadroot(s1)
+            6:  getk(s1, "lib", s1)
+            7:  getk(s1, "movable", s1)
+            8:  prepcallk(s1, "step", s1, s2)
+            9:  move(s3, s0)
+            10:  call(255, s1, s2, 2)
+            11:  loadroot(s1)
+            12:  prepcallk(s1, "_vspace_commit", s1, s2)
+            13:  getk(s3, "h_entity", s0)
+            14:  call(255, s1, s2, 2)
+            15:  dload(s1, "vx", s2, "vvx")
+            16:  get(s2, s0, s2)
+            17:  comparith(s1, 2, s1, 43)
+            18:  getk(s1, "vx", s0)
+            19:  getk(s2, "min_vx", s0)
+            20:  jcmp(s2, 4, s1, CMP_L)
+            21:  dload(s1, "vx", s2, "min_vx")
+            22:  get(s2, s0, s2)
+            23:  set(s255, s0, s1, s2)
+            24:  jmp(-, 6)
+            25:  getk(s1, "vx", s0)
+            26:  getk(s2, "max_vx", s0)
+            27:  jcmp(s2, 3, s1, CMP_G)
+            28:  dload(s1, "vx", s2, "max_vx")
+            29:  get(s2, s0, s2)
+            30:  set(s255, s0, s1, s2)
+            31:  dload(s1, "vy", s2, "vvy")
+            32:  get(s2, s0, s2)
+            33:  comparith(s1, 2, s1, 43)
+            34:  getk(s1, "vy", s0)
+            35:  getk(s2, "min_vy", s0)
+            36:  jcmp(s2, 4, s1, CMP_L)
+            37:  dload(s1, "vy", s2, "min_vy")
+            38:  get(s2, s0, s2)
+            39:  set(s255, s0, s1, s2)
+            40:  jmp(-, 6)
+            41:  getk(s1, "vy", s0)
+            42:  getk(s2, "max_vy", s0)
+            43:  jcmp(s2, 3, s1, CMP_G)
+            44:  dload(s1, "vy", s2, "max_vy")
+            45:  get(s2, s0, s2)
+            46:  set(s255, s0, s1, s2)
+            47:  getk(s1, "frame", s0)
+            48:  loadint(s2, 60)
+            49:  jcmp(s2, 42, s1, CMP_G)
+            50:  getk(s1, "x", s0)
+            51:  loadroot(s2)
+            52:  getk(s2, "world", s2)
+            53:  getk(s2, "left", s2)
+            54:  loadint(s3, 64)
+            55:  sub(s2, s3, s2)
+            56:  cmp(s1, s2, s1, CMP_L)
+            57:  or(s1, 26, s1)
+            58:  getk(s2, "x", s0)
+            59:  loadroot(s3)
+            60:  getk(s3, "world", s3)
+            61:  getk(s3, "right", s3)
+            62:  loadint(s4, 64)
+            63:  add(s3, s4, s3)
+            64:  cmp(s2, s3, s2, CMP_G)
+            65:  or(s2, 17, s2)
+            66:  getk(s3, "y", s0)
+            67:  loadroot(s4)
+            68:  getk(s4, "world", s4)
+            69:  getk(s4, "top", s4)
+            70:  loadint(s5, 64)
+            71:  sub(s4, s5, s4)
+            72:  cmp(s3, s4, s3, CMP_L)
+            73:  or(s3, 8, s3)
+            74:  getk(s4, "y", s0)
+            75:  loadroot(s5)
+            76:  getk(s5, "world", s5)
+            77:  getk(s5, "bottom", s5)
+            78:  loadint(s6, 64)
+            79:  add(s5, s6, s5)
+            80:  cmp(s4, s5, s4, CMP_G)
+            81:  move(s3, s4)
+            82:  move(s2, s3)
+            83:  move(s1, s2)
+            84:  jz(s1, 7)
+            85:  prepcallk(s1, "message", s0, s2)
+            86:  loadint(s3, 4111)
+            87:  loadnulls(s4, 1)
+            88:  call(255, s1, s2, 3)
+            89:  prepcallk(s1, "kill", s0, s2)
+            90:  call(255, s1, s2, 1)
+            91:  return(255, 0)
+            92:  load(s1, "frame")
+            93:  pinc(s1, s0, s1, 1)
+            94:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 91, op: 0
+            1: line: 92, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "plot"
+        nliterals: 12
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 32
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "obj"
+            2: "enemy"
+            3: "canvas_magma"
+            4: "plot"
+            5: "resource"
+            6: "img_liquid_particle"
+            7: "translate"
+            8: "x"
+            9: "camera"
+            10: "y"
+            11: "blend"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "layer", pos: 1, start_op: 7, end_op: 30
+            1: name: "this", pos: 0, start_op: 0, end_op: 31
+          ]
+        Line Informations: [
+            0: line: 95, op: 0
+            1: line: 96, op: 0
+            2: line: 98, op: 4
+            3: line: 101, op: 7
+            4: line: 102, op: 11
+            5: line: 103, op: 27
+            6: line: 104, op: 31
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "obj", s0)
+            5:  getk(s1, "enemy", s1)
+            6:  getk(s1, "canvas_magma", s1)
+            7:  prepcallk(s2, "plot", s1, s3)
+            8:  getk(s4, "resource", s0)
+            9:  getk(s4, "img_liquid_particle", s4)
+            10:  call(255, s2, s3, 2)
+            11:  prepcallk(s2, "translate", s1, s3)
+            12:  getk(s4, "x", s0)
+            13:  loadfloat(s5, 24)
+            14:  sub(s4, s5, s4)
+            15:  loadroot(s5)
+            16:  getk(s5, "camera", s5)
+            17:  getk(s5, "x", s5)
+            18:  sub(s4, s5, s4)
+            19:  getk(s5, "y", s0)
+            20:  loadfloat(s6, 24)
+            21:  sub(s5, s6, s5)
+            22:  loadroot(s6)
+            23:  getk(s6, "camera", s6)
+            24:  getk(s6, "y", s6)
+            25:  sub(s5, s6, s5)
+            26:  call(255, s2, s3, 3)
+            27:  prepcallk(s2, "blend", s1, s3)
+            28:  loadint(s4, 2)
+            29:  loadfloat(s5, 1)
+            30:  call(255, s2, s3, 3)
+            31:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "message"
+        nliterals: 8
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 38
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "camera"
+            3: "kill"
+            4: "lib"
+            5: "default_proc"
+            6: "message"
+            7: "call"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_msg"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 37
+            1: name: "_msg", pos: 1, start_op: 0, end_op: 37
+            2: name: "this", pos: 0, start_op: 0, end_op: 37
+          ]
+        Line Informations: [
+            0: line: 107, op: 0
+            1: line: 108, op: 0
+            2: line: 111, op: 3
+            3: line: 112, op: 7
+            4: line: 114, op: 11
+            5: line: 115, op: 20
+            6: line: 118, op: 25
+            7: line: 119, op: 27
+            8: line: 122, op: 28
+            9: line: 124, op: 37
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 19)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  getk(s3, "y", s0)
+            12:  loadroot(s4)
+            13:  getk(s4, "camera", s4)
+            14:  getk(s4, "y", s4)
+            15:  sub(s3, s4, s3)
+            16:  loadint(s4, -64)
+            17:  jcmp(s4, 2, s3, CMP_L)
+            18:  prepcallk(s3, "kill", s0, s4)
+            19:  call(255, s3, s4, 1)
+            20:  jmp(-, 16)
+            21:  jmp(-, 3)
+            22:  loadint(s3, 4106)
+            23:  eq(s3, 3, s1, 0)
+            24:  jz(s3, 3)
+            25:  prepcallk(s3, "kill", s0, s4)
+            26:  call(255, s3, s4, 1)
+            27:  return(255, 0)
+            28:  loadroot(s3)
+            29:  getk(s3, "lib", s3)
+            30:  getk(s3, "default_proc", s3)
+            31:  getk(s3, "message", s3)
+            32:  prepcallk(s3, "call", s3, s4)
+            33:  dmove(s5, s0, s6, s1)
+            34:  move(s7, s2)
+            35:  tailcall(3, s3, s4, 4)
+            36:  return(1, 3)
+            37:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "on_graze_target"
+        nliterals: 9
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 37
+        nfunctions: 0
+        Literals: [
+            0: "lib"
+            1: "shot"
+            2: "default_on_graze_target_good"
+            3: "call"
+            4: "get_parent"
+            5: "get_child"
+            6: "get_next"
+            7: "on_graze_spread"
+            8: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "next", pos: 4, start_op: 22, end_op: 29
+            1: name: "ite", pos: 3, start_op: 17, end_op: 30
+            2: name: "parent", pos: 2, start_op: 12, end_op: 33
+            3: name: "_target", pos: 1, start_op: 0, end_op: 36
+            4: name: "this", pos: 0, start_op: 0, end_op: 36
+          ]
+        Line Informations: [
+            0: line: 127, op: 0
+            1: line: 129, op: 0
+            2: line: 132, op: 10
+            3: line: 134, op: 12
+            4: line: 136, op: 15
+            5: line: 138, op: 17
+            6: line: 139, op: 20
+            7: line: 140, op: 20
+            8: line: 142, op: 22
+            9: line: 144, op: 24
+            10: line: 145, op: 27
+            11: line: 148, op: 29
+            12: line: 153, op: 31
+            13: line: 157, op: 34
+            14: line: 158, op: 36
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  getk(s2, "lib", s2)
+            2:  getk(s2, "shot", s2)
+            3:  getk(s2, "default_on_graze_target_good", s2)
+            4:  prepcallk(s2, "call", s2, s3)
+            5:  dmove(s4, s0, s5, s1)
+            6:  call(2, s2, s3, 3)
+            7:  loadbool(s3, 1)
+            8:  eq(s2, 3, s2, 0)
+            9:  jz(s2, 24)
+            10:  prepcallk(s2, "get_parent", s0, s3)
+            11:  call(2, s2, s3, 1)
+            12:  loadnulls(s3, 1)
+            13:  ne(s3, 3, s2, 0)
+            14:  jz(s3, 16)
+            15:  prepcallk(s3, "get_child", s2, s4)
+            16:  call(3, s3, s4, 1)
+            17:  loadnulls(s4, 1)
+            18:  ne(s4, 4, s3, 0)
+            19:  jz(s4, 11)
+            20:  prepcallk(s4, "get_next", s3, s5)
+            21:  call(4, s4, s5, 1)
+            22:  ne(s5, 0, s3, 0)
+            23:  jz(s5, 5)
+            24:  prepcallk(s5, "on_graze_spread", s3, s6)
+            25:  move(s7, s1)
+            26:  call(255, s5, s6, 2)
+            27:  prepcallk(s5, "kill", s3, s6)
+            28:  call(255, s5, s6, 1)
+            29:  move(s3, s4)
+            30:  jmp(-, -14)
+            31:  prepcallk(s3, "on_graze_spread", s0, s4)
+            32:  move(s5, s1)
+            33:  call(255, s3, s4, 2)
+            34:  prepcallk(s2, "kill", s0, s3)
+            35:  call(255, s2, s3, 1)
+            36:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "on_graze_spread"
+        nliterals: 3
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 6
+        nfunctions: 0
+        Literals: [
+            0: "Create_Water"
+            1: "x"
+            2: "y"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 5
+            1: name: "this", pos: 0, start_op: 0, end_op: 5
+          ]
+        Line Informations: [
+            0: line: 161, op: 0
+            1: line: 162, op: 0
+            2: line: 163, op: 5
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "Create_Water", s0, s3)
+            1:  getk(s4, "x", s0)
+            2:  getk(s5, "y", s0)
+            3:  loadint(s6, 2)
+            4:  call(255, s2, s3, 4)
+            5:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\utuho\parts\magma.nut"
+        name: "kill_move"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 166, op: 0
+            1: line: 168, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

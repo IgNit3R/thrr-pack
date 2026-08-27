@@ -1,0 +1,939 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut: 
+sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+name: "main"
+nliterals: 16
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 13
+ndefaultparams: 0
+ninstructions: 43
+nfunctions: 10
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "update_default"
+    3: "destruct"
+    4: "lib"
+    5: "shot"
+    6: "common_destruct"
+    7: "interactive"
+    8: "kill_move"
+    9: "on_hit_target"
+    10: "on_hit_ground"
+    11: "on_graze_spread"
+    12: "on_graze_target"
+    13: "default_on_graze_target_good"
+    14: "determination"
+    15: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 42
+    1: name: "this", pos: 0, start_op: 0, end_op: 42
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 21, op: 3
+    2: line: 33, op: 6
+    3: line: 78, op: 9
+    4: line: 80, op: 15
+    5: line: 84, op: 18
+    6: line: 93, op: 21
+    7: line: 95, op: 24
+    8: line: 97, op: 27
+    9: line: 99, op: 30
+    10: line: 101, op: 36
+    11: line: 105, op: 39
+    12: line: 108, op: 42
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "update_default")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "destruct")
+    10:  loadroot(s3)
+    11:  getk(s3, "lib", s3)
+    12:  getk(s3, "shot", s3)
+    13:  getk(s3, "common_destruct", s3)
+    14:  newslot(s255, s0, s2, s3)
+    15:  load(s2, "interactive")
+    16:  closure(s3, 3)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "kill_move")
+    19:  closure(s3, 4)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "on_hit_target")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  load(s2, "on_hit_ground")
+    25:  closure(s3, 6)
+    26:  newslot(s2, s0, s2, s3)
+    27:  load(s2, "on_graze_spread")
+    28:  closure(s3, 7)
+    29:  newslot(s2, s0, s2, s3)
+    30:  load(s2, "on_graze_target")
+    31:  loadroot(s3)
+    32:  getk(s3, "lib", s3)
+    33:  getk(s3, "shot", s3)
+    34:  getk(s3, "default_on_graze_target_good", s3)
+    35:  newslot(s255, s0, s2, s3)
+    36:  load(s2, "determination")
+    37:  closure(s3, 8)
+    38:  newslot(s2, s0, s2, s3)
+    39:  load(s2, "plot")
+    40:  closure(s3, 9)
+    41:  newslot(s2, s0, s2, s3)
+    42:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "construct"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "enable_erace"
+            3: "count"
+            4: "direction_h"
+            5: "check_motion"
+            6: "pre_x"
+            7: "state"
+            8: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 10, op: 12
+            6: line: 11, op: 15
+            7: line: 12, op: 18
+            8: line: 14, op: 21
+            9: line: 17, op: 24
+            10: line: 19, op: 27
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "enable_erace")
+            7:  loadbool(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "count")
+            10:  loadint(s2, 0)
+            11:  newslot(s255, s0, s1, s2)
+            12:  load(s1, "direction_h")
+            13:  loadint(s2, 1)
+            14:  newslot(s255, s0, s1, s2)
+            15:  load(s1, "check_motion")
+            16:  loadnulls(s2, 1)
+            17:  newslot(s255, s0, s1, s2)
+            18:  load(s1, "pre_x")
+            19:  loadnulls(s2, 1)
+            20:  newslot(s255, s0, s1, s2)
+            21:  load(s1, "state")
+            22:  closure(s2, 0)
+            23:  newslot(s255, s0, s1, s2)
+            24:  load(s1, "h_entity")
+            25:  loadbool(s2, 1)
+            26:  newslot(s255, s0, s1, s2)
+            27:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 14, op: 0
+                    1: line: 15, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "message"
+        nliterals: 4
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "state"
+            3: "update_default"
+          ]
+        Parameters: [
+            0: "this"
+            1: "id_"
+            2: "param_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "param_", pos: 2, start_op: 0, end_op: 20
+            1: name: "id_", pos: 1, start_op: 0, end_op: 20
+            2: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 21, op: 0
+            1: line: 22, op: 0
+            2: line: 24, op: 3
+            3: line: 25, op: 7
+            4: line: 26, op: 11
+            5: line: 28, op: 16
+            6: line: 29, op: 19
+            7: line: 31, op: 20
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 8)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 1)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 4)
+            16:  dload(s3, "state", s4, "update_default")
+            17:  get(s4, s0, s4)
+            18:  set(s255, s0, s3, s4)
+            19:  jmp(-, 0)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "update_default"
+        nliterals: 17
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 25
+        ndefaultparams: 0
+        ninstructions: 267
+        nfunctions: 1
+        Literals: [
+            0: "count"
+            1: "stage"
+            2: "draw"
+            3: "message"
+            4: "camera"
+            5: "x"
+            6: "rand"
+            7: "y"
+            8: "Spawn_DangerEffect"
+            9: "direction_h"
+            10: "_audio_play"
+            11: "se"
+            12: "boss_shot"
+            13: "Spawn_EnemyBulletMessage"
+            14: "blood_drop"
+            15: "pre_x"
+            16: "toutetu_step_bloodbubble"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_update", pos: 1, start_op: 109, end_op: 120
+            1: name: "x_", pos: 1, start_op: 201, end_op: 239
+            2: name: "this", pos: 0, start_op: 0, end_op: 266
+          ]
+        Line Informations: [
+            0: line: 33, op: 0
+            1: line: 34, op: 0
+            2: line: 35, op: 2
+            3: line: 36, op: 8
+            4: line: 37, op: 55
+            5: line: 39, op: 104
+            6: line: 40, op: 108
+            7: line: 48, op: 109
+            8: line: 50, op: 121
+            9: line: 51, op: 124
+            10: line: 52, op: 130
+            11: line: 54, op: 137
+            12: line: 55, op: 143
+            13: line: 59, op: 183
+            14: line: 60, op: 189
+            15: line: 61, op: 191
+            16: line: 62, op: 201
+            17: line: 63, op: 206
+            18: line: 64, op: 208
+            19: line: 66, op: 217
+            20: line: 68, op: 225
+            21: line: 69, op: 238
+            22: line: 72, op: 241
+            23: line: 73, op: 253
+            24: line: 76, op: 266
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 1)
+            2:  getk(s1, "count", s0)
+            3:  loadint(s2, 3)
+            4:  bitw(s1, s2, s1, BW_AND)
+            5:  loadint(s2, 3)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 96)
+            8:  getk(s1, "stage", s0)
+            9:  getk(s1, "draw", s1)
+            10:  prepcallk(s1, "message", s1, s2)
+            11:  loadint(s3, 8)
+            12:  newobj(s4, 9, 0, 1)
+            13:  loadroot(s5)
+            14:  getk(s5, "camera", s5)
+            15:  getk(s5, "x", s5)
+            16:  prepcallk(s6, "rand", s0, s7)
+            17:  call(6, s6, s7, 1)
+            18:  loadint(s7, 640)
+            19:  mod(s6, s7, s6)
+            20:  add(s5, s6, s5)
+            21:  appendarray(s4, 5, 0)
+            22:  loadroot(s5)
+            23:  getk(s5, "camera", s5)
+            24:  getk(s5, "y", s5)
+            25:  loadint(s6, 320)
+            26:  add(s5, s6, s5)
+            27:  prepcallk(s6, "rand", s0, s7)
+            28:  call(6, s6, s7, 1)
+            29:  loadint(s7, 32)
+            30:  mod(s6, s7, s6)
+            31:  add(s5, s6, s5)
+            32:  appendarray(s4, 5, 0)
+            33:  loadfloat(s5, 1.5708)
+            34:  neg(s5, s5)
+            35:  appendarray(s4, 5, 0)
+            36:  appendarray(s4, 1065353216, 3)
+            37:  appendarray(s4, 9, 2)
+            38:  appendarray(s4, 1028443341, 3)
+            39:  loadint(s5, -3)
+            40:  prepcallk(s6, "rand", s0, s7)
+            41:  call(6, s6, s7, 1)
+            42:  loadint(s7, 7)
+            43:  mod(s6, s7, s6)
+            44:  add(s5, s6, s5)
+            45:  appendarray(s4, 5, 0)
+            46:  loadint(s5, -6)
+            47:  prepcallk(s6, "rand", s0, s7)
+            48:  call(6, s6, s7, 1)
+            49:  loadint(s7, 6)
+            50:  mod(s6, s7, s6)
+            51:  sub(s5, s6, s5)
+            52:  appendarray(s4, 5, 0)
+            53:  appendarray(s4, 1056964608, 3)
+            54:  call(255, s1, s2, 3)
+            55:  getk(s1, "stage", s0)
+            56:  getk(s1, "draw", s1)
+            57:  prepcallk(s1, "message", s1, s2)
+            58:  loadint(s3, 7)
+            59:  newobj(s4, 9, 0, 1)
+            60:  loadroot(s5)
+            61:  getk(s5, "camera", s5)
+            62:  getk(s5, "x", s5)
+            63:  prepcallk(s6, "rand", s0, s7)
+            64:  call(6, s6, s7, 1)
+            65:  loadint(s7, 640)
+            66:  mod(s6, s7, s6)
+            67:  add(s5, s6, s5)
+            68:  appendarray(s4, 5, 0)
+            69:  loadroot(s5)
+            70:  getk(s5, "camera", s5)
+            71:  getk(s5, "y", s5)
+            72:  loadint(s6, 320)
+            73:  add(s5, s6, s5)
+            74:  prepcallk(s6, "rand", s0, s7)
+            75:  call(6, s6, s7, 1)
+            76:  loadint(s7, 32)
+            77:  mod(s6, s7, s6)
+            78:  add(s5, s6, s5)
+            79:  appendarray(s4, 5, 0)
+            80:  appendarray(s4, 0, 2)
+            81:  loadfloat(s5, 1)
+            82:  prepcallk(s6, "rand", s0, s7)
+            83:  call(6, s6, s7, 1)
+            84:  loadint(s7, 21)
+            85:  mod(s6, s7, s6)
+            86:  loadfloat(s7, 0.1)
+            87:  mul(s6, s7, s6)
+            88:  add(s5, s6, s5)
+            89:  appendarray(s4, 5, 0)
+            90:  appendarray(s4, 8, 2)
+            91:  appendarray(s4, 1023879938, 3)
+            92:  appendarray(s4, 0, 2)
+            93:  loadint(s5, -3)
+            94:  prepcallk(s6, "rand", s0, s7)
+            95:  call(6, s6, s7, 1)
+            96:  loadint(s7, 41)
+            97:  mod(s6, s7, s6)
+            98:  loadfloat(s7, 0.1)
+            99:  mul(s6, s7, s6)
+            100:  sub(s5, s6, s5)
+            101:  appendarray(s4, 5, 0)
+            102:  appendarray(s4, 1048576000, 3)
+            103:  call(255, s1, s2, 3)
+            104:  getk(s1, "count", s0)
+            105:  loadint(s2, 300)
+            106:  eq(s1, 2, s1, 0)
+            107:  jz(s1, 13)
+            108:  closure(s1, 0)
+            109:  prepcallk(s2, "Spawn_DangerEffect", s0, s3)
+            110:  loadroot(s4)
+            111:  getk(s4, "camera", s4)
+            112:  getk(s4, "x", s4)
+            113:  loadroot(s5)
+            114:  getk(s5, "camera", s5)
+            115:  getk(s5, "y", s5)
+            116:  loadint(s6, 288)
+            117:  add(s5, s6, s5)
+            118:  getk(s6, "direction_h", s0)
+            119:  move(s7, s1)
+            120:  call(255, s2, s3, 5)
+            121:  getk(s1, "count", s0)
+            122:  loadint(s2, 420)
+            123:  jcmp(s2, 59, s1, CMP_GE)
+            124:  getk(s1, "count", s0)
+            125:  loadint(s2, 7)
+            126:  bitw(s1, s2, s1, BW_AND)
+            127:  loadint(s2, 7)
+            128:  eq(s1, 2, s1, 0)
+            129:  jz(s1, 7)
+            130:  loadroot(s1)
+            131:  prepcallk(s1, "_audio_play", s1, s2)
+            132:  loadroot(s3)
+            133:  getk(s3, "se", s3)
+            134:  getk(s3, "boss_shot", s3)
+            135:  loadint(s4, 1)
+            136:  call(255, s1, s2, 3)
+            137:  getk(s1, "count", s0)
+            138:  loadint(s2, 1)
+            139:  bitw(s1, s2, s1, BW_AND)
+            140:  loadint(s2, 1)
+            141:  eq(s1, 2, s1, 0)
+            142:  jz(s1, 40)
+            143:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            144:  loadroot(s3)
+            145:  getk(s3, "camera", s3)
+            146:  getk(s3, "x", s3)
+            147:  prepcallk(s4, "rand", s0, s5)
+            148:  call(4, s4, s5, 1)
+            149:  loadint(s5, 640)
+            150:  mod(s4, s5, s4)
+            151:  add(s3, s4, s3)
+            152:  loadroot(s4)
+            153:  getk(s4, "camera", s4)
+            154:  getk(s4, "y", s4)
+            155:  loadint(s5, 288)
+            156:  add(s4, s5, s4)
+            157:  prepcallk(s5, "rand", s0, s6)
+            158:  call(5, s5, s6, 1)
+            159:  loadint(s6, 16)
+            160:  mod(s5, s6, s5)
+            161:  add(s4, s5, s4)
+            162:  load(s5, "blood_drop")
+            163:  loadint(s6, 8194)
+            164:  newobj(s7, 3, 0, 1)
+            165:  loadint(s8, 4)
+            166:  prepcallk(s9, "rand", s0, s10)
+            167:  call(9, s9, s10, 1)
+            168:  loadint(s10, 9)
+            169:  mod(s9, s10, s9)
+            170:  sub(s8, s9, s8)
+            171:  appendarray(s7, 8, 0)
+            172:  loadint(s8, -3)
+            173:  prepcallk(s9, "rand", s0, s10)
+            174:  call(9, s9, s10, 1)
+            175:  loadint(s10, 41)
+            176:  mod(s9, s10, s9)
+            177:  loadfloat(s10, 0.1)
+            178:  mul(s9, s10, s9)
+            179:  sub(s8, s9, s8)
+            180:  appendarray(s7, 8, 0)
+            181:  appendarray(s7, 1056964608, 3)
+            182:  call(255, s1, s2, 6)
+            183:  getk(s1, "count", s0)
+            184:  loadint(s2, 90)
+            185:  mod(s1, s2, s1)
+            186:  loadint(s2, 1)
+            187:  eq(s1, 2, s1, 0)
+            188:  jz(s1, 77)
+            189:  getk(s1, "pre_x", s0)
+            190:  jz(s1, 50)
+            191:  loadroot(s1)
+            192:  getk(s1, "camera", s1)
+            193:  getk(s1, "x", s1)
+            194:  loadint(s2, 64)
+            195:  add(s1, s2, s1)
+            196:  prepcallk(s2, "rand", s0, s3)
+            197:  call(2, s2, s3, 1)
+            198:  loadint(s3, 512)
+            199:  mod(s2, s3, s2)
+            200:  add(s1, s2, s1)
+            201:  getk(s2, "pre_x", s0)
+            202:  jcmp(s2, 3, s1, CMP_G)
+            203:  loadint(s2, 128)
+            204:  add(s1, s2, s1)
+            205:  jmp(-, 2)
+            206:  loadint(s2, 128)
+            207:  sub(s1, s2, s1)
+            208:  loadroot(s2)
+            209:  getk(s2, "camera", s2)
+            210:  getk(s2, "x", s2)
+            211:  loadint(s3, 576)
+            212:  add(s2, s3, s2)
+            213:  jcmp(s2, 3, s1, CMP_G)
+            214:  loadint(s2, 512)
+            215:  sub(s1, s2, s1)
+            216:  jmp(-, 8)
+            217:  loadroot(s2)
+            218:  getk(s2, "camera", s2)
+            219:  getk(s2, "x", s2)
+            220:  loadint(s3, 64)
+            221:  add(s2, s3, s2)
+            222:  jcmp(s2, 2, s1, CMP_L)
+            223:  loadint(s2, 512)
+            224:  add(s1, s2, s1)
+            225:  prepcallk(s2, "Spawn_EnemyBulletMessage", s0, s3)
+            226:  move(s4, s1)
+            227:  loadroot(s5)
+            228:  getk(s5, "camera", s5)
+            229:  getk(s5, "y", s5)
+            230:  loadint(s6, 128)
+            231:  sub(s5, s6, s5)
+            232:  load(s6, "toutetu_step_bloodbubble")
+            233:  loadint(s7, 4)
+            234:  newobj(s8, 2, 0, 1)
+            235:  appendarray(s8, 0, 2)
+            236:  appendarray(s8, 1065353216, 3)
+            237:  call(255, s2, s3, 6)
+            238:  load(s2, "pre_x")
+            239:  set(s255, s0, s2, s1)
+            240:  jmp(-, 25)
+            241:  load(s1, "pre_x")
+            242:  loadroot(s2)
+            243:  getk(s2, "camera", s2)
+            244:  getk(s2, "x", s2)
+            245:  loadint(s3, 64)
+            246:  add(s2, s3, s2)
+            247:  prepcallk(s3, "rand", s0, s4)
+            248:  call(3, s3, s4, 1)
+            249:  loadint(s4, 512)
+            250:  mod(s3, s4, s3)
+            251:  add(s2, s3, s2)
+            252:  set(s255, s0, s1, s2)
+            253:  prepcallk(s1, "Spawn_EnemyBulletMessage", s0, s2)
+            254:  getk(s3, "pre_x", s0)
+            255:  loadroot(s4)
+            256:  getk(s4, "camera", s4)
+            257:  getk(s4, "y", s4)
+            258:  loadint(s5, 128)
+            259:  sub(s4, s5, s4)
+            260:  load(s5, "toutetu_step_bloodbubble")
+            261:  loadint(s6, 4)
+            262:  newobj(s7, 2, 0, 1)
+            263:  appendarray(s7, 0, 2)
+            264:  appendarray(s7, 1065353216, 3)
+            265:  call(255, s1, s2, 6)
+            266:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 18
+                nfunctions: 0
+                Literals: [
+                    0: "camera"
+                    1: "x"
+                    2: "set"
+                    3: "y"
+                    4: "update"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "x_", pos: 1, start_op: 5, end_op: 16
+                    1: name: "this", pos: 0, start_op: 0, end_op: 17
+                  ]
+                Line Informations: [
+                    0: line: 40, op: 0
+                    1: line: 41, op: 0
+                    2: line: 42, op: 5
+                    3: line: 43, op: 7
+                    4: line: 44, op: 11
+                    5: line: 46, op: 14
+                    6: line: 47, op: 17
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  loadroot(s1)
+                    1:  getk(s1, "camera", s1)
+                    2:  getk(s1, "x", s1)
+                    3:  loadint(s2, 32)
+                    4:  add(s1, s2, s1)
+                    5:  loadint(s2, 608)
+                    6:  jcmp(s2, 7, s1, CMP_LE)
+                    7:  prepcallk(s2, "set", s0, s3)
+                    8:  move(s4, s1)
+                    9:  getk(s5, "y", s0)
+                    10:  call(255, s2, s3, 3)
+                    11:  loadint(s2, 64)
+                    12:  add(s1, s2, s1)
+                    13:  jmp(-, -9)
+                    14:  load(s2, "update")
+                    15:  loadnulls(s3, 1)
+                    16:  set(s255, s0, s2, s3)
+                    17:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 11
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "interactive"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [
+            0: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 81, op: 0
+            1: line: 82, op: 0
+            2: line: 83, op: 2
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "state", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "kill_move"
+        nliterals: 3
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "Kill_EnemyBullet"
+            2: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 84, op: 0
+            1: line: 85, op: 0
+            2: line: 86, op: 2
+            3: line: 88, op: 5
+            4: line: 89, op: 8
+            5: line: 91, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 8)
+            2:  load(s1, "h_entity")
+            3:  loadnulls(s2, 1)
+            4:  set(s255, s0, s1, s2)
+            5:  prepcallk(s1, "Kill_EnemyBullet", s0, s2)
+            6:  move(s3, s0)
+            7:  call(255, s1, s2, 2)
+            8:  prepcallk(s1, "kill", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "on_hit_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 93, op: 0
+            1: line: 94, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 95, op: 0
+            1: line: 96, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "on_graze_spread"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 97, op: 0
+            1: line: 98, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 102, op: 0
+            1: line: 103, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_spell_11_core.nut"
+        name: "plot"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 106, op: 0
+            1: line: 108, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

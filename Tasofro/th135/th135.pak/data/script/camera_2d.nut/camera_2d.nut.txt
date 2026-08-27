@@ -1,0 +1,341 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\script\camera_2d.nut: 
+sourcename: ""
+name: "main"
+nliterals: 2
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 3
+ndefaultparams: 0
+ninstructions: 10
+nfunctions: 2
+Literals: [
+    0: "UpdateBattleCamera"
+    1: "UpdaetEventCamera"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 9
+    1: name: "this", pos: 0, start_op: 0, end_op: 9
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 45, op: 4
+    2: line: 58, op: 8
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "UpdateBattleCamera")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 45)
+    5:  load(s2, "UpdaetEventCamera")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 58)
+    9:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "UpdateBattleCamera"
+        nliterals: 15
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 6
+        nlineinfos: 24
+        ndefaultparams: 0
+        ninstructions: 125
+        nfunctions: 0
+        Literals: [
+            0: "target_x"
+            1: "x"
+            2: "target_y"
+            3: "y"
+            4: "offset_x"
+            5: "offset_y"
+            6: "left"
+            7: "cx"
+            8: "zoom"
+            9: "top"
+            10: "cy"
+            11: "right"
+            12: "width"
+            13: "bottom"
+            14: "height"
+          ]
+        Parameters: [
+            0: "this"
+            1: "camera"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "c", pos: 4, start_op: 101, end_op: 107
+            1: name: "c", pos: 4, start_op: 116, end_op: 122
+            2: name: "sy", pos: 3, start_op: 8, end_op: 122
+            3: name: "sx", pos: 2, start_op: 4, end_op: 122
+            4: name: "camera", pos: 1, start_op: 0, end_op: 124
+            5: name: "this", pos: 0, start_op: 0, end_op: 124
+          ]
+        Line Informations: [
+            0: line: 4, op: 1
+            1: line: 5, op: 4
+            2: line: 7, op: 8
+            3: line: 9, op: 15
+            4: line: 10, op: 18
+            5: line: 14, op: 24
+            6: line: 15, op: 31
+            7: line: 19, op: 39
+            8: line: 20, op: 43
+            9: line: 23, op: 47
+            10: line: 24, op: 55
+            11: line: 26, op: 63
+            12: line: 27, op: 70
+            13: line: 29, op: 77
+            14: line: 30, op: 85
+            15: line: 32, op: 93
+            16: line: 34, op: 98
+            17: line: 35, op: 101
+            18: line: 36, op: 105
+            19: line: 38, op: 108
+            20: line: 40, op: 113
+            21: line: 41, op: 116
+            22: line: 42, op: 120
+            23: line: 44, op: 123
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 4)
+            1:  getk(s2, "target_x", s1)
+            2:  getk(s3, "x", s0)
+            3:  sub(s2, s3, s2)
+            4:  line(-, 5)
+            5:  getk(s3, "target_y", s1)
+            6:  getk(s4, "y", s0)
+            7:  sub(s3, s4, s3)
+            8:  line(-, 7)
+            9:  mul(s4, s2, s2)
+            10:  mul(s5, s3, s3)
+            11:  add(s4, s5, s4)
+            12:  loadint(s5, 1)
+            13:  jcmp(s5, 9, s4, CMP_L)
+            14:  line(-, 9)
+            15:  dload(s4, "x", s5, "target_x")
+            16:  get(s5, s1, s5)
+            17:  set(s255, s0, s4, s5)
+            18:  line(-, 10)
+            19:  dload(s4, "y", s5, "target_y")
+            20:  get(s5, s1, s5)
+            21:  set(s255, s0, s4, s5)
+            22:  jmp(-, 16)
+            23:  line(-, 14)
+            24:  dload(s4, "x", s5, "target_x")
+            25:  get(s5, s1, s5)
+            26:  getk(s6, "x", s0)
+            27:  sub(s5, s6, s5)
+            28:  loadfloat(s6, 0.2)
+            29:  mul(s5, s6, s5)
+            30:  comparith(s4, 5, s4, 43)
+            31:  line(-, 15)
+            32:  dload(s4, "y", s5, "target_y")
+            33:  get(s5, s1, s5)
+            34:  getk(s6, "y", s0)
+            35:  sub(s5, s6, s5)
+            36:  loadfloat(s6, 0.2)
+            37:  mul(s5, s6, s5)
+            38:  comparith(s4, 5, s4, 43)
+            39:  line(-, 19)
+            40:  dload(s4, "offset_x", s5, "offset_x")
+            41:  get(s5, s1, s5)
+            42:  set(s255, s0, s4, s5)
+            43:  line(-, 20)
+            44:  dload(s4, "offset_y", s5, "offset_y")
+            45:  get(s5, s1, s5)
+            46:  set(s255, s0, s4, s5)
+            47:  line(-, 23)
+            48:  dload(s4, "left", s5, "x")
+            49:  get(s5, s0, s5)
+            50:  getk(s6, "cx", s0)
+            51:  getk(s7, "zoom", s1)
+            52:  div(s6, s7, s6)
+            53:  sub(s5, s6, s5)
+            54:  set(s255, s0, s4, s5)
+            55:  line(-, 24)
+            56:  dload(s4, "top", s5, "y")
+            57:  get(s5, s0, s5)
+            58:  getk(s6, "cy", s0)
+            59:  getk(s7, "zoom", s1)
+            60:  div(s6, s7, s6)
+            61:  sub(s5, s6, s5)
+            62:  set(s255, s0, s4, s5)
+            63:  line(-, 26)
+            64:  getk(s4, "left", s0)
+            65:  getk(s5, "left", s1)
+            66:  jcmp(s5, 3, s4, CMP_L)
+            67:  dload(s4, "left", s5, "left")
+            68:  get(s5, s1, s5)
+            69:  set(s255, s0, s4, s5)
+            70:  line(-, 27)
+            71:  getk(s4, "top", s0)
+            72:  getk(s5, "top", s1)
+            73:  jcmp(s5, 3, s4, CMP_L)
+            74:  dload(s4, "top", s5, "top")
+            75:  get(s5, s1, s5)
+            76:  set(s255, s0, s4, s5)
+            77:  line(-, 29)
+            78:  dload(s4, "right", s5, "left")
+            79:  get(s5, s0, s5)
+            80:  getk(s6, "width", s1)
+            81:  getk(s7, "zoom", s1)
+            82:  div(s6, s7, s6)
+            83:  add(s5, s6, s5)
+            84:  set(s255, s0, s4, s5)
+            85:  line(-, 30)
+            86:  dload(s4, "bottom", s5, "top")
+            87:  get(s5, s0, s5)
+            88:  getk(s6, "height", s1)
+            89:  getk(s7, "zoom", s1)
+            90:  div(s6, s7, s6)
+            91:  add(s5, s6, s5)
+            92:  set(s255, s0, s4, s5)
+            93:  line(-, 32)
+            94:  getk(s4, "right", s0)
+            95:  getk(s5, "right", s1)
+            96:  jcmp(s5, 11, s4, CMP_G)
+            97:  line(-, 34)
+            98:  getk(s4, "right", s0)
+            99:  getk(s5, "right", s1)
+            100:  sub(s4, s5, s4)
+            101:  line(-, 35)
+            102:  dload(s5, "right", s6, "right")
+            103:  get(s6, s1, s6)
+            104:  set(s255, s0, s5, s6)
+            105:  line(-, 36)
+            106:  load(s5, "left")
+            107:  comparith(s5, 4, s5, 45)
+            108:  line(-, 38)
+            109:  getk(s4, "bottom", s0)
+            110:  getk(s5, "bottom", s1)
+            111:  jcmp(s5, 11, s4, CMP_G)
+            112:  line(-, 40)
+            113:  getk(s4, "bottom", s0)
+            114:  getk(s5, "bottom", s1)
+            115:  sub(s4, s5, s4)
+            116:  line(-, 41)
+            117:  dload(s5, "bottom", s6, "bottom")
+            118:  get(s6, s1, s6)
+            119:  set(s255, s0, s5, s6)
+            120:  line(-, 42)
+            121:  load(s5, "top")
+            122:  comparith(s5, 4, s5, 45)
+            123:  line(-, 44)
+            124:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "UpdaetEventCamera"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 46
+        nfunctions: 0
+        Literals: [
+            0: "zoom"
+            1: "x"
+            2: "left"
+            3: "right"
+            4: "y"
+            5: "top"
+            6: "bottom"
+          ]
+        Parameters: [
+            0: "this"
+            1: "camera"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "camera", pos: 1, start_op: 0, end_op: 45
+            1: name: "this", pos: 0, start_op: 0, end_op: 45
+          ]
+        Line Informations: [
+            0: line: 47, op: 1
+            1: line: 49, op: 4
+            2: line: 50, op: 12
+            3: line: 52, op: 20
+            4: line: 53, op: 26
+            5: line: 54, op: 32
+            6: line: 55, op: 38
+            7: line: 56, op: 44
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 47)
+            1:  load(s2, "zoom")
+            2:  loadfloat(s3, 2)
+            3:  set(s255, s1, s2, s3)
+            4:  line(-, 49)
+            5:  dload(s2, "x", s3, "left")
+            6:  get(s3, s1, s3)
+            7:  getk(s4, "right", s1)
+            8:  add(s3, s4, s3)
+            9:  loadfloat(s4, 0.5)
+            10:  mul(s3, s4, s3)
+            11:  set(s255, s0, s2, s3)
+            12:  line(-, 50)
+            13:  dload(s2, "y", s3, "top")
+            14:  get(s3, s1, s3)
+            15:  getk(s4, "bottom", s1)
+            16:  add(s3, s4, s3)
+            17:  loadfloat(s4, 0.5)
+            18:  mul(s3, s4, s3)
+            19:  set(s255, s0, s2, s3)
+            20:  line(-, 52)
+            21:  dload(s2, "left", s3, "x")
+            22:  get(s3, s0, s3)
+            23:  loadint(s4, 640)
+            24:  sub(s3, s4, s3)
+            25:  set(s255, s0, s2, s3)
+            26:  line(-, 53)
+            27:  dload(s2, "right", s3, "x")
+            28:  get(s3, s0, s3)
+            29:  loadint(s4, 640)
+            30:  add(s3, s4, s3)
+            31:  set(s255, s0, s2, s3)
+            32:  line(-, 54)
+            33:  dload(s2, "top", s3, "y")
+            34:  get(s3, s0, s3)
+            35:  loadint(s4, 360)
+            36:  sub(s3, s4, s3)
+            37:  set(s255, s0, s2, s3)
+            38:  line(-, 55)
+            39:  dload(s2, "bottom", s3, "y")
+            40:  get(s3, s0, s3)
+            41:  loadint(s4, 360)
+            42:  add(s3, s4, s3)
+            43:  set(s255, s0, s2, s3)
+            44:  line(-, 56)
+            45:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

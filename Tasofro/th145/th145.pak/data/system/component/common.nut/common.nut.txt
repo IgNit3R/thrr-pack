@@ -1,0 +1,241 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\component\common.nut: 
+sourcename: ""
+name: "main"
+nliterals: 1
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 2
+ndefaultparams: 0
+ninstructions: 10
+nfunctions: 1
+Literals: [
+    0: "DrawNumber"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 9
+    1: name: "this", pos: 0, start_op: 0, end_op: 9
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 41, op: 8
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "DrawNumber")
+    2:  loadfloat(s3, 1)
+    3:  loadfloat(s4, 1)
+    4:  loadfloat(s5, 1)
+    5:  loadint(s6, -4)
+    6:  closure(s3, 0)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 41)
+    9:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "DrawNumber"
+        nliterals: 9
+        nparameters: 10
+        noutervals: 0
+        nlocalvarinfos: 14
+        nlineinfos: 16
+        ndefaultparams: 4
+        ninstructions: 113
+        nfunctions: 0
+        Literals: [
+            0: "resource"
+            1: "image_width"
+            2: "tointeger"
+            3: "image_height"
+            4: "abs"
+            5: "pl"
+            6: "SetBlend"
+            7: "BLEND_ALPHA"
+            8: "StretchBlt"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_fontName"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+            7: "_scaleY"
+            8: "_scaleX"
+            9: "_charSpacing"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 13, start_op: 75, end_op: 109
+            1: name: "zeroNoDraw", pos: 12, start_op: 15, end_op: 110
+            2: name: "FONT_HEIGHT", pos: 11, start_op: 12, end_op: 110
+            3: name: "FONT_WIDTH", pos: 10, start_op: 8, end_op: 110
+            4: name: "_charSpacing", pos: 9, start_op: 0, end_op: 112
+            5: name: "_scaleX", pos: 8, start_op: 0, end_op: 112
+            6: name: "_scaleY", pos: 7, start_op: 0, end_op: 112
+            7: name: "_alpha", pos: 6, start_op: 0, end_op: 112
+            8: name: "_digit", pos: 5, start_op: 0, end_op: 112
+            9: name: "_num", pos: 4, start_op: 0, end_op: 112
+            10: name: "_y", pos: 3, start_op: 0, end_op: 112
+            11: name: "_x", pos: 2, start_op: 0, end_op: 112
+            12: name: "_fontName", pos: 1, start_op: 0, end_op: 112
+            13: name: "this", pos: 0, start_op: 0, end_op: 112
+          ]
+        Line Informations: [
+            0: line: 5, op: 1
+            1: line: 6, op: 8
+            2: line: 8, op: 12
+            3: line: 9, op: 15
+            4: line: 11, op: 20
+            5: line: 12, op: 26
+            6: line: 15, op: 35
+            7: line: 16, op: 40
+            8: line: 23, op: 61
+            9: line: 25, op: 73
+            10: line: 27, op: 75
+            11: line: 29, op: 81
+            12: line: 35, op: 102
+            13: line: 36, op: 105
+            14: line: 37, op: 108
+            15: line: 39, op: 111
+          ]
+        Default Parameters: [
+            0: 3
+            1: 4
+            2: 5
+            3: 6
+          ]
+        Instructions: [
+            0:  line(-, 5)
+            1:  getk(s10, "resource", s0)
+            2:  get(s10, s10, s1)
+            3:  getk(s10, "image_width", s10)
+            4:  loadint(s11, 10)
+            5:  div(s10, s11, s10)
+            6:  prepcallk(s10, "tointeger", s10, s11)
+            7:  call(10, s10, s11, 1)
+            8:  line(-, 6)
+            9:  getk(s11, "resource", s0)
+            10:  get(s11, s11, s1)
+            11:  getk(s11, "image_height", s11)
+            12:  line(-, 8)
+            13:  loadint(s12, -1)
+            14:  cmp(s12, s12, s5, CMP_LE)
+            15:  line(-, 9)
+            16:  prepcallk(s13, "abs", s0, s14)
+            17:  move(s15, s5)
+            18:  call(13, s13, s14, 2)
+            19:  move(s5, s13)
+            20:  line(-, 11)
+            21:  loadint(s13, 1)
+            22:  jcmp(s13, 3, s5, CMP_GE)
+            23:  add(s13, s9, s10)
+            24:  mul(s13, s13, s5)
+            25:  add(s2, s13, s2)
+            26:  line(-, 12)
+            27:  loadint(s13, 0)
+            28:  eq(s13, 13, s4, 0)
+            29:  and(s13, 3, s13)
+            30:  loadint(s14, 0)
+            31:  ne(s14, 14, s5, 0)
+            32:  move(s13, s14)
+            33:  jz(s13, 27)
+            34:  line(-, 15)
+            35:  getk(s13, "pl", s0)
+            36:  prepcallk(s13, "SetBlend", s13, s14)
+            37:  getk(s15, "BLEND_ALPHA", s0)
+            38:  move(s16, s6)
+            39:  call(255, s13, s14, 3)
+            40:  line(-, 16)
+            41:  getk(s13, "pl", s0)
+            42:  prepcallk(s13, "StretchBlt", s13, s14)
+            43:  mul(s15, s8, s10)
+            44:  sub(s15, s10, s15)
+            45:  loadfloat(s16, 2)
+            46:  div(s15, s16, s15)
+            47:  sub(s15, s15, s2)
+            48:  mul(s16, s7, s11)
+            49:  sub(s16, s11, s16)
+            50:  loadfloat(s17, 2)
+            51:  div(s16, s17, s16)
+            52:  sub(s16, s16, s3)
+            53:  mul(s17, s8, s10)
+            54:  mul(s18, s7, s11)
+            55:  getk(s19, "resource", s0)
+            56:  get(s19, s19, s1)
+            57:  loadint(s20, 0)
+            58:  loadint(s21, 0)
+            59:  dmove(s22, s10, s23, s11)
+            60:  call(255, s13, s14, 10)
+            61:  line(-, 23)
+            62:  loadint(s13, 0)
+            63:  ne(s13, 13, s4, 0)
+            64:  or(s13, 6, s13)
+            65:  not(s14, s12)
+            66:  and(s14, 3, s14)
+            67:  loadint(s15, 1)
+            68:  cmp(s15, s15, s5, CMP_GE)
+            69:  move(s14, s15)
+            70:  move(s13, s14)
+            71:  jz(s13, 39)
+            72:  line(-, 25)
+            73:  loadint(s13, 10)
+            74:  mod(s13, s13, s4)
+            75:  line(-, 27)
+            76:  getk(s14, "pl", s0)
+            77:  prepcallk(s14, "SetBlend", s14, s15)
+            78:  getk(s16, "BLEND_ALPHA", s0)
+            79:  move(s17, s6)
+            80:  call(255, s14, s15, 3)
+            81:  line(-, 29)
+            82:  getk(s14, "pl", s0)
+            83:  prepcallk(s14, "StretchBlt", s14, s15)
+            84:  mul(s16, s8, s10)
+            85:  sub(s16, s10, s16)
+            86:  loadfloat(s17, 2)
+            87:  div(s16, s17, s16)
+            88:  sub(s16, s16, s2)
+            89:  mul(s17, s7, s11)
+            90:  sub(s17, s11, s17)
+            91:  loadfloat(s18, 2)
+            92:  div(s17, s18, s17)
+            93:  sub(s17, s17, s3)
+            94:  mul(s18, s8, s10)
+            95:  mul(s19, s7, s11)
+            96:  getk(s20, "resource", s0)
+            97:  get(s20, s20, s1)
+            98:  mul(s21, s10, s13)
+            99:  loadint(s22, 0)
+            100:  dmove(s23, s10, s24, s11)
+            101:  call(255, s14, s15, 10)
+            102:  line(-, 35)
+            103:  loadint(s14, 10)
+            104:  div(s4, s14, s4)
+            105:  line(-, 36)
+            106:  add(s14, s9, s10)
+            107:  sub(s2, s14, s2)
+            108:  line(-, 37)
+            109:  pincl(s14, s5, 0, 255)
+            110:  jmp(-, -49)
+            111:  line(-, 39)
+            112:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 25
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 7
+bgenerator: 0
+varparams: 1
+

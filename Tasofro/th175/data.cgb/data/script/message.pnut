@@ -1,0 +1,200 @@
+﻿/**
+ * オブジェクト座標をずらす
+ * - _param[0] = X座標
+ * - _param[1] = Y座標
+ */
+const OM_SHIFT = 0x1000;
+
+/**
+ * 接触イベント通知
+ * - _param[0] = 対象オブジェクト
+ */
+const OM_NOTIFY_TOUCH = 0x1001;
+
+/**
+ * 着地イベント通知
+ * - _param[0] = 対象オブジェクト
+ */
+const OM_NOTIFY_STEP = 0x1002;
+
+/**
+ * 画面スクロールのON/OFFを設定する
+ * - _param[0] = 有効にする(true) / 無効にする(false)
+ */
+const OM_ENABLE_MAPSCROLL = 0x1003;
+
+/**
+ * 画面内にあるマップオブジェクトを取得する
+ * - _param[0] = 結果を受け取る配列
+ */
+const OM_FIND_MAPOBJECT_ON_SCREEN = 0x1004;
+
+/**
+ * 無限落下ステージがスクロールする自キャラY座標を設定する
+ * - _param[0] = Y座標
+ */
+const OM_SET_MAPSCROLL_BORDER_Y = 0x1005;
+
+/**
+ * 無限落下ステージがスクロールする範囲を設定する
+ * - _param[0] = Y座標
+ */
+const OM_SET_MAPSCROLL_MAX_Y = 0x1006;
+
+/**
+ * 弾グループにグレイズが発生した時の通知
+ * - _param[0] = グループID
+ */
+const OM_ON_GRAZE_BULLETGROUP = 0x1007;
+
+/**
+ * 地形が破壊されたことを通知する
+ */
+const OM_BREAK_TERRAIN = 0x1008;
+
+/**
+ * プレイヤが過熱された時の通知
+ */
+const OM_NOTIFY_HEAT = 0x1009;
+
+/**
+ * 敵弾の全消去
+ */
+const OM_KILL_ENEMYBULLET = 0x100a;
+
+/**
+ * オブジェクトの設定動作の起動
+ */
+const OM_ACTION = 0x100b;
+
+/**
+ * 中断命令の実行
+ */
+const OM_CANCEL = 0x100c;
+
+/**
+ * 水中落下へのリアクション
+ */
+const OM_FALL_WATER = 0x100d;
+
+/**
+ * ステージ固有のエフェクト生成
+ */
+ const OM_STAGE_EFFECT = 0x100e;
+ 
+/**
+ * 画面外に出た時の通知
+ */
+const OM_NOTIFY_FRAME_OUT= 0x100f;
+
+ /**
+ * 自己ファイルの更新
+ */
+ const OM_RELOAD = 0x1010;
+ 
+ /**
+ * 背景のカメラ移動
+ * - _param[0] = X座標
+ * - _param[1] = Y座標
+ */
+const OM_CAMERA_SHIFT = 0x1011;
+
+ /**
+ * プレイヤーをジャンプさせる
+ * - _param[0] = X速度
+ * - _param[1] = Y速度
+ */
+const OM_JUMP = 0x1012;
+
+ /**
+ * 消去指令
+ */
+const OM_KILL = 0x1013;
+
+ /**
+ * グレイズ挙動
+ */
+const OM_GRAZE = 0x1014;
+
+ /**
+ * ジャストグレイズ挙動
+ */
+const OM_JUST_GRAZE = 0x1015;
+
+ /**
+ * COM挙動切り替え
+ */
+const OM_COM_SWITCH = 0x1016;
+
+/**
+ * オブジェクトの設定動作の起動 複数使い分け用
+ */
+const OM_ACTION2 = 0x1017;
+
+/**
+ * マップ画面を固定し数値分スクロールさせる　[x,y];
+ */
+const OM_MAPSCROLL = 0x1018;
+
+ /**
+ * 情報更新命令
+ */
+const OM_SETTING = 0x1019;
+
+/**
+ * 水回収時のアクション指定
+ */
+const OM_GET_WATER = 0x101a;
+
+/**
+ * 効果音再生に関わる処理
+ */
+const OM_PLAY_SE = 0x101b;
+
+/**
+ * 水中落下からの基点位置への帰還
+ */
+const OM_RETURN_WATER = 0x101c;
+
+/**
+ * ラスボス最終攻撃モード
+ */
+const OM_FINAL_ATTACK = 0x101d;
+
+/**
+ * プレイヤー画面外落下へのリアクション
+ */
+const OM_FALL_DAMAGE = 0x101e;
+
+/**
+ * プレイヤー画面左右ダメージへの
+ */
+const OM_WALL_DAMAGE = 0x1020;
+
+/**
+ * 画面外落下へのリアクション
+ */
+const OM_FALL_BOTTOM = 0x1021;
+
+/**
+ * 灼熱地獄落下スクロールのロックをしつつ画面下部での再離陸も有効な状態に　　デモ演出などでスクロール距離を即座に限界に設定する状況で実行
+ */
+const OM_SET_FALL_LOCK = 0x1022;
+
+/**
+ * ショット挙動の汎用分岐
+ */
+const OM_DEFAULT_SHOT = 0x2000;//直進弾
+const OM_COUNT_SHOT = 0x2001;//直進弾寿命付き
+const OM_FALL_SHOT = 0x2002;//重力弾
+const OM_FALL_LIMIT_SHOT = 0x2003;//重力弾落下速度限界あり
+const OM_ACTION_SHOT = 0x2004;//固有アクション弾
+const OM_BOUND_SHOT = 0x2005;//バウンド弾（地形依存なので地形無視属性は存在しない）
+const OM_FALL_COUNT_SHOT = 0x2006;//重力生存時間弾
+//地形判定なし版
+const OM_FREE_DEFAULT_SHOT = 0x2010;//直進弾
+const OM_FREE_COUNT_SHOT = 0x2011;//直進弾寿命付き
+const OM_FREE_FALL_SHOT = 0x2012;//重力弾
+const OM_FREE_FALL_LIMIT_SHOT = 0x2013;//重力弾落下速度限界あり
+
+const OM_ENABLE_BOAT_MOVE = 0x3001;//ボード移動開始

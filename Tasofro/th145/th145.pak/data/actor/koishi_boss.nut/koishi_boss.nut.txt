@@ -1,0 +1,4288 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\actor\koishi_boss.nut: 
+sourcename: ""
+name: "main"
+nliterals: 6
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 7
+ndefaultparams: 0
+ninstructions: 26
+nfunctions: 6
+Literals: [
+    0: "Spell_Boss1"
+    1: "SpellShot_Boss1_Wave"
+    2: "SpellShot_Boss1"
+    3: "SpellShot2_Boss1"
+    4: "Boss1_BackA"
+    5: "Boss1_BackB"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 25
+    1: name: "this", pos: 0, start_op: 0, end_op: 25
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 308, op: 4
+    2: line: 345, op: 8
+    3: line: 390, op: 12
+    4: line: 436, op: 16
+    5: line: 466, op: 20
+    6: line: 487, op: 24
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "Spell_Boss1")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 308)
+    5:  load(s2, "SpellShot_Boss1_Wave")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 345)
+    9:  load(s2, "SpellShot_Boss1")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 390)
+    13:  load(s2, "SpellShot2_Boss1")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 436)
+    17:  load(s2, "Boss1_BackA")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 466)
+    21:  load(s2, "Boss1_BackB")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 487)
+    25:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Spell_Boss1"
+        nliterals: 39
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 45
+        ndefaultparams: 0
+        ninstructions: 263
+        nfunctions: 11
+        Literals: [
+            0: "Cancel_Check"
+            1: "LabelClear"
+            2: "HitReset"
+            3: "SetSpeed_XY"
+            4: "va"
+            5: "x"
+            6: "y"
+            7: "SetMotion"
+            8: "flag2"
+            9: "manbow"
+            10: "Actor2DProcGroup"
+            11: "p"
+            12: "armor"
+            13: "freeMap"
+            14: "u"
+            15: "GetFront"
+            16: "call"
+            17: "count"
+            18: "flag1"
+            19: "flag5"
+            20: "cycle"
+            21: "wait"
+            22: "back"
+            23: "core"
+            24: "field"
+            25: "fieldScale"
+            26: "fieldCount"
+            27: "warpCount"
+            28: "game"
+            29: "occultGuage"
+            30: "occultCount"
+            31: "occult"
+            32: "SetOccultGuage"
+            33: "lavelClearEvent"
+            34: "owner"
+            35: "initialize_data"
+            36: "com"
+            37: "func"
+            38: "keyAction"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 262
+            1: name: "this", pos: 0, start_op: 0, end_op: 262
+          ]
+        Line Informations: [
+            0: line: 2, op: 1
+            1: line: 3, op: 10
+            2: line: 4, op: 13
+            3: line: 5, op: 16
+            4: line: 6, op: 27
+            5: line: 7, op: 32
+            6: line: 8, op: 39
+            7: line: 9, op: 44
+            8: line: 10, op: 49
+            9: line: 11, op: 55
+            10: line: 12, op: 59
+            11: line: 13, op: 63
+            12: line: 14, op: 67
+            13: line: 15, op: 72
+            14: line: 16, op: 77
+            15: line: 17, op: 82
+            16: line: 18, op: 87
+            17: line: 19, op: 92
+            18: line: 20, op: 97
+            19: line: 21, op: 102
+            20: line: 27, op: 107
+            21: line: 28, op: 113
+            22: line: 29, op: 119
+            23: line: 32, op: 127
+            24: line: 44, op: 132
+            25: line: 46, op: 140
+            26: line: 47, op: 145
+            27: line: 48, op: 150
+            28: line: 49, op: 155
+            29: line: 51, op: 161
+            30: line: 52, op: 166
+            31: line: 53, op: 171
+            32: line: 54, op: 176
+            33: line: 56, op: 182
+            34: line: 57, op: 187
+            35: line: 58, op: 192
+            36: line: 59, op: 197
+            37: line: 61, op: 199
+            38: line: 62, op: 204
+            39: line: 63, op: 209
+            40: line: 64, op: 214
+            41: line: 67, op: 216
+            42: line: 198, op: 230
+            43: line: 306, op: 258
+            44: line: 307, op: 261
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 2)
+            1:  prepcallk(s2, "Cancel_Check", s0, s3)
+            2:  loadint(s4, 10)
+            3:  loadint(s5, 0)
+            4:  loadint(s6, 0)
+            5:  call(2, s2, s3, 4)
+            6:  not(s2, s2)
+            7:  jz(s2, 2)
+            8:  loadbool(s2, 0)
+            9:  return(1, 2)
+            10:  line(-, 3)
+            11:  prepcallk(s2, "LabelClear", s0, s3)
+            12:  call(255, s2, s3, 1)
+            13:  line(-, 4)
+            14:  prepcallk(s2, "HitReset", s0, s3)
+            15:  call(255, s2, s3, 1)
+            16:  line(-, 5)
+            17:  prepcallk(s2, "SetSpeed_XY", s0, s3)
+            18:  getk(s4, "va", s0)
+            19:  getk(s4, "x", s4)
+            20:  loadfloat(s5, 0.25)
+            21:  mul(s4, s5, s4)
+            22:  getk(s5, "va", s0)
+            23:  getk(s5, "y", s5)
+            24:  loadfloat(s6, 0.25)
+            25:  mul(s5, s6, s5)
+            26:  call(255, s2, s3, 3)
+            27:  line(-, 6)
+            28:  prepcallk(s2, "SetMotion", s0, s3)
+            29:  loadint(s4, 4910)
+            30:  loadint(s5, 0)
+            31:  call(255, s2, s3, 3)
+            32:  line(-, 7)
+            33:  load(s2, "flag2")
+            34:  loadroot(s3)
+            35:  getk(s3, "manbow", s3)
+            36:  prepcallk(s3, "Actor2DProcGroup", s3, s4)
+            37:  call(3, s3, s4, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  line(-, 8)
+            40:  getk(s2, "p", s0)
+            41:  load(s3, "armor")
+            42:  loadint(s4, 3)
+            43:  set(s255, s2, s3, s4)
+            44:  line(-, 9)
+            45:  getk(s2, "p", s0)
+            46:  load(s3, "freeMap")
+            47:  loadbool(s4, 1)
+            48:  set(s255, s2, s3, s4)
+            49:  line(-, 10)
+            50:  getk(s2, "u", s0)
+            51:  getk(s2, "GetFront", s2)
+            52:  prepcallk(s2, "call", s2, s3)
+            53:  move(s4, s0)
+            54:  call(255, s2, s3, 2)
+            55:  line(-, 11)
+            56:  load(s2, "count")
+            57:  loadint(s3, 0)
+            58:  set(s255, s0, s2, s3)
+            59:  line(-, 12)
+            60:  load(s2, "flag1")
+            61:  loadnulls(s3, 1)
+            62:  set(s255, s0, s2, s3)
+            63:  line(-, 13)
+            64:  load(s2, "flag5")
+            65:  newobj(s3, 0, 0, 0)
+            66:  set(s255, s0, s2, s3)
+            67:  line(-, 14)
+            68:  getk(s2, "flag5", s0)
+            69:  load(s3, "cycle")
+            70:  loadint(s4, 20)
+            71:  newslot(s255, s2, s3, s4)
+            72:  line(-, 15)
+            73:  getk(s2, "flag5", s0)
+            74:  load(s3, "wait")
+            75:  loadint(s4, 40)
+            76:  newslot(s255, s2, s3, s4)
+            77:  line(-, 16)
+            78:  getk(s2, "flag5", s0)
+            79:  load(s3, "back")
+            80:  loadnulls(s4, 1)
+            81:  newslot(s255, s2, s3, s4)
+            82:  line(-, 17)
+            83:  getk(s2, "flag5", s0)
+            84:  load(s3, "core")
+            85:  loadnulls(s4, 1)
+            86:  newslot(s255, s2, s3, s4)
+            87:  line(-, 18)
+            88:  getk(s2, "flag5", s0)
+            89:  load(s3, "field")
+            90:  loadnulls(s4, 1)
+            91:  newslot(s255, s2, s3, s4)
+            92:  line(-, 19)
+            93:  getk(s2, "flag5", s0)
+            94:  load(s3, "fieldScale")
+            95:  loadfloat(s4, 4)
+            96:  newslot(s255, s2, s3, s4)
+            97:  line(-, 20)
+            98:  getk(s2, "flag5", s0)
+            99:  load(s3, "fieldCount")
+            100:  loadint(s4, 0)
+            101:  newslot(s255, s2, s3, s4)
+            102:  line(-, 21)
+            103:  getk(s2, "flag5", s0)
+            104:  load(s3, "warpCount")
+            105:  loadint(s4, 0)
+            106:  newslot(s255, s2, s3, s4)
+            107:  line(-, 27)
+            108:  loadroot(s2)
+            109:  getk(s2, "game", s2)
+            110:  getk(s2, "occultGuage", s2)
+            111:  not(s2, s2)
+            112:  jz(s2, 14)
+            113:  line(-, 28)
+            114:  loadroot(s2)
+            115:  getk(s2, "game", s2)
+            116:  load(s3, "occultCount")
+            117:  loadint(s4, 10000)
+            118:  set(s255, s2, s3, s4)
+            119:  line(-, 29)
+            120:  loadroot(s2)
+            121:  getk(s2, "occult", s2)
+            122:  prepcallk(s2, "SetOccultGuage", s2, s3)
+            123:  loadroot(s4)
+            124:  getk(s4, "game", s4)
+            125:  getk(s4, "occultCount", s4)
+            126:  call(255, s2, s3, 2)
+            127:  line(-, 32)
+            128:  getk(s2, "p", s0)
+            129:  load(s3, "lavelClearEvent")
+            130:  closure(s4, 0)
+            131:  set(s255, s2, s3, s4)
+            132:  line(-, 44)
+            133:  getk(s2, "owner", s0)
+            134:  getk(s2, "u", s2)
+            135:  getk(s2, "initialize_data", s2)
+            136:  getk(s2, "com", s2)
+            137:  loadint(s3, 0)
+            138:  eq(s3, 3, s2, 0)
+            139:  jz(s3, 18)
+            140:  line(-, 46)
+            141:  getk(s3, "flag5", s0)
+            142:  load(s4, "cycle")
+            143:  loadint(s5, 40)
+            144:  set(s255, s3, s4, s5)
+            145:  line(-, 47)
+            146:  getk(s3, "flag5", s0)
+            147:  load(s4, "wait")
+            148:  loadint(s5, 40)
+            149:  set(s255, s3, s4, s5)
+            150:  line(-, 48)
+            151:  getk(s3, "flag5", s0)
+            152:  load(s4, "fieldScale")
+            153:  loadfloat(s5, 6)
+            154:  set(s255, s3, s4, s5)
+            155:  line(-, 49)
+            156:  jmp(-, 59)
+            157:  jmp(-, 3)
+            158:  loadint(s3, 1)
+            159:  eq(s3, 3, s2, 0)
+            160:  jz(s3, 18)
+            161:  line(-, 51)
+            162:  getk(s3, "flag5", s0)
+            163:  load(s4, "cycle")
+            164:  loadint(s5, 30)
+            165:  set(s255, s3, s4, s5)
+            166:  line(-, 52)
+            167:  getk(s3, "flag5", s0)
+            168:  load(s4, "wait")
+            169:  loadint(s5, 30)
+            170:  set(s255, s3, s4, s5)
+            171:  line(-, 53)
+            172:  getk(s3, "flag5", s0)
+            173:  load(s4, "fieldScale")
+            174:  loadfloat(s5, 4)
+            175:  set(s255, s3, s4, s5)
+            176:  line(-, 54)
+            177:  jmp(-, 38)
+            178:  jmp(-, 3)
+            179:  loadint(s3, 2)
+            180:  eq(s3, 3, s2, 0)
+            181:  jz(s3, 17)
+            182:  line(-, 56)
+            183:  getk(s3, "flag5", s0)
+            184:  load(s4, "cycle")
+            185:  loadint(s5, 20)
+            186:  set(s255, s3, s4, s5)
+            187:  line(-, 57)
+            188:  getk(s3, "flag5", s0)
+            189:  load(s4, "wait")
+            190:  loadint(s5, 25)
+            191:  set(s255, s3, s4, s5)
+            192:  line(-, 58)
+            193:  getk(s3, "flag5", s0)
+            194:  load(s4, "fieldScale")
+            195:  loadfloat(s5, 3.25)
+            196:  set(s255, s3, s4, s5)
+            197:  line(-, 59)
+            198:  jmp(-, 17)
+            199:  line(-, 61)
+            200:  getk(s3, "flag5", s0)
+            201:  load(s4, "wait")
+            202:  loadint(s5, 10)
+            203:  set(s255, s3, s4, s5)
+            204:  line(-, 62)
+            205:  getk(s3, "flag5", s0)
+            206:  load(s4, "cycle")
+            207:  loadint(s5, 10)
+            208:  set(s255, s3, s4, s5)
+            209:  line(-, 63)
+            210:  getk(s3, "flag5", s0)
+            211:  load(s4, "fieldScale")
+            212:  loadfloat(s5, 2.5)
+            213:  set(s255, s3, s4, s5)
+            214:  line(-, 64)
+            215:  jmp(-, 0)
+            216:  line(-, 67)
+            217:  load(s2, "func")
+            218:  newobj(s3, 5, 0, 1)
+            219:  closure(s4, 1)
+            220:  appendarray(s3, 4, 0)
+            221:  closure(s4, 2)
+            222:  appendarray(s3, 4, 0)
+            223:  closure(s4, 3)
+            224:  appendarray(s3, 4, 0)
+            225:  closure(s4, 4)
+            226:  appendarray(s3, 4, 0)
+            227:  closure(s4, 5)
+            228:  appendarray(s3, 4, 0)
+            229:  set(s255, s0, s2, s3)
+            230:  line(-, 198)
+            231:  load(s2, "keyAction")
+            232:  newobj(s3, 12, 0, 1)
+            233:  closure(s4, 6)
+            234:  appendarray(s3, 4, 0)
+            235:  loadnulls(s4, 1)
+            236:  appendarray(s3, 4, 0)
+            237:  loadnulls(s4, 1)
+            238:  appendarray(s3, 4, 0)
+            239:  loadnulls(s4, 1)
+            240:  appendarray(s3, 4, 0)
+            241:  loadnulls(s4, 1)
+            242:  appendarray(s3, 4, 0)
+            243:  loadnulls(s4, 1)
+            244:  appendarray(s3, 4, 0)
+            245:  closure(s4, 7)
+            246:  appendarray(s3, 4, 0)
+            247:  closure(s4, 8)
+            248:  appendarray(s3, 4, 0)
+            249:  loadnulls(s4, 1)
+            250:  appendarray(s3, 4, 0)
+            251:  loadnulls(s4, 1)
+            252:  appendarray(s3, 4, 0)
+            253:  closure(s4, 9)
+            254:  appendarray(s3, 4, 0)
+            255:  closure(s4, 10)
+            256:  appendarray(s3, 4, 0)
+            257:  set(s255, s0, s2, s3)
+            258:  line(-, 306)
+            259:  loadbool(s2, 1)
+            260:  return(1, 2)
+            261:  line(-, 307)
+            262:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 11
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 67
+                nfunctions: 0
+                Literals: [
+                    0: "p"
+                    1: "freeMap"
+                    2: "flag1"
+                    3: "func"
+                    4: "call"
+                    5: "flag5"
+                    6: "back"
+                    7: "core"
+                    8: "field"
+                    9: "occult"
+                    10: "DelOccultGuage"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 66
+                  ]
+                Line Informations: [
+                    0: line: 33, op: 1
+                    1: line: 34, op: 5
+                    2: line: 35, op: 15
+                    3: line: 36, op: 28
+                    4: line: 37, op: 41
+                    5: line: 38, op: 45
+                    6: line: 39, op: 55
+                    7: line: 41, op: 60
+                    8: line: 42, op: 65
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 33)
+                    1:  getk(s1, "p", s0)
+                    2:  load(s2, "freeMap")
+                    3:  loadbool(s3, 0)
+                    4:  set(s255, s1, s2, s3)
+                    5:  line(-, 34)
+                    6:  getk(s1, "flag1", s0)
+                    7:  jz(s1, 7)
+                    8:  getk(s1, "flag1", s0)
+                    9:  getk(s1, "func", s1)
+                    10:  loadint(s2, 0)
+                    11:  get(s1, s1, s2)
+                    12:  prepcallk(s1, "call", s1, s2)
+                    13:  getk(s3, "flag1", s0)
+                    14:  call(255, s1, s2, 2)
+                    15:  line(-, 35)
+                    16:  getk(s1, "flag5", s0)
+                    17:  getk(s1, "back", s1)
+                    18:  jz(s1, 9)
+                    19:  getk(s1, "flag5", s0)
+                    20:  getk(s1, "back", s1)
+                    21:  getk(s1, "func", s1)
+                    22:  loadint(s2, 0)
+                    23:  get(s1, s1, s2)
+                    24:  prepcallk(s1, "call", s1, s2)
+                    25:  getk(s3, "flag5", s0)
+                    26:  getk(s3, "back", s3)
+                    27:  call(255, s1, s2, 2)
+                    28:  line(-, 36)
+                    29:  getk(s1, "flag5", s0)
+                    30:  getk(s1, "core", s1)
+                    31:  jz(s1, 9)
+                    32:  getk(s1, "flag5", s0)
+                    33:  getk(s1, "core", s1)
+                    34:  getk(s1, "func", s1)
+                    35:  loadint(s2, 0)
+                    36:  get(s1, s1, s2)
+                    37:  prepcallk(s1, "call", s1, s2)
+                    38:  getk(s3, "flag5", s0)
+                    39:  getk(s3, "core", s3)
+                    40:  call(255, s1, s2, 2)
+                    41:  line(-, 37)
+                    42:  getk(s1, "flag5", s0)
+                    43:  getk(s1, "field", s1)
+                    44:  jz(s1, 15)
+                    45:  line(-, 38)
+                    46:  getk(s1, "flag5", s0)
+                    47:  getk(s1, "field", s1)
+                    48:  getk(s1, "func", s1)
+                    49:  loadint(s2, 0)
+                    50:  get(s1, s1, s2)
+                    51:  prepcallk(s1, "call", s1, s2)
+                    52:  getk(s3, "flag5", s0)
+                    53:  getk(s3, "field", s3)
+                    54:  call(255, s1, s2, 2)
+                    55:  line(-, 39)
+                    56:  getk(s1, "flag5", s0)
+                    57:  load(s2, "field")
+                    58:  loadnulls(s3, 1)
+                    59:  set(s255, s1, s2, s3)
+                    60:  line(-, 41)
+                    61:  loadroot(s1)
+                    62:  getk(s1, "occult", s1)
+                    63:  prepcallk(s1, "DelOccultGuage", s1, s2)
+                    64:  call(255, s1, s2, 1)
+                    65:  line(-, 42)
+                    66:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 3
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 2
+                  ]
+                Line Informations: [
+                    0: line: 68, op: 0
+                    1: line: 69, op: 1
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 68)
+                    1:  line(-, 69)
+                    2:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: ""
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 30
+                nfunctions: 1
+                Literals: [
+                    0: "p"
+                    1: "armor"
+                    2: "SetMotion"
+                    3: "direction"
+                    4: "target"
+                    5: "SetSpeed_XY"
+                    6: "count"
+                    7: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 29
+                  ]
+                Line Informations: [
+                    0: line: 71, op: 1
+                    1: line: 72, op: 5
+                    2: line: 73, op: 10
+                    3: line: 74, op: 15
+                    4: line: 77, op: 20
+                    5: line: 78, op: 24
+                    6: line: 113, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 71)
+                    1:  getk(s1, "p", s0)
+                    2:  load(s2, "armor")
+                    3:  loadint(s3, 3)
+                    4:  set(s255, s1, s2, s3)
+                    5:  line(-, 72)
+                    6:  prepcallk(s1, "SetMotion", s0, s2)
+                    7:  loadint(s3, 4910)
+                    8:  loadint(s4, 9)
+                    9:  call(255, s1, s2, 3)
+                    10:  line(-, 73)
+                    11:  dload(s1, "direction", s2, "target")
+                    12:  get(s2, s0, s2)
+                    13:  getk(s2, "direction", s2)
+                    14:  set(s255, s0, s1, s2)
+                    15:  line(-, 74)
+                    16:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                    17:  loadfloat(s3, 0)
+                    18:  loadfloat(s4, 0)
+                    19:  call(255, s1, s2, 3)
+                    20:  line(-, 77)
+                    21:  load(s1, "count")
+                    22:  loadint(s2, 0)
+                    23:  set(s255, s0, s1, s2)
+                    24:  line(-, 78)
+                    25:  load(s1, "stateLabel")
+                    26:  closure(s2, 0)
+                    27:  set(s255, s0, s1, s2)
+                    28:  line(-, 113)
+                    29:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 17
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 72
+                        nfunctions: 1
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "SetSpeed_XY"
+                            3: "target"
+                            4: "x"
+                            5: "flag5"
+                            6: "warpCount"
+                            7: "direction"
+                            8: "y"
+                            9: "centerY"
+                            10: "centerStop"
+                            11: "count"
+                            12: "wait"
+                            13: "masterAlpha"
+                            14: "alpha"
+                            15: "SetMotion"
+                            16: "stateLabel"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 71
+                          ]
+                        Line Informations: [
+                            0: line: 79, op: 1
+                            1: line: 80, op: 5
+                            2: line: 81, op: 29
+                            3: line: 82, op: 38
+                            4: line: 104, op: 43
+                            5: line: 105, op: 48
+                            6: line: 106, op: 53
+                            7: line: 107, op: 61
+                            8: line: 108, op: 66
+                            9: line: 112, op: 70
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 79)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 80)
+                            6:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                            7:  getk(s3, "target", s0)
+                            8:  getk(s3, "x", s3)
+                            9:  loadint(s4, 3)
+                            10:  getk(s5, "flag5", s0)
+                            11:  getk(s5, "warpCount", s5)
+                            12:  sub(s4, s5, s4)
+                            13:  loadint(s5, 150)
+                            14:  mul(s4, s5, s4)
+                            15:  getk(s5, "direction", s0)
+                            16:  mul(s4, s5, s4)
+                            17:  sub(s3, s4, s3)
+                            18:  getk(s4, "x", s0)
+                            19:  sub(s3, s4, s3)
+                            20:  loadfloat(s4, 0.2)
+                            21:  mul(s3, s4, s3)
+                            22:  getk(s4, "target", s0)
+                            23:  getk(s4, "y", s4)
+                            24:  getk(s5, "y", s0)
+                            25:  sub(s4, s5, s4)
+                            26:  loadfloat(s5, 0.2)
+                            27:  mul(s4, s5, s4)
+                            28:  call(255, s1, s2, 3)
+                            29:  line(-, 81)
+                            30:  getk(s1, "y", s0)
+                            31:  getk(s2, "centerY", s0)
+                            32:  jcmp(s2, 5, s1, CMP_LE)
+                            33:  getk(s1, "p", s0)
+                            34:  load(s2, "centerStop")
+                            35:  loadint(s3, -2)
+                            36:  set(s255, s1, s2, s3)
+                            37:  jmp(-, 5)
+                            38:  line(-, 82)
+                            39:  getk(s1, "p", s0)
+                            40:  load(s2, "centerStop")
+                            41:  loadint(s3, 2)
+                            42:  set(s255, s1, s2, s3)
+                            43:  line(-, 104)
+                            44:  getk(s1, "count", s0)
+                            45:  getk(s2, "flag5", s0)
+                            46:  getk(s2, "wait", s2)
+                            47:  jcmp(s2, 22, s1, CMP_GE)
+                            48:  line(-, 105)
+                            49:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                            50:  loadfloat(s3, 0)
+                            51:  loadfloat(s4, 0)
+                            52:  call(255, s1, s2, 3)
+                            53:  line(-, 106)
+                            54:  getk(s1, "p", s0)
+                            55:  load(s2, "masterAlpha")
+                            56:  loadfloat(s3, 0)
+                            57:  set(s255, s1, s2, s3)
+                            58:  load(s1, "alpha")
+                            59:  loadfloat(s2, 0)
+                            60:  set(s255, s0, s1, s2)
+                            61:  line(-, 107)
+                            62:  prepcallk(s1, "SetMotion", s0, s2)
+                            63:  loadint(s3, 4910)
+                            64:  loadint(s4, 6)
+                            65:  call(255, s1, s2, 3)
+                            66:  line(-, 108)
+                            67:  load(s1, "stateLabel")
+                            68:  closure(s2, 0)
+                            69:  set(s255, s0, s1, s2)
+                            70:  line(-, 112)
+                            71:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 2
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 1
+                                nlineinfos: 2
+                                ndefaultparams: 0
+                                ninstructions: 7
+                                nfunctions: 0
+                                Literals: [
+                                    0: "p"
+                                    1: "armor"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "this", pos: 0, start_op: 0, end_op: 6
+                                  ]
+                                Line Informations: [
+                                    0: line: 109, op: 1
+                                    1: line: 110, op: 5
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 109)
+                                    1:  getk(s1, "p", s0)
+                                    2:  load(s2, "armor")
+                                    3:  loadint(s3, 3)
+                                    4:  set(s255, s1, s2, s3)
+                                    5:  line(-, 110)
+                                    6:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 4
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 7
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            3: 
+                sourcename: ""
+                name: null
+                nliterals: 7
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 33
+                nfunctions: 1
+                Literals: [
+                    0: "p"
+                    1: "armor"
+                    2: "SetMotion"
+                    3: "count"
+                    4: "flag5"
+                    5: "warpCount"
+                    6: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 32
+                  ]
+                Line Informations: [
+                    0: line: 115, op: 1
+                    1: line: 116, op: 5
+                    2: line: 117, op: 10
+                    3: line: 118, op: 14
+                    4: line: 119, op: 18
+                    5: line: 120, op: 27
+                    6: line: 135, op: 31
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 115)
+                    1:  getk(s1, "p", s0)
+                    2:  load(s2, "armor")
+                    3:  loadint(s3, 3)
+                    4:  set(s255, s1, s2, s3)
+                    5:  line(-, 116)
+                    6:  prepcallk(s1, "SetMotion", s0, s2)
+                    7:  loadint(s3, 4910)
+                    8:  loadint(s4, 5)
+                    9:  call(255, s1, s2, 3)
+                    10:  line(-, 117)
+                    11:  load(s1, "count")
+                    12:  loadint(s2, 0)
+                    13:  set(s255, s0, s1, s2)
+                    14:  line(-, 118)
+                    15:  getk(s1, "flag5", s0)
+                    16:  load(s2, "warpCount")
+                    17:  pinc(s1, s1, s2, 1)
+                    18:  line(-, 119)
+                    19:  getk(s1, "flag5", s0)
+                    20:  getk(s1, "warpCount", s1)
+                    21:  loadint(s2, 4)
+                    22:  jcmp(s2, 4, s1, CMP_GE)
+                    23:  getk(s1, "flag5", s0)
+                    24:  load(s2, "warpCount")
+                    25:  loadint(s3, 0)
+                    26:  set(s255, s1, s2, s3)
+                    27:  line(-, 120)
+                    28:  load(s1, "stateLabel")
+                    29:  closure(s2, 0)
+                    30:  set(s255, s0, s1, s2)
+                    31:  line(-, 135)
+                    32:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 10
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 9
+                        ndefaultparams: 0
+                        ninstructions: 48
+                        nfunctions: 0
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "target"
+                            3: "life"
+                            4: "func"
+                            5: "call"
+                            6: "count"
+                            7: "flag5"
+                            8: "cycle"
+                            9: "warpCount"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 47
+                          ]
+                        Line Informations: [
+                            0: line: 121, op: 1
+                            1: line: 122, op: 5
+                            2: line: 123, op: 11
+                            3: line: 124, op: 18
+                            4: line: 126, op: 20
+                            5: line: 127, op: 25
+                            6: line: 128, op: 31
+                            7: line: 131, op: 40
+                            8: line: 134, op: 46
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 121)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 122)
+                            6:  getk(s1, "target", s0)
+                            7:  getk(s1, "p", s1)
+                            8:  getk(s1, "life", s1)
+                            9:  loadint(s2, 0)
+                            10:  jcmp(s2, 9, s1, CMP_LE)
+                            11:  line(-, 123)
+                            12:  getk(s1, "func", s0)
+                            13:  loadint(s2, 4)
+                            14:  get(s1, s1, s2)
+                            15:  prepcallk(s1, "call", s1, s2)
+                            16:  move(s3, s0)
+                            17:  call(255, s1, s2, 2)
+                            18:  line(-, 124)
+                            19:  return(255, 0)
+                            20:  line(-, 126)
+                            21:  getk(s1, "count", s0)
+                            22:  getk(s2, "flag5", s0)
+                            23:  getk(s2, "cycle", s2)
+                            24:  jcmp(s2, 21, s1, CMP_G)
+                            25:  line(-, 127)
+                            26:  getk(s1, "flag5", s0)
+                            27:  getk(s1, "warpCount", s1)
+                            28:  loadint(s2, 3)
+                            29:  eq(s1, 2, s1, 0)
+                            30:  jz(s1, 8)
+                            31:  line(-, 128)
+                            32:  getk(s1, "func", s0)
+                            33:  loadint(s2, 3)
+                            34:  get(s1, s1, s2)
+                            35:  prepcallk(s1, "call", s1, s2)
+                            36:  move(s3, s0)
+                            37:  call(255, s1, s2, 2)
+                            38:  jmp(-, 7)
+                            39:  line(-, 131)
+                            40:  getk(s1, "func", s0)
+                            41:  loadint(s2, 1)
+                            42:  get(s1, s1, s2)
+                            43:  prepcallk(s1, "call", s1, s2)
+                            44:  move(s3, s0)
+                            45:  call(255, s1, s2, 2)
+                            46:  line(-, 134)
+                            47:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 4
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            4: 
+                sourcename: ""
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 30
+                nfunctions: 1
+                Literals: [
+                    0: "p"
+                    1: "armor"
+                    2: "SetMotion"
+                    3: "direction"
+                    4: "target"
+                    5: "SetSpeed_XY"
+                    6: "count"
+                    7: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 29
+                  ]
+                Line Informations: [
+                    0: line: 137, op: 1
+                    1: line: 138, op: 5
+                    2: line: 139, op: 10
+                    3: line: 140, op: 15
+                    4: line: 143, op: 20
+                    5: line: 144, op: 24
+                    6: line: 179, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 137)
+                    1:  getk(s1, "p", s0)
+                    2:  load(s2, "armor")
+                    3:  loadint(s3, 3)
+                    4:  set(s255, s1, s2, s3)
+                    5:  line(-, 138)
+                    6:  prepcallk(s1, "SetMotion", s0, s2)
+                    7:  loadint(s3, 4910)
+                    8:  loadint(s4, 9)
+                    9:  call(255, s1, s2, 3)
+                    10:  line(-, 139)
+                    11:  dload(s1, "direction", s2, "target")
+                    12:  get(s2, s0, s2)
+                    13:  getk(s2, "direction", s2)
+                    14:  set(s255, s0, s1, s2)
+                    15:  line(-, 140)
+                    16:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                    17:  loadfloat(s3, 0)
+                    18:  loadfloat(s4, 0)
+                    19:  call(255, s1, s2, 3)
+                    20:  line(-, 143)
+                    21:  load(s1, "count")
+                    22:  loadint(s2, 0)
+                    23:  set(s255, s0, s1, s2)
+                    24:  line(-, 144)
+                    25:  load(s1, "stateLabel")
+                    26:  closure(s2, 0)
+                    27:  set(s255, s0, s1, s2)
+                    28:  line(-, 179)
+                    29:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 16
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 73
+                        nfunctions: 1
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "SetSpeed_XY"
+                            3: "target"
+                            4: "x"
+                            5: "flag5"
+                            6: "warpCount"
+                            7: "direction"
+                            8: "y"
+                            9: "centerY"
+                            10: "centerStop"
+                            11: "count"
+                            12: "masterAlpha"
+                            13: "alpha"
+                            14: "SetMotion"
+                            15: "stateLabel"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 72
+                          ]
+                        Line Informations: [
+                            0: line: 145, op: 1
+                            1: line: 146, op: 5
+                            2: line: 147, op: 31
+                            3: line: 148, op: 40
+                            4: line: 170, op: 45
+                            5: line: 171, op: 49
+                            6: line: 172, op: 54
+                            7: line: 173, op: 62
+                            8: line: 174, op: 67
+                            9: line: 178, op: 71
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 145)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 146)
+                            6:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                            7:  getk(s3, "target", s0)
+                            8:  getk(s3, "x", s3)
+                            9:  loadint(s4, 3)
+                            10:  getk(s5, "flag5", s0)
+                            11:  getk(s5, "warpCount", s5)
+                            12:  sub(s4, s5, s4)
+                            13:  loadint(s5, 150)
+                            14:  mul(s4, s5, s4)
+                            15:  loadint(s5, 75)
+                            16:  add(s4, s5, s4)
+                            17:  getk(s5, "direction", s0)
+                            18:  mul(s4, s5, s4)
+                            19:  sub(s3, s4, s3)
+                            20:  getk(s4, "x", s0)
+                            21:  sub(s3, s4, s3)
+                            22:  loadfloat(s4, 0.2)
+                            23:  mul(s3, s4, s3)
+                            24:  getk(s4, "target", s0)
+                            25:  getk(s4, "y", s4)
+                            26:  getk(s5, "y", s0)
+                            27:  sub(s4, s5, s4)
+                            28:  loadfloat(s5, 0.2)
+                            29:  mul(s4, s5, s4)
+                            30:  call(255, s1, s2, 3)
+                            31:  line(-, 147)
+                            32:  getk(s1, "y", s0)
+                            33:  getk(s2, "centerY", s0)
+                            34:  jcmp(s2, 5, s1, CMP_LE)
+                            35:  getk(s1, "p", s0)
+                            36:  load(s2, "centerStop")
+                            37:  loadint(s3, -2)
+                            38:  set(s255, s1, s2, s3)
+                            39:  jmp(-, 5)
+                            40:  line(-, 148)
+                            41:  getk(s1, "p", s0)
+                            42:  load(s2, "centerStop")
+                            43:  loadint(s3, 2)
+                            44:  set(s255, s1, s2, s3)
+                            45:  line(-, 170)
+                            46:  getk(s1, "count", s0)
+                            47:  loadint(s2, 30)
+                            48:  jcmp(s2, 22, s1, CMP_GE)
+                            49:  line(-, 171)
+                            50:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                            51:  loadfloat(s3, 0)
+                            52:  loadfloat(s4, 0)
+                            53:  call(255, s1, s2, 3)
+                            54:  line(-, 172)
+                            55:  getk(s1, "p", s0)
+                            56:  load(s2, "masterAlpha")
+                            57:  loadfloat(s3, 0)
+                            58:  set(s255, s1, s2, s3)
+                            59:  load(s1, "alpha")
+                            60:  loadfloat(s2, 0)
+                            61:  set(s255, s0, s1, s2)
+                            62:  line(-, 173)
+                            63:  prepcallk(s1, "SetMotion", s0, s2)
+                            64:  loadint(s3, 4910)
+                            65:  loadint(s4, 10)
+                            66:  call(255, s1, s2, 3)
+                            67:  line(-, 174)
+                            68:  load(s1, "stateLabel")
+                            69:  closure(s2, 0)
+                            70:  set(s255, s0, s1, s2)
+                            71:  line(-, 178)
+                            72:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 2
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 1
+                                nlineinfos: 2
+                                ndefaultparams: 0
+                                ninstructions: 7
+                                nfunctions: 0
+                                Literals: [
+                                    0: "p"
+                                    1: "armor"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "this", pos: 0, start_op: 0, end_op: 6
+                                  ]
+                                Line Informations: [
+                                    0: line: 175, op: 1
+                                    1: line: 176, op: 5
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 175)
+                                    1:  getk(s1, "p", s0)
+                                    2:  load(s2, "armor")
+                                    3:  loadint(s3, 3)
+                                    4:  set(s255, s1, s2, s3)
+                                    5:  line(-, 176)
+                                    6:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 4
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 7
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            5: 
+                sourcename: ""
+                name: null
+                nliterals: 9
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 35
+                nfunctions: 1
+                Literals: [
+                    0: "y"
+                    1: "centerY"
+                    2: "p"
+                    3: "centerStop"
+                    4: "SetSpeed_XY"
+                    5: "masterAlpha"
+                    6: "alpha"
+                    7: "SetMotion"
+                    8: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 34
+                  ]
+                Line Informations: [
+                    0: line: 181, op: 1
+                    1: line: 182, op: 6
+                    2: line: 183, op: 11
+                    3: line: 184, op: 16
+                    4: line: 185, op: 24
+                    5: line: 186, op: 29
+                    6: line: 195, op: 33
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 181)
+                    1:  dload(s1, "y", s2, "centerY")
+                    2:  get(s2, s0, s2)
+                    3:  loadint(s3, 75)
+                    4:  sub(s2, s3, s2)
+                    5:  set(s255, s0, s1, s2)
+                    6:  line(-, 182)
+                    7:  getk(s1, "p", s0)
+                    8:  load(s2, "centerStop")
+                    9:  loadint(s3, -2)
+                    10:  set(s255, s1, s2, s3)
+                    11:  line(-, 183)
+                    12:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                    13:  loadfloat(s3, 0)
+                    14:  loadfloat(s4, 0)
+                    15:  call(255, s1, s2, 3)
+                    16:  line(-, 184)
+                    17:  getk(s1, "p", s0)
+                    18:  load(s2, "masterAlpha")
+                    19:  loadfloat(s3, 0)
+                    20:  set(s255, s1, s2, s3)
+                    21:  load(s1, "alpha")
+                    22:  loadfloat(s2, 0)
+                    23:  set(s255, s0, s1, s2)
+                    24:  line(-, 185)
+                    25:  prepcallk(s1, "SetMotion", s0, s2)
+                    26:  loadint(s3, 4911)
+                    27:  loadint(s4, 0)
+                    28:  call(255, s1, s2, 3)
+                    29:  line(-, 186)
+                    30:  load(s1, "stateLabel")
+                    31:  closure(s2, 0)
+                    32:  set(s255, s0, s1, s2)
+                    33:  line(-, 195)
+                    34:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 5
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 5
+                        ndefaultparams: 0
+                        ninstructions: 24
+                        nfunctions: 1
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "centerStop"
+                            3: "SetMotion"
+                            4: "stateLabel"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 23
+                          ]
+                        Line Informations: [
+                            0: line: 187, op: 1
+                            1: line: 188, op: 5
+                            2: line: 189, op: 13
+                            3: line: 190, op: 18
+                            4: line: 194, op: 22
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 187)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 188)
+                            6:  getk(s1, "p", s0)
+                            7:  getk(s1, "centerStop", s1)
+                            8:  getk(s2, "p", s0)
+                            9:  getk(s2, "centerStop", s2)
+                            10:  mul(s1, s2, s1)
+                            11:  loadint(s2, 1)
+                            12:  jcmp(s2, 9, s1, CMP_LE)
+                            13:  line(-, 189)
+                            14:  prepcallk(s1, "SetMotion", s0, s2)
+                            15:  loadint(s3, 4911)
+                            16:  loadint(s4, 1)
+                            17:  call(255, s1, s2, 3)
+                            18:  line(-, 190)
+                            19:  load(s1, "stateLabel")
+                            20:  closure(s2, 0)
+                            21:  set(s255, s0, s1, s2)
+                            22:  line(-, 194)
+                            23:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 2
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 1
+                                nlineinfos: 2
+                                ndefaultparams: 0
+                                ninstructions: 7
+                                nfunctions: 0
+                                Literals: [
+                                    0: "p"
+                                    1: "armor"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "this", pos: 0, start_op: 0, end_op: 6
+                                  ]
+                                Line Informations: [
+                                    0: line: 191, op: 1
+                                    1: line: 192, op: 5
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 191)
+                                    1:  getk(s1, "p", s0)
+                                    2:  load(s2, "armor")
+                                    3:  loadint(s3, 3)
+                                    4:  set(s255, s1, s2, s3)
+                                    5:  line(-, 192)
+                                    6:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 4
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            6: 
+                sourcename: ""
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 31
+                nfunctions: 1
+                Literals: [
+                    0: "count"
+                    1: "flag5"
+                    2: "back"
+                    3: "SetFreeObject"
+                    4: "u"
+                    5: "Boss1_BackA"
+                    6: "weakref"
+                    7: "SetSpeed_XY"
+                    8: "direction"
+                    9: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 30
+                  ]
+                Line Informations: [
+                    0: line: 200, op: 1
+                    1: line: 201, op: 4
+                    2: line: 202, op: 18
+                    3: line: 203, op: 25
+                    4: line: 225, op: 29
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 200)
+                    1:  load(s1, "count")
+                    2:  loadint(s2, 0)
+                    3:  set(s255, s0, s1, s2)
+                    4:  line(-, 201)
+                    5:  getk(s1, "flag5", s0)
+                    6:  dload(s2, "back", s3, "SetFreeObject")
+                    7:  prepcall(s3, s3, s0, s4)
+                    8:  loadint(s5, 0)
+                    9:  loadint(s6, 0)
+                    10:  loadfloat(s7, 1)
+                    11:  getk(s8, "u", s0)
+                    12:  getk(s8, "Boss1_BackA", s8)
+                    13:  loadnulls(s9, 1)
+                    14:  call(3, s3, s4, 6)
+                    15:  prepcallk(s3, "weakref", s3, s4)
+                    16:  call(3, s3, s4, 1)
+                    17:  set(s255, s1, s2, s3)
+                    18:  line(-, 202)
+                    19:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                    20:  loadfloat(s3, 8)
+                    21:  getk(s4, "direction", s0)
+                    22:  mul(s3, s4, s3)
+                    23:  loadfloat(s4, -6)
+                    24:  call(255, s1, s2, 3)
+                    25:  line(-, 203)
+                    26:  load(s1, "stateLabel")
+                    27:  closure(s2, 0)
+                    28:  set(s255, s0, s1, s2)
+                    29:  line(-, 225)
+                    30:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 11
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 12
+                        ndefaultparams: 0
+                        ninstructions: 54
+                        nfunctions: 1
+                        Literals: [
+                            0: "VX_Brake"
+                            1: "p"
+                            2: "masterAlpha"
+                            3: "armor"
+                            4: "centerStop"
+                            5: "freeMap"
+                            6: "AddSpeed_XY"
+                            7: "SetMotion"
+                            8: "SetSpeed_XY"
+                            9: "count"
+                            10: "stateLabel"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 53
+                          ]
+                        Line Informations: [
+                            0: line: 204, op: 1
+                            1: line: 205, op: 4
+                            2: line: 206, op: 9
+                            3: line: 207, op: 14
+                            4: line: 208, op: 19
+                            5: line: 209, op: 24
+                            6: line: 210, op: 29
+                            7: line: 211, op: 34
+                            8: line: 212, op: 39
+                            9: line: 213, op: 44
+                            10: line: 217, op: 48
+                            11: line: 224, op: 52
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 204)
+                            1:  prepcallk(s1, "VX_Brake", s0, s2)
+                            2:  loadfloat(s3, 0.15)
+                            3:  call(255, s1, s2, 2)
+                            4:  line(-, 205)
+                            5:  getk(s1, "p", s0)
+                            6:  load(s2, "masterAlpha")
+                            7:  loadfloat(s3, 0.075)
+                            8:  comparith(s1, 65539, s2, 45)
+                            9:  line(-, 206)
+                            10:  getk(s1, "p", s0)
+                            11:  load(s2, "armor")
+                            12:  loadint(s3, 3)
+                            13:  set(s255, s1, s2, s3)
+                            14:  line(-, 207)
+                            15:  getk(s1, "p", s0)
+                            16:  load(s2, "centerStop")
+                            17:  loadint(s3, -3)
+                            18:  set(s255, s1, s2, s3)
+                            19:  line(-, 208)
+                            20:  getk(s1, "p", s0)
+                            21:  load(s2, "freeMap")
+                            22:  loadbool(s3, 1)
+                            23:  set(s255, s1, s2, s3)
+                            24:  line(-, 209)
+                            25:  prepcallk(s1, "AddSpeed_XY", s0, s2)
+                            26:  loadfloat(s3, 0)
+                            27:  loadfloat(s4, 0.2)
+                            28:  call(255, s1, s2, 3)
+                            29:  line(-, 210)
+                            30:  getk(s1, "p", s0)
+                            31:  getk(s1, "masterAlpha", s1)
+                            32:  loadfloat(s2, 0)
+                            33:  jcmp(s2, 18, s1, CMP_LE)
+                            34:  line(-, 211)
+                            35:  prepcallk(s1, "SetMotion", s0, s2)
+                            36:  loadint(s3, 4910)
+                            37:  loadint(s4, 5)
+                            38:  call(255, s1, s2, 3)
+                            39:  line(-, 212)
+                            40:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+                            41:  loadfloat(s3, 0)
+                            42:  loadfloat(s4, 0)
+                            43:  call(255, s1, s2, 3)
+                            44:  line(-, 213)
+                            45:  load(s1, "count")
+                            46:  loadint(s2, 0)
+                            47:  set(s255, s0, s1, s2)
+                            48:  line(-, 217)
+                            49:  load(s1, "stateLabel")
+                            50:  closure(s2, 0)
+                            51:  set(s255, s0, s1, s2)
+                            52:  line(-, 224)
+                            53:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 7
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 1
+                                nlineinfos: 4
+                                ndefaultparams: 0
+                                ninstructions: 19
+                                nfunctions: 0
+                                Literals: [
+                                    0: "p"
+                                    1: "armor"
+                                    2: "count"
+                                    3: "flag5"
+                                    4: "cycle"
+                                    5: "func"
+                                    6: "call"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "this", pos: 0, start_op: 0, end_op: 18
+                                  ]
+                                Line Informations: [
+                                    0: line: 218, op: 1
+                                    1: line: 219, op: 5
+                                    2: line: 220, op: 10
+                                    3: line: 222, op: 17
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 218)
+                                    1:  getk(s1, "p", s0)
+                                    2:  load(s2, "armor")
+                                    3:  loadint(s3, 3)
+                                    4:  set(s255, s1, s2, s3)
+                                    5:  line(-, 219)
+                                    6:  getk(s1, "count", s0)
+                                    7:  getk(s2, "flag5", s0)
+                                    8:  getk(s2, "cycle", s2)
+                                    9:  jcmp(s2, 7, s1, CMP_G)
+                                    10:  line(-, 220)
+                                    11:  getk(s1, "func", s0)
+                                    12:  loadint(s2, 1)
+                                    13:  get(s1, s1, s2)
+                                    14:  prepcallk(s1, "call", s1, s2)
+                                    15:  move(s3, s0)
+                                    16:  call(255, s1, s2, 2)
+                                    17:  line(-, 222)
+                                    18:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 4
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 10
+                bgenerator: 0
+                varparams: 0
+
+            7: 
+                sourcename: ""
+                name: null
+                nliterals: 23
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 3
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 73
+                nfunctions: 1
+                Literals: [
+                    0: "pare"
+                    1: "weakref"
+                    2: "scale"
+                    3: "flag5"
+                    4: "fieldScale"
+                    5: "field"
+                    6: "SetCommonObject"
+                    7: "x"
+                    8: "y"
+                    9: "direction"
+                    10: "object"
+                    11: "Occult_FieldBoss2"
+                    12: "SetSpeed_XY"
+                    13: "count"
+                    14: "PlaySE_Actor"
+                    15: "warpCount"
+                    16: "owner"
+                    17: "u"
+                    18: "initialize_data"
+                    19: "com"
+                    20: "SetShot"
+                    21: "SpellShot_Boss1"
+                    22: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "t_", pos: 2, start_op: 40, end_op: 70
+                    1: name: "t_", pos: 1, start_op: 2, end_op: 70
+                    2: name: "this", pos: 0, start_op: 0, end_op: 72
+                  ]
+                Line Informations: [
+                    0: line: 232, op: 1
+                    1: line: 233, op: 10
+                    2: line: 234, op: 25
+                    3: line: 235, op: 30
+                    4: line: 236, op: 34
+                    5: line: 237, op: 38
+                    6: line: 238, op: 57
+                    7: line: 239, op: 67
+                    8: line: 250, op: 71
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 232)
+                    1:  newobj(s1, 0, 0, 0)
+                    2:  dload(s2, "pare", s3, "weakref")
+                    3:  prepcall(s3, s3, s0, s4)
+                    4:  call(3, s3, s4, 1)
+                    5:  newslot(s255, s1, s2, s3)
+                    6:  dload(s2, "scale", s3, "flag5")
+                    7:  get(s3, s0, s3)
+                    8:  getk(s3, "fieldScale", s3)
+                    9:  newslot(s255, s1, s2, s3)
+                    10:  line(-, 233)
+                    11:  getk(s2, "flag5", s0)
+                    12:  dload(s3, "field", s4, "SetCommonObject")
+                    13:  prepcall(s4, s4, s0, s5)
+                    14:  getk(s6, "x", s0)
+                    15:  getk(s7, "y", s0)
+                    16:  getk(s8, "direction", s0)
+                    17:  loadroot(s9)
+                    18:  getk(s9, "object", s9)
+                    19:  getk(s9, "Occult_FieldBoss2", s9)
+                    20:  move(s10, s1)
+                    21:  call(4, s4, s5, 6)
+                    22:  prepcallk(s4, "weakref", s4, s5)
+                    23:  call(4, s4, s5, 1)
+                    24:  set(s255, s2, s3, s4)
+                    25:  line(-, 234)
+                    26:  prepcallk(s2, "SetSpeed_XY", s0, s3)
+                    27:  loadfloat(s4, 0)
+                    28:  loadfloat(s5, 0)
+                    29:  call(255, s2, s3, 3)
+                    30:  line(-, 235)
+                    31:  load(s2, "count")
+                    32:  loadint(s3, 0)
+                    33:  set(s255, s0, s2, s3)
+                    34:  line(-, 236)
+                    35:  prepcallk(s2, "PlaySE_Actor", s0, s3)
+                    36:  loadint(s4, 2596)
+                    37:  call(255, s2, s3, 2)
+                    38:  line(-, 237)
+                    39:  newobj(s2, 0, 0, 0)
+                    40:  load(s3, "scale")
+                    41:  loadfloat(s4, 1)
+                    42:  getk(s5, "flag5", s0)
+                    43:  getk(s5, "warpCount", s5)
+                    44:  loadfloat(s6, 0.5)
+                    45:  mul(s5, s6, s5)
+                    46:  add(s4, s5, s4)
+                    47:  loadfloat(s5, 1)
+                    48:  getk(s6, "owner", s0)
+                    49:  getk(s6, "u", s6)
+                    50:  getk(s6, "initialize_data", s6)
+                    51:  getk(s6, "com", s6)
+                    52:  loadfloat(s7, 0.5)
+                    53:  mul(s6, s7, s6)
+                    54:  add(s5, s6, s5)
+                    55:  mul(s4, s5, s4)
+                    56:  newslot(s255, s2, s3, s4)
+                    57:  line(-, 238)
+                    58:  prepcallk(s3, "SetShot", s0, s4)
+                    59:  getk(s5, "x", s0)
+                    60:  getk(s6, "y", s0)
+                    61:  getk(s7, "direction", s0)
+                    62:  getk(s8, "owner", s0)
+                    63:  getk(s8, "u", s8)
+                    64:  getk(s8, "SpellShot_Boss1", s8)
+                    65:  move(s9, s2)
+                    66:  call(255, s3, s4, 6)
+                    67:  line(-, 239)
+                    68:  load(s3, "stateLabel")
+                    69:  closure(s4, 0)
+                    70:  set(s255, s0, s3, s4)
+                    71:  line(-, 250)
+                    72:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 8
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 7
+                        ndefaultparams: 0
+                        ninstructions: 31
+                        nfunctions: 0
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "flag5"
+                            3: "field"
+                            4: "flag3"
+                            5: "u"
+                            6: "BossOccult_Damage"
+                            7: "call"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 30
+                          ]
+                        Line Informations: [
+                            0: line: 240, op: 1
+                            1: line: 241, op: 5
+                            2: line: 242, op: 9
+                            3: line: 243, op: 14
+                            4: line: 244, op: 19
+                            5: line: 245, op: 27
+                            6: line: 249, op: 29
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 240)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 241)
+                            6:  getk(s1, "flag5", s0)
+                            7:  getk(s1, "field", s1)
+                            8:  jz(s1, 20)
+                            9:  line(-, 242)
+                            10:  getk(s1, "flag5", s0)
+                            11:  getk(s1, "field", s1)
+                            12:  getk(s1, "flag3", s1)
+                            13:  jz(s1, 15)
+                            14:  line(-, 243)
+                            15:  getk(s1, "flag5", s0)
+                            16:  load(s2, "field")
+                            17:  loadnulls(s3, 1)
+                            18:  set(s255, s1, s2, s3)
+                            19:  line(-, 244)
+                            20:  getk(s1, "u", s0)
+                            21:  getk(s1, "BossOccult_Damage", s1)
+                            22:  prepcallk(s1, "call", s1, s2)
+                            23:  move(s3, s0)
+                            24:  loadint(s4, 1700)
+                            25:  call(1, s1, s2, 3)
+                            26:  jz(s1, 2)
+                            27:  line(-, 245)
+                            28:  return(255, 0)
+                            29:  line(-, 249)
+                            30:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 11
+                bgenerator: 0
+                varparams: 0
+
+            8: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 25
+                nfunctions: 1
+                Literals: [
+                    0: "flag5"
+                    1: "field"
+                    2: "func"
+                    3: "call"
+                    4: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 24
+                  ]
+                Line Informations: [
+                    0: line: 252, op: 1
+                    1: line: 253, op: 4
+                    2: line: 254, op: 14
+                    3: line: 256, op: 19
+                    4: line: 265, op: 23
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 252)
+                    1:  getk(s1, "flag5", s0)
+                    2:  getk(s1, "field", s1)
+                    3:  jz(s1, 15)
+                    4:  line(-, 253)
+                    5:  getk(s1, "flag5", s0)
+                    6:  getk(s1, "field", s1)
+                    7:  getk(s1, "func", s1)
+                    8:  loadint(s2, 0)
+                    9:  get(s1, s1, s2)
+                    10:  prepcallk(s1, "call", s1, s2)
+                    11:  getk(s3, "flag5", s0)
+                    12:  getk(s3, "field", s3)
+                    13:  call(255, s1, s2, 2)
+                    14:  line(-, 254)
+                    15:  getk(s1, "flag5", s0)
+                    16:  load(s2, "field")
+                    17:  loadnulls(s3, 1)
+                    18:  set(s255, s1, s2, s3)
+                    19:  line(-, 256)
+                    20:  load(s1, "stateLabel")
+                    21:  closure(s2, 0)
+                    22:  set(s255, s0, s1, s2)
+                    23:  line(-, 265)
+                    24:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 6
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 7
+                        ndefaultparams: 0
+                        ninstructions: 31
+                        nfunctions: 0
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "masterAlpha"
+                            3: "SetMotion"
+                            4: "func"
+                            5: "call"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 30
+                          ]
+                        Line Informations: [
+                            0: line: 257, op: 1
+                            1: line: 258, op: 5
+                            2: line: 259, op: 10
+                            3: line: 260, op: 15
+                            4: line: 261, op: 20
+                            5: line: 262, op: 27
+                            6: line: 264, op: 29
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 257)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 258)
+                            6:  getk(s1, "p", s0)
+                            7:  load(s2, "masterAlpha")
+                            8:  loadfloat(s3, 0.1)
+                            9:  comparith(s1, 65539, s2, 45)
+                            10:  line(-, 259)
+                            11:  getk(s1, "p", s0)
+                            12:  getk(s1, "masterAlpha", s1)
+                            13:  loadfloat(s2, 0)
+                            14:  jcmp(s2, 14, s1, CMP_LE)
+                            15:  line(-, 260)
+                            16:  prepcallk(s1, "SetMotion", s0, s2)
+                            17:  loadint(s3, 4910)
+                            18:  loadint(s4, 5)
+                            19:  call(255, s1, s2, 3)
+                            20:  line(-, 261)
+                            21:  getk(s1, "func", s0)
+                            22:  loadint(s2, 2)
+                            23:  get(s1, s1, s2)
+                            24:  prepcallk(s1, "call", s1, s2)
+                            25:  move(s3, s0)
+                            26:  call(255, s1, s2, 2)
+                            27:  line(-, 262)
+                            28:  return(255, 0)
+                            29:  line(-, 264)
+                            30:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            9: 
+                sourcename: ""
+                name: null
+                nliterals: 16
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 44
+                nfunctions: 1
+                Literals: [
+                    0: "pare"
+                    1: "weakref"
+                    2: "scale"
+                    3: "flag5"
+                    4: "fieldScale"
+                    5: "field"
+                    6: "SetCommonObject"
+                    7: "x"
+                    8: "y"
+                    9: "direction"
+                    10: "object"
+                    11: "Occult_FieldBoss2"
+                    12: "SetSpeed_XY"
+                    13: "count"
+                    14: "PlaySE_Actor"
+                    15: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "t_", pos: 1, start_op: 2, end_op: 41
+                    1: name: "this", pos: 0, start_op: 0, end_op: 43
+                  ]
+                Line Informations: [
+                    0: line: 269, op: 1
+                    1: line: 270, op: 10
+                    2: line: 271, op: 25
+                    3: line: 272, op: 30
+                    4: line: 273, op: 34
+                    5: line: 274, op: 38
+                    6: line: 289, op: 42
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 269)
+                    1:  newobj(s1, 0, 0, 0)
+                    2:  dload(s2, "pare", s3, "weakref")
+                    3:  prepcall(s3, s3, s0, s4)
+                    4:  call(3, s3, s4, 1)
+                    5:  newslot(s255, s1, s2, s3)
+                    6:  dload(s2, "scale", s3, "flag5")
+                    7:  get(s3, s0, s3)
+                    8:  getk(s3, "fieldScale", s3)
+                    9:  newslot(s255, s1, s2, s3)
+                    10:  line(-, 270)
+                    11:  getk(s2, "flag5", s0)
+                    12:  dload(s3, "field", s4, "SetCommonObject")
+                    13:  prepcall(s4, s4, s0, s5)
+                    14:  getk(s6, "x", s0)
+                    15:  getk(s7, "y", s0)
+                    16:  getk(s8, "direction", s0)
+                    17:  loadroot(s9)
+                    18:  getk(s9, "object", s9)
+                    19:  getk(s9, "Occult_FieldBoss2", s9)
+                    20:  move(s10, s1)
+                    21:  call(4, s4, s5, 6)
+                    22:  prepcallk(s4, "weakref", s4, s5)
+                    23:  call(4, s4, s5, 1)
+                    24:  set(s255, s2, s3, s4)
+                    25:  line(-, 271)
+                    26:  prepcallk(s2, "SetSpeed_XY", s0, s3)
+                    27:  loadfloat(s4, 0)
+                    28:  loadfloat(s5, 0)
+                    29:  call(255, s2, s3, 3)
+                    30:  line(-, 272)
+                    31:  load(s2, "count")
+                    32:  loadint(s3, 0)
+                    33:  set(s255, s0, s2, s3)
+                    34:  line(-, 273)
+                    35:  prepcallk(s2, "PlaySE_Actor", s0, s3)
+                    36:  loadint(s4, 2596)
+                    37:  call(255, s2, s3, 2)
+                    38:  line(-, 274)
+                    39:  load(s2, "stateLabel")
+                    40:  closure(s3, 0)
+                    41:  set(s255, s0, s2, s3)
+                    42:  line(-, 289)
+                    43:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 19
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 2
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 72
+                        nfunctions: 0
+                        Literals: [
+                            0: "count"
+                            1: "scale"
+                            2: "flag5"
+                            3: "warpCount"
+                            4: "owner"
+                            5: "u"
+                            6: "initialize_data"
+                            7: "com"
+                            8: "SetShot"
+                            9: "x"
+                            10: "y"
+                            11: "direction"
+                            12: "SpellShot2_Boss1"
+                            13: "p"
+                            14: "armor"
+                            15: "field"
+                            16: "flag3"
+                            17: "BossOccult_Damage"
+                            18: "call"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "t_", pos: 1, start_op: 14, end_op: 40
+                            1: name: "this", pos: 0, start_op: 0, end_op: 71
+                          ]
+                        Line Informations: [
+                            0: line: 275, op: 1
+                            1: line: 276, op: 12
+                            2: line: 277, op: 31
+                            3: line: 279, op: 41
+                            4: line: 280, op: 46
+                            5: line: 281, op: 50
+                            6: line: 282, op: 55
+                            7: line: 283, op: 60
+                            8: line: 284, op: 68
+                            9: line: 288, op: 70
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 275)
+                            1:  getk(s1, "count", s0)
+                            2:  loadint(s2, 10)
+                            3:  mod(s1, s2, s1)
+                            4:  loadint(s2, 1)
+                            5:  eq(s1, 2, s1, 0)
+                            6:  and(s1, 4, s1)
+                            7:  getk(s2, "count", s0)
+                            8:  loadint(s3, 61)
+                            9:  cmp(s2, s3, s2, CMP_LE)
+                            10:  move(s1, s2)
+                            11:  jz(s1, 29)
+                            12:  line(-, 276)
+                            13:  newobj(s1, 0, 0, 0)
+                            14:  load(s2, "scale")
+                            15:  loadfloat(s3, 2)
+                            16:  getk(s4, "flag5", s0)
+                            17:  getk(s4, "warpCount", s4)
+                            18:  loadfloat(s5, 0.5)
+                            19:  mul(s4, s5, s4)
+                            20:  add(s3, s4, s3)
+                            21:  loadfloat(s4, 1)
+                            22:  getk(s5, "owner", s0)
+                            23:  getk(s5, "u", s5)
+                            24:  getk(s5, "initialize_data", s5)
+                            25:  getk(s5, "com", s5)
+                            26:  loadfloat(s6, 0.25)
+                            27:  mul(s5, s6, s5)
+                            28:  add(s4, s5, s4)
+                            29:  mul(s3, s4, s3)
+                            30:  newslot(s255, s1, s2, s3)
+                            31:  line(-, 277)
+                            32:  prepcallk(s2, "SetShot", s0, s3)
+                            33:  getk(s4, "x", s0)
+                            34:  getk(s5, "y", s0)
+                            35:  getk(s6, "direction", s0)
+                            36:  getk(s7, "owner", s0)
+                            37:  getk(s7, "u", s7)
+                            38:  getk(s7, "SpellShot2_Boss1", s7)
+                            39:  move(s8, s1)
+                            40:  call(255, s2, s3, 6)
+                            41:  line(-, 279)
+                            42:  getk(s1, "p", s0)
+                            43:  load(s2, "armor")
+                            44:  loadint(s3, 3)
+                            45:  set(s255, s1, s2, s3)
+                            46:  line(-, 280)
+                            47:  getk(s1, "flag5", s0)
+                            48:  getk(s1, "field", s1)
+                            49:  jz(s1, 20)
+                            50:  line(-, 281)
+                            51:  getk(s1, "flag5", s0)
+                            52:  getk(s1, "field", s1)
+                            53:  getk(s1, "flag3", s1)
+                            54:  jz(s1, 15)
+                            55:  line(-, 282)
+                            56:  getk(s1, "flag5", s0)
+                            57:  load(s2, "field")
+                            58:  loadnulls(s3, 1)
+                            59:  set(s255, s1, s2, s3)
+                            60:  line(-, 283)
+                            61:  getk(s1, "u", s0)
+                            62:  getk(s1, "BossOccult_Damage", s1)
+                            63:  prepcallk(s1, "call", s1, s2)
+                            64:  move(s3, s0)
+                            65:  loadint(s4, 3400)
+                            66:  call(1, s1, s2, 3)
+                            67:  jz(s1, 2)
+                            68:  line(-, 284)
+                            69:  return(255, 0)
+                            70:  line(-, 288)
+                            71:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 9
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 11
+                bgenerator: 0
+                varparams: 0
+
+            10: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 25
+                nfunctions: 1
+                Literals: [
+                    0: "flag5"
+                    1: "field"
+                    2: "func"
+                    3: "call"
+                    4: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 24
+                  ]
+                Line Informations: [
+                    0: line: 291, op: 1
+                    1: line: 292, op: 4
+                    2: line: 293, op: 14
+                    3: line: 295, op: 19
+                    4: line: 304, op: 23
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 291)
+                    1:  getk(s1, "flag5", s0)
+                    2:  getk(s1, "field", s1)
+                    3:  jz(s1, 15)
+                    4:  line(-, 292)
+                    5:  getk(s1, "flag5", s0)
+                    6:  getk(s1, "field", s1)
+                    7:  getk(s1, "func", s1)
+                    8:  loadint(s2, 0)
+                    9:  get(s1, s1, s2)
+                    10:  prepcallk(s1, "call", s1, s2)
+                    11:  getk(s3, "flag5", s0)
+                    12:  getk(s3, "field", s3)
+                    13:  call(255, s1, s2, 2)
+                    14:  line(-, 293)
+                    15:  getk(s1, "flag5", s0)
+                    16:  load(s2, "field")
+                    17:  loadnulls(s3, 1)
+                    18:  set(s255, s1, s2, s3)
+                    19:  line(-, 295)
+                    20:  load(s1, "stateLabel")
+                    21:  closure(s2, 0)
+                    22:  set(s255, s0, s1, s2)
+                    23:  line(-, 304)
+                    24:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 6
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 7
+                        ndefaultparams: 0
+                        ninstructions: 31
+                        nfunctions: 0
+                        Literals: [
+                            0: "p"
+                            1: "armor"
+                            2: "masterAlpha"
+                            3: "SetMotion"
+                            4: "func"
+                            5: "call"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 30
+                          ]
+                        Line Informations: [
+                            0: line: 296, op: 1
+                            1: line: 297, op: 5
+                            2: line: 298, op: 10
+                            3: line: 299, op: 15
+                            4: line: 300, op: 20
+                            5: line: 301, op: 27
+                            6: line: 303, op: 29
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 296)
+                            1:  getk(s1, "p", s0)
+                            2:  load(s2, "armor")
+                            3:  loadint(s3, 3)
+                            4:  set(s255, s1, s2, s3)
+                            5:  line(-, 297)
+                            6:  getk(s1, "p", s0)
+                            7:  load(s2, "masterAlpha")
+                            8:  loadfloat(s3, 0.1)
+                            9:  comparith(s1, 65539, s2, 45)
+                            10:  line(-, 298)
+                            11:  getk(s1, "p", s0)
+                            12:  getk(s1, "masterAlpha", s1)
+                            13:  loadfloat(s2, 0)
+                            14:  jcmp(s2, 14, s1, CMP_LE)
+                            15:  line(-, 299)
+                            16:  prepcallk(s1, "SetMotion", s0, s2)
+                            17:  loadint(s3, 4910)
+                            18:  loadint(s4, 5)
+                            19:  call(255, s1, s2, 3)
+                            20:  line(-, 300)
+                            21:  getk(s1, "func", s0)
+                            22:  loadint(s2, 2)
+                            23:  get(s1, s1, s2)
+                            24:  prepcallk(s1, "call", s1, s2)
+                            25:  move(s3, s0)
+                            26:  call(255, s1, s2, 2)
+                            27:  line(-, 301)
+                            28:  return(255, 0)
+                            29:  line(-, 303)
+                            30:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 5
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "SpellShot_Boss1_Wave"
+        nliterals: 17
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 63
+        nfunctions: 2
+        Literals: [
+            0: "SetMotion"
+            1: "sx"
+            2: "sy"
+            3: "rz"
+            4: "rand"
+            5: "SetFreeObject"
+            6: "x"
+            7: "y"
+            8: "direction"
+            9: "anime"
+            10: "left"
+            11: "top"
+            12: "width"
+            13: "height"
+            14: "radius0"
+            15: "radius1"
+            16: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a_", pos: 2, start_op: 27, end_op: 60
+            1: name: "t", pos: 1, start_op: 0, end_op: 62
+            2: name: "this", pos: 0, start_op: 0, end_op: 62
+          ]
+        Line Informations: [
+            0: line: 309, op: 1
+            1: line: 310, op: 5
+            2: line: 311, op: 10
+            3: line: 313, op: 19
+            4: line: 323, op: 27
+            5: line: 324, op: 32
+            6: line: 325, op: 37
+            7: line: 326, op: 42
+            8: line: 329, op: 47
+            9: line: 330, op: 52
+            10: line: 338, op: 57
+            11: line: 344, op: 61
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 309)
+            1:  prepcallk(s2, "SetMotion", s0, s3)
+            2:  loadint(s4, 4918)
+            3:  loadint(s5, 3)
+            4:  call(255, s2, s3, 3)
+            5:  line(-, 310)
+            6:  dload(s2, "sx", s3, "sy")
+            7:  loadfloat(s4, 0.5)
+            8:  set(s3, s0, s3, s4)
+            9:  set(s255, s0, s2, s3)
+            10:  line(-, 311)
+            11:  dload(s2, "rz", s3, "rand")
+            12:  prepcall(s3, s3, s0, s4)
+            13:  call(3, s3, s4, 1)
+            14:  loadint(s4, 360)
+            15:  mod(s3, s4, s3)
+            16:  loadfloat(s4, 0.0174533)
+            17:  mul(s3, s4, s3)
+            18:  set(s255, s0, s2, s3)
+            19:  line(-, 313)
+            20:  prepcallk(s2, "SetFreeObject", s0, s3)
+            21:  getk(s4, "x", s0)
+            22:  getk(s5, "y", s0)
+            23:  getk(s6, "direction", s0)
+            24:  closure(s7, 0)
+            25:  loadnulls(s8, 1)
+            26:  call(2, s2, s3, 6)
+            27:  line(-, 323)
+            28:  getk(s3, "anime", s0)
+            29:  load(s4, "left")
+            30:  loadint(s5, 0)
+            31:  set(s255, s3, s4, s5)
+            32:  line(-, 324)
+            33:  getk(s3, "anime", s0)
+            34:  load(s4, "top")
+            35:  loadint(s5, 0)
+            36:  set(s255, s3, s4, s5)
+            37:  line(-, 325)
+            38:  getk(s3, "anime", s0)
+            39:  load(s4, "width")
+            40:  loadint(s5, 256)
+            41:  set(s255, s3, s4, s5)
+            42:  line(-, 326)
+            43:  getk(s3, "anime", s0)
+            44:  load(s4, "height")
+            45:  loadint(s5, 256)
+            46:  set(s255, s3, s4, s5)
+            47:  line(-, 329)
+            48:  getk(s3, "anime", s0)
+            49:  load(s4, "radius0")
+            50:  loadint(s5, 0)
+            51:  set(s255, s3, s4, s5)
+            52:  line(-, 330)
+            53:  getk(s3, "anime", s0)
+            54:  load(s4, "radius1")
+            55:  loadint(s5, 128)
+            56:  set(s255, s3, s4, s5)
+            57:  line(-, 338)
+            58:  load(s3, "stateLabel")
+            59:  closure(s4, 1)
+            60:  set(s255, s0, s3, s4)
+            61:  line(-, 344)
+            62:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 2
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 4
+                ndefaultparams: 0
+                ninstructions: 23
+                nfunctions: 1
+                Literals: [
+                    0: "SetMotion"
+                    1: "sx"
+                    2: "sy"
+                    3: "rand"
+                    4: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "t"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "t", pos: 1, start_op: 0, end_op: 22
+                    1: name: "this", pos: 0, start_op: 0, end_op: 22
+                  ]
+                Line Informations: [
+                    0: line: 314, op: 1
+                    1: line: 315, op: 5
+                    2: line: 316, op: 17
+                    3: line: 321, op: 21
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 314)
+                    1:  prepcallk(s2, "SetMotion", s0, s3)
+                    2:  loadint(s4, 4918)
+                    3:  loadint(s5, 7)
+                    4:  call(255, s2, s3, 3)
+                    5:  line(-, 315)
+                    6:  dload(s2, "sx", s3, "sy")
+                    7:  loadfloat(s4, 1.5)
+                    8:  prepcallk(s5, "rand", s0, s6)
+                    9:  call(5, s5, s6, 1)
+                    10:  loadint(s6, 6)
+                    11:  mod(s5, s6, s5)
+                    12:  loadfloat(s6, 0.1)
+                    13:  mul(s5, s6, s5)
+                    14:  add(s4, s5, s4)
+                    15:  set(s3, s0, s3, s4)
+                    16:  set(s255, s0, s2, s3)
+                    17:  line(-, 316)
+                    18:  load(s2, "stateLabel")
+                    19:  closure(s3, 0)
+                    20:  set(s255, s0, s2, s3)
+                    21:  line(-, 321)
+                    22:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 4
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 4
+                        ndefaultparams: 0
+                        ninstructions: 17
+                        nfunctions: 0
+                        Literals: [
+                            0: "sx"
+                            1: "sy"
+                            2: "alpha"
+                            3: "ReleaseActor"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 16
+                          ]
+                        Line Informations: [
+                            0: line: 317, op: 1
+                            1: line: 318, op: 5
+                            2: line: 319, op: 9
+                            3: line: 320, op: 15
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 317)
+                            1:  dload(s1, "sx", s2, "sy")
+                            2:  loadfloat(s3, 0.05)
+                            3:  comparith(s2, 3, s2, 45)
+                            4:  set(s255, s0, s1, s2)
+                            5:  line(-, 318)
+                            6:  load(s1, "alpha")
+                            7:  loadfloat(s2, 0.15)
+                            8:  comparith(s1, 2, s1, 45)
+                            9:  line(-, 319)
+                            10:  getk(s1, "alpha", s0)
+                            11:  loadfloat(s2, 0)
+                            12:  jcmp(s2, 2, s1, CMP_LE)
+                            13:  prepcallk(s1, "ReleaseActor", s0, s2)
+                            14:  call(255, s1, s2, 1)
+                            15:  line(-, 320)
+                            16:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 4
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 7
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 11
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 38
+                nfunctions: 0
+                Literals: [
+                    0: "anime"
+                    1: "radius0"
+                    2: "radius1"
+                    3: "sx"
+                    4: "sy"
+                    5: "initTable"
+                    6: "scale"
+                    7: "alpha"
+                    8: "green"
+                    9: "blue"
+                    10: "ReleaseActor"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 37
+                  ]
+                Line Informations: [
+                    0: line: 339, op: 1
+                    1: line: 340, op: 13
+                    2: line: 341, op: 23
+                    3: line: 342, op: 30
+                    4: line: 343, op: 36
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 339)
+                    1:  getk(s1, "anime", s0)
+                    2:  dload(s2, "radius0", s3, "anime")
+                    3:  get(s3, s0, s3)
+                    4:  getk(s3, "radius1", s3)
+                    5:  loadint(s4, 128)
+                    6:  add(s3, s4, s3)
+                    7:  getk(s4, "anime", s0)
+                    8:  getk(s4, "radius0", s4)
+                    9:  sub(s3, s4, s3)
+                    10:  loadfloat(s4, 0.1)
+                    11:  mul(s3, s4, s3)
+                    12:  comparith(s1, 65539, s2, 43)
+                    13:  line(-, 340)
+                    14:  dload(s1, "sx", s2, "sy")
+                    15:  getk(s3, "initTable", s0)
+                    16:  getk(s3, "scale", s3)
+                    17:  getk(s4, "sx", s0)
+                    18:  sub(s3, s4, s3)
+                    19:  loadfloat(s4, 0.25)
+                    20:  mul(s3, s4, s3)
+                    21:  comparith(s2, 3, s2, 43)
+                    22:  set(s255, s0, s1, s2)
+                    23:  line(-, 341)
+                    24:  dload(s1, "alpha", s2, "green")
+                    25:  load(s3, "blue")
+                    26:  loadfloat(s4, 0.05)
+                    27:  comparith(s3, 4, s3, 45)
+                    28:  set(s2, s0, s2, s3)
+                    29:  set(s255, s0, s1, s2)
+                    30:  line(-, 342)
+                    31:  getk(s1, "alpha", s0)
+                    32:  loadfloat(s2, 0)
+                    33:  jcmp(s2, 2, s1, CMP_LE)
+                    34:  prepcallk(s1, "ReleaseActor", s0, s2)
+                    35:  call(255, s1, s2, 1)
+                    36:  line(-, 343)
+                    37:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "SpellShot_Boss1"
+        nliterals: 6
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 3
+        Literals: [
+            0: "SetMotion"
+            1: "sx"
+            2: "sy"
+            3: "func"
+            4: "keyAction"
+            5: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 25
+            1: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 346, op: 1
+            1: line: 347, op: 5
+            2: line: 348, op: 10
+            3: line: 358, op: 16
+            4: line: 386, op: 20
+            5: line: 389, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 346)
+            1:  prepcallk(s2, "SetMotion", s0, s3)
+            2:  loadint(s4, 4918)
+            3:  loadint(s5, 4)
+            4:  call(255, s2, s3, 3)
+            5:  line(-, 347)
+            6:  dload(s2, "sx", s3, "sy")
+            7:  loadfloat(s4, 2)
+            8:  set(s3, s0, s3, s4)
+            9:  set(s255, s0, s2, s3)
+            10:  line(-, 348)
+            11:  load(s2, "func")
+            12:  newobj(s3, 1, 0, 1)
+            13:  closure(s4, 0)
+            14:  appendarray(s3, 4, 0)
+            15:  set(s255, s0, s2, s3)
+            16:  line(-, 358)
+            17:  load(s2, "keyAction")
+            18:  closure(s3, 1)
+            19:  set(s255, s0, s2, s3)
+            20:  line(-, 386)
+            21:  load(s2, "stateLabel")
+            22:  closure(s3, 2)
+            23:  set(s255, s0, s2, s3)
+            24:  line(-, 389)
+            25:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 11
+                nfunctions: 1
+                Literals: [
+                    0: "SetMotion"
+                    1: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 10
+                  ]
+                Line Informations: [
+                    0: line: 350, op: 1
+                    1: line: 351, op: 5
+                    2: line: 356, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 350)
+                    1:  prepcallk(s1, "SetMotion", s0, s2)
+                    2:  loadint(s3, 4918)
+                    3:  loadint(s4, 6)
+                    4:  call(255, s1, s2, 3)
+                    5:  line(-, 351)
+                    6:  load(s1, "stateLabel")
+                    7:  closure(s2, 0)
+                    8:  set(s255, s0, s1, s2)
+                    9:  line(-, 356)
+                    10:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 4
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 4
+                        ndefaultparams: 0
+                        ninstructions: 17
+                        nfunctions: 0
+                        Literals: [
+                            0: "sx"
+                            1: "sy"
+                            2: "alpha"
+                            3: "ReleaseActor"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 16
+                          ]
+                        Line Informations: [
+                            0: line: 352, op: 1
+                            1: line: 353, op: 5
+                            2: line: 354, op: 9
+                            3: line: 355, op: 15
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 352)
+                            1:  dload(s1, "sx", s2, "sy")
+                            2:  loadfloat(s3, 0.025)
+                            3:  comparith(s2, 3, s2, 43)
+                            4:  set(s255, s0, s1, s2)
+                            5:  line(-, 353)
+                            6:  load(s1, "alpha")
+                            7:  loadfloat(s2, 0.05)
+                            8:  comparith(s1, 2, s1, 45)
+                            9:  line(-, 354)
+                            10:  getk(s1, "alpha", s0)
+                            11:  loadfloat(s2, 0)
+                            12:  jcmp(s2, 2, s1, CMP_LE)
+                            13:  prepcallk(s1, "ReleaseActor", s0, s2)
+                            14:  call(255, s1, s2, 1)
+                            15:  line(-, 355)
+                            16:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 4
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 3
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 11
+                nfunctions: 1
+                Literals: [
+                    0: "sx"
+                    1: "sy"
+                    2: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 10
+                  ]
+                Line Informations: [
+                    0: line: 360, op: 1
+                    1: line: 361, op: 5
+                    2: line: 385, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 360)
+                    1:  dload(s1, "sx", s2, "sy")
+                    2:  loadfloat(s3, 0.5)
+                    3:  set(s2, s0, s2, s3)
+                    4:  set(s255, s0, s1, s2)
+                    5:  line(-, 361)
+                    6:  load(s1, "stateLabel")
+                    7:  closure(s2, 0)
+                    8:  set(s255, s0, s1, s2)
+                    9:  line(-, 385)
+                    10:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 16
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 2
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 71
+                        nfunctions: 1
+                        Literals: [
+                            0: "count"
+                            1: "scale"
+                            2: "initTable"
+                            3: "SetFreeObjectDynamic"
+                            4: "x"
+                            5: "y"
+                            6: "direction"
+                            7: "owner"
+                            8: "u"
+                            9: "SpellShot_Boss1_Wave"
+                            10: "p"
+                            11: "hitTarget"
+                            12: "stateLabel"
+                            13: "sx"
+                            14: "sy"
+                            15: "SetCollisionScaling"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "t_", pos: 1, start_op: 20, end_op: 33
+                            1: name: "this", pos: 0, start_op: 0, end_op: 70
+                          ]
+                        Line Informations: [
+                            0: line: 362, op: 1
+                            1: line: 363, op: 3
+                            2: line: 364, op: 18
+                            3: line: 365, op: 24
+                            4: line: 367, op: 34
+                            5: line: 368, op: 43
+                            6: line: 369, op: 48
+                            7: line: 381, op: 54
+                            8: line: 382, op: 63
+                            9: line: 384, op: 69
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 362)
+                            1:  load(s1, "count")
+                            2:  pinc(s1, s0, s1, 1)
+                            3:  line(-, 363)
+                            4:  getk(s1, "count", s0)
+                            5:  loadint(s2, 1)
+                            6:  eq(s1, 2, s1, 0)
+                            7:  or(s1, 9, s1)
+                            8:  getk(s2, "count", s0)
+                            9:  loadint(s3, 7)
+                            10:  eq(s2, 3, s2, 0)
+                            11:  or(s2, 4, s2)
+                            12:  getk(s3, "count", s0)
+                            13:  loadint(s4, 11)
+                            14:  eq(s3, 4, s3, 0)
+                            15:  move(s2, s3)
+                            16:  move(s1, s2)
+                            17:  jz(s1, 16)
+                            18:  line(-, 364)
+                            19:  newobj(s1, 0, 0, 0)
+                            20:  dload(s2, "scale", s3, "initTable")
+                            21:  get(s3, s0, s3)
+                            22:  getk(s3, "scale", s3)
+                            23:  newslot(s255, s1, s2, s3)
+                            24:  line(-, 365)
+                            25:  prepcallk(s2, "SetFreeObjectDynamic", s0, s3)
+                            26:  getk(s4, "x", s0)
+                            27:  getk(s5, "y", s0)
+                            28:  getk(s6, "direction", s0)
+                            29:  getk(s7, "owner", s0)
+                            30:  getk(s7, "u", s7)
+                            31:  getk(s7, "SpellShot_Boss1_Wave", s7)
+                            32:  move(s8, s1)
+                            33:  call(255, s2, s3, 6)
+                            34:  line(-, 367)
+                            35:  getk(s1, "count", s0)
+                            36:  loadint(s2, 4)
+                            37:  eq(s1, 2, s1, 0)
+                            38:  jz(s1, 4)
+                            39:  getk(s1, "p", s0)
+                            40:  load(s2, "hitTarget")
+                            41:  loadnulls(s3, 1)
+                            42:  set(s255, s1, s2, s3)
+                            43:  line(-, 368)
+                            44:  getk(s1, "count", s0)
+                            45:  loadint(s2, 5)
+                            46:  eq(s1, 2, s1, 0)
+                            47:  jz(s1, 5)
+                            48:  line(-, 369)
+                            49:  load(s1, "stateLabel")
+                            50:  closure(s2, 0)
+                            51:  set(s255, s0, s1, s2)
+                            52:  jmp(-, 16)
+                            53:  line(-, 381)
+                            54:  dload(s1, "sx", s2, "sy")
+                            55:  getk(s3, "initTable", s0)
+                            56:  getk(s3, "scale", s3)
+                            57:  getk(s4, "sx", s0)
+                            58:  sub(s3, s4, s3)
+                            59:  loadfloat(s4, 0.2)
+                            60:  mul(s3, s4, s3)
+                            61:  comparith(s2, 3, s2, 43)
+                            62:  set(s255, s0, s1, s2)
+                            63:  line(-, 382)
+                            64:  prepcallk(s1, "SetCollisionScaling", s0, s2)
+                            65:  getk(s3, "sx", s0)
+                            66:  getk(s4, "sy", s0)
+                            67:  loadfloat(s5, 1)
+                            68:  call(255, s1, s2, 4)
+                            69:  line(-, 384)
+                            70:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 14
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 2
+                                nlineinfos: 8
+                                ndefaultparams: 0
+                                ninstructions: 56
+                                nfunctions: 0
+                                Literals: [
+                                    0: "count"
+                                    1: "scale"
+                                    2: "initTable"
+                                    3: "SetFreeObjectDynamic"
+                                    4: "x"
+                                    5: "y"
+                                    6: "direction"
+                                    7: "owner"
+                                    8: "u"
+                                    9: "SpellShot_Boss1_Wave"
+                                    10: "sx"
+                                    11: "sy"
+                                    12: "alpha"
+                                    13: "ReleaseActor"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "t_", pos: 1, start_op: 20, end_op: 33
+                                    1: name: "this", pos: 0, start_op: 0, end_op: 55
+                                  ]
+                                Line Informations: [
+                                    0: line: 370, op: 1
+                                    1: line: 371, op: 3
+                                    2: line: 372, op: 18
+                                    3: line: 373, op: 24
+                                    4: line: 375, op: 34
+                                    5: line: 376, op: 44
+                                    6: line: 377, op: 48
+                                    7: line: 378, op: 54
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 370)
+                                    1:  load(s1, "count")
+                                    2:  pinc(s1, s0, s1, 1)
+                                    3:  line(-, 371)
+                                    4:  getk(s1, "count", s0)
+                                    5:  loadint(s2, 1)
+                                    6:  eq(s1, 2, s1, 0)
+                                    7:  or(s1, 9, s1)
+                                    8:  getk(s2, "count", s0)
+                                    9:  loadint(s3, 7)
+                                    10:  eq(s2, 3, s2, 0)
+                                    11:  or(s2, 4, s2)
+                                    12:  getk(s3, "count", s0)
+                                    13:  loadint(s4, 11)
+                                    14:  eq(s3, 4, s3, 0)
+                                    15:  move(s2, s3)
+                                    16:  move(s1, s2)
+                                    17:  jz(s1, 16)
+                                    18:  line(-, 372)
+                                    19:  newobj(s1, 0, 0, 0)
+                                    20:  dload(s2, "scale", s3, "initTable")
+                                    21:  get(s3, s0, s3)
+                                    22:  getk(s3, "scale", s3)
+                                    23:  newslot(s255, s1, s2, s3)
+                                    24:  line(-, 373)
+                                    25:  prepcallk(s2, "SetFreeObjectDynamic", s0, s3)
+                                    26:  getk(s4, "x", s0)
+                                    27:  getk(s5, "y", s0)
+                                    28:  getk(s6, "direction", s0)
+                                    29:  getk(s7, "owner", s0)
+                                    30:  getk(s7, "u", s7)
+                                    31:  getk(s7, "SpellShot_Boss1_Wave", s7)
+                                    32:  move(s8, s1)
+                                    33:  call(255, s2, s3, 6)
+                                    34:  line(-, 375)
+                                    35:  dload(s1, "sx", s2, "sy")
+                                    36:  getk(s3, "initTable", s0)
+                                    37:  getk(s3, "scale", s3)
+                                    38:  getk(s4, "sx", s0)
+                                    39:  sub(s3, s4, s3)
+                                    40:  loadfloat(s4, 0.2)
+                                    41:  mul(s3, s4, s3)
+                                    42:  comparith(s2, 3, s2, 43)
+                                    43:  set(s255, s0, s1, s2)
+                                    44:  line(-, 376)
+                                    45:  load(s1, "alpha")
+                                    46:  loadfloat(s2, 0.025)
+                                    47:  comparith(s1, 2, s1, 45)
+                                    48:  line(-, 377)
+                                    49:  getk(s1, "alpha", s0)
+                                    50:  loadfloat(s2, 0)
+                                    51:  jcmp(s2, 2, s1, CMP_LE)
+                                    52:  prepcallk(s1, "ReleaseActor", s0, s2)
+                                    53:  call(255, s1, s2, 1)
+                                    54:  line(-, 378)
+                                    55:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 9
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 9
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 7
+                nfunctions: 0
+                Literals: [
+                    0: "sx"
+                    1: "sy"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 6
+                  ]
+                Line Informations: [
+                    0: line: 387, op: 1
+                    1: line: 388, op: 5
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 387)
+                    1:  dload(s1, "sx", s2, "sy")
+                    2:  loadfloat(s3, 0.8)
+                    3:  comparith(s2, 3, s2, 42)
+                    4:  set(s255, s0, s1, s2)
+                    5:  line(-, 388)
+                    6:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "SpellShot2_Boss1"
+        nliterals: 6
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 26
+        nfunctions: 3
+        Literals: [
+            0: "SetMotion"
+            1: "sx"
+            2: "sy"
+            3: "func"
+            4: "keyAction"
+            5: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 25
+            1: name: "this", pos: 0, start_op: 0, end_op: 25
+          ]
+        Line Informations: [
+            0: line: 391, op: 1
+            1: line: 392, op: 5
+            2: line: 393, op: 10
+            3: line: 403, op: 16
+            4: line: 431, op: 20
+            5: line: 434, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 391)
+            1:  prepcallk(s2, "SetMotion", s0, s3)
+            2:  loadint(s4, 4918)
+            3:  loadint(s5, 10)
+            4:  call(255, s2, s3, 3)
+            5:  line(-, 392)
+            6:  dload(s2, "sx", s3, "sy")
+            7:  loadfloat(s4, 2)
+            8:  set(s3, s0, s3, s4)
+            9:  set(s255, s0, s2, s3)
+            10:  line(-, 393)
+            11:  load(s2, "func")
+            12:  newobj(s3, 1, 0, 1)
+            13:  closure(s4, 0)
+            14:  appendarray(s3, 4, 0)
+            15:  set(s255, s0, s2, s3)
+            16:  line(-, 403)
+            17:  load(s2, "keyAction")
+            18:  closure(s3, 1)
+            19:  set(s255, s0, s2, s3)
+            20:  line(-, 431)
+            21:  load(s2, "stateLabel")
+            22:  closure(s3, 2)
+            23:  set(s255, s0, s2, s3)
+            24:  line(-, 434)
+            25:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 11
+                nfunctions: 1
+                Literals: [
+                    0: "SetMotion"
+                    1: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 10
+                  ]
+                Line Informations: [
+                    0: line: 395, op: 1
+                    1: line: 396, op: 5
+                    2: line: 401, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 395)
+                    1:  prepcallk(s1, "SetMotion", s0, s2)
+                    2:  loadint(s3, 4918)
+                    3:  loadint(s4, 6)
+                    4:  call(255, s1, s2, 3)
+                    5:  line(-, 396)
+                    6:  load(s1, "stateLabel")
+                    7:  closure(s2, 0)
+                    8:  set(s255, s0, s1, s2)
+                    9:  line(-, 401)
+                    10:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 4
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 4
+                        ndefaultparams: 0
+                        ninstructions: 17
+                        nfunctions: 0
+                        Literals: [
+                            0: "sx"
+                            1: "sy"
+                            2: "alpha"
+                            3: "ReleaseActor"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 16
+                          ]
+                        Line Informations: [
+                            0: line: 397, op: 1
+                            1: line: 398, op: 5
+                            2: line: 399, op: 9
+                            3: line: 400, op: 15
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 397)
+                            1:  dload(s1, "sx", s2, "sy")
+                            2:  loadfloat(s3, 0.025)
+                            3:  comparith(s2, 3, s2, 43)
+                            4:  set(s255, s0, s1, s2)
+                            5:  line(-, 398)
+                            6:  load(s1, "alpha")
+                            7:  loadfloat(s2, 0.05)
+                            8:  comparith(s1, 2, s1, 45)
+                            9:  line(-, 399)
+                            10:  getk(s1, "alpha", s0)
+                            11:  loadfloat(s2, 0)
+                            12:  jcmp(s2, 2, s1, CMP_LE)
+                            13:  prepcallk(s1, "ReleaseActor", s0, s2)
+                            14:  call(255, s1, s2, 1)
+                            15:  line(-, 400)
+                            16:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 4
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 3
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 11
+                nfunctions: 1
+                Literals: [
+                    0: "sx"
+                    1: "sy"
+                    2: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 10
+                  ]
+                Line Informations: [
+                    0: line: 405, op: 1
+                    1: line: 406, op: 5
+                    2: line: 430, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 405)
+                    1:  dload(s1, "sx", s2, "sy")
+                    2:  loadfloat(s3, 0.5)
+                    3:  set(s2, s0, s2, s3)
+                    4:  set(s255, s0, s1, s2)
+                    5:  line(-, 406)
+                    6:  load(s1, "stateLabel")
+                    7:  closure(s2, 0)
+                    8:  set(s255, s0, s1, s2)
+                    9:  line(-, 430)
+                    10:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 16
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 2
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 61
+                        nfunctions: 1
+                        Literals: [
+                            0: "count"
+                            1: "scale"
+                            2: "initTable"
+                            3: "SetFreeObjectDynamic"
+                            4: "x"
+                            5: "y"
+                            6: "direction"
+                            7: "owner"
+                            8: "u"
+                            9: "SpellShot_Boss1_Wave"
+                            10: "p"
+                            11: "hitTarget"
+                            12: "stateLabel"
+                            13: "sx"
+                            14: "sy"
+                            15: "SetCollisionScaling"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "t_", pos: 1, start_op: 10, end_op: 23
+                            1: name: "this", pos: 0, start_op: 0, end_op: 60
+                          ]
+                        Line Informations: [
+                            0: line: 407, op: 1
+                            1: line: 408, op: 3
+                            2: line: 409, op: 8
+                            3: line: 410, op: 14
+                            4: line: 412, op: 24
+                            5: line: 413, op: 33
+                            6: line: 414, op: 38
+                            7: line: 426, op: 44
+                            8: line: 427, op: 53
+                            9: line: 429, op: 59
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 407)
+                            1:  load(s1, "count")
+                            2:  pinc(s1, s0, s1, 1)
+                            3:  line(-, 408)
+                            4:  getk(s1, "count", s0)
+                            5:  loadint(s2, 1)
+                            6:  eq(s1, 2, s1, 0)
+                            7:  jz(s1, 16)
+                            8:  line(-, 409)
+                            9:  newobj(s1, 0, 0, 0)
+                            10:  dload(s2, "scale", s3, "initTable")
+                            11:  get(s3, s0, s3)
+                            12:  getk(s3, "scale", s3)
+                            13:  newslot(s255, s1, s2, s3)
+                            14:  line(-, 410)
+                            15:  prepcallk(s2, "SetFreeObjectDynamic", s0, s3)
+                            16:  getk(s4, "x", s0)
+                            17:  getk(s5, "y", s0)
+                            18:  getk(s6, "direction", s0)
+                            19:  getk(s7, "owner", s0)
+                            20:  getk(s7, "u", s7)
+                            21:  getk(s7, "SpellShot_Boss1_Wave", s7)
+                            22:  move(s8, s1)
+                            23:  call(255, s2, s3, 6)
+                            24:  line(-, 412)
+                            25:  getk(s1, "count", s0)
+                            26:  loadint(s2, 4)
+                            27:  eq(s1, 2, s1, 0)
+                            28:  jz(s1, 4)
+                            29:  getk(s1, "p", s0)
+                            30:  load(s2, "hitTarget")
+                            31:  loadnulls(s3, 1)
+                            32:  set(s255, s1, s2, s3)
+                            33:  line(-, 413)
+                            34:  getk(s1, "count", s0)
+                            35:  loadint(s2, 5)
+                            36:  eq(s1, 2, s1, 0)
+                            37:  jz(s1, 5)
+                            38:  line(-, 414)
+                            39:  load(s1, "stateLabel")
+                            40:  closure(s2, 0)
+                            41:  set(s255, s0, s1, s2)
+                            42:  jmp(-, 16)
+                            43:  line(-, 426)
+                            44:  dload(s1, "sx", s2, "sy")
+                            45:  getk(s3, "initTable", s0)
+                            46:  getk(s3, "scale", s3)
+                            47:  getk(s4, "sx", s0)
+                            48:  sub(s3, s4, s3)
+                            49:  loadfloat(s4, 0.2)
+                            50:  mul(s3, s4, s3)
+                            51:  comparith(s2, 3, s2, 43)
+                            52:  set(s255, s0, s1, s2)
+                            53:  line(-, 427)
+                            54:  prepcallk(s1, "SetCollisionScaling", s0, s2)
+                            55:  getk(s3, "sx", s0)
+                            56:  getk(s4, "sy", s0)
+                            57:  loadfloat(s5, 1)
+                            58:  call(255, s1, s2, 4)
+                            59:  line(-, 429)
+                            60:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: ""
+                                name: null
+                                nliterals: 14
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 2
+                                nlineinfos: 8
+                                ndefaultparams: 0
+                                ninstructions: 56
+                                nfunctions: 0
+                                Literals: [
+                                    0: "count"
+                                    1: "scale"
+                                    2: "initTable"
+                                    3: "SetFreeObjectDynamic"
+                                    4: "x"
+                                    5: "y"
+                                    6: "direction"
+                                    7: "owner"
+                                    8: "u"
+                                    9: "SpellShot_Boss1_Wave"
+                                    10: "sx"
+                                    11: "sy"
+                                    12: "alpha"
+                                    13: "ReleaseActor"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "t_", pos: 1, start_op: 20, end_op: 33
+                                    1: name: "this", pos: 0, start_op: 0, end_op: 55
+                                  ]
+                                Line Informations: [
+                                    0: line: 415, op: 1
+                                    1: line: 416, op: 3
+                                    2: line: 417, op: 18
+                                    3: line: 418, op: 24
+                                    4: line: 420, op: 34
+                                    5: line: 421, op: 44
+                                    6: line: 422, op: 48
+                                    7: line: 423, op: 54
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  line(-, 415)
+                                    1:  load(s1, "count")
+                                    2:  pinc(s1, s0, s1, 1)
+                                    3:  line(-, 416)
+                                    4:  getk(s1, "count", s0)
+                                    5:  loadint(s2, 1)
+                                    6:  eq(s1, 2, s1, 0)
+                                    7:  or(s1, 9, s1)
+                                    8:  getk(s2, "count", s0)
+                                    9:  loadint(s3, 7)
+                                    10:  eq(s2, 3, s2, 0)
+                                    11:  or(s2, 4, s2)
+                                    12:  getk(s3, "count", s0)
+                                    13:  loadint(s4, 11)
+                                    14:  eq(s3, 4, s3, 0)
+                                    15:  move(s2, s3)
+                                    16:  move(s1, s2)
+                                    17:  jz(s1, 16)
+                                    18:  line(-, 417)
+                                    19:  newobj(s1, 0, 0, 0)
+                                    20:  dload(s2, "scale", s3, "initTable")
+                                    21:  get(s3, s0, s3)
+                                    22:  getk(s3, "scale", s3)
+                                    23:  newslot(s255, s1, s2, s3)
+                                    24:  line(-, 418)
+                                    25:  prepcallk(s2, "SetFreeObjectDynamic", s0, s3)
+                                    26:  getk(s4, "x", s0)
+                                    27:  getk(s5, "y", s0)
+                                    28:  getk(s6, "direction", s0)
+                                    29:  getk(s7, "owner", s0)
+                                    30:  getk(s7, "u", s7)
+                                    31:  getk(s7, "SpellShot_Boss1_Wave", s7)
+                                    32:  move(s8, s1)
+                                    33:  call(255, s2, s3, 6)
+                                    34:  line(-, 420)
+                                    35:  dload(s1, "sx", s2, "sy")
+                                    36:  getk(s3, "initTable", s0)
+                                    37:  getk(s3, "scale", s3)
+                                    38:  getk(s4, "sx", s0)
+                                    39:  sub(s3, s4, s3)
+                                    40:  loadfloat(s4, 0.2)
+                                    41:  mul(s3, s4, s3)
+                                    42:  comparith(s2, 3, s2, 43)
+                                    43:  set(s255, s0, s1, s2)
+                                    44:  line(-, 421)
+                                    45:  load(s1, "alpha")
+                                    46:  loadfloat(s2, 0.025)
+                                    47:  comparith(s1, 2, s1, 45)
+                                    48:  line(-, 422)
+                                    49:  getk(s1, "alpha", s0)
+                                    50:  loadfloat(s2, 0)
+                                    51:  jcmp(s2, 2, s1, CMP_LE)
+                                    52:  prepcallk(s1, "ReleaseActor", s0, s2)
+                                    53:  call(255, s1, s2, 1)
+                                    54:  line(-, 423)
+                                    55:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 9
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 9
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+            2: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 7
+                nfunctions: 0
+                Literals: [
+                    0: "sx"
+                    1: "sy"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 6
+                  ]
+                Line Informations: [
+                    0: line: 432, op: 1
+                    1: line: 433, op: 5
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 432)
+                    1:  dload(s1, "sx", s2, "sy")
+                    2:  loadfloat(s3, 0.8)
+                    3:  comparith(s2, 3, s2, 42)
+                    4:  set(s255, s0, s1, s2)
+                    5:  line(-, 433)
+                    6:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "Boss1_BackA"
+        nliterals: 12
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 41
+        nfunctions: 2
+        Literals: [
+            0: "SetMotion"
+            1: "DrawBackActorPriority"
+            2: "alpha"
+            3: "flag1"
+            4: "SetFreeObjectDynamic"
+            5: "direction"
+            6: "owner"
+            7: "u"
+            8: "Boss1_BackB"
+            9: "weakref"
+            10: "func"
+            11: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 40
+            1: name: "this", pos: 0, start_op: 0, end_op: 40
+          ]
+        Line Informations: [
+            0: line: 437, op: 1
+            1: line: 438, op: 5
+            2: line: 439, op: 9
+            3: line: 440, op: 13
+            4: line: 443, op: 29
+            5: line: 455, op: 35
+            6: line: 465, op: 39
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 437)
+            1:  prepcallk(s2, "SetMotion", s0, s3)
+            2:  loadint(s4, 4919)
+            3:  loadint(s5, 1)
+            4:  call(255, s2, s3, 3)
+            5:  line(-, 438)
+            6:  prepcallk(s2, "DrawBackActorPriority", s0, s3)
+            7:  loadint(s4, 110)
+            8:  call(255, s2, s3, 2)
+            9:  line(-, 439)
+            10:  load(s2, "alpha")
+            11:  loadfloat(s3, 0)
+            12:  set(s255, s0, s2, s3)
+            13:  line(-, 440)
+            14:  load(s2, "flag1")
+            15:  newobj(s3, 1, 0, 1)
+            16:  prepcallk(s4, "SetFreeObjectDynamic", s0, s5)
+            17:  loadint(s6, 640)
+            18:  loadint(s7, 360)
+            19:  getk(s8, "direction", s0)
+            20:  getk(s9, "owner", s0)
+            21:  getk(s9, "u", s9)
+            22:  getk(s9, "Boss1_BackB", s9)
+            23:  loadnulls(s10, 1)
+            24:  call(4, s4, s5, 6)
+            25:  prepcallk(s4, "weakref", s4, s5)
+            26:  call(4, s4, s5, 1)
+            27:  appendarray(s3, 4, 0)
+            28:  set(s255, s0, s2, s3)
+            29:  line(-, 443)
+            30:  load(s2, "func")
+            31:  newobj(s3, 1, 0, 1)
+            32:  closure(s4, 0)
+            33:  appendarray(s3, 4, 0)
+            34:  set(s255, s0, s2, s3)
+            35:  line(-, 455)
+            36:  load(s2, "stateLabel")
+            37:  closure(s3, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  line(-, 465)
+            40:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 3
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 24
+                nfunctions: 1
+                Literals: [
+                    0: "flag1"
+                    1: "func"
+                    2: "call"
+                    3: "EraceBackGround"
+                    4: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "a", pos: 3, start_op: 3, end_op: 13
+                    1: name: "@INDEX@", pos: 2, start_op: 2, end_op: 13
+                    2: name: "this", pos: 0, start_op: 0, end_op: 23
+                  ]
+                Line Informations: [
+                    0: line: 445, op: 1
+                    1: line: 446, op: 5
+                    2: line: 448, op: 14
+                    3: line: 449, op: 18
+                    4: line: 453, op: 22
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 445)
+                    1:  getk(s1, "flag1", s0)
+                    2:  loadnulls(s2, 3)
+                    3:  foreach(s1, 10, s2)
+                    4:  postforeach(s1, 10)
+                    5:  line(-, 446)
+                    6:  jz(s3, 6)
+                    7:  getk(s5, "func", s3)
+                    8:  loadint(s6, 0)
+                    9:  get(s5, s5, s6)
+                    10:  prepcallk(s5, "call", s5, s6)
+                    11:  move(s7, s3)
+                    12:  call(255, s5, s6, 2)
+                    13:  jmp(-, -11)
+                    14:  line(-, 448)
+                    15:  prepcallk(s1, "EraceBackGround", s0, s2)
+                    16:  loadbool(s3, 0)
+                    17:  call(255, s1, s2, 2)
+                    18:  line(-, 449)
+                    19:  load(s1, "stateLabel")
+                    20:  closure(s2, 0)
+                    21:  set(s255, s0, s1, s2)
+                    22:  line(-, 453)
+                    23:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 2
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 3
+                        ndefaultparams: 0
+                        ninstructions: 12
+                        nfunctions: 0
+                        Literals: [
+                            0: "alpha"
+                            1: "ReleaseActor"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 11
+                          ]
+                        Line Informations: [
+                            0: line: 450, op: 1
+                            1: line: 451, op: 4
+                            2: line: 452, op: 10
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 450)
+                            1:  load(s1, "alpha")
+                            2:  loadfloat(s2, 0.025)
+                            3:  comparith(s1, 2, s1, 45)
+                            4:  line(-, 451)
+                            5:  getk(s1, "alpha", s0)
+                            6:  loadfloat(s2, 0)
+                            7:  jcmp(s2, 2, s1, CMP_LE)
+                            8:  prepcallk(s1, "ReleaseActor", s0, s2)
+                            9:  call(255, s1, s2, 1)
+                            10:  line(-, 452)
+                            11:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 3
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 8
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 4
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 24
+                nfunctions: 1
+                Literals: [
+                    0: "count"
+                    1: "alpha"
+                    2: "EraceBackGround"
+                    3: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 23
+                  ]
+                Line Informations: [
+                    0: line: 456, op: 1
+                    1: line: 457, op: 3
+                    2: line: 458, op: 7
+                    3: line: 459, op: 11
+                    4: line: 460, op: 14
+                    5: line: 461, op: 18
+                    6: line: 464, op: 22
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 456)
+                    1:  load(s1, "count")
+                    2:  pinc(s1, s0, s1, 1)
+                    3:  line(-, 457)
+                    4:  load(s1, "alpha")
+                    5:  loadfloat(s2, 0.015)
+                    6:  comparith(s1, 2, s1, 43)
+                    7:  line(-, 458)
+                    8:  getk(s1, "alpha", s0)
+                    9:  loadfloat(s2, 1)
+                    10:  jcmp(s2, 11, s1, CMP_G)
+                    11:  line(-, 459)
+                    12:  prepcallk(s1, "EraceBackGround", s0, s2)
+                    13:  call(255, s1, s2, 1)
+                    14:  line(-, 460)
+                    15:  load(s1, "alpha")
+                    16:  loadfloat(s2, 1)
+                    17:  set(s255, s0, s1, s2)
+                    18:  line(-, 461)
+                    19:  load(s1, "stateLabel")
+                    20:  closure(s2, 0)
+                    21:  set(s255, s0, s1, s2)
+                    22:  line(-, 464)
+                    23:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 0
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 2
+                        ndefaultparams: 0
+                        ninstructions: 3
+                        nfunctions: 0
+                        Literals: [  ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 2
+                          ]
+                        Line Informations: [
+                            0: line: 461, op: 0
+                            1: line: 462, op: 1
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 461)
+                            1:  line(-, 462)
+                            2:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 1
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 11
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "Boss1_BackB"
+        nliterals: 7
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 2
+        Literals: [
+            0: "SetMotion"
+            1: "DrawActorPriority"
+            2: "anime"
+            3: "vertex_alpha1"
+            4: "alpha"
+            5: "func"
+            6: "stateLabel"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 29
+            1: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 467, op: 1
+            1: line: 468, op: 5
+            2: line: 469, op: 9
+            3: line: 470, op: 14
+            4: line: 471, op: 18
+            5: line: 479, op: 24
+            6: line: 487, op: 28
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 467)
+            1:  prepcallk(s2, "SetMotion", s0, s3)
+            2:  loadint(s4, 4919)
+            3:  loadint(s5, 0)
+            4:  call(255, s2, s3, 3)
+            5:  line(-, 468)
+            6:  prepcallk(s2, "DrawActorPriority", s0, s3)
+            7:  loadint(s4, 100)
+            8:  call(255, s2, s3, 2)
+            9:  line(-, 469)
+            10:  getk(s2, "anime", s0)
+            11:  load(s3, "vertex_alpha1")
+            12:  loadfloat(s4, 0)
+            13:  set(s255, s2, s3, s4)
+            14:  line(-, 470)
+            15:  load(s2, "alpha")
+            16:  loadfloat(s3, 0)
+            17:  set(s255, s0, s2, s3)
+            18:  line(-, 471)
+            19:  load(s2, "func")
+            20:  newobj(s3, 1, 0, 1)
+            21:  closure(s4, 0)
+            22:  appendarray(s3, 4, 0)
+            23:  set(s255, s0, s2, s3)
+            24:  line(-, 479)
+            25:  load(s2, "stateLabel")
+            26:  closure(s3, 1)
+            27:  set(s255, s0, s2, s3)
+            28:  line(-, 487)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 1
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 6
+                nfunctions: 1
+                Literals: [
+                    0: "stateLabel"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 5
+                  ]
+                Line Informations: [
+                    0: line: 473, op: 1
+                    1: line: 477, op: 4
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 473)
+                    1:  load(s1, "stateLabel")
+                    2:  closure(s2, 0)
+                    3:  set(s255, s0, s1, s2)
+                    4:  line(-, 477)
+                    5:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: ""
+                        name: null
+                        nliterals: 2
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 3
+                        ndefaultparams: 0
+                        ninstructions: 12
+                        nfunctions: 0
+                        Literals: [
+                            0: "alpha"
+                            1: "ReleaseActor"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 11
+                          ]
+                        Line Informations: [
+                            0: line: 474, op: 1
+                            1: line: 475, op: 4
+                            2: line: 476, op: 10
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  line(-, 474)
+                            1:  load(s1, "alpha")
+                            2:  loadfloat(s2, 0.025)
+                            3:  comparith(s1, 2, s1, 45)
+                            4:  line(-, 475)
+                            5:  getk(s1, "alpha", s0)
+                            6:  loadfloat(s2, 0)
+                            7:  jcmp(s2, 2, s1, CMP_LE)
+                            8:  prepcallk(s1, "ReleaseActor", s0, s2)
+                            9:  call(255, s1, s2, 1)
+                            10:  line(-, 476)
+                            11:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 3
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+            1: 
+                sourcename: ""
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 26
+                nfunctions: 0
+                Literals: [
+                    0: "anime"
+                    1: "top"
+                    2: "left"
+                    3: "count"
+                    4: "alpha"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 25
+                  ]
+                Line Informations: [
+                    0: line: 480, op: 1
+                    1: line: 481, op: 5
+                    2: line: 482, op: 10
+                    3: line: 483, op: 13
+                    4: line: 484, op: 17
+                    5: line: 485, op: 24
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 480)
+                    1:  getk(s1, "anime", s0)
+                    2:  load(s2, "top")
+                    3:  loadfloat(s3, 0.2)
+                    4:  comparith(s1, 65539, s2, 45)
+                    5:  line(-, 481)
+                    6:  getk(s1, "anime", s0)
+                    7:  load(s2, "left")
+                    8:  loadfloat(s3, 0.5)
+                    9:  comparith(s1, 65539, s2, 45)
+                    10:  line(-, 482)
+                    11:  load(s1, "count")
+                    12:  pinc(s1, s0, s1, 1)
+                    13:  line(-, 483)
+                    14:  load(s1, "alpha")
+                    15:  loadfloat(s2, 0.015)
+                    16:  comparith(s1, 2, s1, 43)
+                    17:  line(-, 484)
+                    18:  getk(s1, "alpha", s0)
+                    19:  loadfloat(s2, 1)
+                    20:  jcmp(s2, 3, s1, CMP_G)
+                    21:  load(s1, "alpha")
+                    22:  loadfloat(s2, 1)
+                    23:  set(s255, s0, s1, s2)
+                    24:  line(-, 485)
+                    25:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

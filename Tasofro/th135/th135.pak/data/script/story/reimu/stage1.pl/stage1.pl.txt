@@ -1,0 +1,119 @@
+#========================================================================
+#	Stage:1
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/marisa.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+
+#フェイス画像
+,DefineObject,reimu,-360,0,false
+,DefineObject,marisa,-360,0,true
+
+#肩書き
+,DefineObject,reimu_label,50,360,false
+,DefineObject,marisa_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,marisa,"data/system/char_def/汗1.png",20,0,450,320
+
+#初期表情設定
+,ImageDef,reimu,霊夢_選1,0,0
+,ImageDef,marisa,魔理沙_選1,0,0
+
+#肩書き画像の指定
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,marisa_label,"data/system/char_def/name/name_02marisa.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+#,Move,reimu,0,-25,25	,#フェイス画像位置を非トーク位置にシフト
+,Show,reimu,30,-64,0	,#霊夢フェイス表示開始
+,Show,marisa,30,-64,0	,#魔理沙フェイス表示開始
+
+,SetFocus,marisa		,#発言中キャラを指定
+よーし\,a05x2,0,0		,#本文,フキダシ,表示位置補正X,表示位置補正Y
+
+#現在実装の噴出しは0:大 1:中 2:小の三種類です
+
+#本文末尾に\をつけるとテキストで入力待ちになります
+#逆に入れない場合、入力を待たず以後の処理へ進みます
+
+いい加減そろそろ決着つけたい\nと思ってたし,a15x3,0,0
+,WaitInput				,#キー入力を待つ
+
+#フェイス画像を指定　末尾三つが「キャラ名_カタログファイル名」の形
+,ImageDef,marisa,魔理沙_普1,0,0
+
+#フキダシの一括消去　これを実行するまで噴出しは際限なく手前に増える
+,ClearBalloon,marisa
+
+#指定キャラの肩書きを表示開始
+,Show,marisa_label,20,0,-64
+準備は良いか？\,a11x2,0,0
+
+,ClearBalloon,marisa
+
+#指定キャラの肩書きを消去
+,Hide,marisa_label,20,0,64
+
+,SetFocus,reimu,0,
+,ImageDef,reimu,霊夢_余1,0,0
+決着って……\nあんたが私に敵うと思ってるの？,a15x3,0,0
+,WaitInput
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+いいわ\n観客の前で恥をかかせてあげる,a15x3,0,0
+,WaitInput
+,ClearBalloon,reimu
+,Function,"StopBGM(500);",# BGM停止
+,Hide,marisa,30,-64,0,&
+,Hide,reimu,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(102);",# 戦闘BGM再生開始
+
+,ClearBalloon,reimu
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

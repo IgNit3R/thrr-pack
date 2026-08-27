@@ -1,0 +1,174 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\battle\battle_network.nut: 
+sourcename: ""
+name: "main"
+nliterals: 2
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 3
+ndefaultparams: 0
+ninstructions: 10
+nfunctions: 2
+Literals: [
+    0: "Pause"
+    1: "BeginResult"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 9
+    1: name: "this", pos: 0, start_op: 0, end_op: 9
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 17, op: 4
+    2: line: 28, op: 8
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "Pause")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 17)
+    5:  load(s2, "BeginResult")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 28)
+    9:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Pause"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 24
+        nfunctions: 0
+        Literals: [
+            0: "sound"
+            1: "StopBGM"
+            2: "network"
+            3: "use_lobby"
+            4: "Disconnect"
+            5: "loop"
+            6: "EndWithFade"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 23
+          ]
+        Line Informations: [
+            0: line: 5, op: 1
+            1: line: 6, op: 6
+            2: line: 9, op: 12
+            3: line: 13, op: 18
+            4: line: 15, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 5)
+            1:  loadroot(s1)
+            2:  getk(s1, "sound", s1)
+            3:  prepcallk(s1, "StopBGM", s1, s2)
+            4:  loadint(s3, 500)
+            5:  call(255, s1, s2, 2)
+            6:  line(-, 6)
+            7:  loadroot(s1)
+            8:  getk(s1, "network", s1)
+            9:  getk(s1, "use_lobby", s1)
+            10:  jz(s1, 6)
+            11:  line(-, 9)
+            12:  loadroot(s1)
+            13:  getk(s1, "network", s1)
+            14:  prepcallk(s1, "Disconnect", s1, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 5)
+            17:  line(-, 13)
+            18:  loadroot(s1)
+            19:  getk(s1, "loop", s1)
+            20:  prepcallk(s1, "EndWithFade", s1, s2)
+            21:  call(255, s1, s2, 1)
+            22:  line(-, 15)
+            23:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "BeginResult"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 20
+        nfunctions: 0
+        Literals: [
+            0: "config"
+            1: "replay"
+            2: "save_mode_online"
+            3: "Save"
+            4: "End"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 19
+          ]
+        Line Informations: [
+            0: line: 19, op: 1
+            1: line: 22, op: 8
+            2: line: 23, op: 13
+            3: line: 26, op: 15
+            4: line: 28, op: 18
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 19)
+            1:  loadroot(s1)
+            2:  getk(s1, "config", s1)
+            3:  getk(s1, "replay", s1)
+            4:  getk(s1, "save_mode_online", s1)
+            5:  loadint(s2, 0)
+            6:  eq(s2, 2, s1, 0)
+            7:  jz(s2, 7)
+            8:  line(-, 22)
+            9:  loadroot(s2)
+            10:  getk(s2, "replay", s2)
+            11:  prepcallk(s2, "Save", s2, s3)
+            12:  call(255, s2, s3, 1)
+            13:  line(-, 23)
+            14:  jmp(-, 0)
+            15:  line(-, 26)
+            16:  prepcallk(s1, "End", s0, s2)
+            17:  call(255, s1, s2, 1)
+            18:  line(-, 28)
+            19:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

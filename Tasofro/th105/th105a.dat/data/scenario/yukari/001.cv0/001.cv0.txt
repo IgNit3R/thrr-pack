@@ -1,0 +1,213 @@
+## =======================================================================
+#Stage:2
+#Title:働かざる者
+#Place:玄武の沢
+#Weather:川霧
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+Character:yukari,160,0,0,8888FF
+Character:komachi,160,0,1,FF8888
+
+#分画面外に待機
+Action:komachi,100
+
+# 敵登場
+Action:komachi,101
+Action:komachi,102
+
+#カメラ固定
+Action:yukari,4
+
+#フォーカス瞬間移動
+#Action:yukari,11
+
+#向き固定解除
+Action:yukari,152
+
+Label:Start
+PlayBgm:data/bgm/ta05.ogg
+
+Sleep:30;
+
+#Sleep:20
+
+
+#ステージタイトル表示
+Object:data/scenario/yukari/effect/StageTitle002.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:60;
+
+#自分登場
+Action:yukari,50
+Action:yukari,51
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９\
+Face:yukari,嬉
+ふう、この歳になって山登りする羽目になるとは
+思わなかったわ\
+
+Face:yukari,普
+で、ここにも働かない奴がいる\
+
+Face:yukari,
+Hide:1
+Sleep:30
+
+
+Face:komachi,普
+おっと、なんか突然出てきたねぇ\
+
+# 名前のテロップ
+Object:data/scenario/komachi/effect/Name.bmp,2,352,304
+
+Face:yukari,普
+貴方は今回の騒動の時は何をしていたの？\
+
+Face:komachi,驚
+え？　唐突ね。
+まあ良いけどさ……\
+
+Face:komachi,普
+まず今回の騒動って、何の話なのか判らん\
+
+Face:yukari,余
+そう、幽霊を彼岸に送っていたの@
+では何か変化に気付かなかったの？\
+
+Face:komachi,惑
+え？　変化？
+全く話が読めないんだけど……\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:yukari,普
+そう、幽霊の数が減少している事に気付いたのね\
+
+Face:komachi,惑
+おいおい、何の話だい？\
+
+Face:yukari,決
+貴方は何故働かなかった\
+
+Face:yukari,決
+貴方が素早く幽霊を彼岸に送っていれば
+被害は少なくて済んだ\
+
+Face:komachi,驚
+ちょ、ちょっと待ってよ
+被害って何？\
+
+Face:yukari,余
+暢気な死神め@
+地獄へ戻って閻魔様にこっぴどく叱られるがいい\
+
+#戦闘開始処理
+PlayBgm:data/bgm/st02.ogg
+
+Action:yukari,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:komachi,惑
+何だか知らないけど仕事に戻った方が
+いい気がしてきた\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yukari,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:komachi,200
+#攻撃側ニュートラル移行検知
+Action:yukari,202
+
+#自キャラ天候
+#Action:yukari,103
+Sleep:60;
+
+Face:yukari,余
+さあ、仕事に戻った戻った\
+
+Face:komachi,負
+もう、何なんですか\
+
+Face:yukari,惑
+山登りが退屈でしてね\
+
+Face:yukari,余
+丁度良いところに貴方が居たから\
+
+Face:komachi,負
+って、お前さんはワープして出てこなかったか？
+山登りもへったくれも……\
+
+Hide:1
+# ここで紫が潜って消える
+#紫画面外へ隙間退避
+Action:yukari,155
+#紫画面外へ隙間退避完了確認
+Action:yukari,156
+Hide:0
+
+#Sleep:60;
+
+Face:komachi,無
+Face:yukari,無
+ああ山登りは大変ね\
+
+
+Hide:1
+Sleep:60;
+Result:
+
+#Hide:1
+FadeBgm:2000,0
+Stage:3,120
+
+#やられキャラ画面退場
+Action:komachi,201
+
+#自キャラ基準点へ移動
+#Action:yukari,150
+
+#カメラ中央あわせ
+Action:yukari,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

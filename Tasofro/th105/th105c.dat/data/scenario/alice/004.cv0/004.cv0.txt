@@ -1,0 +1,263 @@
+## =======================================================================
+#Stage:5
+#Title:天空の龍宮
+#Place:玄海雲
+#Weather:台風
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:alice,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#専用ステージ初期設定
+Action:iku,139
+
+#カメラ固定
+Action:alice,4
+
+#フォーカス瞬間移動
+Action:alice,11
+
+#自キャラ画面左待機
+Action:alice,5
+
+Bgm:data/bgm/ta02.ogg
+
+#背景暗雲設置
+Action:iku,134
+
+#向き固定解除
+Action:alice,152
+
+#天候解除
+Action:iku,153
+
+Label:Start
+
+#フェードイン　黒
+Action:alice,161
+
+Sleep:60
+
+#ステージタイトル表示
+Object:data/scenario/alice/effect/StageTitle005.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage5.bmp,1,256,352
+Sleep:300
+
+#雲中背景解除
+Action:iku,135
+Sleep:120
+
+#画面上から登場
+Action:alice,6
+
+#登場終了検知
+Action:alice,7
+
+Sleep:60
+
+Face:alice,惑
+雲の中は思ったより荒れているのね\
+
+Face:alice,惑
+何か手掛かりがあるといいんだけど……\
+
+Face:alice,
+Hide:1
+Sleep:60
+
+#衣玖黒塗りで画面上から登場
+Action:iku,130
+Sleep:90
+Face:iku,
+空を緋色に染めるは大地のあくび\
+
+大地のあくびは目覚めの兆し\
+
+#落雷+衣玖の姿が浮かび上がる
+Action:iku,131
+
+まもなく幻想郷が目覚めるでしょう
+激しく、残酷に\
+
+Sleep:90
+
+Face:alice,驚
+こんな暗い雲の中を泳いでくるなんて……@
+ただ者じゃないわね\
+
+# 名前のテロップ
+#Name:美しき緋の衣　永江衣玖
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Face:iku,普
+私はただ危険を知らせるだけの龍宮の使い@
+緋色の雲を泳ぐ者です\
+
+Face:iku,惑
+わざわざ雲の中を昇ってきた貴方の方が
+私から見たら不思議ですわ\
+
+Face:alice,惑
+龍宮の……使い？\
+
+Face:iku,普
+ええ、私達は緋色の雲を泳ぐだけの使い\
+
+Face:alice,普
+龍宮の使い……
+どっかで聞いた事が有るような\
+
+Face:alice,驚
+龍宮の使い……@
+あ、そうか！\
+
+#イベント　衣玖浮遊状態終了
+Action:iku,132
+
+Bgm:data/bgm/st04.ogg
+
+Face:alice,驚
+龍宮の使いが現れるのは地震の宏観前兆だわ！\
+
+Face:iku,余
+そうです
+残念ながら地震は起こります\
+
+Face:alice,惑
+むむむ
+これはいよいよもって私の予想の裏付けが……\
+
+Face:iku,惑
+それは避けようのない、残酷な事実\
+
+Face:alice,惑
+どうすれば……\
+
+Face:alice,嬉
+そう、宏観前兆を全て無くせば逆に地震が無くなる
+って本に書いてあったわ\
+
+Face:iku,驚
+え？\
+
+Face:alice,決
+貴方を居なかったことにして、
+緋色の雲もかき消せばあるいは！\
+
+
+#戦闘開始処理
+Action:alice,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,余
+残念ながら私を倒しても地震が起こる
+事実には変化はありません\
+
+Face:iku,普
+貴方の人形も全て焼けてしまわないように
+火の元に注意した方が良いですよ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:iku,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:alice,202
+
+#Weather:天候クリア
+# 無天候へ
+Action:iku,133
+
+Face:alice,嬉
+取り敢えず勝った！\
+
+Face:iku,負
+残念ながら私を倒しても地震が起こる
+事実には変化はありません\
+
+Face:alice,普
+そんな事試してみないと判らないでしょ？\
+
+Face:alice,惑
+後は緋色の雲をかき消せば……
+ってこれは難問ね\
+
+Face:iku,負
+緋色の雲ですか……@
+もしかしたらこの雲は作られた物かも\
+
+Face:alice,驚
+どういう意味？\
+
+Face:iku,負
+この雲の成分は水ではないみたいで……@
+生き物の本質で構成されています\
+
+Face:iku,負
+だから、おかしいとは思いつつ……\
+
+Face:iku,負
+でも緋色の雲が出来たら私達は動かないと
+いけないし\
+
+Face:alice,余
+ほら、貴方も躍らされているのよ！@
+地震を起こそうとしている黒幕は絶対にいる！\
+
+
+Hide:1
+
+Sleep:30
+#画面上部へ移動
+Action:alice,151
+
+Sleep:90
+Result:
+
+#フェードアウト　白
+Action:alice,162
+Sleep:60
+FadeBgm:2000,0
+
+Stage:5,0
+
+End:
+
+
+
+
+
+## =======================================================================

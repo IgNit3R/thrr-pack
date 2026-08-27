@@ -1,0 +1,83 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/koishi.csv"
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+
+#フェイス画像
+,DefineObject,koishi,-360,0,false
+,DefineObject,futo,-360,0,true
+
+#肩書き
+,DefineObject,koishi_label,50,360,false
+,DefineObject,futo_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,koishi_label,"data/system/char_def/name/name_07koishi.png",0,0,0,0
+#,ImageFile,futo_label,"data/system/char_def/name/name_05futo.png",0,0,0,0
+,ImageFile,futo_label,"data/system/char_def/name/name_05futo.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage2 「悪夢の終わり」
+# 場所：夢殿大祀廟
+
+# こいしの絵を出さないで
+,ImageDef,futo,布都_驚1,0,0
+,Show,futo,30,-64,0
+,SetFocus,futo
+太子様が\n何者かに敗れただと？,a11x2,0,0
+
+,Show,futo_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,futo_label,20,0,64
+# 名前テロップ
+# 龍脈を司る風水師　　　物部布都
+
+,ImageDef,futo,布都_惑1,0,0
+しかも対戦相手は不明……\nどういうことだ？\,c11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,koishi,こいし_普2,0,0
+,Show,koishi,30,-64,0
+,SetFocus,koishi
+もしもーし\,b05x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,koishi,こいし_嬉1,0,0
+私と対戦しませんかー\,a11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,futo,布都_驚1,0,0
+,SetFocus,futo
+む　どこから声がしてる？\,c11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,koishi,こいし_普2,0,0
+,SetFocus,koishi
+見えてないのかな\,c11x2,0,0
+
+,ClearBalloon,koishi
+,ImageDef,koishi,こいし_必1,0,0
+これでも喰らえい！\,a11x2,0,0
+
+,ClearBalloon,koishi
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,koishi,30,-64,0,&
+,Hide,futo,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(105);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

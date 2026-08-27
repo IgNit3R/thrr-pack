@@ -1,0 +1,221 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\koishi\koishi.nut: 
+sourcename: ""
+name: "main"
+nliterals: 10
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 35
+nfunctions: 3
+Literals: [
+    0: "KoishiStatus"
+    1: "BattleStatus"
+    2: "autoAttack"
+    3: "ex_f"
+    4: "ex_f_max"
+    5: "ex_b"
+    6: "ex_b_max"
+    7: "Koishi_BottomDraw"
+    8: "KoishiBottomDraw_Left"
+    9: "KoishiBottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 34
+    1: name: "this", pos: 0, start_op: 0, end_op: 34
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 11, op: 20
+    2: line: 14, op: 21
+    3: line: 32, op: 25
+    4: line: 37, op: 29
+    5: line: 41, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "KoishiStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "autoAttack")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f")
+    8:  loadint(s5, 0)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_f_max")
+    11:  loadint(s5, 320)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b")
+    14:  loadint(s5, 0)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "ex_b_max")
+    17:  loadint(s5, 320)
+    18:  newslota(0, s3, s4, s5)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 11)
+    21:  line(-, 14)
+    22:  load(s2, "Koishi_BottomDraw")
+    23:  closure(s3, 0)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 32)
+    26:  load(s2, "KoishiBottomDraw_Left")
+    27:  closure(s3, 1)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 37)
+    30:  load(s2, "KoishiBottomDraw_Right")
+    31:  closure(s3, 2)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 41)
+    34:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Koishi_BottomDraw"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "KoishiStatus"
+            2: "player_id"
+            3: "KoishiBottomDraw_Left"
+            4: "KoishiBottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 18, op: 1
+            1: line: 21, op: 7
+            2: line: 23, op: 14
+            3: line: 25, op: 17
+            4: line: 27, op: 24
+            5: line: 29, op: 26
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 18)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "KoishiStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 21)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 23)
+            14:  prepcallk(s1, "KoishiBottomDraw_Left", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 9)
+            17:  line(-, 25)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 3)
+            23:  line(-, 27)
+            24:  prepcallk(s1, "KoishiBottomDraw_Right", s0, s2)
+            25:  call(255, s1, s2, 1)
+            26:  line(-, 29)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "KoishiBottomDraw_Left"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 33, op: 0
+            1: line: 34, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 33)
+            1:  line(-, 34)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "KoishiBottomDraw_Right"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 38, op: 0
+            1: line: 39, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 38)
+            1:  line(-, 39)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

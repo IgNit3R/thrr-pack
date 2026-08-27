@@ -1,0 +1,77 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/marisa.csv"
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+
+#フェイス画像
+,DefineObject,marisa,-360,0,false
+,DefineObject,hijiri,-360,0,true
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+
+
+#Label:Win
+
+# ＊ここは新聞にならずに会話シーンを入れてください
+#
+
+,ImageDef,hijiri,聖_普1,0,0
+,Show,hijiri,30,-64,0
+,ImageDef,marisa,魔理沙_決1,0,0
+,Show,marisa,30,-64,0
+,SetFocus,marisa
+ちょっと待った！\,b11x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,marisa,魔理沙_怒1,0,0
+お前……誰だ？\,c11x2,0,0
+
+,ClearBalloon,marisa
+聖じゃ無いだろ\,c11x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,hijiri,聖_普1,0,0
+,SetFocus,hijiri
+ほう\n気付いたかね\,a11x2,0,0
+
+,ClearBalloon,hijiri
+,ImageDef,hijiri,聖_決1,0,0
+じゃあもうこの姿で\n居る必要はあるまい\,a11x2,0,0
+,ClearBalloon,hijiri
+
+# --------------------------
+
+,Hide,hijiri,30,-64,0,&
+,Hide,marisa,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobOut();"
+,Sleep,150
+
+# 二人の会話の絵が消える
+# 聖からモクモクと煙が出る
+#
+# それと同時に背景のキャラ達もドロンと狸に戻り
+# 一斉に霧散する
+# そこに残ったのは誰も居ない野原
+
+# ＊復帰後の会話絵は魔理沙のみで
+
+,ImageDef,marisa,魔理沙_驚1,0,0
+,Show,marisa,30,-64,0
+,SetFocus,marisa
+何だと？\,a05x2,0,0
+
+,ClearBalloon,marisa
+,ImageDef,marisa,魔理沙_驚1,0,0
+まさかギャラリーも\n偽物だとか……！\,a11x2,0,0
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

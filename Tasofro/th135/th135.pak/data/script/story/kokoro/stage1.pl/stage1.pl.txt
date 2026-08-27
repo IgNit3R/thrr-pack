@@ -1,0 +1,75 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/kokoro.csv"
+,LoadImageDef,"data/system/char_def/face/ichirin.csv"
+
+#フェイス画像
+,DefineObject,kokoro,-360,0,false
+,DefineObject,ichirin,-360,0,true
+
+#肩書き
+,DefineObject,kokoro_label,50,360,false
+,DefineObject,ichirin_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,kokoro_label,"data/system/char_def/name/name_9kokoro.png",0,0,0,0
+,ImageFile,ichirin_label,"data/system/char_def/name/name_03ichirin.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage1 「聖輦神楽」
+# 場所：聖輦船
+
+#0１２３４５６７８９０１２３４
+,ImageDef,ichirin,一輪_汗1,0,0
+,Show,ichirin,30,-64,0
+,ImageDef,kokoro,こころ_普1,0,0
+,Show,kokoro,30,-64,0
+,SetFocus,kokoro
+……やあやあ\n我こそは秦こころなるぞ\,a11x2,0,0
+
+,ClearBalloon,kokoro
+,ImageDef,ichirin,一輪_汗1,0,0
+,SetFocus,ichirin
+決闘するのに\nそんな口上要らないわよ,a11x2,0,0
+
+,Show,ichirin_label,20,0,-64
+,WaitInput
+,ClearBalloon,ichirin
+,Hide,ichirin_label,20,0,64
+
+# 名前テロップ
+# 圧倒する妖怪行者　　　雲居一輪＆雲山
+
+,ImageDef,ichirin,一輪_必1,0,0
+私と最強の称号を賭けて闘え！\,a15x3,0,0
+
+,ClearBalloon,ichirin
+,ImageDef,ichirin,一輪_普1,0,0
+こんな感じでいいわ\,a11x2,0,0
+
+,ClearBalloon,ichirin
+,ImageDef,kokoro,こころ_嬉1,0,0
+,SetFocus,kokoro
+受けて立つわ！\,b11x2,0,0
+
+,ClearBalloon,kokoro
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,kokoro,30,-64,0,&
+,Hide,ichirin,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(103);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

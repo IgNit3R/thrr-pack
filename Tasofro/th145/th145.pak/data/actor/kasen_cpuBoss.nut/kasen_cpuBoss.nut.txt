@@ -1,0 +1,1263 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\actor\kasen_cpuBoss.nut: 
+sourcename: ""
+name: "main"
+nliterals: 8
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 9
+ndefaultparams: 0
+ninstructions: 34
+nfunctions: 8
+Literals: [
+    0: "CPU_Set_Boss1"
+    1: "CPU_Boss1_Update"
+    2: "CPU_Set_Boss2"
+    3: "CPU_Boss2_Update"
+    4: "CPU_Set_Boss3"
+    5: "CPU_Boss3_Update"
+    6: "CPU_Set_Boss4"
+    7: "CPU_Boss4_Update"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 33
+    1: name: "this", pos: 0, start_op: 0, end_op: 33
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 35, op: 4
+    2: line: 65, op: 8
+    3: line: 84, op: 12
+    4: line: 103, op: 16
+    5: line: 112, op: 20
+    6: line: 128, op: 24
+    7: line: 155, op: 28
+    8: line: 164, op: 32
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 2)
+    1:  load(s2, "CPU_Set_Boss1")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 35)
+    5:  load(s2, "CPU_Boss1_Update")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 65)
+    9:  load(s2, "CPU_Set_Boss2")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 84)
+    13:  load(s2, "CPU_Boss2_Update")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 103)
+    17:  load(s2, "CPU_Set_Boss3")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 112)
+    21:  load(s2, "CPU_Boss3_Update")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 128)
+    25:  load(s2, "CPU_Set_Boss4")
+    26:  closure(s3, 6)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 155)
+    29:  load(s2, "CPU_Boss4_Update")
+    30:  closure(s3, 7)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 164)
+    33:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "CPU_Set_Boss1"
+        nliterals: 20
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 20
+        ndefaultparams: 0
+        ninstructions: 118
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "cpu_senser"
+            2: "Init"
+            3: "cpu_count"
+            4: "cpuSubState"
+            5: "u"
+            6: "CPU_Defence"
+            7: "CPU_MoveBase"
+            8: "CPU_AttackBase"
+            9: "cpu_level"
+            10: "cpuState"
+            11: "CPU_Boss1_Update"
+            12: "cpu_bossSpellCount"
+            13: "cpu_bossSpellLifeLine"
+            14: "cpu_flag1"
+            15: "cpu_flag2"
+            16: "owner"
+            17: "initialize_data"
+            18: "com"
+            19: "cpu_flag3"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 117
+            1: name: "this", pos: 0, start_op: 0, end_op: 117
+          ]
+        Line Informations: [
+            0: line: 3, op: 1
+            1: line: 4, op: 9
+            2: line: 5, op: 18
+            3: line: 12, op: 33
+            4: line: 13, op: 38
+            5: line: 14, op: 43
+            6: line: 15, op: 48
+            7: line: 16, op: 53
+            8: line: 17, op: 58
+            9: line: 18, op: 63
+            10: line: 20, op: 71
+            11: line: 21, op: 76
+            12: line: 23, op: 82
+            13: line: 24, op: 87
+            14: line: 26, op: 93
+            15: line: 27, op: 98
+            16: line: 29, op: 100
+            17: line: 30, op: 105
+            18: line: 32, op: 107
+            19: line: 34, op: 116
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 3)
+            1:  getk(s2, "p", s0)
+            2:  getk(s2, "cpu_senser", s2)
+            3:  prepcallk(s2, "Init", s2, s3)
+            4:  move(s4, s0)
+            5:  loadint(s5, 128)
+            6:  loadint(s6, 192)
+            7:  loadint(s7, 352)
+            8:  call(255, s2, s3, 5)
+            9:  line(-, 4)
+            10:  getk(s2, "p", s0)
+            11:  load(s3, "cpu_count")
+            12:  newobj(s4, 4, 0, 1)
+            13:  appendarray(s4, 0, 2)
+            14:  appendarray(s4, 0, 2)
+            15:  appendarray(s4, 0, 2)
+            16:  appendarray(s4, 0, 2)
+            17:  set(s255, s2, s3, s4)
+            18:  line(-, 5)
+            19:  load(s2, "cpuSubState")
+            20:  newobj(s3, 4, 0, 1)
+            21:  getk(s4, "u", s0)
+            22:  getk(s4, "CPU_Defence", s4)
+            23:  appendarray(s3, 4, 0)
+            24:  loadnulls(s4, 1)
+            25:  appendarray(s3, 4, 0)
+            26:  getk(s4, "u", s0)
+            27:  getk(s4, "CPU_MoveBase", s4)
+            28:  appendarray(s3, 4, 0)
+            29:  getk(s4, "u", s0)
+            30:  getk(s4, "CPU_AttackBase", s4)
+            31:  appendarray(s3, 4, 0)
+            32:  set(s255, s0, s2, s3)
+            33:  line(-, 12)
+            34:  getk(s2, "p", s0)
+            35:  load(s3, "cpu_level")
+            36:  loadint(s4, 10)
+            37:  set(s255, s2, s3, s4)
+            38:  line(-, 13)
+            39:  dload(s2, "cpuState", s3, "u")
+            40:  get(s3, s0, s3)
+            41:  getk(s3, "CPU_Boss1_Update", s3)
+            42:  set(s255, s0, s2, s3)
+            43:  line(-, 14)
+            44:  getk(s2, "p", s0)
+            45:  load(s3, "cpu_bossSpellCount")
+            46:  loadint(s4, 0)
+            47:  set(s255, s2, s3, s4)
+            48:  line(-, 15)
+            49:  getk(s2, "p", s0)
+            50:  load(s3, "cpu_bossSpellLifeLine")
+            51:  loadint(s4, 100)
+            52:  set(s255, s2, s3, s4)
+            53:  line(-, 16)
+            54:  getk(s2, "p", s0)
+            55:  load(s3, "cpu_flag1")
+            56:  loadint(s4, 0)
+            57:  set(s255, s2, s3, s4)
+            58:  line(-, 17)
+            59:  getk(s2, "p", s0)
+            60:  load(s3, "cpu_flag2")
+            61:  loadint(s4, 0)
+            62:  set(s255, s2, s3, s4)
+            63:  line(-, 18)
+            64:  getk(s2, "owner", s0)
+            65:  getk(s2, "u", s2)
+            66:  getk(s2, "initialize_data", s2)
+            67:  getk(s2, "com", s2)
+            68:  loadint(s3, 0)
+            69:  eq(s3, 3, s2, 0)
+            70:  jz(s3, 8)
+            71:  line(-, 20)
+            72:  getk(s3, "p", s0)
+            73:  load(s4, "cpu_flag3")
+            74:  loadint(s5, 2)
+            75:  set(s255, s3, s4, s5)
+            76:  line(-, 21)
+            77:  jmp(-, 29)
+            78:  jmp(-, 3)
+            79:  loadint(s3, 1)
+            80:  eq(s3, 3, s2, 0)
+            81:  jz(s3, 8)
+            82:  line(-, 23)
+            83:  getk(s3, "p", s0)
+            84:  load(s4, "cpu_flag3")
+            85:  loadint(s5, 3)
+            86:  set(s255, s3, s4, s5)
+            87:  line(-, 24)
+            88:  jmp(-, 18)
+            89:  jmp(-, 3)
+            90:  loadint(s3, 2)
+            91:  eq(s3, 3, s2, 0)
+            92:  jz(s3, 7)
+            93:  line(-, 26)
+            94:  getk(s3, "p", s0)
+            95:  load(s4, "cpu_flag3")
+            96:  loadint(s5, 4)
+            97:  set(s255, s3, s4, s5)
+            98:  line(-, 27)
+            99:  jmp(-, 7)
+            100:  line(-, 29)
+            101:  getk(s3, "p", s0)
+            102:  load(s4, "cpu_flag3")
+            103:  loadint(s5, 5)
+            104:  set(s255, s3, s4, s5)
+            105:  line(-, 30)
+            106:  jmp(-, 0)
+            107:  line(-, 32)
+            108:  getk(s2, "p", s0)
+            109:  load(s3, "cpu_count")
+            110:  newobj(s4, 4, 0, 1)
+            111:  appendarray(s4, 0, 2)
+            112:  appendarray(s4, 0, 2)
+            113:  appendarray(s4, 0, 2)
+            114:  appendarray(s4, 0, 2)
+            115:  set(s255, s2, s3, s4)
+            116:  line(-, 34)
+            117:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "CPU_Boss1_Update"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "p"
+            1: "cpu_bossSpellCount"
+            2: "u"
+            3: "CommonCpuLoop"
+            4: "call"
+            5: "BossCall_Init"
+            6: "cpuState"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 36, op: 1
+            1: line: 37, op: 4
+            2: line: 38, op: 11
+            3: line: 39, op: 19
+            4: line: 63, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 36)
+            1:  getk(s1, "p", s0)
+            2:  load(s2, "cpu_bossSpellCount")
+            3:  pinc(s1, s1, s2, 1)
+            4:  line(-, 37)
+            5:  getk(s1, "u", s0)
+            6:  getk(s1, "CommonCpuLoop", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  loadnulls(s4, 1)
+            10:  call(255, s1, s2, 3)
+            11:  line(-, 38)
+            12:  getk(s1, "u", s0)
+            13:  getk(s1, "BossCall_Init", s1)
+            14:  prepcallk(s1, "call", s1, s2)
+            15:  move(s3, s0)
+            16:  loadnulls(s4, 1)
+            17:  call(1, s1, s2, 3)
+            18:  jz(s1, 4)
+            19:  line(-, 39)
+            20:  load(s1, "cpuState")
+            21:  closure(s2, 0)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 63)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 13
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 14
+                ndefaultparams: 0
+                ninstructions: 77
+                nfunctions: 0
+                Literals: [
+                    0: "u"
+                    1: "CommonCpuLoop"
+                    2: "call"
+                    3: "IsAttack"
+                    4: "SP_ADD_CPU"
+                    5: "p"
+                    6: "cpu_flag3"
+                    7: "sp"
+                    8: "spMax"
+                    9: "cpu_flag1"
+                    10: "Spell_Boss1"
+                    11: "cpu_bossSpellCount"
+                    12: "CPU_Update"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 76
+                  ]
+                Line Informations: [
+                    0: line: 40, op: 1
+                    1: line: 41, op: 7
+                    2: line: 42, op: 16
+                    3: line: 43, op: 22
+                    4: line: 45, op: 28
+                    5: line: 46, op: 36
+                    6: line: 47, op: 41
+                    7: line: 49, op: 46
+                    8: line: 51, op: 48
+                    9: line: 52, op: 56
+                    10: line: 53, op: 61
+                    11: line: 55, op: 66
+                    12: line: 59, op: 70
+                    13: line: 61, op: 75
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 40)
+                    1:  getk(s1, "u", s0)
+                    2:  getk(s1, "CommonCpuLoop", s1)
+                    3:  prepcallk(s1, "call", s1, s2)
+                    4:  move(s3, s0)
+                    5:  loadnulls(s4, 1)
+                    6:  call(255, s1, s2, 3)
+                    7:  line(-, 41)
+                    8:  prepcallk(s1, "IsAttack", s0, s2)
+                    9:  call(1, s1, s2, 1)
+                    10:  loadint(s2, 2)
+                    11:  jcmp(s2, 4, s1, CMP_LE)
+                    12:  prepcallk(s1, "SP_ADD_CPU", s0, s2)
+                    13:  getk(s3, "p", s0)
+                    14:  getk(s3, "cpu_flag3", s3)
+                    15:  call(255, s1, s2, 2)
+                    16:  line(-, 42)
+                    17:  getk(s1, "p", s0)
+                    18:  getk(s1, "sp", s1)
+                    19:  getk(s2, "p", s0)
+                    20:  getk(s2, "spMax", s2)
+                    21:  jcmp(s2, 47, s1, CMP_GE)
+                    22:  line(-, 43)
+                    23:  getk(s1, "p", s0)
+                    24:  getk(s1, "cpu_flag1", s1)
+                    25:  loadint(s2, 1)
+                    26:  eq(s2, 2, s1, 0)
+                    27:  jz(s2, 20)
+                    28:  line(-, 45)
+                    29:  getk(s2, "u", s0)
+                    30:  getk(s2, "Spell_Boss1", s2)
+                    31:  prepcallk(s2, "call", s2, s3)
+                    32:  move(s4, s0)
+                    33:  loadnulls(s5, 1)
+                    34:  call(2, s2, s3, 3)
+                    35:  jz(s2, 10)
+                    36:  line(-, 46)
+                    37:  getk(s2, "p", s0)
+                    38:  load(s3, "cpu_bossSpellCount")
+                    39:  loadint(s4, -300)
+                    40:  set(s255, s2, s3, s4)
+                    41:  line(-, 47)
+                    42:  getk(s2, "p", s0)
+                    43:  load(s3, "cpu_flag1")
+                    44:  loadint(s4, 0)
+                    45:  set(s255, s2, s3, s4)
+                    46:  line(-, 49)
+                    47:  jmp(-, 20)
+                    48:  line(-, 51)
+                    49:  getk(s2, "u", s0)
+                    50:  getk(s2, "Spell_Boss1", s2)
+                    51:  prepcallk(s2, "call", s2, s3)
+                    52:  move(s4, s0)
+                    53:  loadnulls(s5, 1)
+                    54:  call(2, s2, s3, 3)
+                    55:  jz(s2, 10)
+                    56:  line(-, 52)
+                    57:  getk(s2, "p", s0)
+                    58:  load(s3, "cpu_bossSpellCount")
+                    59:  loadint(s4, -300)
+                    60:  set(s255, s2, s3, s4)
+                    61:  line(-, 53)
+                    62:  getk(s2, "p", s0)
+                    63:  load(s3, "cpu_flag1")
+                    64:  loadint(s4, 1)
+                    65:  set(s255, s2, s3, s4)
+                    66:  line(-, 55)
+                    67:  jmp(-, 0)
+                    68:  jmp(-, 6)
+                    69:  line(-, 59)
+                    70:  getk(s1, "u", s0)
+                    71:  getk(s1, "CPU_Update", s1)
+                    72:  prepcallk(s1, "call", s1, s2)
+                    73:  move(s3, s0)
+                    74:  call(255, s1, s2, 2)
+                    75:  line(-, 61)
+                    76:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "CPU_Set_Boss2"
+        nliterals: 16
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 74
+        nfunctions: 0
+        Literals: [
+            0: "p"
+            1: "cpu_senser"
+            2: "Init"
+            3: "cpu_count"
+            4: "cpuSubState"
+            5: "u"
+            6: "CPU_Defence"
+            7: "CPU_MoveBase"
+            8: "CPU_AttackBase"
+            9: "cpu_level"
+            10: "cpuState"
+            11: "CPU_Boss2_Update"
+            12: "cpu_bossSpellCount"
+            13: "cpu_bossSpellLifeLine"
+            14: "cpu_flag1"
+            15: "cpu_flag2"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 73
+            1: name: "this", pos: 0, start_op: 0, end_op: 73
+          ]
+        Line Informations: [
+            0: line: 66, op: 1
+            1: line: 67, op: 9
+            2: line: 68, op: 18
+            3: line: 75, op: 33
+            4: line: 76, op: 38
+            5: line: 77, op: 43
+            6: line: 78, op: 48
+            7: line: 79, op: 53
+            8: line: 80, op: 58
+            9: line: 81, op: 63
+            10: line: 83, op: 72
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 66)
+            1:  getk(s2, "p", s0)
+            2:  getk(s2, "cpu_senser", s2)
+            3:  prepcallk(s2, "Init", s2, s3)
+            4:  move(s4, s0)
+            5:  loadint(s5, 128)
+            6:  loadint(s6, 192)
+            7:  loadint(s7, 352)
+            8:  call(255, s2, s3, 5)
+            9:  line(-, 67)
+            10:  getk(s2, "p", s0)
+            11:  load(s3, "cpu_count")
+            12:  newobj(s4, 4, 0, 1)
+            13:  appendarray(s4, 0, 2)
+            14:  appendarray(s4, 0, 2)
+            15:  appendarray(s4, 0, 2)
+            16:  appendarray(s4, 0, 2)
+            17:  set(s255, s2, s3, s4)
+            18:  line(-, 68)
+            19:  load(s2, "cpuSubState")
+            20:  newobj(s3, 4, 0, 1)
+            21:  getk(s4, "u", s0)
+            22:  getk(s4, "CPU_Defence", s4)
+            23:  appendarray(s3, 4, 0)
+            24:  loadnulls(s4, 1)
+            25:  appendarray(s3, 4, 0)
+            26:  getk(s4, "u", s0)
+            27:  getk(s4, "CPU_MoveBase", s4)
+            28:  appendarray(s3, 4, 0)
+            29:  getk(s4, "u", s0)
+            30:  getk(s4, "CPU_AttackBase", s4)
+            31:  appendarray(s3, 4, 0)
+            32:  set(s255, s0, s2, s3)
+            33:  line(-, 75)
+            34:  getk(s2, "p", s0)
+            35:  load(s3, "cpu_level")
+            36:  loadint(s4, 25)
+            37:  set(s255, s2, s3, s4)
+            38:  line(-, 76)
+            39:  dload(s2, "cpuState", s3, "u")
+            40:  get(s3, s0, s3)
+            41:  getk(s3, "CPU_Boss2_Update", s3)
+            42:  set(s255, s0, s2, s3)
+            43:  line(-, 77)
+            44:  getk(s2, "p", s0)
+            45:  load(s3, "cpu_bossSpellCount")
+            46:  loadint(s4, 0)
+            47:  set(s255, s2, s3, s4)
+            48:  line(-, 78)
+            49:  getk(s2, "p", s0)
+            50:  load(s3, "cpu_bossSpellLifeLine")
+            51:  loadint(s4, 100)
+            52:  set(s255, s2, s3, s4)
+            53:  line(-, 79)
+            54:  getk(s2, "p", s0)
+            55:  load(s3, "cpu_flag1")
+            56:  loadint(s4, 0)
+            57:  set(s255, s2, s3, s4)
+            58:  line(-, 80)
+            59:  getk(s2, "p", s0)
+            60:  load(s3, "cpu_flag2")
+            61:  loadint(s4, 0)
+            62:  set(s255, s2, s3, s4)
+            63:  line(-, 81)
+            64:  getk(s2, "p", s0)
+            65:  load(s3, "cpu_count")
+            66:  newobj(s4, 4, 0, 1)
+            67:  appendarray(s4, 0, 2)
+            68:  appendarray(s4, 0, 2)
+            69:  appendarray(s4, 0, 2)
+            70:  appendarray(s4, 0, 2)
+            71:  set(s255, s2, s3, s4)
+            72:  line(-, 83)
+            73:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "CPU_Boss2_Update"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "p"
+            1: "cpu_bossSpellCount"
+            2: "u"
+            3: "CommonCpuLoop"
+            4: "call"
+            5: "BossCall_Init"
+            6: "cpuState"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 85, op: 1
+            1: line: 86, op: 4
+            2: line: 87, op: 11
+            3: line: 88, op: 19
+            4: line: 101, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 85)
+            1:  getk(s1, "p", s0)
+            2:  load(s2, "cpu_bossSpellCount")
+            3:  pinc(s1, s1, s2, 1)
+            4:  line(-, 86)
+            5:  getk(s1, "u", s0)
+            6:  getk(s1, "CommonCpuLoop", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  loadnulls(s4, 1)
+            10:  call(255, s1, s2, 3)
+            11:  line(-, 87)
+            12:  getk(s1, "u", s0)
+            13:  getk(s1, "BossCall_Init", s1)
+            14:  prepcallk(s1, "call", s1, s2)
+            15:  move(s3, s0)
+            16:  loadnulls(s4, 1)
+            17:  call(1, s1, s2, 3)
+            18:  jz(s1, 4)
+            19:  line(-, 88)
+            20:  load(s1, "cpuState")
+            21:  closure(s2, 0)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 101)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 11
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 7
+                ndefaultparams: 0
+                ninstructions: 43
+                nfunctions: 0
+                Literals: [
+                    0: "u"
+                    1: "CommonCpuLoop"
+                    2: "call"
+                    3: "IsAttack"
+                    4: "SP_ADD_CPU"
+                    5: "p"
+                    6: "sp"
+                    7: "spMax"
+                    8: "Spell_Boss2"
+                    9: "cpu_flag1"
+                    10: "CPU_Update"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 42
+                  ]
+                Line Informations: [
+                    0: line: 89, op: 1
+                    1: line: 90, op: 7
+                    2: line: 91, op: 15
+                    3: line: 92, op: 21
+                    4: line: 93, op: 29
+                    5: line: 97, op: 36
+                    6: line: 99, op: 41
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 89)
+                    1:  getk(s1, "u", s0)
+                    2:  getk(s1, "CommonCpuLoop", s1)
+                    3:  prepcallk(s1, "call", s1, s2)
+                    4:  move(s3, s0)
+                    5:  loadnulls(s4, 1)
+                    6:  call(255, s1, s2, 3)
+                    7:  line(-, 90)
+                    8:  prepcallk(s1, "IsAttack", s0, s2)
+                    9:  call(1, s1, s2, 1)
+                    10:  loadint(s2, 2)
+                    11:  jcmp(s2, 3, s1, CMP_LE)
+                    12:  prepcallk(s1, "SP_ADD_CPU", s0, s2)
+                    13:  loadint(s3, 2)
+                    14:  call(255, s1, s2, 2)
+                    15:  line(-, 91)
+                    16:  getk(s1, "p", s0)
+                    17:  getk(s1, "sp", s1)
+                    18:  getk(s2, "p", s0)
+                    19:  getk(s2, "spMax", s2)
+                    20:  jcmp(s2, 14, s1, CMP_GE)
+                    21:  line(-, 92)
+                    22:  getk(s1, "u", s0)
+                    23:  getk(s1, "Spell_Boss2", s1)
+                    24:  prepcallk(s1, "call", s1, s2)
+                    25:  move(s3, s0)
+                    26:  loadnulls(s4, 1)
+                    27:  call(1, s1, s2, 3)
+                    28:  jz(s1, 5)
+                    29:  line(-, 93)
+                    30:  getk(s1, "p", s0)
+                    31:  load(s2, "cpu_flag1")
+                    32:  loadint(s3, 0)
+                    33:  set(s255, s1, s2, s3)
+                    34:  jmp(-, 6)
+                    35:  line(-, 97)
+                    36:  getk(s1, "u", s0)
+                    37:  getk(s1, "CPU_Update", s1)
+                    38:  prepcallk(s1, "call", s1, s2)
+                    39:  move(s3, s0)
+                    40:  call(255, s1, s2, 2)
+                    41:  line(-, 99)
+                    42:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "CPU_Set_Boss3"
+        nliterals: 9
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 36
+        nfunctions: 0
+        Literals: [
+            0: "cpuState"
+            1: "u"
+            2: "CPU_Boss3_Update"
+            3: "p"
+            4: "cpu_bossSpellCount"
+            5: "cpu_bossSpellLifeLine"
+            6: "cpu_flag1"
+            7: "cpu_flag2"
+            8: "cpu_count"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 35
+            1: name: "this", pos: 0, start_op: 0, end_op: 35
+          ]
+        Line Informations: [
+            0: line: 104, op: 1
+            1: line: 105, op: 5
+            2: line: 106, op: 10
+            3: line: 107, op: 15
+            4: line: 108, op: 20
+            5: line: 109, op: 25
+            6: line: 111, op: 34
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 104)
+            1:  dload(s2, "cpuState", s3, "u")
+            2:  get(s3, s0, s3)
+            3:  getk(s3, "CPU_Boss3_Update", s3)
+            4:  set(s255, s0, s2, s3)
+            5:  line(-, 105)
+            6:  getk(s2, "p", s0)
+            7:  load(s3, "cpu_bossSpellCount")
+            8:  loadint(s4, 0)
+            9:  set(s255, s2, s3, s4)
+            10:  line(-, 106)
+            11:  getk(s2, "p", s0)
+            12:  load(s3, "cpu_bossSpellLifeLine")
+            13:  loadint(s4, 100)
+            14:  set(s255, s2, s3, s4)
+            15:  line(-, 107)
+            16:  getk(s2, "p", s0)
+            17:  load(s3, "cpu_flag1")
+            18:  loadint(s4, 0)
+            19:  set(s255, s2, s3, s4)
+            20:  line(-, 108)
+            21:  getk(s2, "p", s0)
+            22:  load(s3, "cpu_flag2")
+            23:  loadint(s4, 0)
+            24:  set(s255, s2, s3, s4)
+            25:  line(-, 109)
+            26:  getk(s2, "p", s0)
+            27:  load(s3, "cpu_count")
+            28:  newobj(s4, 4, 0, 1)
+            29:  appendarray(s4, 0, 2)
+            30:  appendarray(s4, 0, 2)
+            31:  appendarray(s4, 0, 2)
+            32:  appendarray(s4, 0, 2)
+            33:  set(s255, s2, s3, s4)
+            34:  line(-, 111)
+            35:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "CPU_Boss3_Update"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 1
+        Literals: [
+            0: "p"
+            1: "cpu_bossSpellCount"
+            2: "u"
+            3: "CommonCpuLoop"
+            4: "call"
+            5: "BossCall_Init"
+            6: "cpuState"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 113, op: 1
+            1: line: 114, op: 4
+            2: line: 115, op: 11
+            3: line: 116, op: 19
+            4: line: 117, op: 24
+            5: line: 126, op: 28
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 113)
+            1:  getk(s1, "p", s0)
+            2:  load(s2, "cpu_bossSpellCount")
+            3:  pinc(s1, s1, s2, 1)
+            4:  line(-, 114)
+            5:  getk(s1, "u", s0)
+            6:  getk(s1, "CommonCpuLoop", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  loadnulls(s4, 1)
+            10:  call(255, s1, s2, 3)
+            11:  line(-, 115)
+            12:  getk(s1, "u", s0)
+            13:  getk(s1, "BossCall_Init", s1)
+            14:  prepcallk(s1, "call", s1, s2)
+            15:  move(s3, s0)
+            16:  loadnulls(s4, 1)
+            17:  call(1, s1, s2, 3)
+            18:  jz(s1, 9)
+            19:  line(-, 116)
+            20:  getk(s1, "p", s0)
+            21:  load(s2, "cpu_bossSpellCount")
+            22:  loadint(s3, 1)
+            23:  set(s255, s1, s2, s3)
+            24:  line(-, 117)
+            25:  load(s1, "cpuState")
+            26:  closure(s2, 0)
+            27:  set(s255, s0, s1, s2)
+            28:  line(-, 126)
+            29:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 6
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 32
+                nfunctions: 0
+                Literals: [
+                    0: "p"
+                    1: "cpu_bossSpellCount"
+                    2: "Cancel_Check"
+                    3: "u"
+                    4: "Spell_Boss3_Move"
+                    5: "call"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 31
+                  ]
+                Line Informations: [
+                    0: line: 118, op: 1
+                    1: line: 119, op: 4
+                    2: line: 120, op: 11
+                    3: line: 121, op: 25
+                    4: line: 124, op: 30
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 118)
+                    1:  getk(s1, "p", s0)
+                    2:  load(s2, "cpu_bossSpellCount")
+                    3:  pinc(s1, s1, s2, 1)
+                    4:  line(-, 119)
+                    5:  prepcallk(s1, "Cancel_Check", s0, s2)
+                    6:  loadint(s3, 10)
+                    7:  loadint(s4, 0)
+                    8:  loadint(s5, 0)
+                    9:  call(1, s1, s2, 4)
+                    10:  jz(s1, 19)
+                    11:  line(-, 120)
+                    12:  getk(s1, "p", s0)
+                    13:  getk(s1, "cpu_bossSpellCount", s1)
+                    14:  loadint(s2, 0)
+                    15:  cmp(s1, s2, s1, CMP_G)
+                    16:  and(s1, 7, s1)
+                    17:  getk(s2, "u", s0)
+                    18:  getk(s2, "Spell_Boss3_Move", s2)
+                    19:  prepcallk(s2, "call", s2, s3)
+                    20:  move(s4, s0)
+                    21:  loadnulls(s5, 1)
+                    22:  call(2, s2, s3, 3)
+                    23:  move(s1, s2)
+                    24:  jz(s1, 5)
+                    25:  line(-, 121)
+                    26:  getk(s1, "p", s0)
+                    27:  load(s2, "cpu_bossSpellCount")
+                    28:  loadint(s3, -120)
+                    29:  set(s255, s1, s2, s3)
+                    30:  line(-, 124)
+                    31:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "CPU_Set_Boss4"
+        nliterals: 17
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 80
+        nfunctions: 0
+        Literals: [
+            0: "cpuState"
+            1: "u"
+            2: "CPU_Boss4_Update"
+            3: "p"
+            4: "cpu_level"
+            5: "cpu_bossSpellCount"
+            6: "cpu_bossSpellLifeLine"
+            7: "cpu_flag1"
+            8: "cpu_flag2"
+            9: "owner"
+            10: "initialize_data"
+            11: "com"
+            12: "cpu_count"
+            13: "cpuSubState"
+            14: "CPU_Defence"
+            15: "CPU_MoveBase"
+            16: "CPU_AttackBase"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 1, start_op: 0, end_op: 79
+            1: name: "this", pos: 0, start_op: 0, end_op: 79
+          ]
+        Line Informations: [
+            0: line: 129, op: 1
+            1: line: 130, op: 5
+            2: line: 131, op: 10
+            3: line: 132, op: 15
+            4: line: 133, op: 20
+            5: line: 134, op: 25
+            6: line: 135, op: 30
+            7: line: 137, op: 38
+            8: line: 139, op: 44
+            9: line: 141, op: 50
+            10: line: 143, op: 52
+            11: line: 146, op: 54
+            12: line: 147, op: 63
+            13: line: 154, op: 78
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 129)
+            1:  dload(s2, "cpuState", s3, "u")
+            2:  get(s3, s0, s3)
+            3:  getk(s3, "CPU_Boss4_Update", s3)
+            4:  set(s255, s0, s2, s3)
+            5:  line(-, 130)
+            6:  getk(s2, "p", s0)
+            7:  load(s3, "cpu_level")
+            8:  loadint(s4, 5)
+            9:  set(s255, s2, s3, s4)
+            10:  line(-, 131)
+            11:  getk(s2, "p", s0)
+            12:  load(s3, "cpu_bossSpellCount")
+            13:  loadint(s4, 0)
+            14:  set(s255, s2, s3, s4)
+            15:  line(-, 132)
+            16:  getk(s2, "p", s0)
+            17:  load(s3, "cpu_bossSpellLifeLine")
+            18:  loadint(s4, 100)
+            19:  set(s255, s2, s3, s4)
+            20:  line(-, 133)
+            21:  getk(s2, "p", s0)
+            22:  load(s3, "cpu_flag1")
+            23:  loadint(s4, 0)
+            24:  set(s255, s2, s3, s4)
+            25:  line(-, 134)
+            26:  getk(s2, "p", s0)
+            27:  load(s3, "cpu_flag2")
+            28:  loadint(s4, 0)
+            29:  set(s255, s2, s3, s4)
+            30:  line(-, 135)
+            31:  getk(s2, "owner", s0)
+            32:  getk(s2, "u", s2)
+            33:  getk(s2, "initialize_data", s2)
+            34:  getk(s2, "com", s2)
+            35:  loadint(s3, 0)
+            36:  eq(s3, 3, s2, 0)
+            37:  jz(s3, 3)
+            38:  line(-, 137)
+            39:  jmp(-, 14)
+            40:  jmp(-, 3)
+            41:  loadint(s3, 1)
+            42:  eq(s3, 3, s2, 0)
+            43:  jz(s3, 3)
+            44:  line(-, 139)
+            45:  jmp(-, 8)
+            46:  jmp(-, 3)
+            47:  loadint(s3, 2)
+            48:  eq(s3, 3, s2, 0)
+            49:  jz(s3, 2)
+            50:  line(-, 141)
+            51:  jmp(-, 2)
+            52:  line(-, 143)
+            53:  jmp(-, 0)
+            54:  line(-, 146)
+            55:  getk(s2, "p", s0)
+            56:  load(s3, "cpu_count")
+            57:  newobj(s4, 4, 0, 1)
+            58:  appendarray(s4, 0, 2)
+            59:  appendarray(s4, 0, 2)
+            60:  appendarray(s4, 0, 2)
+            61:  appendarray(s4, 0, 2)
+            62:  set(s255, s2, s3, s4)
+            63:  line(-, 147)
+            64:  load(s2, "cpuSubState")
+            65:  newobj(s3, 4, 0, 1)
+            66:  getk(s4, "u", s0)
+            67:  getk(s4, "CPU_Defence", s4)
+            68:  appendarray(s3, 4, 0)
+            69:  loadnulls(s4, 1)
+            70:  appendarray(s3, 4, 0)
+            71:  getk(s4, "u", s0)
+            72:  getk(s4, "CPU_MoveBase", s4)
+            73:  appendarray(s3, 4, 0)
+            74:  getk(s4, "u", s0)
+            75:  getk(s4, "CPU_AttackBase", s4)
+            76:  appendarray(s3, 4, 0)
+            77:  set(s255, s0, s2, s3)
+            78:  line(-, 154)
+            79:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "CPU_Boss4_Update"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "p"
+            1: "cpu_bossSpellCount"
+            2: "u"
+            3: "CommonCpuLoop"
+            4: "call"
+            5: "BossCall_Init"
+            6: "cpuState"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 156, op: 1
+            1: line: 157, op: 4
+            2: line: 158, op: 11
+            3: line: 159, op: 19
+            4: line: 164, op: 23
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 156)
+            1:  getk(s1, "p", s0)
+            2:  load(s2, "cpu_bossSpellCount")
+            3:  pinc(s1, s1, s2, 1)
+            4:  line(-, 157)
+            5:  getk(s1, "u", s0)
+            6:  getk(s1, "CommonCpuLoop", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  loadnulls(s4, 1)
+            10:  call(255, s1, s2, 3)
+            11:  line(-, 158)
+            12:  getk(s1, "u", s0)
+            13:  getk(s1, "BossCall_Init", s1)
+            14:  prepcallk(s1, "call", s1, s2)
+            15:  move(s3, s0)
+            16:  loadnulls(s4, 1)
+            17:  call(1, s1, s2, 3)
+            18:  jz(s1, 4)
+            19:  line(-, 159)
+            20:  load(s1, "cpuState")
+            21:  closure(s2, 0)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 164)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 4
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 16
+                nfunctions: 0
+                Literals: [
+                    0: "u"
+                    1: "CommonCpuLoop"
+                    2: "call"
+                    3: "Spell_Boss4"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 15
+                  ]
+                Line Informations: [
+                    0: line: 160, op: 1
+                    1: line: 161, op: 7
+                    2: line: 162, op: 14
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 160)
+                    1:  getk(s1, "u", s0)
+                    2:  getk(s1, "CommonCpuLoop", s1)
+                    3:  prepcallk(s1, "call", s1, s2)
+                    4:  move(s3, s0)
+                    5:  loadnulls(s4, 1)
+                    6:  call(255, s1, s2, 3)
+                    7:  line(-, 161)
+                    8:  getk(s1, "u", s0)
+                    9:  getk(s1, "Spell_Boss4", s1)
+                    10:  prepcallk(s1, "call", s1, s2)
+                    11:  move(s3, s0)
+                    12:  loadnulls(s4, 1)
+                    13:  call(255, s1, s2, 3)
+                    14:  line(-, 162)
+                    15:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 5
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

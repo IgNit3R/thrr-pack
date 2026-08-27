@@ -1,0 +1,182 @@
+## =======================================================================
+#Stage:4
+#Title:雨にも風にも
+#Place:川
+#Weather:快晴
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+#
+# 霊夢が一人
+#
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:reimu,160,0,0,8888FF
+Character:aya,160,0,1,FF8888
+#分画面外に待機
+Action:aya,100
+#カメラ固定
+Action:reimu,4
+#フォーカス瞬間移動
+#Action:reimu,11
+Bgm:data/bgm/ta03.ogg
+
+#向き固定解除
+Action:reimu,152
+
+Label:Start
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/reimu/effect/StageTitle004.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage4.bmp,1,256,352
+Sleep:60;
+
+Face:reimu,普
+そうね
+確かに晴れているのは私の周りだけみたいね\
+
+とすると、緋色の霧はみんなの体から出ている？
+そして、その霧が……\
+Face:reimu,
+Hide:1
+
+#Weather:風雨
+# 横殴りの雨が降る
+Action:aya,103
+Sleep:60
+
+Face:reimu,普
+その人の周りの天気を変えているのね
+その人の持った<accent>気質の天気</accent>に\
+Face:reimu,
+Hide:1
+Sleep:30
+
+#
+# 文登場
+#
+
+#登場モーション開始
+Action:aya,101
+
+#登場モーション終了検知
+Action:aya,102
+
+Face:aya,普
+ちょいと
+こんな風が強い日に山に来るなんて\
+
+Face:aya,汗
+死ぬ気なの？\
+
+# 名前のテロップ
+#Name:風雨の鴉　射命丸文
+Object:data/scenario/aya/effect/Name.bmp,2,352,304
+
+Face:reimu,余
+よりによって酷い天気ねぇ……
+あんたには風と雨がお似合いって事ね\
+
+Face:aya,怒
+こりゃまた最初から喧嘩を売るつもりなのね\
+
+Face:reimu,惑
+先を急いでるの
+どうも緋色の雲は山の上に集まってるみたいだから\
+
+Bgm:data/bgm/st03.ogg
+
+Face:aya,決
+ああいいよ、売られた喧嘩は買い占めるわ
+ここを通りたかったら、喧嘩バーゲンでも始めなさい\
+
+Action:reimu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:aya,普
+山は人間の来る所じゃない
+さっさと帰りなさい\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:aya,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:aya,200
+#攻撃側ニュートラル移行検知
+Action:reimu,202
+
+# 晴れる
+Action:reimu,103
+Sleep:60
+
+Face:reimu,嬉
+やはり、山の上が怪しいわ
+山の上だけ緋色の雲が晴れないし……\
+
+Face:aya,負
+そこまで本気ならば仕方がないわね
+私がみんなに言っておくからさっさと行きなさい\
+
+Face:reimu,普
+言われなくても行くわよ
+私の直感が外れた事なんて無いんだから\
+
+Face:aya,負
+久々に晴れるのを見たなぁ
+晴れると気持ちが良いね\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30;
+
+#上空移行用上空退避
+Action:reimu,151
+
+Sleep:90;
+
+#フェードアウト　黒
+Action:reimu,160
+Sleep:60;
+
+
+Stage:4,0
+
+End:
+
+
+
+
+
+## =======================================================================

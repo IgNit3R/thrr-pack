@@ -1,0 +1,259 @@
+## =======================================================================
+#Stage:Final
+#Title:天の娘、地の神、人の心
+#Place:山頂
+#Weather:極光
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+Character:reimu,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#敵画面外に待機
+Action:tenshi,100
+#カメラ初期位置固定
+Action:tenshi,130
+#霊夢画面外待機
+Action:reimu,5
+
+#向き固定解除
+Action:reimu,152
+
+Label:Start
+
+Sleep:85;
+
+#フェードイン　白
+Bgm:data/bgm/ta07.ogg
+Action:reimu,163
+
+#カメラ下へ
+Action:tenshi,131
+#Sleep:40;
+
+#ステージタイトル表示
+Object:data/scenario/reimu/effect/StageTitle006.bmp,0,256,-32
+
+#Sleep:20;
+#自キャラ画面上から落下して登場
+Action:reimu,6
+Action:reimu,7
+#Sleep:40;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+#Sleep:10;
+
+Sleep:180;
+Face:reimu,普
+さあ、何処に居るのかしら
+地震の責任を取ってくれる奴は\
+
+それにしても、雲の上は静かねー\
+Face:reimu,
+
+Hide:1
+
+#イベント　メッセージウィンドウ消去
+#イベント　カメラ上空へ
+Action:tenshi,132
+
+#イベント　地震
+Action:tenshi,133
+
+Sleep:60
+
+Face:tenshi,無
+天にして大地を制し\
+
+Hide:1
+#Sleep:120
+
+Action:tenshi,133
+#イベント　地震
+地にして要を除き\
+
+Hide:1
+Sleep:60
+
+# 天子登場
+#イベント　大地震
+#イベント　カメラフォーカス元へ
+Action:tenshi,134
+#sleep,180
+
+人の緋色の心を映し出せ\
+
+#登場ポーズ終了指令
+Action:tenshi,139
+#sleep,30
+
+Face:reimu,普
+あんたが地震を起こしたり、天候をおかしくした
+犯人ね？\
+
+Face:tenshi,普
+異変解決の専門家ね
+待ってたわ\
+
+Face:reimu,怒
+何が待ってた、よ
+まるで解決して欲しいかのようじゃない\
+
+Face:tenshi,余
+異変解決<accent>ごっこ</accent>は、何も妖怪相手じゃなくても
+良いでしょ？\
+
+#Name:非想非非想天の娘　比那名居天子
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,普
+私は天界に住む<ruby ひななゐ>比那名居</ruby>の人\
+
+Face:tenshi,普
+毎日、歌、歌、酒、踊り、歌の繰り返し
+天界の生活はほんと、のんびりしていてねぇ\
+
+Face:reimu,普
+羨ましいわね
+自慢？\
+
+Face:tenshi,怒
+何言ってるのよ
+退屈だって言ってるの！\
+
+Face:tenshi,普
+だから、貴方が地上で色々な妖怪相手に
+遊んでいるのを見てきたわ\
+
+Face:reimu,汗
+遊んでいた訳じゃないけどね\
+
+Face:tenshi,普
+それを見て思ったの
+私も異変解決ごっこがしたいって\
+
+Face:tenshi,嬉
+だから起こしちゃった、異変\
+
+Face:reimu,怒
+起こしちゃった、じゃないでしょ！
+そのお陰で神社は滅茶苦茶よ！！\
+
+Face:tenshi,余
+あれは試し打ちよ
+本番はこれから\
+
+Face:tenshi,普
+この、<ruby ひそうのつるぎ>緋想の剣</ruby>は人の気質を丸裸にする
+剣なの\
+
+これで、緋色の霧を集めてー\
+Face:tenshi,
+
+#イベント　天子地面に剣を刺して地震発生
+Action:tenshi,135
+Action:tenshi,136
+
+Face:tenshi,余
+集まった天の気が大地を揺るがすの\
+
+Face:tenshi,普
+さらに私の足下にある要石を動かし\
+
+Face:tenshi,
+
+#イベント　要石を動かして地震発生
+Action:tenshi,137
+Action:tenshi,138
+
+Face:tenshi,嬉
+これから幻想郷全域の大地を揺るがすでしょう\
+
+Face:reimu,怒
+ふん、なめきったもんね\
+Face:reimu,怒
+どういう仕組みであろうと、地震を起こした
+犯人だって事は間違いないみたいね\
+
+Face:reimu,普
+相手が天人だろうが変人だろうが
+私の仕事は一つ\
+
+Bgm:data/bgm/st05.ogg
+
+Face:reimu,決
+異変を起こす奴を退治する事のみ！
+あとついでに、神社の修理もやって貰うわよ\
+
+Face:tenshi,余
+うふふ
+そうそう！その意気込みが欲しかったのよ！\
+
+Face:tenshi,惑
+私はいつまでも退屈な天界暮らしを
+していたくはないわ\
+
+Face:tenshi,嬉
+それも今日でおしまい\
+
+Face:tenshi,余
+空の天気も、地の安定も、人の気質も
+私の掌の上\
+
+Face:tenshi,決
+数多の妖怪を退治してきた貴方の天気！
+見せて貰うわよ\
+
+
+#戦闘開始処理
+Action:reimu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+
+End:
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　有頂天へ
+Action:tenshi,180
+#天候解除
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:reimu,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

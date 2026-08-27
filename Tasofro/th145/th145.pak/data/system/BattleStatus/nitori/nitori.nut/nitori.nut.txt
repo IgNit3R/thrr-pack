@@ -1,0 +1,484 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\nitori\nitori.nut: 
+sourcename: ""
+name: "main"
+nliterals: 13
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 5
+ndefaultparams: 0
+ninstructions: 44
+nfunctions: 2
+Literals: [
+    0: "NitoriStatus"
+    1: "BattleStatus"
+    2: "bullet"
+    3: "charge"
+    4: "ex_f"
+    5: "ex_f_max"
+    6: "ex_b"
+    7: "ex_b_max"
+    8: "nessie"
+    9: "practice_nessie"
+    10: "ligit_alpha"
+    11: "Nitori_BottomDraw"
+    12: "NitoriBottomDraw"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 43
+    1: name: "this", pos: 0, start_op: 0, end_op: 43
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 19, op: 32
+    2: line: 22, op: 33
+    3: line: 48, op: 37
+    4: line: 83, op: 42
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "NitoriStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "bullet")
+    5:  loadint(s5, 999)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "charge")
+    8:  loadint(s5, 100)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_f")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_f_max")
+    14:  loadint(s5, 320)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "ex_b")
+    17:  loadint(s5, 0)
+    18:  newslota(0, s3, s4, s5)
+    19:  load(s4, "ex_b_max")
+    20:  loadint(s5, 320)
+    21:  newslota(0, s3, s4, s5)
+    22:  load(s4, "nessie")
+    23:  loadint(s5, 0)
+    24:  newslota(0, s3, s4, s5)
+    25:  load(s4, "practice_nessie")
+    26:  loadint(s5, -1)
+    27:  newslota(0, s3, s4, s5)
+    28:  load(s4, "ligit_alpha")
+    29:  loadfloat(s5, 0)
+    30:  newslota(0, s3, s4, s5)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 19)
+    33:  line(-, 22)
+    34:  load(s2, "Nitori_BottomDraw")
+    35:  closure(s3, 0)
+    36:  newslot(s2, s0, s2, s3)
+    37:  line(-, 48)
+    38:  load(s2, "NitoriBottomDraw")
+    39:  loadnulls(s3, 1)
+    40:  closure(s3, 1)
+    41:  newslot(s2, s0, s2, s3)
+    42:  line(-, 83)
+    43:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Nitori_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 38
+        nfunctions: 1
+        Literals: [
+            0: "status"
+            1: "NitoriStatus"
+            2: "player_id"
+            3: "NitoriBottomDraw"
+            4: "Blit"
+            5: "bindenv"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "dummy_layer", pos: 1, start_op: 25, end_op: 35
+            1: name: "this", pos: 0, start_op: 0, end_op: 37
+          ]
+        Line Informations: [
+            0: line: 25, op: 1
+            1: line: 28, op: 7
+            2: line: 30, op: 14
+            3: line: 32, op: 17
+            4: line: 34, op: 24
+            5: line: 36, op: 25
+            6: line: 42, op: 32
+            7: line: 45, op: 36
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 25)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "NitoriStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 28)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 30)
+            14:  prepcallk(s1, "NitoriBottomDraw", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 19)
+            17:  line(-, 32)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 13)
+            23:  line(-, 34)
+            24:  newobj(s1, 0, 0, 0)
+            25:  line(-, 36)
+            26:  load(s2, "Blit")
+            27:  closure(s3, 0)
+            28:  prepcallk(s3, "bindenv", s3, s4)
+            29:  move(s5, s0)
+            30:  call(3, s3, s4, 2)
+            31:  newslot(s255, s1, s2, s3)
+            32:  line(-, 42)
+            33:  prepcallk(s2, "NitoriBottomDraw", s0, s3)
+            34:  move(s4, s1)
+            35:  call(255, s2, s3, 2)
+            36:  line(-, 45)
+            37:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 4
+                nparameters: 10
+                noutervals: 0
+                nlocalvarinfos: 10
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 22
+                nfunctions: 0
+                Literals: [
+                    0: "bottom"
+                    1: "layer0"
+                    2: "Blit"
+                    3: "BlitScale"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "_x"
+                    2: "_y"
+                    3: "_w"
+                    4: "_h"
+                    5: "_img"
+                    6: "_src_x"
+                    7: "_src_y"
+                    8: "_blend"
+                    9: "_alpha"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_alpha", pos: 9, start_op: 0, end_op: 21
+                    1: name: "_blend", pos: 8, start_op: 0, end_op: 21
+                    2: name: "_src_y", pos: 7, start_op: 0, end_op: 21
+                    3: name: "_src_x", pos: 6, start_op: 0, end_op: 21
+                    4: name: "_img", pos: 5, start_op: 0, end_op: 21
+                    5: name: "_h", pos: 4, start_op: 0, end_op: 21
+                    6: name: "_w", pos: 3, start_op: 0, end_op: 21
+                    7: name: "_y", pos: 2, start_op: 0, end_op: 21
+                    8: name: "_x", pos: 1, start_op: 0, end_op: 21
+                    9: name: "this", pos: 0, start_op: 0, end_op: 21
+                  ]
+                Line Informations: [
+                    0: line: 38, op: 1
+                    1: line: 39, op: 11
+                    2: line: 40, op: 20
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 38)
+                    1:  getk(s10, "bottom", s0)
+                    2:  getk(s10, "layer0", s10)
+                    3:  prepcallk(s10, "Blit", s10, s11)
+                    4:  loadint(s12, 1280)
+                    5:  sub(s12, s1, s12)
+                    6:  dmove(s13, s2, s14, s3)
+                    7:  dmove(s15, s4, s16, s5)
+                    8:  dmove(s17, s6, s18, s7)
+                    9:  dmove(s19, s8, s20, s9)
+                    10:  call(255, s10, s11, 10)
+                    11:  line(-, 39)
+                    12:  getk(s10, "bottom", s0)
+                    13:  getk(s10, "layer0", s10)
+                    14:  prepcallk(s10, "BlitScale", s10, s11)
+                    15:  loadint(s12, -1)
+                    16:  loadint(s13, 1)
+                    17:  loadint(s14, 0)
+                    18:  loadint(s15, 0)
+                    19:  call(255, s10, s11, 5)
+                    20:  line(-, 40)
+                    21:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 21
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "NitoriBottomDraw"
+        nliterals: 16
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 7
+        nlineinfos: 19
+        ndefaultparams: 1
+        ninstructions: 154
+        nfunctions: 0
+        Literals: [
+            0: "bottom"
+            1: "layer0"
+            2: "status"
+            3: "spell_gauge_size"
+            4: "Blit"
+            5: "images"
+            6: "resource"
+            7: "nessie_gauge"
+            8: "BLEND_ALPHA"
+            9: "nessie"
+            10: "ligit_alpha"
+            11: "act"
+            12: "BattleStatus"
+            13: "global"
+            14: "my_rand"
+            15: "BLEND_ADD"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_dst_layer"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "w", pos: 6, start_op: 65, end_op: 151
+            1: name: "src_y", pos: 5, start_op: 35, end_op: 151
+            2: name: "y", pos: 4, start_op: 15, end_op: 151
+            3: name: "x", pos: 3, start_op: 14, end_op: 151
+            4: name: "dst_layer", pos: 2, start_op: 7, end_op: 151
+            5: name: "_dst_layer", pos: 1, start_op: 0, end_op: 153
+            6: name: "this", pos: 0, start_op: 0, end_op: 153
+          ]
+        Line Informations: [
+            0: line: 50, op: 1
+            1: line: 53, op: 7
+            2: line: 54, op: 15
+            3: line: 55, op: 19
+            4: line: 57, op: 33
+            5: line: 59, op: 35
+            6: line: 61, op: 41
+            7: line: 63, op: 43
+            8: line: 65, op: 49
+            9: line: 67, op: 51
+            10: line: 69, op: 57
+            11: line: 72, op: 58
+            12: line: 73, op: 65
+            13: line: 74, op: 69
+            14: line: 76, op: 73
+            15: line: 78, op: 96
+            16: line: 79, op: 114
+            17: line: 80, op: 126
+            18: line: 81, op: 152
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 50)
+            1:  jz(s1, 2)
+            2:  move(s2, s1)
+            3:  jmp(-, 3)
+            4:  getk(s3, "bottom", s0)
+            5:  getk(s3, "layer0", s3)
+            6:  move(s2, s3)
+            7:  line(-, 53)
+            8:  loadint(s3, 295)
+            9:  loadint(s4, 300)
+            10:  getk(s5, "status", s0)
+            11:  getk(s5, "spell_gauge_size", s5)
+            12:  sub(s4, s5, s4)
+            13:  sub(s3, s4, s3)
+            14:  loadint(s4, 662)
+            15:  line(-, 54)
+            16:  loadint(s5, 195)
+            17:  jcmp(s5, 1, s3, CMP_L)
+            18:  loadint(s3, 195)
+            19:  line(-, 55)
+            20:  prepcallk(s5, "Blit", s2, s6)
+            21:  dmove(s7, s3, s8, s4)
+            22:  loadint(s9, 110)
+            23:  loadint(s10, 22)
+            24:  getk(s11, "status", s0)
+            25:  getk(s11, "images", s11)
+            26:  getk(s11, "resource", s11)
+            27:  getk(s11, "nessie_gauge", s11)
+            28:  loadint(s12, 0)
+            29:  loadint(s13, 0)
+            30:  getk(s14, "BLEND_ALPHA", s0)
+            31:  loadfloat(s15, 1)
+            32:  call(255, s5, s6, 10)
+            33:  line(-, 57)
+            34:  loadint(s5, 58)
+            35:  line(-, 59)
+            36:  getk(s6, "status", s0)
+            37:  getk(s6, "nessie", s6)
+            38:  loadint(s7, 250)
+            39:  jcmp(s7, 3, s6, CMP_LE)
+            40:  line(-, 61)
+            41:  loadint(s5, 22)
+            42:  jmp(-, 15)
+            43:  line(-, 63)
+            44:  getk(s6, "status", s0)
+            45:  getk(s6, "nessie", s6)
+            46:  loadint(s7, 500)
+            47:  jcmp(s7, 3, s6, CMP_LE)
+            48:  line(-, 65)
+            49:  loadint(s5, 34)
+            50:  jmp(-, 7)
+            51:  line(-, 67)
+            52:  getk(s6, "status", s0)
+            53:  getk(s6, "nessie", s6)
+            54:  loadint(s7, 999)
+            55:  jcmp(s7, 2, s6, CMP_LE)
+            56:  line(-, 69)
+            57:  loadint(s5, 46)
+            58:  line(-, 72)
+            59:  getk(s6, "status", s0)
+            60:  getk(s6, "nessie", s6)
+            61:  loadint(s7, 84)
+            62:  mul(s6, s7, s6)
+            63:  loadint(s7, 1000)
+            64:  div(s6, s7, s6)
+            65:  line(-, 73)
+            66:  loadint(s7, 0)
+            67:  jcmp(s7, 1, s6, CMP_L)
+            68:  loadint(s6, 0)
+            69:  line(-, 74)
+            70:  loadint(s7, 84)
+            71:  jcmp(s7, 1, s6, CMP_G)
+            72:  loadint(s6, 84)
+            73:  line(-, 76)
+            74:  prepcallk(s7, "Blit", s2, s8)
+            75:  loadint(s9, 15)
+            76:  add(s9, s9, s3)
+            77:  loadint(s10, 84)
+            78:  sub(s10, s6, s10)
+            79:  add(s9, s10, s9)
+            80:  loadint(s10, 6)
+            81:  add(s10, s10, s4)
+            82:  move(s11, s6)
+            83:  loadint(s12, 11)
+            84:  getk(s13, "status", s0)
+            85:  getk(s13, "images", s13)
+            86:  getk(s13, "resource", s13)
+            87:  getk(s13, "nessie_gauge", s13)
+            88:  loadint(s14, 1)
+            89:  loadint(s15, 84)
+            90:  sub(s15, s6, s15)
+            91:  add(s14, s15, s14)
+            92:  move(s15, s5)
+            93:  getk(s16, "BLEND_ALPHA", s0)
+            94:  loadfloat(s17, 1)
+            95:  call(255, s7, s8, 10)
+            96:  line(-, 78)
+            97:  getk(s7, "status", s0)
+            98:  load(s8, "ligit_alpha")
+            99:  loadroot(s9)
+            100:  getk(s9, "act", s9)
+            101:  getk(s9, "BattleStatus", s9)
+            102:  getk(s9, "global", s9)
+            103:  prepcallk(s9, "my_rand", s9, s10)
+            104:  call(9, s9, s10, 1)
+            105:  loadint(s10, 100)
+            106:  mod(s9, s10, s9)
+            107:  loadfloat(s10, 100)
+            108:  div(s9, s10, s9)
+            109:  loadfloat(s10, 0.5)
+            110:  sub(s9, s10, s9)
+            111:  loadfloat(s10, 0.5)
+            112:  mul(s9, s10, s9)
+            113:  comparith(s7, 458761, s8, 43)
+            114:  line(-, 79)
+            115:  getk(s7, "status", s0)
+            116:  dload(s8, "ligit_alpha", s9, "status")
+            117:  get(s9, s0, s9)
+            118:  getk(s9, "ligit_alpha", s9)
+            119:  loadfloat(s10, 0.8)
+            120:  mul(s9, s10, s9)
+            121:  loadfloat(s10, 0.5)
+            122:  loadfloat(s11, 0.2)
+            123:  mul(s10, s11, s10)
+            124:  add(s9, s10, s9)
+            125:  set(s255, s7, s8, s9)
+            126:  line(-, 80)
+            127:  prepcallk(s7, "Blit", s2, s8)
+            128:  loadint(s9, 15)
+            129:  add(s9, s9, s3)
+            130:  loadint(s10, 84)
+            131:  sub(s10, s6, s10)
+            132:  add(s9, s10, s9)
+            133:  loadint(s10, 6)
+            134:  add(s10, s10, s4)
+            135:  move(s11, s6)
+            136:  loadint(s12, 11)
+            137:  getk(s13, "status", s0)
+            138:  getk(s13, "images", s13)
+            139:  getk(s13, "resource", s13)
+            140:  getk(s13, "nessie_gauge", s13)
+            141:  loadint(s14, 1)
+            142:  loadint(s15, 84)
+            143:  sub(s15, s6, s15)
+            144:  add(s14, s15, s14)
+            145:  move(s15, s5)
+            146:  getk(s16, "BLEND_ADD", s0)
+            147:  getk(s17, "status", s0)
+            148:  getk(s17, "ligit_alpha", s17)
+            149:  loadfloat(s18, 0.1)
+            150:  mul(s17, s18, s17)
+            151:  call(255, s7, s8, 10)
+            152:  line(-, 81)
+            153:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 19
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

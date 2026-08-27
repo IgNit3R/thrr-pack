@@ -1,0 +1,257 @@
+## =======================================================================
+#Stage:Final
+#Title:太公望の釣り堀
+#Place:有頂天
+#Weather:極光
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:suika,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#敵画面外に待機
+Action:tenshi,100
+#カメラ初期位置固定
+Action:tenshi,130
+#自キャラ画面外待機
+Action:suika,1
+
+#向き固定解除
+Action:suika,152
+
+#天候初期化
+Action:tenshi,153
+
+Label:Start
+
+Sleep:85;
+
+PlayBgm:data/bgm/ta07.ogg
+
+#フェードイン　白
+Action:suika,163
+
+#カメラ下へ
+Action:tenshi,131
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/suika/effect/StageTitle003.bmp,0,256,-32
+#画面上から落下して登場
+Action:suika,50
+Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Action:suika,51
+
+#sleep,60
+Face:suika,嬉
+天界は広いねぇ\
+
+Face:suika,普
+我々は地上に住む場所を失ったというのに\
+
+Face:suika,普
+山ですら、我々の居場所が無いというのに\
+
+Face:suika,余
+おーい出てこいよー
+花も綺麗だし酒でも一杯やろうじゃん\
+
+Hide:1
+
+#イベント　メッセージウィンドウ消去
+#イベント　カメラ上空へ
+Action:tenshi,132
+
+#イベント　地震
+Action:tenshi,133
+
+#sleep,180
+
+
+Face:tenshi,無
+花は半開を見て\
+
+
+Hide:1
+Sleep:30
+
+Action:tenshi,133
+#イベント　地震
+酒は微酔に呑む\
+
+Hide:1
+#sleep,60
+
+# 天子登場
+#イベント　大地震
+#イベント　カメラフォーカス元へ
+Action:tenshi,134
+#sleep,180
+
+それが天界に入る者の心得です\
+
+#登場ポーズ終了指令
+#sleep,30
+
+Face:suika,普
+まあまあそう言わずに\
+
+Action:tenshi,139
+
+#Name:非想非非想天の娘　比那名居天子
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,普
+貴方はもしかして、鬼？
+まさかねぇ\
+
+Face:suika,怒
+鬼で何が悪い
+鬼の酒は呑めないって言うのかい？\
+
+Face:tenshi,驚
+いえいえ、まさか地上に鬼が居るなんて
+思っていなかったので\
+
+Face:tenshi,嬉
+それで遙々天界まで何の用でしょう？\
+
+Hide:1
+Sleep:20
+Action:suika,107
+Sleep:30
+
+Face:suika,余
+いやさあ、あんた
+みんなの心、萃めてるでしょ？\
+
+Face:suika,普
+何が目的なのさ\
+
+Face:tenshi,驚
+流石、もう気付いたのですか……
+目的はというと特にないです\
+
+Face:suika,余
+ほう？\
+
+Face:tenshi,嬉
+貴方風に言えば、酒の肴、ですかね\
+
+Face:suika,嬉
+へぇそうかい、ならいいけどさ\
+
+Face:suika,惑
+ただねぇ、
+萃め方が雑で、みんな洩れちゃってるんだが\
+
+Face:tenshi,余
+洩れて天気にならないと魚は釣れないからね\
+
+Face:suika,余
+肴だけに魚、ねぇ
+本当、天人は魚釣りが好きだねぇ\
+
+Face:tenshi,驚
+それは昔からの風習ですから
+ってそれで貴方は何が目的？\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:suika,余
+そうだねぇ、
+この広い天界の一部を貸してくれないかねぇ\
+
+Face:tenshi,惑
+はい？\
+
+Face:suika,余
+のんびりひなたぼっこしたり……
+みんなでお酒を呑んだり……\
+
+Face:suika,嬉
+夢が広がるねぇ\
+
+
+PlayBgm:data/bgm/st05.ogg
+
+Face:tenshi,驚
+ちょっとちょっとそんな事駄目に
+決まってるでしょ？\
+
+Face:suika,決
+では力ずくで\
+
+Face:tenshi,怒
+ふん、こっちが下手に出たからって
+図に乗るんじゃないよ！\
+
+Face:tenshi,決
+その自信が何処から出てくるのか
+見極めてやる\
+
+
+#戦闘開始処理
+Action:suika,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:tenshi,決
+さあさあ、地面で這い蹲って酒でも呑むが良いわ！\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　有頂天へ
+Action:tenshi,180
+#天候解除
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:suika,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

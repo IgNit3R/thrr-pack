@@ -1,0 +1,236 @@
+## =======================================================================
+#Stage:3
+#Title:二つ目の成仏
+#Place:玄武の沢
+#Weather:川霧
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:youmu,160,0,0,8888FF
+Character:komachi,160,0,1,FF8888
+Character:yukari,160,0,2,FF8888
+
+#カメラ固定
+Action:youmu,4
+
+#フォーカス瞬間移動
+#Action:youmu,11
+
+#敵フィールド端で待機
+Action:komachi,100
+
+#向き固定解除
+Action:youmu,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta00.ogg
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/youmu/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60
+
+Face:youmu,普
+そんな事は無いと思うけど……\
+
+Face:youmu,惑
+一応死神にも聞いてみようかな……\
+
+Face:youmu,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:komachi,101
+Action:komachi,102
+Sleep:20
+
+Face:komachi,普
+どうした？
+眠そうな顔して\
+
+# 名前のテロップ
+Object:data/scenario/komachi/effect/Name.bmp,2,352,304
+
+Face:youmu,汗
+いえ、最近幽霊の姿が減りましてね……
+眠くはないですが\
+
+Hide:1
+#敵天候
+Action:komachi,103
+Sleep:60
+
+Face:komachi,驚
+ああ、幽霊か
+そうだ、その事でお前さんに忠告する事があった\
+
+Face:youmu,普
+はい？\
+
+Face:komachi,普
+お前さんだろ？
+最近、幽霊を斬ってまわっているのは\
+
+Face:komachi,怒
+幽霊達は斬られてどっかに
+いっちまってるんだ\
+
+Face:youmu,驚
+え？　斬られて？
+どういう事？\
+
+Face:komachi,普
+それはこっちが聞きたい\
+
+Face:youmu,驚
+最低でも私は斬っていない\
+
+Face:komachi,余
+お前さん以外に<ruby そんな>幽霊を斬る</ruby>事出来る奴が
+いるのかい？\
+
+Face:komachi,決
+身に覚えがないのなら
+夢遊病の気でも疑ってみるんだな！\
+
+
+#戦闘開始
+PlayBgm:data/bgm/st02.ogg
+Action:youmu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:komachi,余
+さてさて、最近は仕事が少なくなって楽だね\
+
+Face:komachi,汗
+……ってそんな手放しで喜ぶ訳にも行かないか\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:komachi,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:komachi,200
+#攻撃側ニュートラル移行検知
+Action:youmu,202
+
+#自天候
+Action:youmu,103
+Sleep:60
+
+Face:youmu,怒
+私はやってませんって
+私も幽霊の件で調査をしてるのです！\
+
+Face:komachi,負
+そうなのか？\
+
+Face:komachi,負
+他にそんな事が出来る奴がいるのか……？\
+
+Face:komachi,無
+Face:youmu,無
+<color FFFFFF>それが居るのよ</color>\
+
+Face:youmu,
+Face:komachi,
+
+Hide:1
+
+Sleep:30
+
+#二番手登場
+Action:yukari,105
+
+#Weather:二番手天候
+Action:yukari,103
+
+#105終了検知
+Action:yukari,106
+
+Face:youmu,驚
+へ！？
+紫様？\
+
+Face:yukari,普
+妖夢、幽霊を斬れるのは貴方だけではない\
+
+Face:youmu,普
+そ、そうなんですか\
+
+# 名前のテロップ
+Object:data/scenario/yukari/effect/Name.bmp,2,352,304
+
+Face:yukari,普
+幽霊が勝手に斬られている現状は危険ですわ\
+
+Face:youmu,惑
+しかし、何の為に斬られているのでしょう？\
+
+Face:yukari,普
+さあ、こっちへ……\
+
+Hide:1
+
+Sleep:10
+
+#やられキャラ画面退場
+Action:komachi,201
+
+#ステージ間調整自キャラ
+Action:youmu,150
+Sleep:15
+
+#ステージ間調整敵
+Action:yukari,110
+Stage:1,120
+CrossFadeBgm:data/bgm/st01.ogg,2000,1
+
+#カメラ中央あわせ
+Action:youmu,4
+
+#ステージ間調整敵　終了検知
+Action:yukari,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

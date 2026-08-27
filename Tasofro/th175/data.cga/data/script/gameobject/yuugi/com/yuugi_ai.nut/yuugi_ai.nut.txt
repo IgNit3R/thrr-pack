@@ -1,0 +1,491 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\yuugi\com\yuugi_ai.nut: 
+sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+name: "main"
+nliterals: 2
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 3
+ndefaultparams: 0
+ninstructions: 7
+nfunctions: 2
+Literals: [
+    0: "begin_battle"
+    1: "stage_in"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 6
+    1: name: "this", pos: 0, start_op: 0, end_op: 6
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 38, op: 3
+    2: line: 76, op: 6
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "begin_battle")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "stage_in")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+        name: "begin_battle"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 19
+        nfunctions: 1
+        Literals: [
+            0: "visible"
+            1: "direction_h"
+            2: "invincible_time"
+            3: "state"
+            4: "com_stack"
+            5: "com_state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 18
+          ]
+        Line Informations: [
+            0: line: 1, op: 0
+            1: line: 2, op: 0
+            2: line: 3, op: 3
+            3: line: 4, op: 6
+            4: line: 14, op: 9
+            5: line: 23, op: 12
+            6: line: 24, op: 15
+            7: line: 36, op: 18
+            8: line: 37, op: 18
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "visible")
+            1:  loadbool(s2, 0)
+            2:  set(s255, s0, s1, s2)
+            3:  load(s1, "direction_h")
+            4:  loadint(s2, -1)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "invincible_time")
+            7:  loadint(s2, -1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "state")
+            10:  loadnulls(s2, 1)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "com_stack")
+            13:  newobj(s2, 0, 0, 1)
+            14:  set(s255, s0, s1, s2)
+            15:  load(s1, "com_state")
+            16:  closure(s2, 0)
+            17:  set(s255, s0, s1, s2)
+            18:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+                name: null
+                nliterals: 5
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 8
+                ndefaultparams: 0
+                ninstructions: 17
+                nfunctions: 0
+                Literals: [
+                    0: "state"
+                    1: "com_stack"
+                    2: "len"
+                    3: "Activate_ComRoutine"
+                    4: "Activate_ComStack"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 16
+                  ]
+                Line Informations: [
+                    0: line: 24, op: 0
+                    1: line: 25, op: 0
+                    2: line: 27, op: 4
+                    3: line: 28, op: 9
+                    4: line: 29, op: 11
+                    5: line: 32, op: 13
+                    6: line: 33, op: 15
+                    7: line: 36, op: 16
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "state", s0)
+                    1:  loadnulls(s2, 1)
+                    2:  eq(s1, 2, s1, 0)
+                    3:  jz(s1, 12)
+                    4:  getk(s1, "com_stack", s0)
+                    5:  prepcallk(s1, "len", s1, s2)
+                    6:  call(1, s1, s2, 1)
+                    7:  loadint(s2, 0)
+                    8:  jcmp(s2, 4, s1, CMP_LE)
+                    9:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+                    10:  call(255, s1, s2, 1)
+                    11:  return(255, 0)
+                    12:  jmp(-, 3)
+                    13:  prepcallk(s1, "Activate_ComStack", s0, s2)
+                    14:  call(255, s1, s2, 1)
+                    15:  return(255, 0)
+                    16:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+        name: "stage_in"
+        nliterals: 13
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 41
+        nfunctions: 1
+        Literals: [
+            0: "visible"
+            1: "direction_h"
+            2: "invincible_time"
+            3: "x"
+            4: "camera"
+            5: "y"
+            6: "world"
+            7: "top"
+            8: "vx"
+            9: "vy"
+            10: "g"
+            11: "count"
+            12: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "val_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "val_", pos: 1, start_op: 0, end_op: 40
+            1: name: "this", pos: 0, start_op: 0, end_op: 40
+          ]
+        Line Informations: [
+            0: line: 38, op: 0
+            1: line: 39, op: 0
+            2: line: 40, op: 3
+            3: line: 41, op: 6
+            4: line: 42, op: 9
+            5: line: 43, op: 18
+            6: line: 44, op: 25
+            7: line: 45, op: 34
+            8: line: 46, op: 37
+            9: line: 76, op: 40
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s2, "visible")
+            1:  loadbool(s3, 0)
+            2:  set(s255, s0, s2, s3)
+            3:  load(s2, "direction_h")
+            4:  loadint(s3, -1)
+            5:  set(s255, s0, s2, s3)
+            6:  load(s2, "invincible_time")
+            7:  loadint(s3, -1)
+            8:  set(s255, s0, s2, s3)
+            9:  load(s2, "x")
+            10:  loadroot(s3)
+            11:  getk(s3, "camera", s3)
+            12:  getk(s3, "x", s3)
+            13:  loadint(s4, 320)
+            14:  add(s3, s4, s3)
+            15:  loadint(s4, 64)
+            16:  add(s3, s4, s3)
+            17:  set(s255, s0, s2, s3)
+            18:  load(s2, "y")
+            19:  loadroot(s3)
+            20:  getk(s3, "world", s3)
+            21:  getk(s3, "top", s3)
+            22:  loadint(s4, 128)
+            23:  add(s3, s4, s3)
+            24:  set(s255, s0, s2, s3)
+            25:  load(s2, "vx")
+            26:  loadint(s3, 0)
+            27:  set(s255, s0, s2, s3)
+            28:  load(s2, "vy")
+            29:  loadint(s3, 0)
+            30:  set(s255, s0, s2, s3)
+            31:  load(s2, "g")
+            32:  loadint(s3, 0)
+            33:  set(s255, s0, s2, s3)
+            34:  load(s2, "count")
+            35:  loadint(s3, 0)
+            36:  set(s255, s0, s2, s3)
+            37:  load(s2, "state")
+            38:  closure(s3, 0)
+            39:  set(s255, s0, s2, s3)
+            40:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 11
+                ndefaultparams: 0
+                ninstructions: 29
+                nfunctions: 1
+                Literals: [
+                    0: "count"
+                    1: "visible"
+                    2: "motion"
+                    3: "roll"
+                    4: "vx"
+                    5: "direction_h"
+                    6: "vy"
+                    7: "g"
+                    8: "ground"
+                    9: "state"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 28
+                  ]
+                Line Informations: [
+                    0: line: 46, op: 0
+                    1: line: 47, op: 0
+                    2: line: 48, op: 2
+                    3: line: 49, op: 6
+                    4: line: 50, op: 9
+                    5: line: 51, op: 11
+                    6: line: 52, op: 16
+                    7: line: 53, op: 19
+                    8: line: 54, op: 22
+                    9: line: 55, op: 25
+                    10: line: 75, op: 28
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 60)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 22)
+                    6:  load(s1, "visible")
+                    7:  loadbool(s2, 1)
+                    8:  set(s255, s0, s1, s2)
+                    9:  dload(s1, "motion", s2, "roll")
+                    10:  set(s255, s0, s1, s2)
+                    11:  load(s1, "vx")
+                    12:  loadfloat(s2, 5)
+                    13:  getk(s3, "direction_h", s0)
+                    14:  mul(s2, s3, s2)
+                    15:  set(s255, s0, s1, s2)
+                    16:  load(s1, "vy")
+                    17:  loadfloat(s2, -2)
+                    18:  set(s255, s0, s1, s2)
+                    19:  load(s1, "g")
+                    20:  loadfloat(s2, 0.25)
+                    21:  set(s255, s0, s1, s2)
+                    22:  load(s1, "ground")
+                    23:  loadbool(s2, 0)
+                    24:  set(s255, s0, s1, s2)
+                    25:  load(s1, "state")
+                    26:  closure(s2, 0)
+                    27:  set(s255, s0, s1, s2)
+                    28:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+                        name: null
+                        nliterals: 9
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 10
+                        ndefaultparams: 0
+                        ninstructions: 30
+                        nfunctions: 1
+                        Literals: [
+                            0: "vy"
+                            1: "motion"
+                            2: "jump_fall"
+                            3: "ground"
+                            4: "free_map"
+                            5: "g"
+                            6: "landing"
+                            7: "count"
+                            8: "state"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 29
+                          ]
+                        Line Informations: [
+                            0: line: 55, op: 0
+                            1: line: 56, op: 0
+                            2: line: 57, op: 5
+                            3: line: 58, op: 12
+                            4: line: 59, op: 15
+                            5: line: 60, op: 18
+                            6: line: 61, op: 21
+                            7: line: 62, op: 23
+                            8: line: 63, op: 26
+                            9: line: 73, op: 29
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  getk(s1, "vy", s0)
+                            1:  loadfloat(s2, 3)
+                            2:  jcmp(s2, 2, s1, CMP_G)
+                            3:  dload(s1, "motion", s2, "jump_fall")
+                            4:  set(s255, s0, s1, s2)
+                            5:  getk(s1, "vy", s0)
+                            6:  loadfloat(s2, 0)
+                            7:  cmp(s1, s2, s1, CMP_G)
+                            8:  and(s1, 2, s1)
+                            9:  getk(s2, "ground", s0)
+                            10:  move(s1, s2)
+                            11:  jz(s1, 17)
+                            12:  load(s1, "free_map")
+                            13:  loadbool(s2, 0)
+                            14:  set(s255, s0, s1, s2)
+                            15:  load(s1, "vy")
+                            16:  loadint(s2, 0)
+                            17:  set(s255, s0, s1, s2)
+                            18:  load(s1, "g")
+                            19:  loadint(s2, 0)
+                            20:  set(s255, s0, s1, s2)
+                            21:  dload(s1, "motion", s2, "landing")
+                            22:  set(s255, s0, s1, s2)
+                            23:  load(s1, "count")
+                            24:  loadint(s2, 0)
+                            25:  set(s255, s0, s1, s2)
+                            26:  load(s1, "state")
+                            27:  closure(s2, 0)
+                            28:  set(s255, s0, s1, s2)
+                            29:  return(255, 0)
+                          ]
+                        Functions: [
+                            0: 
+                                sourcename: "data\script\gameobject\yuugi\com\yuugi_ai.nut"
+                                name: null
+                                nliterals: 5
+                                nparameters: 1
+                                noutervals: 0
+                                nlocalvarinfos: 1
+                                nlineinfos: 8
+                                ndefaultparams: 0
+                                ninstructions: 20
+                                nfunctions: 0
+                                Literals: [
+                                    0: "VX_Brake"
+                                    1: "count"
+                                    2: "motion"
+                                    3: "stand"
+                                    4: "Activate_ComRoutine"
+                                  ]
+                                Parameters: [
+                                    0: "this"
+                                  ]
+                                Outer Values: [  ]
+                                Local variables informations: [
+                                    0: name: "this", pos: 0, start_op: 0, end_op: 19
+                                  ]
+                                Line Informations: [
+                                    0: line: 63, op: 0
+                                    1: line: 64, op: 0
+                                    2: line: 65, op: 4
+                                    3: line: 66, op: 6
+                                    4: line: 67, op: 12
+                                    5: line: 68, op: 16
+                                    6: line: 69, op: 18
+                                    7: line: 71, op: 19
+                                  ]
+                                Default Parameters: [  ]
+                                Instructions: [
+                                    0:  prepcallk(s1, "VX_Brake", s0, s2)
+                                    1:  move(s3, s0)
+                                    2:  loadfloat(s4, 0.5)
+                                    3:  call(255, s1, s2, 3)
+                                    4:  load(s1, "count")
+                                    5:  pinc(s1, s0, s1, 1)
+                                    6:  getk(s1, "count", s0)
+                                    7:  loadint(s2, 30)
+                                    8:  eq(s1, 2, s1, 0)
+                                    9:  jz(s1, 2)
+                                    10:  dload(s1, "motion", s2, "stand")
+                                    11:  set(s255, s0, s1, s2)
+                                    12:  getk(s1, "count", s0)
+                                    13:  loadint(s2, 60)
+                                    14:  eq(s1, 2, s1, 0)
+                                    15:  jz(s1, 3)
+                                    16:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+                                    17:  call(255, s1, s2, 1)
+                                    18:  return(255, 0)
+                                    19:  return(255, 0)
+                                  ]
+                                Functions: [  ]
+                                stacksize: 5
+                                bgenerator: 0
+                                varparams: 0
+
+                          ]
+                        stacksize: 3
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

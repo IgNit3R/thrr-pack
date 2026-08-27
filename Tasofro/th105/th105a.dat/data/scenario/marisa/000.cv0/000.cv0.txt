@@ -1,0 +1,200 @@
+## =======================================================================
+#Stage:1
+#Title:高湿の夏
+#Place:人形の森
+#Weather:霧雨
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+
+Character:marisa,160,0,0,8888FF
+Character:alice,160,0,1,FF8888
+
+#背景　人形の森
+Stage:13,0
+
+#魔理沙画面外に待機
+Action:marisa,1
+
+#アリス画面外に待機
+Action:alice,100
+
+#カメラ中央固定
+Action:marisa,2
+
+Label:Start
+#自キャラ天候
+Action:marisa,103
+
+PlayBgm:data/bgm/ta03.ogg
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/marisa/effect/StageTitle001.bmp,0,256,-32
+Sleep:30;
+Object:data/scenario/effect/Stage1.bmp,1,256,352
+Sleep:30;
+
+#登場
+Action:marisa,50
+Action:marisa,51
+
+
+# 普、嬉、余、汗、驚、怒、決、惑、負
+
+Face:marisa,惑
+#0１２３４５６７８９０１２３４５６７８９０１２３
+困ったもんだ
+雨続きで洗濯も出来やしない\
+
+梅雨が明けてから一向に雨の止む気配がないぜ\
+
+
+Face:marisa,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+Action:alice,101
+Action:alice,102
+
+Face:alice,普
+それでよく梅雨が明けたって判ったのね\
+
+# 名前のテロップ
+Object:data/scenario/alice/effect/Name.bmp,2,352,304
+
+Face:marisa,普
+おお、いつの間にこんな所に\
+
+Hide:1
+
+#敵天候
+Action:alice,103
+Sleep:60
+
+Face:alice,惑
+あ、まただわ……\
+
+最近雹が降ってばかりで洗濯も出来やしない\
+
+
+Face:marisa,驚
+これは珍しい、雹が降ってくるなんて\
+
+Face:alice,普
+本来ならね
+でも今年は梅雨が明けてから雹ばかり……\
+
+Face:marisa,余
+それでよく梅雨が明けたって判ったな\
+
+Face:alice,余
+あんたみたいに馬鹿じゃないからね\
+
+Face:marisa,普
+判ったぜ\
+
+Face:marisa,余
+お前が森の湿度を上げてたんだろ？\
+
+Face:alice,普
+何の為に？\
+
+Face:marisa,決
+知るか
+倒してからじっくりと聞いてやるぜ\
+
+
+#戦闘開始処理
+
+Face:marisa,
+
+PlayBgm:data/bgm/st00.ogg
+Action:marisa,3
+End:
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:alice,嬉
+湿度を上げてたのが誰なのかよく考えなさい\
+
+Face:alice,余
+雨を呼ぶお馬鹿さん\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:alice,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+
+#やられキャラ完全ダウン検知
+Action:alice,200
+#攻撃側ニュートラル移行検知
+Action:marisa,202
+
+#自キャラ天候
+Action:marisa,103
+Sleep:60;
+
+Face:marisa,決
+じゃないな
+雹より雨の方が問題だ\
+
+Face:alice,負
+雹だって問題よ\
+
+Face:marisa,普
+また雨が降ってきたな……\
+
+Face:marisa,嬉
+つまり私にお天道様を取り戻しに行けと
+この雨は言っているんだな？\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:1,120
+
+#やられキャラ画面退場
+Action:alice,201
+
+#自キャラ基準点へ移動
+Action:marisa,150
+
+#カメラ中央あわせ
+Action:marisa,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

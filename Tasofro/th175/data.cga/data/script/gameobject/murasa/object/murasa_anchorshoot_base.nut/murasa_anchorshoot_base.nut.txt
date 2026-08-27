@@ -1,0 +1,680 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut: 
+sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+name: "main"
+nliterals: 14
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 11
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 8
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "destruct"
+    3: "lib"
+    4: "shot"
+    5: "common_destruct"
+    6: "kill_move"
+    7: "interactive"
+    8: "on_hit_target"
+    9: "on_hit_enemyshot"
+    10: "on_hit_ground"
+    11: "on_graze_target"
+    12: "determination"
+    13: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 6, op: 0
+    1: line: 37, op: 3
+    2: line: 63, op: 7
+    3: line: 65, op: 13
+    4: line: 74, op: 16
+    5: line: 78, op: 19
+    6: line: 80, op: 25
+    7: line: 82, op: 28
+    8: line: 85, op: 31
+    9: line: 89, op: 34
+    10: line: 101, op: 37
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  loadnulls(s3, 1)
+    5:  closure(s3, 1)
+    6:  newslot(s2, s0, s2, s3)
+    7:  load(s2, "destruct")
+    8:  loadroot(s3)
+    9:  getk(s3, "lib", s3)
+    10:  getk(s3, "shot", s3)
+    11:  getk(s3, "common_destruct", s3)
+    12:  newslot(s255, s0, s2, s3)
+    13:  load(s2, "kill_move")
+    14:  closure(s3, 2)
+    15:  newslot(s2, s0, s2, s3)
+    16:  load(s2, "interactive")
+    17:  closure(s3, 3)
+    18:  newslot(s2, s0, s2, s3)
+    19:  load(s2, "on_hit_target")
+    20:  loadroot(s3)
+    21:  getk(s3, "lib", s3)
+    22:  getk(s3, "shot", s3)
+    23:  getk(s3, "on_hit_enemyshot", s3)
+    24:  newslot(s255, s0, s2, s3)
+    25:  load(s2, "on_hit_ground")
+    26:  closure(s3, 4)
+    27:  newslot(s2, s0, s2, s3)
+    28:  load(s2, "on_graze_target")
+    29:  closure(s3, 5)
+    30:  newslot(s2, s0, s2, s3)
+    31:  load(s2, "determination")
+    32:  closure(s3, 6)
+    33:  newslot(s2, s0, s2, s3)
+    34:  load(s2, "plot")
+    35:  closure(s3, 7)
+    36:  newslot(s2, s0, s2, s3)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "construct"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 65
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "init_movable"
+            2: "enable_erace"
+            3: "attack_power"
+            4: "direction_h"
+            5: "obj"
+            6: "enemy"
+            7: "scale_x"
+            8: "layer"
+            9: "layer_s2"
+            10: "_audio_play"
+            11: "se"
+            12: "anchor_release"
+            13: "frameset"
+            14: "_composition_create_framepointer"
+            15: "resource_pool"
+            16: "murasa/anchor"
+            17: "maskbits"
+            18: "state"
+            19: "h_entity"
+            20: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 64
+          ]
+        Line Informations: [
+            0: line: 7, op: 0
+            1: line: 9, op: 0
+            2: line: 10, op: 3
+            3: line: 11, op: 6
+            4: line: 12, op: 9
+            5: line: 15, op: 12
+            6: line: 16, op: 17
+            7: line: 17, op: 20
+            8: line: 19, op: 23
+            9: line: 21, op: 30
+            10: line: 22, op: 38
+            11: line: 24, op: 41
+            12: line: 27, op: 44
+            13: line: 36, op: 64
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  prepcallk(s1, "init_movable", s0, s2)
+            4:  move(s3, s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "enable_erace")
+            7:  loadbool(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "attack_power")
+            10:  loadint(s2, 2)
+            11:  set(s255, s0, s1, s2)
+            12:  dload(s1, "direction_h", s2, "obj")
+            13:  get(s2, s0, s2)
+            14:  getk(s2, "enemy", s2)
+            15:  getk(s2, "direction_h", s2)
+            16:  newslot(s255, s0, s1, s2)
+            17:  dload(s1, "scale_x", s2, "direction_h")
+            18:  get(s2, s0, s2)
+            19:  set(s255, s0, s1, s2)
+            20:  dload(s1, "layer", s2, "layer_s2")
+            21:  get(s2, s0, s2)
+            22:  newslot(s255, s0, s1, s2)
+            23:  loadroot(s1)
+            24:  prepcallk(s1, "_audio_play", s1, s2)
+            25:  loadroot(s3)
+            26:  getk(s3, "se", s3)
+            27:  getk(s3, "anchor_release", s3)
+            28:  loadint(s4, 1)
+            29:  call(255, s1, s2, 3)
+            30:  load(s1, "frameset")
+            31:  loadroot(s2)
+            32:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            33:  loadroot(s4)
+            34:  getk(s4, "resource_pool", s4)
+            35:  getk(s4, "murasa/anchor", s4)
+            36:  call(2, s2, s3, 2)
+            37:  set(s255, s0, s1, s2)
+            38:  load(s1, "maskbits")
+            39:  loadint(s2, 4)
+            40:  set(s255, s0, s1, s2)
+            41:  load(s1, "state")
+            42:  closure(s2, 0)
+            43:  newslot(s255, s0, s1, s2)
+            44:  load(s1, "h_entity")
+            45:  loadroot(s2)
+            46:  prepcallk(s2, "_vspace_regist", s2, s3)
+            47:  move(s4, s0)
+            48:  loadint(s5, 1)
+            49:  loadint(s6, 2)
+            50:  bitw(s5, s6, s5, BW_OR)
+            51:  loadint(s6, 8)
+            52:  bitw(s5, s6, s5, BW_OR)
+            53:  loadint(s6, 64)
+            54:  bitw(s5, s6, s5, BW_OR)
+            55:  loadint(s6, 128)
+            56:  bitw(s5, s6, s5, BW_OR)
+            57:  loadint(s6, 16)
+            58:  bitw(s5, s6, s5, BW_OR)
+            59:  loadint(s6, 256)
+            60:  bitw(s5, s6, s5, BW_OR)
+            61:  loadint(s6, 0)
+            62:  call(2, s2, s3, 4)
+            63:  newslot(s255, s0, s1, s2)
+            64:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 24, op: 0
+                    1: line: 25, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "message"
+        nliterals: 7
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 14
+        ndefaultparams: 1
+        ninstructions: 41
+        nfunctions: 1
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "kill_move"
+            3: "vx"
+            4: "vy"
+            5: "angle"
+            6: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_message_id"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 40
+            1: name: "_message_id", pos: 1, start_op: 0, end_op: 40
+            2: name: "this", pos: 0, start_op: 0, end_op: 40
+          ]
+        Line Informations: [
+            0: line: 38, op: 0
+            1: line: 39, op: 0
+            2: line: 41, op: 3
+            3: line: 42, op: 7
+            4: line: 43, op: 11
+            5: line: 45, op: 16
+            6: line: 46, op: 18
+            7: line: 47, op: 19
+            8: line: 50, op: 24
+            9: line: 51, op: 28
+            10: line: 52, op: 32
+            11: line: 53, op: 36
+            12: line: 59, op: 39
+            13: line: 61, op: 40
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 28)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 4108)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 5)
+            16:  prepcallk(s3, "kill_move", s0, s4)
+            17:  call(255, s3, s4, 1)
+            18:  return(255, 0)
+            19:  jmp(-, 20)
+            20:  jmp(-, 3)
+            21:  loadint(s3, 8192)
+            22:  eq(s3, 3, s1, 0)
+            23:  jz(s3, 16)
+            24:  load(s3, "vx")
+            25:  loadint(s4, 0)
+            26:  get(s4, s2, s4)
+            27:  set(s255, s0, s3, s4)
+            28:  load(s3, "vy")
+            29:  loadint(s4, 1)
+            30:  get(s4, s2, s4)
+            31:  set(s255, s0, s3, s4)
+            32:  load(s3, "angle")
+            33:  loadint(s4, 2)
+            34:  get(s4, s2, s4)
+            35:  set(s255, s0, s3, s4)
+            36:  load(s3, "state")
+            37:  closure(s4, 0)
+            38:  set(s255, s0, s3, s4)
+            39:  jmp(-, 0)
+            40:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 14
+                nfunctions: 0
+                Literals: [
+                    0: "frameset"
+                    1: "step"
+                    2: "x"
+                    3: "vx"
+                    4: "y"
+                    5: "vy"
+                    6: "_vspace_commit"
+                    7: "h_entity"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 13
+                  ]
+                Line Informations: [
+                    0: line: 53, op: 0
+                    1: line: 54, op: 0
+                    2: line: 55, op: 3
+                    3: line: 56, op: 6
+                    4: line: 57, op: 9
+                    5: line: 58, op: 13
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "frameset", s0)
+                    1:  prepcallk(s1, "step", s1, s2)
+                    2:  call(255, s1, s2, 1)
+                    3:  dload(s1, "x", s2, "vx")
+                    4:  get(s2, s0, s2)
+                    5:  comparith(s1, 2, s1, 43)
+                    6:  dload(s1, "y", s2, "vy")
+                    7:  get(s2, s0, s2)
+                    8:  comparith(s1, 2, s1, 43)
+                    9:  loadroot(s1)
+                    10:  prepcallk(s1, "_vspace_commit", s1, s2)
+                    11:  getk(s3, "h_entity", s0)
+                    12:  call(255, s1, s2, 2)
+                    13:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "kill_move"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "Kill_EnemyBullet"
+            2: "_vspace_unregist"
+            3: "kill"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 65, op: 0
+            1: line: 66, op: 0
+            2: line: 67, op: 2
+            3: line: 68, op: 5
+            4: line: 69, op: 9
+            5: line: 70, op: 12
+            6: line: 72, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 12)
+            2:  prepcallk(s1, "Kill_EnemyBullet", s0, s2)
+            3:  move(s3, s0)
+            4:  call(255, s1, s2, 2)
+            5:  loadroot(s1)
+            6:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            7:  getk(s3, "h_entity", s0)
+            8:  call(255, s1, s2, 2)
+            9:  load(s1, "h_entity")
+            10:  loadnulls(s2, 1)
+            11:  set(s255, s0, s1, s2)
+            12:  prepcallk(s1, "kill", s0, s2)
+            13:  call(255, s1, s2, 1)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "interactive"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [
+            0: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 74, op: 0
+            1: line: 75, op: 0
+            2: line: 76, op: 2
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "state", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "on_hit_ground"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 80, op: 0
+            1: line: 81, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 82, op: 0
+            1: line: 83, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 86, op: 0
+            1: line: 87, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\murasa\object\murasa_anchorshoot_base.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer"
+            2: "plot"
+            3: "frameset"
+            4: "rotate"
+            5: "angle"
+            6: "scale"
+            7: "scale_x"
+            8: "translate"
+            9: "x"
+            10: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 90, op: 0
+            1: line: 91, op: 0
+            2: line: 92, op: 4
+            3: line: 93, op: 8
+            4: line: 94, op: 12
+            5: line: 95, op: 17
+            6: line: 101, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer", s0)
+            9:  prepcallk(s1, "rotate", s1, s2)
+            10:  getk(s3, "angle", s0)
+            11:  call(255, s1, s2, 2)
+            12:  getk(s1, "layer", s0)
+            13:  prepcallk(s1, "scale", s1, s2)
+            14:  getk(s3, "scale_x", s0)
+            15:  loadint(s4, 1)
+            16:  call(255, s1, s2, 3)
+            17:  getk(s1, "layer", s0)
+            18:  prepcallk(s1, "translate", s1, s2)
+            19:  getk(s3, "x", s0)
+            20:  getk(s4, "y", s0)
+            21:  call(255, s1, s2, 3)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

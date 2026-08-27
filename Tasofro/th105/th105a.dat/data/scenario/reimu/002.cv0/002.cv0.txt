@@ -1,0 +1,126 @@
+## =======================================================================
+#Stage:3
+#Title:三途の幻想郷
+#Place:川
+#Weather:川霧
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+Character:reimu,160,0,0,8888FF
+Character:komachi,160,0,1,FF8888
+
+#カメラ固定
+Action:reimu,4
+#フォーカス瞬間移動
+#Action:reimu,11
+
+#向き固定解除
+Action:reimu,152
+
+Label:Start
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/reimu/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+
+Face:reimu,普
+じゃ、邪魔者も居なくなったところで改めて
+その<accent>気</accent>を潰させてもらうわ\
+
+Action:reimu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:komachi,余
+なんだい、そんなんじゃ異変解決どころじゃない
+じゃないか\
+
+Face:komachi,惑
+このあたいの<accent>気</accent>……
+危険な気なのかなぁ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:komachi,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:komachi,200
+#攻撃側ニュートラル移行検知
+Action:reimu,202
+
+#自キャラ天候
+Action:reimu,103
+Sleep:60
+
+Face:reimu,嬉
+やっと天気が元通りになったわ\
+
+Face:komachi,負
+ちょっと待って、晴れているのが普通？\
+Face:komachi,負
+よく見てみ？
+晴れているのも、お前さんの周りだけだ\
+
+Face:reimu,普
+むむむ……
+早く異変を起こしている奴を見つけないと……\
+
+Face:komachi,負
+見つけてどうするのかい？\
+
+Face:reimu,怒
+神社を直して貰うのよ！\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:3,120
+
+
+
+#やられキャラ画面退場
+Action:komachi,201
+
+#自キャラ位置補正
+Action:reimu,150
+
+Action:reimu,4
+
+
+End:
+
+
+
+
+
+## =======================================================================

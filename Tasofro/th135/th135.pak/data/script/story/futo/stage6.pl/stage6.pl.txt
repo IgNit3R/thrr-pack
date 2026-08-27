@@ -1,0 +1,120 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+
+#フェイス画像
+,DefineObject,futo,-360,0,false
+,DefineObject,mamizou,-360,0,true
+
+#肩書き
+,DefineObject,futo_label,50,360,false
+,DefineObject,mamizou_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,futo_label,"data/system/char_def/name/name_04futo.png",0,0,0,0
+,ImageFile,mamizou_label,"data/system/char_def/name/name_09mamizou.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+,Function,GameStory_2P_InSpecial(),
+,Sleep,120
+
+#Stage6 「ムーンサイドフェスティバル」
+# 場所：狸の野原
+#
+
+#0１２３４５６７８９０１２３４
+,ImageDef,mamizou,マミゾウ_嬉2,0,0
+,Show,mamizou,30,-64,0
+,ImageDef,futo,布都_驚1,0,0
+,Show,futo,30,-64,0
+,SetFocus,futo
+き　貴様は\,a05x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,futo,布都_怒1,0,0
+化け狸の仕業だったか！,a11x2,0,0
+,Show,mamizou_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,mamizou_label,20,0,64
+
+# 名前テロップ
+# いつも驚きを提供する化け狸　二ッ岩マミゾウ
+
+,ImageDef,mamizou,マミゾウ_余1,0,0
+,SetFocus,mamizou
+簡単に騙されおって\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_普2,0,0
+これで如何に人気が\n無力なのか判るかな？\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,futo,布都_驚1,0,0
+,SetFocus,futo
+貴様　もしかして……\,c11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,mamizou,マミゾウ_普3,0,0
+,SetFocus,mamizou
+そうじゃ\n積み重ねた人気など\n偽者の悪意で失う\,a15x3,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,mamizou,マミゾウ_余1,0,0
+宗教なんてまさに\n蜃気楼のような物じゃ\,a11x2,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,futo,布都_怒1,0,0
+,SetFocus,futo
+許さんぞ\n何が偽者の悪意だ\,a11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,futo,布都_普3,0,0
+だいたいな\n悪意を持って化けるお前が\n一方的に悪いだけじゃ無いか\,a15x3,0,0
+,ClearBalloon,futo
+
+# -------------------------------
+
+,Hide,mamizou,30,-64,0,&
+,Hide,futo,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobIn();"
+,Sleep,150
+
+# 二人の絵が消える
+#
+# 背景に狸が集まって来る（移動が面倒なら、突如煙を出して出現しても可）
+
+,Show,mamizou,30,-64,0,&
+,Show,futo,30,-64,0
+,ImageDef,mamizou,マミゾウ_余1,0,0
+,SetFocus,mamizou
+ふぉっふぉっふぉ\n皆も戦闘の匂いを\n嗅ぎつけてきたわい\,a15x3,0,0
+
+,ClearBalloon,mamizou
+,ImageDef,futo,布都_必1,0,0
+,SetFocus,futo
+二度と悪意の\R[変化|へんげ]が\n出来ぬようにしてやる！\,a11x2,0,0
+
+,ClearBalloon,futo
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,futo,30,-64,0,&
+,Hide,mamizou,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(110);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End

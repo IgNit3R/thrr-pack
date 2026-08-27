@@ -1,0 +1,138 @@
+#========================================================================
+#	Stage:4
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,hijiri,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,hijiri_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,hijiri,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_汗1,0,0
+,ImageDef,hijiri,聖_普1,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,hijiri_label,"data/system/char_def/name/name_04hijiri.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall(),	#ステージロゴ表示
+,Sleep,120
+
+,Show,reimu,30,-64,0
+
+,SetFocus,reimu
+ぐ……\,c05x2,20,-30
+,ClearBalloon,reimu
+
+悔しいけど　うちより\nお祭り感が出ているわね\,c11x2,20,-30
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_余1,0,0
+まあ\nアウェイでも格好良く勝てば\n注目は私に向くはず！\,a15x3
+,ClearBalloon,reimu
+
+,Function,GameStory_2P_In(),
+,Sleep,120
+
+,SetFocus,hijiri
+,Show,hijiri,30,-64,0
+お待ちしておりましたわ,a11x2,20,0
+,Show,hijiri_label,20,0,-64
+,WaitInput
+,ClearBalloon,hijiri
+,Hide,hijiri_label,20,0,64
+
+,ImageDef,hijiri,聖_余1,20,0
+既にあらかたライバルと闘い\n全て制してきました\,a15x3,20,0
+,ClearBalloon,hijiri
+
+,ImageDef,hijiri,聖_普1,20,0
+ようやく人気争いも\n佳境といったところでしょうか？\,a15x3,20,0
+,ClearBalloon,hijiri
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_怒1,0,0
+私も全て倒してきたもん！\nここで負ける訳にはいかないの,a15x3,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+,SetFocus,hijiri
+,ImageDef,hijiri,聖_選1,0,0
+この争いは　いわば\n仏教と神道の代理戦争,a11x2,20,-30
+,WaitInput
+,ClearBalloon,hijiri
+
+,ImageDef,hijiri,聖_普1,0,0
+ただ相手を退けるだけでは\n本当の勝ちとは言えないのです\,a15x3,20,-30
+,ClearBalloon,hijiri
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_普2,0,0
+判ってる,a05x2,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普1,0,0
+如何に観客を味方に付けられるか\n如何に人気を集められるか\,a15x3
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_必1,0,0
+嫌悪感を与えるような勝ち方じゃ\n意味が無いのよね\,c15x3
+,ClearBalloon,reimu
+
+,SetFocus,hijiri
+,ImageDef,hijiri,聖_決1,0,0
+人前で闘い慣れてない貴方に\nその魅力的な闘いが出来るかしら？,a15x3
+,WaitInput
+,ClearBalloon,hijiri
+
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,reimu,30,-64,0,&
+,Hide,hijiri,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(104);",# 戦闘BGM再生開始
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

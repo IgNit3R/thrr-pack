@@ -1,0 +1,248 @@
+## =======================================================================
+#Stage:2
+#Title:龍宮の使い
+#Place:玄海雲
+#Weather:台風
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:suika,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#専用ステージ初期設定
+Action:iku,139
+
+#カメラ固定
+Action:suika,4
+
+#フォーカス瞬間移動
+Action:suika,11
+
+#自キャラ画面左待機
+Action:suika,5
+
+#向き固定解除
+Action:suika,152
+
+#天候初期化
+Action:iku,153
+
+Label:Start
+
+PlayBgm:data/bgm/ta02.ogg
+
+#背景暗雲設置
+Action:iku,134
+
+#フェードイン　黒
+Action:suika,161
+
+Sleep:60
+
+#ステージタイトル表示
+Object:data/scenario/suika/effect/StageTitle002.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:300
+
+#雲中背景解除
+Action:iku,135
+Sleep:120
+
+#画面上から登場
+Action:suika,6
+
+#登場終了検知
+Action:suika,7
+
+Sleep:60
+
+Face:suika,惑
+なんだいこの雲は\
+
+Face:suika,惑
+みんなから霧を萃めていると思ったら、
+随分と雑な萃め方だねぇ\
+
+Face:suika,普
+殆どの霧が天気となって洩れちゃってるよ\
+
+Face:suika,余
+心を萃めて何がしたいんだか判らんが、
+この程度じゃたがが知れてるねぇ\
+
+Face:suika,
+Hide:1
+Sleep:60
+
+#衣玖黒塗りで画面上から登場
+Action:iku,130
+Sleep:90
+Face:iku,
+緋色の雲の濃度は基準の三倍\
+
+百倍までは誤差の範囲ね\
+
+
+#落雷+衣玖の姿が浮かび上がる
+Action:iku,131
+
+Face:iku,
+今日はまだ問題は無しっと\
+
+Face:suika,余
+お、龍宮の使いかい
+珍しいもん見たもんだ\
+
+# 名前のテロップ
+#Name:美しき緋の衣　永江衣玖
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Face:iku,驚
+おわっ
+誰か居たのですか？\
+
+Face:suika,普
+まあね\
+
+Face:suika,余
+龍宮の使いが出てくるなんて
+何か緊急事態かい？\
+
+#イベント　衣玖浮遊状態終了
+Action:iku,132
+
+Face:iku,惑
+え？
+ええ、緋色の雲の濃度が心配でして\
+
+Face:iku,普
+まあ今のところは心配ないレベルですが……\
+
+Face:suika,普
+へぇ。　このまま雲が濃くなったら、
+地震が起こるって言うんだね？\
+
+Face:iku,惑
+ま、そういう事です……
+って詳しいんですね？\
+
+Face:suika,余
+まあね\
+
+PlayBgm:data/bgm/st04.ogg
+
+Face:iku,惑
+正体も明かさないし、怪しいですね\
+
+Face:iku,普
+これより上は天界です\
+
+Face:iku,余
+行かない方が無難ですよ……
+って言っても行くんでしょうね\
+
+Face:iku,決
+ちょっと試させて貰います\
+
+Face:suika,余
+ふん、龍宮の使いなんかじゃ話にならないね\
+
+
+
+#戦闘開始処理
+Action:suika,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,普
+さあ、帰ってください\
+
+Face:iku,余
+ま、ここら辺で遊ぶだけなら別に気にしないですけど\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:iku,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:suika,202
+
+#Weather:天候クリア
+# 無天候へ
+Action:iku,133
+
+Face:suika,嬉
+さて、と
+天界まで行ってみるかねぇ\
+
+Face:iku,負
+一体……貴方は何者ですか？\
+
+Face:suika,余
+そうそう、この雲の濃度、もっともっと濃くなるよ\
+
+Face:iku,負
+え？\
+
+Face:suika,普
+そうなったらあんたも忙しくなるだろうねぇ\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30
+#画面上部へ移動
+Action:suika,151
+
+Sleep:90
+
+#フェードアウト　白
+Action:suika,162
+Sleep:60
+
+Stage:5,0
+
+End:
+
+
+
+
+
+## =======================================================================

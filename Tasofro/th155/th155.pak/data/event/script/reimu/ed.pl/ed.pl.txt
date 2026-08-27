@@ -1,0 +1,66 @@
+#========================================================================
+#	霊夢：エンディング
+#	場所：
+#   スレイブ：華扇　敵チーム：紫
+#	ステージタイトル
+#	   「」
+#========================================================================
+
+
+,Return
+# =========================================================
+
+# 本編
+# -------------------------------------------------------
+
+# ********************************************
+# ********************************************
+
+:main_1
+
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Function,"::sound.StopBGM(1000)",# 指定BGM再生開始
+,ImageFile,back,"data/event/pic/bg/black.png",0,0
+
+#\n幻想郷各所で『完全憑依』と呼ばれる\n不可思議な現象が起こっていた。\
+
+,ImageFile,ed,"data/event/pic/reimu/ed1.png",0,0
+
+,Sleep,2,#ウェイト命令
+,Function,"::graphics.FadeIn(60)"#画面がフェードイン
+,Sleep,30
+,WaitInput
+,ImageFile,ed,"data/event/pic/bg/black.png",0,0
+,Sleep,20
+#\n全くの別人が、精神のみならず\n肉体をも乗っ取る現象である。\
+,ImageFile,ed,"data/event/pic/reimu/ed2.png",0,0
+,Sleep,30
+,WaitInput
+
+,ImageFile,ed,"data/event/pic/bg/black.png",0,0
+,Sleep,20
+#\nこの物語は、『完全憑依』を監視する者、\n利用する者、訳もわからず巻き込まれる者、\
+,ImageFile,ed,"data/event/pic/reimu/ed3.png",0,0
+,Sleep,30
+,WaitInput
+
+,ImageFile,ed,"data/event/pic/bg/black.png",0,0
+,Sleep,20
+#\nそして裏に潜んだ脅威を曝こうとする者……。\
+,ImageFile,ed,"data/event/pic/reimu/ed4.png",0,0
+,Sleep,30
+,WaitInput
+
+,ImageFile,ed,"data/event/pic/bg/black.png",0,0
+,Sleep,20
+#\nこれから始まるのは「最強の二人は自分達だ」\nと誤解した者達の\R[悲喜交々|ひきこもごも]のストーリーである。\
+,ImageFile,ed,"data/event/pic/reimu/ed5.png",0,0
+#,WaitInput
+#,Hide,ed
+,Function,"::talk.is_active = false"
+
+,Sleep,600000
+
+
+,End

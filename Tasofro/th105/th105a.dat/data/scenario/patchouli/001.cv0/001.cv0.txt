@@ -1,0 +1,179 @@
+## =======================================================================
+#Stage:2
+#Title:快晴の神社
+#Place:博麗神社
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+Character:patchouli,160,0,0,8888FF
+Character:reimu,160,0,1,FF8888
+#Character:marisa,160,0,2,FF8888
+
+#敵キャラ画面外に待機
+Action:reimu,100
+#カメラ固定
+Action:patchouli,4
+
+#フォーカス瞬間移動
+#Action:patchouli,11
+
+#向き固定解除
+Action:patchouli,152
+
+Label:Start
+PlayBgm:data/bgm/ta03.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/patchouli/effect/StageTitle002.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:60
+
+Face:patchouli,普
+巫女は気付いているのかしら？\
+
+#
+# 敵登場
+#
+Action:reimu,101
+Action:reimu,102
+
+Object:data/scenario/reimu/effect/Name.bmp,2,352,304
+
+Face:reimu,普
+珍しい顔ね\
+
+Face:patchouli,余
+顔なんてどうでも良いのよ
+貴方の様子を見に来ただけ\
+
+# 天候変化
+Hide:1
+Sleep:30
+# 敵天候
+Action:reimu,103
+Sleep:20
+
+Face:reimu,普
+至って健康よ
+ちょっと日照り続きなのが辛いだけで\
+
+Face:patchouli,普
+そう、日照り続きなの
+雲一つ無いってのは単純って事ね\
+
+Face:reimu,惑
+？\
+
+Face:patchouli,決
+貴方が動かないのなら私が動く\
+
+#戦闘開始
+PlayBgm:data/bgm/st01.ogg
+Action:patchouli,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:reimu,汗
+確かに、動いてたわね\
+
+Face:reimu,普
+でも、暑いから水分補給でもした方がいいかもね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:reimu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:reimu,200
+#攻撃側ニュートラル移行検知
+Action:patchouli,202
+
+#自キャラ天候に変化
+Action:patchouli,103
+Sleep:60
+
+Face:patchouli,惑
+もう少し判りやすく変化が無いと
+気付かないのかしら？\
+
+Face:reimu,負
+うー
+暑くて駄目だわー\
+
+Hide:1
+#Weather:二番手天候
+#Action:marisa,103
+Action:patchouli,104
+
+Sleep:60;
+
+# 雨
+Face:patchouli,驚
+……雨？\
+
+Face:reimu,負
+暑かったけど倒れている時に雨も困るー\
+
+Face:patchouli,普
+誰の、かしら？\
+
+#ステージ間調整自キャラ
+Action:patchouli,150
+#カメラ中央あわせ
+Action:patchouli,4
+
+CrossFadeBgm:data/bgm/st02.ogg,2000,1
+
+#やられキャラ画面退場
+Action:reimu,201
+Sleep:60
+
+# 三番手登場
+Hide:1
+
+
+End:
+
+
+
+
+
+## =======================================================================

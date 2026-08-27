@@ -1,0 +1,230 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\marisa\marisa.nut: 
+sourcename: ""
+name: "main"
+nliterals: 10
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 35
+nfunctions: 3
+Literals: [
+    0: "MarisaStatus"
+    1: "BattleStatus"
+    2: "ex_f"
+    3: "ex_f_max"
+    4: "ex_b"
+    5: "ex_b_max"
+    6: "star"
+    7: "Marisa_BottomDraw"
+    8: "Marisa_BottomDraw_Left"
+    9: "Marisa_BottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 34
+    1: name: "this", pos: 0, start_op: 0, end_op: 34
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 11, op: 20
+    2: line: 14, op: 21
+    3: line: 31, op: 25
+    4: line: 35, op: 29
+    5: line: 39, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "MarisaStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "ex_f")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f_max")
+    8:  loadint(s5, 256)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_b")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b_max")
+    14:  loadint(s5, 256)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "star")
+    17:  loadint(s5, 0)
+    18:  newslota(0, s3, s4, s5)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 11)
+    21:  line(-, 14)
+    22:  load(s2, "Marisa_BottomDraw")
+    23:  closure(s3, 0)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 31)
+    26:  load(s2, "Marisa_BottomDraw_Left")
+    27:  closure(s3, 1)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 35)
+    30:  load(s2, "Marisa_BottomDraw_Right")
+    31:  closure(s3, 2)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 39)
+    34:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Marisa_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 35
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "name"
+            2: "MarisaStatus"
+            3: "player_id"
+            4: "Marisa_BottomDraw_Left"
+            5: "Marisa_BottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 34
+          ]
+        Line Informations: [
+            0: line: 17, op: 1
+            1: line: 18, op: 7
+            2: line: 21, op: 14
+            3: line: 23, op: 21
+            4: line: 25, op: 24
+            5: line: 27, op: 31
+            6: line: 29, op: 33
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 17)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "name", s1)
+            3:  loadint(s2, 1)
+            4:  ne(s1, 2, s1, 0)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 18)
+            8:  getk(s1, "status", s0)
+            9:  getk(s2, "MarisaStatus", s0)
+            10:  instanceof(s1, s2, s1)
+            11:  not(s1, s1)
+            12:  jz(s1, 1)
+            13:  return(255, 0)
+            14:  line(-, 21)
+            15:  getk(s1, "status", s0)
+            16:  getk(s1, "player_id", s1)
+            17:  loadint(s2, 0)
+            18:  eq(s1, 2, s1, 0)
+            19:  jz(s1, 4)
+            20:  line(-, 23)
+            21:  prepcallk(s1, "Marisa_BottomDraw_Left", s0, s2)
+            22:  call(255, s1, s2, 1)
+            23:  jmp(-, 9)
+            24:  line(-, 25)
+            25:  getk(s1, "status", s0)
+            26:  getk(s1, "player_id", s1)
+            27:  loadint(s2, 1)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 3)
+            30:  line(-, 27)
+            31:  prepcallk(s1, "Marisa_BottomDraw_Right", s0, s2)
+            32:  call(255, s1, s2, 1)
+            33:  line(-, 29)
+            34:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Marisa_BottomDraw_Left"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 32, op: 0
+            1: line: 33, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 32)
+            1:  line(-, 33)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Marisa_BottomDraw_Right"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 36, op: 0
+            1: line: 37, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 36)
+            1:  line(-, 37)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

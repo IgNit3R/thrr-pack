@@ -1,0 +1,256 @@
+## =======================================================================
+#Stage:4
+#Title:若い玄雲海
+#Place:玄海雲
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:patchouli,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#専用ステージ初期設定
+Action:iku,139
+
+#天候初期化
+Action:iku,153
+
+#カメラ固定
+Action:patchouli,4
+
+#フォーカス瞬間移動
+Action:patchouli,11
+
+#自キャラ画面左待機
+Action:patchouli,5
+
+PlayBgm:data/bgm/ta02.ogg
+
+#背景暗雲設置
+Action:iku,134
+
+#向き固定解除
+Action:patchouli,152
+
+Label:Start
+
+#フェードイン　黒
+Action:patchouli,161
+
+Sleep:60
+
+#ステージタイトル表示
+Object:data/scenario/patchouli/effect/StageTitle004.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage4.bmp,1,256,352
+Sleep:300
+
+#雲中背景解除
+Action:iku,135
+Sleep:120
+
+#画面上から登場
+Action:patchouli,6
+
+#登場終了検知
+Action:patchouli,7
+
+Sleep:60
+
+Face:patchouli,惑
+何故みんな気付かない
+みんなの体から気質が霧散してるというのに\
+
+Face:patchouli,普
+その霧が周りの天気を変化させ、さらに霧は
+空の一点に集められている\
+
+Face:patchouli,
+Hide:1
+Sleep:60
+
+#衣玖黒塗りで画面上から登場
+Action:iku,130
+Sleep:90
+Face:iku,
+雲の色に注意せよ\
+
+雲の密度に注意せよ\
+
+
+#落雷+衣玖の姿が浮かび上がる
+Action:iku,131
+
+
+Face:iku,
+このままでは危険区域に突入するだろう\
+
+Sleep:40
+
+Face:patchouli,普
+誰？\
+
+Face:iku,驚
+おお？
+こんな雲の中に誰かが居る\
+
+Face:iku,惑
+これも予兆なのでしょうか\
+
+Face:patchouli,普
+私は気質、いや緋色の霧が集められている
+場所に向かってきたの\
+
+Face:patchouli,普
+貴方は一体？\
+
+#イベント　衣玖浮遊状態終了
+Action:iku,132
+
+# 名前のテロップ
+#Name:美しき緋の衣　永江衣玖
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Face:iku,驚
+私は雨雲を泳ぐだけの龍宮の使い\
+
+Face:iku,余
+この雲は危険な区域まで成長する
+可能性がある\
+
+Face:iku,普
+それを確認しに来ただけです\
+
+PlayBgm:data/bgm/st04.ogg
+
+Face:patchouli,惑
+この皆の気質が集められた雲に……
+どんな危険が\
+
+Face:iku,驚
+集められた……？
+言っている事を判りかねますが……\
+
+Face:iku,惑
+この雲には大地を目覚めさせる可能性がある事は
+事実です\
+
+Face:patchouli,惑
+……それが狙いなの？\
+
+Face:patchouli,決
+貴方の知っている事を全て語って貰うよ！\
+
+
+
+#戦闘開始処理
+Action:patchouli,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,驚
+まだ、大丈夫ですが……\
+
+Face:iku,余
+今の調子で雲が成長すれば、
+地震は免れないでしょう\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:iku,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:patchouli,202
+
+#Weather:天候クリア
+# 無天候へ
+Action:iku,133
+
+Face:patchouli,普
+貴方の知っている事を全て語って貰うよ！\
+
+Face:iku,負
+この緋色の雲は地震を引き起こすまでに
+成長する可能性があります\
+
+Face:iku,負
+私達が知っている事はそれだけです\
+
+Face:iku,負
+地震を避ける手段は持ち合わせていないのです\
+
+Face:patchouli,普
+……この雲は人工的に集められた雲よ\
+
+Face:iku,負
+え？
+そうなんですか？\
+
+Face:patchouli,普
+だから、集めている奴を探し出して潰せば
+地震だって避けられる筈\
+
+Face:iku,負
+人工的に緋色の雲を作る事なんて……\
+
+Face:patchouli,嬉
+犯人の目星はついてるんだけどね\
+
+Hide:1
+
+Sleep:30
+#画面上部へ移動
+Action:patchouli,151
+
+Sleep:90
+Result:
+
+#フェードアウト　白
+Action:patchouli,162
+FadeBgm:2000,0
+Sleep:60
+
+Stage:5,0
+
+End:
+
+
+
+
+
+## =======================================================================

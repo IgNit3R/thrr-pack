@@ -1,0 +1,830 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\kanako\com\kanako_ai.nut: 
+sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+name: "main"
+nliterals: 4
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 5
+ndefaultparams: 0
+ninstructions: 13
+nfunctions: 4
+Literals: [
+    0: "begin_battle"
+    1: "com_set_wait"
+    2: "com_common_interrupt"
+    3: "com_common_recover"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 12
+    1: name: "this", pos: 0, start_op: 0, end_op: 12
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 14, op: 3
+    2: line: 41, op: 6
+    3: line: 84, op: 9
+    4: line: 127, op: 12
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "begin_battle")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "com_set_wait")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "com_common_interrupt")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "com_common_recover")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+        name: "begin_battle"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "ground"
+            2: "Activate_ComRoutine"
+            3: "g"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 1, op: 0
+            1: line: 3, op: 0
+            2: line: 5, op: 4
+            3: line: 7, op: 8
+            4: line: 10, op: 11
+            5: line: 13, op: 14
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "state", s0)
+            1:  loadnulls(s2, 1)
+            2:  eq(s1, 2, s1, 0)
+            3:  jz(s1, 10)
+            4:  getk(s1, "ground", s0)
+            5:  loadbool(s2, 1)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  jmp(-, 3)
+            11:  load(s1, "g")
+            12:  loadfloat(s2, 0.5)
+            13:  set(s255, s0, s1, s2)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+        name: "com_set_wait"
+        nliterals: 1
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 4
+        nfunctions: 1
+        Literals: [
+            0: "com_state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 3
+            1: name: "this", pos: 0, start_op: 0, end_op: 3
+          ]
+        Line Informations: [
+            0: line: 15, op: 0
+            1: line: 17, op: 0
+            2: line: 40, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s2, "com_state")
+            1:  closure(s3, 0)
+            2:  set(s255, s0, s2, s3)
+            3:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+                name: null
+                nliterals: 10
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 11
+                ndefaultparams: 0
+                ninstructions: 32
+                nfunctions: 1
+                Literals: [
+                    0: "state"
+                    1: "ground"
+                    2: "GetFront"
+                    3: "com_state"
+                    4: "vx"
+                    5: "vy"
+                    6: "g"
+                    7: "count"
+                    8: "motion"
+                    9: "stand"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 31
+                  ]
+                Line Informations: [
+                    0: line: 18, op: 0
+                    1: line: 19, op: 0
+                    2: line: 21, op: 9
+                    3: line: 22, op: 11
+                    4: line: 23, op: 14
+                    5: line: 24, op: 17
+                    6: line: 25, op: 20
+                    7: line: 26, op: 23
+                    8: line: 27, op: 26
+                    9: line: 29, op: 28
+                    10: line: 39, op: 31
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  getk(s1, "state", s0)
+                    1:  loadnulls(s2, 1)
+                    2:  eq(s1, 2, s1, 0)
+                    3:  and(s1, 4, s1)
+                    4:  getk(s2, "ground", s0)
+                    5:  loadbool(s3, 1)
+                    6:  eq(s2, 3, s2, 0)
+                    7:  move(s1, s2)
+                    8:  jz(s1, 22)
+                    9:  prepcallk(s1, "GetFront", s0, s2)
+                    10:  call(255, s1, s2, 1)
+                    11:  load(s1, "com_state")
+                    12:  loadnulls(s2, 1)
+                    13:  set(s255, s0, s1, s2)
+                    14:  load(s1, "vx")
+                    15:  loadfloat(s2, 0)
+                    16:  set(s255, s0, s1, s2)
+                    17:  load(s1, "vy")
+                    18:  loadint(s2, 0)
+                    19:  set(s255, s0, s1, s2)
+                    20:  load(s1, "g")
+                    21:  loadint(s2, 0)
+                    22:  set(s255, s0, s1, s2)
+                    23:  load(s1, "count")
+                    24:  loadint(s2, 0)
+                    25:  set(s255, s0, s1, s2)
+                    26:  dload(s1, "motion", s2, "stand")
+                    27:  set(s255, s0, s1, s2)
+                    28:  load(s1, "state")
+                    29:  closure(s2, 0)
+                    30:  set(s255, s0, s1, s2)
+                    31:  return(255, 0)
+                  ]
+                Functions: [
+                    0: 
+                        sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+                        name: null
+                        nliterals: 3
+                        nparameters: 1
+                        noutervals: 0
+                        nlocalvarinfos: 1
+                        nlineinfos: 6
+                        ndefaultparams: 0
+                        ninstructions: 12
+                        nfunctions: 0
+                        Literals: [
+                            0: "count"
+                            1: "state"
+                            2: "Activate_ComRoutine"
+                          ]
+                        Parameters: [
+                            0: "this"
+                          ]
+                        Outer Values: [  ]
+                        Local variables informations: [
+                            0: name: "this", pos: 0, start_op: 0, end_op: 11
+                          ]
+                        Line Informations: [
+                            0: line: 30, op: 0
+                            1: line: 31, op: 0
+                            2: line: 32, op: 2
+                            3: line: 34, op: 6
+                            4: line: 35, op: 9
+                            5: line: 37, op: 11
+                          ]
+                        Default Parameters: [  ]
+                        Instructions: [
+                            0:  load(s1, "count")
+                            1:  pinc(s1, s0, s1, 1)
+                            2:  getk(s1, "count", s0)
+                            3:  loadint(s2, 60)
+                            4:  eq(s1, 2, s1, 0)
+                            5:  jz(s1, 5)
+                            6:  load(s1, "state")
+                            7:  loadnulls(s2, 1)
+                            8:  set(s255, s0, s1, s2)
+                            9:  prepcallk(s1, "Activate_ComRoutine", s0, s2)
+                            10:  call(255, s1, s2, 1)
+                            11:  return(255, 0)
+                          ]
+                        Functions: [  ]
+                        stacksize: 3
+                        bgenerator: 0
+                        varparams: 0
+
+                  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+        name: "com_common_interrupt"
+        nliterals: 10
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "count"
+            2: "motion"
+            3: "damage"
+            4: "vx"
+            5: "direction_h"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 24
+            1: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 42, op: 0
+            1: line: 43, op: 0
+            2: line: 44, op: 2
+            3: line: 45, op: 5
+            4: line: 46, op: 7
+            5: line: 47, op: 12
+            6: line: 48, op: 15
+            7: line: 49, op: 18
+            8: line: 50, op: 21
+            9: line: 83, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  load(s2, "count")
+            3:  loadint(s3, 0)
+            4:  set(s255, s0, s2, s3)
+            5:  dload(s2, "motion", s3, "damage")
+            6:  set(s255, s0, s2, s3)
+            7:  load(s2, "vx")
+            8:  loadint(s3, -3)
+            9:  getk(s4, "direction_h", s0)
+            10:  mul(s3, s4, s3)
+            11:  set(s255, s0, s2, s3)
+            12:  load(s2, "vy")
+            13:  loadfloat(s3, -6.5)
+            14:  set(s255, s0, s2, s3)
+            15:  load(s2, "g")
+            16:  loadfloat(s3, 0.5)
+            17:  set(s255, s0, s2, s3)
+            18:  load(s2, "ground")
+            19:  loadbool(s3, 0)
+            20:  set(s255, s0, s2, s3)
+            21:  load(s2, "state")
+            22:  closure(s3, 0)
+            23:  set(s255, s0, s2, s3)
+            24:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+                name: null
+                nliterals: 15
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 2
+                nlineinfos: 20
+                ndefaultparams: 0
+                ninstructions: 76
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "vy"
+                    2: "ground"
+                    3: "y"
+                    4: "camera"
+                    5: "x"
+                    6: "stage"
+                    7: "map"
+                    8: "message"
+                    9: "Damage_ReturnShip"
+                    10: "VX_Brake"
+                    11: "motion"
+                    12: "damage2"
+                    13: "Landing"
+                    14: "com_common_recover"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "pos_", pos: 1, start_op: 43, end_op: 51
+                    1: name: "this", pos: 0, start_op: 0, end_op: 75
+                  ]
+                Line Informations: [
+                    0: line: 50, op: 0
+                    1: line: 51, op: 0
+                    2: line: 52, op: 2
+                    3: line: 58, op: 5
+                    4: line: 59, op: 12
+                    5: line: 60, op: 15
+                    6: line: 62, op: 21
+                    7: line: 63, op: 34
+                    8: line: 64, op: 43
+                    9: line: 65, op: 49
+                    10: line: 66, op: 51
+                    11: line: 71, op: 52
+                    12: line: 72, op: 55
+                    13: line: 73, op: 59
+                    14: line: 74, op: 63
+                    15: line: 75, op: 65
+                    16: line: 77, op: 67
+                    17: line: 78, op: 71
+                    18: line: 79, op: 74
+                    19: line: 82, op: 75
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 999)
+                    4:  jcmp(s2, 47, s1, CMP_LE)
+                    5:  getk(s1, "count", s0)
+                    6:  loadint(s2, 999)
+                    7:  eq(s1, 2, s1, 0)
+                    8:  jz(s1, 3)
+                    9:  load(s1, "count")
+                    10:  loadint(s2, 998)
+                    11:  set(s255, s0, s1, s2)
+                    12:  getk(s1, "vy", s0)
+                    13:  loadfloat(s2, 0)
+                    14:  jcmp(s2, 37, s1, CMP_G)
+                    15:  getk(s1, "ground", s0)
+                    16:  jz(s1, 4)
+                    17:  load(s1, "count")
+                    18:  loadint(s2, 1000)
+                    19:  set(s255, s0, s1, s2)
+                    20:  jmp(-, 31)
+                    21:  getk(s1, "vy", s0)
+                    22:  loadint(s2, 0)
+                    23:  cmp(s1, s2, s1, CMP_G)
+                    24:  and(s1, 8, s1)
+                    25:  getk(s2, "y", s0)
+                    26:  loadroot(s3)
+                    27:  getk(s3, "camera", s3)
+                    28:  getk(s3, "y", s3)
+                    29:  loadint(s4, 360)
+                    30:  add(s3, s4, s3)
+                    31:  cmp(s2, s3, s2, CMP_G)
+                    32:  move(s1, s2)
+                    33:  jz(s1, 18)
+                    34:  newobj(s1, 2, 0, 1)
+                    35:  getk(s2, "x", s0)
+                    36:  appendarray(s1, 2, 0)
+                    37:  loadroot(s2)
+                    38:  getk(s2, "camera", s2)
+                    39:  getk(s2, "y", s2)
+                    40:  loadint(s3, 360)
+                    41:  add(s2, s3, s2)
+                    42:  appendarray(s1, 2, 0)
+                    43:  getk(s2, "stage", s0)
+                    44:  getk(s2, "map", s2)
+                    45:  prepcallk(s2, "message", s2, s3)
+                    46:  loadint(s4, 4110)
+                    47:  move(s5, s1)
+                    48:  call(255, s2, s3, 3)
+                    49:  prepcallk(s2, "Damage_ReturnShip", s0, s3)
+                    50:  call(255, s2, s3, 1)
+                    51:  return(255, 0)
+                    52:  getk(s1, "count", s0)
+                    53:  loadint(s2, 1000)
+                    54:  jcmp(s2, 20, s1, CMP_GE)
+                    55:  prepcallk(s1, "VX_Brake", s0, s2)
+                    56:  move(s3, s0)
+                    57:  loadfloat(s4, 0.25)
+                    58:  call(255, s1, s2, 3)
+                    59:  getk(s1, "count", s0)
+                    60:  loadint(s2, 1000)
+                    61:  eq(s1, 2, s1, 0)
+                    62:  jz(s1, 4)
+                    63:  dload(s1, "motion", s2, "damage2")
+                    64:  set(s255, s0, s1, s2)
+                    65:  prepcallk(s1, "Landing", s0, s2)
+                    66:  call(255, s1, s2, 1)
+                    67:  getk(s1, "count", s0)
+                    68:  loadint(s2, 1030)
+                    69:  eq(s1, 2, s1, 0)
+                    70:  jz(s1, 4)
+                    71:  prepcallk(s1, "com_common_recover", s0, s2)
+                    72:  loadnulls(s3, 1)
+                    73:  call(255, s1, s2, 2)
+                    74:  return(255, 0)
+                    75:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 6
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+        name: "com_common_recover"
+        nliterals: 18
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 1
+        Literals: [
+            0: "GetFront"
+            1: "lib"
+            2: "enemy"
+            3: "baria_active"
+            4: "count"
+            5: "vx"
+            6: "vy"
+            7: "g"
+            8: "ground"
+            9: "motion"
+            10: "jump_pre"
+            11: "flag1"
+            12: "direction_h"
+            13: "x"
+            14: "world"
+            15: "left"
+            16: "right"
+            17: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_val"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_val", pos: 1, start_op: 0, end_op: 52
+            1: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 84, op: 0
+            1: line: 85, op: 0
+            2: line: 86, op: 2
+            3: line: 87, op: 8
+            4: line: 88, op: 11
+            5: line: 89, op: 14
+            6: line: 90, op: 17
+            7: line: 91, op: 20
+            8: line: 92, op: 23
+            9: line: 93, op: 25
+            10: line: 94, op: 29
+            11: line: 95, op: 39
+            12: line: 96, op: 49
+            13: line: 127, op: 52
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s2, "GetFront", s0, s3)
+            1:  call(255, s2, s3, 1)
+            2:  loadroot(s2)
+            3:  getk(s2, "lib", s2)
+            4:  getk(s2, "enemy", s2)
+            5:  prepcallk(s2, "baria_active", s2, s3)
+            6:  move(s4, s0)
+            7:  call(255, s2, s3, 2)
+            8:  load(s2, "count")
+            9:  loadint(s3, 0)
+            10:  set(s255, s0, s2, s3)
+            11:  load(s2, "vx")
+            12:  loadint(s3, 0)
+            13:  set(s255, s0, s2, s3)
+            14:  load(s2, "vy")
+            15:  loadint(s3, 0)
+            16:  set(s255, s0, s2, s3)
+            17:  load(s2, "g")
+            18:  loadint(s3, 0)
+            19:  set(s255, s0, s2, s3)
+            20:  load(s2, "ground")
+            21:  loadbool(s3, 1)
+            22:  set(s255, s0, s2, s3)
+            23:  dload(s2, "motion", s3, "jump_pre")
+            24:  set(s255, s0, s2, s3)
+            25:  dload(s2, "flag1", s3, "direction_h")
+            26:  get(s3, s0, s3)
+            27:  neg(s3, s3)
+            28:  set(s255, s0, s2, s3)
+            29:  getk(s2, "x", s0)
+            30:  loadroot(s3)
+            31:  getk(s3, "world", s3)
+            32:  getk(s3, "left", s3)
+            33:  loadint(s4, 196)
+            34:  add(s3, s4, s3)
+            35:  jcmp(s3, 3, s2, CMP_L)
+            36:  load(s2, "flag1")
+            37:  loadint(s3, 1)
+            38:  set(s255, s0, s2, s3)
+            39:  getk(s2, "x", s0)
+            40:  loadroot(s3)
+            41:  getk(s3, "world", s3)
+            42:  getk(s3, "right", s3)
+            43:  loadint(s4, 196)
+            44:  sub(s3, s4, s3)
+            45:  jcmp(s3, 3, s2, CMP_G)
+            46:  load(s2, "flag1")
+            47:  loadint(s3, -1)
+            48:  set(s255, s0, s2, s3)
+            49:  load(s2, "state")
+            50:  closure(s3, 0)
+            51:  set(s255, s0, s2, s3)
+            52:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\com\kanako_ai.nut"
+                name: null
+                nliterals: 20
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 25
+                ndefaultparams: 0
+                ninstructions: 131
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "motion"
+                    2: "roll"
+                    3: "vx"
+                    4: "flag1"
+                    5: "vy"
+                    6: "g"
+                    7: "ground"
+                    8: "VX_Brake"
+                    9: "direction_h"
+                    10: "x"
+                    11: "world"
+                    12: "left"
+                    13: "right"
+                    14: "y"
+                    15: "camera"
+                    16: "landing"
+                    17: "stand"
+                    18: "state"
+                    19: "Activate_ComStack"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 130
+                  ]
+                Line Informations: [
+                    0: line: 96, op: 0
+                    1: line: 97, op: 0
+                    2: line: 98, op: 2
+                    3: line: 99, op: 5
+                    4: line: 100, op: 9
+                    5: line: 101, op: 11
+                    6: line: 102, op: 16
+                    7: line: 103, op: 19
+                    8: line: 104, op: 22
+                    9: line: 106, op: 25
+                    10: line: 107, op: 38
+                    11: line: 108, op: 65
+                    12: line: 110, op: 70
+                    13: line: 112, op: 96
+                    14: line: 113, op: 99
+                    15: line: 114, op: 103
+                    16: line: 115, op: 105
+                    17: line: 116, op: 108
+                    18: line: 117, op: 111
+                    19: line: 119, op: 114
+                    20: line: 121, op: 120
+                    21: line: 122, op: 124
+                    22: line: 123, op: 127
+                    23: line: 124, op: 129
+                    24: line: 126, op: 130
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 599)
+                    4:  jcmp(s2, 91, s1, CMP_LE)
+                    5:  getk(s1, "count", s0)
+                    6:  loadint(s2, 6)
+                    7:  eq(s1, 2, s1, 0)
+                    8:  jz(s1, 16)
+                    9:  dload(s1, "motion", s2, "roll")
+                    10:  set(s255, s0, s1, s2)
+                    11:  load(s1, "vx")
+                    12:  loadfloat(s2, -8)
+                    13:  getk(s3, "flag1", s0)
+                    14:  mul(s2, s3, s2)
+                    15:  set(s255, s0, s1, s2)
+                    16:  load(s1, "vy")
+                    17:  loadfloat(s2, -4)
+                    18:  set(s255, s0, s1, s2)
+                    19:  load(s1, "g")
+                    20:  loadfloat(s2, 0.25)
+                    21:  set(s255, s0, s1, s2)
+                    22:  load(s1, "ground")
+                    23:  loadbool(s2, 0)
+                    24:  set(s255, s0, s1, s2)
+                    25:  getk(s1, "count", s0)
+                    26:  loadint(s2, 6)
+                    27:  cmp(s1, s2, s1, CMP_GE)
+                    28:  and(s1, 4, s1)
+                    29:  getk(s2, "count", s0)
+                    30:  loadint(s3, 22)
+                    31:  cmp(s2, s3, s2, CMP_LE)
+                    32:  move(s1, s2)
+                    33:  jz(s1, 4)
+                    34:  prepcallk(s1, "VX_Brake", s0, s2)
+                    35:  move(s3, s0)
+                    36:  loadfloat(s4, 0.2)
+                    37:  call(255, s1, s2, 3)
+                    38:  getk(s1, "direction_h", s0)
+                    39:  loadint(s2, -1)
+                    40:  eq(s1, 2, s1, 0)
+                    41:  and(s1, 8, s1)
+                    42:  getk(s2, "x", s0)
+                    43:  loadroot(s3)
+                    44:  getk(s3, "world", s3)
+                    45:  getk(s3, "left", s3)
+                    46:  loadint(s4, 32)
+                    47:  add(s3, s4, s3)
+                    48:  cmp(s2, s3, s2, CMP_L)
+                    49:  move(s1, s2)
+                    50:  or(s1, 13, s1)
+                    51:  getk(s2, "direction_h", s0)
+                    52:  loadint(s3, 1)
+                    53:  eq(s2, 3, s2, 0)
+                    54:  and(s2, 8, s2)
+                    55:  getk(s3, "x", s0)
+                    56:  loadroot(s4)
+                    57:  getk(s4, "world", s4)
+                    58:  getk(s4, "right", s4)
+                    59:  loadint(s5, 32)
+                    60:  sub(s4, s5, s4)
+                    61:  cmp(s3, s4, s3, CMP_G)
+                    62:  move(s2, s3)
+                    63:  move(s1, s2)
+                    64:  jz(s1, 5)
+                    65:  dload(s1, "vx", s2, "vx")
+                    66:  get(s2, s0, s2)
+                    67:  loadfloat(s3, -0.5)
+                    68:  mul(s2, s3, s2)
+                    69:  set(s255, s0, s1, s2)
+                    70:  getk(s1, "count", s0)
+                    71:  loadint(s2, 6)
+                    72:  cmp(s1, s2, s1, CMP_G)
+                    73:  and(s1, 18, s1)
+                    74:  getk(s2, "vy", s0)
+                    75:  loadfloat(s3, 0)
+                    76:  cmp(s2, s3, s2, CMP_G)
+                    77:  and(s2, 13, s2)
+                    78:  getk(s3, "ground", s0)
+                    79:  or(s3, 10, s3)
+                    80:  getk(s4, "y", s0)
+                    81:  loadroot(s5)
+                    82:  getk(s5, "camera", s5)
+                    83:  getk(s5, "y", s5)
+                    84:  loadint(s6, 360)
+                    85:  add(s5, s6, s5)
+                    86:  loadint(s6, 32)
+                    87:  add(s5, s6, s5)
+                    88:  cmp(s4, s5, s4, CMP_G)
+                    89:  move(s3, s4)
+                    90:  move(s2, s3)
+                    91:  move(s1, s2)
+                    92:  jz(s1, 3)
+                    93:  load(s1, "count")
+                    94:  loadint(s2, 600)
+                    95:  set(s255, s0, s1, s2)
+                    96:  getk(s1, "count", s0)
+                    97:  loadint(s2, 600)
+                    98:  jcmp(s2, 21, s1, CMP_GE)
+                    99:  getk(s1, "count", s0)
+                    100:  loadint(s2, 600)
+                    101:  eq(s1, 2, s1, 0)
+                    102:  jz(s1, 11)
+                    103:  dload(s1, "motion", s2, "landing")
+                    104:  set(s255, s0, s1, s2)
+                    105:  load(s1, "vx")
+                    106:  loadint(s2, 0)
+                    107:  set(s255, s0, s1, s2)
+                    108:  load(s1, "vy")
+                    109:  loadint(s2, 0)
+                    110:  set(s255, s0, s1, s2)
+                    111:  load(s1, "g")
+                    112:  loadint(s2, 0)
+                    113:  set(s255, s0, s1, s2)
+                    114:  getk(s1, "count", s0)
+                    115:  loadint(s2, 606)
+                    116:  eq(s1, 2, s1, 0)
+                    117:  jz(s1, 2)
+                    118:  dload(s1, "motion", s2, "stand")
+                    119:  set(s255, s0, s1, s2)
+                    120:  getk(s1, "count", s0)
+                    121:  loadint(s2, 606)
+                    122:  eq(s1, 2, s1, 0)
+                    123:  jz(s1, 6)
+                    124:  load(s1, "state")
+                    125:  loadnulls(s2, 1)
+                    126:  set(s255, s0, s1, s2)
+                    127:  prepcallk(s1, "Activate_ComStack", s0, s2)
+                    128:  call(255, s1, s2, 1)
+                    129:  return(255, 0)
+                    130:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 7
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,907 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\system\BattleStatus\marisa\marisa.nut: 
+sourcename: ""
+name: "main"
+nliterals: 10
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 35
+nfunctions: 3
+Literals: [
+    0: "MarisaStatus"
+    1: "BattleStatus"
+    2: "ex_f"
+    3: "ex_f_max"
+    4: "ex_b"
+    5: "ex_b_max"
+    6: "star"
+    7: "Marisa_BottomDraw"
+    8: "Marisa_BottomDraw_Left"
+    9: "Marisa_BottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 34
+    1: name: "this", pos: 0, start_op: 0, end_op: 34
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 11, op: 20
+    2: line: 14, op: 21
+    3: line: 31, op: 25
+    4: line: 77, op: 29
+    5: line: 125, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "MarisaStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "ex_f")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f_max")
+    8:  loadint(s5, 256)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_b")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b_max")
+    14:  loadint(s5, 256)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "star")
+    17:  loadint(s5, 0)
+    18:  newslota(0, s3, s4, s5)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 11)
+    21:  line(-, 14)
+    22:  load(s2, "Marisa_BottomDraw")
+    23:  closure(s3, 0)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 31)
+    26:  load(s2, "Marisa_BottomDraw_Left")
+    27:  closure(s3, 1)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 77)
+    30:  load(s2, "Marisa_BottomDraw_Right")
+    31:  closure(s3, 2)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 125)
+    34:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Marisa_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 35
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "name"
+            2: "MarisaStatus"
+            3: "player_id"
+            4: "Marisa_BottomDraw_Left"
+            5: "Marisa_BottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 34
+          ]
+        Line Informations: [
+            0: line: 17, op: 1
+            1: line: 18, op: 7
+            2: line: 21, op: 14
+            3: line: 23, op: 21
+            4: line: 25, op: 24
+            5: line: 27, op: 31
+            6: line: 29, op: 33
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 17)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "name", s1)
+            3:  loadint(s2, 1)
+            4:  ne(s1, 2, s1, 0)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 18)
+            8:  getk(s1, "status", s0)
+            9:  getk(s2, "MarisaStatus", s0)
+            10:  instanceof(s1, s2, s1)
+            11:  not(s1, s1)
+            12:  jz(s1, 1)
+            13:  return(255, 0)
+            14:  line(-, 21)
+            15:  getk(s1, "status", s0)
+            16:  getk(s1, "player_id", s1)
+            17:  loadint(s2, 0)
+            18:  eq(s1, 2, s1, 0)
+            19:  jz(s1, 4)
+            20:  line(-, 23)
+            21:  prepcallk(s1, "Marisa_BottomDraw_Left", s0, s2)
+            22:  call(255, s1, s2, 1)
+            23:  jmp(-, 9)
+            24:  line(-, 25)
+            25:  getk(s1, "status", s0)
+            26:  getk(s1, "player_id", s1)
+            27:  loadint(s2, 1)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 3)
+            30:  line(-, 27)
+            31:  prepcallk(s1, "Marisa_BottomDraw_Right", s0, s2)
+            32:  call(255, s1, s2, 1)
+            33:  line(-, 29)
+            34:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Marisa_BottomDraw_Left"
+        nliterals: 28
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 7
+        nlineinfos: 27
+        ndefaultparams: 0
+        ninstructions: 281
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "images"
+            2: "resource"
+            3: "marisa_base1"
+            4: "bottom"
+            5: "BitBlt"
+            6: "image_width"
+            7: "image_height"
+            8: "BLEND_ALPHA"
+            9: "guardcrash_alert"
+            10: "cos"
+            11: "count"
+            12: "marisa_red"
+            13: "BLEND_ADD"
+            14: "ex_b"
+            15: "ex_b_max"
+            16: "marisa_blue"
+            17: "ex_f"
+            18: "ex_f_max"
+            19: "star"
+            20: "marisa_star1_1"
+            21: "marisa_star2_1"
+            22: "marisa_star3_1"
+            23: "hp_frame_left"
+            24: "character_name_l"
+            25: "graph"
+            26: "en_frame"
+            27: "en_kao"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "alpha", pos: 3, start_op: 34, end_op: 73
+            1: name: "img_bar2", pos: 5, start_op: 122, end_op: 278
+            2: name: "img_bar1", pos: 4, start_op: 81, end_op: 278
+            3: name: "bar_width", pos: 3, start_op: 76, end_op: 278
+            4: name: "base_x", pos: 2, start_op: 7, end_op: 278
+            5: name: "img_base", pos: 1, start_op: 5, end_op: 278
+            6: name: "this", pos: 0, start_op: 0, end_op: 280
+          ]
+        Line Informations: [
+            0: line: 34, op: 1
+            1: line: 35, op: 5
+            2: line: 36, op: 7
+            3: line: 39, op: 20
+            4: line: 41, op: 25
+            5: line: 42, op: 34
+            6: line: 43, op: 54
+            7: line: 47, op: 74
+            8: line: 48, op: 76
+            9: line: 49, op: 81
+            10: line: 50, op: 89
+            11: line: 51, op: 93
+            12: line: 52, op: 97
+            13: line: 54, op: 117
+            14: line: 55, op: 122
+            15: line: 56, op: 130
+            16: line: 57, op: 134
+            17: line: 58, op: 138
+            18: line: 61, op: 158
+            19: line: 62, op: 163
+            20: line: 64, op: 188
+            21: line: 65, op: 193
+            22: line: 67, op: 218
+            23: line: 68, op: 223
+            24: line: 71, op: 248
+            25: line: 74, op: 262
+            26: line: 75, op: 279
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 34)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "images", s1)
+            3:  getk(s1, "resource", s1)
+            4:  getk(s1, "marisa_base1", s1)
+            5:  line(-, 35)
+            6:  loadint(s2, 0)
+            7:  line(-, 36)
+            8:  getk(s3, "bottom", s0)
+            9:  prepcallk(s3, "BitBlt", s3, s4)
+            10:  move(s5, s2)
+            11:  loadint(s6, -40)
+            12:  getk(s7, "image_width", s1)
+            13:  getk(s8, "image_height", s1)
+            14:  move(s9, s1)
+            15:  loadint(s10, 0)
+            16:  loadint(s11, 0)
+            17:  getk(s12, "BLEND_ALPHA", s0)
+            18:  loadfloat(s13, 1)
+            19:  call(255, s3, s4, 10)
+            20:  line(-, 39)
+            21:  getk(s3, "status", s0)
+            22:  getk(s3, "guardcrash_alert", s3)
+            23:  jz(s3, 50)
+            24:  line(-, 41)
+            25:  prepcallk(s3, "cos", s0, s4)
+            26:  getk(s5, "count", s0)
+            27:  loadfloat(s6, 0.24)
+            28:  mul(s5, s6, s5)
+            29:  call(3, s3, s4, 2)
+            30:  loadfloat(s4, 0.5)
+            31:  mul(s3, s4, s3)
+            32:  loadfloat(s4, 0.5)
+            33:  add(s3, s4, s3)
+            34:  line(-, 42)
+            35:  getk(s4, "bottom", s0)
+            36:  prepcallk(s4, "BitBlt", s4, s5)
+            37:  loadint(s6, 104)
+            38:  add(s6, s6, s2)
+            39:  loadint(s7, 53)
+            40:  loadint(s8, 255)
+            41:  loadint(s9, 18)
+            42:  getk(s10, "status", s0)
+            43:  getk(s10, "images", s10)
+            44:  getk(s10, "resource", s10)
+            45:  getk(s10, "marisa_red", s10)
+            46:  loadint(s11, 0)
+            47:  loadint(s12, 0)
+            48:  getk(s13, "BLEND_ALPHA", s0)
+            49:  loadfloat(s14, 0.1)
+            50:  mul(s14, s14, s3)
+            51:  loadfloat(s15, 0.1)
+            52:  add(s14, s15, s14)
+            53:  call(255, s4, s5, 10)
+            54:  line(-, 43)
+            55:  getk(s4, "bottom", s0)
+            56:  prepcallk(s4, "BitBlt", s4, s5)
+            57:  loadint(s6, 104)
+            58:  add(s6, s6, s2)
+            59:  loadint(s7, 53)
+            60:  loadint(s8, 255)
+            61:  loadint(s9, 18)
+            62:  getk(s10, "status", s0)
+            63:  getk(s10, "images", s10)
+            64:  getk(s10, "resource", s10)
+            65:  getk(s10, "marisa_red", s10)
+            66:  loadint(s11, 0)
+            67:  loadint(s12, 0)
+            68:  getk(s13, "BLEND_ADD", s0)
+            69:  loadfloat(s14, 0.1)
+            70:  mul(s14, s14, s3)
+            71:  loadfloat(s15, 0.05)
+            72:  add(s14, s15, s14)
+            73:  call(255, s4, s5, 10)
+            74:  line(-, 47)
+            75:  loadnulls(s3, 1)
+            76:  line(-, 48)
+            77:  getk(s4, "status", s0)
+            78:  getk(s4, "images", s4)
+            79:  getk(s4, "resource", s4)
+            80:  getk(s4, "marisa_red", s4)
+            81:  line(-, 49)
+            82:  getk(s5, "status", s0)
+            83:  getk(s5, "ex_b", s5)
+            84:  loadint(s6, 256)
+            85:  mul(s5, s6, s5)
+            86:  getk(s6, "status", s0)
+            87:  getk(s6, "ex_b_max", s6)
+            88:  div(s3, s6, s5)
+            89:  line(-, 50)
+            90:  loadint(s5, 0)
+            91:  jcmp(s5, 1, s3, CMP_L)
+            92:  loadint(s3, 0)
+            93:  line(-, 51)
+            94:  loadint(s5, 256)
+            95:  jcmp(s5, 1, s3, CMP_G)
+            96:  loadint(s3, 256)
+            97:  line(-, 52)
+            98:  getk(s5, "bottom", s0)
+            99:  prepcallk(s5, "BitBlt", s5, s6)
+            100:  loadint(s7, 39)
+            101:  add(s7, s7, s2)
+            102:  loadint(s8, 320)
+            103:  add(s7, s8, s7)
+            104:  sub(s7, s3, s7)
+            105:  loadint(s8, 1)
+            106:  add(s7, s8, s7)
+            107:  loadint(s8, 53)
+            108:  move(s9, s3)
+            109:  getk(s10, "image_height", s4)
+            110:  move(s11, s4)
+            111:  loadint(s12, 256)
+            112:  sub(s12, s3, s12)
+            113:  loadint(s13, 0)
+            114:  getk(s14, "BLEND_ALPHA", s0)
+            115:  loadfloat(s15, 1)
+            116:  call(255, s5, s6, 10)
+            117:  line(-, 54)
+            118:  getk(s5, "status", s0)
+            119:  getk(s5, "images", s5)
+            120:  getk(s5, "resource", s5)
+            121:  getk(s5, "marisa_blue", s5)
+            122:  line(-, 55)
+            123:  getk(s6, "status", s0)
+            124:  getk(s6, "ex_f", s6)
+            125:  loadint(s7, 256)
+            126:  mul(s6, s7, s6)
+            127:  getk(s7, "status", s0)
+            128:  getk(s7, "ex_f_max", s7)
+            129:  div(s3, s7, s6)
+            130:  line(-, 56)
+            131:  loadint(s6, 0)
+            132:  jcmp(s6, 1, s3, CMP_L)
+            133:  loadint(s3, 0)
+            134:  line(-, 57)
+            135:  loadint(s6, 256)
+            136:  jcmp(s6, 1, s3, CMP_G)
+            137:  loadint(s3, 256)
+            138:  line(-, 58)
+            139:  getk(s6, "bottom", s0)
+            140:  prepcallk(s6, "BitBlt", s6, s7)
+            141:  loadint(s8, 39)
+            142:  add(s8, s8, s2)
+            143:  loadint(s9, 320)
+            144:  add(s8, s9, s8)
+            145:  sub(s8, s3, s8)
+            146:  loadint(s9, 1)
+            147:  add(s8, s9, s8)
+            148:  loadint(s9, 53)
+            149:  move(s10, s3)
+            150:  getk(s11, "image_height", s5)
+            151:  move(s12, s5)
+            152:  loadint(s13, 256)
+            153:  sub(s13, s3, s13)
+            154:  loadint(s14, 0)
+            155:  getk(s15, "BLEND_ALPHA", s0)
+            156:  loadfloat(s16, 1)
+            157:  call(255, s6, s7, 10)
+            158:  line(-, 61)
+            159:  getk(s6, "status", s0)
+            160:  getk(s6, "star", s6)
+            161:  loadint(s7, 1)
+            162:  jcmp(s7, 25, s6, CMP_GE)
+            163:  line(-, 62)
+            164:  getk(s6, "bottom", s0)
+            165:  prepcallk(s6, "BitBlt", s6, s7)
+            166:  loadint(s8, 72)
+            167:  add(s8, s8, s2)
+            168:  loadint(s9, 51)
+            169:  getk(s10, "status", s0)
+            170:  getk(s10, "images", s10)
+            171:  getk(s10, "resource", s10)
+            172:  getk(s10, "marisa_star1_1", s10)
+            173:  getk(s10, "image_width", s10)
+            174:  getk(s11, "status", s0)
+            175:  getk(s11, "images", s11)
+            176:  getk(s11, "resource", s11)
+            177:  getk(s11, "marisa_star1_1", s11)
+            178:  getk(s11, "image_height", s11)
+            179:  getk(s12, "status", s0)
+            180:  getk(s12, "images", s12)
+            181:  getk(s12, "resource", s12)
+            182:  getk(s12, "marisa_star1_1", s12)
+            183:  loadint(s13, 0)
+            184:  loadint(s14, 0)
+            185:  getk(s15, "BLEND_ALPHA", s0)
+            186:  loadfloat(s16, 1)
+            187:  call(255, s6, s7, 10)
+            188:  line(-, 64)
+            189:  getk(s6, "status", s0)
+            190:  getk(s6, "star", s6)
+            191:  loadint(s7, 2)
+            192:  jcmp(s7, 25, s6, CMP_GE)
+            193:  line(-, 65)
+            194:  getk(s6, "bottom", s0)
+            195:  prepcallk(s6, "BitBlt", s6, s7)
+            196:  loadint(s8, 38)
+            197:  add(s8, s8, s2)
+            198:  loadint(s9, 45)
+            199:  getk(s10, "status", s0)
+            200:  getk(s10, "images", s10)
+            201:  getk(s10, "resource", s10)
+            202:  getk(s10, "marisa_star2_1", s10)
+            203:  getk(s10, "image_width", s10)
+            204:  getk(s11, "status", s0)
+            205:  getk(s11, "images", s11)
+            206:  getk(s11, "resource", s11)
+            207:  getk(s11, "marisa_star2_1", s11)
+            208:  getk(s11, "image_height", s11)
+            209:  getk(s12, "status", s0)
+            210:  getk(s12, "images", s12)
+            211:  getk(s12, "resource", s12)
+            212:  getk(s12, "marisa_star2_1", s12)
+            213:  loadint(s13, 0)
+            214:  loadint(s14, 0)
+            215:  getk(s15, "BLEND_ALPHA", s0)
+            216:  loadfloat(s16, 1)
+            217:  call(255, s6, s7, 10)
+            218:  line(-, 67)
+            219:  getk(s6, "status", s0)
+            220:  getk(s6, "star", s6)
+            221:  loadint(s7, 3)
+            222:  jcmp(s7, 25, s6, CMP_GE)
+            223:  line(-, 68)
+            224:  getk(s6, "bottom", s0)
+            225:  prepcallk(s6, "BitBlt", s6, s7)
+            226:  loadint(s8, 14)
+            227:  add(s8, s8, s2)
+            228:  loadint(s9, 27)
+            229:  getk(s10, "status", s0)
+            230:  getk(s10, "images", s10)
+            231:  getk(s10, "resource", s10)
+            232:  getk(s10, "marisa_star3_1", s10)
+            233:  getk(s10, "image_width", s10)
+            234:  getk(s11, "status", s0)
+            235:  getk(s11, "images", s11)
+            236:  getk(s11, "resource", s11)
+            237:  getk(s11, "marisa_star3_1", s11)
+            238:  getk(s11, "image_height", s11)
+            239:  getk(s12, "status", s0)
+            240:  getk(s12, "images", s12)
+            241:  getk(s12, "resource", s12)
+            242:  getk(s12, "marisa_star3_1", s12)
+            243:  loadint(s13, 0)
+            244:  loadint(s14, 0)
+            245:  getk(s15, "BLEND_ALPHA", s0)
+            246:  loadfloat(s16, 1)
+            247:  call(255, s6, s7, 10)
+            248:  line(-, 71)
+            249:  getk(s6, "hp_frame_left", s0)
+            250:  prepcallk(s6, "BitBlt", s6, s7)
+            251:  loadint(s8, 115)
+            252:  loadint(s9, 47)
+            253:  loadint(s10, 128)
+            254:  loadint(s11, 28)
+            255:  getk(s12, "resource", s0)
+            256:  getk(s12, "character_name_l", s12)
+            257:  loadint(s13, 0)
+            258:  loadint(s14, 28)
+            259:  getk(s15, "BLEND_ALPHA", s0)
+            260:  loadfloat(s16, 1)
+            261:  call(255, s6, s7, 10)
+            262:  line(-, 74)
+            263:  getk(s6, "graph", s0)
+            264:  getk(s6, "en_frame", s6)
+            265:  prepcallk(s6, "BitBlt", s6, s7)
+            266:  loadint(s8, 14)
+            267:  loadint(s9, 14)
+            268:  loadint(s10, 100)
+            269:  loadint(s11, 100)
+            270:  getk(s12, "status", s0)
+            271:  getk(s12, "images", s12)
+            272:  getk(s12, "resource", s12)
+            273:  getk(s12, "en_kao", s12)
+            274:  loadint(s13, 0)
+            275:  loadint(s14, 0)
+            276:  getk(s15, "BLEND_ALPHA", s0)
+            277:  loadfloat(s16, 1)
+            278:  call(255, s6, s7, 10)
+            279:  line(-, 75)
+            280:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 17
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Marisa_BottomDraw_Right"
+        nliterals: 30
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 8
+        nlineinfos: 28
+        ndefaultparams: 0
+        ninstructions: 278
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "images"
+            2: "resource"
+            3: "marisa_base"
+            4: "image_width"
+            5: "bottom"
+            6: "BitBlt"
+            7: "image_height"
+            8: "BLEND_ALPHA"
+            9: "guardcrash_alert"
+            10: "cos"
+            11: "count"
+            12: "marisa_red"
+            13: "BLEND_ADD"
+            14: "ex_b"
+            15: "ex_b_max"
+            16: "marisa_blue"
+            17: "ex_f"
+            18: "ex_f_max"
+            19: "star"
+            20: "marisa_star1"
+            21: "marisa_star2"
+            22: "marisa_star3"
+            23: "marisa_name"
+            24: "hp_frame_right"
+            25: "character_name_r"
+            26: "MirrorBlt"
+            27: "graph"
+            28: "en_frame"
+            29: "en_kao"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "alpha", pos: 3, start_op: 38, end_op: 77
+            1: name: "img_name", pos: 6, start_op: 245, end_op: 275
+            2: name: "img_bar2", pos: 5, start_op: 120, end_op: 275
+            3: name: "img_bar1", pos: 4, start_op: 85, end_op: 275
+            4: name: "bar_width", pos: 3, start_op: 80, end_op: 275
+            5: name: "base_x", pos: 2, start_op: 11, end_op: 275
+            6: name: "img_base", pos: 1, start_op: 5, end_op: 275
+            7: name: "this", pos: 0, start_op: 0, end_op: 277
+          ]
+        Line Informations: [
+            0: line: 80, op: 1
+            1: line: 81, op: 5
+            2: line: 82, op: 11
+            3: line: 85, op: 24
+            4: line: 87, op: 29
+            5: line: 88, op: 38
+            6: line: 89, op: 58
+            7: line: 93, op: 78
+            8: line: 95, op: 80
+            9: line: 96, op: 85
+            10: line: 97, op: 93
+            11: line: 98, op: 97
+            12: line: 99, op: 101
+            13: line: 101, op: 115
+            14: line: 102, op: 120
+            15: line: 103, op: 128
+            16: line: 104, op: 132
+            17: line: 105, op: 136
+            18: line: 108, op: 150
+            19: line: 109, op: 155
+            20: line: 111, op: 180
+            21: line: 112, op: 185
+            22: line: 114, op: 210
+            23: line: 115, op: 215
+            24: line: 118, op: 240
+            25: line: 119, op: 245
+            26: line: 122, op: 259
+            27: line: 123, op: 276
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 80)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "images", s1)
+            3:  getk(s1, "resource", s1)
+            4:  getk(s1, "marisa_base", s1)
+            5:  line(-, 81)
+            6:  loadint(s2, 1280)
+            7:  getk(s3, "image_width", s1)
+            8:  sub(s2, s3, s2)
+            9:  loadint(s3, 1)
+            10:  sub(s2, s3, s2)
+            11:  line(-, 82)
+            12:  getk(s3, "bottom", s0)
+            13:  prepcallk(s3, "BitBlt", s3, s4)
+            14:  move(s5, s2)
+            15:  loadint(s6, -40)
+            16:  getk(s7, "image_width", s1)
+            17:  getk(s8, "image_height", s1)
+            18:  move(s9, s1)
+            19:  loadint(s10, 0)
+            20:  loadint(s11, 0)
+            21:  getk(s12, "BLEND_ALPHA", s0)
+            22:  loadfloat(s13, 1)
+            23:  call(255, s3, s4, 10)
+            24:  line(-, 85)
+            25:  getk(s3, "status", s0)
+            26:  getk(s3, "guardcrash_alert", s3)
+            27:  jz(s3, 50)
+            28:  line(-, 87)
+            29:  prepcallk(s3, "cos", s0, s4)
+            30:  getk(s5, "count", s0)
+            31:  loadfloat(s6, 0.24)
+            32:  mul(s5, s6, s5)
+            33:  call(3, s3, s4, 2)
+            34:  loadfloat(s4, 0.5)
+            35:  mul(s3, s4, s3)
+            36:  loadfloat(s4, 0.5)
+            37:  add(s3, s4, s3)
+            38:  line(-, 88)
+            39:  getk(s4, "bottom", s0)
+            40:  prepcallk(s4, "BitBlt", s4, s5)
+            41:  loadint(s6, 1)
+            42:  add(s6, s6, s2)
+            43:  loadint(s7, 53)
+            44:  loadint(s8, 256)
+            45:  loadint(s9, 18)
+            46:  getk(s10, "status", s0)
+            47:  getk(s10, "images", s10)
+            48:  getk(s10, "resource", s10)
+            49:  getk(s10, "marisa_red", s10)
+            50:  loadint(s11, 0)
+            51:  loadint(s12, 0)
+            52:  getk(s13, "BLEND_ALPHA", s0)
+            53:  loadfloat(s14, 0.1)
+            54:  mul(s14, s14, s3)
+            55:  loadfloat(s15, 0.1)
+            56:  add(s14, s15, s14)
+            57:  call(255, s4, s5, 10)
+            58:  line(-, 89)
+            59:  getk(s4, "bottom", s0)
+            60:  prepcallk(s4, "BitBlt", s4, s5)
+            61:  loadint(s6, 1)
+            62:  add(s6, s6, s2)
+            63:  loadint(s7, 53)
+            64:  loadint(s8, 256)
+            65:  loadint(s9, 18)
+            66:  getk(s10, "status", s0)
+            67:  getk(s10, "images", s10)
+            68:  getk(s10, "resource", s10)
+            69:  getk(s10, "marisa_red", s10)
+            70:  loadint(s11, 0)
+            71:  loadint(s12, 0)
+            72:  getk(s13, "BLEND_ADD", s0)
+            73:  loadfloat(s14, 0.1)
+            74:  mul(s14, s14, s3)
+            75:  loadfloat(s15, 0.05)
+            76:  add(s14, s15, s14)
+            77:  call(255, s4, s5, 10)
+            78:  line(-, 93)
+            79:  loadnulls(s3, 1)
+            80:  line(-, 95)
+            81:  getk(s4, "status", s0)
+            82:  getk(s4, "images", s4)
+            83:  getk(s4, "resource", s4)
+            84:  getk(s4, "marisa_red", s4)
+            85:  line(-, 96)
+            86:  getk(s5, "status", s0)
+            87:  getk(s5, "ex_b", s5)
+            88:  loadint(s6, 256)
+            89:  mul(s5, s6, s5)
+            90:  getk(s6, "status", s0)
+            91:  getk(s6, "ex_b_max", s6)
+            92:  div(s3, s6, s5)
+            93:  line(-, 97)
+            94:  loadint(s5, 0)
+            95:  jcmp(s5, 1, s3, CMP_L)
+            96:  loadint(s3, 0)
+            97:  line(-, 98)
+            98:  loadint(s5, 256)
+            99:  jcmp(s5, 1, s3, CMP_G)
+            100:  loadint(s3, 256)
+            101:  line(-, 99)
+            102:  getk(s5, "bottom", s0)
+            103:  prepcallk(s5, "BitBlt", s5, s6)
+            104:  loadint(s7, 1)
+            105:  add(s7, s7, s2)
+            106:  loadint(s8, 53)
+            107:  move(s9, s3)
+            108:  getk(s10, "image_height", s4)
+            109:  move(s11, s4)
+            110:  loadint(s12, 0)
+            111:  loadint(s13, 0)
+            112:  getk(s14, "BLEND_ALPHA", s0)
+            113:  loadfloat(s15, 1)
+            114:  call(255, s5, s6, 10)
+            115:  line(-, 101)
+            116:  getk(s5, "status", s0)
+            117:  getk(s5, "images", s5)
+            118:  getk(s5, "resource", s5)
+            119:  getk(s5, "marisa_blue", s5)
+            120:  line(-, 102)
+            121:  getk(s6, "status", s0)
+            122:  getk(s6, "ex_f", s6)
+            123:  loadint(s7, 256)
+            124:  mul(s6, s7, s6)
+            125:  getk(s7, "status", s0)
+            126:  getk(s7, "ex_f_max", s7)
+            127:  div(s3, s7, s6)
+            128:  line(-, 103)
+            129:  loadint(s6, 0)
+            130:  jcmp(s6, 1, s3, CMP_L)
+            131:  loadint(s3, 0)
+            132:  line(-, 104)
+            133:  loadint(s6, 256)
+            134:  jcmp(s6, 1, s3, CMP_G)
+            135:  loadint(s3, 256)
+            136:  line(-, 105)
+            137:  getk(s6, "bottom", s0)
+            138:  prepcallk(s6, "BitBlt", s6, s7)
+            139:  loadint(s8, 1)
+            140:  add(s8, s8, s2)
+            141:  loadint(s9, 53)
+            142:  move(s10, s3)
+            143:  getk(s11, "image_height", s5)
+            144:  move(s12, s5)
+            145:  loadint(s13, 0)
+            146:  loadint(s14, 0)
+            147:  getk(s15, "BLEND_ALPHA", s0)
+            148:  loadfloat(s16, 1)
+            149:  call(255, s6, s7, 10)
+            150:  line(-, 108)
+            151:  getk(s6, "status", s0)
+            152:  getk(s6, "star", s6)
+            153:  loadint(s7, 1)
+            154:  jcmp(s7, 25, s6, CMP_GE)
+            155:  line(-, 109)
+            156:  getk(s6, "bottom", s0)
+            157:  prepcallk(s6, "BitBlt", s6, s7)
+            158:  loadint(s8, 259)
+            159:  add(s8, s8, s2)
+            160:  loadint(s9, 51)
+            161:  getk(s10, "status", s0)
+            162:  getk(s10, "images", s10)
+            163:  getk(s10, "resource", s10)
+            164:  getk(s10, "marisa_star1", s10)
+            165:  getk(s10, "image_width", s10)
+            166:  getk(s11, "status", s0)
+            167:  getk(s11, "images", s11)
+            168:  getk(s11, "resource", s11)
+            169:  getk(s11, "marisa_star1", s11)
+            170:  getk(s11, "image_height", s11)
+            171:  getk(s12, "status", s0)
+            172:  getk(s12, "images", s12)
+            173:  getk(s12, "resource", s12)
+            174:  getk(s12, "marisa_star1", s12)
+            175:  loadint(s13, 0)
+            176:  loadint(s14, 0)
+            177:  getk(s15, "BLEND_ALPHA", s0)
+            178:  loadfloat(s16, 1)
+            179:  call(255, s6, s7, 10)
+            180:  line(-, 111)
+            181:  getk(s6, "status", s0)
+            182:  getk(s6, "star", s6)
+            183:  loadint(s7, 2)
+            184:  jcmp(s7, 25, s6, CMP_GE)
+            185:  line(-, 112)
+            186:  getk(s6, "bottom", s0)
+            187:  prepcallk(s6, "BitBlt", s6, s7)
+            188:  loadint(s8, 293)
+            189:  add(s8, s8, s2)
+            190:  loadint(s9, 45)
+            191:  getk(s10, "status", s0)
+            192:  getk(s10, "images", s10)
+            193:  getk(s10, "resource", s10)
+            194:  getk(s10, "marisa_star2", s10)
+            195:  getk(s10, "image_width", s10)
+            196:  getk(s11, "status", s0)
+            197:  getk(s11, "images", s11)
+            198:  getk(s11, "resource", s11)
+            199:  getk(s11, "marisa_star2", s11)
+            200:  getk(s11, "image_height", s11)
+            201:  getk(s12, "status", s0)
+            202:  getk(s12, "images", s12)
+            203:  getk(s12, "resource", s12)
+            204:  getk(s12, "marisa_star2", s12)
+            205:  loadint(s13, 0)
+            206:  loadint(s14, 0)
+            207:  getk(s15, "BLEND_ALPHA", s0)
+            208:  loadfloat(s16, 1)
+            209:  call(255, s6, s7, 10)
+            210:  line(-, 114)
+            211:  getk(s6, "status", s0)
+            212:  getk(s6, "star", s6)
+            213:  loadint(s7, 3)
+            214:  jcmp(s7, 25, s6, CMP_GE)
+            215:  line(-, 115)
+            216:  getk(s6, "bottom", s0)
+            217:  prepcallk(s6, "BitBlt", s6, s7)
+            218:  loadint(s8, 316)
+            219:  add(s8, s8, s2)
+            220:  loadint(s9, 27)
+            221:  getk(s10, "status", s0)
+            222:  getk(s10, "images", s10)
+            223:  getk(s10, "resource", s10)
+            224:  getk(s10, "marisa_star3", s10)
+            225:  getk(s10, "image_width", s10)
+            226:  getk(s11, "status", s0)
+            227:  getk(s11, "images", s11)
+            228:  getk(s11, "resource", s11)
+            229:  getk(s11, "marisa_star3", s11)
+            230:  getk(s11, "image_height", s11)
+            231:  getk(s12, "status", s0)
+            232:  getk(s12, "images", s12)
+            233:  getk(s12, "resource", s12)
+            234:  getk(s12, "marisa_star3", s12)
+            235:  loadint(s13, 0)
+            236:  loadint(s14, 0)
+            237:  getk(s15, "BLEND_ALPHA", s0)
+            238:  loadfloat(s16, 1)
+            239:  call(255, s6, s7, 10)
+            240:  line(-, 118)
+            241:  getk(s6, "status", s0)
+            242:  getk(s6, "images", s6)
+            243:  getk(s6, "resource", s6)
+            244:  getk(s6, "marisa_name", s6)
+            245:  line(-, 119)
+            246:  getk(s7, "hp_frame_right", s0)
+            247:  prepcallk(s7, "BitBlt", s7, s8)
+            248:  loadint(s9, 212)
+            249:  loadint(s10, 47)
+            250:  loadint(s11, 128)
+            251:  loadint(s12, 28)
+            252:  getk(s13, "resource", s0)
+            253:  getk(s13, "character_name_r", s13)
+            254:  loadint(s14, 0)
+            255:  loadint(s15, 28)
+            256:  getk(s16, "BLEND_ALPHA", s0)
+            257:  loadfloat(s17, 1)
+            258:  call(255, s7, s8, 10)
+            259:  line(-, 122)
+            260:  prepcallk(s7, "MirrorBlt", s0, s8)
+            261:  getk(s9, "graph", s0)
+            262:  getk(s9, "en_frame", s9)
+            263:  loadint(s10, 14)
+            264:  loadint(s11, 14)
+            265:  loadint(s12, 100)
+            266:  loadint(s13, 100)
+            267:  getk(s14, "status", s0)
+            268:  getk(s14, "images", s14)
+            269:  getk(s14, "resource", s14)
+            270:  getk(s14, "en_kao", s14)
+            271:  loadint(s15, 0)
+            272:  loadint(s16, 0)
+            273:  getk(s17, "BLEND_ALPHA", s0)
+            274:  loadfloat(s18, 1)
+            275:  call(255, s7, s8, 11)
+            276:  line(-, 123)
+            277:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 19
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,274 @@
+## =======================================================================
+#Stage:2
+#Title:氷の粒が降り注ぐ
+#Place:森
+#Weather:快晴
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:reimu,160,0,0,8888FF
+Character:alice,160,0,1,FF8888
+Character:komachi,160,0,2,FF8888
+#敵画面外に待機
+Action:alice,100
+#カメラ固定
+Action:reimu,4
+
+#フォーカス瞬間移動
+#Action:reimu,11
+
+Bgm:data/bgm/ta01.ogg
+
+#向き固定解除
+Action:reimu,152
+
+Label:Start
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/reimu/effect/StageTitle002.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:80
+
+Face:reimu,普
+どうも地震は神社でしか起きてなかったみたいね\
+
+それに魔理沙の周りだけ降っている雨\
+
+あの雨を降らしている雲は緋色だったわ……\
+
+これらの天変地異
+自然の出来事だと考え難い\
+
+Face:reimu,
+Hide:1
+Sleep:30
+
+#
+# アリス登場
+#
+Action:alice,101
+Action:alice,102
+
+Sleep:20
+
+Face:alice,普
+森に入ってくるなんて珍しいじゃないの\
+
+Face:reimu,惑
+（異変の事は人間以外には内緒にしないとね）
+え、ええ。まぁその\
+
+# 名前のテロップ
+#Name:雹の人形遣い　アリス・マーガトロイド
+Object:data/scenario/alice/effect/Name.bmp,2,352,304
+
+Face:alice,惑
+何よ、その異変を解決しようとしている
+みたいな返事は\
+
+Face:reimu,汗
+何を言ってるのかしら
+そう、最近の森の天気はどう？\
+
+Face:alice,普
+変な質問ねぇ\
+
+Face:alice,汗
+最近の天気はおかしいわね
+毎日、雹が降ってくるじゃないの\
+
+Face:reimu,普
+雹だって？
+雹なんて……\
+
+Hide:1
+
+#敵天候
+Action:alice,103
+
+Sleep:60
+
+Face:alice,普
+あ、ほら、また……\
+
+Face:reimu,普
+（また、緋色の空だわ）
+あら、本当\
+
+Face:alice,普
+異変なんでしょ？
+霊夢が森にまで来るなんて\
+
+Face:reimu,怒
+怪しいわね
+それらしい事言ってないのに……\
+
+何か隠してるんでしょ？\
+
+Face:alice,惑
+と言われてもねぇ\
+
+PlayBgm:data/bgm/st01.ogg
+
+Face:reimu,普
+なんか変ね
+異変の香りがするなぁ\
+
+Face:alice,余
+疑うのは結構\
+
+でも、さっさと解決しないと神社を
+破壊されても知らないよ？\
+
+Action:reimu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:alice,余
+腑抜けねぇ
+これじゃあ、まだまだ雹が続きそうだわ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:alice,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:alice,200
+#攻撃側ニュートラル移行検知
+Action:reimu,202
+
+#Weather:快晴
+Action:reimu,103
+Sleep:60
+
+Face:reimu,余
+なんで、神社が壊れた事を知ってるのよ\
+
+Face:alice,負
+あれ？　壊れてたの？\
+
+Face:reimu,汗
+しらばっくれて、もう……\
+Face:reimu,
+Face:alice,
+
+Hide:1
+
+# 二番手登場
+Action:komachi,105
+
+#Weather:二番手天候
+Action:komachi,103
+
+# 登場終了検知
+Action:komachi,106
+
+#CrossFadeBgm:data/bgm/st02.ogg,2000,1
+
+Face:komachi,普
+ああ、もう
+何処に行ってもジメジメして嫌ねぇ\
+
+Face:reimu,普
+あ、いつぞやのサボマイスタ\
+
+#Name:川霧の水先案内人　小野塚小町
+# 名前のテロップ
+Object:data/scenario/komachi/effect/Name.bmp,2,352,304
+
+Face:komachi,汗
+何だそれ\
+
+Face:komachi,普
+仕事の合間に散歩していたら、
+面白そうな事をしていたので見に来たのさ\
+
+Face:reimu,普
+あんたも……
+あんたも天気を変えるのね\
+
+Face:komachi,惑
+ああん？
+何を言ってるのか判らんな\
+
+Face:reimu,普
+気付いてないの？
+あんたの周りだけよ、川霧が出ているの\
+
+Face:komachi,普
+そういえばそうかな
+それがどうしたのかい\
+
+Face:reimu,普
+体から漏れる気も天気の気も同じ気……
+異変を起こした敵に利用されてるかも知れない\
+Face:reimu,余
+その<accent>気</accent>も潰させてもらうわ\
+
+Face:alice,負
+どうでも良いけど、私が動けないから
+決闘するなら別の場所でやってくんない？\
+
+Face:komachi,汗
+まあ\
+
+Hide:1
+Sleep:10
+
+#やられキャラ画面退場
+Action:alice,201
+
+#ステージ間調整自キャラ
+Action:reimu,150
+Sleep:15
+
+#ステージ間調整敵
+Action:komachi,110
+Stage:2,120
+CrossFadeBgm:data/bgm/st02.ogg,2000,1
+
+#カメラ中央あわせ
+Action:reimu,4
+
+Action:komachi,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

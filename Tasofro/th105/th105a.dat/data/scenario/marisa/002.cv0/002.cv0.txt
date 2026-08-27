@@ -1,0 +1,129 @@
+## =======================================================================
+#Stage:3
+#Title:緋色の雲
+#Place:玄武の沢
+#Weather:晴嵐
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+Character:marisa,160,0,0,8888FF
+Character:udonge,160,0,1,FF8888
+
+#カメラ固定
+Action:marisa,4
+
+#フォーカス瞬間移動
+#Action:marisa,11
+
+#向き固定解除
+Action:marisa,152
+
+Label:Start
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/marisa/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+
+Face:udonge,普
+ここならよく見えるでしょ？
+妖怪の山に掛かった雲が\
+
+Face:marisa,普
+余り天気が良くなくて良く見えないが\
+
+Face:udonge,怒
+不自然な色の雲、不自然な天候
+これが何を意味するのかというと――\
+
+Face:marisa,怒
+ああもうどうでも良いぜ
+私は晴れて暑い夏を取り戻したいだけだ\
+
+
+#戦闘開始処理
+Action:marisa,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:udonge,惑
+それにしても神社で地震？
+何か不自然ね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:udonge,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:udonge,200
+#攻撃側ニュートラル移行検知
+Action:marisa,202
+
+#自キャラ天候
+Action:marisa,103
+Sleep:60
+
+Face:udonge,負
+折角説明しようと思ったのに\
+
+Face:marisa,普
+また雨が降ってきたな\
+
+Face:marisa,普
+どうやら私一人だと雨が降るのかも知れん\
+
+Face:marisa,惑
+実は雨女だったのか……\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:3,120
+
+#やられキャラ画面退場
+Action:udonge,201
+
+#自キャラ基準点へ移動
+Action:marisa,150
+
+#カメラ中央あわせ
+Action:marisa,4
+
+
+End:
+
+
+
+
+
+## =======================================================================

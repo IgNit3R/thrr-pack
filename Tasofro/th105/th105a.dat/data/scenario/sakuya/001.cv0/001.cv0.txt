@@ -1,0 +1,233 @@
+## =======================================================================
+#Stage:2
+#Title:蒼天の冥界
+#Place:冥界
+#Weather:蒼天
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+
+Character:sakuya,160,0,0,8888FF
+Character:youmu,160,0,1,FF8888
+Character:yuyuko,160,0,2,FF8888
+#敵画面外に待機
+Action:youmu,100
+#カメラ固定
+Action:sakuya,4
+
+#フォーカス瞬間移動
+#Action:sakuya,11
+
+#向き固定解除
+Action:sakuya,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta03.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle002.bmp,0,256,-32
+Sleep:30;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:30
+
+Face:sakuya,惑
+体から吸い取られるように出ている気……\
+
+Face:sakuya,普
+体から出る気といえば幽霊よね\
+
+Face:sakuya,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:youmu,101
+Action:youmu,102
+
+Sleep:20
+
+Face:youmu,普
+どうしたのです？
+険しい顔して\
+
+# 名前のテロップ
+Object:data/scenario/youmu/effect/Name.bmp,2,352,304
+
+Face:sakuya,普
+いや、またなんか不思議な現象が起きて……\
+
+Hide:1
+
+# ここで妖夢の体から緋色の霧が立ち上る
+# その後天候が変化がいいかな
+
+#敵天候
+Action:youmu,103
+Sleep:60
+
+Face:sakuya,普
+貴方の体からも出てるわよ\
+
+
+Face:youmu,驚
+へ？
+な、何の話？\
+
+Face:sakuya,惑
+幽霊の様な何かが体から\
+
+Face:youmu,普
+幽霊？
+それならまあ出てるとは思いますが\
+
+
+Face:sakuya,普
+怪しいといえば怪しい
+ここを通して貰うわよ\
+
+Face:youmu,惑
+何だか判らないけど通すつもりは無いです\
+
+
+
+#戦闘開始
+PlayBgm:data/bgm/st02.ogg
+Action:sakuya,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:youmu,惑
+最近、私の周りだけ暑くて敵わないわ\
+
+Face:youmu,惑
+屋敷は屋敷で変な事になっているし\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:youmu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:youmu,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+#霧雨
+Action:sakuya,103
+
+Face:sakuya,余
+さあお屋敷まで通して\
+
+Face:youmu,負
+しょうがないですね\
+
+Face:youmu,負
+でも今、屋敷は変な事になっているのです\
+
+Face:sakuya,惑
+変な事……？@
+それはますます行かないとね\
+
+Face:sakuya,
+Face:youmu,
+
+Hide:1
+
+Sleep:30
+
+#二番手登場
+Action:yuyuko,105
+
+#Weather:二番手天候
+Action:yuyuko,103
+
+#105終了検知
+Action:yuyuko,106
+
+Face:yuyuko,普
+変な事って何？　妖夢\
+
+Face:youmu,負
+わわ、幽々子さま\
+
+Face:sakuya,驚
+……え？\
+
+Face:sakuya,驚
+雪？
+今は夏だというのに……\
+
+# 名前のテロップ
+Object:data/scenario/yuyuko/effect/Name.bmp,2,352,304
+
+Face:yuyuko,嬉
+私の周りに変な事なんて何一つ無いわ\
+
+Face:yuyuko,嬉
+さあ、私の屋敷に来たいのならどうぞどうぞ\
+
+Face:sakuya,普
+いや、随分と変な事になっている気がする……\
+
+Hide:1
+
+Sleep:10
+
+#やられキャラ画面退場
+Action:youmu,201
+
+#ステージ間調整自キャラ
+Action:sakuya,150
+Sleep:15
+
+#ステージ間調整敵
+Action:yuyuko,110
+Stage:17,120
+CrossFadeBgm:data/bgm/st01.ogg,2000,1
+
+#カメラ中央あわせ
+Action:sakuya,4
+
+#ステージ間調整敵　終了検知
+Action:yuyuko,111
+
+Sleep:60
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,152 @@
+#========================================================================
+#	Stage:6win
+#========================================================================
+
+:init
+:main_1
+,SetDefaultBalloon,0
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/mamizou.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,mamizou,-360,0,true
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+
+,ImageDef,reimu,霊夢_決1,0,0
+,ImageDef,mamizou,マミゾウ_惑1,20,0
+
+#,Function,"GameStory_PlayBGM(304);",# BGM再生開始
+
+,Return
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Show,reimu,30,-64,0
+,Show,mamizou,30,-64,0	,#双方登場
+
+,SetFocus,reimu
+よーし\n完勝！\,b05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普1,0,0
+これで幻想郷中の\n人気は私の物ね\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,mamizou,0,
+……,c05x2
+,WaitInput
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普1,20,0
+お前さんは気が付いておるか？\nこのお祭り騒ぎの裏にあるものに\,a15x3,20,0
+,ClearBalloon,mamizou
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_惑1,0,0
+え？\n何の話？,a05x2,20,0
+,WaitInput
+,ClearBalloon,reimu
+
+
+,SetFocus,mamizou,0,
+,ImageDef,mamizou,マミゾウ_余1,20,0
+原因は知らんが……,c11x2
+,WaitInput
+,ClearBalloon,mamizou
+
+幻想郷中の人間から\n感情が奪われておるんじゃ\,c11x2
+,ClearBalloon,reimu
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_惑1,0,0
+感情が奪われている……？\n観客も対戦相手もみんな感情\nむき出しだったけど\？,c15x3,20,-30
+,ClearBalloon,reimu
+
+,SetFocus,mamizou
+,ImageDef,mamizou,マミゾウ_普2,20,0
+全ての感情ではなく\nただ一つだけ\n感情が失われていたのじゃよ\,a15x3,20,0
+,ClearBalloon,mamizou
+
+,SetFocus,reimu
+えーっと……\,c05x2,20,0
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_普2,0,0
+そうだ\nそもそも私は……\,a11x2
+,ClearBalloon,reimu
+厭世観で荒廃した世界を\n神の威厳で救おうと……\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,mamizou,0,
+,ImageDef,mamizou,マミゾウ_普3,20,0
+厭世観\nそうじゃよ\,a05x2
+,ClearBalloon,mamizou
+
+失われた感情とは\,a11x2
+,ClearBalloon,mamizou
+
+,ImageDef,reimu,霊夢_驚1,0,0
+,ImageDef,mamizou,マミゾウ_普3,20,0
+希望の心じゃ\,a05x2,20,0
+,ClearBalloon,mamizou
+
+そして今\n人間の希望を集めているのが\,a15x3,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普2,20,0
+お前さんがた\n宗教家じゃよ,a11x2
+,WaitInput
+,ClearBalloon,mamizou
+
+,SetFocus,reimu,0,
+,ImageDef,reimu,霊夢_嬉1,0,0
+やっぱり間違いじゃ無かったわね！\n私の行動は！\,a15x3,20,0
+,ClearBalloon,reimu
+
+,SetFocus,mamizou,0,
+……お前さんは\n知らんかもしれんが\,a11x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_余1,20,0
+今の人間の里は\n丑三つ時を過ぎると\,c11x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普3,20,0
+感情が存在しない\n最悪の場所となる\,c11x2,20,0
+,ClearBalloon,mamizou
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_驚1,0,0
+何だって？\,c05x2
+,ClearBalloon,reimu
+
+,SetFocus,mamizou
+,ImageDef,mamizou,マミゾウ_普3,20,0
+しかも徐々に時間が\n長くなっておるぞ\,a11x2,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,mamizou,マミゾウ_普3,20,0
+このままでは未来永劫\n感情が失われてもおかしくない\,a15x3,20,0
+,ClearBalloon,mamizou
+
+,ImageDef,reimu,霊夢_普1,0,0
+,SetFocus,reimu
+人間の里\n丑三つ時ね？,b05x2,20,0
+,WaitInput
+,ClearBalloon,reimu
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

@@ -1,0 +1,59 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/ichirin.csv"
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+
+#フェイス画像
+,DefineObject,ichirin,-360,0,false
+,DefineObject,hijiri,-360,0,true
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+
+
+#Label:Win
+
+# ＊ここは新聞にならずに会話シーンを入れてください
+#
+,ImageDef,hijiri,聖_決1,0,0
+,Show,hijiri,30,-64,0
+,ImageDef,ichirin,一輪_必1,0,0
+,Show,ichirin,30,-64,0
+,SetFocus,ichirin
+ちょっと待て！\,a11x2,0,0
+
+,ClearBalloon,ichirin
+,ImageDef,ichirin,一輪_怒1,0,0
+我が仏教にその様な\n邪悪な術を使う者はいない！\,a15x3,0,0
+
+,ClearBalloon,ichirin
+,ImageDef,ichirin,一輪_決1,0,0
+お前は誰だ？\,a05x2,0,0
+
+,ClearBalloon,ichirin
+
+# --------------------------
+
+,Hide,hijiri,30,-64,0,&
+,Hide,ichirin,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobOut();"
+,Sleep,150
+
+# 二人の会話の絵が消える
+# 一輪からモクモクと煙が出る
+#
+# それと同時に背景のキャラ達もドロンと狸に戻り
+# 一斉に霧散する
+# そこに残ったのは誰も居ない野原
+
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

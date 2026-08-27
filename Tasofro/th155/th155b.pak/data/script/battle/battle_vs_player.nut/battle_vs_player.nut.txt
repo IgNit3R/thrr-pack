@@ -1,0 +1,4432 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\script\battle\battle_vs_player.nut: 
+sourcename: ""
+name: "main"
+nliterals: 44
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 44
+ndefaultparams: 0
+ninstructions: 178
+nfunctions: 35
+Literals: [
+    0: "time"
+    1: "time_unit"
+    2: "win"
+    3: "winner"
+    4: "match_num"
+    5: "round"
+    6: "bgm"
+    7: "GuardCrash_Check"
+    8: "GuardCrash_Check_VS"
+    9: "Pause"
+    10: "Begin"
+    11: "Round_Begin"
+    12: "Game_BeginUpdate"
+    13: "RoundBeginDemo_Skip"
+    14: "Game_BeginSkipUpdate"
+    15: "Round_Ready"
+    16: "Game_BattleReady"
+    17: "Round_Fight"
+    18: "Game_BattleUpdate"
+    19: "Round_KO"
+    20: "Game_KoUpdate"
+    21: "Game_FinishUpdate"
+    22: "Game_DowbleKoUpdate"
+    23: "Round_TimeUP"
+    24: "Game_TimeUpUpdate"
+    25: "Round_TimeUpCall"
+    26: "Game_TimeUpCallUpdate"
+    27: "Game_DrawUpdate"
+    28: "Round_DrawCall"
+    29: "Game_DrawCallUpdate"
+    30: "Round_Win"
+    31: "Game_WinUpdate"
+    32: "Round_WinCall"
+    33: "Game_WinCallUpdate"
+    34: "BeginNextRound"
+    35: "Game_BeginNextRoundUpdate"
+    36: "BeginResult"
+    37: "Game_ResultUpdate"
+    38: "BeginResultEnd"
+    39: "Game_ResultEndUpdate"
+    40: "FightEndFunction"
+    41: "RoundReset"
+    42: "SetWinner"
+    43: "CreateWinData"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 177
+    1: name: "this", pos: 0, start_op: 0, end_op: 177
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 4, op: 6
+    2: line: 6, op: 10
+    3: line: 7, op: 16
+    4: line: 8, op: 20
+    5: line: 9, op: 24
+    6: line: 11, op: 28
+    7: line: 12, op: 32
+    8: line: 15, op: 36
+    9: line: 22, op: 40
+    10: line: 28, op: 44
+    11: line: 61, op: 48
+    12: line: 85, op: 52
+    13: line: 94, op: 56
+    14: line: 113, op: 60
+    15: line: 131, op: 64
+    16: line: 157, op: 68
+    17: line: 174, op: 72
+    18: line: 202, op: 76
+    19: line: 256, op: 80
+    20: line: 274, op: 84
+    21: line: 291, op: 88
+    22: line: 314, op: 92
+    23: line: 346, op: 96
+    24: line: 363, op: 100
+    25: line: 511, op: 104
+    26: line: 531, op: 108
+    27: line: 542, op: 112
+    28: line: 550, op: 116
+    29: line: 560, op: 120
+    30: line: 604, op: 124
+    31: line: 615, op: 128
+    32: line: 626, op: 132
+    33: line: 650, op: 136
+    34: line: 666, op: 140
+    35: line: 681, op: 144
+    36: line: 695, op: 148
+    37: line: 700, op: 152
+    38: line: 704, op: 156
+    39: line: 722, op: 160
+    40: line: 737, op: 164
+    41: line: 759, op: 168
+    42: line: 800, op: 172
+    43: line: 814, op: 176
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "time")
+    2:  loadint(s3, 99)
+    3:  loadint(s4, 90)
+    4:  mul(s3, s4, s3)
+    5:  newslot(s255, s0, s2, s3)
+    6:  line(-, 4)
+    7:  load(s2, "time_unit")
+    8:  loadint(s3, 90)
+    9:  newslot(s255, s0, s2, s3)
+    10:  line(-, 6)
+    11:  load(s2, "win")
+    12:  newobj(s3, 2, 0, 1)
+    13:  appendarray(s3, 0, 2)
+    14:  appendarray(s3, 0, 2)
+    15:  newslot(s255, s0, s2, s3)
+    16:  line(-, 7)
+    17:  load(s2, "winner")
+    18:  loadint(s3, 0)
+    19:  newslot(s255, s0, s2, s3)
+    20:  line(-, 8)
+    21:  load(s2, "match_num")
+    22:  loadint(s3, 2)
+    23:  newslot(s255, s0, s2, s3)
+    24:  line(-, 9)
+    25:  load(s2, "round")
+    26:  loadint(s3, 0)
+    27:  newslot(s255, s0, s2, s3)
+    28:  line(-, 11)
+    29:  load(s2, "bgm")
+    30:  loadnulls(s3, 1)
+    31:  newslot(s255, s0, s2, s3)
+    32:  line(-, 12)
+    33:  dload(s2, "GuardCrash_Check", s3, "GuardCrash_Check_VS")
+    34:  get(s3, s0, s3)
+    35:  set(s255, s0, s2, s3)
+    36:  line(-, 15)
+    37:  load(s2, "Pause")
+    38:  closure(s3, 0)
+    39:  newslot(s2, s0, s2, s3)
+    40:  line(-, 22)
+    41:  load(s2, "Begin")
+    42:  closure(s3, 1)
+    43:  newslot(s2, s0, s2, s3)
+    44:  line(-, 28)
+    45:  load(s2, "Round_Begin")
+    46:  closure(s3, 2)
+    47:  newslot(s2, s0, s2, s3)
+    48:  line(-, 61)
+    49:  load(s2, "Game_BeginUpdate")
+    50:  closure(s3, 3)
+    51:  newslot(s2, s0, s2, s3)
+    52:  line(-, 85)
+    53:  load(s2, "RoundBeginDemo_Skip")
+    54:  closure(s3, 4)
+    55:  newslot(s2, s0, s2, s3)
+    56:  line(-, 94)
+    57:  load(s2, "Game_BeginSkipUpdate")
+    58:  closure(s3, 5)
+    59:  newslot(s2, s0, s2, s3)
+    60:  line(-, 113)
+    61:  load(s2, "Round_Ready")
+    62:  closure(s3, 6)
+    63:  newslot(s2, s0, s2, s3)
+    64:  line(-, 131)
+    65:  load(s2, "Game_BattleReady")
+    66:  closure(s3, 7)
+    67:  newslot(s2, s0, s2, s3)
+    68:  line(-, 157)
+    69:  load(s2, "Round_Fight")
+    70:  closure(s3, 8)
+    71:  newslot(s2, s0, s2, s3)
+    72:  line(-, 174)
+    73:  load(s2, "Game_BattleUpdate")
+    74:  closure(s3, 9)
+    75:  newslot(s2, s0, s2, s3)
+    76:  line(-, 202)
+    77:  load(s2, "Round_KO")
+    78:  closure(s3, 10)
+    79:  newslot(s2, s0, s2, s3)
+    80:  line(-, 256)
+    81:  load(s2, "Game_KoUpdate")
+    82:  closure(s3, 11)
+    83:  newslot(s2, s0, s2, s3)
+    84:  line(-, 274)
+    85:  load(s2, "Game_FinishUpdate")
+    86:  closure(s3, 12)
+    87:  newslot(s2, s0, s2, s3)
+    88:  line(-, 291)
+    89:  load(s2, "Game_DowbleKoUpdate")
+    90:  closure(s3, 13)
+    91:  newslot(s2, s0, s2, s3)
+    92:  line(-, 314)
+    93:  load(s2, "Round_TimeUP")
+    94:  closure(s3, 14)
+    95:  newslot(s2, s0, s2, s3)
+    96:  line(-, 346)
+    97:  load(s2, "Game_TimeUpUpdate")
+    98:  closure(s3, 15)
+    99:  newslot(s2, s0, s2, s3)
+    100:  line(-, 363)
+    101:  load(s2, "Round_TimeUpCall")
+    102:  closure(s3, 16)
+    103:  newslot(s2, s0, s2, s3)
+    104:  line(-, 511)
+    105:  load(s2, "Game_TimeUpCallUpdate")
+    106:  closure(s3, 17)
+    107:  newslot(s2, s0, s2, s3)
+    108:  line(-, 531)
+    109:  load(s2, "Game_DrawUpdate")
+    110:  closure(s3, 18)
+    111:  newslot(s2, s0, s2, s3)
+    112:  line(-, 542)
+    113:  load(s2, "Round_DrawCall")
+    114:  closure(s3, 19)
+    115:  newslot(s2, s0, s2, s3)
+    116:  line(-, 550)
+    117:  load(s2, "Game_DrawCallUpdate")
+    118:  closure(s3, 20)
+    119:  newslot(s2, s0, s2, s3)
+    120:  line(-, 560)
+    121:  load(s2, "Round_Win")
+    122:  closure(s3, 21)
+    123:  newslot(s2, s0, s2, s3)
+    124:  line(-, 604)
+    125:  load(s2, "Game_WinUpdate")
+    126:  closure(s3, 22)
+    127:  newslot(s2, s0, s2, s3)
+    128:  line(-, 615)
+    129:  load(s2, "Round_WinCall")
+    130:  closure(s3, 23)
+    131:  newslot(s2, s0, s2, s3)
+    132:  line(-, 626)
+    133:  load(s2, "Game_WinCallUpdate")
+    134:  closure(s3, 24)
+    135:  newslot(s2, s0, s2, s3)
+    136:  line(-, 650)
+    137:  load(s2, "BeginNextRound")
+    138:  closure(s3, 25)
+    139:  newslot(s2, s0, s2, s3)
+    140:  line(-, 666)
+    141:  load(s2, "Game_BeginNextRoundUpdate")
+    142:  closure(s3, 26)
+    143:  newslot(s2, s0, s2, s3)
+    144:  line(-, 681)
+    145:  load(s2, "BeginResult")
+    146:  closure(s3, 27)
+    147:  newslot(s2, s0, s2, s3)
+    148:  line(-, 695)
+    149:  load(s2, "Game_ResultUpdate")
+    150:  closure(s3, 28)
+    151:  newslot(s2, s0, s2, s3)
+    152:  line(-, 700)
+    153:  load(s2, "BeginResultEnd")
+    154:  closure(s3, 29)
+    155:  newslot(s2, s0, s2, s3)
+    156:  line(-, 704)
+    157:  load(s2, "Game_ResultEndUpdate")
+    158:  closure(s3, 30)
+    159:  newslot(s2, s0, s2, s3)
+    160:  line(-, 722)
+    161:  load(s2, "FightEndFunction")
+    162:  closure(s3, 31)
+    163:  newslot(s2, s0, s2, s3)
+    164:  line(-, 737)
+    165:  load(s2, "RoundReset")
+    166:  closure(s3, 32)
+    167:  newslot(s2, s0, s2, s3)
+    168:  line(-, 759)
+    169:  load(s2, "SetWinner")
+    170:  closure(s3, 33)
+    171:  newslot(s2, s0, s2, s3)
+    172:  line(-, 800)
+    173:  load(s2, "CreateWinData")
+    174:  closure(s3, 34)
+    175:  newslot(s2, s0, s2, s3)
+    176:  line(-, 814)
+    177:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Pause"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 15
+        nfunctions: 0
+        Literals: [
+            0: "sound"
+            1: "PlaySE"
+            2: "menu"
+            3: "pause"
+            4: "Initialize"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 14
+          ]
+        Line Informations: [
+            0: line: 17, op: 1
+            1: line: 18, op: 6
+            2: line: 19, op: 13
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 17)
+            1:  loadroot(s1)
+            2:  getk(s1, "sound", s1)
+            3:  prepcallk(s1, "PlaySE", s1, s2)
+            4:  loadint(s3, 111)
+            5:  call(255, s1, s2, 2)
+            6:  line(-, 18)
+            7:  loadroot(s1)
+            8:  getk(s1, "menu", s1)
+            9:  getk(s1, "pause", s1)
+            10:  prepcallk(s1, "Initialize", s1, s2)
+            11:  loadint(s3, 0)
+            12:  call(255, s1, s2, 2)
+            13:  line(-, 19)
+            14:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Begin"
+        nliterals: 1
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "Round_Begin"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 24, op: 1
+            1: line: 25, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 24)
+            1:  prepcallk(s1, "Round_Begin", s0, s2)
+            2:  call(255, s1, s2, 1)
+            3:  line(-, 25)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "Round_Begin"
+        nliterals: 21
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 19
+        ndefaultparams: 0
+        ninstructions: 119
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_BeginUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "endWinDemo"
+            5: "endLoseDemo"
+            6: "skipDemo"
+            7: "enable_contact_test"
+            8: "camera"
+            9: "Reset"
+            10: "SetTarget"
+            11: "team"
+            12: "current"
+            13: "func_beginDemo"
+            14: "sound"
+            15: "PlayBGM"
+            16: "bgm"
+            17: "BGMTitle"
+            18: "Activate"
+            19: "mp"
+            20: "op"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 118
+          ]
+        Line Informations: [
+            0: line: 30, op: 1
+            1: line: 31, op: 4
+            2: line: 32, op: 8
+            3: line: 34, op: 12
+            4: line: 35, op: 18
+            5: line: 36, op: 24
+            6: line: 38, op: 30
+            7: line: 40, op: 34
+            8: line: 41, op: 39
+            9: line: 43, op: 48
+            10: line: 44, op: 61
+            11: line: 46, op: 74
+            12: line: 48, op: 80
+            13: line: 49, op: 85
+            14: line: 54, op: 89
+            15: line: 55, op: 96
+            16: line: 57, op: 103
+            17: line: 58, op: 110
+            18: line: 59, op: 117
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 30)
+            1:  dload(s1, "battleUpdate", s2, "Game_BeginUpdate")
+            2:  get(s2, s0, s2)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 31)
+            5:  load(s1, "state")
+            6:  loadint(s2, 2)
+            7:  set(s255, s0, s1, s2)
+            8:  line(-, 32)
+            9:  load(s1, "demoCount")
+            10:  loadint(s2, 0)
+            11:  set(s255, s0, s1, s2)
+            12:  line(-, 34)
+            13:  load(s1, "endWinDemo")
+            14:  newobj(s2, 2, 0, 1)
+            15:  appendarray(s2, 0, 4)
+            16:  appendarray(s2, 0, 4)
+            17:  set(s255, s0, s1, s2)
+            18:  line(-, 35)
+            19:  load(s1, "endLoseDemo")
+            20:  newobj(s2, 2, 0, 1)
+            21:  appendarray(s2, 0, 4)
+            22:  appendarray(s2, 0, 4)
+            23:  set(s255, s0, s1, s2)
+            24:  line(-, 36)
+            25:  load(s1, "skipDemo")
+            26:  newobj(s2, 2, 0, 1)
+            27:  appendarray(s2, 0, 4)
+            28:  appendarray(s2, 0, 4)
+            29:  set(s255, s0, s1, s2)
+            30:  line(-, 38)
+            31:  load(s1, "enable_contact_test")
+            32:  loadbool(s2, 0)
+            33:  set(s255, s0, s1, s2)
+            34:  line(-, 40)
+            35:  loadroot(s1)
+            36:  getk(s1, "camera", s1)
+            37:  prepcallk(s1, "Reset", s1, s2)
+            38:  call(255, s1, s2, 1)
+            39:  line(-, 41)
+            40:  loadroot(s1)
+            41:  getk(s1, "camera", s1)
+            42:  prepcallk(s1, "SetTarget", s1, s2)
+            43:  loadint(s3, 640)
+            44:  loadint(s4, 340)
+            45:  loadfloat(s5, 2)
+            46:  loadbool(s6, 1)
+            47:  call(255, s1, s2, 5)
+            48:  line(-, 43)
+            49:  getk(s1, "team", s0)
+            50:  loadint(s2, 0)
+            51:  get(s1, s1, s2)
+            52:  getk(s1, "current", s1)
+            53:  getk(s1, "func_beginDemo", s1)
+            54:  jz(s1, 6)
+            55:  getk(s1, "team", s0)
+            56:  loadint(s2, 0)
+            57:  get(s1, s1, s2)
+            58:  getk(s1, "current", s1)
+            59:  prepcallk(s1, "func_beginDemo", s1, s2)
+            60:  call(255, s1, s2, 1)
+            61:  line(-, 44)
+            62:  getk(s1, "team", s0)
+            63:  loadint(s2, 1)
+            64:  get(s1, s1, s2)
+            65:  getk(s1, "current", s1)
+            66:  getk(s1, "func_beginDemo", s1)
+            67:  jz(s1, 6)
+            68:  getk(s1, "team", s0)
+            69:  loadint(s2, 1)
+            70:  get(s1, s1, s2)
+            71:  getk(s1, "current", s1)
+            72:  prepcallk(s1, "func_beginDemo", s1, s2)
+            73:  call(255, s1, s2, 1)
+            74:  line(-, 46)
+            75:  loadroot(s1)
+            76:  getk(s1, "sound", s1)
+            77:  prepcallk(s1, "PlayBGM", s1, s2)
+            78:  loadnulls(s3, 1)
+            79:  call(255, s1, s2, 2)
+            80:  line(-, 48)
+            81:  dload(s1, "bgm", s2, "BGMTitle")
+            82:  prepcall(s2, s2, s0, s3)
+            83:  call(2, s2, s3, 1)
+            84:  set(s255, s0, s1, s2)
+            85:  line(-, 49)
+            86:  getk(s1, "bgm", s0)
+            87:  prepcallk(s1, "Activate", s1, s2)
+            88:  call(255, s1, s2, 1)
+            89:  line(-, 54)
+            90:  getk(s1, "team", s0)
+            91:  loadint(s2, 0)
+            92:  get(s1, s1, s2)
+            93:  load(s2, "mp")
+            94:  loadint(s3, 1000)
+            95:  set(s255, s1, s2, s3)
+            96:  line(-, 55)
+            97:  getk(s1, "team", s0)
+            98:  loadint(s2, 1)
+            99:  get(s1, s1, s2)
+            100:  load(s2, "mp")
+            101:  loadint(s3, 1000)
+            102:  set(s255, s1, s2, s3)
+            103:  line(-, 57)
+            104:  getk(s1, "team", s0)
+            105:  loadint(s2, 0)
+            106:  get(s1, s1, s2)
+            107:  load(s2, "op")
+            108:  loadint(s3, 1000)
+            109:  set(s255, s1, s2, s3)
+            110:  line(-, 58)
+            111:  getk(s1, "team", s0)
+            112:  loadint(s2, 1)
+            113:  get(s1, s1, s2)
+            114:  load(s2, "op")
+            115:  loadint(s3, 1000)
+            116:  set(s255, s1, s2, s3)
+            117:  line(-, 59)
+            118:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "Game_BeginUpdate"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 63
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "team"
+            2: "current"
+            3: "command"
+            4: "rsv_k0"
+            5: "rsv_k1"
+            6: "rsv_k2"
+            7: "rsv_k3"
+            8: "RoundBeginDemo_Skip"
+            9: "endWinDemo"
+            10: "Round_Ready"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "c1", pos: 2, start_op: 19, end_op: 60
+            1: name: "c0", pos: 1, start_op: 13, end_op: 60
+            2: name: "this", pos: 0, start_op: 0, end_op: 62
+          ]
+        Line Informations: [
+            0: line: 63, op: 1
+            1: line: 64, op: 3
+            2: line: 66, op: 8
+            3: line: 67, op: 13
+            4: line: 69, op: 19
+            5: line: 72, op: 42
+            6: line: 73, op: 44
+            7: line: 76, op: 46
+            8: line: 78, op: 57
+            9: line: 79, op: 59
+            10: line: 82, op: 61
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 63)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 64)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 60)
+            6:  jcmp(s2, 54, s1, CMP_GE)
+            7:  line(-, 66)
+            8:  getk(s1, "team", s0)
+            9:  loadint(s2, 0)
+            10:  get(s1, s1, s2)
+            11:  getk(s1, "current", s1)
+            12:  getk(s1, "command", s1)
+            13:  line(-, 67)
+            14:  getk(s2, "team", s0)
+            15:  loadint(s3, 1)
+            16:  get(s2, s2, s3)
+            17:  getk(s2, "current", s2)
+            18:  getk(s2, "command", s2)
+            19:  line(-, 69)
+            20:  getk(s3, "rsv_k0", s1)
+            21:  getk(s4, "rsv_k1", s1)
+            22:  add(s3, s4, s3)
+            23:  getk(s4, "rsv_k2", s1)
+            24:  add(s3, s4, s3)
+            25:  getk(s4, "rsv_k3", s1)
+            26:  add(s3, s4, s3)
+            27:  loadint(s4, 0)
+            28:  ne(s3, 4, s3, 0)
+            29:  or(s3, 10, s3)
+            30:  getk(s4, "rsv_k0", s2)
+            31:  getk(s5, "rsv_k1", s2)
+            32:  add(s4, s5, s4)
+            33:  getk(s5, "rsv_k2", s2)
+            34:  add(s4, s5, s4)
+            35:  getk(s5, "rsv_k3", s2)
+            36:  add(s4, s5, s4)
+            37:  loadint(s5, 0)
+            38:  ne(s4, 5, s4, 0)
+            39:  move(s3, s4)
+            40:  jz(s3, 5)
+            41:  line(-, 72)
+            42:  prepcallk(s3, "RoundBeginDemo_Skip", s0, s4)
+            43:  call(255, s3, s4, 1)
+            44:  line(-, 73)
+            45:  return(255, 0)
+            46:  line(-, 76)
+            47:  getk(s3, "endWinDemo", s0)
+            48:  loadint(s4, 0)
+            49:  get(s3, s3, s4)
+            50:  and(s3, 4, s3)
+            51:  getk(s4, "endWinDemo", s0)
+            52:  loadint(s5, 1)
+            53:  get(s4, s4, s5)
+            54:  move(s3, s4)
+            55:  jz(s3, 5)
+            56:  line(-, 78)
+            57:  prepcallk(s3, "Round_Ready", s0, s4)
+            58:  call(255, s3, s4, 1)
+            59:  line(-, 79)
+            60:  return(255, 0)
+            61:  line(-, 82)
+            62:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "RoundBeginDemo_Skip"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_BeginSkipUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "graphics"
+            5: "FadeOut"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 87, op: 1
+            1: line: 88, op: 1
+            2: line: 89, op: 5
+            3: line: 90, op: 9
+            4: line: 91, op: 13
+            5: line: 92, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 87)
+            1:  line(-, 88)
+            2:  dload(s1, "battleUpdate", s2, "Game_BeginSkipUpdate")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 89)
+            6:  load(s1, "state")
+            7:  loadint(s2, 2)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 90)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 91)
+            14:  loadroot(s1)
+            15:  getk(s1, "graphics", s1)
+            16:  prepcallk(s1, "FadeOut", s1, s2)
+            17:  loadint(s3, 10)
+            18:  call(255, s1, s2, 2)
+            19:  line(-, 92)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "Game_BeginSkipUpdate"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "team"
+            2: "current"
+            3: "func_beginDemoSkip"
+            4: "slave"
+            5: "graphics"
+            6: "FadeIn"
+            7: "Round_Ready"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 96, op: 1
+            1: line: 97, op: 3
+            2: line: 99, op: 9
+            3: line: 100, op: 15
+            4: line: 101, op: 22
+            5: line: 102, op: 29
+            6: line: 104, op: 36
+            7: line: 106, op: 41
+            8: line: 107, op: 46
+            9: line: 108, op: 49
+            10: line: 110, op: 51
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 96)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 97)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 10)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 28)
+            8:  line(-, 99)
+            9:  getk(s1, "team", s0)
+            10:  loadint(s2, 0)
+            11:  get(s1, s1, s2)
+            12:  getk(s1, "current", s1)
+            13:  prepcallk(s1, "func_beginDemoSkip", s1, s2)
+            14:  call(255, s1, s2, 1)
+            15:  line(-, 100)
+            16:  getk(s1, "team", s0)
+            17:  loadint(s2, 1)
+            18:  get(s1, s1, s2)
+            19:  getk(s1, "current", s1)
+            20:  prepcallk(s1, "func_beginDemoSkip", s1, s2)
+            21:  call(255, s1, s2, 1)
+            22:  line(-, 101)
+            23:  getk(s1, "team", s0)
+            24:  loadint(s2, 0)
+            25:  get(s1, s1, s2)
+            26:  getk(s1, "slave", s1)
+            27:  prepcallk(s1, "func_beginDemoSkip", s1, s2)
+            28:  call(255, s1, s2, 1)
+            29:  line(-, 102)
+            30:  getk(s1, "team", s0)
+            31:  loadint(s2, 1)
+            32:  get(s1, s1, s2)
+            33:  getk(s1, "slave", s1)
+            34:  prepcallk(s1, "func_beginDemoSkip", s1, s2)
+            35:  call(255, s1, s2, 1)
+            36:  line(-, 104)
+            37:  getk(s1, "demoCount", s0)
+            38:  loadint(s2, 10)
+            39:  jcmp(s2, 11, s1, CMP_GE)
+            40:  line(-, 106)
+            41:  loadroot(s1)
+            42:  getk(s1, "graphics", s1)
+            43:  prepcallk(s1, "FadeIn", s1, s2)
+            44:  loadint(s3, 10)
+            45:  call(255, s1, s2, 2)
+            46:  line(-, 107)
+            47:  prepcallk(s1, "Round_Ready", s0, s2)
+            48:  call(255, s1, s2, 1)
+            49:  line(-, 108)
+            50:  return(255, 0)
+            51:  line(-, 110)
+            52:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "Round_Ready"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 40
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_BattleReady"
+            2: "state"
+            3: "demoCount"
+            4: "round"
+            5: "gauge"
+            6: "Show"
+            7: "bgm"
+            8: "Deactivate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 39
+          ]
+        Line Informations: [
+            0: line: 115, op: 1
+            1: line: 116, op: 1
+            2: line: 117, op: 5
+            3: line: 118, op: 9
+            4: line: 120, op: 13
+            5: line: 121, op: 16
+            6: line: 123, op: 23
+            7: line: 125, op: 27
+            8: line: 127, op: 31
+            9: line: 128, op: 34
+            10: line: 130, op: 38
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 115)
+            1:  line(-, 116)
+            2:  dload(s1, "battleUpdate", s2, "Game_BattleReady")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 117)
+            6:  load(s1, "state")
+            7:  loadint(s2, 4)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 118)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 120)
+            14:  load(s1, "round")
+            15:  pinc(s1, s0, s1, 1)
+            16:  line(-, 121)
+            17:  getk(s1, "round", s0)
+            18:  loadint(s2, 5)
+            19:  jcmp(s2, 3, s1, CMP_G)
+            20:  load(s1, "round")
+            21:  loadint(s2, 5)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 123)
+            24:  getk(s1, "gauge", s0)
+            25:  prepcallk(s1, "Show", s1, s2)
+            26:  call(255, s1, s2, 1)
+            27:  line(-, 125)
+            28:  getk(s1, "bgm", s0)
+            29:  jz(s1, 8)
+            30:  line(-, 127)
+            31:  getk(s1, "bgm", s0)
+            32:  prepcallk(s1, "Deactivate", s1, s2)
+            33:  call(255, s1, s2, 1)
+            34:  line(-, 128)
+            35:  load(s1, "bgm")
+            36:  loadnulls(s2, 1)
+            37:  set(s255, s0, s1, s2)
+            38:  line(-, 130)
+            39:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "Game_BattleReady"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 67
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "PlaySE"
+            2: "actor"
+            3: "SetEffectLight"
+            4: "round"
+            5: "Round_Fight"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 66
+          ]
+        Line Informations: [
+            0: line: 133, op: 1
+            1: line: 134, op: 3
+            2: line: 136, op: 9
+            3: line: 137, op: 12
+            4: line: 139, op: 23
+            5: line: 141, op: 31
+            6: line: 142, op: 34
+            7: line: 144, op: 42
+            8: line: 146, op: 50
+            9: line: 149, op: 53
+            10: line: 151, op: 63
+            11: line: 153, op: 65
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 133)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 134)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 20)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 15)
+            8:  line(-, 136)
+            9:  prepcallk(s1, "PlaySE", s0, s2)
+            10:  loadint(s3, 850)
+            11:  call(255, s1, s2, 2)
+            12:  line(-, 137)
+            13:  loadroot(s1)
+            14:  getk(s1, "actor", s1)
+            15:  prepcallk(s1, "SetEffectLight", s1, s2)
+            16:  loadint(s3, 640)
+            17:  loadint(s4, 360)
+            18:  loadint(s5, 1000)
+            19:  getk(s6, "round", s0)
+            20:  loadint(s7, 1)
+            21:  sub(s6, s7, s6)
+            22:  call(255, s1, s2, 5)
+            23:  line(-, 139)
+            24:  getk(s1, "demoCount", s0)
+            25:  loadint(s2, 20)
+            26:  loadint(s3, 100)
+            27:  add(s2, s3, s2)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 12)
+            30:  line(-, 141)
+            31:  prepcallk(s1, "PlaySE", s0, s2)
+            32:  loadint(s3, 851)
+            33:  call(255, s1, s2, 2)
+            34:  line(-, 142)
+            35:  loadroot(s1)
+            36:  getk(s1, "actor", s1)
+            37:  prepcallk(s1, "SetEffectLight", s1, s2)
+            38:  loadint(s3, 640)
+            39:  loadint(s4, 360)
+            40:  loadint(s5, 1001)
+            41:  call(255, s1, s2, 4)
+            42:  line(-, 144)
+            43:  getk(s1, "demoCount", s0)
+            44:  loadint(s2, 20)
+            45:  loadint(s3, 148)
+            46:  add(s2, s3, s2)
+            47:  eq(s1, 2, s1, 0)
+            48:  jz(s1, 4)
+            49:  line(-, 146)
+            50:  prepcallk(s1, "PlaySE", s0, s2)
+            51:  loadint(s3, 853)
+            52:  call(255, s1, s2, 2)
+            53:  line(-, 149)
+            54:  getk(s1, "demoCount", s0)
+            55:  loadint(s2, 20)
+            56:  loadint(s3, 100)
+            57:  add(s2, s3, s2)
+            58:  loadint(s3, 70)
+            59:  add(s2, s3, s2)
+            60:  eq(s1, 2, s1, 0)
+            61:  jz(s1, 3)
+            62:  line(-, 151)
+            63:  prepcallk(s1, "Round_Fight", s0, s2)
+            64:  call(255, s1, s2, 1)
+            65:  line(-, 153)
+            66:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "Round_Fight"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 37
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "battleUpdate"
+            2: "Game_BattleUpdate"
+            3: "enableTimeCount"
+            4: "enableTimeUp"
+            5: "enable_contact_test"
+            6: "camera"
+            7: "SetTarget"
+            8: "SetMode_Battle"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 36
+          ]
+        Line Informations: [
+            0: line: 159, op: 1
+            1: line: 161, op: 1
+            2: line: 162, op: 5
+            3: line: 164, op: 9
+            4: line: 165, op: 13
+            5: line: 167, op: 17
+            6: line: 169, op: 21
+            7: line: 170, op: 30
+            8: line: 171, op: 35
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 159)
+            1:  line(-, 161)
+            2:  load(s1, "state")
+            3:  loadint(s2, 8)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 162)
+            6:  dload(s1, "battleUpdate", s2, "Game_BattleUpdate")
+            7:  get(s2, s0, s2)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 164)
+            10:  load(s1, "enableTimeCount")
+            11:  loadbool(s2, 1)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 165)
+            14:  load(s1, "enableTimeUp")
+            15:  loadbool(s2, 1)
+            16:  set(s255, s0, s1, s2)
+            17:  line(-, 167)
+            18:  load(s1, "enable_contact_test")
+            19:  loadbool(s2, 1)
+            20:  set(s255, s0, s1, s2)
+            21:  line(-, 169)
+            22:  loadroot(s1)
+            23:  getk(s1, "camera", s1)
+            24:  prepcallk(s1, "SetTarget", s1, s2)
+            25:  loadint(s3, 640)
+            26:  loadint(s4, 340)
+            27:  loadfloat(s5, 2)
+            28:  loadbool(s6, 1)
+            29:  call(255, s1, s2, 5)
+            30:  line(-, 170)
+            31:  loadroot(s1)
+            32:  getk(s1, "camera", s1)
+            33:  prepcallk(s1, "SetMode_Battle", s1, s2)
+            34:  call(255, s1, s2, 1)
+            35:  line(-, 171)
+            36:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: ""
+        name: "Game_BattleUpdate"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 83
+        nfunctions: 0
+        Literals: [
+            0: "team"
+            1: "CheckKO"
+            2: "Round_KO"
+            3: "is_time_stop"
+            4: "enableTimeCount"
+            5: "time"
+            6: "time_unit"
+            7: "sound"
+            8: "PlaySE"
+            9: "gauge"
+            10: "FlashTime"
+            11: "enableTimeUp"
+            12: "Round_TimeUP"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 82
+          ]
+        Line Informations: [
+            0: line: 177, op: 1
+            1: line: 179, op: 15
+            2: line: 180, op: 17
+            3: line: 183, op: 19
+            4: line: 185, op: 32
+            5: line: 187, op: 34
+            6: line: 189, op: 54
+            7: line: 190, op: 59
+            8: line: 193, op: 63
+            9: line: 194, op: 70
+            10: line: 196, op: 79
+            11: line: 199, op: 81
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 177)
+            1:  getk(s1, "team", s0)
+            2:  loadint(s2, 0)
+            3:  get(s1, s1, s2)
+            4:  prepcallk(s1, "CheckKO", s1, s2)
+            5:  call(1, s1, s2, 1)
+            6:  or(s1, 6, s1)
+            7:  getk(s2, "team", s0)
+            8:  loadint(s3, 1)
+            9:  get(s2, s2, s3)
+            10:  prepcallk(s2, "CheckKO", s2, s3)
+            11:  call(2, s2, s3, 1)
+            12:  move(s1, s2)
+            13:  jz(s1, 5)
+            14:  line(-, 179)
+            15:  prepcallk(s1, "Round_KO", s0, s2)
+            16:  call(255, s1, s2, 1)
+            17:  line(-, 180)
+            18:  return(255, 0)
+            19:  line(-, 183)
+            20:  getk(s1, "is_time_stop", s0)
+            21:  not(s1, s1)
+            22:  and(s1, 7, s1)
+            23:  getk(s2, "enableTimeCount", s0)
+            24:  and(s2, 4, s2)
+            25:  getk(s3, "time", s0)
+            26:  loadint(s4, 0)
+            27:  cmp(s3, s4, s3, CMP_GE)
+            28:  move(s2, s3)
+            29:  move(s1, s2)
+            30:  jz(s1, 50)
+            31:  line(-, 185)
+            32:  load(s1, "time")
+            33:  pinc(s1, s0, s1, 255)
+            34:  line(-, 187)
+            35:  getk(s1, "time", s0)
+            36:  loadint(s2, 0)
+            37:  cmp(s1, s2, s1, CMP_G)
+            38:  and(s1, 13, s1)
+            39:  getk(s2, "time", s0)
+            40:  getk(s3, "time_unit", s0)
+            41:  loadint(s4, 10)
+            42:  mul(s3, s4, s3)
+            43:  cmp(s2, s3, s2, CMP_L)
+            44:  and(s2, 6, s2)
+            45:  getk(s3, "time", s0)
+            46:  getk(s4, "time_unit", s0)
+            47:  mod(s3, s4, s3)
+            48:  loadint(s4, 0)
+            49:  eq(s3, 4, s3, 0)
+            50:  move(s2, s3)
+            51:  move(s1, s2)
+            52:  jz(s1, 10)
+            53:  line(-, 189)
+            54:  loadroot(s1)
+            55:  getk(s1, "sound", s1)
+            56:  prepcallk(s1, "PlaySE", s1, s2)
+            57:  loadint(s3, 867)
+            58:  call(255, s1, s2, 2)
+            59:  line(-, 190)
+            60:  getk(s1, "gauge", s0)
+            61:  prepcallk(s1, "FlashTime", s1, s2)
+            62:  call(255, s1, s2, 1)
+            63:  line(-, 193)
+            64:  getk(s1, "time", s0)
+            65:  loadint(s2, 0)
+            66:  jcmp(s2, 3, s1, CMP_L)
+            67:  load(s1, "time")
+            68:  loadint(s2, 0)
+            69:  set(s255, s0, s1, s2)
+            70:  line(-, 194)
+            71:  getk(s1, "time", s0)
+            72:  loadint(s2, 0)
+            73:  eq(s1, 2, s1, 0)
+            74:  and(s1, 2, s1)
+            75:  getk(s2, "enableTimeUp", s0)
+            76:  move(s1, s2)
+            77:  jz(s1, 3)
+            78:  line(-, 196)
+            79:  prepcallk(s1, "Round_TimeUP", s0, s2)
+            80:  call(255, s1, s2, 1)
+            81:  line(-, 199)
+            82:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: ""
+        name: "Round_KO"
+        nliterals: 26
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 23
+        ndefaultparams: 0
+        ninstructions: 131
+        nfunctions: 0
+        Literals: [
+            0: "FightEndFunction"
+            1: "count"
+            2: "priority"
+            3: "actor"
+            4: "SetEffect"
+            5: "effect_class"
+            6: "EF_SpeedLine"
+            7: "SetEffectLight"
+            8: "PlaySE"
+            9: "state"
+            10: "demoCount"
+            11: "enable_contact_test"
+            12: "enableTimeCount"
+            13: "endWinDemo"
+            14: "endLoseDemo"
+            15: "skipDemo"
+            16: "SetTimeStop"
+            17: "SetWinner"
+            18: "win"
+            19: "match_num"
+            20: "CreateWinData"
+            21: "winner"
+            22: "battleUpdate"
+            23: "Game_DowbleKoUpdate"
+            24: "Game_FinishUpdate"
+            25: "Game_KoUpdate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 1, start_op: 6, end_op: 128
+            1: name: "this", pos: 0, start_op: 0, end_op: 130
+          ]
+        Line Informations: [
+            0: line: 204, op: 1
+            1: line: 206, op: 1
+            2: line: 208, op: 4
+            3: line: 209, op: 12
+            4: line: 210, op: 25
+            5: line: 211, op: 34
+            6: line: 213, op: 38
+            7: line: 214, op: 42
+            8: line: 215, op: 46
+            9: line: 217, op: 50
+            10: line: 218, op: 54
+            11: line: 219, op: 60
+            12: line: 220, op: 66
+            13: line: 222, op: 72
+            14: line: 224, op: 76
+            15: line: 226, op: 79
+            16: line: 228, op: 94
+            17: line: 232, op: 96
+            18: line: 234, op: 102
+            19: line: 241, op: 107
+            20: line: 243, op: 121
+            21: line: 249, op: 126
+            22: line: 254, op: 129
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 204)
+            1:  line(-, 206)
+            2:  prepcallk(s1, "FightEndFunction", s0, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 208)
+            5:  newobj(s1, 0, 0, 0)
+            6:  load(s2, "count")
+            7:  loadint(s3, 60)
+            8:  newslot(s255, s1, s2, s3)
+            9:  load(s2, "priority")
+            10:  loadint(s3, 210)
+            11:  newslot(s255, s1, s2, s3)
+            12:  line(-, 209)
+            13:  loadroot(s2)
+            14:  getk(s2, "actor", s2)
+            15:  prepcallk(s2, "SetEffect", s2, s3)
+            16:  loadint(s4, 640)
+            17:  loadint(s5, 360)
+            18:  loadfloat(s6, 1)
+            19:  loadroot(s7)
+            20:  getk(s7, "actor", s7)
+            21:  getk(s7, "effect_class", s7)
+            22:  getk(s7, "EF_SpeedLine", s7)
+            23:  move(s8, s1)
+            24:  call(255, s2, s3, 6)
+            25:  line(-, 210)
+            26:  loadroot(s2)
+            27:  getk(s2, "actor", s2)
+            28:  prepcallk(s2, "SetEffectLight", s2, s3)
+            29:  loadint(s4, 640)
+            30:  loadint(s5, 360)
+            31:  loadint(s6, 1001)
+            32:  loadint(s7, 1)
+            33:  call(255, s2, s3, 5)
+            34:  line(-, 211)
+            35:  prepcallk(s2, "PlaySE", s0, s3)
+            36:  loadint(s4, 855)
+            37:  call(255, s2, s3, 2)
+            38:  line(-, 213)
+            39:  load(s2, "state")
+            40:  loadint(s3, 64)
+            41:  set(s255, s0, s2, s3)
+            42:  line(-, 214)
+            43:  load(s2, "demoCount")
+            44:  loadint(s3, 0)
+            45:  set(s255, s0, s2, s3)
+            46:  line(-, 215)
+            47:  load(s2, "enable_contact_test")
+            48:  loadbool(s3, 0)
+            49:  set(s255, s0, s2, s3)
+            50:  line(-, 217)
+            51:  load(s2, "enableTimeCount")
+            52:  loadbool(s3, 0)
+            53:  set(s255, s0, s2, s3)
+            54:  line(-, 218)
+            55:  load(s2, "endWinDemo")
+            56:  newobj(s3, 2, 0, 1)
+            57:  appendarray(s3, 0, 4)
+            58:  appendarray(s3, 0, 4)
+            59:  set(s255, s0, s2, s3)
+            60:  line(-, 219)
+            61:  load(s2, "endLoseDemo")
+            62:  newobj(s3, 2, 0, 1)
+            63:  appendarray(s3, 0, 4)
+            64:  appendarray(s3, 0, 4)
+            65:  set(s255, s0, s2, s3)
+            66:  line(-, 220)
+            67:  load(s2, "skipDemo")
+            68:  newobj(s3, 2, 0, 1)
+            69:  appendarray(s3, 0, 4)
+            70:  appendarray(s3, 0, 4)
+            71:  set(s255, s0, s2, s3)
+            72:  line(-, 222)
+            73:  prepcallk(s2, "SetTimeStop", s0, s3)
+            74:  loadint(s4, 60)
+            75:  call(255, s2, s3, 2)
+            76:  line(-, 224)
+            77:  prepcallk(s2, "SetWinner", s0, s3)
+            78:  call(255, s2, s3, 1)
+            79:  line(-, 226)
+            80:  getk(s2, "win", s0)
+            81:  loadint(s3, 0)
+            82:  get(s2, s2, s3)
+            83:  getk(s3, "match_num", s0)
+            84:  cmp(s2, s3, s2, CMP_GE)
+            85:  or(s2, 6, s2)
+            86:  getk(s3, "win", s0)
+            87:  loadint(s4, 1)
+            88:  get(s3, s3, s4)
+            89:  getk(s4, "match_num", s0)
+            90:  cmp(s3, s4, s3, CMP_GE)
+            91:  move(s2, s3)
+            92:  jz(s2, 3)
+            93:  line(-, 228)
+            94:  prepcallk(s2, "CreateWinData", s0, s3)
+            95:  call(255, s2, s3, 1)
+            96:  line(-, 232)
+            97:  getk(s2, "winner", s0)
+            98:  loadint(s3, 0)
+            99:  eq(s2, 3, s2, 0)
+            100:  jz(s2, 5)
+            101:  line(-, 234)
+            102:  dload(s2, "battleUpdate", s3, "Game_DowbleKoUpdate")
+            103:  get(s3, s0, s3)
+            104:  set(s255, s0, s2, s3)
+            105:  jmp(-, 23)
+            106:  line(-, 241)
+            107:  getk(s2, "win", s0)
+            108:  loadint(s3, 0)
+            109:  get(s2, s2, s3)
+            110:  getk(s3, "match_num", s0)
+            111:  cmp(s2, s3, s2, CMP_GE)
+            112:  or(s2, 6, s2)
+            113:  getk(s3, "win", s0)
+            114:  loadint(s4, 1)
+            115:  get(s3, s3, s4)
+            116:  getk(s4, "match_num", s0)
+            117:  cmp(s3, s4, s3, CMP_GE)
+            118:  move(s2, s3)
+            119:  jz(s2, 5)
+            120:  line(-, 243)
+            121:  dload(s2, "battleUpdate", s3, "Game_FinishUpdate")
+            122:  get(s3, s0, s3)
+            123:  set(s255, s0, s2, s3)
+            124:  jmp(-, 4)
+            125:  line(-, 249)
+            126:  dload(s2, "battleUpdate", s3, "Game_KoUpdate")
+            127:  get(s3, s0, s3)
+            128:  set(s255, s0, s2, s3)
+            129:  line(-, 254)
+            130:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 9
+        bgenerator: 0
+        varparams: 0
+
+    11: 
+        sourcename: ""
+        name: "Game_KoUpdate"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 45
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "team"
+            2: "ResetCombo"
+            3: "current"
+            4: "IsFree"
+            5: "Round_Win"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 44
+          ]
+        Line Informations: [
+            0: line: 258, op: 1
+            1: line: 259, op: 3
+            2: line: 261, op: 9
+            3: line: 262, op: 14
+            4: line: 264, op: 20
+            5: line: 266, op: 25
+            6: line: 269, op: 41
+            7: line: 272, op: 43
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 258)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 259)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 120)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 12)
+            8:  line(-, 261)
+            9:  getk(s1, "team", s0)
+            10:  loadint(s2, 0)
+            11:  get(s1, s1, s2)
+            12:  prepcallk(s1, "ResetCombo", s1, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 262)
+            15:  getk(s1, "team", s0)
+            16:  loadint(s2, 1)
+            17:  get(s1, s1, s2)
+            18:  prepcallk(s1, "ResetCombo", s1, s2)
+            19:  call(255, s1, s2, 1)
+            20:  line(-, 264)
+            21:  getk(s1, "demoCount", s0)
+            22:  loadint(s2, 180)
+            23:  jcmp(s2, 19, s1, CMP_GE)
+            24:  line(-, 266)
+            25:  getk(s1, "team", s0)
+            26:  loadint(s2, 0)
+            27:  get(s1, s1, s2)
+            28:  getk(s1, "current", s1)
+            29:  prepcallk(s1, "IsFree", s1, s2)
+            30:  call(1, s1, s2, 1)
+            31:  or(s1, 7, s1)
+            32:  getk(s2, "team", s0)
+            33:  loadint(s3, 1)
+            34:  get(s2, s2, s3)
+            35:  getk(s2, "current", s2)
+            36:  prepcallk(s2, "IsFree", s2, s3)
+            37:  call(2, s2, s3, 1)
+            38:  move(s1, s2)
+            39:  jz(s1, 3)
+            40:  line(-, 269)
+            41:  prepcallk(s1, "Round_Win", s0, s2)
+            42:  call(255, s1, s2, 1)
+            43:  line(-, 272)
+            44:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    12: 
+        sourcename: ""
+        name: "Game_FinishUpdate"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 39
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "SetSlow"
+            2: "team"
+            3: "ResetCombo"
+            4: "Round_Win"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 38
+          ]
+        Line Informations: [
+            0: line: 276, op: 1
+            1: line: 277, op: 3
+            2: line: 278, op: 11
+            3: line: 280, op: 17
+            4: line: 281, op: 22
+            5: line: 283, op: 28
+            6: line: 286, op: 33
+            7: line: 287, op: 35
+            8: line: 289, op: 37
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 276)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 277)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 60)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  prepcallk(s1, "SetSlow", s0, s2)
+            9:  loadint(s3, 240)
+            10:  call(255, s1, s2, 2)
+            11:  line(-, 278)
+            12:  getk(s1, "demoCount", s0)
+            13:  loadint(s2, 120)
+            14:  eq(s1, 2, s1, 0)
+            15:  jz(s1, 12)
+            16:  line(-, 280)
+            17:  getk(s1, "team", s0)
+            18:  loadint(s2, 0)
+            19:  get(s1, s1, s2)
+            20:  prepcallk(s1, "ResetCombo", s1, s2)
+            21:  call(255, s1, s2, 1)
+            22:  line(-, 281)
+            23:  getk(s1, "team", s0)
+            24:  loadint(s2, 1)
+            25:  get(s1, s1, s2)
+            26:  prepcallk(s1, "ResetCombo", s1, s2)
+            27:  call(255, s1, s2, 1)
+            28:  line(-, 283)
+            29:  getk(s1, "demoCount", s0)
+            30:  loadint(s2, 300)
+            31:  jcmp(s2, 5, s1, CMP_GE)
+            32:  line(-, 286)
+            33:  prepcallk(s1, "Round_Win", s0, s2)
+            34:  call(255, s1, s2, 1)
+            35:  line(-, 287)
+            36:  return(255, 0)
+            37:  line(-, 289)
+            38:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    13: 
+        sourcename: ""
+        name: "Game_DowbleKoUpdate"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 11
+        ndefaultparams: 0
+        ninstructions: 49
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "team"
+            2: "ResetCombo"
+            3: "keyTake"
+            4: "PlaySE"
+            5: "actor"
+            6: "SetEffectLight"
+            7: "BeginNextRound"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 1, start_op: 22, end_op: 38
+            1: name: "this", pos: 0, start_op: 0, end_op: 48
+          ]
+        Line Informations: [
+            0: line: 293, op: 1
+            1: line: 294, op: 3
+            2: line: 296, op: 9
+            3: line: 297, op: 14
+            4: line: 299, op: 20
+            5: line: 300, op: 22
+            6: line: 301, op: 26
+            7: line: 302, op: 30
+            8: line: 306, op: 39
+            9: line: 308, op: 45
+            10: line: 310, op: 47
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 293)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 294)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 210)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 31)
+            8:  line(-, 296)
+            9:  getk(s1, "team", s0)
+            10:  loadint(s2, 0)
+            11:  get(s1, s1, s2)
+            12:  prepcallk(s1, "ResetCombo", s1, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 297)
+            15:  getk(s1, "team", s0)
+            16:  loadint(s2, 1)
+            17:  get(s1, s1, s2)
+            18:  prepcallk(s1, "ResetCombo", s1, s2)
+            19:  call(255, s1, s2, 1)
+            20:  line(-, 299)
+            21:  newobj(s1, 0, 0, 0)
+            22:  line(-, 300)
+            23:  load(s2, "keyTake")
+            24:  loadint(s3, 2)
+            25:  newslot(s255, s1, s2, s3)
+            26:  line(-, 301)
+            27:  prepcallk(s2, "PlaySE", s0, s3)
+            28:  loadint(s4, 854)
+            29:  call(255, s2, s3, 2)
+            30:  line(-, 302)
+            31:  loadroot(s2)
+            32:  getk(s2, "actor", s2)
+            33:  prepcallk(s2, "SetEffectLight", s2, s3)
+            34:  loadint(s4, 640)
+            35:  loadint(s5, 360)
+            36:  loadint(s6, 1001)
+            37:  loadint(s7, 3)
+            38:  call(255, s2, s3, 5)
+            39:  line(-, 306)
+            40:  getk(s1, "demoCount", s0)
+            41:  loadint(s2, 330)
+            42:  eq(s1, 2, s1, 0)
+            43:  jz(s1, 3)
+            44:  line(-, 308)
+            45:  prepcallk(s1, "BeginNextRound", s0, s2)
+            46:  call(255, s1, s2, 1)
+            47:  line(-, 310)
+            48:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    14: 
+        sourcename: ""
+        name: "Round_TimeUP"
+        nliterals: 20
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 18
+        ndefaultparams: 0
+        ninstructions: 103
+        nfunctions: 0
+        Literals: [
+            0: "FightEndFunction"
+            1: "battleUpdate"
+            2: "Game_TimeUpUpdate"
+            3: "state"
+            4: "demoCount"
+            5: "enable_contact_test"
+            6: "endWinDemo"
+            7: "endLoseDemo"
+            8: "skipDemo"
+            9: "enableTimeCount"
+            10: "SetWinner"
+            11: "win"
+            12: "match_num"
+            13: "CreateWinData"
+            14: "PlaySE"
+            15: "actor"
+            16: "SetEffectLight"
+            17: "team"
+            18: "current"
+            19: "resetTimeUpFunc"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 102
+          ]
+        Line Informations: [
+            0: line: 316, op: 1
+            1: line: 318, op: 1
+            2: line: 320, op: 4
+            3: line: 321, op: 8
+            4: line: 322, op: 12
+            5: line: 324, op: 16
+            6: line: 326, op: 20
+            7: line: 327, op: 26
+            8: line: 328, op: 32
+            9: line: 329, op: 38
+            10: line: 332, op: 42
+            11: line: 334, op: 45
+            12: line: 336, op: 60
+            13: line: 339, op: 62
+            14: line: 340, op: 66
+            15: line: 342, op: 75
+            16: line: 343, op: 88
+            17: line: 344, op: 101
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 316)
+            1:  line(-, 318)
+            2:  prepcallk(s1, "FightEndFunction", s0, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 320)
+            5:  dload(s1, "battleUpdate", s2, "Game_TimeUpUpdate")
+            6:  get(s2, s0, s2)
+            7:  set(s255, s0, s1, s2)
+            8:  line(-, 321)
+            9:  load(s1, "state")
+            10:  loadint(s2, 64)
+            11:  set(s255, s0, s1, s2)
+            12:  line(-, 322)
+            13:  load(s1, "demoCount")
+            14:  loadint(s2, 0)
+            15:  set(s255, s0, s1, s2)
+            16:  line(-, 324)
+            17:  load(s1, "enable_contact_test")
+            18:  loadbool(s2, 0)
+            19:  set(s255, s0, s1, s2)
+            20:  line(-, 326)
+            21:  load(s1, "endWinDemo")
+            22:  newobj(s2, 2, 0, 1)
+            23:  appendarray(s2, 0, 4)
+            24:  appendarray(s2, 0, 4)
+            25:  set(s255, s0, s1, s2)
+            26:  line(-, 327)
+            27:  load(s1, "endLoseDemo")
+            28:  newobj(s2, 2, 0, 1)
+            29:  appendarray(s2, 0, 4)
+            30:  appendarray(s2, 0, 4)
+            31:  set(s255, s0, s1, s2)
+            32:  line(-, 328)
+            33:  load(s1, "skipDemo")
+            34:  newobj(s2, 2, 0, 1)
+            35:  appendarray(s2, 0, 4)
+            36:  appendarray(s2, 0, 4)
+            37:  set(s255, s0, s1, s2)
+            38:  line(-, 329)
+            39:  load(s1, "enableTimeCount")
+            40:  loadbool(s2, 0)
+            41:  set(s255, s0, s1, s2)
+            42:  line(-, 332)
+            43:  prepcallk(s1, "SetWinner", s0, s2)
+            44:  call(255, s1, s2, 1)
+            45:  line(-, 334)
+            46:  getk(s1, "win", s0)
+            47:  loadint(s2, 0)
+            48:  get(s1, s1, s2)
+            49:  getk(s2, "match_num", s0)
+            50:  cmp(s1, s2, s1, CMP_GE)
+            51:  or(s1, 6, s1)
+            52:  getk(s2, "win", s0)
+            53:  loadint(s3, 1)
+            54:  get(s2, s2, s3)
+            55:  getk(s3, "match_num", s0)
+            56:  cmp(s2, s3, s2, CMP_GE)
+            57:  move(s1, s2)
+            58:  jz(s1, 3)
+            59:  line(-, 336)
+            60:  prepcallk(s1, "CreateWinData", s0, s2)
+            61:  call(255, s1, s2, 1)
+            62:  line(-, 339)
+            63:  prepcallk(s1, "PlaySE", s0, s2)
+            64:  loadint(s3, 852)
+            65:  call(255, s1, s2, 2)
+            66:  line(-, 340)
+            67:  loadroot(s1)
+            68:  getk(s1, "actor", s1)
+            69:  prepcallk(s1, "SetEffectLight", s1, s2)
+            70:  loadint(s3, 640)
+            71:  loadint(s4, 360)
+            72:  loadint(s5, 1001)
+            73:  loadint(s6, 2)
+            74:  call(255, s1, s2, 5)
+            75:  line(-, 342)
+            76:  getk(s1, "team", s0)
+            77:  loadint(s2, 0)
+            78:  get(s1, s1, s2)
+            79:  getk(s1, "current", s1)
+            80:  getk(s1, "resetTimeUpFunc", s1)
+            81:  jz(s1, 6)
+            82:  getk(s1, "team", s0)
+            83:  loadint(s2, 0)
+            84:  get(s1, s1, s2)
+            85:  getk(s1, "current", s1)
+            86:  prepcallk(s1, "resetTimeUpFunc", s1, s2)
+            87:  call(255, s1, s2, 1)
+            88:  line(-, 343)
+            89:  getk(s1, "team", s0)
+            90:  loadint(s2, 1)
+            91:  get(s1, s1, s2)
+            92:  getk(s1, "current", s1)
+            93:  getk(s1, "resetTimeUpFunc", s1)
+            94:  jz(s1, 6)
+            95:  getk(s1, "team", s0)
+            96:  loadint(s2, 1)
+            97:  get(s1, s1, s2)
+            98:  getk(s1, "current", s1)
+            99:  prepcallk(s1, "resetTimeUpFunc", s1, s2)
+            100:  call(255, s1, s2, 1)
+            101:  line(-, 344)
+            102:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    15: 
+        sourcename: ""
+        name: "Game_TimeUpUpdate"
+        nliterals: 4
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 3
+        ndefaultparams: 0
+        ninstructions: 22
+        nfunctions: 1
+        Literals: [
+            0: "team"
+            1: "current"
+            2: "IsFree"
+            3: "battleUpdate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 21
+          ]
+        Line Informations: [
+            0: line: 349, op: 1
+            1: line: 351, op: 17
+            2: line: 361, op: 20
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 349)
+            1:  getk(s1, "team", s0)
+            2:  loadint(s2, 0)
+            3:  get(s1, s1, s2)
+            4:  getk(s1, "current", s1)
+            5:  prepcallk(s1, "IsFree", s1, s2)
+            6:  call(1, s1, s2, 1)
+            7:  and(s1, 7, s1)
+            8:  getk(s2, "team", s0)
+            9:  loadint(s3, 1)
+            10:  get(s2, s2, s3)
+            11:  getk(s2, "current", s2)
+            12:  prepcallk(s2, "IsFree", s2, s3)
+            13:  call(2, s2, s3, 1)
+            14:  move(s1, s2)
+            15:  jz(s1, 4)
+            16:  line(-, 351)
+            17:  load(s1, "battleUpdate")
+            18:  closure(s2, 0)
+            19:  set(s255, s0, s1, s2)
+            20:  line(-, 361)
+            21:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 5
+                ndefaultparams: 0
+                ninstructions: 14
+                nfunctions: 0
+                Literals: [
+                    0: "demoCount"
+                    1: "Round_TimeUpCall"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 13
+                  ]
+                Line Informations: [
+                    0: line: 353, op: 1
+                    1: line: 354, op: 3
+                    2: line: 356, op: 8
+                    3: line: 357, op: 10
+                    4: line: 359, op: 12
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 353)
+                    1:  load(s1, "demoCount")
+                    2:  pinc(s1, s0, s1, 1)
+                    3:  line(-, 354)
+                    4:  getk(s1, "demoCount", s0)
+                    5:  loadint(s2, 150)
+                    6:  jcmp(s2, 5, s1, CMP_GE)
+                    7:  line(-, 356)
+                    8:  prepcallk(s1, "Round_TimeUpCall", s0, s2)
+                    9:  call(255, s1, s2, 1)
+                    10:  line(-, 357)
+                    11:  return(255, 0)
+                    12:  line(-, 359)
+                    13:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    16: 
+        sourcename: ""
+        name: "Round_TimeUpCall"
+        nliterals: 36
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 11
+        nlineinfos: 73
+        ndefaultparams: 0
+        ninstructions: 532
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "demoCount"
+            2: "endWinDemo"
+            3: "endLoseDemo"
+            4: "skipDemo"
+            5: "winner"
+            6: "PlaySE"
+            7: "actor"
+            8: "SetEffectLight"
+            9: "team"
+            10: "current"
+            11: "slave"
+            12: "Team_Lose"
+            13: "func_timeDemo"
+            14: "battleUpdate"
+            15: "Game_DrawUpdate"
+            16: "Game_TimeUpCallUpdate"
+            17: "autoCamera"
+            18: "camera"
+            19: "SetTarget"
+            20: "x"
+            21: "y"
+            22: "master"
+            23: "Team_Win"
+            24: "func_winDemo"
+            25: "type"
+            26: "infoActor"
+            27: "index"
+            28: "SetEffect"
+            29: "effect_class"
+            30: "Round_Call_Win1P"
+            31: "weakref"
+            32: "Round_Call_Win2P"
+            33: "SetFreeObject"
+            34: "WinPlayerName_L"
+            35: "WinPlayerName_R"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "l_", pos: 3, start_op: 54, end_op: 95
+            1: name: "w_", pos: 2, start_op: 50, end_op: 95
+            2: name: "t", pos: 5, start_op: 186, end_op: 312
+            3: name: "a", pos: 4, start_op: 151, end_op: 312
+            4: name: "l_", pos: 3, start_op: 109, end_op: 312
+            5: name: "w_", pos: 2, start_op: 105, end_op: 312
+            6: name: "t", pos: 5, start_op: 403, end_op: 529
+            7: name: "a", pos: 4, start_op: 368, end_op: 529
+            8: name: "l_", pos: 3, start_op: 326, end_op: 529
+            9: name: "w_", pos: 2, start_op: 322, end_op: 529
+            10: name: "this", pos: 0, start_op: 0, end_op: 531
+          ]
+        Line Informations: [
+            0: line: 365, op: 1
+            1: line: 366, op: 1
+            2: line: 367, op: 5
+            3: line: 369, op: 9
+            4: line: 370, op: 15
+            5: line: 371, op: 21
+            6: line: 373, op: 27
+            7: line: 376, op: 32
+            8: line: 377, op: 36
+            9: line: 378, op: 45
+            10: line: 380, op: 54
+            11: line: 381, op: 61
+            12: line: 384, op: 68
+            13: line: 386, op: 72
+            14: line: 387, op: 79
+            15: line: 390, op: 86
+            16: line: 392, op: 90
+            17: line: 395, op: 94
+            18: line: 397, op: 100
+            19: line: 399, op: 109
+            20: line: 400, op: 116
+            21: line: 403, op: 123
+            22: line: 405, op: 127
+            23: line: 406, op: 131
+            24: line: 407, op: 135
+            25: line: 419, op: 146
+            26: line: 420, op: 151
+            27: line: 421, op: 158
+            28: line: 424, op: 165
+            29: line: 426, op: 169
+            30: line: 427, op: 173
+            31: line: 429, op: 184
+            32: line: 430, op: 186
+            33: line: 431, op: 190
+            34: line: 432, op: 194
+            35: line: 433, op: 202
+            36: line: 434, op: 206
+            37: line: 435, op: 212
+            38: line: 438, op: 230
+            39: line: 440, op: 245
+            40: line: 443, op: 260
+            41: line: 444, op: 265
+            42: line: 447, op: 283
+            43: line: 449, op: 298
+            44: line: 451, op: 311
+            45: line: 453, op: 317
+            46: line: 455, op: 326
+            47: line: 456, op: 333
+            48: line: 459, op: 340
+            49: line: 461, op: 344
+            50: line: 462, op: 348
+            51: line: 463, op: 352
+            52: line: 475, op: 363
+            53: line: 476, op: 368
+            54: line: 477, op: 375
+            55: line: 480, op: 382
+            56: line: 482, op: 386
+            57: line: 483, op: 390
+            58: line: 485, op: 401
+            59: line: 486, op: 403
+            60: line: 487, op: 407
+            61: line: 488, op: 411
+            62: line: 489, op: 419
+            63: line: 490, op: 423
+            64: line: 491, op: 429
+            65: line: 494, op: 447
+            66: line: 496, op: 462
+            67: line: 499, op: 477
+            68: line: 500, op: 482
+            69: line: 503, op: 500
+            70: line: 505, op: 515
+            71: line: 507, op: 528
+            72: line: 509, op: 530
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 365)
+            1:  line(-, 366)
+            2:  load(s1, "state")
+            3:  loadint(s2, 64)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 367)
+            6:  load(s1, "demoCount")
+            7:  loadint(s2, 0)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 369)
+            10:  load(s1, "endWinDemo")
+            11:  newobj(s2, 2, 0, 1)
+            12:  appendarray(s2, 0, 4)
+            13:  appendarray(s2, 0, 4)
+            14:  set(s255, s0, s1, s2)
+            15:  line(-, 370)
+            16:  load(s1, "endLoseDemo")
+            17:  newobj(s2, 2, 0, 1)
+            18:  appendarray(s2, 0, 4)
+            19:  appendarray(s2, 0, 4)
+            20:  set(s255, s0, s1, s2)
+            21:  line(-, 371)
+            22:  load(s1, "skipDemo")
+            23:  newobj(s2, 2, 0, 1)
+            24:  appendarray(s2, 0, 4)
+            25:  appendarray(s2, 0, 4)
+            26:  set(s255, s0, s1, s2)
+            27:  line(-, 373)
+            28:  getk(s1, "winner", s0)
+            29:  loadint(s2, 0)
+            30:  eq(s2, 2, s1, 0)
+            31:  jz(s2, 65)
+            32:  line(-, 376)
+            33:  prepcallk(s2, "PlaySE", s0, s3)
+            34:  loadint(s4, 854)
+            35:  call(255, s2, s3, 2)
+            36:  line(-, 377)
+            37:  loadroot(s2)
+            38:  getk(s2, "actor", s2)
+            39:  prepcallk(s2, "SetEffectLight", s2, s3)
+            40:  loadint(s4, 640)
+            41:  loadint(s5, 360)
+            42:  loadint(s6, 1001)
+            43:  loadint(s7, 3)
+            44:  call(255, s2, s3, 5)
+            45:  line(-, 378)
+            46:  getk(s2, "team", s0)
+            47:  loadint(s3, 0)
+            48:  get(s2, s2, s3)
+            49:  getk(s2, "current", s2)
+            50:  getk(s3, "team", s0)
+            51:  loadint(s4, 1)
+            52:  get(s3, s3, s4)
+            53:  getk(s3, "current", s3)
+            54:  line(-, 380)
+            55:  getk(s4, "team", s2)
+            56:  getk(s4, "current", s4)
+            57:  getk(s5, "team", s2)
+            58:  getk(s5, "slave", s5)
+            59:  eq(s4, 5, s4, 0)
+            60:  jz(s4, 6)
+            61:  line(-, 381)
+            62:  getk(s4, "team", s2)
+            63:  getk(s4, "current", s4)
+            64:  prepcallk(s4, "Team_Lose", s4, s5)
+            65:  call(255, s4, s5, 1)
+            66:  jmp(-, 5)
+            67:  line(-, 384)
+            68:  getk(s4, "func_timeDemo", s2)
+            69:  jz(s4, 2)
+            70:  prepcallk(s4, "func_timeDemo", s2, s5)
+            71:  call(255, s4, s5, 1)
+            72:  line(-, 386)
+            73:  getk(s4, "team", s3)
+            74:  getk(s4, "current", s4)
+            75:  getk(s5, "team", s3)
+            76:  getk(s5, "slave", s5)
+            77:  eq(s4, 5, s4, 0)
+            78:  jz(s4, 6)
+            79:  line(-, 387)
+            80:  getk(s4, "team", s3)
+            81:  getk(s4, "current", s4)
+            82:  prepcallk(s4, "Team_Lose", s4, s5)
+            83:  call(255, s4, s5, 1)
+            84:  jmp(-, 5)
+            85:  line(-, 390)
+            86:  getk(s4, "func_timeDemo", s3)
+            87:  jz(s4, 2)
+            88:  prepcallk(s4, "func_timeDemo", s3, s5)
+            89:  call(255, s4, s5, 1)
+            90:  line(-, 392)
+            91:  dload(s4, "battleUpdate", s5, "Game_DrawUpdate")
+            92:  get(s5, s0, s5)
+            93:  set(s255, s0, s4, s5)
+            94:  line(-, 395)
+            95:  jmp(-, 434)
+            96:  jmp(-, 3)
+            97:  loadint(s2, 1)
+            98:  eq(s2, 2, s1, 0)
+            99:  jz(s2, 214)
+            100:  line(-, 397)
+            101:  getk(s2, "team", s0)
+            102:  loadint(s3, 0)
+            103:  get(s2, s2, s3)
+            104:  getk(s2, "current", s2)
+            105:  getk(s3, "team", s0)
+            106:  loadint(s4, 1)
+            107:  get(s3, s3, s4)
+            108:  getk(s3, "current", s3)
+            109:  line(-, 399)
+            110:  getk(s4, "team", s3)
+            111:  getk(s4, "current", s4)
+            112:  getk(s5, "team", s3)
+            113:  getk(s5, "slave", s5)
+            114:  eq(s4, 5, s4, 0)
+            115:  jz(s4, 6)
+            116:  line(-, 400)
+            117:  getk(s4, "team", s3)
+            118:  getk(s4, "current", s4)
+            119:  prepcallk(s4, "Team_Lose", s4, s5)
+            120:  call(255, s4, s5, 1)
+            121:  jmp(-, 5)
+            122:  line(-, 403)
+            123:  getk(s4, "func_timeDemo", s3)
+            124:  jz(s4, 2)
+            125:  prepcallk(s4, "func_timeDemo", s3, s5)
+            126:  call(255, s4, s5, 1)
+            127:  line(-, 405)
+            128:  dload(s4, "battleUpdate", s5, "Game_TimeUpCallUpdate")
+            129:  get(s5, s0, s5)
+            130:  set(s255, s0, s4, s5)
+            131:  line(-, 406)
+            132:  load(s4, "autoCamera")
+            133:  loadbool(s5, 0)
+            134:  set(s255, s2, s4, s5)
+            135:  line(-, 407)
+            136:  loadroot(s4)
+            137:  getk(s4, "camera", s4)
+            138:  prepcallk(s4, "SetTarget", s4, s5)
+            139:  getk(s6, "x", s2)
+            140:  getk(s7, "y", s2)
+            141:  loadint(s8, 20)
+            142:  sub(s7, s8, s7)
+            143:  loadfloat(s8, 2)
+            144:  loadbool(s9, 0)
+            145:  call(255, s4, s5, 5)
+            146:  line(-, 419)
+            147:  getk(s4, "team", s0)
+            148:  loadint(s5, 0)
+            149:  get(s4, s4, s5)
+            150:  getk(s4, "master", s4)
+            151:  line(-, 420)
+            152:  getk(s5, "team", s4)
+            153:  getk(s5, "current", s5)
+            154:  getk(s6, "team", s4)
+            155:  getk(s6, "slave", s6)
+            156:  eq(s5, 6, s5, 0)
+            157:  jz(s5, 6)
+            158:  line(-, 421)
+            159:  getk(s5, "team", s4)
+            160:  getk(s5, "current", s5)
+            161:  prepcallk(s5, "Team_Win", s5, s6)
+            162:  call(255, s5, s6, 1)
+            163:  jmp(-, 5)
+            164:  line(-, 424)
+            165:  getk(s5, "func_winDemo", s4)
+            166:  jz(s5, 2)
+            167:  prepcallk(s5, "func_winDemo", s4, s6)
+            168:  call(255, s5, s6, 1)
+            169:  line(-, 426)
+            170:  load(s5, "autoCamera")
+            171:  loadbool(s6, 0)
+            172:  set(s255, s4, s5, s6)
+            173:  line(-, 427)
+            174:  loadroot(s5)
+            175:  getk(s5, "camera", s5)
+            176:  prepcallk(s5, "SetTarget", s5, s6)
+            177:  getk(s7, "x", s4)
+            178:  getk(s8, "y", s4)
+            179:  loadint(s9, 20)
+            180:  sub(s8, s9, s8)
+            181:  loadfloat(s9, 2)
+            182:  loadbool(s10, 0)
+            183:  call(255, s5, s6, 5)
+            184:  line(-, 429)
+            185:  newobj(s5, 0, 0, 0)
+            186:  line(-, 430)
+            187:  dload(s6, "winner", s7, "type")
+            188:  get(s7, s4, s7)
+            189:  newslot(s255, s5, s6, s7)
+            190:  line(-, 431)
+            191:  dload(s6, "team", s7, "team")
+            192:  get(s7, s4, s7)
+            193:  newslot(s255, s5, s6, s7)
+            194:  line(-, 432)
+            195:  load(s6, "infoActor")
+            196:  newobj(s7, 2, 0, 1)
+            197:  loadnulls(s8, 1)
+            198:  appendarray(s7, 8, 0)
+            199:  loadnulls(s8, 1)
+            200:  appendarray(s7, 8, 0)
+            201:  set(s255, s0, s6, s7)
+            202:  line(-, 433)
+            203:  getk(s6, "x", s4)
+            204:  loadint(s7, 640)
+            205:  jcmp(s7, 53, s6, CMP_LE)
+            206:  line(-, 434)
+            207:  getk(s6, "team", s4)
+            208:  getk(s6, "index", s6)
+            209:  loadint(s7, 0)
+            210:  eq(s6, 7, s6, 0)
+            211:  jz(s6, 17)
+            212:  line(-, 435)
+            213:  getk(s6, "infoActor", s0)
+            214:  loadint(s7, 0)
+            215:  prepcallk(s8, "SetEffect", s4, s9)
+            216:  loadint(s10, 880)
+            217:  loadint(s11, 460)
+            218:  loadfloat(s12, 1)
+            219:  loadroot(s13)
+            220:  getk(s13, "actor", s13)
+            221:  getk(s13, "effect_class", s13)
+            222:  getk(s13, "Round_Call_Win1P", s13)
+            223:  move(s14, s5)
+            224:  call(8, s8, s9, 6)
+            225:  prepcallk(s8, "weakref", s8, s9)
+            226:  call(8, s8, s9, 1)
+            227:  set(s255, s6, s7, s8)
+            228:  jmp(-, 16)
+            229:  line(-, 438)
+            230:  getk(s6, "infoActor", s0)
+            231:  loadint(s7, 0)
+            232:  prepcallk(s8, "SetEffect", s4, s9)
+            233:  loadint(s10, 880)
+            234:  loadint(s11, 460)
+            235:  loadfloat(s12, 1)
+            236:  loadroot(s13)
+            237:  getk(s13, "actor", s13)
+            238:  getk(s13, "effect_class", s13)
+            239:  getk(s13, "Round_Call_Win2P", s13)
+            240:  move(s14, s5)
+            241:  call(8, s8, s9, 6)
+            242:  prepcallk(s8, "weakref", s8, s9)
+            243:  call(8, s8, s9, 1)
+            244:  set(s255, s6, s7, s8)
+            245:  line(-, 440)
+            246:  getk(s6, "infoActor", s0)
+            247:  loadint(s7, 1)
+            248:  prepcallk(s8, "SetFreeObject", s4, s9)
+            249:  loadint(s10, 0)
+            250:  loadint(s11, 600)
+            251:  loadfloat(s12, 1)
+            252:  getk(s13, "WinPlayerName_L", s4)
+            253:  newobj(s14, 0, 0, 0)
+            254:  call(8, s8, s9, 6)
+            255:  prepcallk(s8, "weakref", s8, s9)
+            256:  call(8, s8, s9, 1)
+            257:  set(s255, s6, s7, s8)
+            258:  jmp(-, 52)
+            259:  line(-, 443)
+            260:  getk(s6, "team", s4)
+            261:  getk(s6, "index", s6)
+            262:  loadint(s7, 0)
+            263:  eq(s6, 7, s6, 0)
+            264:  jz(s6, 17)
+            265:  line(-, 444)
+            266:  getk(s6, "infoActor", s0)
+            267:  loadint(s7, 0)
+            268:  prepcallk(s8, "SetEffect", s4, s9)
+            269:  loadint(s10, 400)
+            270:  loadint(s11, 460)
+            271:  loadfloat(s12, 1)
+            272:  loadroot(s13)
+            273:  getk(s13, "actor", s13)
+            274:  getk(s13, "effect_class", s13)
+            275:  getk(s13, "Round_Call_Win1P", s13)
+            276:  move(s14, s5)
+            277:  call(8, s8, s9, 6)
+            278:  prepcallk(s8, "weakref", s8, s9)
+            279:  call(8, s8, s9, 1)
+            280:  set(s255, s6, s7, s8)
+            281:  jmp(-, 16)
+            282:  line(-, 447)
+            283:  getk(s6, "infoActor", s0)
+            284:  loadint(s7, 0)
+            285:  prepcallk(s8, "SetEffect", s4, s9)
+            286:  loadint(s10, 400)
+            287:  loadint(s11, 460)
+            288:  loadfloat(s12, 1)
+            289:  loadroot(s13)
+            290:  getk(s13, "actor", s13)
+            291:  getk(s13, "effect_class", s13)
+            292:  getk(s13, "Round_Call_Win2P", s13)
+            293:  move(s14, s5)
+            294:  call(8, s8, s9, 6)
+            295:  prepcallk(s8, "weakref", s8, s9)
+            296:  call(8, s8, s9, 1)
+            297:  set(s255, s6, s7, s8)
+            298:  line(-, 449)
+            299:  getk(s6, "infoActor", s0)
+            300:  loadint(s7, 1)
+            301:  prepcallk(s8, "SetFreeObject", s4, s9)
+            302:  loadint(s10, 1280)
+            303:  loadint(s11, 600)
+            304:  loadfloat(s12, 1)
+            305:  getk(s13, "WinPlayerName_R", s4)
+            306:  newobj(s14, 0, 0, 0)
+            307:  call(8, s8, s9, 6)
+            308:  prepcallk(s8, "weakref", s8, s9)
+            309:  call(8, s8, s9, 1)
+            310:  set(s255, s6, s7, s8)
+            311:  line(-, 451)
+            312:  jmp(-, 217)
+            313:  jmp(-, 3)
+            314:  loadint(s2, 2)
+            315:  eq(s2, 2, s1, 0)
+            316:  jz(s2, 213)
+            317:  line(-, 453)
+            318:  getk(s2, "team", s0)
+            319:  loadint(s3, 1)
+            320:  get(s2, s2, s3)
+            321:  getk(s2, "current", s2)
+            322:  getk(s3, "team", s0)
+            323:  loadint(s4, 0)
+            324:  get(s3, s3, s4)
+            325:  getk(s3, "current", s3)
+            326:  line(-, 455)
+            327:  getk(s4, "team", s3)
+            328:  getk(s4, "current", s4)
+            329:  getk(s5, "team", s3)
+            330:  getk(s5, "slave", s5)
+            331:  eq(s4, 5, s4, 0)
+            332:  jz(s4, 6)
+            333:  line(-, 456)
+            334:  getk(s4, "team", s3)
+            335:  getk(s4, "current", s4)
+            336:  prepcallk(s4, "Team_Lose", s4, s5)
+            337:  call(255, s4, s5, 1)
+            338:  jmp(-, 5)
+            339:  line(-, 459)
+            340:  getk(s4, "func_timeDemo", s3)
+            341:  jz(s4, 2)
+            342:  prepcallk(s4, "func_timeDemo", s3, s5)
+            343:  call(255, s4, s5, 1)
+            344:  line(-, 461)
+            345:  dload(s4, "battleUpdate", s5, "Game_TimeUpCallUpdate")
+            346:  get(s5, s0, s5)
+            347:  set(s255, s0, s4, s5)
+            348:  line(-, 462)
+            349:  load(s4, "autoCamera")
+            350:  loadbool(s5, 0)
+            351:  set(s255, s2, s4, s5)
+            352:  line(-, 463)
+            353:  loadroot(s4)
+            354:  getk(s4, "camera", s4)
+            355:  prepcallk(s4, "SetTarget", s4, s5)
+            356:  getk(s6, "x", s2)
+            357:  getk(s7, "y", s2)
+            358:  loadint(s8, 20)
+            359:  sub(s7, s8, s7)
+            360:  loadfloat(s8, 2)
+            361:  loadbool(s9, 0)
+            362:  call(255, s4, s5, 5)
+            363:  line(-, 475)
+            364:  getk(s4, "team", s0)
+            365:  loadint(s5, 1)
+            366:  get(s4, s4, s5)
+            367:  getk(s4, "master", s4)
+            368:  line(-, 476)
+            369:  getk(s5, "team", s4)
+            370:  getk(s5, "current", s5)
+            371:  getk(s6, "team", s4)
+            372:  getk(s6, "slave", s6)
+            373:  eq(s5, 6, s5, 0)
+            374:  jz(s5, 6)
+            375:  line(-, 477)
+            376:  getk(s5, "team", s4)
+            377:  getk(s5, "current", s5)
+            378:  prepcallk(s5, "Team_Win", s5, s6)
+            379:  call(255, s5, s6, 1)
+            380:  jmp(-, 5)
+            381:  line(-, 480)
+            382:  getk(s5, "func_winDemo", s4)
+            383:  jz(s5, 2)
+            384:  prepcallk(s5, "func_winDemo", s4, s6)
+            385:  call(255, s5, s6, 1)
+            386:  line(-, 482)
+            387:  load(s5, "autoCamera")
+            388:  loadbool(s6, 0)
+            389:  set(s255, s4, s5, s6)
+            390:  line(-, 483)
+            391:  loadroot(s5)
+            392:  getk(s5, "camera", s5)
+            393:  prepcallk(s5, "SetTarget", s5, s6)
+            394:  getk(s7, "x", s4)
+            395:  getk(s8, "y", s4)
+            396:  loadint(s9, 20)
+            397:  sub(s8, s9, s8)
+            398:  loadfloat(s9, 2)
+            399:  loadbool(s10, 0)
+            400:  call(255, s5, s6, 5)
+            401:  line(-, 485)
+            402:  newobj(s5, 0, 0, 0)
+            403:  line(-, 486)
+            404:  dload(s6, "winner", s7, "type")
+            405:  get(s7, s4, s7)
+            406:  newslot(s255, s5, s6, s7)
+            407:  line(-, 487)
+            408:  dload(s6, "team", s7, "team")
+            409:  get(s7, s4, s7)
+            410:  newslot(s255, s5, s6, s7)
+            411:  line(-, 488)
+            412:  load(s6, "infoActor")
+            413:  newobj(s7, 2, 0, 1)
+            414:  loadnulls(s8, 1)
+            415:  appendarray(s7, 8, 0)
+            416:  loadnulls(s8, 1)
+            417:  appendarray(s7, 8, 0)
+            418:  set(s255, s0, s6, s7)
+            419:  line(-, 489)
+            420:  getk(s6, "x", s4)
+            421:  loadint(s7, 640)
+            422:  jcmp(s7, 53, s6, CMP_LE)
+            423:  line(-, 490)
+            424:  getk(s6, "team", s4)
+            425:  getk(s6, "index", s6)
+            426:  loadint(s7, 0)
+            427:  eq(s6, 7, s6, 0)
+            428:  jz(s6, 17)
+            429:  line(-, 491)
+            430:  getk(s6, "infoActor", s0)
+            431:  loadint(s7, 0)
+            432:  prepcallk(s8, "SetEffect", s4, s9)
+            433:  loadint(s10, 880)
+            434:  loadint(s11, 460)
+            435:  loadfloat(s12, 1)
+            436:  loadroot(s13)
+            437:  getk(s13, "actor", s13)
+            438:  getk(s13, "effect_class", s13)
+            439:  getk(s13, "Round_Call_Win1P", s13)
+            440:  move(s14, s5)
+            441:  call(8, s8, s9, 6)
+            442:  prepcallk(s8, "weakref", s8, s9)
+            443:  call(8, s8, s9, 1)
+            444:  set(s255, s6, s7, s8)
+            445:  jmp(-, 16)
+            446:  line(-, 494)
+            447:  getk(s6, "infoActor", s0)
+            448:  loadint(s7, 0)
+            449:  prepcallk(s8, "SetEffect", s4, s9)
+            450:  loadint(s10, 880)
+            451:  loadint(s11, 460)
+            452:  loadfloat(s12, 1)
+            453:  loadroot(s13)
+            454:  getk(s13, "actor", s13)
+            455:  getk(s13, "effect_class", s13)
+            456:  getk(s13, "Round_Call_Win2P", s13)
+            457:  move(s14, s5)
+            458:  call(8, s8, s9, 6)
+            459:  prepcallk(s8, "weakref", s8, s9)
+            460:  call(8, s8, s9, 1)
+            461:  set(s255, s6, s7, s8)
+            462:  line(-, 496)
+            463:  getk(s6, "infoActor", s0)
+            464:  loadint(s7, 1)
+            465:  prepcallk(s8, "SetFreeObject", s4, s9)
+            466:  loadint(s10, 0)
+            467:  loadint(s11, 600)
+            468:  loadfloat(s12, 1)
+            469:  getk(s13, "WinPlayerName_L", s4)
+            470:  newobj(s14, 0, 0, 0)
+            471:  call(8, s8, s9, 6)
+            472:  prepcallk(s8, "weakref", s8, s9)
+            473:  call(8, s8, s9, 1)
+            474:  set(s255, s6, s7, s8)
+            475:  jmp(-, 52)
+            476:  line(-, 499)
+            477:  getk(s6, "team", s4)
+            478:  getk(s6, "index", s6)
+            479:  loadint(s7, 0)
+            480:  eq(s6, 7, s6, 0)
+            481:  jz(s6, 17)
+            482:  line(-, 500)
+            483:  getk(s6, "infoActor", s0)
+            484:  loadint(s7, 0)
+            485:  prepcallk(s8, "SetEffect", s4, s9)
+            486:  loadint(s10, 400)
+            487:  loadint(s11, 460)
+            488:  loadfloat(s12, 1)
+            489:  loadroot(s13)
+            490:  getk(s13, "actor", s13)
+            491:  getk(s13, "effect_class", s13)
+            492:  getk(s13, "Round_Call_Win1P", s13)
+            493:  move(s14, s5)
+            494:  call(8, s8, s9, 6)
+            495:  prepcallk(s8, "weakref", s8, s9)
+            496:  call(8, s8, s9, 1)
+            497:  set(s255, s6, s7, s8)
+            498:  jmp(-, 16)
+            499:  line(-, 503)
+            500:  getk(s6, "infoActor", s0)
+            501:  loadint(s7, 0)
+            502:  prepcallk(s8, "SetEffect", s4, s9)
+            503:  loadint(s10, 400)
+            504:  loadint(s11, 460)
+            505:  loadfloat(s12, 1)
+            506:  loadroot(s13)
+            507:  getk(s13, "actor", s13)
+            508:  getk(s13, "effect_class", s13)
+            509:  getk(s13, "Round_Call_Win2P", s13)
+            510:  move(s14, s5)
+            511:  call(8, s8, s9, 6)
+            512:  prepcallk(s8, "weakref", s8, s9)
+            513:  call(8, s8, s9, 1)
+            514:  set(s255, s6, s7, s8)
+            515:  line(-, 505)
+            516:  getk(s6, "infoActor", s0)
+            517:  loadint(s7, 1)
+            518:  prepcallk(s8, "SetFreeObject", s4, s9)
+            519:  loadint(s10, 1280)
+            520:  loadint(s11, 600)
+            521:  loadfloat(s12, 1)
+            522:  getk(s13, "WinPlayerName_R", s4)
+            523:  newobj(s14, 0, 0, 0)
+            524:  call(8, s8, s9, 6)
+            525:  prepcallk(s8, "weakref", s8, s9)
+            526:  call(8, s8, s9, 1)
+            527:  set(s255, s6, s7, s8)
+            528:  line(-, 507)
+            529:  jmp(-, 0)
+            530:  line(-, 509)
+            531:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 15
+        bgenerator: 0
+        varparams: 0
+
+    17: 
+        sourcename: ""
+        name: "Game_TimeUpCallUpdate"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 61
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "team"
+            2: "current"
+            3: "command"
+            4: "skipDemo"
+            5: "rsv_k0"
+            6: "rsv_k1"
+            7: "rsv_k2"
+            8: "rsv_k3"
+            9: "endWinDemo"
+            10: "Round_WinCall"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "c", pos: 1, start_op: 13, end_op: 45
+            1: name: "this", pos: 0, start_op: 0, end_op: 60
+          ]
+        Line Informations: [
+            0: line: 514, op: 1
+            1: line: 515, op: 3
+            2: line: 517, op: 8
+            3: line: 518, op: 13
+            4: line: 519, op: 26
+            5: line: 520, op: 33
+            6: line: 525, op: 46
+            7: line: 527, op: 57
+            8: line: 529, op: 59
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 514)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 515)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 30)
+            6:  jcmp(s2, 39, s1, CMP_G)
+            7:  line(-, 517)
+            8:  getk(s1, "team", s0)
+            9:  loadint(s2, 0)
+            10:  get(s1, s1, s2)
+            11:  getk(s1, "current", s1)
+            12:  getk(s1, "command", s1)
+            13:  line(-, 518)
+            14:  getk(s2, "skipDemo", s0)
+            15:  loadint(s3, 0)
+            16:  getk(s4, "rsv_k0", s1)
+            17:  getk(s5, "rsv_k1", s1)
+            18:  add(s4, s5, s4)
+            19:  getk(s5, "rsv_k2", s1)
+            20:  add(s4, s5, s4)
+            21:  getk(s5, "rsv_k3", s1)
+            22:  add(s4, s5, s4)
+            23:  loadint(s5, 0)
+            24:  cmp(s4, s5, s4, CMP_G)
+            25:  set(s255, s2, s3, s4)
+            26:  line(-, 519)
+            27:  getk(s2, "team", s0)
+            28:  loadint(s3, 1)
+            29:  get(s2, s2, s3)
+            30:  getk(s2, "current", s2)
+            31:  getk(s2, "command", s2)
+            32:  move(s1, s2)
+            33:  line(-, 520)
+            34:  getk(s2, "skipDemo", s0)
+            35:  loadint(s3, 1)
+            36:  getk(s4, "rsv_k0", s1)
+            37:  getk(s5, "rsv_k1", s1)
+            38:  add(s4, s5, s4)
+            39:  getk(s5, "rsv_k2", s1)
+            40:  add(s4, s5, s4)
+            41:  getk(s5, "rsv_k3", s1)
+            42:  add(s4, s5, s4)
+            43:  loadint(s5, 0)
+            44:  cmp(s4, s5, s4, CMP_G)
+            45:  set(s255, s2, s3, s4)
+            46:  line(-, 525)
+            47:  getk(s1, "endWinDemo", s0)
+            48:  loadint(s2, 0)
+            49:  get(s1, s1, s2)
+            50:  or(s1, 4, s1)
+            51:  getk(s2, "endWinDemo", s0)
+            52:  loadint(s3, 1)
+            53:  get(s2, s2, s3)
+            54:  move(s1, s2)
+            55:  jz(s1, 3)
+            56:  line(-, 527)
+            57:  prepcallk(s1, "Round_WinCall", s0, s2)
+            58:  call(255, s1, s2, 1)
+            59:  line(-, 529)
+            60:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    18: 
+        sourcename: ""
+        name: "Game_DrawUpdate"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "endLoseDemo"
+            1: "Round_DrawCall"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 533, op: 1
+            1: line: 536, op: 11
+            2: line: 537, op: 13
+            3: line: 539, op: 15
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 533)
+            1:  getk(s1, "endLoseDemo", s0)
+            2:  loadint(s2, 0)
+            3:  get(s1, s1, s2)
+            4:  and(s1, 4, s1)
+            5:  getk(s2, "endLoseDemo", s0)
+            6:  loadint(s3, 1)
+            7:  get(s2, s2, s3)
+            8:  move(s1, s2)
+            9:  jz(s1, 5)
+            10:  line(-, 536)
+            11:  prepcallk(s1, "Round_DrawCall", s0, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 537)
+            14:  return(255, 0)
+            15:  line(-, 539)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    19: 
+        sourcename: ""
+        name: "Round_DrawCall"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_DrawCallUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "skipDemo"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 544, op: 1
+            1: line: 545, op: 1
+            2: line: 546, op: 5
+            3: line: 547, op: 9
+            4: line: 548, op: 13
+            5: line: 549, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 544)
+            1:  line(-, 545)
+            2:  dload(s1, "battleUpdate", s2, "Game_DrawCallUpdate")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 546)
+            6:  load(s1, "state")
+            7:  loadint(s2, 32)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 547)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 548)
+            14:  load(s1, "skipDemo")
+            15:  newobj(s2, 2, 0, 1)
+            16:  appendarray(s2, 0, 4)
+            17:  appendarray(s2, 0, 4)
+            18:  set(s255, s0, s1, s2)
+            19:  line(-, 549)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    20: 
+        sourcename: ""
+        name: "Game_DrawCallUpdate"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 13
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "BeginNextRound"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 12
+          ]
+        Line Informations: [
+            0: line: 552, op: 1
+            1: line: 553, op: 3
+            2: line: 555, op: 9
+            3: line: 557, op: 11
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 552)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 553)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 60)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 3)
+            8:  line(-, 555)
+            9:  prepcallk(s1, "BeginNextRound", s0, s2)
+            10:  call(255, s1, s2, 1)
+            11:  line(-, 557)
+            12:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    21: 
+        sourcename: ""
+        name: "Round_Win"
+        nliterals: 30
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 26
+        ndefaultparams: 0
+        ninstructions: 203
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_WinUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "endWinDemo"
+            5: "skipDemo"
+            6: "winner"
+            7: "team"
+            8: "master"
+            9: "current"
+            10: "slave"
+            11: "Team_Win"
+            12: "func_winDemo"
+            13: "autoCamera"
+            14: "camera"
+            15: "SetTarget"
+            16: "x"
+            17: "y"
+            18: "type"
+            19: "infoActor"
+            20: "index"
+            21: "SetEffect"
+            22: "actor"
+            23: "effect_class"
+            24: "Round_Call_Win1P"
+            25: "weakref"
+            26: "Round_Call_Win2P"
+            27: "SetFreeObject"
+            28: "WinPlayerName_L"
+            29: "WinPlayerName_R"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t", pos: 2, start_op: 76, end_op: 200
+            1: name: "a", pos: 1, start_op: 41, end_op: 200
+            2: name: "this", pos: 0, start_op: 0, end_op: 202
+          ]
+        Line Informations: [
+            0: line: 562, op: 1
+            1: line: 563, op: 1
+            2: line: 564, op: 5
+            3: line: 565, op: 9
+            4: line: 567, op: 13
+            5: line: 568, op: 19
+            6: line: 571, op: 25
+            7: line: 572, op: 41
+            8: line: 573, op: 48
+            9: line: 576, op: 55
+            10: line: 578, op: 59
+            11: line: 579, op: 63
+            12: line: 581, op: 74
+            13: line: 582, op: 76
+            14: line: 583, op: 80
+            15: line: 584, op: 84
+            16: line: 585, op: 92
+            17: line: 586, op: 96
+            18: line: 587, op: 102
+            19: line: 590, op: 120
+            20: line: 592, op: 135
+            21: line: 595, op: 150
+            22: line: 596, op: 155
+            23: line: 599, op: 173
+            24: line: 601, op: 188
+            25: line: 603, op: 201
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 562)
+            1:  line(-, 563)
+            2:  dload(s1, "battleUpdate", s2, "Game_WinUpdate")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 564)
+            6:  load(s1, "state")
+            7:  loadint(s2, 32)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 565)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 567)
+            14:  load(s1, "endWinDemo")
+            15:  newobj(s2, 2, 0, 1)
+            16:  appendarray(s2, 0, 4)
+            17:  appendarray(s2, 0, 4)
+            18:  set(s255, s0, s1, s2)
+            19:  line(-, 568)
+            20:  load(s1, "skipDemo")
+            21:  newobj(s2, 2, 0, 1)
+            22:  appendarray(s2, 0, 4)
+            23:  appendarray(s2, 0, 4)
+            24:  set(s255, s0, s1, s2)
+            25:  line(-, 571)
+            26:  getk(s1, "winner", s0)
+            27:  loadint(s2, 1)
+            28:  eq(s1, 2, s1, 0)
+            29:  jz(s1, 6)
+            30:  getk(s2, "team", s0)
+            31:  loadint(s3, 0)
+            32:  get(s2, s2, s3)
+            33:  getk(s2, "master", s2)
+            34:  move(s1, s2)
+            35:  jmp(-, 5)
+            36:  getk(s2, "team", s0)
+            37:  loadint(s3, 1)
+            38:  get(s2, s2, s3)
+            39:  getk(s2, "master", s2)
+            40:  move(s1, s2)
+            41:  line(-, 572)
+            42:  getk(s2, "team", s1)
+            43:  getk(s2, "current", s2)
+            44:  getk(s3, "team", s1)
+            45:  getk(s3, "slave", s3)
+            46:  eq(s2, 3, s2, 0)
+            47:  jz(s2, 6)
+            48:  line(-, 573)
+            49:  getk(s2, "team", s1)
+            50:  getk(s2, "current", s2)
+            51:  prepcallk(s2, "Team_Win", s2, s3)
+            52:  call(255, s2, s3, 1)
+            53:  jmp(-, 5)
+            54:  line(-, 576)
+            55:  getk(s2, "func_winDemo", s1)
+            56:  jz(s2, 2)
+            57:  prepcallk(s2, "func_winDemo", s1, s3)
+            58:  call(255, s2, s3, 1)
+            59:  line(-, 578)
+            60:  load(s2, "autoCamera")
+            61:  loadbool(s3, 0)
+            62:  set(s255, s1, s2, s3)
+            63:  line(-, 579)
+            64:  loadroot(s2)
+            65:  getk(s2, "camera", s2)
+            66:  prepcallk(s2, "SetTarget", s2, s3)
+            67:  getk(s4, "x", s1)
+            68:  getk(s5, "y", s1)
+            69:  loadint(s6, 20)
+            70:  sub(s5, s6, s5)
+            71:  loadfloat(s6, 2)
+            72:  loadbool(s7, 0)
+            73:  call(255, s2, s3, 5)
+            74:  line(-, 581)
+            75:  newobj(s2, 0, 0, 0)
+            76:  line(-, 582)
+            77:  dload(s3, "winner", s4, "type")
+            78:  get(s4, s1, s4)
+            79:  newslot(s255, s2, s3, s4)
+            80:  line(-, 583)
+            81:  dload(s3, "team", s4, "team")
+            82:  get(s4, s1, s4)
+            83:  newslot(s255, s2, s3, s4)
+            84:  line(-, 584)
+            85:  load(s3, "infoActor")
+            86:  newobj(s4, 2, 0, 1)
+            87:  loadnulls(s5, 1)
+            88:  appendarray(s4, 5, 0)
+            89:  loadnulls(s5, 1)
+            90:  appendarray(s4, 5, 0)
+            91:  set(s255, s0, s3, s4)
+            92:  line(-, 585)
+            93:  getk(s3, "x", s1)
+            94:  loadint(s4, 640)
+            95:  jcmp(s4, 53, s3, CMP_LE)
+            96:  line(-, 586)
+            97:  getk(s3, "team", s1)
+            98:  getk(s3, "index", s3)
+            99:  loadint(s4, 0)
+            100:  eq(s3, 4, s3, 0)
+            101:  jz(s3, 17)
+            102:  line(-, 587)
+            103:  getk(s3, "infoActor", s0)
+            104:  loadint(s4, 0)
+            105:  prepcallk(s5, "SetEffect", s1, s6)
+            106:  loadint(s7, 880)
+            107:  loadint(s8, 460)
+            108:  loadfloat(s9, 1)
+            109:  loadroot(s10)
+            110:  getk(s10, "actor", s10)
+            111:  getk(s10, "effect_class", s10)
+            112:  getk(s10, "Round_Call_Win1P", s10)
+            113:  move(s11, s2)
+            114:  call(5, s5, s6, 6)
+            115:  prepcallk(s5, "weakref", s5, s6)
+            116:  call(5, s5, s6, 1)
+            117:  set(s255, s3, s4, s5)
+            118:  jmp(-, 16)
+            119:  line(-, 590)
+            120:  getk(s3, "infoActor", s0)
+            121:  loadint(s4, 0)
+            122:  prepcallk(s5, "SetEffect", s1, s6)
+            123:  loadint(s7, 880)
+            124:  loadint(s8, 460)
+            125:  loadfloat(s9, 1)
+            126:  loadroot(s10)
+            127:  getk(s10, "actor", s10)
+            128:  getk(s10, "effect_class", s10)
+            129:  getk(s10, "Round_Call_Win2P", s10)
+            130:  move(s11, s2)
+            131:  call(5, s5, s6, 6)
+            132:  prepcallk(s5, "weakref", s5, s6)
+            133:  call(5, s5, s6, 1)
+            134:  set(s255, s3, s4, s5)
+            135:  line(-, 592)
+            136:  getk(s3, "infoActor", s0)
+            137:  loadint(s4, 1)
+            138:  prepcallk(s5, "SetFreeObject", s1, s6)
+            139:  loadint(s7, 0)
+            140:  loadint(s8, 600)
+            141:  loadfloat(s9, 1)
+            142:  getk(s10, "WinPlayerName_L", s1)
+            143:  newobj(s11, 0, 0, 0)
+            144:  call(5, s5, s6, 6)
+            145:  prepcallk(s5, "weakref", s5, s6)
+            146:  call(5, s5, s6, 1)
+            147:  set(s255, s3, s4, s5)
+            148:  jmp(-, 52)
+            149:  line(-, 595)
+            150:  getk(s3, "team", s1)
+            151:  getk(s3, "index", s3)
+            152:  loadint(s4, 0)
+            153:  eq(s3, 4, s3, 0)
+            154:  jz(s3, 17)
+            155:  line(-, 596)
+            156:  getk(s3, "infoActor", s0)
+            157:  loadint(s4, 0)
+            158:  prepcallk(s5, "SetEffect", s1, s6)
+            159:  loadint(s7, 400)
+            160:  loadint(s8, 460)
+            161:  loadfloat(s9, 1)
+            162:  loadroot(s10)
+            163:  getk(s10, "actor", s10)
+            164:  getk(s10, "effect_class", s10)
+            165:  getk(s10, "Round_Call_Win1P", s10)
+            166:  move(s11, s2)
+            167:  call(5, s5, s6, 6)
+            168:  prepcallk(s5, "weakref", s5, s6)
+            169:  call(5, s5, s6, 1)
+            170:  set(s255, s3, s4, s5)
+            171:  jmp(-, 16)
+            172:  line(-, 599)
+            173:  getk(s3, "infoActor", s0)
+            174:  loadint(s4, 0)
+            175:  prepcallk(s5, "SetEffect", s1, s6)
+            176:  loadint(s7, 400)
+            177:  loadint(s8, 460)
+            178:  loadfloat(s9, 1)
+            179:  loadroot(s10)
+            180:  getk(s10, "actor", s10)
+            181:  getk(s10, "effect_class", s10)
+            182:  getk(s10, "Round_Call_Win2P", s10)
+            183:  move(s11, s2)
+            184:  call(5, s5, s6, 6)
+            185:  prepcallk(s5, "weakref", s5, s6)
+            186:  call(5, s5, s6, 1)
+            187:  set(s255, s3, s4, s5)
+            188:  line(-, 601)
+            189:  getk(s3, "infoActor", s0)
+            190:  loadint(s4, 1)
+            191:  prepcallk(s5, "SetFreeObject", s1, s6)
+            192:  loadint(s7, 1280)
+            193:  loadint(s8, 600)
+            194:  loadfloat(s9, 1)
+            195:  getk(s10, "WinPlayerName_R", s1)
+            196:  newobj(s11, 0, 0, 0)
+            197:  call(5, s5, s6, 6)
+            198:  prepcallk(s5, "weakref", s5, s6)
+            199:  call(5, s5, s6, 1)
+            200:  set(s255, s3, s4, s5)
+            201:  line(-, 603)
+            202:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 12
+        bgenerator: 0
+        varparams: 0
+
+    22: 
+        sourcename: ""
+        name: "Game_WinUpdate"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "endWinDemo"
+            1: "Round_WinCall"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 606, op: 1
+            1: line: 609, op: 11
+            2: line: 610, op: 13
+            3: line: 612, op: 15
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 606)
+            1:  getk(s1, "endWinDemo", s0)
+            2:  loadint(s2, 0)
+            3:  get(s1, s1, s2)
+            4:  or(s1, 4, s1)
+            5:  getk(s2, "endWinDemo", s0)
+            6:  loadint(s3, 1)
+            7:  get(s2, s2, s3)
+            8:  move(s1, s2)
+            9:  jz(s1, 5)
+            10:  line(-, 609)
+            11:  prepcallk(s1, "Round_WinCall", s0, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 610)
+            14:  return(255, 0)
+            15:  line(-, 612)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    23: 
+        sourcename: ""
+        name: "Round_WinCall"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_WinCallUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "skipDemo"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 617, op: 1
+            1: line: 618, op: 1
+            2: line: 619, op: 5
+            3: line: 620, op: 9
+            4: line: 622, op: 13
+            5: line: 625, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 617)
+            1:  line(-, 618)
+            2:  dload(s1, "battleUpdate", s2, "Game_WinCallUpdate")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 619)
+            6:  load(s1, "state")
+            7:  loadint(s2, 32)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 620)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 622)
+            14:  load(s1, "skipDemo")
+            15:  newobj(s2, 2, 0, 1)
+            16:  appendarray(s2, 0, 4)
+            17:  appendarray(s2, 0, 4)
+            18:  set(s255, s0, s1, s2)
+            19:  line(-, 625)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    24: 
+        sourcename: ""
+        name: "Game_WinCallUpdate"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 31
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "win"
+            2: "match_num"
+            3: "BeginResult"
+            4: "BeginNextRound"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 30
+          ]
+        Line Informations: [
+            0: line: 633, op: 1
+            1: line: 634, op: 3
+            2: line: 636, op: 9
+            3: line: 639, op: 23
+            4: line: 644, op: 27
+            5: line: 647, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 633)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 634)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 60)
+            6:  eq(s1, 2, s1, 0)
+            7:  jz(s1, 21)
+            8:  line(-, 636)
+            9:  getk(s1, "win", s0)
+            10:  loadint(s2, 0)
+            11:  get(s1, s1, s2)
+            12:  getk(s2, "match_num", s0)
+            13:  cmp(s1, s2, s1, CMP_GE)
+            14:  or(s1, 6, s1)
+            15:  getk(s2, "win", s0)
+            16:  loadint(s3, 1)
+            17:  get(s2, s2, s3)
+            18:  getk(s3, "match_num", s0)
+            19:  cmp(s2, s3, s2, CMP_GE)
+            20:  move(s1, s2)
+            21:  jz(s1, 4)
+            22:  line(-, 639)
+            23:  prepcallk(s1, "BeginResult", s0, s2)
+            24:  call(255, s1, s2, 1)
+            25:  jmp(-, 3)
+            26:  line(-, 644)
+            27:  prepcallk(s1, "BeginNextRound", s0, s2)
+            28:  call(255, s1, s2, 1)
+            29:  line(-, 647)
+            30:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    25: 
+        sourcename: ""
+        name: "BeginNextRound"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 41
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_BeginNextRoundUpdate"
+            2: "state"
+            3: "demoCount"
+            4: "infoActor"
+            5: "func"
+            6: "call"
+            7: "graphics"
+            8: "FadeOut"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 3, start_op: 19, end_op: 28
+            1: name: "@INDEX@", pos: 2, start_op: 18, end_op: 28
+            2: name: "this", pos: 0, start_op: 0, end_op: 40
+          ]
+        Line Informations: [
+            0: line: 652, op: 1
+            1: line: 653, op: 1
+            2: line: 654, op: 5
+            3: line: 655, op: 9
+            4: line: 657, op: 13
+            5: line: 658, op: 16
+            6: line: 659, op: 21
+            7: line: 662, op: 29
+            8: line: 664, op: 33
+            9: line: 665, op: 39
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 652)
+            1:  line(-, 653)
+            2:  dload(s1, "battleUpdate", s2, "Game_BeginNextRoundUpdate")
+            3:  get(s2, s0, s2)
+            4:  set(s255, s0, s1, s2)
+            5:  line(-, 654)
+            6:  load(s1, "state")
+            7:  loadint(s2, 128)
+            8:  set(s255, s0, s1, s2)
+            9:  line(-, 655)
+            10:  load(s1, "demoCount")
+            11:  loadint(s2, 0)
+            12:  set(s255, s0, s1, s2)
+            13:  line(-, 657)
+            14:  getk(s1, "infoActor", s0)
+            15:  jz(s1, 13)
+            16:  line(-, 658)
+            17:  getk(s1, "infoActor", s0)
+            18:  loadnulls(s2, 3)
+            19:  foreach(s1, 9, s2)
+            20:  postforeach(s1, 9)
+            21:  line(-, 659)
+            22:  getk(s5, "func", s3)
+            23:  loadint(s6, 0)
+            24:  get(s5, s5, s6)
+            25:  prepcallk(s5, "call", s5, s6)
+            26:  move(s7, s3)
+            27:  call(255, s5, s6, 2)
+            28:  jmp(-, -10)
+            29:  line(-, 662)
+            30:  load(s1, "infoActor")
+            31:  loadnulls(s2, 1)
+            32:  set(s255, s0, s1, s2)
+            33:  line(-, 664)
+            34:  loadroot(s1)
+            35:  getk(s1, "graphics", s1)
+            36:  prepcallk(s1, "FadeOut", s1, s2)
+            37:  loadint(s3, 60)
+            38:  call(255, s1, s2, 2)
+            39:  line(-, 665)
+            40:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    26: 
+        sourcename: ""
+        name: "Game_BeginNextRoundUpdate"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "demoCount"
+            1: "RoundReset"
+            2: "Round_Ready"
+            3: "graphics"
+            4: "FadeIn"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 668, op: 1
+            1: line: 669, op: 3
+            2: line: 673, op: 8
+            3: line: 674, op: 10
+            4: line: 675, op: 13
+            5: line: 678, op: 19
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 668)
+            1:  load(s1, "demoCount")
+            2:  pinc(s1, s0, s1, 1)
+            3:  line(-, 669)
+            4:  getk(s1, "demoCount", s0)
+            5:  loadint(s2, 60)
+            6:  jcmp(s2, 12, s1, CMP_GE)
+            7:  line(-, 673)
+            8:  prepcallk(s1, "RoundReset", s0, s2)
+            9:  call(255, s1, s2, 1)
+            10:  line(-, 674)
+            11:  prepcallk(s1, "Round_Ready", s0, s2)
+            12:  call(255, s1, s2, 1)
+            13:  line(-, 675)
+            14:  loadroot(s1)
+            15:  getk(s1, "graphics", s1)
+            16:  prepcallk(s1, "FadeIn", s1, s2)
+            17:  loadint(s3, 15)
+            18:  call(255, s1, s2, 2)
+            19:  line(-, 678)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    27: 
+        sourcename: ""
+        name: "BeginResult"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 36
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_ResultUpdate"
+            2: "demoCount"
+            3: "infoActor"
+            4: "func"
+            5: "call"
+            6: "talk"
+            7: "Begin"
+            8: "start"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "a", pos: 3, start_op: 14, end_op: 23
+            1: name: "@INDEX@", pos: 2, start_op: 13, end_op: 23
+            2: name: "this", pos: 0, start_op: 0, end_op: 35
+          ]
+        Line Informations: [
+            0: line: 683, op: 1
+            1: line: 684, op: 4
+            2: line: 686, op: 8
+            3: line: 687, op: 11
+            4: line: 688, op: 16
+            5: line: 691, op: 24
+            6: line: 693, op: 28
+            7: line: 694, op: 34
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 683)
+            1:  dload(s1, "battleUpdate", s2, "Game_ResultUpdate")
+            2:  get(s2, s0, s2)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 684)
+            5:  load(s1, "demoCount")
+            6:  loadint(s2, 0)
+            7:  set(s255, s0, s1, s2)
+            8:  line(-, 686)
+            9:  getk(s1, "infoActor", s0)
+            10:  jz(s1, 13)
+            11:  line(-, 687)
+            12:  getk(s1, "infoActor", s0)
+            13:  loadnulls(s2, 3)
+            14:  foreach(s1, 9, s2)
+            15:  postforeach(s1, 9)
+            16:  line(-, 688)
+            17:  getk(s5, "func", s3)
+            18:  loadint(s6, 0)
+            19:  get(s5, s5, s6)
+            20:  prepcallk(s5, "call", s5, s6)
+            21:  move(s7, s3)
+            22:  call(255, s5, s6, 2)
+            23:  jmp(-, -10)
+            24:  line(-, 691)
+            25:  load(s1, "infoActor")
+            26:  loadnulls(s2, 1)
+            27:  set(s255, s0, s1, s2)
+            28:  line(-, 693)
+            29:  loadroot(s1)
+            30:  getk(s1, "talk", s1)
+            31:  prepcallk(s1, "Begin", s1, s2)
+            32:  load(s3, "start")
+            33:  call(255, s1, s2, 2)
+            34:  line(-, 694)
+            35:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    28: 
+        sourcename: ""
+        name: "Game_ResultUpdate"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 696, op: 0
+            1: line: 697, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 696)
+            1:  line(-, 697)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    29: 
+        sourcename: ""
+        name: "BeginResultEnd"
+        nliterals: 2
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 6
+        nfunctions: 0
+        Literals: [
+            0: "battleUpdate"
+            1: "Game_ResultEndUpdate"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 5
+          ]
+        Line Informations: [
+            0: line: 702, op: 1
+            1: line: 703, op: 4
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 702)
+            1:  dload(s1, "battleUpdate", s2, "Game_ResultEndUpdate")
+            2:  get(s2, s0, s2)
+            3:  set(s255, s0, s1, s2)
+            4:  line(-, 703)
+            5:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    30: 
+        sourcename: ""
+        name: "Game_ResultEndUpdate"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 9
+        ndefaultparams: 0
+        ninstructions: 59
+        nfunctions: 1
+        Literals: [
+            0: "team"
+            1: "input"
+            2: "b0"
+            3: "b1"
+            4: "b2"
+            5: "b3"
+            6: "b4"
+            7: "battleUpdate"
+            8: "replay"
+            9: "Confirm"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "c", pos: 2, start_op: 7, end_op: 56
+            1: name: "b", pos: 1, start_op: 2, end_op: 56
+            2: name: "this", pos: 0, start_op: 0, end_op: 58
+          ]
+        Line Informations: [
+            0: line: 706, op: 1
+            1: line: 707, op: 2
+            2: line: 708, op: 7
+            3: line: 709, op: 23
+            4: line: 710, op: 29
+            5: line: 712, op: 45
+            6: line: 714, op: 48
+            7: line: 715, op: 51
+            8: line: 718, op: 57
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 706)
+            1:  loadbool(s1, 0)
+            2:  line(-, 707)
+            3:  getk(s2, "team", s0)
+            4:  loadint(s3, 0)
+            5:  get(s2, s2, s3)
+            6:  getk(s2, "input", s2)
+            7:  line(-, 708)
+            8:  getk(s3, "b0", s2)
+            9:  or(s3, 11, s3)
+            10:  getk(s4, "b1", s2)
+            11:  or(s4, 8, s4)
+            12:  getk(s5, "b2", s2)
+            13:  or(s5, 5, s5)
+            14:  getk(s6, "b3", s2)
+            15:  or(s6, 2, s6)
+            16:  getk(s7, "b4", s2)
+            17:  move(s6, s7)
+            18:  move(s5, s6)
+            19:  move(s4, s5)
+            20:  move(s3, s4)
+            21:  jz(s3, 1)
+            22:  loadbool(s1, 1)
+            23:  line(-, 709)
+            24:  getk(s3, "team", s0)
+            25:  loadint(s4, 1)
+            26:  get(s3, s3, s4)
+            27:  getk(s3, "input", s3)
+            28:  move(s2, s3)
+            29:  line(-, 710)
+            30:  getk(s3, "b0", s2)
+            31:  or(s3, 11, s3)
+            32:  getk(s4, "b1", s2)
+            33:  or(s4, 8, s4)
+            34:  getk(s5, "b2", s2)
+            35:  or(s5, 5, s5)
+            36:  getk(s6, "b3", s2)
+            37:  or(s6, 2, s6)
+            38:  getk(s7, "b4", s2)
+            39:  move(s6, s7)
+            40:  move(s5, s6)
+            41:  move(s4, s5)
+            42:  move(s3, s4)
+            43:  jz(s3, 1)
+            44:  loadbool(s1, 1)
+            45:  line(-, 712)
+            46:  jz(s1, 10)
+            47:  line(-, 714)
+            48:  load(s3, "battleUpdate")
+            49:  closure(s4, 0)
+            50:  set(s255, s0, s3, s4)
+            51:  line(-, 715)
+            52:  loadroot(s3)
+            53:  getk(s3, "replay", s3)
+            54:  prepcallk(s3, "Confirm", s3, s4)
+            55:  loadnulls(s5, 1)
+            56:  call(255, s3, s4, 2)
+            57:  line(-, 718)
+            58:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 1
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 1
+                ndefaultparams: 0
+                ninstructions: 5
+                nfunctions: 0
+                Literals: [
+                    0: "End"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 4
+                  ]
+                Line Informations: [
+                    0: line: 714, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 714)
+                    1:  prepcallk(s1, "End", s0, s2)
+                    2:  call(255, s1, s2, 1)
+                    3:  line(-, 714)
+                    4:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    31: 
+        sourcename: ""
+        name: "FightEndFunction"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 48
+        nfunctions: 0
+        Literals: [
+            0: "gauge"
+            1: "Hide"
+            2: "team"
+            3: "current"
+            4: "EndSpellCard"
+            5: "master"
+            6: "BuffReset"
+            7: "slave"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 47
+          ]
+        Line Informations: [
+            0: line: 724, op: 1
+            1: line: 726, op: 4
+            2: line: 727, op: 11
+            3: line: 729, op: 18
+            4: line: 730, op: 25
+            5: line: 731, op: 32
+            6: line: 732, op: 39
+            7: line: 733, op: 46
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 724)
+            1:  getk(s1, "gauge", s0)
+            2:  prepcallk(s1, "Hide", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  line(-, 726)
+            5:  getk(s1, "team", s0)
+            6:  loadint(s2, 0)
+            7:  get(s1, s1, s2)
+            8:  getk(s1, "current", s1)
+            9:  prepcallk(s1, "EndSpellCard", s1, s2)
+            10:  call(255, s1, s2, 1)
+            11:  line(-, 727)
+            12:  getk(s1, "team", s0)
+            13:  loadint(s2, 1)
+            14:  get(s1, s1, s2)
+            15:  getk(s1, "current", s1)
+            16:  prepcallk(s1, "EndSpellCard", s1, s2)
+            17:  call(255, s1, s2, 1)
+            18:  line(-, 729)
+            19:  getk(s1, "team", s0)
+            20:  loadint(s2, 0)
+            21:  get(s1, s1, s2)
+            22:  getk(s1, "master", s1)
+            23:  prepcallk(s1, "BuffReset", s1, s2)
+            24:  call(255, s1, s2, 1)
+            25:  line(-, 730)
+            26:  getk(s1, "team", s0)
+            27:  loadint(s2, 1)
+            28:  get(s1, s1, s2)
+            29:  getk(s1, "master", s1)
+            30:  prepcallk(s1, "BuffReset", s1, s2)
+            31:  call(255, s1, s2, 1)
+            32:  line(-, 731)
+            33:  getk(s1, "team", s0)
+            34:  loadint(s2, 0)
+            35:  get(s1, s1, s2)
+            36:  getk(s1, "slave", s1)
+            37:  prepcallk(s1, "BuffReset", s1, s2)
+            38:  call(255, s1, s2, 1)
+            39:  line(-, 732)
+            40:  getk(s1, "team", s0)
+            41:  loadint(s2, 1)
+            42:  get(s1, s1, s2)
+            43:  getk(s1, "slave", s1)
+            44:  prepcallk(s1, "BuffReset", s1, s2)
+            45:  call(255, s1, s2, 1)
+            46:  line(-, 733)
+            47:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    32: 
+        sourcename: ""
+        name: "RoundReset"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 0
+        Literals: [
+            0: "group_player"
+            1: "Clear"
+            2: "group_effect"
+            3: "team"
+            4: "ResetRound"
+            5: "camera"
+            6: "Reset"
+            7: "SetTarget"
+            8: "time"
+            9: "enableTimeCount"
+            10: "enableTimeUp"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 739, op: 1
+            1: line: 740, op: 6
+            2: line: 742, op: 11
+            3: line: 743, op: 17
+            4: line: 750, op: 23
+            5: line: 751, op: 28
+            6: line: 753, op: 37
+            7: line: 754, op: 43
+            8: line: 755, op: 47
+            9: line: 756, op: 51
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 739)
+            1:  getk(s1, "group_player", s0)
+            2:  prepcallk(s1, "Clear", s1, s2)
+            3:  loadint(s3, 15)
+            4:  bwnot(s3, s3)
+            5:  call(255, s1, s2, 2)
+            6:  line(-, 740)
+            7:  getk(s1, "group_effect", s0)
+            8:  prepcallk(s1, "Clear", s1, s2)
+            9:  loadint(s3, -1)
+            10:  call(255, s1, s2, 2)
+            11:  line(-, 742)
+            12:  getk(s1, "team", s0)
+            13:  loadint(s2, 0)
+            14:  get(s1, s1, s2)
+            15:  prepcallk(s1, "ResetRound", s1, s2)
+            16:  call(255, s1, s2, 1)
+            17:  line(-, 743)
+            18:  getk(s1, "team", s0)
+            19:  loadint(s2, 1)
+            20:  get(s1, s1, s2)
+            21:  prepcallk(s1, "ResetRound", s1, s2)
+            22:  call(255, s1, s2, 1)
+            23:  line(-, 750)
+            24:  loadroot(s1)
+            25:  getk(s1, "camera", s1)
+            26:  prepcallk(s1, "Reset", s1, s2)
+            27:  call(255, s1, s2, 1)
+            28:  line(-, 751)
+            29:  loadroot(s1)
+            30:  getk(s1, "camera", s1)
+            31:  prepcallk(s1, "SetTarget", s1, s2)
+            32:  loadint(s3, 640)
+            33:  loadint(s4, 340)
+            34:  loadfloat(s5, 2)
+            35:  loadbool(s6, 1)
+            36:  call(255, s1, s2, 5)
+            37:  line(-, 753)
+            38:  load(s1, "time")
+            39:  loadint(s2, 99)
+            40:  loadint(s3, 90)
+            41:  mul(s2, s3, s2)
+            42:  set(s255, s0, s1, s2)
+            43:  line(-, 754)
+            44:  load(s1, "enableTimeCount")
+            45:  loadbool(s2, 0)
+            46:  set(s255, s0, s1, s2)
+            47:  line(-, 755)
+            48:  load(s1, "enableTimeUp")
+            49:  loadbool(s2, 0)
+            50:  set(s255, s0, s1, s2)
+            51:  line(-, 756)
+            52:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    33: 
+        sourcename: ""
+        name: "SetWinner"
+        nliterals: 7
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 18
+        ndefaultparams: 0
+        ninstructions: 136
+        nfunctions: 0
+        Literals: [
+            0: "team"
+            1: "life"
+            2: "winner"
+            3: "gauge"
+            4: "SetWin"
+            5: "win"
+            6: "match_num"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 135
+          ]
+        Line Informations: [
+            0: line: 762, op: 1
+            1: line: 763, op: 20
+            2: line: 764, op: 31
+            3: line: 768, op: 43
+            4: line: 769, op: 56
+            5: line: 770, op: 70
+            6: line: 774, op: 74
+            7: line: 777, op: 79
+            8: line: 778, op: 87
+            9: line: 779, op: 91
+            10: line: 781, op: 97
+            11: line: 782, op: 105
+            12: line: 783, op: 109
+            13: line: 785, op: 111
+            14: line: 786, op: 129
+            15: line: 789, op: 131
+            16: line: 795, op: 132
+            17: line: 797, op: 134
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 762)
+            1:  getk(s1, "team", s0)
+            2:  loadint(s2, 0)
+            3:  get(s1, s1, s2)
+            4:  getk(s1, "life", s1)
+            5:  loadint(s2, 0)
+            6:  cmp(s1, s2, s1, CMP_LE)
+            7:  and(s1, 7, s1)
+            8:  getk(s2, "team", s0)
+            9:  loadint(s3, 1)
+            10:  get(s2, s2, s3)
+            11:  getk(s2, "life", s2)
+            12:  loadint(s3, 0)
+            13:  cmp(s2, s3, s2, CMP_LE)
+            14:  move(s1, s2)
+            15:  jz(s1, 4)
+            16:  load(s1, "winner")
+            17:  loadint(s2, 0)
+            18:  set(s255, s0, s1, s2)
+            19:  jmp(-, 54)
+            20:  line(-, 763)
+            21:  getk(s1, "team", s0)
+            22:  loadint(s2, 0)
+            23:  get(s1, s1, s2)
+            24:  getk(s1, "life", s1)
+            25:  loadint(s2, 0)
+            26:  jcmp(s2, 4, s1, CMP_LE)
+            27:  load(s1, "winner")
+            28:  loadint(s2, 2)
+            29:  set(s255, s0, s1, s2)
+            30:  jmp(-, 43)
+            31:  line(-, 764)
+            32:  getk(s1, "team", s0)
+            33:  loadint(s2, 1)
+            34:  get(s1, s1, s2)
+            35:  getk(s1, "life", s1)
+            36:  loadint(s2, 0)
+            37:  jcmp(s2, 4, s1, CMP_LE)
+            38:  load(s1, "winner")
+            39:  loadint(s2, 1)
+            40:  set(s255, s0, s1, s2)
+            41:  jmp(-, 32)
+            42:  line(-, 768)
+            43:  getk(s1, "team", s0)
+            44:  loadint(s2, 0)
+            45:  get(s1, s1, s2)
+            46:  getk(s1, "life", s1)
+            47:  getk(s2, "team", s0)
+            48:  loadint(s3, 1)
+            49:  get(s2, s2, s3)
+            50:  getk(s2, "life", s2)
+            51:  jcmp(s2, 4, s1, CMP_G)
+            52:  load(s1, "winner")
+            53:  loadint(s2, 1)
+            54:  set(s255, s0, s1, s2)
+            55:  jmp(-, 18)
+            56:  line(-, 769)
+            57:  getk(s1, "team", s0)
+            58:  loadint(s2, 0)
+            59:  get(s1, s1, s2)
+            60:  getk(s1, "life", s1)
+            61:  getk(s2, "team", s0)
+            62:  loadint(s3, 1)
+            63:  get(s2, s2, s3)
+            64:  getk(s2, "life", s2)
+            65:  jcmp(s2, 4, s1, CMP_L)
+            66:  load(s1, "winner")
+            67:  loadint(s2, 2)
+            68:  set(s255, s0, s1, s2)
+            69:  jmp(-, 4)
+            70:  line(-, 770)
+            71:  load(s1, "winner")
+            72:  loadint(s2, 0)
+            73:  set(s255, s0, s1, s2)
+            74:  line(-, 774)
+            75:  getk(s1, "winner", s0)
+            76:  loadint(s2, 1)
+            77:  eq(s2, 2, s1, 0)
+            78:  jz(s2, 15)
+            79:  line(-, 777)
+            80:  getk(s2, "gauge", s0)
+            81:  prepcallk(s2, "SetWin", s2, s3)
+            82:  loadint(s4, 0)
+            83:  getk(s5, "win", s0)
+            84:  loadint(s6, 0)
+            85:  get(s5, s5, s6)
+            86:  call(255, s2, s3, 3)
+            87:  line(-, 778)
+            88:  getk(s2, "win", s0)
+            89:  loadint(s3, 0)
+            90:  pinc(s2, s2, s3, 1)
+            91:  line(-, 779)
+            92:  jmp(-, 41)
+            93:  jmp(-, 3)
+            94:  loadint(s2, 2)
+            95:  eq(s2, 2, s1, 0)
+            96:  jz(s2, 14)
+            97:  line(-, 781)
+            98:  getk(s2, "gauge", s0)
+            99:  prepcallk(s2, "SetWin", s2, s3)
+            100:  loadint(s4, 1)
+            101:  getk(s5, "win", s0)
+            102:  loadint(s6, 1)
+            103:  get(s5, s5, s6)
+            104:  call(255, s2, s3, 3)
+            105:  line(-, 782)
+            106:  getk(s2, "win", s0)
+            107:  loadint(s3, 1)
+            108:  pinc(s2, s2, s3, 1)
+            109:  line(-, 783)
+            110:  jmp(-, 23)
+            111:  line(-, 785)
+            112:  getk(s2, "win", s0)
+            113:  loadint(s3, 0)
+            114:  get(s2, s2, s3)
+            115:  getk(s3, "match_num", s0)
+            116:  loadint(s4, 1)
+            117:  sub(s3, s4, s3)
+            118:  cmp(s2, s3, s2, CMP_GE)
+            119:  and(s2, 8, s2)
+            120:  getk(s3, "win", s0)
+            121:  loadint(s4, 1)
+            122:  get(s3, s3, s4)
+            123:  getk(s4, "match_num", s0)
+            124:  loadint(s5, 1)
+            125:  sub(s4, s5, s4)
+            126:  cmp(s3, s4, s3, CMP_GE)
+            127:  move(s2, s3)
+            128:  jz(s2, 2)
+            129:  line(-, 786)
+            130:  jmp(-, 1)
+            131:  line(-, 789)
+            132:  line(-, 795)
+            133:  jmp(-, 0)
+            134:  line(-, 797)
+            135:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    34: 
+        sourcename: ""
+        name: "CreateWinData"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 53
+        nfunctions: 0
+        Literals: [
+            0: "winner"
+            1: "talk"
+            2: "GenerateResultMessage"
+            3: "team"
+            4: "master_name"
+            5: "slave_name"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 52
+          ]
+        Line Informations: [
+            0: line: 802, op: 1
+            1: line: 803, op: 1
+            2: line: 805, op: 7
+            3: line: 809, op: 30
+            4: line: 811, op: 51
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 802)
+            1:  line(-, 803)
+            2:  getk(s1, "winner", s0)
+            3:  loadint(s2, 1)
+            4:  eq(s1, 2, s1, 0)
+            5:  jz(s1, 23)
+            6:  line(-, 805)
+            7:  loadroot(s1)
+            8:  getk(s1, "talk", s1)
+            9:  prepcallk(s1, "GenerateResultMessage", s1, s2)
+            10:  getk(s3, "team", s0)
+            11:  loadint(s4, 0)
+            12:  get(s3, s3, s4)
+            13:  getk(s3, "master_name", s3)
+            14:  getk(s4, "team", s0)
+            15:  loadint(s5, 0)
+            16:  get(s4, s4, s5)
+            17:  getk(s4, "slave_name", s4)
+            18:  getk(s5, "team", s0)
+            19:  loadint(s6, 1)
+            20:  get(s5, s5, s6)
+            21:  getk(s5, "master_name", s5)
+            22:  getk(s6, "team", s0)
+            23:  loadint(s7, 1)
+            24:  get(s6, s6, s7)
+            25:  getk(s6, "slave_name", s6)
+            26:  loadbool(s7, 0)
+            27:  call(255, s1, s2, 6)
+            28:  jmp(-, 22)
+            29:  line(-, 809)
+            30:  loadroot(s1)
+            31:  getk(s1, "talk", s1)
+            32:  prepcallk(s1, "GenerateResultMessage", s1, s2)
+            33:  getk(s3, "team", s0)
+            34:  loadint(s4, 1)
+            35:  get(s3, s3, s4)
+            36:  getk(s3, "master_name", s3)
+            37:  getk(s4, "team", s0)
+            38:  loadint(s5, 1)
+            39:  get(s4, s4, s5)
+            40:  getk(s4, "slave_name", s4)
+            41:  getk(s5, "team", s0)
+            42:  loadint(s6, 0)
+            43:  get(s5, s5, s6)
+            44:  getk(s5, "master_name", s5)
+            45:  getk(s6, "team", s0)
+            46:  loadint(s7, 0)
+            47:  get(s6, s6, s7)
+            48:  getk(s6, "slave_name", s6)
+            49:  loadbool(s7, 1)
+            50:  call(255, s1, s2, 6)
+            51:  line(-, 811)
+            52:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

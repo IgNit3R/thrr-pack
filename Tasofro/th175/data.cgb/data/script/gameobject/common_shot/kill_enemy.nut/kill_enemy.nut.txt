@@ -1,0 +1,659 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\common_shot\kill_enemy.nut: 
+sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+name: "main"
+nliterals: 8
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 9
+ndefaultparams: 0
+ninstructions: 25
+nfunctions: 8
+Literals: [
+    0: "construct"
+    1: "destruct"
+    2: "interactive"
+    3: "on_hit_target"
+    4: "on_hit_ground"
+    5: "on_graze_target"
+    6: "determination"
+    7: "plot"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 24
+    1: name: "this", pos: 0, start_op: 0, end_op: 24
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 38, op: 3
+    2: line: 48, op: 6
+    3: line: 57, op: 9
+    4: line: 65, op: 12
+    5: line: 70, op: 15
+    6: line: 77, op: 18
+    7: line: 81, op: 21
+    8: line: 92, op: 24
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "destruct")
+    4:  closure(s3, 1)
+    5:  newslot(s2, s0, s2, s3)
+    6:  load(s2, "interactive")
+    7:  closure(s3, 2)
+    8:  newslot(s2, s0, s2, s3)
+    9:  load(s2, "on_hit_target")
+    10:  closure(s3, 3)
+    11:  newslot(s2, s0, s2, s3)
+    12:  load(s2, "on_hit_ground")
+    13:  closure(s3, 4)
+    14:  newslot(s2, s0, s2, s3)
+    15:  load(s2, "on_graze_target")
+    16:  closure(s3, 5)
+    17:  newslot(s2, s0, s2, s3)
+    18:  load(s2, "determination")
+    19:  closure(s3, 6)
+    20:  newslot(s2, s0, s2, s3)
+    21:  load(s2, "plot")
+    22:  closure(s3, 7)
+    23:  newslot(s2, s0, s2, s3)
+    24:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "construct"
+        nliterals: 18
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 59
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "attack_power"
+            2: "push_x"
+            3: "push_y"
+            4: "vx"
+            5: "vy"
+            6: "v"
+            7: "direction_h"
+            8: "obj"
+            9: "player"
+            10: "frameset"
+            11: "_composition_create_framepointer"
+            12: "resource_pool"
+            13: "kill_shot_enemy"
+            14: "maskbits"
+            15: "state"
+            16: "h_entity"
+            17: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 58
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 6, op: 6
+            4: line: 7, op: 9
+            5: line: 12, op: 12
+            6: line: 13, op: 15
+            7: line: 14, op: 18
+            8: line: 15, op: 21
+            9: line: 17, op: 26
+            10: line: 18, op: 34
+            11: line: 20, op: 37
+            12: line: 29, op: 40
+            13: line: 36, op: 58
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "attack_power")
+            4:  loadint(s2, 1000)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "push_x")
+            7:  loadfloat(s2, -3)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "push_y")
+            10:  loadfloat(s2, -5)
+            11:  set(s255, s0, s1, s2)
+            12:  load(s1, "vx")
+            13:  loadint(s2, 0)
+            14:  newslot(s255, s0, s1, s2)
+            15:  load(s1, "vy")
+            16:  loadint(s2, 0)
+            17:  newslot(s255, s0, s1, s2)
+            18:  load(s1, "v")
+            19:  loadfloat(s2, 0)
+            20:  newslot(s255, s0, s1, s2)
+            21:  dload(s1, "direction_h", s2, "obj")
+            22:  get(s2, s0, s2)
+            23:  getk(s2, "player", s2)
+            24:  getk(s2, "direction_h", s2)
+            25:  newslot(s255, s0, s1, s2)
+            26:  load(s1, "frameset")
+            27:  loadroot(s2)
+            28:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            29:  loadroot(s4)
+            30:  getk(s4, "resource_pool", s4)
+            31:  getk(s4, "kill_shot_enemy", s4)
+            32:  call(2, s2, s3, 2)
+            33:  newslot(s255, s0, s1, s2)
+            34:  load(s1, "maskbits")
+            35:  loadint(s2, 8)
+            36:  newslot(s255, s0, s1, s2)
+            37:  load(s1, "state")
+            38:  closure(s2, 0)
+            39:  newslot(s255, s0, s1, s2)
+            40:  load(s1, "h_entity")
+            41:  loadroot(s2)
+            42:  prepcallk(s2, "_vspace_regist", s2, s3)
+            43:  move(s4, s0)
+            44:  loadint(s5, 1)
+            45:  loadint(s6, 2)
+            46:  bitw(s5, s6, s5, BW_OR)
+            47:  loadint(s6, 8)
+            48:  bitw(s5, s6, s5, BW_OR)
+            49:  loadint(s6, 64)
+            50:  bitw(s5, s6, s5, BW_OR)
+            51:  loadint(s6, 128)
+            52:  bitw(s5, s6, s5, BW_OR)
+            53:  loadint(s6, 16)
+            54:  bitw(s5, s6, s5, BW_OR)
+            55:  loadint(s6, 0)
+            56:  call(2, s2, s3, 4)
+            57:  newslot(s255, s0, s1, s2)
+            58:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 6
+                ndefaultparams: 0
+                ninstructions: 10
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 9
+                  ]
+                Line Informations: [
+                    0: line: 20, op: 0
+                    1: line: 21, op: 0
+                    2: line: 22, op: 2
+                    3: line: 24, op: 6
+                    4: line: 25, op: 8
+                    5: line: 27, op: 9
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 2)
+                    4:  eq(s1, 2, s1, 0)
+                    5:  jz(s1, 3)
+                    6:  prepcallk(s1, "kill", s0, s2)
+                    7:  call(255, s1, s2, 1)
+                    8:  return(255, 0)
+                    9:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "destruct"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "_vspace_unregist"
+            2: "h_entity"
+            3: "group_prev"
+            4: "group_next"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 39, op: 0
+            1: line: 40, op: 0
+            2: line: 42, op: 3
+            3: line: 43, op: 7
+            4: line: 44, op: 10
+            5: line: 45, op: 13
+            6: line: 46, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            5:  getk(s3, "h_entity", s0)
+            6:  call(255, s1, s2, 2)
+            7:  load(s1, "h_entity")
+            8:  loadnulls(s2, 1)
+            9:  set(s255, s0, s1, s2)
+            10:  load(s1, "group_prev")
+            11:  loadnulls(s2, 1)
+            12:  set(s255, s0, s1, s2)
+            13:  load(s1, "group_next")
+            14:  loadnulls(s2, 1)
+            15:  set(s255, s0, s1, s2)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "interactive"
+        nliterals: 9
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 22
+        nfunctions: 0
+        Literals: [
+            0: "frameset"
+            1: "step"
+            2: "state"
+            3: "x"
+            4: "obj"
+            5: "enemy"
+            6: "y"
+            7: "_vspace_commit"
+            8: "h_entity"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 21
+          ]
+        Line Informations: [
+            0: line: 49, op: 0
+            1: line: 50, op: 0
+            2: line: 51, op: 3
+            3: line: 52, op: 5
+            4: line: 53, op: 10
+            5: line: 54, op: 17
+            6: line: 55, op: 21
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "frameset", s0)
+            1:  prepcallk(s1, "step", s1, s2)
+            2:  call(255, s1, s2, 1)
+            3:  prepcallk(s1, "state", s0, s2)
+            4:  call(255, s1, s2, 1)
+            5:  dload(s1, "x", s2, "obj")
+            6:  get(s2, s0, s2)
+            7:  getk(s2, "enemy", s2)
+            8:  getk(s2, "x", s2)
+            9:  set(s255, s0, s1, s2)
+            10:  dload(s1, "y", s2, "obj")
+            11:  get(s2, s0, s2)
+            12:  getk(s2, "enemy", s2)
+            13:  getk(s2, "y", s2)
+            14:  loadint(s3, 32)
+            15:  sub(s2, s3, s2)
+            16:  set(s255, s0, s1, s2)
+            17:  loadroot(s1)
+            18:  prepcallk(s1, "_vspace_commit", s1, s2)
+            19:  getk(s3, "h_entity", s0)
+            20:  call(255, s1, s2, 2)
+            21:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "on_hit_target"
+        nliterals: 8
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 25
+        nfunctions: 0
+        Literals: [
+            0: "invincible_time"
+            1: "on_hit_damage_reaction"
+            2: "_vspace_unregist"
+            3: "h_entity"
+            4: "_audio_play"
+            5: "se"
+            6: "hit_000"
+            7: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 24
+            1: name: "this", pos: 0, start_op: 0, end_op: 24
+          ]
+        Line Informations: [
+            0: line: 57, op: 0
+            1: line: 58, op: 0
+            2: line: 59, op: 5
+            3: line: 60, op: 8
+            4: line: 61, op: 12
+            5: line: 62, op: 15
+            6: line: 63, op: 22
+            7: line: 64, op: 24
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "invincible_time", s1)
+            1:  loadint(s3, 0)
+            2:  ne(s2, 3, s2, 0)
+            3:  jz(s2, 1)
+            4:  return(255, 0)
+            5:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+            6:  move(s4, s0)
+            7:  call(255, s2, s3, 2)
+            8:  loadroot(s2)
+            9:  prepcallk(s2, "_vspace_unregist", s2, s3)
+            10:  getk(s4, "h_entity", s0)
+            11:  call(255, s2, s3, 2)
+            12:  load(s2, "h_entity")
+            13:  loadnulls(s3, 1)
+            14:  set(s255, s0, s2, s3)
+            15:  loadroot(s2)
+            16:  prepcallk(s2, "_audio_play", s2, s3)
+            17:  loadroot(s4)
+            18:  getk(s4, "se", s4)
+            19:  getk(s4, "hit_000", s4)
+            20:  loadint(s5, 1)
+            21:  call(255, s2, s3, 3)
+            22:  prepcallk(s2, "kill", s0, s3)
+            23:  call(255, s2, s3, 1)
+            24:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "on_hit_ground"
+        nliterals: 3
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 10
+        nfunctions: 0
+        Literals: [
+            0: "_vspace_unregist"
+            1: "h_entity"
+            2: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 9
+            1: name: "this", pos: 0, start_op: 0, end_op: 9
+          ]
+        Line Informations: [
+            0: line: 65, op: 0
+            1: line: 66, op: 0
+            2: line: 67, op: 4
+            3: line: 68, op: 7
+            4: line: 69, op: 9
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  prepcallk(s2, "_vspace_unregist", s2, s3)
+            2:  getk(s4, "h_entity", s0)
+            3:  call(255, s2, s3, 2)
+            4:  load(s2, "h_entity")
+            5:  loadnulls(s3, 1)
+            6:  set(s255, s0, s2, s3)
+            7:  prepcallk(s2, "kill", s0, s3)
+            8:  call(255, s2, s3, 1)
+            9:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "on_graze_target"
+        nliterals: 6
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 17
+        nfunctions: 0
+        Literals: [
+            0: "_vspace_unregist"
+            1: "h_entity"
+            2: "_audio_play"
+            3: "se"
+            4: "hit_000"
+            5: "kill"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 16
+            1: name: "this", pos: 0, start_op: 0, end_op: 16
+          ]
+        Line Informations: [
+            0: line: 70, op: 0
+            1: line: 71, op: 0
+            2: line: 72, op: 4
+            3: line: 73, op: 7
+            4: line: 74, op: 14
+            5: line: 75, op: 16
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  prepcallk(s2, "_vspace_unregist", s2, s3)
+            2:  getk(s4, "h_entity", s0)
+            3:  call(255, s2, s3, 2)
+            4:  load(s2, "h_entity")
+            5:  loadnulls(s3, 1)
+            6:  set(s255, s0, s2, s3)
+            7:  loadroot(s2)
+            8:  prepcallk(s2, "_audio_play", s2, s3)
+            9:  loadroot(s4)
+            10:  getk(s4, "se", s4)
+            11:  getk(s4, "hit_000", s4)
+            12:  loadint(s5, 1)
+            13:  call(255, s2, s3, 3)
+            14:  prepcallk(s2, "kill", s0, s3)
+            15:  call(255, s2, s3, 1)
+            16:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 78, op: 0
+            1: line: 79, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\common_shot\kill_enemy.nut"
+        name: "plot"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 23
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "layer_s2"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "direction_h"
+            6: "rotate"
+            7: "angle"
+            8: "translate"
+            9: "x"
+            10: "y"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 22
+          ]
+        Line Informations: [
+            0: line: 82, op: 0
+            1: line: 83, op: 0
+            2: line: 85, op: 4
+            3: line: 86, op: 8
+            4: line: 87, op: 13
+            5: line: 88, op: 17
+            6: line: 92, op: 22
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "layer_s2", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "layer_s2", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "direction_h", s0)
+            11:  loadint(s4, 1)
+            12:  call(255, s1, s2, 3)
+            13:  getk(s1, "layer_s2", s0)
+            14:  prepcallk(s1, "rotate", s1, s2)
+            15:  getk(s3, "angle", s0)
+            16:  call(255, s1, s2, 2)
+            17:  getk(s1, "layer_s2", s0)
+            18:  prepcallk(s1, "translate", s1, s2)
+            19:  getk(s3, "x", s0)
+            20:  getk(s4, "y", s0)
+            21:  call(255, s1, s2, 3)
+            22:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

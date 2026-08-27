@@ -1,0 +1,309 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\mokou\mokou.nut: 
+sourcename: ""
+name: "main"
+nliterals: 10
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 35
+nfunctions: 3
+Literals: [
+    0: "MokouStatus"
+    1: "BattleStatus"
+    2: "ex_f"
+    3: "ex_f_max"
+    4: "ex_b"
+    5: "ex_b_max"
+    6: "self_damage"
+    7: "Mokou_BottomDraw"
+    8: "MokouBottomDraw_Left"
+    9: "MokouBottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 34
+    1: name: "this", pos: 0, start_op: 0, end_op: 34
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 13, op: 20
+    2: line: 16, op: 21
+    3: line: 33, op: 25
+    4: line: 52, op: 29
+    5: line: 56, op: 33
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "MokouStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "ex_f")
+    5:  loadint(s5, 0)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f_max")
+    8:  loadint(s5, 320)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_b")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b_max")
+    14:  loadint(s5, 320)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "self_damage")
+    17:  loadint(s5, -1)
+    18:  newslota(0, s3, s4, s5)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 13)
+    21:  line(-, 16)
+    22:  load(s2, "Mokou_BottomDraw")
+    23:  closure(s3, 0)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 33)
+    26:  load(s2, "MokouBottomDraw_Left")
+    27:  closure(s3, 1)
+    28:  newslot(s2, s0, s2, s3)
+    29:  line(-, 52)
+    30:  load(s2, "MokouBottomDraw_Right")
+    31:  closure(s3, 2)
+    32:  newslot(s2, s0, s2, s3)
+    33:  line(-, 56)
+    34:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Mokou_BottomDraw"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "MokouStatus"
+            2: "player_id"
+            3: "MokouBottomDraw_Left"
+            4: "MokouBottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 19, op: 1
+            1: line: 22, op: 7
+            2: line: 24, op: 14
+            3: line: 26, op: 17
+            4: line: 28, op: 24
+            5: line: 30, op: 26
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 19)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "MokouStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 22)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 24)
+            14:  prepcallk(s1, "MokouBottomDraw_Left", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 9)
+            17:  line(-, 26)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 3)
+            23:  line(-, 28)
+            24:  prepcallk(s1, "MokouBottomDraw_Right", s0, s2)
+            25:  call(255, s1, s2, 1)
+            26:  line(-, 30)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "MokouBottomDraw_Left"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 10
+        ndefaultparams: 0
+        ninstructions: 68
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "visible"
+            2: "bottom"
+            3: "layer0"
+            4: "self_damage"
+            5: "Blit"
+            6: "resource"
+            7: "gauge_life"
+            8: "BLEND_ALPHA"
+            9: "BlitScale"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "y", pos: 4, start_op: 24, end_op: 65
+            1: name: "x", pos: 3, start_op: 23, end_op: 65
+            2: name: "w", pos: 2, start_op: 21, end_op: 65
+            3: name: "dst_layer", pos: 1, start_op: 9, end_op: 65
+            4: name: "this", pos: 0, start_op: 0, end_op: 67
+          ]
+        Line Informations: [
+            0: line: 35, op: 1
+            1: line: 37, op: 6
+            2: line: 40, op: 9
+            3: line: 42, op: 15
+            4: line: 43, op: 21
+            5: line: 44, op: 24
+            6: line: 45, op: 38
+            7: line: 46, op: 45
+            8: line: 47, op: 59
+            9: line: 49, op: 66
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 35)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "visible", s1)
+            3:  not(s1, s1)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 37)
+            7:  getk(s1, "bottom", s0)
+            8:  getk(s1, "layer0", s1)
+            9:  line(-, 40)
+            10:  getk(s2, "status", s0)
+            11:  getk(s2, "self_damage", s2)
+            12:  loadint(s3, 0)
+            13:  jcmp(s3, 52, s2, CMP_GE)
+            14:  line(-, 42)
+            15:  getk(s2, "status", s0)
+            16:  getk(s2, "self_damage", s2)
+            17:  loadint(s3, 335)
+            18:  mul(s2, s3, s2)
+            19:  loadint(s3, 10)
+            20:  div(s2, s3, s2)
+            21:  line(-, 43)
+            22:  loadint(s3, 96)
+            23:  loadint(s4, 640)
+            24:  line(-, 44)
+            25:  prepcallk(s5, "Blit", s1, s6)
+            26:  move(s7, s3)
+            27:  loadint(s8, 14)
+            28:  add(s8, s8, s4)
+            29:  loadint(s9, 335)
+            30:  loadint(s10, 22)
+            31:  getk(s11, "resource", s0)
+            32:  getk(s11, "gauge_life", s11)
+            33:  loadint(s12, 0)
+            34:  loadint(s13, 88)
+            35:  getk(s14, "BLEND_ALPHA", s0)
+            36:  loadfloat(s15, 1)
+            37:  call(255, s5, s6, 10)
+            38:  line(-, 45)
+            39:  prepcallk(s5, "BlitScale", s1, s6)
+            40:  loadfloat(s7, 0.75)
+            41:  loadfloat(s8, 0.75)
+            42:  loadint(s9, 0)
+            43:  loadint(s10, 0)
+            44:  call(255, s5, s6, 5)
+            45:  line(-, 46)
+            46:  prepcallk(s5, "Blit", s1, s6)
+            47:  move(s7, s3)
+            48:  loadint(s8, 14)
+            49:  add(s8, s8, s4)
+            50:  move(s9, s2)
+            51:  loadint(s10, 22)
+            52:  getk(s11, "resource", s0)
+            53:  getk(s11, "gauge_life", s11)
+            54:  loadint(s12, 0)
+            55:  loadint(s13, 0)
+            56:  getk(s14, "BLEND_ALPHA", s0)
+            57:  loadfloat(s15, 1)
+            58:  call(255, s5, s6, 10)
+            59:  line(-, 47)
+            60:  prepcallk(s5, "BlitScale", s1, s6)
+            61:  loadfloat(s7, 0.75)
+            62:  loadfloat(s8, 0.75)
+            63:  loadint(s9, 0)
+            64:  loadint(s10, 0)
+            65:  call(255, s5, s6, 5)
+            66:  line(-, 49)
+            67:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 16
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "MokouBottomDraw_Right"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 53, op: 0
+            1: line: 54, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 53)
+            1:  line(-, 54)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

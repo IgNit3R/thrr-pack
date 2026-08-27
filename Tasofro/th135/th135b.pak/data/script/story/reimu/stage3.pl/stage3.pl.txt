@@ -1,0 +1,115 @@
+#========================================================================
+#	Stage:3
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+
+,SetDefaultBalloon,0
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,futo,-360,0,true
+
+,DefineObject,reimu_label,50,360,false
+,DefineObject,futo_label,1120,360,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,futo,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_余1,0,0
+,ImageDef,futo,布都_普2,20,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,futo_label,"data/system/char_def/name/name_05futo.png",0,0,0,0
+
+#,Function,"GameStory_PlayBGM(301);",# 会話BGM再生開始
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+,Sleep,60
+
+,Function,GameStory_TitleCall(),	#ステージロゴ表示
+,Sleep,120
+
+,Show,reimu,30,-64,0
+
+,SetFocus,reimu
+うーん\n賑やか賑やか\,a05x2,20,-30
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_嬉1,0,0
+やっぱりお祭りっぽいのは\n良いわね\,a11x2,20,-30
+,ClearBalloon,reimu
+
+,Function,GameStory_2P_In(),
+,Sleep,120
+
+,SetFocus,futo
+,Show,futo,30,-64,0
+次の相手は巫女か\n今度は負けんぞ！,b11x2,20,0
+,Show,futo_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,futo_label,20,0,64
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_汗1,0,0
+あんたといつ会っても\n負ける気がしない,a11x2,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+,SetFocus,futo
+,ImageDef,futo,布都_惑1,0,0
+いつまでそんな余裕を\n言っていられるかな？,c11x2,20,-30
+,WaitInput
+,ClearBalloon,futo
+
+,ImageDef,futo,布都_普1,0,0
+千数百年もの\n長き眠りから覚め\,a11x2,20,-30
+,ClearBalloon,futo
+
+,ImageDef,futo,布都_普2,0,0
+現代の未来的な\nエッセンスも加え\,a11x2,20,-30
+,ClearBalloon,futo
+
+,ImageDef,futo,布都_決1,0,0
+文字通り生まれ変わった\n我が道術\n派手に喰らうが良い！\,a15x3
+,ClearBalloon,futo
+
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,reimu,30,-64,0,&
+,Hide,futo,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(105);",# 戦闘BGM再生開始
+
+#,Function,"::act.StorySelect.StartBattle();",# TODO::対戦開始命令が用意されたら差し替える
+,Function,"RoundStory_Ready();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+
+
+# -------------------------------------------------------
+# サブルーチン
+# -------------------------------------------------------
+:TestMessage
+サブルーチン実行\
+,ClearBalloon
+,Return

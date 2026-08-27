@@ -1,0 +1,166 @@
+## =======================================================================
+#Stage:3
+#Title:避暑地で肝を冷やせ
+#Place:白玉楼の雪庭
+#Weather:雪
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+
+Character:sakuya,160,0,0,8888FF
+Character:yuyuko,160,0,1,FF8888
+
+#カメラ固定
+Action:sakuya,4
+
+#フォーカス瞬間移動
+#Action:sakuya,11
+
+#向き固定解除
+Action:sakuya,152
+
+Label:Start
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/sakuya/effect/StageTitle003.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage3.bmp,1,256,352
+Sleep:60;
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Face:sakuya,驚
+しかもこんなに積もっている……\
+
+Face:sakuya,汗
+何処が変な事が何一つもないのかと\
+
+Face:yuyuko,普
+雪が降れば積もるのは当然です\
+
+Face:yuyuko,普
+さあ、貴方はこの冥界で避暑する事が出来ます\
+
+Face:sakuya,汗
+私の知らないところで雪が降ってるなんて……
+体から出る霧なんて大した異変でも無かったのかな\
+
+Face:sakuya,普
+ここまでおかしな事を堂々としていると、
+貴方は何にも企んでいない気もする\
+
+Face:yuyuko,余
+そんな事ありませんよ\
+
+Face:sakuya,汗
+むむむ@
+一応問い詰めるだけ問い詰めておきましょう\
+
+
+Action:sakuya,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:yuyuko,余
+雪が降った処で夏である事には何にも
+変わりありません\
+
+Face:yuyuko,普
+貴方は自分のお屋敷に戻って、
+念の為改築でもした方が良いかもね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yuyuko,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:yuyuko,200
+#攻撃側ニュートラル移行検知
+Action:sakuya,202
+
+#自キャラ天候
+Action:sakuya,103
+Sleep:60
+
+Face:yuyuko,負
+あー涼しい夏だわ\
+
+Face:sakuya,普
+というか寒いくらいよ\
+
+Face:sakuya,普
+ところで訊きたいんだけど……@
+貴方の体からも緋色の霧が立ち上っているわね\
+
+Face:sakuya,余
+それは何かしら？\
+
+Face:yuyuko,負
+そんな話？
+その話はもう解決したから良いの\
+
+Face:sakuya,汗
+はい？\
+
+Face:yuyuko,負
+貴方も知りたければ霧の行方を追えば
+いいかもね\
+
+Face:sakuya,惑
+うーん……
+やっぱりあそこね\
+
+Face:sakuya,惑
+山は気が進まないですわ\
+
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:3,120
+
+#やられキャラ画面退場
+Action:yuyuko,201
+
+#自キャラ基準点へ移動
+Action:sakuya,150
+
+#カメラ中央あわせ
+Action:sakuya,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

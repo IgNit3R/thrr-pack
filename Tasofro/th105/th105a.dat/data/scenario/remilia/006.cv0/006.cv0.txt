@@ -1,0 +1,194 @@
+## =======================================================================
+#Stage:7
+#Title:井の中の蛙
+#Place:大図書館
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:remilia,160,0,0,8888FF
+Character:reimu,160,0,1,FF8888
+#敵画面外に待機
+Action:reimu,100
+#カメラ固定
+Action:remilia,4
+
+#フォーカス瞬間移動
+#Action:remilia,11
+
+#向き固定解除
+Action:remilia,152
+
+Label:Start
+PlayBgm:data/bgm/ta08.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/remilia/effect/StageTitle007.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage7.bmp,1,256,352
+Sleep:60
+
+Face:remilia,普
+沢山犯人を倒したような気がする\
+
+Face:remilia,普
+そろそろ異変も解決出来てるといいのだけど\
+
+Face:remilia,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:reimu,101
+Action:reimu,102
+
+Sleep:20
+
+Face:reimu,怒
+何よ何よ\
+
+# 名前のテロップ
+Object:data/scenario/reimu/effect/Name.bmp,2,352,304
+
+Face:remilia,余
+今度は君かね
+犯人は\
+
+#敵天候
+Action:reimu,103
+
+Face:reimu,怒
+私は遊んでいる暇はないの
+神社が壊れて大変なんだから！\
+
+Face:remilia,余
+ほうほう
+つまり神社を壊して天気の異変を……\
+
+Face:remilia,驚
+え？
+神社が壊れたって？\
+
+Face:reimu,怒
+そうよ、地震でね！
+そのやり場のない憤りをどうすれば！\
+
+Face:remilia,余
+そんなん簡単じゃない\
+
+Face:remilia,嬉
+ここで私相手にぶちまけてみたらどう？\
+
+Face:reimu,怒
+言われなくてもそうするわよ！\
+
+#戦闘開始
+PlayBgm:data/bgm/st10.ogg
+Action:remilia,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:reimu,決
+全くすっきりしない！\
+
+Face:reimu,普
+ああむなしい\
+
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:reimu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:reimu,200
+#攻撃側ニュートラル移行検知
+Action:remilia,202
+
+#自キャラ天候
+Action:remilia,103
+#Sleep:60
+
+Face:remilia,驚
+神社が壊れただって？\
+
+Face:remilia,普
+もしかして今回の出来事って……
+私が思っていたよりも大きな\
+
+Face:reimu,負
+何か知ってるの？\
+
+Face:remilia,普
+いや、今回は出歩かなかったらよく判らない\
+
+Face:reimu,負
+何で出歩かなかったのよ\
+
+Face:remilia,余
+不意に雨が降ってきたりするんだもん\
+
+Face:reimu,負
+雨って、ずっと日照り続きだけどね……\
+
+Face:remilia,普
+長い間晴れているのを見ていない気がする……@
+むむむむむ？\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:16,120
+
+#やられキャラ画面退場
+Action:reimu,201
+
+#自キャラ基準点へ移動
+Action:remilia,150
+
+#カメラ中央あわせ
+Action:remilia,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

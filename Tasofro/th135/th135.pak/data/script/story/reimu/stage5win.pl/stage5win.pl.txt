@@ -1,0 +1,74 @@
+#========================================================================
+#	Stage:5win
+#========================================================================
+
+:init
+:main_1
+,SetDefaultBalloon,0
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/miko.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,miko,-360,0,true
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+
+,ImageDef,reimu,霊夢_惑1,0,0
+,ImageDef,miko,神子_普1,20,0
+
+#,Function,"GameStory_PlayBGM(303);",# BGM再生開始
+
+,Return
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Show,reimu,30,-64,0
+,Show,miko,30,-64,0	,#双方登場
+
+,SetFocus,reimu
+何？\,a05x2
+,ClearBalloon,reimu
+
+この不思議な手応えは\,c11x2
+,ClearBalloon,reimu
+
+,SetFocus,miko,0,
+,ImageDef,miko,神子_決1,20,0
+ふぉっふぉっふぉ\nまんまと騙されおったわい,a11x2
+,WaitInput
+,ClearBalloon,miko
+
+# --------------------------
+
+,Hide,miko,30,-64,0,&
+,Hide,reimu,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobOut();"
+,Sleep,120
+# ここで二人の絵を一旦引っ込めて
+# 背景演出を入れる
+
+,Show,reimu,30,-64,0	,#霊夢フェイス表示開始
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_驚1,0,0
+な！,b05x2,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+みんな狸!?\,c05x2
+,ClearBalloon,reimu
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

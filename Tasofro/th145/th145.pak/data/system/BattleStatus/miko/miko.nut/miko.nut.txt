@@ -1,0 +1,371 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\miko\miko.nut: 
+sourcename: ""
+name: "main"
+nliterals: 11
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 3
+Literals: [
+    0: "MikoStatus"
+    1: "BattleStatus"
+    2: "popular"
+    3: "ex_f"
+    4: "ex_f_max"
+    5: "ex_b"
+    6: "ex_b_max"
+    7: "color"
+    8: "Miko_BottomDraw"
+    9: "MikoBottomDraw_Left"
+    10: "MikoBottomDraw_Right"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 14, op: 23
+    2: line: 17, op: 24
+    3: line: 35, op: 28
+    4: line: 47, op: 32
+    5: line: 58, op: 36
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "MikoStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "popular")
+    5:  loadint(s5, 1)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "ex_f")
+    8:  loadint(s5, 0)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_f_max")
+    11:  loadint(s5, 320)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_b")
+    14:  loadint(s5, 0)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "ex_b_max")
+    17:  loadint(s5, 320)
+    18:  newslota(0, s3, s4, s5)
+    19:  load(s4, "color")
+    20:  loadint(s5, -1)
+    21:  newslota(0, s3, s4, s5)
+    22:  newslot(s2, s0, s2, s3)
+    23:  line(-, 14)
+    24:  line(-, 17)
+    25:  load(s2, "Miko_BottomDraw")
+    26:  closure(s3, 0)
+    27:  newslot(s2, s0, s2, s3)
+    28:  line(-, 35)
+    29:  load(s2, "MikoBottomDraw_Left")
+    30:  closure(s3, 1)
+    31:  newslot(s2, s0, s2, s3)
+    32:  line(-, 47)
+    33:  load(s2, "MikoBottomDraw_Right")
+    34:  closure(s3, 2)
+    35:  newslot(s2, s0, s2, s3)
+    36:  line(-, 58)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Miko_BottomDraw"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 6
+        ndefaultparams: 0
+        ninstructions: 28
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "MikoStatus"
+            2: "player_id"
+            3: "MikoBottomDraw_Left"
+            4: "MikoBottomDraw_Right"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 27
+          ]
+        Line Informations: [
+            0: line: 21, op: 1
+            1: line: 24, op: 7
+            2: line: 26, op: 14
+            3: line: 28, op: 17
+            4: line: 30, op: 24
+            5: line: 32, op: 26
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 21)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "MikoStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 24)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 26)
+            14:  prepcallk(s1, "MikoBottomDraw_Left", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 9)
+            17:  line(-, 28)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 3)
+            23:  line(-, 30)
+            24:  prepcallk(s1, "MikoBottomDraw_Right", s0, s2)
+            25:  call(255, s1, s2, 1)
+            26:  line(-, 32)
+            27:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "MikoBottomDraw_Left"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 57
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "visible"
+            2: "bottom"
+            3: "layer0"
+            4: "Blit"
+            5: "images"
+            6: "resource"
+            7: "mantle"
+            8: "BLEND_ALPHA"
+            9: "color"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "dst_layer", pos: 1, start_op: 9, end_op: 54
+            1: name: "this", pos: 0, start_op: 0, end_op: 56
+          ]
+        Line Informations: [
+            0: line: 37, op: 1
+            1: line: 39, op: 6
+            2: line: 42, op: 9
+            3: line: 43, op: 31
+            4: line: 44, op: 55
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 37)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "visible", s1)
+            3:  not(s1, s1)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 39)
+            7:  getk(s1, "bottom", s0)
+            8:  getk(s1, "layer0", s1)
+            9:  line(-, 42)
+            10:  prepcallk(s2, "Blit", s1, s3)
+            11:  loadint(s4, 96)
+            12:  loadint(s5, 640)
+            13:  loadint(s6, 128)
+            14:  loadint(s7, 128)
+            15:  getk(s8, "status", s0)
+            16:  getk(s8, "images", s8)
+            17:  getk(s8, "resource", s8)
+            18:  getk(s8, "mantle", s8)
+            19:  loadint(s9, 0)
+            20:  loadint(s10, 0)
+            21:  getk(s11, "BLEND_ALPHA", s0)
+            22:  getk(s12, "status", s0)
+            23:  getk(s12, "color", s12)
+            24:  loadint(s13, 0)
+            25:  eq(s12, 13, s12, 0)
+            26:  jz(s12, 2)
+            27:  loadfloat(s12, 1)
+            28:  jmp(-, 1)
+            29:  loadfloat(s12, 0.5)
+            30:  call(255, s2, s3, 10)
+            31:  line(-, 43)
+            32:  prepcallk(s2, "Blit", s1, s3)
+            33:  loadint(s4, 96)
+            34:  loadint(s5, 128)
+            35:  add(s4, s5, s4)
+            36:  loadint(s5, 640)
+            37:  loadint(s6, 128)
+            38:  loadint(s7, 128)
+            39:  getk(s8, "status", s0)
+            40:  getk(s8, "images", s8)
+            41:  getk(s8, "resource", s8)
+            42:  getk(s8, "mantle", s8)
+            43:  loadint(s9, 128)
+            44:  loadint(s10, 0)
+            45:  getk(s11, "BLEND_ALPHA", s0)
+            46:  getk(s12, "status", s0)
+            47:  getk(s12, "color", s12)
+            48:  loadint(s13, 1)
+            49:  eq(s12, 13, s12, 0)
+            50:  jz(s12, 2)
+            51:  loadfloat(s12, 1)
+            52:  jmp(-, 1)
+            53:  loadfloat(s12, 0.5)
+            54:  call(255, s2, s3, 10)
+            55:  line(-, 44)
+            56:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 14
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "MikoBottomDraw_Right"
+        nliterals: 10
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 65
+        nfunctions: 0
+        Literals: [
+            0: "status"
+            1: "visible"
+            2: "bottom"
+            3: "layer0"
+            4: "Blit"
+            5: "images"
+            6: "resource"
+            7: "mantle"
+            8: "BLEND_ALPHA"
+            9: "color"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "dst_layer", pos: 1, start_op: 9, end_op: 62
+            1: name: "this", pos: 0, start_op: 0, end_op: 64
+          ]
+        Line Informations: [
+            0: line: 49, op: 1
+            1: line: 51, op: 6
+            2: line: 54, op: 9
+            3: line: 55, op: 35
+            4: line: 56, op: 63
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 49)
+            1:  getk(s1, "status", s0)
+            2:  getk(s1, "visible", s1)
+            3:  not(s1, s1)
+            4:  jz(s1, 1)
+            5:  return(255, 0)
+            6:  line(-, 51)
+            7:  getk(s1, "bottom", s0)
+            8:  getk(s1, "layer0", s1)
+            9:  line(-, 54)
+            10:  prepcallk(s2, "Blit", s1, s3)
+            11:  loadint(s4, 1280)
+            12:  loadint(s5, 96)
+            13:  sub(s4, s5, s4)
+            14:  loadint(s5, 256)
+            15:  sub(s4, s5, s4)
+            16:  loadint(s5, 640)
+            17:  loadint(s6, 128)
+            18:  loadint(s7, 128)
+            19:  getk(s8, "status", s0)
+            20:  getk(s8, "images", s8)
+            21:  getk(s8, "resource", s8)
+            22:  getk(s8, "mantle", s8)
+            23:  loadint(s9, 0)
+            24:  loadint(s10, 0)
+            25:  getk(s11, "BLEND_ALPHA", s0)
+            26:  getk(s12, "status", s0)
+            27:  getk(s12, "color", s12)
+            28:  loadint(s13, 0)
+            29:  eq(s12, 13, s12, 0)
+            30:  jz(s12, 2)
+            31:  loadfloat(s12, 1)
+            32:  jmp(-, 1)
+            33:  loadfloat(s12, 0.5)
+            34:  call(255, s2, s3, 10)
+            35:  line(-, 55)
+            36:  prepcallk(s2, "Blit", s1, s3)
+            37:  loadint(s4, 1280)
+            38:  loadint(s5, 96)
+            39:  sub(s4, s5, s4)
+            40:  loadint(s5, 256)
+            41:  sub(s4, s5, s4)
+            42:  loadint(s5, 128)
+            43:  add(s4, s5, s4)
+            44:  loadint(s5, 640)
+            45:  loadint(s6, 128)
+            46:  loadint(s7, 128)
+            47:  getk(s8, "status", s0)
+            48:  getk(s8, "images", s8)
+            49:  getk(s8, "resource", s8)
+            50:  getk(s8, "mantle", s8)
+            51:  loadint(s9, 128)
+            52:  loadint(s10, 0)
+            53:  getk(s11, "BLEND_ALPHA", s0)
+            54:  getk(s12, "status", s0)
+            55:  getk(s12, "color", s12)
+            56:  loadint(s13, 1)
+            57:  eq(s12, 13, s12, 0)
+            58:  jz(s12, 2)
+            59:  loadfloat(s12, 1)
+            60:  jmp(-, 1)
+            61:  loadfloat(s12, 0.5)
+            62:  call(255, s2, s3, 10)
+            63:  line(-, 56)
+            64:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 14
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,205 @@
+## =======================================================================
+#Stage:2
+#Title:新しき神社
+#Place:壊れた神社
+#Weather:蒼天
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:youmu,160,0,0,8888FF
+Character:reimu,160,0,1,FF8888
+#敵画面外に待機
+Action:reimu,100
+#カメラ固定
+Action:youmu,4
+
+#フォーカス瞬間移動
+#Action:youmu,11
+
+#向き固定解除
+Action:youmu,152
+
+Label:Start
+
+PlayBgm:data/bgm/ta05.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/youmu/effect/StageTitle002.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:60
+
+Face:youmu,驚
+……\
+
+Face:youmu,驚
+え？
+神社ってこんなにエキゾチックな造形だったっけ？\
+
+Face:youmu,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:reimu,101
+Action:reimu,102
+
+Sleep:20
+
+Face:reimu,怒
+あーもう何よ
+今日は営業してないわ！\
+
+# 名前のテロップ
+Object:data/scenario/reimu/effect/Name.bmp,2,352,304
+
+Face:youmu,普
+どうしたの？ 
+神社、変な風に改装しちゃって\
+
+Face:reimu,怒
+改装な訳が無いでしょ？
+壊されたのよ、ナマズに！\
+
+Face:youmu,惑
+……うちの屋敷には雪は積もるし
+神社はナマズに壊されてるし\
+
+Face:youmu,普
+幽霊はどっか消えてしまうし……
+何か変な事ばかりね\
+
+Hide:1
+
+#敵天候
+Action:reimu,103
+Sleep:60
+
+Face:reimu,怒
+あんたも私の邪魔しに来たの？\
+
+Face:youmu,余
+いえいえそんなつもりでは……
+って日射しが強くなって来たわね\
+
+Face:reimu,余
+あー暑い暑い
+そういえばさっきなんか言ってたわね\
+
+Face:reimu,嬉
+『……うちの屋敷には雪は積もるし』
+ちょっと涼みに行ってこようかな\
+
+Face:youmu,驚
+え？@
+いや私の留守にそれは困る\
+
+Face:reimu,怒
+五月蠅い
+こちとらやり場のない怒りを抱えているんだ！\
+
+#戦闘開始
+PlayBgm:data/bgm/st00.ogg
+Action:youmu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:reimu,嬉
+じゃ、行ってくる\
+
+Face:reimu,余
+あんたはここで神社でも建て直しててね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:reimu,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:reimu,200
+#攻撃側ニュートラル移行検知
+Action:youmu,202
+
+#天候蒼天に変化
+Action:youmu,103
+Sleep:60;
+
+Face:youmu,余
+ふう、神社が大変な事になってるのは判るけど
+少し落ち着いて\
+
+Face:reimu,負
+むー\
+
+Face:youmu,惑
+……うーん
+神社からも幽霊の姿が見えない\
+
+Face:youmu,惑
+ねえ、幽霊が何処に行ったのか知らない？\
+
+Face:reimu,負
+あー？　幽霊？
+それはあんたでしょ？\
+
+Face:reimu,負
+三途の川でも渡ってるんじゃないの？\
+
+Face:youmu,惑
+うーむ
+何か大事になっていなければいいんだけど\
+
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Stage:2,120
+
+#やられキャラ画面退場
+Action:reimu,201
+
+#自キャラ基準点へ移動
+Action:youmu,150
+
+#カメラ中央あわせ
+Action:youmu,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

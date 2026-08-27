@@ -1,0 +1,56 @@
+#========================================================================
+#	Stage:1
+#	Title:
+#	Place:
+#	Weather:
+#========================================================================
+
+:init
+,SetDefaultBalloon,1
+#,Function,"::act.fader.FadeIn(60, 0x00000000, null);"
+
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/marisa.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-320,0,false
+,DefineObject,marisa,-320,0,true
+
+,DefineObject,reimu_label,50,320,false
+,DefineObject,marisa_label,1050,320,false
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+#,ImageFile,reimu,"data/system/char_def/汗1.png",20,0,420,270
+#,ImageFile,marisa,"data/system/char_def/汗1.png",20,0,450,320
+,ImageDef,reimu,霊夢_普1,0,0
+,ImageDef,marisa,魔理沙_普1,0,0
+
+,ImageFile,reimu_label,"data/system/char_def/name/name_01reimu.png",0,0,0,0
+,ImageFile,marisa_label,"data/system/char_def/name/name_02marisa.png",0,0,0,0
+
+,Return
+
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Sleep,40
+,Show,reimu,30,-64,0	,#霊夢登場
+,Sleep,50
+
+,SetFocus,reimu,0,
+
+表示テストです\
+
+,Function,"::act.CharSelect2.ReturnFromBattle();",# TODO::対戦開始命令が用意されたら差し替える
+
+,End
+

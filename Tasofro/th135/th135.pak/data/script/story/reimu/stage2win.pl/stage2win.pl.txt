@@ -1,0 +1,58 @@
+#========================================================================
+#	Stage:2win
+#========================================================================
+
+:init
+:main_1
+,SetDefaultBalloon,0
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/ichirin.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,ichirin,-360,0,true
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+
+,ImageDef,reimu,霊夢_普1,0,0
+,ImageDef,ichirin,一輪_負1,20,0
+
+#,Function,"GameStory_PlayBGM(302);",# BGM再生開始
+
+,Return
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Show,reimu,30,-64,0
+,Show,ichirin,30,-64,0	,#双方登場
+
+,SetFocus,ichirin
+	悔しいけど……完敗ね\nこの仇はきっと……\,c11x2,20,0
+
+,ClearBalloon,ichirin
+,SetFocus,reimu,0,
+,ImageDef,reimu,霊夢_余1,0,0
+楽勝楽勝！,a05x2
+,WaitInput
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_普1,0,0
+この調子でライバル達を\n倒していけば\,a11x2
+
+,ClearBalloon,reimu
+,ImageDef,reimu,霊夢_嬉1,0,0
+幻想郷中の信仰心を\n全て自分の元に……\,c11x2
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

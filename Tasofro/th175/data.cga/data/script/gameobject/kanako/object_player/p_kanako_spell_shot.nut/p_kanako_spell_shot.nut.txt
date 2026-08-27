@@ -1,0 +1,1058 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut: 
+sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+name: "main"
+nliterals: 11
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 12
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 11
+Literals: [
+    0: "construct"
+    1: "message"
+    2: "kill_move"
+    3: "destruct"
+    4: "interactive"
+    5: "determination"
+    6: "plot"
+    7: "on_hit_damage_reaction"
+    8: "on_hit_target"
+    9: "on_hit_ground"
+    10: "on_graze_target"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 2, op: 0
+    1: line: 32, op: 3
+    2: line: 64, op: 10
+    3: line: 87, op: 13
+    4: line: 93, op: 16
+    5: line: 100, op: 19
+    6: line: 104, op: 22
+    7: line: 116, op: 25
+    8: line: 119, op: 28
+    9: line: 126, op: 31
+    10: line: 131, op: 34
+    11: line: 132, op: 37
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  load(s2, "construct")
+    1:  closure(s3, 0)
+    2:  newslot(s2, s0, s2, s3)
+    3:  load(s2, "message")
+    4:  newobj(s3, 3, 0, 1)
+    5:  appendarray(s3, 0, 2)
+    6:  appendarray(s3, 0, 2)
+    7:  appendarray(s3, 0, 2)
+    8:  closure(s3, 1)
+    9:  newslot(s2, s0, s2, s3)
+    10:  load(s2, "kill_move")
+    11:  closure(s3, 2)
+    12:  newslot(s2, s0, s2, s3)
+    13:  load(s2, "destruct")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  load(s2, "interactive")
+    17:  closure(s3, 4)
+    18:  newslot(s2, s0, s2, s3)
+    19:  load(s2, "determination")
+    20:  closure(s3, 5)
+    21:  newslot(s2, s0, s2, s3)
+    22:  load(s2, "plot")
+    23:  closure(s3, 6)
+    24:  newslot(s2, s0, s2, s3)
+    25:  load(s2, "on_hit_damage_reaction")
+    26:  closure(s3, 7)
+    27:  newslot(s2, s0, s2, s3)
+    28:  load(s2, "on_hit_target")
+    29:  closure(s3, 8)
+    30:  newslot(s2, s0, s2, s3)
+    31:  load(s2, "on_hit_ground")
+    32:  closure(s3, 9)
+    33:  newslot(s2, s0, s2, s3)
+    34:  load(s2, "on_graze_target")
+    35:  closure(s3, 10)
+    36:  newslot(s2, s0, s2, s3)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "construct"
+        nliterals: 17
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 55
+        nfunctions: 1
+        Literals: [
+            0: "init_shot_object"
+            1: "attack_power"
+            2: "vx"
+            3: "vy"
+            4: "v"
+            5: "direction_h"
+            6: "obj"
+            7: "player"
+            8: "count"
+            9: "alpha"
+            10: "scale"
+            11: "plot_layer"
+            12: "layer_s2"
+            13: "maskbits"
+            14: "state"
+            15: "h_entity"
+            16: "_vspace_regist"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 54
+          ]
+        Line Informations: [
+            0: line: 3, op: 0
+            1: line: 4, op: 0
+            2: line: 5, op: 3
+            3: line: 7, op: 6
+            4: line: 8, op: 9
+            5: line: 9, op: 12
+            6: line: 12, op: 15
+            7: line: 13, op: 20
+            8: line: 14, op: 23
+            9: line: 15, op: 26
+            10: line: 17, op: 29
+            11: line: 18, op: 32
+            12: line: 20, op: 35
+            13: line: 23, op: 38
+            14: line: 30, op: 54
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "init_shot_object", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  load(s1, "attack_power")
+            4:  loadint(s2, 1)
+            5:  set(s255, s0, s1, s2)
+            6:  load(s1, "vx")
+            7:  loadfloat(s2, 1)
+            8:  newslot(s255, s0, s1, s2)
+            9:  load(s1, "vy")
+            10:  loadfloat(s2, -3)
+            11:  newslot(s255, s0, s1, s2)
+            12:  load(s1, "v")
+            13:  loadfloat(s2, 0)
+            14:  newslot(s255, s0, s1, s2)
+            15:  dload(s1, "direction_h", s2, "obj")
+            16:  get(s2, s0, s2)
+            17:  getk(s2, "player", s2)
+            18:  getk(s2, "direction_h", s2)
+            19:  newslot(s255, s0, s1, s2)
+            20:  load(s1, "count")
+            21:  loadint(s2, 0)
+            22:  newslot(s255, s0, s1, s2)
+            23:  load(s1, "alpha")
+            24:  loadfloat(s2, 1)
+            25:  newslot(s255, s0, s1, s2)
+            26:  load(s1, "scale")
+            27:  loadfloat(s2, 1)
+            28:  newslot(s255, s0, s1, s2)
+            29:  dload(s1, "plot_layer", s2, "layer_s2")
+            30:  get(s2, s0, s2)
+            31:  newslot(s255, s0, s1, s2)
+            32:  load(s1, "maskbits")
+            33:  loadint(s2, 8)
+            34:  set(s255, s0, s1, s2)
+            35:  load(s1, "state")
+            36:  closure(s2, 0)
+            37:  newslot(s255, s0, s1, s2)
+            38:  load(s1, "h_entity")
+            39:  loadroot(s2)
+            40:  prepcallk(s2, "_vspace_regist", s2, s3)
+            41:  move(s4, s0)
+            42:  loadint(s5, 1)
+            43:  loadint(s6, 2)
+            44:  bitw(s5, s6, s5, BW_OR)
+            45:  loadint(s6, 8)
+            46:  bitw(s5, s6, s5, BW_OR)
+            47:  loadint(s6, 64)
+            48:  bitw(s5, s6, s5, BW_OR)
+            49:  loadint(s6, 128)
+            50:  bitw(s5, s6, s5, BW_OR)
+            51:  loadint(s6, 0)
+            52:  call(2, s2, s3, 4)
+            53:  newslot(s255, s0, s1, s2)
+            54:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+                name: null
+                nliterals: 0
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 2
+                ndefaultparams: 0
+                ninstructions: 1
+                nfunctions: 0
+                Literals: [  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 0
+                  ]
+                Line Informations: [
+                    0: line: 20, op: 0
+                    1: line: 21, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 1
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "message"
+        nliterals: 16
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 18
+        ndefaultparams: 1
+        ninstructions: 71
+        nfunctions: 1
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "frameset"
+            3: "_composition_create_framepointer"
+            4: "resource_pool"
+            5: "player_kanako/shot_water000"
+            6: "plot_layer"
+            7: "layer_s2"
+            8: "angle"
+            9: "vx"
+            10: "cos"
+            11: "direction_h"
+            12: "vy"
+            13: "sin"
+            14: "attack_power"
+            15: "state"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_message_id"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 70
+            1: name: "_message_id", pos: 1, start_op: 0, end_op: 70
+            2: name: "this", pos: 0, start_op: 0, end_op: 70
+          ]
+        Line Informations: [
+            0: line: 32, op: 0
+            1: line: 33, op: 0
+            2: line: 35, op: 3
+            3: line: 36, op: 7
+            4: line: 37, op: 11
+            5: line: 39, op: 16
+            6: line: 40, op: 24
+            7: line: 41, op: 27
+            8: line: 42, op: 31
+            9: line: 43, op: 39
+            10: line: 44, op: 45
+            11: line: 45, op: 50
+            12: line: 46, op: 55
+            13: line: 47, op: 59
+            14: line: 49, op: 63
+            15: line: 50, op: 66
+            16: line: 60, op: 69
+            17: line: 62, op: 70
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 58)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 1)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 54)
+            16:  load(s3, "frameset")
+            17:  loadroot(s4)
+            18:  prepcallk(s4, "_composition_create_framepointer", s4, s5)
+            19:  loadroot(s6)
+            20:  getk(s6, "resource_pool", s6)
+            21:  getk(s6, "player_kanako/shot_water000", s6)
+            22:  call(4, s4, s5, 2)
+            23:  set(s255, s0, s3, s4)
+            24:  dload(s3, "plot_layer", s4, "layer_s2")
+            25:  get(s4, s0, s4)
+            26:  set(s255, s0, s3, s4)
+            27:  load(s3, "angle")
+            28:  loadint(s4, 0)
+            29:  get(s4, s2, s4)
+            30:  set(s255, s0, s3, s4)
+            31:  dload(s3, "vx", s4, "cos")
+            32:  prepcall(s4, s4, s0, s5)
+            33:  loadint(s6, 0)
+            34:  get(s6, s2, s6)
+            35:  call(4, s4, s5, 2)
+            36:  getk(s5, "direction_h", s0)
+            37:  mul(s4, s5, s4)
+            38:  set(s255, s0, s3, s4)
+            39:  dload(s3, "vy", s4, "sin")
+            40:  prepcall(s4, s4, s0, s5)
+            41:  loadint(s6, 0)
+            42:  get(s6, s2, s6)
+            43:  call(4, s4, s5, 2)
+            44:  set(s255, s0, s3, s4)
+            45:  dload(s3, "x", s4, "vx")
+            46:  get(s4, s0, s4)
+            47:  loadint(s5, 48)
+            48:  mul(s4, s5, s4)
+            49:  comparith(s3, 4, s3, 43)
+            50:  dload(s3, "y", s4, "vy")
+            51:  get(s4, s0, s4)
+            52:  loadint(s5, 48)
+            53:  mul(s4, s5, s4)
+            54:  comparith(s3, 4, s3, 43)
+            55:  load(s3, "vx")
+            56:  loadint(s4, 1)
+            57:  get(s4, s2, s4)
+            58:  comparith(s3, 4, s3, 42)
+            59:  load(s3, "vy")
+            60:  loadint(s4, 1)
+            61:  get(s4, s2, s4)
+            62:  comparith(s3, 4, s3, 42)
+            63:  load(s3, "attack_power")
+            64:  loadint(s4, 1)
+            65:  set(s255, s0, s3, s4)
+            66:  load(s3, "state")
+            67:  closure(s4, 0)
+            68:  set(s255, s0, s3, s4)
+            69:  jmp(-, 0)
+            70:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+                name: null
+                nliterals: 8
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 9
+                ndefaultparams: 0
+                ninstructions: 19
+                nfunctions: 0
+                Literals: [
+                    0: "count"
+                    1: "kill_move"
+                    2: "x"
+                    3: "vx"
+                    4: "y"
+                    5: "vy"
+                    6: "_vspace_commit"
+                    7: "h_entity"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 18
+                  ]
+                Line Informations: [
+                    0: line: 50, op: 0
+                    1: line: 51, op: 0
+                    2: line: 52, op: 2
+                    3: line: 53, op: 5
+                    4: line: 54, op: 7
+                    5: line: 56, op: 8
+                    6: line: 57, op: 11
+                    7: line: 58, op: 14
+                    8: line: 59, op: 18
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "count")
+                    1:  pinc(s1, s0, s1, 1)
+                    2:  getk(s1, "count", s0)
+                    3:  loadint(s2, 20)
+                    4:  jcmp(s2, 3, s1, CMP_GE)
+                    5:  prepcallk(s1, "kill_move", s0, s2)
+                    6:  call(255, s1, s2, 1)
+                    7:  return(255, 0)
+                    8:  dload(s1, "x", s2, "vx")
+                    9:  get(s2, s0, s2)
+                    10:  comparith(s1, 2, s1, 43)
+                    11:  dload(s1, "y", s2, "vy")
+                    12:  get(s2, s0, s2)
+                    13:  comparith(s1, 2, s1, 43)
+                    14:  loadroot(s1)
+                    15:  prepcallk(s1, "_vspace_commit", s1, s2)
+                    16:  getk(s3, "h_entity", s0)
+                    17:  call(255, s1, s2, 2)
+                    18:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "kill_move"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 72
+        nfunctions: 1
+        Literals: [
+            0: "h_entity"
+            1: "_vspace_unregist"
+            2: "scale"
+            3: "rand"
+            4: "angle"
+            5: "frameset"
+            6: "_composition_create_framepointer"
+            7: "resource_pool"
+            8: "player_kanako/water_sprash_000"
+            9: "count"
+            10: "vx"
+            11: "vy"
+            12: "state"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 71
+          ]
+        Line Informations: [
+            0: line: 64, op: 0
+            1: line: 65, op: 0
+            2: line: 66, op: 2
+            3: line: 67, op: 6
+            4: line: 68, op: 9
+            5: line: 69, op: 19
+            6: line: 70, op: 27
+            7: line: 71, op: 35
+            8: line: 72, op: 38
+            9: line: 73, op: 43
+            10: line: 74, op: 48
+            11: line: 75, op: 58
+            12: line: 76, op: 68
+            13: line: 85, op: 71
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "h_entity", s0)
+            1:  jz(s1, 69)
+            2:  loadroot(s1)
+            3:  prepcallk(s1, "_vspace_unregist", s1, s2)
+            4:  getk(s3, "h_entity", s0)
+            5:  call(255, s1, s2, 2)
+            6:  load(s1, "h_entity")
+            7:  loadnulls(s2, 1)
+            8:  set(s255, s0, s1, s2)
+            9:  load(s1, "scale")
+            10:  loadfloat(s2, 0.5)
+            11:  prepcallk(s3, "rand", s0, s4)
+            12:  call(3, s3, s4, 1)
+            13:  loadint(s4, 6)
+            14:  mod(s3, s4, s3)
+            15:  loadfloat(s4, 0.1)
+            16:  mul(s3, s4, s3)
+            17:  add(s2, s3, s2)
+            18:  set(s255, s0, s1, s2)
+            19:  dload(s1, "angle", s2, "rand")
+            20:  prepcall(s2, s2, s0, s3)
+            21:  call(2, s2, s3, 1)
+            22:  loadint(s3, 360)
+            23:  mod(s2, s3, s2)
+            24:  loadfloat(s3, 0.017453)
+            25:  mul(s2, s3, s2)
+            26:  set(s255, s0, s1, s2)
+            27:  load(s1, "frameset")
+            28:  loadroot(s2)
+            29:  prepcallk(s2, "_composition_create_framepointer", s2, s3)
+            30:  loadroot(s4)
+            31:  getk(s4, "resource_pool", s4)
+            32:  getk(s4, "player_kanako/water_sprash_000", s4)
+            33:  call(2, s2, s3, 2)
+            34:  set(s255, s0, s1, s2)
+            35:  load(s1, "count")
+            36:  loadint(s2, 0)
+            37:  set(s255, s0, s1, s2)
+            38:  dload(s1, "vx", s2, "vx")
+            39:  get(s2, s0, s2)
+            40:  loadfloat(s3, 0.2)
+            41:  mul(s2, s3, s2)
+            42:  set(s255, s0, s1, s2)
+            43:  dload(s1, "vy", s2, "vy")
+            44:  get(s2, s0, s2)
+            45:  loadfloat(s3, 0.2)
+            46:  mul(s2, s3, s2)
+            47:  set(s255, s0, s1, s2)
+            48:  load(s1, "vx")
+            49:  loadint(s2, 10)
+            50:  prepcallk(s3, "rand", s0, s4)
+            51:  call(3, s3, s4, 1)
+            52:  loadint(s4, 21)
+            53:  mod(s3, s4, s3)
+            54:  sub(s2, s3, s2)
+            55:  loadfloat(s3, 0.1)
+            56:  mul(s2, s3, s2)
+            57:  comparith(s1, 2, s1, 43)
+            58:  load(s1, "vy")
+            59:  loadint(s2, 10)
+            60:  prepcallk(s3, "rand", s0, s4)
+            61:  call(3, s3, s4, 1)
+            62:  loadint(s4, 21)
+            63:  mod(s3, s4, s3)
+            64:  sub(s2, s3, s2)
+            65:  loadfloat(s3, 0.1)
+            66:  mul(s2, s3, s2)
+            67:  comparith(s1, 2, s1, 43)
+            68:  load(s1, "state")
+            69:  closure(s2, 0)
+            70:  set(s255, s0, s1, s2)
+            71:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+                name: null
+                nliterals: 7
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 8
+                ndefaultparams: 0
+                ninstructions: 21
+                nfunctions: 0
+                Literals: [
+                    0: "scale"
+                    1: "alpha"
+                    2: "vy"
+                    3: "x"
+                    4: "vx"
+                    5: "y"
+                    6: "kill"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 20
+                  ]
+                Line Informations: [
+                    0: line: 76, op: 0
+                    1: line: 77, op: 0
+                    2: line: 78, op: 3
+                    3: line: 79, op: 6
+                    4: line: 80, op: 9
+                    5: line: 81, op: 12
+                    6: line: 82, op: 15
+                    7: line: 83, op: 20
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  load(s1, "scale")
+                    1:  loadfloat(s2, 0.1)
+                    2:  comparith(s1, 2, s1, 43)
+                    3:  load(s1, "alpha")
+                    4:  loadfloat(s2, 0.05)
+                    5:  comparith(s1, 2, s1, 45)
+                    6:  load(s1, "vy")
+                    7:  loadfloat(s2, 0.25)
+                    8:  comparith(s1, 2, s1, 43)
+                    9:  dload(s1, "x", s2, "vx")
+                    10:  get(s2, s0, s2)
+                    11:  comparith(s1, 2, s1, 43)
+                    12:  dload(s1, "y", s2, "vy")
+                    13:  get(s2, s0, s2)
+                    14:  comparith(s1, 2, s1, 43)
+                    15:  getk(s1, "alpha", s0)
+                    16:  loadfloat(s2, 0)
+                    17:  jcmp(s2, 2, s1, CMP_LE)
+                    18:  prepcallk(s1, "kill", s0, s2)
+                    19:  call(255, s1, s2, 1)
+                    20:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 3
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "destruct"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 11
+        nfunctions: 0
+        Literals: [
+            0: "Kill_PlayerBullet"
+            1: "lib"
+            2: "shot"
+            3: "common_destruct"
+            4: "call"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 10
+          ]
+        Line Informations: [
+            0: line: 88, op: 0
+            1: line: 89, op: 0
+            2: line: 90, op: 3
+            3: line: 91, op: 10
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "Kill_PlayerBullet", s0, s2)
+            1:  move(s3, s0)
+            2:  call(255, s1, s2, 2)
+            3:  loadroot(s1)
+            4:  getk(s1, "lib", s1)
+            5:  getk(s1, "shot", s1)
+            6:  getk(s1, "common_destruct", s1)
+            7:  prepcallk(s1, "call", s1, s2)
+            8:  move(s3, s0)
+            9:  call(255, s1, s2, 2)
+            10:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "interactive"
+        nliterals: 5
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 5
+        ndefaultparams: 0
+        ninstructions: 9
+        nfunctions: 0
+        Literals: [
+            0: "state"
+            1: "frameset"
+            2: "step"
+            3: "scale_x"
+            4: "direction_h"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 8
+          ]
+        Line Informations: [
+            0: line: 94, op: 0
+            1: line: 95, op: 0
+            2: line: 96, op: 2
+            3: line: 97, op: 5
+            4: line: 98, op: 8
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  prepcallk(s1, "state", s0, s2)
+            1:  call(255, s1, s2, 1)
+            2:  getk(s1, "frameset", s0)
+            3:  prepcallk(s1, "step", s1, s2)
+            4:  call(255, s1, s2, 1)
+            5:  dload(s1, "scale_x", s2, "direction_h")
+            6:  get(s2, s0, s2)
+            7:  set(s255, s0, s1, s2)
+            8:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "determination"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 101, op: 0
+            1: line: 102, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "plot"
+        nliterals: 13
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 30
+        nfunctions: 0
+        Literals: [
+            0: "visible"
+            1: "plot_layer"
+            2: "plot"
+            3: "frameset"
+            4: "scale"
+            5: "scale_x"
+            6: "rotate"
+            7: "angle"
+            8: "translate"
+            9: "x"
+            10: "y"
+            11: "blend"
+            12: "alpha"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 29
+          ]
+        Line Informations: [
+            0: line: 105, op: 0
+            1: line: 106, op: 0
+            2: line: 107, op: 4
+            3: line: 108, op: 8
+            4: line: 109, op: 15
+            5: line: 110, op: 19
+            6: line: 111, op: 24
+            7: line: 112, op: 29
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "visible", s0)
+            1:  not(s1, s1)
+            2:  jz(s1, 1)
+            3:  return(255, 0)
+            4:  getk(s1, "plot_layer", s0)
+            5:  prepcallk(s1, "plot", s1, s2)
+            6:  getk(s3, "frameset", s0)
+            7:  call(255, s1, s2, 2)
+            8:  getk(s1, "plot_layer", s0)
+            9:  prepcallk(s1, "scale", s1, s2)
+            10:  getk(s3, "scale", s0)
+            11:  getk(s4, "scale_x", s0)
+            12:  mul(s3, s4, s3)
+            13:  getk(s4, "scale", s0)
+            14:  call(255, s1, s2, 3)
+            15:  getk(s1, "plot_layer", s0)
+            16:  prepcallk(s1, "rotate", s1, s2)
+            17:  getk(s3, "angle", s0)
+            18:  call(255, s1, s2, 2)
+            19:  getk(s1, "plot_layer", s0)
+            20:  prepcallk(s1, "translate", s1, s2)
+            21:  getk(s3, "x", s0)
+            22:  getk(s4, "y", s0)
+            23:  call(255, s1, s2, 3)
+            24:  getk(s1, "plot_layer", s0)
+            25:  prepcallk(s1, "blend", s1, s2)
+            26:  loadint(s3, 1)
+            27:  getk(s4, "alpha", s0)
+            28:  call(255, s1, s2, 3)
+            29:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "on_hit_damage_reaction"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 116, op: 0
+            1: line: 117, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "on_hit_target"
+        nliterals: 15
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 33
+        nfunctions: 0
+        Literals: [
+            0: "lib"
+            1: "shot"
+            2: "default_hit_check"
+            3: "call"
+            4: "on_hit_damage_reaction"
+            5: "Spawn_CountSprite"
+            6: "x"
+            7: "hit_x"
+            8: "y"
+            9: "hit_y"
+            10: "hit_flash"
+            11: "_audio_play"
+            12: "se"
+            13: "hit_000"
+            14: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 32
+            1: name: "this", pos: 0, start_op: 0, end_op: 32
+          ]
+        Line Informations: [
+            0: line: 119, op: 0
+            1: line: 120, op: 0
+            2: line: 121, op: 10
+            3: line: 122, op: 13
+            4: line: 123, op: 23
+            5: line: 124, op: 30
+            6: line: 125, op: 32
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "lib", s0)
+            1:  getk(s2, "shot", s2)
+            2:  getk(s2, "default_hit_check", s2)
+            3:  prepcallk(s2, "call", s2, s3)
+            4:  dmove(s4, s0, s5, s1)
+            5:  call(2, s2, s3, 3)
+            6:  loadbool(s3, 0)
+            7:  eq(s2, 3, s2, 0)
+            8:  jz(s2, 1)
+            9:  return(255, 0)
+            10:  prepcallk(s2, "on_hit_damage_reaction", s1, s3)
+            11:  move(s4, s0)
+            12:  call(255, s2, s3, 2)
+            13:  prepcallk(s2, "Spawn_CountSprite", s0, s3)
+            14:  getk(s4, "x", s1)
+            15:  getk(s5, "hit_x", s1)
+            16:  add(s4, s5, s4)
+            17:  getk(s5, "y", s1)
+            18:  getk(s6, "hit_y", s1)
+            19:  add(s5, s6, s5)
+            20:  load(s6, "hit_flash")
+            21:  loadint(s7, 20)
+            22:  call(255, s2, s3, 5)
+            23:  loadroot(s2)
+            24:  prepcallk(s2, "_audio_play", s2, s3)
+            25:  loadroot(s4)
+            26:  getk(s4, "se", s4)
+            27:  getk(s4, "hit_000", s4)
+            28:  loadint(s5, 1)
+            29:  call(255, s2, s3, 3)
+            30:  prepcallk(s2, "kill_move", s0, s3)
+            31:  call(255, s2, s3, 1)
+            32:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    9: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "on_hit_ground"
+        nliterals: 2
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 4
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [
+            0: "h_entity"
+            1: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 4
+            1: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 126, op: 0
+            1: line: 127, op: 0
+            2: line: 128, op: 2
+            3: line: 130, op: 4
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "h_entity", s0)
+            1:  jz(s2, 2)
+            2:  prepcallk(s2, "kill_move", s0, s3)
+            3:  call(255, s2, s3, 1)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 4
+        bgenerator: 0
+        varparams: 0
+
+    10: 
+        sourcename: "data\script\gameobject\kanako\object_player\p_kanako_spell_shot.nut"
+        name: "on_graze_target"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 1
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "_target"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_target", pos: 1, start_op: 0, end_op: 0
+            1: name: "this", pos: 0, start_op: 0, end_op: 0
+          ]
+        Line Informations: [
+            0: line: 131, op: 0
+            1: line: 132, op: 0
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 2
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 5
+bgenerator: 0
+varparams: 1
+

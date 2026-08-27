@@ -1,0 +1,192 @@
+## =======================================================================
+#Stage:2
+#Title:残雪見舞い申し上げます
+#Place:白玉楼の雪庭
+#Weather:
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:udonge,160,0,0,8888FF
+Character:yuyuko,160,0,1,FF8888
+#敵画面外に待機
+Action:yuyuko,100
+#カメラ固定
+Action:udonge,4
+
+#フォーカス瞬間移動
+#Action:udonge,11
+
+#向き固定解除
+Action:udonge,152
+
+Label:Start
+PlayBgm:data/bgm/ta08.ogg
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/udonge/effect/StageTitle002.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage2.bmp,1,256,352
+Sleep:60
+
+Face:udonge,驚
+……まだ、雪が消えていないとは\
+
+Face:udonge,
+Hide:1
+Sleep:30
+
+#
+# 敵登場
+#
+Action:yuyuko,101
+Action:yuyuko,102
+
+Sleep:20
+
+Face:yuyuko,普
+ああもう、グチャグチャねぇ\
+
+# 名前のテロップ
+Object:data/scenario/yuyuko/effect/Name.bmp,2,352,304
+
+Face:yuyuko,余
+そろそろ、夏の雪見も店じまいかなぁ\
+
+Face:udonge,普
+意外と溶けないもんですね
+これだけの雪\
+
+Face:yuyuko,余
+何かしら？
+涼みに来たの？\
+
+Face:udonge,惑
+この状態で訊くのも何ですが……
+何かおかしな事って起きていませんか？\
+
+Face:yuyuko,嬉
+起きてない
+ナマズの幽霊が暴れたとかそんな事は\
+
+Face:udonge,汗
+はい？
+ま、まぁ起きていないのならいいんですけど\
+
+Face:yuyuko,普
+地震の事を心配しているのかしら？\
+
+Face:udonge,驚
+え？　ええ
+そうなんですよ\
+
+Face:yuyuko,嬉
+ならば、私を倒してからいきなさい\
+
+Face:udonge,汗
+済みませんが意味が判りません\
+
+#戦闘開始
+PlayBgm:data/bgm/st16.ogg
+Action:udonge,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:yuyuko,余
+地震はいつでも起こる事を覚悟しておいて\
+
+Face:yuyuko,普
+起こらないように鎮めておくのが
+一番良いのです\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:udonge,104
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:yuyuko,200
+#攻撃側ニュートラル移行検知
+Action:udonge,202
+
+#自キャラ天候
+Face:yuyuko,負
+地震が心配なら神社に行ってみなさい\
+
+Face:yuyuko,負
+今日は新生神社の落成式だって言ってましたわ\
+
+Face:udonge,驚
+あ、神社がもう直ったんですね\
+
+Face:yuyuko,負
+でも、今頃神社はどうなってるのかなぁ\
+
+Face:udonge,汗
+？？\
+
+# 雨
+Face:udonge,普
+ま、地震も心配だけど、新しくなった
+神社の様子でも見に行ってきますか\
+
+
+Hide:1
+Result:
+
+Stage:0,120
+FadeBgm:2000,0
+
+#やられキャラ画面退場
+Action:yuyuko,201
+
+#自キャラ基準点へ移動
+Action:udonge,150
+
+#カメラ中央あわせ
+Action:udonge,4
+
+Sleep:120;
+
+End:
+
+
+
+
+
+## =======================================================================

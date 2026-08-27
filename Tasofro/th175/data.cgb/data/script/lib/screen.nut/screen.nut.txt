@@ -1,0 +1,2415 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\lib\screen.nut: 
+sourcename: "data\script\lib\screen.nut"
+name: "main"
+nliterals: 118
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 19
+nlineinfos: 164
+ndefaultparams: 0
+ninstructions: 886
+nfunctions: 6
+Literals: [
+    0: "scene"
+    1: "rootenv"
+    2: "enable_bloom1"
+    3: "enable_bloom2"
+    4: "drawlayer_done"
+    5: "left"
+    6: "top"
+    7: "width"
+    8: "height"
+    9: "enable_render"
+    10: "target_canvas"
+    11: "camera"
+    12: "_exec"
+    13: "data/script/lib/camera_v2.nut"
+    14: "resource"
+    15: "rt_backscreen_fhd"
+    16: "_composition_create_resource"
+    17: "data/resource/rt_1920x1080.def"
+    18: "rt_backscreen"
+    19: "data/resource/rt_640x360.def"
+    20: "rt_backscreen2"
+    21: "rt_sprite"
+    22: "rt_sprite_add"
+    23: "rt_ui"
+    24: "ps_wavelet"
+    25: "_composition_create_pixelshader"
+    26: "data/shader/wavelet.fx"
+    27: "PS"
+    28: "ps_4_0"
+    29: "ps_ground_wave"
+    30: "data/shader/ground_wave.fx"
+    31: "ps_steam_fluctuation"
+    32: "data/shader/steam_fluctuation.fx"
+    33: "ps_retro_crt"
+    34: "data/shader/retro_crt.fx"
+    35: "ps_static_alpha_10"
+    36: "data/shader/static_alpha.fx"
+    37: "main"
+    38: "clearconst"
+    39: "pushconst"
+    40: "ps_fill_solid"
+    41: "data/shader/fill_solid.fx"
+    42: "dot"
+    43: "_composition_create_dot"
+    44: "ps_fill"
+    45: "data/shader/fill.fx"
+    46: "ps_fire_gradation"
+    47: "data/shader/fire_gradation.fx"
+    48: "ps_gradation"
+    49: "data/shader/gradation.fx"
+    50: "img_ripple"
+    51: "_composition_create_ripple"
+    52: "ps_liquid"
+    53: "data/shader/liquid0.fx"
+    54: "liquid_type"
+    55: "canvas"
+    56: "layer_backbuffer_clear"
+    57: "_composition_create_canvas"
+    58: "layer_spritebuffer_clear"
+    59: "layer_spriteadd_clear"
+    60: "layer_screen_clear"
+    61: "layer_screen"
+    62: "layer_screen2"
+    63: "layer_backbuffer_fhd"
+    64: "layer_backbuffer_fhd_bloom"
+    65: "layer_backbuffer_fhd2"
+    66: "layer_backbuffer_fhd_clear"
+    67: "layer_ui_clear"
+    68: "layer_backbuffer2"
+    69: "layer_sprite_pre"
+    70: "setrendertarget"
+    71: "filter"
+    72: "layer_posteffect"
+    73: "rt_bloom_step1"
+    74: "data/resource/rt_320x180.def"
+    75: "rt_bloom_step2"
+    76: "rt_bloom_step3"
+    77: "ps_bloom_step1"
+    78: "data/shader/bloom.fx"
+    79: "step1"
+    80: "ps_bloom_step2"
+    81: "gauss_h"
+    82: "ps_bloom_step3"
+    83: "gauss_v"
+    84: "layer_bloom_step1"
+    85: "layer_bloom_step2"
+    86: "layer_bloom_step3"
+    87: "rt_bloom2_step1"
+    88: "rt_bloom2_step2"
+    89: "rt_bloom2_step3"
+    90: "ps_bloom2_step1"
+    91: "ps_bloom2_step2"
+    92: "ps_bloom2_step3"
+    93: "layer_bloom2_step1"
+    94: "layer_bloom2_step2"
+    95: "layer_bloom2_step3"
+    96: "event"
+    97: "talk_flag"
+    98: "len"
+    99: "exp"
+    100: "tofloat"
+    101: "layer_ui"
+    102: "layer_f0"
+    103: "layer_f0_add"
+    104: "layer_s0"
+    105: "layer_s0_add"
+    106: "layer_s1"
+    107: "layer_s2"
+    108: "layer_s2_add"
+    109: "layer_bg0"
+    110: "layer_bg1"
+    111: "layer_bg1_add"
+    112: "layer_fg0"
+    113: "clear"
+    114: "drawlayers"
+    115: "render"
+    116: "set_position"
+    117: "select_liquid_type"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "pos", pos: 8, start_op: 569, end_op: 579
+    1: name: "i", pos: 7, start_op: 562, end_op: 581
+    2: name: "i", pos: 7, start_op: 627, end_op: 642
+    3: name: "pos", pos: 12, start_op: 663, end_op: 673
+    4: name: "i", pos: 11, start_op: 656, end_op: 675
+    5: name: "i", pos: 11, start_op: 721, end_op: 736
+    6: name: "create_canvas", pos: 12, start_op: 742, end_op: 884
+    7: name: "_env", pos: 11, start_op: 740, end_op: 884
+    8: name: "weight", pos: 10, start_op: 655, end_op: 884
+    9: name: "sum", pos: 9, start_op: 646, end_op: 884
+    10: name: "dispersion", pos: 8, start_op: 645, end_op: 884
+    11: name: "seed", pos: 7, start_op: 644, end_op: 884
+    12: name: "weight", pos: 6, start_op: 561, end_op: 884
+    13: name: "sum", pos: 5, start_op: 552, end_op: 884
+    14: name: "dispersion", pos: 4, start_op: 551, end_op: 884
+    15: name: "seed", pos: 3, start_op: 550, end_op: 884
+    16: name: "env", pos: 2, start_op: 2, end_op: 884
+    17: name: "vargv", pos: 1, start_op: 0, end_op: 885
+    18: name: "this", pos: 0, start_op: 0, end_op: 885
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 3, op: 2
+    2: line: 4, op: 5
+    3: line: 6, op: 8
+    4: line: 8, op: 11
+    5: line: 9, op: 14
+    6: line: 10, op: 17
+    7: line: 11, op: 20
+    8: line: 13, op: 23
+    9: line: 14, op: 26
+    10: line: 17, op: 29
+    11: line: 18, op: 33
+    12: line: 21, op: 39
+    13: line: 22, op: 42
+    14: line: 24, op: 49
+    15: line: 25, op: 56
+    16: line: 26, op: 63
+    17: line: 27, op: 70
+    18: line: 28, op: 77
+    19: line: 30, op: 84
+    20: line: 31, op: 92
+    21: line: 32, op: 100
+    22: line: 34, op: 108
+    23: line: 35, op: 116
+    24: line: 37, op: 124
+    25: line: 38, op: 128
+    26: line: 40, op: 133
+    27: line: 42, op: 141
+    28: line: 44, op: 147
+    29: line: 45, op: 155
+    30: line: 46, op: 163
+    31: line: 48, op: 171
+    32: line: 50, op: 177
+    33: line: 52, op: 185
+    34: line: 55, op: 188
+    35: line: 56, op: 191
+    36: line: 57, op: 198
+    37: line: 58, op: 205
+    38: line: 59, op: 212
+    39: line: 60, op: 219
+    40: line: 61, op: 226
+    41: line: 62, op: 233
+    42: line: 63, op: 240
+    43: line: 64, op: 247
+    44: line: 65, op: 254
+    45: line: 66, op: 261
+    46: line: 67, op: 268
+    47: line: 68, op: 275
+    48: line: 70, op: 282
+    49: line: 71, op: 288
+    50: line: 72, op: 294
+    51: line: 73, op: 300
+    52: line: 74, op: 306
+    53: line: 76, op: 312
+    54: line: 78, op: 318
+    55: line: 79, op: 324
+    56: line: 81, op: 329
+    57: line: 82, op: 335
+    58: line: 84, op: 340
+    59: line: 86, op: 346
+    60: line: 88, op: 352
+    61: line: 89, op: 357
+    62: line: 90, op: 362
+    63: line: 92, op: 367
+    64: line: 95, op: 373
+    65: line: 96, op: 380
+    66: line: 97, op: 387
+    67: line: 98, op: 394
+    68: line: 99, op: 402
+    69: line: 100, op: 410
+    70: line: 102, op: 418
+    71: line: 103, op: 425
+    72: line: 105, op: 431
+    73: line: 106, op: 438
+    74: line: 108, op: 444
+    75: line: 109, op: 451
+    76: line: 112, op: 457
+    77: line: 113, op: 464
+    78: line: 114, op: 471
+    79: line: 115, op: 478
+    80: line: 116, op: 486
+    81: line: 117, op: 494
+    82: line: 119, op: 502
+    83: line: 120, op: 509
+    84: line: 122, op: 515
+    85: line: 123, op: 522
+    86: line: 125, op: 528
+    87: line: 126, op: 535
+    88: line: 129, op: 541
+    89: line: 130, op: 545
+    90: line: 135, op: 549
+    91: line: 136, op: 550
+    92: line: 138, op: 551
+    93: line: 139, op: 552
+    94: line: 140, op: 561
+    95: line: 141, op: 565
+    96: line: 142, op: 565
+    97: line: 143, op: 569
+    98: line: 144, op: 576
+    99: line: 147, op: 582
+    100: line: 148, op: 586
+    101: line: 149, op: 595
+    102: line: 151, op: 604
+    103: line: 152, op: 608
+    104: line: 153, op: 617
+    105: line: 155, op: 626
+    106: line: 156, op: 630
+    107: line: 157, op: 630
+    108: line: 158, op: 631
+    109: line: 159, op: 636
+    110: line: 168, op: 643
+    111: line: 169, op: 644
+    112: line: 171, op: 645
+    113: line: 172, op: 646
+    114: line: 173, op: 655
+    115: line: 174, op: 659
+    116: line: 175, op: 659
+    117: line: 176, op: 663
+    118: line: 177, op: 670
+    119: line: 180, op: 676
+    120: line: 181, op: 680
+    121: line: 182, op: 689
+    122: line: 184, op: 698
+    123: line: 185, op: 702
+    124: line: 186, op: 711
+    125: line: 188, op: 720
+    126: line: 189, op: 724
+    127: line: 190, op: 724
+    128: line: 191, op: 725
+    129: line: 192, op: 730
+    130: line: 198, op: 737
+    131: line: 200, op: 740
+    132: line: 208, op: 742
+    133: line: 210, op: 742
+    134: line: 211, op: 747
+    135: line: 212, op: 752
+    136: line: 213, op: 757
+    137: line: 214, op: 762
+    138: line: 215, op: 767
+    139: line: 216, op: 772
+    140: line: 217, op: 777
+    141: line: 218, op: 782
+    142: line: 219, op: 787
+    143: line: 220, op: 792
+    144: line: 221, op: 797
+    145: line: 223, op: 802
+    146: line: 224, op: 807
+    147: line: 225, op: 812
+    148: line: 226, op: 817
+    149: line: 227, op: 822
+    150: line: 228, op: 827
+    151: line: 229, op: 832
+    152: line: 230, op: 837
+    153: line: 232, op: 842
+    154: line: 233, op: 847
+    155: line: 234, op: 852
+    156: line: 235, op: 857
+    157: line: 240, op: 862
+    158: line: 269, op: 865
+    159: line: 322, op: 868
+    160: line: 413, op: 872
+    161: line: 421, op: 879
+    162: line: 488, op: 882
+    163: line: 489, op: 885
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  getk(s2, "scene", s0)
+    1:  getk(s2, "rootenv", s2)
+    2:  load(s3, "enable_bloom1")
+    3:  loadbool(s4, 1)
+    4:  newslot(s255, s0, s3, s4)
+    5:  load(s3, "enable_bloom2")
+    6:  loadbool(s4, 1)
+    7:  newslot(s255, s0, s3, s4)
+    8:  load(s3, "drawlayer_done")
+    9:  loadbool(s4, 0)
+    10:  newslot(s255, s0, s3, s4)
+    11:  load(s3, "left")
+    12:  loadint(s4, 0)
+    13:  newslot(s255, s0, s3, s4)
+    14:  load(s3, "top")
+    15:  loadint(s4, 0)
+    16:  newslot(s255, s0, s3, s4)
+    17:  load(s3, "width")
+    18:  loadint(s4, -1)
+    19:  newslot(s255, s0, s3, s4)
+    20:  load(s3, "height")
+    21:  loadint(s4, -1)
+    22:  newslot(s255, s0, s3, s4)
+    23:  load(s3, "enable_render")
+    24:  loadbool(s4, 1)
+    25:  newslot(s255, s0, s3, s4)
+    26:  load(s3, "target_canvas")
+    27:  loadnulls(s4, 1)
+    28:  newslot(s255, s0, s3, s4)
+    29:  loadroot(s3)
+    30:  load(s4, "camera")
+    31:  newobj(s5, 0, 0, 0)
+    32:  newslot(s255, s3, s4, s5)
+    33:  loadroot(s3)
+    34:  prepcallk(s3, "_exec", s3, s4)
+    35:  load(s5, "data/script/lib/camera_v2.nut")
+    36:  loadroot(s6)
+    37:  getk(s6, "camera", s6)
+    38:  call(255, s3, s4, 3)
+    39:  load(s3, "resource")
+    40:  newobj(s4, 0, 0, 0)
+    41:  newslot(s255, s0, s3, s4)
+    42:  getk(s3, "resource", s0)
+    43:  load(s4, "rt_backscreen_fhd")
+    44:  loadroot(s5)
+    45:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    46:  load(s7, "data/resource/rt_1920x1080.def")
+    47:  call(5, s5, s6, 2)
+    48:  newslot(s255, s3, s4, s5)
+    49:  getk(s3, "resource", s0)
+    50:  load(s4, "rt_backscreen")
+    51:  loadroot(s5)
+    52:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    53:  load(s7, "data/resource/rt_640x360.def")
+    54:  call(5, s5, s6, 2)
+    55:  newslot(s255, s3, s4, s5)
+    56:  getk(s3, "resource", s0)
+    57:  load(s4, "rt_backscreen2")
+    58:  loadroot(s5)
+    59:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    60:  load(s7, "data/resource/rt_640x360.def")
+    61:  call(5, s5, s6, 2)
+    62:  newslot(s255, s3, s4, s5)
+    63:  getk(s3, "resource", s0)
+    64:  load(s4, "rt_sprite")
+    65:  loadroot(s5)
+    66:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    67:  load(s7, "data/resource/rt_640x360.def")
+    68:  call(5, s5, s6, 2)
+    69:  newslot(s255, s3, s4, s5)
+    70:  getk(s3, "resource", s0)
+    71:  load(s4, "rt_sprite_add")
+    72:  loadroot(s5)
+    73:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    74:  load(s7, "data/resource/rt_640x360.def")
+    75:  call(5, s5, s6, 2)
+    76:  newslot(s255, s3, s4, s5)
+    77:  getk(s3, "resource", s0)
+    78:  load(s4, "rt_ui")
+    79:  loadroot(s5)
+    80:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    81:  load(s7, "data/resource/rt_640x360.def")
+    82:  call(5, s5, s6, 2)
+    83:  newslot(s255, s3, s4, s5)
+    84:  getk(s3, "resource", s0)
+    85:  load(s4, "ps_wavelet")
+    86:  loadroot(s5)
+    87:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    88:  dload(s7, "data/shader/wavelet.fx", s8, "PS")
+    89:  load(s9, "ps_4_0")
+    90:  call(5, s5, s6, 4)
+    91:  newslot(s255, s3, s4, s5)
+    92:  getk(s3, "resource", s0)
+    93:  load(s4, "ps_ground_wave")
+    94:  loadroot(s5)
+    95:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    96:  dload(s7, "data/shader/ground_wave.fx", s8, "PS")
+    97:  load(s9, "ps_4_0")
+    98:  call(5, s5, s6, 4)
+    99:  newslot(s255, s3, s4, s5)
+    100:  getk(s3, "resource", s0)
+    101:  load(s4, "ps_steam_fluctuation")
+    102:  loadroot(s5)
+    103:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    104:  dload(s7, "data/shader/steam_fluctuation.fx", s8, "PS")
+    105:  load(s9, "ps_4_0")
+    106:  call(5, s5, s6, 4)
+    107:  newslot(s255, s3, s4, s5)
+    108:  getk(s3, "resource", s0)
+    109:  load(s4, "ps_retro_crt")
+    110:  loadroot(s5)
+    111:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    112:  dload(s7, "data/shader/retro_crt.fx", s8, "PS")
+    113:  load(s9, "ps_4_0")
+    114:  call(5, s5, s6, 4)
+    115:  newslot(s255, s3, s4, s5)
+    116:  getk(s3, "resource", s0)
+    117:  load(s4, "ps_static_alpha_10")
+    118:  loadroot(s5)
+    119:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    120:  dload(s7, "data/shader/static_alpha.fx", s8, "main")
+    121:  load(s9, "ps_4_0")
+    122:  call(5, s5, s6, 4)
+    123:  newslot(s255, s3, s4, s5)
+    124:  getk(s3, "resource", s0)
+    125:  getk(s3, "ps_static_alpha_10", s3)
+    126:  prepcallk(s3, "clearconst", s3, s4)
+    127:  call(255, s3, s4, 1)
+    128:  getk(s3, "resource", s0)
+    129:  getk(s3, "ps_static_alpha_10", s3)
+    130:  prepcallk(s3, "pushconst", s3, s4)
+    131:  loadfloat(s5, 1)
+    132:  call(255, s3, s4, 2)
+    133:  getk(s3, "resource", s0)
+    134:  load(s4, "ps_fill_solid")
+    135:  loadroot(s5)
+    136:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    137:  dload(s7, "data/shader/fill_solid.fx", s8, "main")
+    138:  load(s9, "ps_4_0")
+    139:  call(5, s5, s6, 4)
+    140:  newslot(s255, s3, s4, s5)
+    141:  getk(s3, "resource", s0)
+    142:  load(s4, "dot")
+    143:  loadroot(s5)
+    144:  prepcallk(s5, "_composition_create_dot", s5, s6)
+    145:  call(5, s5, s6, 1)
+    146:  newslot(s255, s3, s4, s5)
+    147:  getk(s3, "resource", s0)
+    148:  load(s4, "ps_fill")
+    149:  loadroot(s5)
+    150:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    151:  dload(s7, "data/shader/fill.fx", s8, "PS")
+    152:  load(s9, "ps_4_0")
+    153:  call(5, s5, s6, 4)
+    154:  newslot(s255, s3, s4, s5)
+    155:  getk(s3, "resource", s0)
+    156:  load(s4, "ps_fire_gradation")
+    157:  loadroot(s5)
+    158:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    159:  dload(s7, "data/shader/fire_gradation.fx", s8, "PS")
+    160:  load(s9, "ps_4_0")
+    161:  call(5, s5, s6, 4)
+    162:  newslot(s255, s3, s4, s5)
+    163:  getk(s3, "resource", s0)
+    164:  load(s4, "ps_gradation")
+    165:  loadroot(s5)
+    166:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    167:  dload(s7, "data/shader/gradation.fx", s8, "PS")
+    168:  load(s9, "ps_4_0")
+    169:  call(5, s5, s6, 4)
+    170:  newslot(s255, s3, s4, s5)
+    171:  getk(s3, "resource", s0)
+    172:  load(s4, "img_ripple")
+    173:  loadroot(s5)
+    174:  prepcallk(s5, "_composition_create_ripple", s5, s6)
+    175:  call(5, s5, s6, 1)
+    176:  newslot(s255, s3, s4, s5)
+    177:  getk(s3, "resource", s0)
+    178:  load(s4, "ps_liquid")
+    179:  loadroot(s5)
+    180:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    181:  dload(s7, "data/shader/liquid0.fx", s8, "PS")
+    182:  load(s9, "ps_4_0")
+    183:  call(5, s5, s6, 4)
+    184:  newslot(s255, s3, s4, s5)
+    185:  load(s3, "liquid_type")
+    186:  loadint(s4, 0)
+    187:  newslot(s255, s0, s3, s4)
+    188:  load(s3, "canvas")
+    189:  newobj(s4, 0, 0, 0)
+    190:  newslot(s255, s0, s3, s4)
+    191:  getk(s3, "canvas", s0)
+    192:  load(s4, "layer_backbuffer_clear")
+    193:  loadroot(s5)
+    194:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    195:  loadint(s7, 16)
+    196:  call(5, s5, s6, 2)
+    197:  newslot(s255, s3, s4, s5)
+    198:  getk(s3, "canvas", s0)
+    199:  load(s4, "layer_spritebuffer_clear")
+    200:  loadroot(s5)
+    201:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    202:  loadint(s7, 16)
+    203:  call(5, s5, s6, 2)
+    204:  newslot(s255, s3, s4, s5)
+    205:  getk(s3, "canvas", s0)
+    206:  load(s4, "layer_spriteadd_clear")
+    207:  loadroot(s5)
+    208:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    209:  loadint(s7, 16)
+    210:  call(5, s5, s6, 2)
+    211:  newslot(s255, s3, s4, s5)
+    212:  getk(s3, "canvas", s0)
+    213:  load(s4, "layer_screen_clear")
+    214:  loadroot(s5)
+    215:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    216:  loadint(s7, 16)
+    217:  call(5, s5, s6, 2)
+    218:  newslot(s255, s3, s4, s5)
+    219:  getk(s3, "canvas", s0)
+    220:  load(s4, "layer_screen")
+    221:  loadroot(s5)
+    222:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    223:  loadint(s7, 128)
+    224:  call(5, s5, s6, 2)
+    225:  newslot(s255, s3, s4, s5)
+    226:  getk(s3, "canvas", s0)
+    227:  load(s4, "layer_screen2")
+    228:  loadroot(s5)
+    229:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    230:  loadint(s7, 128)
+    231:  call(5, s5, s6, 2)
+    232:  newslot(s255, s3, s4, s5)
+    233:  getk(s3, "canvas", s0)
+    234:  load(s4, "layer_backbuffer_fhd")
+    235:  loadroot(s5)
+    236:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    237:  loadint(s7, 128)
+    238:  call(5, s5, s6, 2)
+    239:  newslot(s255, s3, s4, s5)
+    240:  getk(s3, "canvas", s0)
+    241:  load(s4, "layer_backbuffer_fhd_bloom")
+    242:  loadroot(s5)
+    243:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    244:  loadint(s7, 128)
+    245:  call(5, s5, s6, 2)
+    246:  newslot(s255, s3, s4, s5)
+    247:  getk(s3, "canvas", s0)
+    248:  load(s4, "layer_backbuffer_fhd2")
+    249:  loadroot(s5)
+    250:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    251:  loadint(s7, 128)
+    252:  call(5, s5, s6, 2)
+    253:  newslot(s255, s3, s4, s5)
+    254:  getk(s3, "canvas", s0)
+    255:  load(s4, "layer_backbuffer_fhd_clear")
+    256:  loadroot(s5)
+    257:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    258:  loadint(s7, 16)
+    259:  call(5, s5, s6, 2)
+    260:  newslot(s255, s3, s4, s5)
+    261:  getk(s3, "canvas", s0)
+    262:  load(s4, "layer_ui_clear")
+    263:  loadroot(s5)
+    264:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    265:  loadint(s7, 16)
+    266:  call(5, s5, s6, 2)
+    267:  newslot(s255, s3, s4, s5)
+    268:  getk(s3, "canvas", s0)
+    269:  load(s4, "layer_backbuffer2")
+    270:  loadroot(s5)
+    271:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    272:  loadint(s7, 128)
+    273:  call(5, s5, s6, 2)
+    274:  newslot(s255, s3, s4, s5)
+    275:  getk(s3, "canvas", s0)
+    276:  load(s4, "layer_sprite_pre")
+    277:  loadroot(s5)
+    278:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    279:  loadint(s7, 16)
+    280:  call(5, s5, s6, 2)
+    281:  newslot(s255, s3, s4, s5)
+    282:  getk(s3, "canvas", s0)
+    283:  getk(s3, "layer_backbuffer_clear", s3)
+    284:  prepcallk(s3, "setrendertarget", s3, s4)
+    285:  getk(s5, "resource", s0)
+    286:  getk(s5, "rt_backscreen", s5)
+    287:  call(255, s3, s4, 2)
+    288:  getk(s3, "canvas", s0)
+    289:  getk(s3, "layer_spritebuffer_clear", s3)
+    290:  prepcallk(s3, "setrendertarget", s3, s4)
+    291:  getk(s5, "resource", s0)
+    292:  getk(s5, "rt_sprite", s5)
+    293:  call(255, s3, s4, 2)
+    294:  getk(s3, "canvas", s0)
+    295:  getk(s3, "layer_spriteadd_clear", s3)
+    296:  prepcallk(s3, "setrendertarget", s3, s4)
+    297:  getk(s5, "resource", s0)
+    298:  getk(s5, "rt_sprite_add", s5)
+    299:  call(255, s3, s4, 2)
+    300:  getk(s3, "canvas", s0)
+    301:  getk(s3, "layer_ui_clear", s3)
+    302:  prepcallk(s3, "setrendertarget", s3, s4)
+    303:  getk(s5, "resource", s0)
+    304:  getk(s5, "rt_ui", s5)
+    305:  call(255, s3, s4, 2)
+    306:  getk(s3, "canvas", s0)
+    307:  getk(s3, "layer_backbuffer2", s3)
+    308:  prepcallk(s3, "setrendertarget", s3, s4)
+    309:  getk(s5, "resource", s0)
+    310:  getk(s5, "rt_backscreen2", s5)
+    311:  call(255, s3, s4, 2)
+    312:  getk(s3, "canvas", s0)
+    313:  getk(s3, "layer_sprite_pre", s3)
+    314:  prepcallk(s3, "setrendertarget", s3, s4)
+    315:  getk(s5, "resource", s0)
+    316:  getk(s5, "rt_sprite", s5)
+    317:  call(255, s3, s4, 2)
+    318:  getk(s3, "canvas", s0)
+    319:  getk(s3, "layer_backbuffer_fhd", s3)
+    320:  prepcallk(s3, "setrendertarget", s3, s4)
+    321:  getk(s5, "resource", s0)
+    322:  getk(s5, "rt_backscreen_fhd", s5)
+    323:  call(255, s3, s4, 2)
+    324:  getk(s3, "canvas", s0)
+    325:  getk(s3, "layer_backbuffer_fhd", s3)
+    326:  prepcallk(s3, "filter", s3, s4)
+    327:  loadint(s5, 1)
+    328:  call(255, s3, s4, 2)
+    329:  getk(s3, "canvas", s0)
+    330:  getk(s3, "layer_backbuffer_fhd2", s3)
+    331:  prepcallk(s3, "setrendertarget", s3, s4)
+    332:  getk(s5, "resource", s0)
+    333:  getk(s5, "rt_backscreen_fhd", s5)
+    334:  call(255, s3, s4, 2)
+    335:  getk(s3, "canvas", s0)
+    336:  getk(s3, "layer_backbuffer_fhd2", s3)
+    337:  prepcallk(s3, "filter", s3, s4)
+    338:  loadint(s5, 1)
+    339:  call(255, s3, s4, 2)
+    340:  getk(s3, "canvas", s0)
+    341:  getk(s3, "layer_backbuffer_fhd_bloom", s3)
+    342:  prepcallk(s3, "setrendertarget", s3, s4)
+    343:  getk(s5, "resource", s0)
+    344:  getk(s5, "rt_backscreen_fhd", s5)
+    345:  call(255, s3, s4, 2)
+    346:  getk(s3, "canvas", s0)
+    347:  getk(s3, "layer_backbuffer_fhd_clear", s3)
+    348:  prepcallk(s3, "setrendertarget", s3, s4)
+    349:  getk(s5, "resource", s0)
+    350:  getk(s5, "rt_backscreen_fhd", s5)
+    351:  call(255, s3, s4, 2)
+    352:  getk(s3, "canvas", s0)
+    353:  getk(s3, "layer_screen", s3)
+    354:  prepcallk(s3, "filter", s3, s4)
+    355:  loadint(s5, 1)
+    356:  call(255, s3, s4, 2)
+    357:  getk(s3, "canvas", s0)
+    358:  getk(s3, "layer_screen2", s3)
+    359:  prepcallk(s3, "filter", s3, s4)
+    360:  loadint(s5, 1)
+    361:  call(255, s3, s4, 2)
+    362:  getk(s3, "canvas", s0)
+    363:  getk(s3, "layer_spriteadd_clear", s3)
+    364:  prepcallk(s3, "filter", s3, s4)
+    365:  loadint(s5, 1)
+    366:  call(255, s3, s4, 2)
+    367:  getk(s3, "canvas", s0)
+    368:  load(s4, "layer_posteffect")
+    369:  loadroot(s5)
+    370:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    371:  call(5, s5, s6, 1)
+    372:  newslot(s255, s3, s4, s5)
+    373:  getk(s3, "resource", s0)
+    374:  load(s4, "rt_bloom_step1")
+    375:  loadroot(s5)
+    376:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    377:  load(s7, "data/resource/rt_320x180.def")
+    378:  call(5, s5, s6, 2)
+    379:  newslot(s255, s3, s4, s5)
+    380:  getk(s3, "resource", s0)
+    381:  load(s4, "rt_bloom_step2")
+    382:  loadroot(s5)
+    383:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    384:  load(s7, "data/resource/rt_320x180.def")
+    385:  call(5, s5, s6, 2)
+    386:  newslot(s255, s3, s4, s5)
+    387:  getk(s3, "resource", s0)
+    388:  load(s4, "rt_bloom_step3")
+    389:  loadroot(s5)
+    390:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    391:  load(s7, "data/resource/rt_320x180.def")
+    392:  call(5, s5, s6, 2)
+    393:  newslot(s255, s3, s4, s5)
+    394:  getk(s3, "resource", s0)
+    395:  load(s4, "ps_bloom_step1")
+    396:  loadroot(s5)
+    397:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    398:  dload(s7, "data/shader/bloom.fx", s8, "step1")
+    399:  load(s9, "ps_4_0")
+    400:  call(5, s5, s6, 4)
+    401:  newslot(s255, s3, s4, s5)
+    402:  getk(s3, "resource", s0)
+    403:  load(s4, "ps_bloom_step2")
+    404:  loadroot(s5)
+    405:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    406:  dload(s7, "data/shader/bloom.fx", s8, "gauss_h")
+    407:  load(s9, "ps_4_0")
+    408:  call(5, s5, s6, 4)
+    409:  newslot(s255, s3, s4, s5)
+    410:  getk(s3, "resource", s0)
+    411:  load(s4, "ps_bloom_step3")
+    412:  loadroot(s5)
+    413:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    414:  dload(s7, "data/shader/bloom.fx", s8, "gauss_v")
+    415:  load(s9, "ps_4_0")
+    416:  call(5, s5, s6, 4)
+    417:  newslot(s255, s3, s4, s5)
+    418:  getk(s3, "canvas", s0)
+    419:  load(s4, "layer_bloom_step1")
+    420:  loadroot(s5)
+    421:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    422:  loadint(s7, 128)
+    423:  call(5, s5, s6, 2)
+    424:  newslot(s255, s3, s4, s5)
+    425:  getk(s3, "canvas", s0)
+    426:  getk(s3, "layer_bloom_step1", s3)
+    427:  prepcallk(s3, "setrendertarget", s3, s4)
+    428:  getk(s5, "resource", s0)
+    429:  getk(s5, "rt_bloom_step1", s5)
+    430:  call(255, s3, s4, 2)
+    431:  getk(s3, "canvas", s0)
+    432:  load(s4, "layer_bloom_step2")
+    433:  loadroot(s5)
+    434:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    435:  loadint(s7, 128)
+    436:  call(5, s5, s6, 2)
+    437:  newslot(s255, s3, s4, s5)
+    438:  getk(s3, "canvas", s0)
+    439:  getk(s3, "layer_bloom_step2", s3)
+    440:  prepcallk(s3, "setrendertarget", s3, s4)
+    441:  getk(s5, "resource", s0)
+    442:  getk(s5, "rt_bloom_step2", s5)
+    443:  call(255, s3, s4, 2)
+    444:  getk(s3, "canvas", s0)
+    445:  load(s4, "layer_bloom_step3")
+    446:  loadroot(s5)
+    447:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    448:  loadint(s7, 128)
+    449:  call(5, s5, s6, 2)
+    450:  newslot(s255, s3, s4, s5)
+    451:  getk(s3, "canvas", s0)
+    452:  getk(s3, "layer_bloom_step3", s3)
+    453:  prepcallk(s3, "setrendertarget", s3, s4)
+    454:  getk(s5, "resource", s0)
+    455:  getk(s5, "rt_bloom_step3", s5)
+    456:  call(255, s3, s4, 2)
+    457:  getk(s3, "resource", s0)
+    458:  load(s4, "rt_bloom2_step1")
+    459:  loadroot(s5)
+    460:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    461:  load(s7, "data/resource/rt_320x180.def")
+    462:  call(5, s5, s6, 2)
+    463:  newslot(s255, s3, s4, s5)
+    464:  getk(s3, "resource", s0)
+    465:  load(s4, "rt_bloom2_step2")
+    466:  loadroot(s5)
+    467:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    468:  load(s7, "data/resource/rt_320x180.def")
+    469:  call(5, s5, s6, 2)
+    470:  newslot(s255, s3, s4, s5)
+    471:  getk(s3, "resource", s0)
+    472:  load(s4, "rt_bloom2_step3")
+    473:  loadroot(s5)
+    474:  prepcallk(s5, "_composition_create_resource", s5, s6)
+    475:  load(s7, "data/resource/rt_320x180.def")
+    476:  call(5, s5, s6, 2)
+    477:  newslot(s255, s3, s4, s5)
+    478:  getk(s3, "resource", s0)
+    479:  load(s4, "ps_bloom2_step1")
+    480:  loadroot(s5)
+    481:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    482:  dload(s7, "data/shader/bloom.fx", s8, "step1")
+    483:  load(s9, "ps_4_0")
+    484:  call(5, s5, s6, 4)
+    485:  newslot(s255, s3, s4, s5)
+    486:  getk(s3, "resource", s0)
+    487:  load(s4, "ps_bloom2_step2")
+    488:  loadroot(s5)
+    489:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    490:  dload(s7, "data/shader/bloom.fx", s8, "gauss_h")
+    491:  load(s9, "ps_4_0")
+    492:  call(5, s5, s6, 4)
+    493:  newslot(s255, s3, s4, s5)
+    494:  getk(s3, "resource", s0)
+    495:  load(s4, "ps_bloom2_step3")
+    496:  loadroot(s5)
+    497:  prepcallk(s5, "_composition_create_pixelshader", s5, s6)
+    498:  dload(s7, "data/shader/bloom.fx", s8, "gauss_v")
+    499:  load(s9, "ps_4_0")
+    500:  call(5, s5, s6, 4)
+    501:  newslot(s255, s3, s4, s5)
+    502:  getk(s3, "canvas", s0)
+    503:  load(s4, "layer_bloom2_step1")
+    504:  loadroot(s5)
+    505:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    506:  loadint(s7, 128)
+    507:  call(5, s5, s6, 2)
+    508:  newslot(s255, s3, s4, s5)
+    509:  getk(s3, "canvas", s0)
+    510:  getk(s3, "layer_bloom2_step1", s3)
+    511:  prepcallk(s3, "setrendertarget", s3, s4)
+    512:  getk(s5, "resource", s0)
+    513:  getk(s5, "rt_bloom2_step1", s5)
+    514:  call(255, s3, s4, 2)
+    515:  getk(s3, "canvas", s0)
+    516:  load(s4, "layer_bloom2_step2")
+    517:  loadroot(s5)
+    518:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    519:  loadint(s7, 128)
+    520:  call(5, s5, s6, 2)
+    521:  newslot(s255, s3, s4, s5)
+    522:  getk(s3, "canvas", s0)
+    523:  getk(s3, "layer_bloom2_step2", s3)
+    524:  prepcallk(s3, "setrendertarget", s3, s4)
+    525:  getk(s5, "resource", s0)
+    526:  getk(s5, "rt_bloom2_step2", s5)
+    527:  call(255, s3, s4, 2)
+    528:  getk(s3, "canvas", s0)
+    529:  load(s4, "layer_bloom2_step3")
+    530:  loadroot(s5)
+    531:  prepcallk(s5, "_composition_create_canvas", s5, s6)
+    532:  loadint(s7, 128)
+    533:  call(5, s5, s6, 2)
+    534:  newslot(s255, s3, s4, s5)
+    535:  getk(s3, "canvas", s0)
+    536:  getk(s3, "layer_bloom2_step3", s3)
+    537:  prepcallk(s3, "setrendertarget", s3, s4)
+    538:  getk(s5, "resource", s0)
+    539:  getk(s5, "rt_bloom2_step3", s5)
+    540:  call(255, s3, s4, 2)
+    541:  loadroot(s3)
+    542:  load(s4, "event")
+    543:  newobj(s5, 0, 0, 0)
+    544:  newslot(s255, s3, s4, s5)
+    545:  getk(s3, "event", s0)
+    546:  load(s4, "talk_flag")
+    547:  loadbool(s5, 0)
+    548:  newslot(s255, s3, s4, s5)
+    549:  loadfloat(s3, 15)
+    550:  mul(s4, s3, s3)
+    551:  loadint(s5, 0)
+    552:  newobj(s6, 8, 0, 1)
+    553:  appendarray(s6, 0, 3)
+    554:  appendarray(s6, 0, 3)
+    555:  appendarray(s6, 0, 3)
+    556:  appendarray(s6, 0, 3)
+    557:  appendarray(s6, 0, 3)
+    558:  appendarray(s6, 0, 3)
+    559:  appendarray(s6, 0, 3)
+    560:  appendarray(s6, 0, 3)
+    561:  loadint(s7, 0)
+    562:  prepcallk(s8, "len", s6, s9)
+    563:  call(8, s8, s9, 1)
+    564:  jcmp(s8, 17, s7, CMP_L)
+    565:  loadfloat(s8, 1)
+    566:  loadfloat(s9, 2)
+    567:  mul(s9, s7, s9)
+    568:  add(s8, s9, s8)
+    569:  prepcallk(s9, "exp", s0, s10)
+    570:  loadfloat(s11, -0.5)
+    571:  mul(s12, s8, s8)
+    572:  mul(s11, s12, s11)
+    573:  div(s11, s4, s11)
+    574:  call(9, s9, s10, 2)
+    575:  set(s255, s6, s7, s9)
+    576:  loadfloat(s9, 2)
+    577:  get(s10, s6, s7)
+    578:  mul(s9, s10, s9)
+    579:  add(s5, s9, s5)
+    580:  pincl(s8, s7, 0, 1)
+    581:  jmp(-, -20)
+    582:  getk(s7, "resource", s0)
+    583:  getk(s7, "ps_bloom_step2", s7)
+    584:  prepcallk(s7, "clearconst", s7, s8)
+    585:  call(255, s7, s8, 1)
+    586:  getk(s7, "resource", s0)
+    587:  getk(s7, "ps_bloom_step2", s7)
+    588:  prepcallk(s7, "pushconst", s7, s8)
+    589:  getk(s9, "resource", s0)
+    590:  getk(s9, "rt_bloom_step1", s9)
+    591:  getk(s9, "width", s9)
+    592:  prepcallk(s9, "tofloat", s9, s10)
+    593:  call(9, s9, s10, 1)
+    594:  call(255, s7, s8, 2)
+    595:  getk(s7, "resource", s0)
+    596:  getk(s7, "ps_bloom_step2", s7)
+    597:  prepcallk(s7, "pushconst", s7, s8)
+    598:  getk(s9, "resource", s0)
+    599:  getk(s9, "rt_bloom_step1", s9)
+    600:  getk(s9, "height", s9)
+    601:  prepcallk(s9, "tofloat", s9, s10)
+    602:  call(9, s9, s10, 1)
+    603:  call(255, s7, s8, 2)
+    604:  getk(s7, "resource", s0)
+    605:  getk(s7, "ps_bloom_step3", s7)
+    606:  prepcallk(s7, "clearconst", s7, s8)
+    607:  call(255, s7, s8, 1)
+    608:  getk(s7, "resource", s0)
+    609:  getk(s7, "ps_bloom_step3", s7)
+    610:  prepcallk(s7, "pushconst", s7, s8)
+    611:  getk(s9, "resource", s0)
+    612:  getk(s9, "rt_bloom_step1", s9)
+    613:  getk(s9, "width", s9)
+    614:  prepcallk(s9, "tofloat", s9, s10)
+    615:  call(9, s9, s10, 1)
+    616:  call(255, s7, s8, 2)
+    617:  getk(s7, "resource", s0)
+    618:  getk(s7, "ps_bloom_step3", s7)
+    619:  prepcallk(s7, "pushconst", s7, s8)
+    620:  getk(s9, "resource", s0)
+    621:  getk(s9, "rt_bloom_step1", s9)
+    622:  getk(s9, "height", s9)
+    623:  prepcallk(s9, "tofloat", s9, s10)
+    624:  call(9, s9, s10, 1)
+    625:  call(255, s7, s8, 2)
+    626:  loadint(s7, 0)
+    627:  prepcallk(s8, "len", s6, s9)
+    628:  call(8, s8, s9, 1)
+    629:  jcmp(s8, 13, s7, CMP_L)
+    630:  comparith(s8, 393221, s7, 47)
+    631:  getk(s8, "resource", s0)
+    632:  getk(s8, "ps_bloom_step2", s8)
+    633:  prepcallk(s8, "pushconst", s8, s9)
+    634:  get(s10, s6, s7)
+    635:  call(255, s8, s9, 2)
+    636:  getk(s8, "resource", s0)
+    637:  getk(s8, "ps_bloom_step3", s8)
+    638:  prepcallk(s8, "pushconst", s8, s9)
+    639:  get(s10, s6, s7)
+    640:  call(255, s8, s9, 2)
+    641:  pincl(s8, s7, 0, 1)
+    642:  jmp(-, -16)
+    643:  loadfloat(s7, 20)
+    644:  mul(s8, s7, s7)
+    645:  loadint(s9, 0)
+    646:  newobj(s10, 8, 0, 1)
+    647:  appendarray(s10, 0, 3)
+    648:  appendarray(s10, 0, 3)
+    649:  appendarray(s10, 0, 3)
+    650:  appendarray(s10, 0, 3)
+    651:  appendarray(s10, 0, 3)
+    652:  appendarray(s10, 0, 3)
+    653:  appendarray(s10, 0, 3)
+    654:  appendarray(s10, 0, 3)
+    655:  loadint(s11, 0)
+    656:  prepcallk(s12, "len", s10, s13)
+    657:  call(12, s12, s13, 1)
+    658:  jcmp(s12, 17, s11, CMP_L)
+    659:  loadfloat(s12, 1)
+    660:  loadfloat(s13, 2)
+    661:  mul(s13, s11, s13)
+    662:  add(s12, s13, s12)
+    663:  prepcallk(s13, "exp", s0, s14)
+    664:  loadfloat(s15, -0.5)
+    665:  mul(s16, s12, s12)
+    666:  mul(s15, s16, s15)
+    667:  div(s15, s8, s15)
+    668:  call(13, s13, s14, 2)
+    669:  set(s255, s10, s11, s13)
+    670:  loadfloat(s13, 2)
+    671:  get(s14, s10, s11)
+    672:  mul(s13, s14, s13)
+    673:  add(s9, s13, s9)
+    674:  pincl(s12, s11, 0, 1)
+    675:  jmp(-, -20)
+    676:  getk(s11, "resource", s0)
+    677:  getk(s11, "ps_bloom2_step2", s11)
+    678:  prepcallk(s11, "clearconst", s11, s12)
+    679:  call(255, s11, s12, 1)
+    680:  getk(s11, "resource", s0)
+    681:  getk(s11, "ps_bloom2_step2", s11)
+    682:  prepcallk(s11, "pushconst", s11, s12)
+    683:  getk(s13, "resource", s0)
+    684:  getk(s13, "rt_bloom_step1", s13)
+    685:  getk(s13, "width", s13)
+    686:  prepcallk(s13, "tofloat", s13, s14)
+    687:  call(13, s13, s14, 1)
+    688:  call(255, s11, s12, 2)
+    689:  getk(s11, "resource", s0)
+    690:  getk(s11, "ps_bloom2_step2", s11)
+    691:  prepcallk(s11, "pushconst", s11, s12)
+    692:  getk(s13, "resource", s0)
+    693:  getk(s13, "rt_bloom_step1", s13)
+    694:  getk(s13, "height", s13)
+    695:  prepcallk(s13, "tofloat", s13, s14)
+    696:  call(13, s13, s14, 1)
+    697:  call(255, s11, s12, 2)
+    698:  getk(s11, "resource", s0)
+    699:  getk(s11, "ps_bloom2_step3", s11)
+    700:  prepcallk(s11, "clearconst", s11, s12)
+    701:  call(255, s11, s12, 1)
+    702:  getk(s11, "resource", s0)
+    703:  getk(s11, "ps_bloom2_step3", s11)
+    704:  prepcallk(s11, "pushconst", s11, s12)
+    705:  getk(s13, "resource", s0)
+    706:  getk(s13, "rt_bloom_step1", s13)
+    707:  getk(s13, "width", s13)
+    708:  prepcallk(s13, "tofloat", s13, s14)
+    709:  call(13, s13, s14, 1)
+    710:  call(255, s11, s12, 2)
+    711:  getk(s11, "resource", s0)
+    712:  getk(s11, "ps_bloom2_step3", s11)
+    713:  prepcallk(s11, "pushconst", s11, s12)
+    714:  getk(s13, "resource", s0)
+    715:  getk(s13, "rt_bloom_step1", s13)
+    716:  getk(s13, "height", s13)
+    717:  prepcallk(s13, "tofloat", s13, s14)
+    718:  call(13, s13, s14, 1)
+    719:  call(255, s11, s12, 2)
+    720:  loadint(s11, 0)
+    721:  prepcallk(s12, "len", s10, s13)
+    722:  call(12, s12, s13, 1)
+    723:  jcmp(s12, 13, s11, CMP_L)
+    724:  comparith(s12, 655369, s11, 47)
+    725:  getk(s12, "resource", s0)
+    726:  getk(s12, "ps_bloom2_step2", s12)
+    727:  prepcallk(s12, "pushconst", s12, s13)
+    728:  get(s14, s10, s11)
+    729:  call(255, s12, s13, 2)
+    730:  getk(s12, "resource", s0)
+    731:  getk(s12, "ps_bloom2_step3", s12)
+    732:  prepcallk(s12, "pushconst", s12, s13)
+    733:  get(s14, s10, s11)
+    734:  call(255, s12, s13, 2)
+    735:  pincl(s12, s11, 0, 1)
+    736:  jmp(-, -16)
+    737:  loadroot(s11)
+    738:  getk(s11, "scene", s11)
+    739:  getk(s11, "rootenv", s11)
+    740:  loadint(s12, 25600)
+    741:  closure(s12, 0)
+    742:  load(s13, "layer_ui")
+    743:  move(s14, s0)
+    744:  loadint(s15, 512)
+    745:  call(14, s12, s14, 2)
+    746:  newslot(s255, s11, s13, s14)
+    747:  load(s13, "layer_f0")
+    748:  move(s14, s0)
+    749:  loadint(s15, 10240)
+    750:  call(14, s12, s14, 2)
+    751:  newslot(s255, s11, s13, s14)
+    752:  load(s13, "layer_f0_add")
+    753:  move(s14, s0)
+    754:  loadint(s15, 10240)
+    755:  call(14, s12, s14, 2)
+    756:  newslot(s255, s11, s13, s14)
+    757:  load(s13, "layer_s0")
+    758:  move(s14, s0)
+    759:  loadint(s15, 10240)
+    760:  call(14, s12, s14, 2)
+    761:  newslot(s255, s11, s13, s14)
+    762:  load(s13, "layer_s0_add")
+    763:  move(s14, s0)
+    764:  loadint(s15, 10240)
+    765:  call(14, s12, s14, 2)
+    766:  newslot(s255, s11, s13, s14)
+    767:  load(s13, "layer_s1")
+    768:  move(s14, s0)
+    769:  loadint(s15, 10240)
+    770:  call(14, s12, s14, 2)
+    771:  newslot(s255, s11, s13, s14)
+    772:  load(s13, "layer_s2")
+    773:  move(s14, s0)
+    774:  loadint(s15, 10240)
+    775:  call(14, s12, s14, 2)
+    776:  newslot(s255, s11, s13, s14)
+    777:  load(s13, "layer_s2_add")
+    778:  move(s14, s0)
+    779:  loadint(s15, 10240)
+    780:  call(14, s12, s14, 2)
+    781:  newslot(s255, s11, s13, s14)
+    782:  load(s13, "layer_bg0")
+    783:  move(s14, s0)
+    784:  loadint(s15, 2560)
+    785:  call(14, s12, s14, 2)
+    786:  newslot(s255, s11, s13, s14)
+    787:  load(s13, "layer_bg1")
+    788:  move(s14, s0)
+    789:  loadint(s15, 2560)
+    790:  call(14, s12, s14, 2)
+    791:  newslot(s255, s11, s13, s14)
+    792:  load(s13, "layer_bg1_add")
+    793:  move(s14, s0)
+    794:  loadint(s15, 2560)
+    795:  call(14, s12, s14, 2)
+    796:  newslot(s255, s11, s13, s14)
+    797:  load(s13, "layer_fg0")
+    798:  move(s14, s0)
+    799:  loadint(s15, 2560)
+    800:  call(14, s12, s14, 2)
+    801:  newslot(s255, s11, s13, s14)
+    802:  getk(s13, "layer_s0", s11)
+    803:  prepcallk(s13, "setrendertarget", s13, s14)
+    804:  getk(s15, "resource", s0)
+    805:  getk(s15, "rt_sprite", s15)
+    806:  call(255, s13, s14, 2)
+    807:  getk(s13, "layer_s1", s11)
+    808:  prepcallk(s13, "setrendertarget", s13, s14)
+    809:  getk(s15, "resource", s0)
+    810:  getk(s15, "rt_sprite", s15)
+    811:  call(255, s13, s14, 2)
+    812:  getk(s13, "layer_s2", s11)
+    813:  prepcallk(s13, "setrendertarget", s13, s14)
+    814:  getk(s15, "resource", s0)
+    815:  getk(s15, "rt_sprite", s15)
+    816:  call(255, s13, s14, 2)
+    817:  getk(s13, "layer_s2_add", s11)
+    818:  prepcallk(s13, "setrendertarget", s13, s14)
+    819:  getk(s15, "resource", s0)
+    820:  getk(s15, "rt_sprite", s15)
+    821:  call(255, s13, s14, 2)
+    822:  getk(s13, "layer_fg0", s11)
+    823:  prepcallk(s13, "setrendertarget", s13, s14)
+    824:  getk(s15, "resource", s0)
+    825:  getk(s15, "rt_sprite", s15)
+    826:  call(255, s13, s14, 2)
+    827:  getk(s13, "layer_f0", s11)
+    828:  prepcallk(s13, "setrendertarget", s13, s14)
+    829:  getk(s15, "resource", s0)
+    830:  getk(s15, "rt_sprite", s15)
+    831:  call(255, s13, s14, 2)
+    832:  getk(s13, "layer_f0_add", s11)
+    833:  prepcallk(s13, "setrendertarget", s13, s14)
+    834:  getk(s15, "resource", s0)
+    835:  getk(s15, "rt_sprite", s15)
+    836:  call(255, s13, s14, 2)
+    837:  getk(s13, "layer_ui", s11)
+    838:  prepcallk(s13, "setrendertarget", s13, s14)
+    839:  getk(s15, "resource", s0)
+    840:  getk(s15, "rt_ui", s15)
+    841:  call(255, s13, s14, 2)
+    842:  getk(s13, "layer_f0_add", s11)
+    843:  prepcallk(s13, "setrendertarget", s13, s14)
+    844:  getk(s15, "resource", s0)
+    845:  getk(s15, "rt_sprite_add", s15)
+    846:  call(255, s13, s14, 2)
+    847:  getk(s13, "layer_s0_add", s11)
+    848:  prepcallk(s13, "setrendertarget", s13, s14)
+    849:  getk(s15, "resource", s0)
+    850:  getk(s15, "rt_sprite_add", s15)
+    851:  call(255, s13, s14, 2)
+    852:  getk(s13, "layer_s2_add", s11)
+    853:  prepcallk(s13, "setrendertarget", s13, s14)
+    854:  getk(s15, "resource", s0)
+    855:  getk(s15, "rt_sprite_add", s15)
+    856:  call(255, s13, s14, 2)
+    857:  getk(s13, "layer_bg1_add", s11)
+    858:  prepcallk(s13, "setrendertarget", s13, s14)
+    859:  getk(s15, "resource", s0)
+    860:  getk(s15, "rt_sprite_add", s15)
+    861:  call(255, s13, s14, 2)
+    862:  load(s13, "clear")
+    863:  closure(s14, 1)
+    864:  newslot(s13, s0, s13, s14)
+    865:  load(s13, "drawlayers")
+    866:  closure(s14, 2)
+    867:  newslot(s13, s0, s13, s14)
+    868:  load(s13, "render")
+    869:  loadnulls(s14, 1)
+    870:  closure(s14, 3)
+    871:  newslot(s13, s0, s13, s14)
+    872:  load(s13, "set_position")
+    873:  loadint(s14, 0)
+    874:  loadint(s15, 0)
+    875:  loadint(s16, -1)
+    876:  loadint(s17, -1)
+    877:  closure(s14, 4)
+    878:  newslot(s13, s0, s13, s14)
+    879:  load(s13, "select_liquid_type")
+    880:  closure(s14, 5)
+    881:  newslot(s13, s0, s13, s14)
+    882:  prepcallk(s13, "select_liquid_type", s0, s14)
+    883:  loadint(s15, 0)
+    884:  call(255, s13, s14, 2)
+    885:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\lib\screen.nut"
+        name: null
+        nliterals: 6
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 8
+        ndefaultparams: 1
+        ninstructions: 21
+        nfunctions: 0
+        Literals: [
+            0: "_composition_create_canvas"
+            1: "filter"
+            2: "setrendertarget"
+            3: "resource"
+            4: "rt_backscreen"
+            5: "postmessage"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_queue_size"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "new_cnvas", pos: 2, start_op: 4, end_op: 19
+            1: name: "_queue_size", pos: 1, start_op: 0, end_op: 20
+            2: name: "this", pos: 0, start_op: 0, end_op: 20
+          ]
+        Line Informations: [
+            0: line: 201, op: 0
+            1: line: 202, op: 0
+            2: line: 203, op: 4
+            3: line: 204, op: 7
+            4: line: 205, op: 11
+            5: line: 206, op: 15
+            6: line: 207, op: 19
+            7: line: 208, op: 20
+          ]
+        Default Parameters: [
+            0: 12
+          ]
+        Instructions: [
+            0:  loadroot(s2)
+            1:  prepcallk(s2, "_composition_create_canvas", s2, s3)
+            2:  move(s4, s1)
+            3:  call(2, s2, s3, 2)
+            4:  prepcallk(s3, "filter", s2, s4)
+            5:  loadint(s5, 1)
+            6:  call(255, s3, s4, 2)
+            7:  prepcallk(s3, "setrendertarget", s2, s4)
+            8:  getk(s5, "resource", s0)
+            9:  getk(s5, "rt_backscreen", s5)
+            10:  call(255, s3, s4, 2)
+            11:  prepcallk(s3, "postmessage", s2, s4)
+            12:  loadint(s5, 1)
+            13:  loadint(s6, 2)
+            14:  call(255, s3, s4, 3)
+            15:  prepcallk(s3, "postmessage", s2, s4)
+            16:  loadint(s5, 2)
+            17:  loadint(s6, 2)
+            18:  call(255, s3, s4, 3)
+            19:  return(1, 2)
+            20:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\lib\screen.nut"
+        name: "clear"
+        nliterals: 14
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 68
+        nfunctions: 0
+        Literals: [
+            0: "canvas"
+            1: "layer_screen_clear"
+            2: "clear"
+            3: "publish"
+            4: "layer_backbuffer_clear"
+            5: "layer_spritebuffer_clear"
+            6: "layer_backbuffer_fhd_clear"
+            7: "layer_ui_clear"
+            8: "layer_spriteadd_clear"
+            9: "plot"
+            10: "resource"
+            11: "dot"
+            12: "scale"
+            13: "color"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 67
+          ]
+        Line Informations: [
+            0: line: 241, op: 0
+            1: line: 243, op: 0
+            2: line: 244, op: 4
+            3: line: 246, op: 8
+            4: line: 247, op: 12
+            5: line: 249, op: 16
+            6: line: 251, op: 20
+            7: line: 253, op: 24
+            8: line: 254, op: 28
+            9: line: 256, op: 32
+            10: line: 257, op: 36
+            11: line: 259, op: 40
+            12: line: 260, op: 44
+            13: line: 261, op: 50
+            14: line: 262, op: 56
+            15: line: 263, op: 63
+            16: line: 264, op: 67
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s1, "canvas", s0)
+            1:  getk(s1, "layer_screen_clear", s1)
+            2:  prepcallk(s1, "clear", s1, s2)
+            3:  call(255, s1, s2, 1)
+            4:  getk(s1, "canvas", s0)
+            5:  getk(s1, "layer_screen_clear", s1)
+            6:  prepcallk(s1, "publish", s1, s2)
+            7:  call(255, s1, s2, 1)
+            8:  getk(s1, "canvas", s0)
+            9:  getk(s1, "layer_backbuffer_clear", s1)
+            10:  prepcallk(s1, "clear", s1, s2)
+            11:  call(255, s1, s2, 1)
+            12:  getk(s1, "canvas", s0)
+            13:  getk(s1, "layer_backbuffer_clear", s1)
+            14:  prepcallk(s1, "publish", s1, s2)
+            15:  call(255, s1, s2, 1)
+            16:  getk(s1, "canvas", s0)
+            17:  getk(s1, "layer_spritebuffer_clear", s1)
+            18:  prepcallk(s1, "clear", s1, s2)
+            19:  call(255, s1, s2, 1)
+            20:  getk(s1, "canvas", s0)
+            21:  getk(s1, "layer_spritebuffer_clear", s1)
+            22:  prepcallk(s1, "publish", s1, s2)
+            23:  call(255, s1, s2, 1)
+            24:  getk(s1, "canvas", s0)
+            25:  getk(s1, "layer_backbuffer_fhd_clear", s1)
+            26:  prepcallk(s1, "clear", s1, s2)
+            27:  call(255, s1, s2, 1)
+            28:  getk(s1, "canvas", s0)
+            29:  getk(s1, "layer_backbuffer_fhd_clear", s1)
+            30:  prepcallk(s1, "publish", s1, s2)
+            31:  call(255, s1, s2, 1)
+            32:  getk(s1, "canvas", s0)
+            33:  getk(s1, "layer_ui_clear", s1)
+            34:  prepcallk(s1, "clear", s1, s2)
+            35:  call(255, s1, s2, 1)
+            36:  getk(s1, "canvas", s0)
+            37:  getk(s1, "layer_ui_clear", s1)
+            38:  prepcallk(s1, "publish", s1, s2)
+            39:  call(255, s1, s2, 1)
+            40:  getk(s1, "canvas", s0)
+            41:  getk(s1, "layer_spriteadd_clear", s1)
+            42:  prepcallk(s1, "clear", s1, s2)
+            43:  call(255, s1, s2, 1)
+            44:  getk(s1, "canvas", s0)
+            45:  getk(s1, "layer_spriteadd_clear", s1)
+            46:  prepcallk(s1, "plot", s1, s2)
+            47:  getk(s3, "resource", s0)
+            48:  getk(s3, "dot", s3)
+            49:  call(255, s1, s2, 2)
+            50:  getk(s1, "canvas", s0)
+            51:  getk(s1, "layer_spriteadd_clear", s1)
+            52:  prepcallk(s1, "scale", s1, s2)
+            53:  loadint(s3, 640)
+            54:  loadint(s4, 360)
+            55:  call(255, s1, s2, 3)
+            56:  getk(s1, "canvas", s0)
+            57:  getk(s1, "layer_spriteadd_clear", s1)
+            58:  prepcallk(s1, "color", s1, s2)
+            59:  loadint(s3, 0)
+            60:  loadint(s4, 0)
+            61:  loadint(s5, 0)
+            62:  call(255, s1, s2, 4)
+            63:  getk(s1, "canvas", s0)
+            64:  getk(s1, "layer_spriteadd_clear", s1)
+            65:  prepcallk(s1, "publish", s1, s2)
+            66:  call(255, s1, s2, 1)
+            67:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\lib\screen.nut"
+        name: "drawlayers"
+        nliterals: 34
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 34
+        ndefaultparams: 0
+        ninstructions: 173
+        nfunctions: 0
+        Literals: [
+            0: "drawlayer_done"
+            1: "scene"
+            2: "rootenv"
+            3: "layer_bg1"
+            4: "publish"
+            5: "layer_bg0"
+            6: "enable_bloom1"
+            7: "canvas"
+            8: "layer_bloom_step1"
+            9: "clear"
+            10: "plot"
+            11: "resource"
+            12: "rt_backscreen"
+            13: "pixelshader"
+            14: "ps_bloom_step1"
+            15: "scale"
+            16: "layer_bloom_step2"
+            17: "rt_bloom_step1"
+            18: "ps_bloom_step2"
+            19: "layer_bloom_step3"
+            20: "rt_bloom_step2"
+            21: "ps_bloom_step3"
+            22: "layer_sprite_pre"
+            23: "rt_bloom_step3"
+            24: "blend"
+            25: "layer_s0"
+            26: "layer_s0_add"
+            27: "layer_s1"
+            28: "layer_s2"
+            29: "layer_s2_add"
+            30: "layer_fg0"
+            31: "layer_f0"
+            32: "layer_f0_add"
+            33: "layer_ui"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 172
+          ]
+        Line Informations: [
+            0: line: 270, op: 0
+            1: line: 271, op: 0
+            2: line: 273, op: 3
+            3: line: 274, op: 9
+            4: line: 276, op: 15
+            5: line: 278, op: 19
+            6: line: 279, op: 23
+            7: line: 280, op: 29
+            8: line: 281, op: 35
+            9: line: 282, op: 42
+            10: line: 284, op: 46
+            11: line: 285, op: 50
+            12: line: 286, op: 56
+            13: line: 287, op: 62
+            14: line: 289, op: 66
+            15: line: 290, op: 70
+            16: line: 291, op: 76
+            17: line: 292, op: 82
+            18: line: 295, op: 86
+            19: line: 297, op: 92
+            20: line: 299, op: 96
+            21: line: 300, op: 102
+            22: line: 301, op: 108
+            23: line: 303, op: 114
+            24: line: 305, op: 118
+            25: line: 306, op: 124
+            26: line: 308, op: 130
+            27: line: 309, op: 136
+            28: line: 310, op: 142
+            29: line: 312, op: 148
+            30: line: 314, op: 154
+            31: line: 315, op: 160
+            32: line: 316, op: 166
+            33: line: 317, op: 172
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "drawlayer_done")
+            1:  loadbool(s2, 1)
+            2:  set(s255, s0, s1, s2)
+            3:  loadroot(s1)
+            4:  getk(s1, "scene", s1)
+            5:  getk(s1, "rootenv", s1)
+            6:  getk(s1, "layer_bg1", s1)
+            7:  prepcallk(s1, "publish", s1, s2)
+            8:  call(255, s1, s2, 1)
+            9:  loadroot(s1)
+            10:  getk(s1, "scene", s1)
+            11:  getk(s1, "rootenv", s1)
+            12:  getk(s1, "layer_bg0", s1)
+            13:  prepcallk(s1, "publish", s1, s2)
+            14:  call(255, s1, s2, 1)
+            15:  getk(s1, "enable_bloom1", s0)
+            16:  loadbool(s2, 1)
+            17:  eq(s1, 2, s1, 0)
+            18:  jz(s1, 67)
+            19:  getk(s1, "canvas", s0)
+            20:  getk(s1, "layer_bloom_step1", s1)
+            21:  prepcallk(s1, "clear", s1, s2)
+            22:  call(255, s1, s2, 1)
+            23:  getk(s1, "canvas", s0)
+            24:  getk(s1, "layer_bloom_step1", s1)
+            25:  prepcallk(s1, "plot", s1, s2)
+            26:  getk(s3, "resource", s0)
+            27:  getk(s3, "rt_backscreen", s3)
+            28:  call(255, s1, s2, 2)
+            29:  getk(s1, "canvas", s0)
+            30:  getk(s1, "layer_bloom_step1", s1)
+            31:  prepcallk(s1, "pixelshader", s1, s2)
+            32:  getk(s3, "resource", s0)
+            33:  getk(s3, "ps_bloom_step1", s3)
+            34:  call(255, s1, s2, 2)
+            35:  getk(s1, "canvas", s0)
+            36:  getk(s1, "layer_bloom_step1", s1)
+            37:  prepcallk(s1, "scale", s1, s2)
+            38:  loadfloat(s3, 0.5)
+            39:  loadfloat(s4, 0.5)
+            40:  loadint(s5, 0)
+            41:  call(255, s1, s2, 4)
+            42:  getk(s1, "canvas", s0)
+            43:  getk(s1, "layer_bloom_step1", s1)
+            44:  prepcallk(s1, "publish", s1, s2)
+            45:  call(255, s1, s2, 1)
+            46:  getk(s1, "canvas", s0)
+            47:  getk(s1, "layer_bloom_step2", s1)
+            48:  prepcallk(s1, "clear", s1, s2)
+            49:  call(255, s1, s2, 1)
+            50:  getk(s1, "canvas", s0)
+            51:  getk(s1, "layer_bloom_step2", s1)
+            52:  prepcallk(s1, "plot", s1, s2)
+            53:  getk(s3, "resource", s0)
+            54:  getk(s3, "rt_bloom_step1", s3)
+            55:  call(255, s1, s2, 2)
+            56:  getk(s1, "canvas", s0)
+            57:  getk(s1, "layer_bloom_step2", s1)
+            58:  prepcallk(s1, "pixelshader", s1, s2)
+            59:  getk(s3, "resource", s0)
+            60:  getk(s3, "ps_bloom_step2", s3)
+            61:  call(255, s1, s2, 2)
+            62:  getk(s1, "canvas", s0)
+            63:  getk(s1, "layer_bloom_step2", s1)
+            64:  prepcallk(s1, "publish", s1, s2)
+            65:  call(255, s1, s2, 1)
+            66:  getk(s1, "canvas", s0)
+            67:  getk(s1, "layer_bloom_step3", s1)
+            68:  prepcallk(s1, "clear", s1, s2)
+            69:  call(255, s1, s2, 1)
+            70:  getk(s1, "canvas", s0)
+            71:  getk(s1, "layer_bloom_step3", s1)
+            72:  prepcallk(s1, "plot", s1, s2)
+            73:  getk(s3, "resource", s0)
+            74:  getk(s3, "rt_bloom_step2", s3)
+            75:  call(255, s1, s2, 2)
+            76:  getk(s1, "canvas", s0)
+            77:  getk(s1, "layer_bloom_step3", s1)
+            78:  prepcallk(s1, "pixelshader", s1, s2)
+            79:  getk(s3, "resource", s0)
+            80:  getk(s3, "ps_bloom_step3", s3)
+            81:  call(255, s1, s2, 2)
+            82:  getk(s1, "canvas", s0)
+            83:  getk(s1, "layer_bloom_step3", s1)
+            84:  prepcallk(s1, "publish", s1, s2)
+            85:  call(255, s1, s2, 1)
+            86:  getk(s1, "canvas", s0)
+            87:  getk(s1, "layer_sprite_pre", s1)
+            88:  prepcallk(s1, "plot", s1, s2)
+            89:  getk(s3, "resource", s0)
+            90:  getk(s3, "rt_backscreen", s3)
+            91:  call(255, s1, s2, 2)
+            92:  getk(s1, "enable_bloom1", s0)
+            93:  loadbool(s2, 1)
+            94:  eq(s1, 2, s1, 0)
+            95:  jz(s1, 18)
+            96:  getk(s1, "canvas", s0)
+            97:  getk(s1, "layer_sprite_pre", s1)
+            98:  prepcallk(s1, "plot", s1, s2)
+            99:  getk(s3, "resource", s0)
+            100:  getk(s3, "rt_bloom_step3", s3)
+            101:  call(255, s1, s2, 2)
+            102:  getk(s1, "canvas", s0)
+            103:  getk(s1, "layer_sprite_pre", s1)
+            104:  prepcallk(s1, "scale", s1, s2)
+            105:  loadint(s3, 2)
+            106:  loadint(s4, 2)
+            107:  call(255, s1, s2, 3)
+            108:  getk(s1, "canvas", s0)
+            109:  getk(s1, "layer_sprite_pre", s1)
+            110:  prepcallk(s1, "blend", s1, s2)
+            111:  loadint(s3, 2)
+            112:  loadint(s4, 1)
+            113:  call(255, s1, s2, 3)
+            114:  getk(s1, "canvas", s0)
+            115:  getk(s1, "layer_sprite_pre", s1)
+            116:  prepcallk(s1, "publish", s1, s2)
+            117:  call(255, s1, s2, 1)
+            118:  loadroot(s1)
+            119:  getk(s1, "scene", s1)
+            120:  getk(s1, "rootenv", s1)
+            121:  getk(s1, "layer_s0", s1)
+            122:  prepcallk(s1, "publish", s1, s2)
+            123:  call(255, s1, s2, 1)
+            124:  loadroot(s1)
+            125:  getk(s1, "scene", s1)
+            126:  getk(s1, "rootenv", s1)
+            127:  getk(s1, "layer_s0_add", s1)
+            128:  prepcallk(s1, "publish", s1, s2)
+            129:  call(255, s1, s2, 1)
+            130:  loadroot(s1)
+            131:  getk(s1, "scene", s1)
+            132:  getk(s1, "rootenv", s1)
+            133:  getk(s1, "layer_s1", s1)
+            134:  prepcallk(s1, "publish", s1, s2)
+            135:  call(255, s1, s2, 1)
+            136:  loadroot(s1)
+            137:  getk(s1, "scene", s1)
+            138:  getk(s1, "rootenv", s1)
+            139:  getk(s1, "layer_s2", s1)
+            140:  prepcallk(s1, "publish", s1, s2)
+            141:  call(255, s1, s2, 1)
+            142:  loadroot(s1)
+            143:  getk(s1, "scene", s1)
+            144:  getk(s1, "rootenv", s1)
+            145:  getk(s1, "layer_s2_add", s1)
+            146:  prepcallk(s1, "publish", s1, s2)
+            147:  call(255, s1, s2, 1)
+            148:  loadroot(s1)
+            149:  getk(s1, "scene", s1)
+            150:  getk(s1, "rootenv", s1)
+            151:  getk(s1, "layer_fg0", s1)
+            152:  prepcallk(s1, "publish", s1, s2)
+            153:  call(255, s1, s2, 1)
+            154:  loadroot(s1)
+            155:  getk(s1, "scene", s1)
+            156:  getk(s1, "rootenv", s1)
+            157:  getk(s1, "layer_f0", s1)
+            158:  prepcallk(s1, "publish", s1, s2)
+            159:  call(255, s1, s2, 1)
+            160:  loadroot(s1)
+            161:  getk(s1, "scene", s1)
+            162:  getk(s1, "rootenv", s1)
+            163:  getk(s1, "layer_f0_add", s1)
+            164:  prepcallk(s1, "publish", s1, s2)
+            165:  call(255, s1, s2, 1)
+            166:  loadroot(s1)
+            167:  getk(s1, "scene", s1)
+            168:  getk(s1, "rootenv", s1)
+            169:  getk(s1, "layer_ui", s1)
+            170:  prepcallk(s1, "publish", s1, s2)
+            171:  call(255, s1, s2, 1)
+            172:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\lib\screen.nut"
+        name: "render"
+        nliterals: 40
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 4
+        nlineinfos: 51
+        ndefaultparams: 1
+        ninstructions: 255
+        nfunctions: 0
+        Literals: [
+            0: "enable_render"
+            1: "drawlayer_done"
+            2: "drawlayers"
+            3: "canvas"
+            4: "layer_backbuffer2"
+            5: "clear"
+            6: "enable_bloom2"
+            7: "layer_bloom2_step1"
+            8: "plot"
+            9: "resource"
+            10: "rt_sprite_add"
+            11: "scale"
+            12: "publish"
+            13: "layer_bloom2_step2"
+            14: "rt_bloom2_step1"
+            15: "pixelshader"
+            16: "ps_bloom2_step2"
+            17: "layer_bloom2_step3"
+            18: "rt_bloom2_step2"
+            19: "ps_bloom2_step3"
+            20: "rt_sprite"
+            21: "blend"
+            22: "ps_static_alpha_10"
+            23: "rt_bloom2_step3"
+            24: "translate"
+            25: "rt_ui"
+            26: "_SCREEN_WIDTH"
+            27: "tofloat"
+            28: "rt_backscreen"
+            29: "width"
+            30: "_SCREEN_HEIGHT"
+            31: "height"
+            32: "target_canvas"
+            33: "rt_backscreen2"
+            34: "left"
+            35: "top"
+            36: "layer_screen"
+            37: "config"
+            38: "screen_effect"
+            39: "ps_retro_crt"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_target_canvas"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "scale_y", pos: 3, start_op: 176, end_op: 253
+            1: name: "scale_x", pos: 2, start_op: 168, end_op: 253
+            2: name: "_target_canvas", pos: 1, start_op: 0, end_op: 254
+            3: name: "this", pos: 0, start_op: 0, end_op: 254
+          ]
+        Line Informations: [
+            0: line: 323, op: 0
+            1: line: 324, op: 0
+            2: line: 326, op: 5
+            3: line: 328, op: 9
+            4: line: 331, op: 11
+            5: line: 333, op: 15
+            6: line: 335, op: 19
+            7: line: 336, op: 23
+            8: line: 338, op: 29
+            9: line: 339, op: 36
+            10: line: 341, op: 40
+            11: line: 342, op: 44
+            12: line: 343, op: 50
+            13: line: 344, op: 56
+            14: line: 346, op: 60
+            15: line: 347, op: 64
+            16: line: 348, op: 70
+            17: line: 349, op: 76
+            18: line: 353, op: 80
+            19: line: 355, op: 86
+            20: line: 356, op: 92
+            21: line: 357, op: 98
+            22: line: 359, op: 104
+            23: line: 361, op: 108
+            24: line: 362, op: 114
+            25: line: 363, op: 120
+            26: line: 365, op: 126
+            27: line: 366, op: 132
+            28: line: 367, op: 138
+            29: line: 368, op: 144
+            30: line: 372, op: 150
+            31: line: 374, op: 156
+            32: line: 377, op: 160
+            33: line: 378, op: 168
+            34: line: 380, op: 176
+            35: line: 382, op: 179
+            36: line: 385, op: 186
+            37: line: 387, op: 189
+            38: line: 390, op: 196
+            39: line: 392, op: 200
+            40: line: 393, op: 205
+            41: line: 394, op: 210
+            42: line: 396, op: 214
+            43: line: 398, op: 218
+            44: line: 399, op: 224
+            45: line: 400, op: 230
+            46: line: 402, op: 235
+            47: line: 404, op: 241
+            48: line: 407, op: 247
+            49: line: 410, op: 251
+            50: line: 411, op: 254
+          ]
+        Default Parameters: [
+            0: 14
+          ]
+        Instructions: [
+            0:  getk(s2, "enable_render", s0)
+            1:  loadbool(s3, 0)
+            2:  eq(s2, 3, s2, 0)
+            3:  jz(s2, 1)
+            4:  return(255, 0)
+            5:  getk(s2, "drawlayer_done", s0)
+            6:  loadbool(s3, 0)
+            7:  eq(s2, 3, s2, 0)
+            8:  jz(s2, 2)
+            9:  prepcallk(s2, "drawlayers", s0, s3)
+            10:  call(255, s2, s3, 1)
+            11:  getk(s2, "canvas", s0)
+            12:  getk(s2, "layer_backbuffer2", s2)
+            13:  prepcallk(s2, "clear", s2, s3)
+            14:  call(255, s2, s3, 1)
+            15:  getk(s2, "enable_bloom2", s0)
+            16:  loadbool(s3, 1)
+            17:  eq(s2, 3, s2, 0)
+            18:  jz(s2, 61)
+            19:  getk(s2, "canvas", s0)
+            20:  getk(s2, "layer_bloom2_step1", s2)
+            21:  prepcallk(s2, "clear", s2, s3)
+            22:  call(255, s2, s3, 1)
+            23:  getk(s2, "canvas", s0)
+            24:  getk(s2, "layer_bloom2_step1", s2)
+            25:  prepcallk(s2, "plot", s2, s3)
+            26:  getk(s4, "resource", s0)
+            27:  getk(s4, "rt_sprite_add", s4)
+            28:  call(255, s2, s3, 2)
+            29:  getk(s2, "canvas", s0)
+            30:  getk(s2, "layer_bloom2_step1", s2)
+            31:  prepcallk(s2, "scale", s2, s3)
+            32:  loadfloat(s4, 0.5)
+            33:  loadfloat(s5, 0.5)
+            34:  loadint(s6, 0)
+            35:  call(255, s2, s3, 4)
+            36:  getk(s2, "canvas", s0)
+            37:  getk(s2, "layer_bloom2_step1", s2)
+            38:  prepcallk(s2, "publish", s2, s3)
+            39:  call(255, s2, s3, 1)
+            40:  getk(s2, "canvas", s0)
+            41:  getk(s2, "layer_bloom2_step2", s2)
+            42:  prepcallk(s2, "clear", s2, s3)
+            43:  call(255, s2, s3, 1)
+            44:  getk(s2, "canvas", s0)
+            45:  getk(s2, "layer_bloom2_step2", s2)
+            46:  prepcallk(s2, "plot", s2, s3)
+            47:  getk(s4, "resource", s0)
+            48:  getk(s4, "rt_bloom2_step1", s4)
+            49:  call(255, s2, s3, 2)
+            50:  getk(s2, "canvas", s0)
+            51:  getk(s2, "layer_bloom2_step2", s2)
+            52:  prepcallk(s2, "pixelshader", s2, s3)
+            53:  getk(s4, "resource", s0)
+            54:  getk(s4, "ps_bloom2_step2", s4)
+            55:  call(255, s2, s3, 2)
+            56:  getk(s2, "canvas", s0)
+            57:  getk(s2, "layer_bloom2_step2", s2)
+            58:  prepcallk(s2, "publish", s2, s3)
+            59:  call(255, s2, s3, 1)
+            60:  getk(s2, "canvas", s0)
+            61:  getk(s2, "layer_bloom2_step3", s2)
+            62:  prepcallk(s2, "clear", s2, s3)
+            63:  call(255, s2, s3, 1)
+            64:  getk(s2, "canvas", s0)
+            65:  getk(s2, "layer_bloom2_step3", s2)
+            66:  prepcallk(s2, "plot", s2, s3)
+            67:  getk(s4, "resource", s0)
+            68:  getk(s4, "rt_bloom2_step2", s4)
+            69:  call(255, s2, s3, 2)
+            70:  getk(s2, "canvas", s0)
+            71:  getk(s2, "layer_bloom2_step3", s2)
+            72:  prepcallk(s2, "pixelshader", s2, s3)
+            73:  getk(s4, "resource", s0)
+            74:  getk(s4, "ps_bloom2_step3", s4)
+            75:  call(255, s2, s3, 2)
+            76:  getk(s2, "canvas", s0)
+            77:  getk(s2, "layer_bloom2_step3", s2)
+            78:  prepcallk(s2, "publish", s2, s3)
+            79:  call(255, s2, s3, 1)
+            80:  getk(s2, "canvas", s0)
+            81:  getk(s2, "layer_backbuffer2", s2)
+            82:  prepcallk(s2, "plot", s2, s3)
+            83:  getk(s4, "resource", s0)
+            84:  getk(s4, "rt_sprite", s4)
+            85:  call(255, s2, s3, 2)
+            86:  getk(s2, "canvas", s0)
+            87:  getk(s2, "layer_backbuffer2", s2)
+            88:  prepcallk(s2, "plot", s2, s3)
+            89:  getk(s4, "resource", s0)
+            90:  getk(s4, "rt_sprite_add", s4)
+            91:  call(255, s2, s3, 2)
+            92:  getk(s2, "canvas", s0)
+            93:  getk(s2, "layer_backbuffer2", s2)
+            94:  prepcallk(s2, "blend", s2, s3)
+            95:  loadint(s4, 2)
+            96:  loadint(s5, 1)
+            97:  call(255, s2, s3, 3)
+            98:  getk(s2, "canvas", s0)
+            99:  getk(s2, "layer_backbuffer2", s2)
+            100:  prepcallk(s2, "pixelshader", s2, s3)
+            101:  getk(s4, "resource", s0)
+            102:  getk(s4, "ps_static_alpha_10", s4)
+            103:  call(255, s2, s3, 2)
+            104:  getk(s2, "enable_bloom2", s0)
+            105:  loadbool(s3, 1)
+            106:  eq(s2, 3, s2, 0)
+            107:  jz(s2, 42)
+            108:  getk(s2, "canvas", s0)
+            109:  getk(s2, "layer_backbuffer2", s2)
+            110:  prepcallk(s2, "plot", s2, s3)
+            111:  getk(s4, "resource", s0)
+            112:  getk(s4, "rt_bloom2_step3", s4)
+            113:  call(255, s2, s3, 2)
+            114:  getk(s2, "canvas", s0)
+            115:  getk(s2, "layer_backbuffer2", s2)
+            116:  prepcallk(s2, "scale", s2, s3)
+            117:  loadint(s4, 2)
+            118:  loadint(s5, 2)
+            119:  call(255, s2, s3, 3)
+            120:  getk(s2, "canvas", s0)
+            121:  getk(s2, "layer_backbuffer2", s2)
+            122:  prepcallk(s2, "blend", s2, s3)
+            123:  loadint(s4, 2)
+            124:  loadint(s5, 1)
+            125:  call(255, s2, s3, 3)
+            126:  getk(s2, "canvas", s0)
+            127:  getk(s2, "layer_backbuffer2", s2)
+            128:  prepcallk(s2, "plot", s2, s3)
+            129:  getk(s4, "resource", s0)
+            130:  getk(s4, "rt_bloom2_step3", s4)
+            131:  call(255, s2, s3, 2)
+            132:  getk(s2, "canvas", s0)
+            133:  getk(s2, "layer_backbuffer2", s2)
+            134:  prepcallk(s2, "scale", s2, s3)
+            135:  loadint(s4, 2)
+            136:  loadint(s5, 2)
+            137:  call(255, s2, s3, 3)
+            138:  getk(s2, "canvas", s0)
+            139:  getk(s2, "layer_backbuffer2", s2)
+            140:  prepcallk(s2, "translate", s2, s3)
+            141:  loadint(s4, 1)
+            142:  loadint(s5, 1)
+            143:  call(255, s2, s3, 3)
+            144:  getk(s2, "canvas", s0)
+            145:  getk(s2, "layer_backbuffer2", s2)
+            146:  prepcallk(s2, "blend", s2, s3)
+            147:  loadint(s4, 2)
+            148:  loadfloat(s5, 0.25)
+            149:  call(255, s2, s3, 3)
+            150:  getk(s2, "canvas", s0)
+            151:  getk(s2, "layer_backbuffer2", s2)
+            152:  prepcallk(s2, "plot", s2, s3)
+            153:  getk(s4, "resource", s0)
+            154:  getk(s4, "rt_ui", s4)
+            155:  call(255, s2, s3, 2)
+            156:  getk(s2, "canvas", s0)
+            157:  getk(s2, "layer_backbuffer2", s2)
+            158:  prepcallk(s2, "publish", s2, s3)
+            159:  call(255, s2, s3, 1)
+            160:  loadroot(s2)
+            161:  getk(s2, "_SCREEN_WIDTH", s2)
+            162:  prepcallk(s2, "tofloat", s2, s3)
+            163:  call(2, s2, s3, 1)
+            164:  getk(s3, "resource", s0)
+            165:  getk(s3, "rt_backscreen", s3)
+            166:  getk(s3, "width", s3)
+            167:  div(s2, s3, s2)
+            168:  loadroot(s3)
+            169:  getk(s3, "_SCREEN_HEIGHT", s3)
+            170:  prepcallk(s3, "tofloat", s3, s4)
+            171:  call(3, s3, s4, 1)
+            172:  getk(s4, "resource", s0)
+            173:  getk(s4, "rt_backscreen", s4)
+            174:  getk(s4, "height", s4)
+            175:  div(s3, s4, s3)
+            176:  getk(s4, "width", s0)
+            177:  loadfloat(s5, 0)
+            178:  jcmp(s5, 7, s4, CMP_GE)
+            179:  getk(s4, "width", s0)
+            180:  prepcallk(s4, "tofloat", s4, s5)
+            181:  call(4, s4, s5, 1)
+            182:  getk(s5, "resource", s0)
+            183:  getk(s5, "rt_backscreen", s5)
+            184:  getk(s5, "width", s5)
+            185:  div(s2, s5, s4)
+            186:  getk(s4, "height", s0)
+            187:  loadfloat(s5, 0)
+            188:  jcmp(s5, 7, s4, CMP_GE)
+            189:  getk(s4, "height", s0)
+            190:  prepcallk(s4, "tofloat", s4, s5)
+            191:  call(4, s4, s5, 1)
+            192:  getk(s5, "resource", s0)
+            193:  getk(s5, "rt_backscreen", s5)
+            194:  getk(s5, "height", s5)
+            195:  div(s3, s5, s4)
+            196:  getk(s4, "target_canvas", s0)
+            197:  loadnulls(s5, 1)
+            198:  ne(s4, 5, s4, 0)
+            199:  jz(s4, 18)
+            200:  getk(s4, "target_canvas", s0)
+            201:  prepcallk(s4, "plot", s4, s5)
+            202:  getk(s6, "resource", s0)
+            203:  getk(s6, "rt_backscreen2", s6)
+            204:  call(255, s4, s5, 2)
+            205:  getk(s4, "target_canvas", s0)
+            206:  prepcallk(s4, "translate", s4, s5)
+            207:  getk(s6, "left", s0)
+            208:  getk(s7, "top", s0)
+            209:  call(255, s4, s5, 3)
+            210:  getk(s4, "target_canvas", s0)
+            211:  prepcallk(s4, "scale", s4, s5)
+            212:  dmove(s6, s2, s7, s3)
+            213:  call(255, s4, s5, 3)
+            214:  getk(s4, "target_canvas", s0)
+            215:  prepcallk(s4, "publish", s4, s5)
+            216:  call(255, s4, s5, 1)
+            217:  jmp(-, 33)
+            218:  getk(s4, "canvas", s0)
+            219:  getk(s4, "layer_screen", s4)
+            220:  prepcallk(s4, "plot", s4, s5)
+            221:  getk(s6, "resource", s0)
+            222:  getk(s6, "rt_backscreen2", s6)
+            223:  call(255, s4, s5, 2)
+            224:  getk(s4, "canvas", s0)
+            225:  getk(s4, "layer_screen", s4)
+            226:  prepcallk(s4, "translate", s4, s5)
+            227:  getk(s6, "left", s0)
+            228:  getk(s7, "top", s0)
+            229:  call(255, s4, s5, 3)
+            230:  getk(s4, "canvas", s0)
+            231:  getk(s4, "layer_screen", s4)
+            232:  prepcallk(s4, "scale", s4, s5)
+            233:  dmove(s6, s2, s7, s3)
+            234:  call(255, s4, s5, 3)
+            235:  loadroot(s4)
+            236:  getk(s4, "config", s4)
+            237:  getk(s4, "screen_effect", s4)
+            238:  loadint(s5, 0)
+            239:  eq(s4, 5, s4, 0)
+            240:  jz(s4, 6)
+            241:  getk(s4, "canvas", s0)
+            242:  getk(s4, "layer_screen", s4)
+            243:  prepcallk(s4, "pixelshader", s4, s5)
+            244:  getk(s6, "resource", s0)
+            245:  getk(s6, "ps_retro_crt", s6)
+            246:  call(255, s4, s5, 2)
+            247:  getk(s4, "canvas", s0)
+            248:  getk(s4, "layer_screen", s4)
+            249:  prepcallk(s4, "publish", s4, s5)
+            250:  call(255, s4, s5, 1)
+            251:  load(s4, "drawlayer_done")
+            252:  loadbool(s5, 0)
+            253:  set(s255, s0, s4, s5)
+            254:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: "data\script\lib\screen.nut"
+        name: "set_position"
+        nliterals: 4
+        nparameters: 5
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 6
+        ndefaultparams: 4
+        ninstructions: 9
+        nfunctions: 0
+        Literals: [
+            0: "left"
+            1: "top"
+            2: "width"
+            3: "height"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_left"
+            2: "_top"
+            3: "_width"
+            4: "_height"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_height", pos: 4, start_op: 0, end_op: 8
+            1: name: "_width", pos: 3, start_op: 0, end_op: 8
+            2: name: "_top", pos: 2, start_op: 0, end_op: 8
+            3: name: "_left", pos: 1, start_op: 0, end_op: 8
+            4: name: "this", pos: 0, start_op: 0, end_op: 8
+          ]
+        Line Informations: [
+            0: line: 414, op: 0
+            1: line: 415, op: 0
+            2: line: 416, op: 2
+            3: line: 417, op: 4
+            4: line: 418, op: 6
+            5: line: 419, op: 8
+          ]
+        Default Parameters: [
+            0: 14
+            1: 15
+            2: 16
+            3: 17
+          ]
+        Instructions: [
+            0:  load(s5, "left")
+            1:  set(s255, s0, s5, s1)
+            2:  load(s5, "top")
+            3:  set(s255, s0, s5, s2)
+            4:  load(s5, "width")
+            5:  set(s255, s0, s5, s3)
+            6:  load(s5, "height")
+            7:  set(s255, s0, s5, s4)
+            8:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: "data\script\lib\screen.nut"
+        name: "select_liquid_type"
+        nliterals: 5
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 45
+        ndefaultparams: 0
+        ninstructions: 201
+        nfunctions: 0
+        Literals: [
+            0: "resource"
+            1: "ps_liquid"
+            2: "clearconst"
+            3: "pushconst"
+            4: "liquid_type"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_type"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_type", pos: 1, start_op: 0, end_op: 200
+            1: name: "this", pos: 0, start_op: 0, end_op: 200
+          ]
+        Line Informations: [
+            0: line: 422, op: 0
+            1: line: 423, op: 0
+            2: line: 425, op: 4
+            3: line: 429, op: 7
+            4: line: 430, op: 12
+            5: line: 431, op: 17
+            6: line: 432, op: 22
+            7: line: 434, op: 27
+            8: line: 435, op: 32
+            9: line: 436, op: 37
+            10: line: 437, op: 42
+            11: line: 439, op: 47
+            12: line: 440, op: 52
+            13: line: 441, op: 57
+            14: line: 442, op: 62
+            15: line: 444, op: 67
+            16: line: 445, op: 69
+            17: line: 449, op: 74
+            18: line: 450, op: 79
+            19: line: 451, op: 84
+            20: line: 452, op: 89
+            21: line: 454, op: 94
+            22: line: 455, op: 99
+            23: line: 456, op: 104
+            24: line: 457, op: 109
+            25: line: 459, op: 114
+            26: line: 460, op: 119
+            27: line: 461, op: 124
+            28: line: 462, op: 129
+            29: line: 464, op: 134
+            30: line: 465, op: 136
+            31: line: 469, op: 137
+            32: line: 470, op: 142
+            33: line: 471, op: 147
+            34: line: 472, op: 152
+            35: line: 474, op: 157
+            36: line: 475, op: 162
+            37: line: 476, op: 167
+            38: line: 477, op: 172
+            39: line: 479, op: 177
+            40: line: 480, op: 182
+            41: line: 481, op: 187
+            42: line: 482, op: 192
+            43: line: 484, op: 197
+            44: line: 486, op: 200
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  getk(s2, "resource", s0)
+            1:  getk(s2, "ps_liquid", s2)
+            2:  prepcallk(s2, "clearconst", s2, s3)
+            3:  call(255, s2, s3, 1)
+            4:  loadint(s2, 1)
+            5:  eq(s2, 2, s1, 0)
+            6:  jz(s2, 64)
+            7:  getk(s2, "resource", s0)
+            8:  getk(s2, "ps_liquid", s2)
+            9:  prepcallk(s2, "pushconst", s2, s3)
+            10:  loadfloat(s4, 1)
+            11:  call(255, s2, s3, 2)
+            12:  getk(s2, "resource", s0)
+            13:  getk(s2, "ps_liquid", s2)
+            14:  prepcallk(s2, "pushconst", s2, s3)
+            15:  loadfloat(s4, 0.8)
+            16:  call(255, s2, s3, 2)
+            17:  getk(s2, "resource", s0)
+            18:  getk(s2, "ps_liquid", s2)
+            19:  prepcallk(s2, "pushconst", s2, s3)
+            20:  loadfloat(s4, 0.7)
+            21:  call(255, s2, s3, 2)
+            22:  getk(s2, "resource", s0)
+            23:  getk(s2, "ps_liquid", s2)
+            24:  prepcallk(s2, "pushconst", s2, s3)
+            25:  loadfloat(s4, 0.5)
+            26:  call(255, s2, s3, 2)
+            27:  getk(s2, "resource", s0)
+            28:  getk(s2, "ps_liquid", s2)
+            29:  prepcallk(s2, "pushconst", s2, s3)
+            30:  loadfloat(s4, 1)
+            31:  call(255, s2, s3, 2)
+            32:  getk(s2, "resource", s0)
+            33:  getk(s2, "ps_liquid", s2)
+            34:  prepcallk(s2, "pushconst", s2, s3)
+            35:  loadfloat(s4, 0.9)
+            36:  call(255, s2, s3, 2)
+            37:  getk(s2, "resource", s0)
+            38:  getk(s2, "ps_liquid", s2)
+            39:  prepcallk(s2, "pushconst", s2, s3)
+            40:  loadfloat(s4, 0.85)
+            41:  call(255, s2, s3, 2)
+            42:  getk(s2, "resource", s0)
+            43:  getk(s2, "ps_liquid", s2)
+            44:  prepcallk(s2, "pushconst", s2, s3)
+            45:  loadfloat(s4, 0.85)
+            46:  call(255, s2, s3, 2)
+            47:  getk(s2, "resource", s0)
+            48:  getk(s2, "ps_liquid", s2)
+            49:  prepcallk(s2, "pushconst", s2, s3)
+            50:  loadfloat(s4, 0.08)
+            51:  call(255, s2, s3, 2)
+            52:  getk(s2, "resource", s0)
+            53:  getk(s2, "ps_liquid", s2)
+            54:  prepcallk(s2, "pushconst", s2, s3)
+            55:  loadfloat(s4, 0.05)
+            56:  call(255, s2, s3, 2)
+            57:  getk(s2, "resource", s0)
+            58:  getk(s2, "ps_liquid", s2)
+            59:  prepcallk(s2, "pushconst", s2, s3)
+            60:  loadfloat(s4, 0.05)
+            61:  call(255, s2, s3, 2)
+            62:  getk(s2, "resource", s0)
+            63:  getk(s2, "ps_liquid", s2)
+            64:  prepcallk(s2, "pushconst", s2, s3)
+            65:  loadfloat(s4, 0.9)
+            66:  call(255, s2, s3, 2)
+            67:  load(s2, "liquid_type")
+            68:  set(s255, s0, s2, s1)
+            69:  jmp(-, 130)
+            70:  jmp(-, 3)
+            71:  loadint(s2, 2)
+            72:  eq(s2, 2, s1, 0)
+            73:  jz(s2, 63)
+            74:  getk(s2, "resource", s0)
+            75:  getk(s2, "ps_liquid", s2)
+            76:  prepcallk(s2, "pushconst", s2, s3)
+            77:  loadfloat(s4, 1)
+            78:  call(255, s2, s3, 2)
+            79:  getk(s2, "resource", s0)
+            80:  getk(s2, "ps_liquid", s2)
+            81:  prepcallk(s2, "pushconst", s2, s3)
+            82:  loadfloat(s4, 0.8)
+            83:  call(255, s2, s3, 2)
+            84:  getk(s2, "resource", s0)
+            85:  getk(s2, "ps_liquid", s2)
+            86:  prepcallk(s2, "pushconst", s2, s3)
+            87:  loadfloat(s4, 0.8)
+            88:  call(255, s2, s3, 2)
+            89:  getk(s2, "resource", s0)
+            90:  getk(s2, "ps_liquid", s2)
+            91:  prepcallk(s2, "pushconst", s2, s3)
+            92:  loadfloat(s4, 0.5)
+            93:  call(255, s2, s3, 2)
+            94:  getk(s2, "resource", s0)
+            95:  getk(s2, "ps_liquid", s2)
+            96:  prepcallk(s2, "pushconst", s2, s3)
+            97:  loadfloat(s4, 1)
+            98:  call(255, s2, s3, 2)
+            99:  getk(s2, "resource", s0)
+            100:  getk(s2, "ps_liquid", s2)
+            101:  prepcallk(s2, "pushconst", s2, s3)
+            102:  loadfloat(s4, 0.6)
+            103:  call(255, s2, s3, 2)
+            104:  getk(s2, "resource", s0)
+            105:  getk(s2, "ps_liquid", s2)
+            106:  prepcallk(s2, "pushconst", s2, s3)
+            107:  loadfloat(s4, 0.6)
+            108:  call(255, s2, s3, 2)
+            109:  getk(s2, "resource", s0)
+            110:  getk(s2, "ps_liquid", s2)
+            111:  prepcallk(s2, "pushconst", s2, s3)
+            112:  loadfloat(s4, 0.85)
+            113:  call(255, s2, s3, 2)
+            114:  getk(s2, "resource", s0)
+            115:  getk(s2, "ps_liquid", s2)
+            116:  prepcallk(s2, "pushconst", s2, s3)
+            117:  loadfloat(s4, 0.65)
+            118:  call(255, s2, s3, 2)
+            119:  getk(s2, "resource", s0)
+            120:  getk(s2, "ps_liquid", s2)
+            121:  prepcallk(s2, "pushconst", s2, s3)
+            122:  loadfloat(s4, 0.005)
+            123:  call(255, s2, s3, 2)
+            124:  getk(s2, "resource", s0)
+            125:  getk(s2, "ps_liquid", s2)
+            126:  prepcallk(s2, "pushconst", s2, s3)
+            127:  loadfloat(s4, 0.001)
+            128:  call(255, s2, s3, 2)
+            129:  getk(s2, "resource", s0)
+            130:  getk(s2, "ps_liquid", s2)
+            131:  prepcallk(s2, "pushconst", s2, s3)
+            132:  loadfloat(s4, 0.85)
+            133:  call(255, s2, s3, 2)
+            134:  load(s2, "liquid_type")
+            135:  set(s255, s0, s2, s1)
+            136:  jmp(-, 63)
+            137:  getk(s2, "resource", s0)
+            138:  getk(s2, "ps_liquid", s2)
+            139:  prepcallk(s2, "pushconst", s2, s3)
+            140:  loadfloat(s4, 0.9)
+            141:  call(255, s2, s3, 2)
+            142:  getk(s2, "resource", s0)
+            143:  getk(s2, "ps_liquid", s2)
+            144:  prepcallk(s2, "pushconst", s2, s3)
+            145:  loadfloat(s4, 0.9)
+            146:  call(255, s2, s3, 2)
+            147:  getk(s2, "resource", s0)
+            148:  getk(s2, "ps_liquid", s2)
+            149:  prepcallk(s2, "pushconst", s2, s3)
+            150:  loadfloat(s4, 1)
+            151:  call(255, s2, s3, 2)
+            152:  getk(s2, "resource", s0)
+            153:  getk(s2, "ps_liquid", s2)
+            154:  prepcallk(s2, "pushconst", s2, s3)
+            155:  loadfloat(s4, 0.4)
+            156:  call(255, s2, s3, 2)
+            157:  getk(s2, "resource", s0)
+            158:  getk(s2, "ps_liquid", s2)
+            159:  prepcallk(s2, "pushconst", s2, s3)
+            160:  loadfloat(s4, 0.95)
+            161:  call(255, s2, s3, 2)
+            162:  getk(s2, "resource", s0)
+            163:  getk(s2, "ps_liquid", s2)
+            164:  prepcallk(s2, "pushconst", s2, s3)
+            165:  loadfloat(s4, 0.95)
+            166:  call(255, s2, s3, 2)
+            167:  getk(s2, "resource", s0)
+            168:  getk(s2, "ps_liquid", s2)
+            169:  prepcallk(s2, "pushconst", s2, s3)
+            170:  loadfloat(s4, 1)
+            171:  call(255, s2, s3, 2)
+            172:  getk(s2, "resource", s0)
+            173:  getk(s2, "ps_liquid", s2)
+            174:  prepcallk(s2, "pushconst", s2, s3)
+            175:  loadfloat(s4, 0.85)
+            176:  call(255, s2, s3, 2)
+            177:  getk(s2, "resource", s0)
+            178:  getk(s2, "ps_liquid", s2)
+            179:  prepcallk(s2, "pushconst", s2, s3)
+            180:  loadfloat(s4, 0.3)
+            181:  call(255, s2, s3, 2)
+            182:  getk(s2, "resource", s0)
+            183:  getk(s2, "ps_liquid", s2)
+            184:  prepcallk(s2, "pushconst", s2, s3)
+            185:  loadfloat(s4, 0.3)
+            186:  call(255, s2, s3, 2)
+            187:  getk(s2, "resource", s0)
+            188:  getk(s2, "ps_liquid", s2)
+            189:  prepcallk(s2, "pushconst", s2, s3)
+            190:  loadfloat(s4, 0.7)
+            191:  call(255, s2, s3, 2)
+            192:  getk(s2, "resource", s0)
+            193:  getk(s2, "ps_liquid", s2)
+            194:  prepcallk(s2, "pushconst", s2, s3)
+            195:  loadfloat(s4, 0.6)
+            196:  call(255, s2, s3, 2)
+            197:  load(s2, "liquid_type")
+            198:  loadint(s3, 0)
+            199:  set(s255, s0, s2, s3)
+            200:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 5
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 18
+bgenerator: 0
+varparams: 1
+

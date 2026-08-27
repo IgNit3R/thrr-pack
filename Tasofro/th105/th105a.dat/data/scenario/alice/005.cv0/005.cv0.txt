@@ -1,0 +1,264 @@
+## =======================================================================
+#Stage:Final
+#Title:天の娘、地の神、人の心
+#Place:有頂天
+#Weather:極光
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Bgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:alice,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#敵画面外に待機
+Action:tenshi,100
+#カメラ初期位置固定
+Action:tenshi,130
+#自キャラ画面外待機
+Action:alice,5
+
+#天候クリア
+Action:tenshi,153
+
+Label:Start
+
+Sleep:85;
+Bgm:data/bgm/ta07.ogg
+
+#フェードイン　白
+Action:alice,163
+
+#カメラ下へ
+Action:tenshi,131
+
+#向き固定解除
+Action:alice,152
+
+Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/alice/effect/StageTitle006.bmp,0,256,-32
+#画面上から落下して登場
+Action:alice,6
+Action:alice,7
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Sleep:180;
+
+#sleep,60
+Face:alice,普
+と、意気込んだのは良いけど……\
+
+Face:alice,普
+緋色の雲を作っていた奴なんて何処にいるのかな\
+
+#イベント　地震
+Action:tenshi,133
+Sleep:60;
+
+Face:alice,驚
+って、地震！？\
+
+Face:alice,
+
+Hide:1
+
+#イベント　メッセージウィンドウ消去
+#イベント　カメラ上空へ
+Action:tenshi,132
+
+#イベント　地震
+Action:tenshi,133
+
+#sleep,180
+
+Face:tenshi,無
+天にして大地を制し\
+
+Hide:1
+Sleep:30
+
+Action:tenshi,133
+#イベント　地震
+地にして要を除き\
+
+Hide:1
+#sleep,60
+
+# 天子登場
+#イベント　大地震
+#イベント　カメラフォーカス元へ
+Action:tenshi,134
+#sleep,180
+
+人の緋色の心を映し出せ\
+
+#登場ポーズ終了指令
+Action:tenshi,139
+#sleep,30
+
+Face:alice,驚
+じ、地震がこんなにも……\
+
+Face:tenshi,嬉
+地震を起こせる準備が整ったからね\
+
+Face:alice,普
+貴方は一体\
+
+#Name:非想非非想天の娘　比那名居天子
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,普
+私は<ruby ひななゐ>比那名居</ruby><ruby てんし>天子</ruby>
+天界に住む歌と踊りが仕事の天の人よ\
+
+Face:alice,汗
+そんなんじゃなくて、地震とか緋色の雲とか
+なんかそういう\
+
+Face:tenshi,余
+地震は起こるよ\
+
+Face:alice,普
+やっぱり……
+って貴方……\
+
+Face:tenshi,余
+だって地震を起こしているのは私だもん\
+
+Face:alice,驚
+そんなこったろうと思ったわ
+何か不自然な予兆だったし\
+
+Face:alice,普
+じゃ、私が貴方を倒せば地震は収まるのね\
+
+Face:tenshi,余
+どうかしらね
+そこまでは私は保証できない\
+
+Face:alice,惑
+あー？\
+
+Face:tenshi,余
+私は地上の生き物の気質を緋色の雲に変え
+天気を変えたわ\
+
+Face:tenshi,普
+その緋色の雲が\
+
+
+Face:tenshi,
+Hide:1
+
+#イベント　天子地面に剣を刺して地震発生
+Action:tenshi,135
+Action:tenshi,136
+
+Hide:0
+
+Face:tenshi,余
+地震を引き起こす\
+
+Face:tenshi,普
+その地震に気付いた者が私のもとまで
+来てくれればそれで良いの\
+
+Face:tenshi,嬉
+手始めに神社に地震を起こしてみたわ
+それで巫女が来るかと思ったけど……\
+
+Face:tenshi,普
+まあ誰でも良いわね@
+暇つぶしにはなるし\
+
+Face:tenshi,惑
+この後、何処にどういう地震が起きるか
+判らないけど、そんなのどうでも良いわ\
+
+Face:tenshi,嬉
+ここは宙に浮いているんだから\
+
+Bgm:data/bgm/st05.ogg
+
+Face:alice,怒
+……ふざけた奴ね\
+
+Face:alice,怒
+何よ、その自分勝手な行動\
+
+Face:tenshi,嬉
+良いじゃない、貴方達ばかりずるいわ
+私だって、人間や妖怪達と遊びたいの\
+
+Face:alice,怒
+……どのみち、貴方はコテンパンにしないと
+いけないようね\
+
+Face:tenshi,決
+そうよ、<accent>される</accent>為に私は準備したんだから@
+さあ、有頂天の境地で全ての魔法をさらけ出せ！\
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+#Face:tenshi,
+
+#イベント　要石を動かして地震発生
+#Action:tenshi,137
+#Action:tenshi,138
+
+#戦闘開始処理
+Action:alice,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　有頂天へ
+Action:tenshi,180
+#天候解除
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:alice,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

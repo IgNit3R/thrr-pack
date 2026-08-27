@@ -1,0 +1,1734 @@
+E:\GitWorkspace\thworks\release\tf\th135\dat\th135\data\system\BattleStatus\DrawNumber.nut: 
+sourcename: ""
+name: "main"
+nliterals: 9
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 10
+ndefaultparams: 0
+ninstructions: 41
+nfunctions: 9
+Literals: [
+    0: "DrawNumber50"
+    1: "DrawNumber_Time"
+    2: "DrawNumber_TimeRed"
+    3: "DrawNumber_HitCount"
+    4: "DrawNumber16"
+    5: "DrawNumber_Damage"
+    6: "DrawNumber_Rate"
+    7: "DrawNumber_Stun"
+    8: "DrawNumber_PopRate"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 40
+    1: name: "this", pos: 0, start_op: 0, end_op: 40
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 30, op: 4
+    2: line: 60, op: 8
+    3: line: 90, op: 12
+    4: line: 117, op: 16
+    5: line: 144, op: 20
+    6: line: 174, op: 25
+    7: line: 206, op: 30
+    8: line: 238, op: 35
+    9: line: 317, op: 39
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 3)
+    1:  load(s2, "DrawNumber50")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 30)
+    5:  load(s2, "DrawNumber_Time")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 60)
+    9:  load(s2, "DrawNumber_TimeRed")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 90)
+    13:  load(s2, "DrawNumber_HitCount")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 117)
+    17:  load(s2, "DrawNumber16")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 144)
+    21:  load(s2, "DrawNumber_Damage")
+    22:  loadbool(s3, 0)
+    23:  closure(s3, 5)
+    24:  newslot(s2, s0, s2, s3)
+    25:  line(-, 174)
+    26:  load(s2, "DrawNumber_Rate")
+    27:  loadbool(s3, 0)
+    28:  closure(s3, 6)
+    29:  newslot(s2, s0, s2, s3)
+    30:  line(-, 206)
+    31:  load(s2, "DrawNumber_Stun")
+    32:  loadbool(s3, 0)
+    33:  closure(s3, 7)
+    34:  newslot(s2, s0, s2, s3)
+    35:  line(-, 238)
+    36:  load(s2, "DrawNumber_PopRate")
+    37:  closure(s3, 8)
+    38:  newslot(s2, s0, s2, s3)
+    39:  line(-, 317)
+    40:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "DrawNumber50"
+        nliterals: 5
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 78
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "BitBlt"
+            2: "resource"
+            3: "time_num"
+            4: "BLEND_ALPHA"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 8, start_op: 52, end_op: 74
+            1: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 75
+            2: name: "_alpha", pos: 6, start_op: 0, end_op: 77
+            3: name: "_digit", pos: 5, start_op: 0, end_op: 77
+            4: name: "_num", pos: 4, start_op: 0, end_op: 77
+            5: name: "_y", pos: 3, start_op: 0, end_op: 77
+            6: name: "_x", pos: 2, start_op: 0, end_op: 77
+            7: name: "_pl", pos: 1, start_op: 0, end_op: 77
+            8: name: "this", pos: 0, start_op: 0, end_op: 77
+          ]
+        Line Informations: [
+            0: line: 5, op: 1
+            1: line: 6, op: 1
+            2: line: 8, op: 2
+            3: line: 9, op: 5
+            4: line: 11, op: 10
+            5: line: 12, op: 16
+            6: line: 14, op: 25
+            7: line: 15, op: 36
+            8: line: 18, op: 38
+            9: line: 20, op: 50
+            10: line: 21, op: 52
+            11: line: 23, op: 65
+            12: line: 24, op: 68
+            13: line: 25, op: 73
+            14: line: 27, op: 76
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 5)
+            1:  line(-, 6)
+            2:  line(-, 8)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 9)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 11)
+            11:  loadint(s8, 1)
+            12:  jcmp(s8, 3, s5, CMP_GE)
+            13:  loadint(s8, 50)
+            14:  mul(s8, s8, s5)
+            15:  add(s2, s8, s2)
+            16:  line(-, 12)
+            17:  loadint(s8, 0)
+            18:  eq(s8, 8, s4, 0)
+            19:  and(s8, 3, s8)
+            20:  loadint(s9, 0)
+            21:  eq(s9, 9, s5, 0)
+            22:  move(s8, s9)
+            23:  jz(s8, 14)
+            24:  line(-, 14)
+            25:  prepcallk(s8, "BitBlt", s1, s9)
+            26:  dmove(s10, s2, s11, s3)
+            27:  loadint(s12, 50)
+            28:  loadint(s13, 61)
+            29:  getk(s14, "resource", s0)
+            30:  getk(s14, "time_num", s14)
+            31:  loadint(s15, 0)
+            32:  loadint(s16, 0)
+            33:  getk(s17, "BLEND_ALPHA", s0)
+            34:  move(s18, s6)
+            35:  call(255, s8, s9, 10)
+            36:  line(-, 15)
+            37:  return(255, 0)
+            38:  line(-, 18)
+            39:  loadint(s8, 0)
+            40:  ne(s8, 8, s4, 0)
+            41:  or(s8, 6, s8)
+            42:  not(s9, s7)
+            43:  and(s9, 3, s9)
+            44:  loadint(s10, 1)
+            45:  cmp(s10, s10, s5, CMP_GE)
+            46:  move(s9, s10)
+            47:  move(s8, s9)
+            48:  jz(s8, 27)
+            49:  line(-, 20)
+            50:  loadint(s8, 10)
+            51:  mod(s8, s8, s4)
+            52:  line(-, 21)
+            53:  prepcallk(s9, "BitBlt", s1, s10)
+            54:  dmove(s11, s2, s12, s3)
+            55:  loadint(s13, 50)
+            56:  loadint(s14, 61)
+            57:  getk(s15, "resource", s0)
+            58:  getk(s15, "time_num", s15)
+            59:  loadint(s16, 50)
+            60:  mul(s16, s16, s8)
+            61:  loadint(s17, 0)
+            62:  getk(s18, "BLEND_ALPHA", s0)
+            63:  move(s19, s6)
+            64:  call(255, s9, s10, 10)
+            65:  line(-, 23)
+            66:  loadint(s9, 10)
+            67:  div(s4, s9, s4)
+            68:  line(-, 24)
+            69:  loadint(s9, 50)
+            70:  loadint(s10, 5)
+            71:  sub(s9, s10, s9)
+            72:  sub(s2, s9, s2)
+            73:  line(-, 25)
+            74:  pincl(s9, s5, 0, 255)
+            75:  jmp(-, -37)
+            76:  line(-, 27)
+            77:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 20
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "DrawNumber_Time"
+        nliterals: 5
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 10
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 82
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "time_num1"
+            3: "BitBlt"
+            4: "BLEND_ALPHA"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 9, start_op: 54, end_op: 78
+            1: name: "img", pos: 8, start_op: 13, end_op: 79
+            2: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 79
+            3: name: "_alpha", pos: 6, start_op: 0, end_op: 81
+            4: name: "_digit", pos: 5, start_op: 0, end_op: 81
+            5: name: "_num", pos: 4, start_op: 0, end_op: 81
+            6: name: "_y", pos: 3, start_op: 0, end_op: 81
+            7: name: "_x", pos: 2, start_op: 0, end_op: 81
+            8: name: "_pl", pos: 1, start_op: 0, end_op: 81
+            9: name: "this", pos: 0, start_op: 0, end_op: 81
+          ]
+        Line Informations: [
+            0: line: 32, op: 1
+            1: line: 33, op: 1
+            2: line: 35, op: 2
+            3: line: 36, op: 5
+            4: line: 38, op: 10
+            5: line: 40, op: 13
+            6: line: 41, op: 19
+            7: line: 43, op: 28
+            8: line: 44, op: 38
+            9: line: 47, op: 40
+            10: line: 49, op: 52
+            11: line: 50, op: 54
+            12: line: 52, op: 66
+            13: line: 53, op: 69
+            14: line: 54, op: 74
+            15: line: 55, op: 77
+            16: line: 57, op: 80
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 32)
+            1:  line(-, 33)
+            2:  line(-, 35)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 36)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 38)
+            11:  getk(s8, "resource", s0)
+            12:  getk(s8, "time_num1", s8)
+            13:  line(-, 40)
+            14:  loadint(s9, 1)
+            15:  jcmp(s9, 3, s5, CMP_GE)
+            16:  loadint(s9, 53)
+            17:  mul(s9, s9, s5)
+            18:  add(s2, s9, s2)
+            19:  line(-, 41)
+            20:  loadint(s9, 0)
+            21:  eq(s9, 9, s4, 0)
+            22:  and(s9, 3, s9)
+            23:  loadint(s10, 0)
+            24:  eq(s10, 10, s5, 0)
+            25:  move(s9, s10)
+            26:  jz(s9, 13)
+            27:  line(-, 43)
+            28:  prepcallk(s9, "BitBlt", s1, s10)
+            29:  dmove(s11, s2, s12, s3)
+            30:  loadint(s13, 53)
+            31:  loadint(s14, 71)
+            32:  move(s15, s8)
+            33:  loadint(s16, 0)
+            34:  loadint(s17, 0)
+            35:  getk(s18, "BLEND_ALPHA", s0)
+            36:  move(s19, s6)
+            37:  call(255, s9, s10, 10)
+            38:  line(-, 44)
+            39:  return(255, 0)
+            40:  line(-, 47)
+            41:  loadint(s9, 0)
+            42:  ne(s9, 9, s4, 0)
+            43:  or(s9, 6, s9)
+            44:  not(s10, s7)
+            45:  and(s10, 3, s10)
+            46:  loadint(s11, 1)
+            47:  cmp(s11, s11, s5, CMP_GE)
+            48:  move(s10, s11)
+            49:  move(s9, s10)
+            50:  jz(s9, 29)
+            51:  line(-, 49)
+            52:  loadint(s9, 10)
+            53:  mod(s9, s9, s4)
+            54:  line(-, 50)
+            55:  prepcallk(s10, "BitBlt", s1, s11)
+            56:  dmove(s12, s2, s13, s3)
+            57:  loadint(s14, 53)
+            58:  loadint(s15, 71)
+            59:  move(s16, s8)
+            60:  loadint(s17, 53)
+            61:  mul(s17, s17, s9)
+            62:  loadint(s18, 0)
+            63:  getk(s19, "BLEND_ALPHA", s0)
+            64:  move(s20, s6)
+            65:  call(255, s10, s11, 10)
+            66:  line(-, 52)
+            67:  loadint(s10, 10)
+            68:  div(s4, s10, s4)
+            69:  line(-, 53)
+            70:  loadint(s10, 53)
+            71:  loadint(s11, 3)
+            72:  sub(s10, s11, s10)
+            73:  sub(s2, s10, s2)
+            74:  line(-, 54)
+            75:  loadint(s10, 16)
+            76:  sub(s3, s10, s3)
+            77:  line(-, 55)
+            78:  pincl(s10, s5, 0, 255)
+            79:  jmp(-, -39)
+            80:  line(-, 57)
+            81:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 21
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "DrawNumber_TimeRed"
+        nliterals: 5
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 10
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 82
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "time_num2"
+            3: "BitBlt"
+            4: "BLEND_ALPHA"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 9, start_op: 54, end_op: 78
+            1: name: "img", pos: 8, start_op: 13, end_op: 79
+            2: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 79
+            3: name: "_alpha", pos: 6, start_op: 0, end_op: 81
+            4: name: "_digit", pos: 5, start_op: 0, end_op: 81
+            5: name: "_num", pos: 4, start_op: 0, end_op: 81
+            6: name: "_y", pos: 3, start_op: 0, end_op: 81
+            7: name: "_x", pos: 2, start_op: 0, end_op: 81
+            8: name: "_pl", pos: 1, start_op: 0, end_op: 81
+            9: name: "this", pos: 0, start_op: 0, end_op: 81
+          ]
+        Line Informations: [
+            0: line: 62, op: 1
+            1: line: 63, op: 1
+            2: line: 65, op: 2
+            3: line: 66, op: 5
+            4: line: 68, op: 10
+            5: line: 70, op: 13
+            6: line: 71, op: 19
+            7: line: 73, op: 28
+            8: line: 74, op: 38
+            9: line: 77, op: 40
+            10: line: 79, op: 52
+            11: line: 80, op: 54
+            12: line: 82, op: 66
+            13: line: 83, op: 69
+            14: line: 84, op: 74
+            15: line: 85, op: 77
+            16: line: 87, op: 80
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 62)
+            1:  line(-, 63)
+            2:  line(-, 65)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 66)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 68)
+            11:  getk(s8, "resource", s0)
+            12:  getk(s8, "time_num2", s8)
+            13:  line(-, 70)
+            14:  loadint(s9, 1)
+            15:  jcmp(s9, 3, s5, CMP_GE)
+            16:  loadint(s9, 53)
+            17:  mul(s9, s9, s5)
+            18:  add(s2, s9, s2)
+            19:  line(-, 71)
+            20:  loadint(s9, 0)
+            21:  eq(s9, 9, s4, 0)
+            22:  and(s9, 3, s9)
+            23:  loadint(s10, 0)
+            24:  eq(s10, 10, s5, 0)
+            25:  move(s9, s10)
+            26:  jz(s9, 13)
+            27:  line(-, 73)
+            28:  prepcallk(s9, "BitBlt", s1, s10)
+            29:  dmove(s11, s2, s12, s3)
+            30:  loadint(s13, 53)
+            31:  loadint(s14, 71)
+            32:  move(s15, s8)
+            33:  loadint(s16, 0)
+            34:  loadint(s17, 0)
+            35:  getk(s18, "BLEND_ALPHA", s0)
+            36:  move(s19, s6)
+            37:  call(255, s9, s10, 10)
+            38:  line(-, 74)
+            39:  return(255, 0)
+            40:  line(-, 77)
+            41:  loadint(s9, 0)
+            42:  ne(s9, 9, s4, 0)
+            43:  or(s9, 6, s9)
+            44:  not(s10, s7)
+            45:  and(s10, 3, s10)
+            46:  loadint(s11, 1)
+            47:  cmp(s11, s11, s5, CMP_GE)
+            48:  move(s10, s11)
+            49:  move(s9, s10)
+            50:  jz(s9, 29)
+            51:  line(-, 79)
+            52:  loadint(s9, 10)
+            53:  mod(s9, s9, s4)
+            54:  line(-, 80)
+            55:  prepcallk(s10, "BitBlt", s1, s11)
+            56:  dmove(s12, s2, s13, s3)
+            57:  loadint(s14, 53)
+            58:  loadint(s15, 71)
+            59:  move(s16, s8)
+            60:  loadint(s17, 53)
+            61:  mul(s17, s17, s9)
+            62:  loadint(s18, 0)
+            63:  getk(s19, "BLEND_ALPHA", s0)
+            64:  move(s20, s6)
+            65:  call(255, s10, s11, 10)
+            66:  line(-, 82)
+            67:  loadint(s10, 10)
+            68:  div(s4, s10, s4)
+            69:  line(-, 83)
+            70:  loadint(s10, 53)
+            71:  loadint(s11, 3)
+            72:  sub(s10, s11, s10)
+            73:  sub(s2, s10, s2)
+            74:  line(-, 84)
+            75:  loadint(s10, 16)
+            76:  sub(s3, s10, s3)
+            77:  line(-, 85)
+            78:  pincl(s10, s5, 0, 255)
+            79:  jmp(-, -39)
+            80:  line(-, 87)
+            81:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 21
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "DrawNumber_HitCount"
+        nliterals: 5
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 78
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "BitBlt"
+            2: "resource"
+            3: "hits_num_b"
+            4: "BLEND_ALPHA"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 8, start_op: 52, end_op: 74
+            1: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 75
+            2: name: "_alpha", pos: 6, start_op: 0, end_op: 77
+            3: name: "_digit", pos: 5, start_op: 0, end_op: 77
+            4: name: "_num", pos: 4, start_op: 0, end_op: 77
+            5: name: "_y", pos: 3, start_op: 0, end_op: 77
+            6: name: "_x", pos: 2, start_op: 0, end_op: 77
+            7: name: "_pl", pos: 1, start_op: 0, end_op: 77
+            8: name: "this", pos: 0, start_op: 0, end_op: 77
+          ]
+        Line Informations: [
+            0: line: 92, op: 1
+            1: line: 93, op: 1
+            2: line: 95, op: 2
+            3: line: 96, op: 5
+            4: line: 98, op: 10
+            5: line: 99, op: 16
+            6: line: 101, op: 25
+            7: line: 102, op: 36
+            8: line: 105, op: 38
+            9: line: 107, op: 50
+            10: line: 108, op: 52
+            11: line: 110, op: 65
+            12: line: 111, op: 68
+            13: line: 112, op: 73
+            14: line: 114, op: 76
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 92)
+            1:  line(-, 93)
+            2:  line(-, 95)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 96)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 98)
+            11:  loadint(s8, 1)
+            12:  jcmp(s8, 3, s5, CMP_GE)
+            13:  loadint(s8, 69)
+            14:  mul(s8, s8, s5)
+            15:  add(s2, s8, s2)
+            16:  line(-, 99)
+            17:  loadint(s8, 0)
+            18:  eq(s8, 8, s4, 0)
+            19:  and(s8, 3, s8)
+            20:  loadint(s9, 0)
+            21:  eq(s9, 9, s5, 0)
+            22:  move(s8, s9)
+            23:  jz(s8, 14)
+            24:  line(-, 101)
+            25:  prepcallk(s8, "BitBlt", s1, s9)
+            26:  dmove(s10, s2, s11, s3)
+            27:  loadint(s12, 69)
+            28:  loadint(s13, 74)
+            29:  getk(s14, "resource", s0)
+            30:  getk(s14, "hits_num_b", s14)
+            31:  loadint(s15, 0)
+            32:  loadint(s16, 0)
+            33:  getk(s17, "BLEND_ALPHA", s0)
+            34:  move(s18, s6)
+            35:  call(255, s8, s9, 10)
+            36:  line(-, 102)
+            37:  return(255, 0)
+            38:  line(-, 105)
+            39:  loadint(s8, 0)
+            40:  ne(s8, 8, s4, 0)
+            41:  or(s8, 6, s8)
+            42:  not(s9, s7)
+            43:  and(s9, 3, s9)
+            44:  loadint(s10, 1)
+            45:  cmp(s10, s10, s5, CMP_GE)
+            46:  move(s9, s10)
+            47:  move(s8, s9)
+            48:  jz(s8, 27)
+            49:  line(-, 107)
+            50:  loadint(s8, 10)
+            51:  mod(s8, s8, s4)
+            52:  line(-, 108)
+            53:  prepcallk(s9, "BitBlt", s1, s10)
+            54:  dmove(s11, s2, s12, s3)
+            55:  loadint(s13, 69)
+            56:  loadint(s14, 74)
+            57:  getk(s15, "resource", s0)
+            58:  getk(s15, "hits_num_b", s15)
+            59:  loadint(s16, 69)
+            60:  mul(s16, s16, s8)
+            61:  loadint(s17, 0)
+            62:  getk(s18, "BLEND_ALPHA", s0)
+            63:  move(s19, s6)
+            64:  call(255, s9, s10, 10)
+            65:  line(-, 110)
+            66:  loadint(s9, 10)
+            67:  div(s4, s9, s4)
+            68:  line(-, 111)
+            69:  loadint(s9, 69)
+            70:  loadint(s10, 10)
+            71:  sub(s9, s10, s9)
+            72:  sub(s2, s9, s2)
+            73:  line(-, 112)
+            74:  pincl(s9, s5, 0, 255)
+            75:  jmp(-, -37)
+            76:  line(-, 114)
+            77:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 20
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "DrawNumber16"
+        nliterals: 5
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 9
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 78
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "BitBlt"
+            2: "resource"
+            3: "hits_num_s"
+            4: "BLEND_ALPHA"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 8, start_op: 52, end_op: 74
+            1: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 75
+            2: name: "_alpha", pos: 6, start_op: 0, end_op: 77
+            3: name: "_digit", pos: 5, start_op: 0, end_op: 77
+            4: name: "_num", pos: 4, start_op: 0, end_op: 77
+            5: name: "_y", pos: 3, start_op: 0, end_op: 77
+            6: name: "_x", pos: 2, start_op: 0, end_op: 77
+            7: name: "_pl", pos: 1, start_op: 0, end_op: 77
+            8: name: "this", pos: 0, start_op: 0, end_op: 77
+          ]
+        Line Informations: [
+            0: line: 119, op: 1
+            1: line: 120, op: 1
+            2: line: 122, op: 2
+            3: line: 123, op: 5
+            4: line: 125, op: 10
+            5: line: 126, op: 16
+            6: line: 128, op: 25
+            7: line: 129, op: 36
+            8: line: 132, op: 38
+            9: line: 134, op: 50
+            10: line: 135, op: 52
+            11: line: 137, op: 65
+            12: line: 138, op: 68
+            13: line: 139, op: 73
+            14: line: 141, op: 76
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 119)
+            1:  line(-, 120)
+            2:  line(-, 122)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 123)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 125)
+            11:  loadint(s8, 1)
+            12:  jcmp(s8, 3, s5, CMP_GE)
+            13:  loadint(s8, 16)
+            14:  mul(s8, s8, s5)
+            15:  add(s2, s8, s2)
+            16:  line(-, 126)
+            17:  loadint(s8, 0)
+            18:  eq(s8, 8, s4, 0)
+            19:  and(s8, 3, s8)
+            20:  loadint(s9, 0)
+            21:  eq(s9, 9, s5, 0)
+            22:  move(s8, s9)
+            23:  jz(s8, 14)
+            24:  line(-, 128)
+            25:  prepcallk(s8, "BitBlt", s1, s9)
+            26:  dmove(s10, s2, s11, s3)
+            27:  loadint(s12, 16)
+            28:  loadint(s13, 22)
+            29:  getk(s14, "resource", s0)
+            30:  getk(s14, "hits_num_s", s14)
+            31:  loadint(s15, 0)
+            32:  loadint(s16, 0)
+            33:  getk(s17, "BLEND_ALPHA", s0)
+            34:  move(s18, s6)
+            35:  call(255, s8, s9, 10)
+            36:  line(-, 129)
+            37:  return(255, 0)
+            38:  line(-, 132)
+            39:  loadint(s8, 0)
+            40:  ne(s8, 8, s4, 0)
+            41:  or(s8, 6, s8)
+            42:  not(s9, s7)
+            43:  and(s9, 3, s9)
+            44:  loadint(s10, 1)
+            45:  cmp(s10, s10, s5, CMP_GE)
+            46:  move(s9, s10)
+            47:  move(s8, s9)
+            48:  jz(s8, 27)
+            49:  line(-, 134)
+            50:  loadint(s8, 10)
+            51:  mod(s8, s8, s4)
+            52:  line(-, 135)
+            53:  prepcallk(s9, "BitBlt", s1, s10)
+            54:  dmove(s11, s2, s12, s3)
+            55:  loadint(s13, 16)
+            56:  loadint(s14, 22)
+            57:  getk(s15, "resource", s0)
+            58:  getk(s15, "hits_num_s", s15)
+            59:  loadint(s16, 16)
+            60:  mul(s16, s16, s8)
+            61:  loadint(s17, 0)
+            62:  getk(s18, "BLEND_ALPHA", s0)
+            63:  move(s19, s6)
+            64:  call(255, s9, s10, 10)
+            65:  line(-, 137)
+            66:  loadint(s9, 10)
+            67:  div(s4, s9, s4)
+            68:  line(-, 138)
+            69:  loadint(s9, 16)
+            70:  loadint(s10, 3)
+            71:  sub(s9, s10, s9)
+            72:  sub(s2, s9, s2)
+            73:  line(-, 139)
+            74:  pincl(s9, s5, 0, 255)
+            75:  jmp(-, -37)
+            76:  line(-, 141)
+            77:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 20
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "DrawNumber_Damage"
+        nliterals: 7
+        nparameters: 8
+        noutervals: 0
+        nlocalvarinfos: 12
+        nlineinfos: 17
+        ndefaultparams: 1
+        ninstructions: 90
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "hits_num_s"
+            3: "hits_damage_num"
+            4: "BLEND_ADD"
+            5: "BLEND_ALPHA"
+            6: "BitBlt"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+            7: "_white"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 11, start_op: 66, end_op: 86
+            1: name: "blend", pos: 10, start_op: 26, end_op: 87
+            2: name: "img", pos: 9, start_op: 19, end_op: 87
+            3: name: "zeroNoDraw", pos: 8, start_op: 5, end_op: 87
+            4: name: "_white", pos: 7, start_op: 0, end_op: 89
+            5: name: "_alpha", pos: 6, start_op: 0, end_op: 89
+            6: name: "_digit", pos: 5, start_op: 0, end_op: 89
+            7: name: "_num", pos: 4, start_op: 0, end_op: 89
+            8: name: "_y", pos: 3, start_op: 0, end_op: 89
+            9: name: "_x", pos: 2, start_op: 0, end_op: 89
+            10: name: "_pl", pos: 1, start_op: 0, end_op: 89
+            11: name: "this", pos: 0, start_op: 0, end_op: 89
+          ]
+        Line Informations: [
+            0: line: 146, op: 1
+            1: line: 147, op: 1
+            2: line: 149, op: 2
+            3: line: 150, op: 5
+            4: line: 152, op: 10
+            5: line: 153, op: 19
+            6: line: 155, op: 26
+            7: line: 156, op: 32
+            8: line: 158, op: 41
+            9: line: 159, op: 50
+            10: line: 162, op: 52
+            11: line: 164, op: 64
+            12: line: 165, op: 66
+            13: line: 167, op: 77
+            14: line: 168, op: 80
+            15: line: 169, op: 85
+            16: line: 171, op: 88
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 146)
+            1:  line(-, 147)
+            2:  line(-, 149)
+            3:  loadint(s8, -1)
+            4:  cmp(s8, s8, s5, CMP_LE)
+            5:  line(-, 150)
+            6:  prepcallk(s9, "abs", s0, s10)
+            7:  move(s11, s5)
+            8:  call(9, s9, s10, 2)
+            9:  move(s5, s9)
+            10:  line(-, 152)
+            11:  jz(s7, 4)
+            12:  getk(s10, "resource", s0)
+            13:  getk(s10, "hits_num_s", s10)
+            14:  move(s9, s10)
+            15:  jmp(-, 3)
+            16:  getk(s10, "resource", s0)
+            17:  getk(s10, "hits_damage_num", s10)
+            18:  move(s9, s10)
+            19:  line(-, 153)
+            20:  jz(s7, 3)
+            21:  getk(s11, "BLEND_ADD", s0)
+            22:  move(s10, s11)
+            23:  jmp(-, 2)
+            24:  getk(s11, "BLEND_ALPHA", s0)
+            25:  move(s10, s11)
+            26:  line(-, 155)
+            27:  loadint(s11, 1)
+            28:  jcmp(s11, 3, s5, CMP_GE)
+            29:  loadint(s11, 16)
+            30:  mul(s11, s11, s5)
+            31:  add(s2, s11, s2)
+            32:  line(-, 156)
+            33:  loadint(s11, 0)
+            34:  eq(s11, 11, s4, 0)
+            35:  and(s11, 3, s11)
+            36:  loadint(s12, 0)
+            37:  eq(s12, 12, s5, 0)
+            38:  move(s11, s12)
+            39:  jz(s11, 12)
+            40:  line(-, 158)
+            41:  prepcallk(s11, "BitBlt", s1, s12)
+            42:  dmove(s13, s2, s14, s3)
+            43:  loadint(s15, 16)
+            44:  loadint(s16, 22)
+            45:  move(s17, s9)
+            46:  loadint(s18, 0)
+            47:  loadint(s19, 0)
+            48:  dmove(s20, s10, s21, s6)
+            49:  call(255, s11, s12, 10)
+            50:  line(-, 159)
+            51:  return(255, 0)
+            52:  line(-, 162)
+            53:  loadint(s11, 0)
+            54:  ne(s11, 11, s4, 0)
+            55:  or(s11, 6, s11)
+            56:  not(s12, s8)
+            57:  and(s12, 3, s12)
+            58:  loadint(s13, 1)
+            59:  cmp(s13, s13, s5, CMP_GE)
+            60:  move(s12, s13)
+            61:  move(s11, s12)
+            62:  jz(s11, 25)
+            63:  line(-, 164)
+            64:  loadint(s11, 10)
+            65:  mod(s11, s11, s4)
+            66:  line(-, 165)
+            67:  prepcallk(s12, "BitBlt", s1, s13)
+            68:  dmove(s14, s2, s15, s3)
+            69:  loadint(s16, 16)
+            70:  loadint(s17, 22)
+            71:  move(s18, s9)
+            72:  loadint(s19, 16)
+            73:  mul(s19, s19, s11)
+            74:  loadint(s20, 0)
+            75:  dmove(s21, s10, s22, s6)
+            76:  call(255, s12, s13, 10)
+            77:  line(-, 167)
+            78:  loadint(s12, 10)
+            79:  div(s4, s12, s4)
+            80:  line(-, 168)
+            81:  loadint(s12, 16)
+            82:  loadint(s13, 3)
+            83:  sub(s12, s13, s12)
+            84:  sub(s2, s12, s2)
+            85:  line(-, 169)
+            86:  pincl(s12, s5, 0, 255)
+            87:  jmp(-, -35)
+            88:  line(-, 171)
+            89:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 23
+        bgenerator: 0
+        varparams: 0
+
+    6: 
+        sourcename: ""
+        name: "DrawNumber_Rate"
+        nliterals: 7
+        nparameters: 8
+        noutervals: 0
+        nlocalvarinfos: 12
+        nlineinfos: 18
+        ndefaultparams: 1
+        ninstructions: 107
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "hits_num_s"
+            3: "hits_rate_num"
+            4: "BLEND_ADD"
+            5: "BLEND_ALPHA"
+            6: "BitBlt"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+            7: "_white"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 11, start_op: 83, end_op: 103
+            1: name: "blend", pos: 10, start_op: 26, end_op: 104
+            2: name: "img", pos: 9, start_op: 19, end_op: 104
+            3: name: "zeroNoDraw", pos: 8, start_op: 5, end_op: 104
+            4: name: "_white", pos: 7, start_op: 0, end_op: 106
+            5: name: "_alpha", pos: 6, start_op: 0, end_op: 106
+            6: name: "_digit", pos: 5, start_op: 0, end_op: 106
+            7: name: "_num", pos: 4, start_op: 0, end_op: 106
+            8: name: "_y", pos: 3, start_op: 0, end_op: 106
+            9: name: "_x", pos: 2, start_op: 0, end_op: 106
+            10: name: "_pl", pos: 1, start_op: 0, end_op: 106
+            11: name: "this", pos: 0, start_op: 0, end_op: 106
+          ]
+        Line Informations: [
+            0: line: 176, op: 1
+            1: line: 177, op: 1
+            2: line: 179, op: 2
+            3: line: 180, op: 5
+            4: line: 182, op: 10
+            5: line: 183, op: 19
+            6: line: 185, op: 26
+            7: line: 187, op: 43
+            8: line: 188, op: 49
+            9: line: 190, op: 58
+            10: line: 191, op: 67
+            11: line: 194, op: 69
+            12: line: 196, op: 81
+            13: line: 197, op: 83
+            14: line: 199, op: 94
+            15: line: 200, op: 97
+            16: line: 201, op: 102
+            17: line: 203, op: 105
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 176)
+            1:  line(-, 177)
+            2:  line(-, 179)
+            3:  loadint(s8, -1)
+            4:  cmp(s8, s8, s5, CMP_LE)
+            5:  line(-, 180)
+            6:  prepcallk(s9, "abs", s0, s10)
+            7:  move(s11, s5)
+            8:  call(9, s9, s10, 2)
+            9:  move(s5, s9)
+            10:  line(-, 182)
+            11:  jz(s7, 4)
+            12:  getk(s10, "resource", s0)
+            13:  getk(s10, "hits_num_s", s10)
+            14:  move(s9, s10)
+            15:  jmp(-, 3)
+            16:  getk(s10, "resource", s0)
+            17:  getk(s10, "hits_rate_num", s10)
+            18:  move(s9, s10)
+            19:  line(-, 183)
+            20:  jz(s7, 3)
+            21:  getk(s11, "BLEND_ADD", s0)
+            22:  move(s10, s11)
+            23:  jmp(-, 2)
+            24:  getk(s11, "BLEND_ALPHA", s0)
+            25:  move(s10, s11)
+            26:  line(-, 185)
+            27:  prepcallk(s11, "BitBlt", s1, s12)
+            28:  loadint(s13, 16)
+            29:  add(s13, s13, s2)
+            30:  loadint(s14, 2)
+            31:  add(s13, s14, s13)
+            32:  move(s14, s3)
+            33:  loadint(s15, 16)
+            34:  loadint(s16, 22)
+            35:  getk(s17, "resource", s0)
+            36:  getk(s17, "hits_rate_num", s17)
+            37:  loadint(s18, 16)
+            38:  loadint(s19, 10)
+            39:  mul(s18, s19, s18)
+            40:  loadint(s19, 0)
+            41:  dmove(s20, s10, s21, s6)
+            42:  call(255, s11, s12, 10)
+            43:  line(-, 187)
+            44:  loadint(s11, 1)
+            45:  jcmp(s11, 3, s5, CMP_GE)
+            46:  loadint(s11, 16)
+            47:  mul(s11, s11, s5)
+            48:  add(s2, s11, s2)
+            49:  line(-, 188)
+            50:  loadint(s11, 0)
+            51:  eq(s11, 11, s4, 0)
+            52:  and(s11, 3, s11)
+            53:  loadint(s12, 0)
+            54:  eq(s12, 12, s5, 0)
+            55:  move(s11, s12)
+            56:  jz(s11, 12)
+            57:  line(-, 190)
+            58:  prepcallk(s11, "BitBlt", s1, s12)
+            59:  dmove(s13, s2, s14, s3)
+            60:  loadint(s15, 16)
+            61:  loadint(s16, 22)
+            62:  move(s17, s9)
+            63:  loadint(s18, 0)
+            64:  loadint(s19, 0)
+            65:  dmove(s20, s10, s21, s6)
+            66:  call(255, s11, s12, 10)
+            67:  line(-, 191)
+            68:  return(255, 0)
+            69:  line(-, 194)
+            70:  loadint(s11, 0)
+            71:  ne(s11, 11, s4, 0)
+            72:  or(s11, 6, s11)
+            73:  not(s12, s8)
+            74:  and(s12, 3, s12)
+            75:  loadint(s13, 1)
+            76:  cmp(s13, s13, s5, CMP_GE)
+            77:  move(s12, s13)
+            78:  move(s11, s12)
+            79:  jz(s11, 25)
+            80:  line(-, 196)
+            81:  loadint(s11, 10)
+            82:  mod(s11, s11, s4)
+            83:  line(-, 197)
+            84:  prepcallk(s12, "BitBlt", s1, s13)
+            85:  dmove(s14, s2, s15, s3)
+            86:  loadint(s16, 16)
+            87:  loadint(s17, 22)
+            88:  move(s18, s9)
+            89:  loadint(s19, 16)
+            90:  mul(s19, s19, s11)
+            91:  loadint(s20, 0)
+            92:  dmove(s21, s10, s22, s6)
+            93:  call(255, s12, s13, 10)
+            94:  line(-, 199)
+            95:  loadint(s12, 10)
+            96:  div(s4, s12, s4)
+            97:  line(-, 200)
+            98:  loadint(s12, 16)
+            99:  loadint(s13, 3)
+            100:  sub(s12, s13, s12)
+            101:  sub(s2, s12, s2)
+            102:  line(-, 201)
+            103:  pincl(s12, s5, 0, 255)
+            104:  jmp(-, -35)
+            105:  line(-, 203)
+            106:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 23
+        bgenerator: 0
+        varparams: 0
+
+    7: 
+        sourcename: ""
+        name: "DrawNumber_Stun"
+        nliterals: 7
+        nparameters: 8
+        noutervals: 0
+        nlocalvarinfos: 12
+        nlineinfos: 18
+        ndefaultparams: 1
+        ninstructions: 106
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "hits_num_s"
+            3: "hits_stun_num"
+            4: "BLEND_ADD"
+            5: "BLEND_ALPHA"
+            6: "BitBlt"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+            7: "_white"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "code", pos: 11, start_op: 82, end_op: 102
+            1: name: "blend", pos: 10, start_op: 26, end_op: 103
+            2: name: "img", pos: 9, start_op: 19, end_op: 103
+            3: name: "zeroNoDraw", pos: 8, start_op: 5, end_op: 103
+            4: name: "_white", pos: 7, start_op: 0, end_op: 105
+            5: name: "_alpha", pos: 6, start_op: 0, end_op: 105
+            6: name: "_digit", pos: 5, start_op: 0, end_op: 105
+            7: name: "_num", pos: 4, start_op: 0, end_op: 105
+            8: name: "_y", pos: 3, start_op: 0, end_op: 105
+            9: name: "_x", pos: 2, start_op: 0, end_op: 105
+            10: name: "_pl", pos: 1, start_op: 0, end_op: 105
+            11: name: "this", pos: 0, start_op: 0, end_op: 105
+          ]
+        Line Informations: [
+            0: line: 208, op: 1
+            1: line: 209, op: 1
+            2: line: 211, op: 2
+            3: line: 212, op: 5
+            4: line: 214, op: 10
+            5: line: 215, op: 19
+            6: line: 217, op: 26
+            7: line: 219, op: 42
+            8: line: 220, op: 48
+            9: line: 222, op: 57
+            10: line: 223, op: 66
+            11: line: 226, op: 68
+            12: line: 228, op: 80
+            13: line: 229, op: 82
+            14: line: 231, op: 93
+            15: line: 232, op: 96
+            16: line: 233, op: 101
+            17: line: 235, op: 104
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 208)
+            1:  line(-, 209)
+            2:  line(-, 211)
+            3:  loadint(s8, -1)
+            4:  cmp(s8, s8, s5, CMP_LE)
+            5:  line(-, 212)
+            6:  prepcallk(s9, "abs", s0, s10)
+            7:  move(s11, s5)
+            8:  call(9, s9, s10, 2)
+            9:  move(s5, s9)
+            10:  line(-, 214)
+            11:  jz(s7, 4)
+            12:  getk(s10, "resource", s0)
+            13:  getk(s10, "hits_num_s", s10)
+            14:  move(s9, s10)
+            15:  jmp(-, 3)
+            16:  getk(s10, "resource", s0)
+            17:  getk(s10, "hits_stun_num", s10)
+            18:  move(s9, s10)
+            19:  line(-, 215)
+            20:  jz(s7, 3)
+            21:  getk(s11, "BLEND_ADD", s0)
+            22:  move(s10, s11)
+            23:  jmp(-, 2)
+            24:  getk(s11, "BLEND_ALPHA", s0)
+            25:  move(s10, s11)
+            26:  line(-, 217)
+            27:  prepcallk(s11, "BitBlt", s1, s12)
+            28:  loadint(s13, 16)
+            29:  add(s13, s13, s2)
+            30:  loadint(s14, 2)
+            31:  add(s13, s14, s13)
+            32:  move(s14, s3)
+            33:  loadint(s15, 16)
+            34:  loadint(s16, 22)
+            35:  move(s17, s9)
+            36:  loadint(s18, 16)
+            37:  loadint(s19, 10)
+            38:  mul(s18, s19, s18)
+            39:  loadint(s19, 0)
+            40:  dmove(s20, s10, s21, s6)
+            41:  call(255, s11, s12, 10)
+            42:  line(-, 219)
+            43:  loadint(s11, 1)
+            44:  jcmp(s11, 3, s5, CMP_GE)
+            45:  loadint(s11, 16)
+            46:  mul(s11, s11, s5)
+            47:  add(s2, s11, s2)
+            48:  line(-, 220)
+            49:  loadint(s11, 0)
+            50:  eq(s11, 11, s4, 0)
+            51:  and(s11, 3, s11)
+            52:  loadint(s12, 0)
+            53:  eq(s12, 12, s5, 0)
+            54:  move(s11, s12)
+            55:  jz(s11, 12)
+            56:  line(-, 222)
+            57:  prepcallk(s11, "BitBlt", s1, s12)
+            58:  dmove(s13, s2, s14, s3)
+            59:  loadint(s15, 16)
+            60:  loadint(s16, 22)
+            61:  move(s17, s9)
+            62:  loadint(s18, 0)
+            63:  loadint(s19, 0)
+            64:  dmove(s20, s10, s21, s6)
+            65:  call(255, s11, s12, 10)
+            66:  line(-, 223)
+            67:  return(255, 0)
+            68:  line(-, 226)
+            69:  loadint(s11, 0)
+            70:  ne(s11, 11, s4, 0)
+            71:  or(s11, 6, s11)
+            72:  not(s12, s8)
+            73:  and(s12, 3, s12)
+            74:  loadint(s13, 1)
+            75:  cmp(s13, s13, s5, CMP_GE)
+            76:  move(s12, s13)
+            77:  move(s11, s12)
+            78:  jz(s11, 25)
+            79:  line(-, 228)
+            80:  loadint(s11, 10)
+            81:  mod(s11, s11, s4)
+            82:  line(-, 229)
+            83:  prepcallk(s12, "BitBlt", s1, s13)
+            84:  dmove(s14, s2, s15, s3)
+            85:  loadint(s16, 16)
+            86:  loadint(s17, 22)
+            87:  move(s18, s9)
+            88:  loadint(s19, 16)
+            89:  mul(s19, s19, s11)
+            90:  loadint(s20, 0)
+            91:  dmove(s21, s10, s22, s6)
+            92:  call(255, s12, s13, 10)
+            93:  line(-, 231)
+            94:  loadint(s12, 10)
+            95:  div(s4, s12, s4)
+            96:  line(-, 232)
+            97:  loadint(s12, 16)
+            98:  loadint(s13, 3)
+            99:  sub(s12, s13, s12)
+            100:  sub(s2, s12, s2)
+            101:  line(-, 233)
+            102:  pincl(s12, s5, 0, 255)
+            103:  jmp(-, -35)
+            104:  line(-, 235)
+            105:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 23
+        bgenerator: 0
+        varparams: 0
+
+    8: 
+        sourcename: ""
+        name: "DrawNumber_PopRate"
+        nliterals: 12
+        nparameters: 7
+        noutervals: 0
+        nlocalvarinfos: 14
+        nlineinfos: 44
+        ndefaultparams: 0
+        ninstructions: 285
+        nfunctions: 0
+        Literals: [
+            0: "abs"
+            1: "resource"
+            2: "ninki_num_plus"
+            3: "BitBlt"
+            4: "ninki_max_plus"
+            5: "BLEND_ALPHA"
+            6: "cos"
+            7: "count"
+            8: "BLEND_ADD"
+            9: "ninki_max_minus"
+            10: "ninki_num_minus"
+            11: "ninki_num_0"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_pl"
+            2: "_x"
+            3: "_y"
+            4: "_num"
+            5: "_digit"
+            6: "_alpha"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "alpha", pos: 11, start_op: 46, end_op: 68
+            1: name: "alpha", pos: 11, start_op: 97, end_op: 119
+            2: name: "code", pos: 11, start_op: 224, end_op: 245
+            3: name: "abs_num", pos: 10, start_op: 19, end_op: 282
+            4: name: "minus", pos: 9, start_op: 15, end_op: 282
+            5: name: "img", pos: 8, start_op: 13, end_op: 282
+            6: name: "zeroNoDraw", pos: 7, start_op: 5, end_op: 282
+            7: name: "_alpha", pos: 6, start_op: 0, end_op: 284
+            8: name: "_digit", pos: 5, start_op: 0, end_op: 284
+            9: name: "_num", pos: 4, start_op: 0, end_op: 284
+            10: name: "_y", pos: 3, start_op: 0, end_op: 284
+            11: name: "_x", pos: 2, start_op: 0, end_op: 284
+            12: name: "_pl", pos: 1, start_op: 0, end_op: 284
+            13: name: "this", pos: 0, start_op: 0, end_op: 284
+          ]
+        Line Informations: [
+            0: line: 240, op: 1
+            1: line: 241, op: 1
+            2: line: 243, op: 2
+            3: line: 244, op: 5
+            4: line: 246, op: 10
+            5: line: 248, op: 13
+            6: line: 250, op: 15
+            7: line: 252, op: 19
+            8: line: 254, op: 24
+            9: line: 256, op: 39
+            10: line: 257, op: 46
+            11: line: 258, op: 50
+            12: line: 259, op: 67
+            13: line: 261, op: 70
+            14: line: 263, op: 75
+            15: line: 265, op: 90
+            16: line: 266, op: 97
+            17: line: 267, op: 101
+            18: line: 268, op: 118
+            19: line: 272, op: 120
+            20: line: 274, op: 124
+            21: line: 275, op: 125
+            22: line: 276, op: 128
+            23: line: 279, op: 132
+            24: line: 281, op: 140
+            25: line: 284, op: 143
+            26: line: 285, op: 156
+            27: line: 287, op: 161
+            28: line: 288, op: 167
+            29: line: 290, op: 176
+            30: line: 291, op: 188
+            31: line: 292, op: 193
+            32: line: 293, op: 208
+            33: line: 296, op: 210
+            34: line: 298, op: 222
+            35: line: 299, op: 224
+            36: line: 301, op: 236
+            37: line: 302, op: 239
+            38: line: 303, op: 244
+            39: line: 306, op: 247
+            40: line: 308, op: 251
+            41: line: 310, op: 253
+            42: line: 312, op: 269
+            43: line: 315, op: 283
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 240)
+            1:  line(-, 241)
+            2:  line(-, 243)
+            3:  loadint(s7, -1)
+            4:  cmp(s7, s7, s5, CMP_LE)
+            5:  line(-, 244)
+            6:  prepcallk(s8, "abs", s0, s9)
+            7:  move(s10, s5)
+            8:  call(8, s8, s9, 2)
+            9:  move(s5, s8)
+            10:  line(-, 246)
+            11:  getk(s8, "resource", s0)
+            12:  getk(s8, "ninki_num_plus", s8)
+            13:  line(-, 248)
+            14:  loadbool(s9, 0)
+            15:  line(-, 250)
+            16:  prepcallk(s10, "abs", s0, s11)
+            17:  move(s12, s4)
+            18:  call(10, s10, s11, 2)
+            19:  line(-, 252)
+            20:  loadint(s11, 100)
+            21:  eq(s11, 11, s4, 0)
+            22:  jz(s11, 47)
+            23:  line(-, 254)
+            24:  prepcallk(s11, "BitBlt", s1, s12)
+            25:  loadint(s13, 77)
+            26:  sub(s13, s13, s2)
+            27:  loadint(s14, 19)
+            28:  add(s13, s14, s13)
+            29:  move(s14, s3)
+            30:  loadint(s15, 77)
+            31:  loadint(s16, 30)
+            32:  getk(s17, "resource", s0)
+            33:  getk(s17, "ninki_max_plus", s17)
+            34:  loadint(s18, 0)
+            35:  loadint(s19, 0)
+            36:  getk(s20, "BLEND_ALPHA", s0)
+            37:  move(s21, s6)
+            38:  call(255, s11, s12, 10)
+            39:  line(-, 256)
+            40:  prepcallk(s11, "cos", s0, s12)
+            41:  getk(s13, "count", s0)
+            42:  loadfloat(s14, 0.06)
+            43:  mul(s13, s14, s13)
+            44:  call(11, s11, s12, 2)
+            45:  neg(s11, s11)
+            46:  line(-, 257)
+            47:  loadfloat(s12, 0)
+            48:  jcmp(s12, 1, s11, CMP_L)
+            49:  loadfloat(s11, 0)
+            50:  line(-, 258)
+            51:  prepcallk(s12, "BitBlt", s1, s13)
+            52:  loadint(s14, 77)
+            53:  sub(s14, s14, s2)
+            54:  loadint(s15, 19)
+            55:  add(s14, s15, s14)
+            56:  move(s15, s3)
+            57:  loadint(s16, 77)
+            58:  loadint(s17, 30)
+            59:  getk(s18, "resource", s0)
+            60:  getk(s18, "ninki_max_plus", s18)
+            61:  loadint(s19, 0)
+            62:  loadint(s20, 0)
+            63:  getk(s21, "BLEND_ADD", s0)
+            64:  loadfloat(s22, 0.25)
+            65:  mul(s22, s22, s11)
+            66:  call(255, s12, s13, 10)
+            67:  line(-, 259)
+            68:  return(255, 0)
+            69:  jmp(-, 50)
+            70:  line(-, 261)
+            71:  loadint(s11, -100)
+            72:  eq(s11, 11, s4, 0)
+            73:  jz(s11, 46)
+            74:  line(-, 263)
+            75:  prepcallk(s11, "BitBlt", s1, s12)
+            76:  loadint(s13, 77)
+            77:  sub(s13, s13, s2)
+            78:  loadint(s14, 19)
+            79:  add(s13, s14, s13)
+            80:  move(s14, s3)
+            81:  loadint(s15, 77)
+            82:  loadint(s16, 30)
+            83:  getk(s17, "resource", s0)
+            84:  getk(s17, "ninki_max_minus", s17)
+            85:  loadint(s18, 0)
+            86:  loadint(s19, 0)
+            87:  getk(s20, "BLEND_ALPHA", s0)
+            88:  move(s21, s6)
+            89:  call(255, s11, s12, 10)
+            90:  line(-, 265)
+            91:  prepcallk(s11, "cos", s0, s12)
+            92:  getk(s13, "count", s0)
+            93:  loadfloat(s14, 0.06)
+            94:  mul(s13, s14, s13)
+            95:  call(11, s11, s12, 2)
+            96:  neg(s11, s11)
+            97:  line(-, 266)
+            98:  loadfloat(s12, 0)
+            99:  jcmp(s12, 1, s11, CMP_L)
+            100:  loadfloat(s11, 0)
+            101:  line(-, 267)
+            102:  prepcallk(s12, "BitBlt", s1, s13)
+            103:  loadint(s14, 77)
+            104:  sub(s14, s14, s2)
+            105:  loadint(s15, 19)
+            106:  add(s14, s15, s14)
+            107:  move(s15, s3)
+            108:  loadint(s16, 77)
+            109:  loadint(s17, 30)
+            110:  getk(s18, "resource", s0)
+            111:  getk(s18, "ninki_max_minus", s18)
+            112:  loadint(s19, 0)
+            113:  loadint(s20, 0)
+            114:  getk(s21, "BLEND_ADD", s0)
+            115:  loadfloat(s22, 0.4)
+            116:  mul(s22, s22, s11)
+            117:  call(255, s12, s13, 10)
+            118:  line(-, 268)
+            119:  return(255, 0)
+            120:  line(-, 272)
+            121:  loadint(s11, 0)
+            122:  jcmp(s11, 9, s4, CMP_L)
+            123:  line(-, 274)
+            124:  loadbool(s9, 1)
+            125:  line(-, 275)
+            126:  neg(s11, s4)
+            127:  move(s4, s11)
+            128:  line(-, 276)
+            129:  getk(s11, "resource", s0)
+            130:  getk(s11, "ninki_num_minus", s11)
+            131:  move(s8, s11)
+            132:  line(-, 279)
+            133:  prepcallk(s11, "abs", s0, s12)
+            134:  move(s13, s4)
+            135:  call(11, s11, s12, 2)
+            136:  loadint(s12, 0)
+            137:  eq(s11, 12, s11, 0)
+            138:  jz(s11, 4)
+            139:  line(-, 281)
+            140:  getk(s11, "resource", s0)
+            141:  getk(s11, "ninki_num_0", s11)
+            142:  move(s8, s11)
+            143:  line(-, 284)
+            144:  prepcallk(s11, "BitBlt", s1, s12)
+            145:  dmove(s13, s2, s14, s3)
+            146:  loadint(s15, 30)
+            147:  loadint(s16, 30)
+            148:  move(s17, s8)
+            149:  loadint(s18, 30)
+            150:  loadint(s19, 12)
+            151:  mul(s18, s19, s18)
+            152:  loadint(s19, 0)
+            153:  getk(s20, "BLEND_ALPHA", s0)
+            154:  move(s21, s6)
+            155:  call(255, s11, s12, 10)
+            156:  line(-, 285)
+            157:  loadint(s11, 30)
+            158:  loadint(s12, 3)
+            159:  sub(s11, s12, s11)
+            160:  sub(s2, s11, s2)
+            161:  line(-, 287)
+            162:  loadint(s11, 2)
+            163:  jcmp(s11, 3, s5, CMP_GE)
+            164:  loadint(s11, 30)
+            165:  mul(s11, s11, s5)
+            166:  add(s2, s11, s2)
+            167:  line(-, 288)
+            168:  loadint(s11, 0)
+            169:  eq(s11, 11, s4, 0)
+            170:  and(s11, 3, s11)
+            171:  loadint(s12, 1)
+            172:  cmp(s12, s12, s5, CMP_LE)
+            173:  move(s11, s12)
+            174:  jz(s11, 35)
+            175:  line(-, 290)
+            176:  prepcallk(s11, "BitBlt", s1, s12)
+            177:  dmove(s13, s2, s14, s3)
+            178:  loadint(s15, 30)
+            179:  loadint(s16, 30)
+            180:  move(s17, s8)
+            181:  loadint(s18, 30)
+            182:  loadint(s19, 0)
+            183:  mul(s18, s19, s18)
+            184:  loadint(s19, 0)
+            185:  getk(s20, "BLEND_ALPHA", s0)
+            186:  move(s21, s6)
+            187:  call(255, s11, s12, 10)
+            188:  line(-, 291)
+            189:  loadint(s11, 30)
+            190:  loadint(s12, 3)
+            191:  sub(s11, s12, s11)
+            192:  sub(s2, s11, s2)
+            193:  line(-, 292)
+            194:  prepcallk(s11, "BitBlt", s1, s12)
+            195:  move(s13, s2)
+            196:  loadint(s14, 3)
+            197:  sub(s14, s14, s3)
+            198:  loadint(s15, 30)
+            199:  loadint(s16, 30)
+            200:  move(s17, s8)
+            201:  loadint(s18, 30)
+            202:  loadint(s19, 13)
+            203:  mul(s18, s19, s18)
+            204:  loadint(s19, 0)
+            205:  getk(s20, "BLEND_ALPHA", s0)
+            206:  move(s21, s6)
+            207:  call(255, s11, s12, 10)
+            208:  line(-, 293)
+            209:  return(255, 0)
+            210:  line(-, 296)
+            211:  loadint(s11, 0)
+            212:  ne(s11, 11, s4, 0)
+            213:  or(s11, 6, s11)
+            214:  not(s12, s7)
+            215:  and(s12, 3, s12)
+            216:  loadint(s13, 1)
+            217:  cmp(s13, s13, s5, CMP_G)
+            218:  move(s12, s13)
+            219:  move(s11, s12)
+            220:  jz(s11, 26)
+            221:  line(-, 298)
+            222:  loadint(s11, 10)
+            223:  mod(s11, s11, s4)
+            224:  line(-, 299)
+            225:  prepcallk(s12, "BitBlt", s1, s13)
+            226:  dmove(s14, s2, s15, s3)
+            227:  loadint(s16, 30)
+            228:  loadint(s17, 30)
+            229:  move(s18, s8)
+            230:  loadint(s19, 30)
+            231:  mul(s19, s19, s11)
+            232:  loadint(s20, 0)
+            233:  getk(s21, "BLEND_ALPHA", s0)
+            234:  move(s22, s6)
+            235:  call(255, s12, s13, 10)
+            236:  line(-, 301)
+            237:  loadint(s12, 10)
+            238:  div(s4, s12, s4)
+            239:  line(-, 302)
+            240:  loadint(s12, 30)
+            241:  loadint(s13, 3)
+            242:  sub(s12, s13, s12)
+            243:  sub(s2, s12, s2)
+            244:  line(-, 303)
+            245:  pincl(s12, s5, 0, 255)
+            246:  jmp(-, -36)
+            247:  line(-, 306)
+            248:  loadint(s11, 100)
+            249:  jcmp(s11, 33, s10, CMP_L)
+            250:  line(-, 308)
+            251:  jz(s9, 16)
+            252:  line(-, 310)
+            253:  prepcallk(s11, "BitBlt", s1, s12)
+            254:  move(s13, s2)
+            255:  loadint(s14, 3)
+            256:  sub(s14, s14, s3)
+            257:  loadint(s15, 30)
+            258:  loadint(s16, 30)
+            259:  move(s17, s8)
+            260:  loadint(s18, 30)
+            261:  loadint(s19, 11)
+            262:  mul(s18, s19, s18)
+            263:  loadint(s19, 0)
+            264:  getk(s20, "BLEND_ALPHA", s0)
+            265:  move(s21, s6)
+            266:  call(255, s11, s12, 10)
+            267:  jmp(-, 15)
+            268:  line(-, 312)
+            269:  prepcallk(s11, "BitBlt", s1, s12)
+            270:  move(s13, s2)
+            271:  loadint(s14, 3)
+            272:  sub(s14, s14, s3)
+            273:  loadint(s15, 30)
+            274:  loadint(s16, 30)
+            275:  move(s17, s8)
+            276:  loadint(s18, 30)
+            277:  loadint(s19, 10)
+            278:  mul(s18, s19, s18)
+            279:  loadint(s19, 0)
+            280:  getk(s20, "BLEND_ALPHA", s0)
+            281:  move(s21, s6)
+            282:  call(255, s11, s12, 10)
+            283:  line(-, 315)
+            284:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 23
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

@@ -1,0 +1,555 @@
+E:\GitWorkspace\thworks\release\tf\th145\dat\th145\data\system\BattleStatus\mamizou\mamizou.nut: 
+sourcename: ""
+name: "main"
+nliterals: 11
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 5
+ndefaultparams: 0
+ninstructions: 38
+nfunctions: 2
+Literals: [
+    0: "MamizouStatus"
+    1: "BattleStatus"
+    2: "raccoon"
+    3: "revive"
+    4: "ex_f"
+    5: "ex_f_max"
+    6: "ex_b"
+    7: "ex_b_max"
+    8: "bg_alpha"
+    9: "Mamizou_BottomDraw"
+    10: "MamizouBottomDraw"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 37
+    1: name: "this", pos: 0, start_op: 0, end_op: 37
+  ]
+Line Informations: [
+    0: line: 4, op: 0
+    1: line: 15, op: 26
+    2: line: 18, op: 27
+    3: line: 44, op: 31
+    4: line: 93, op: 36
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 4)
+    1:  dload(s2, "MamizouStatus", s3, "BattleStatus")
+    2:  get(s3, s0, s3)
+    3:  newobj(s3, 3, 255, 2)
+    4:  load(s4, "raccoon")
+    5:  loadint(s5, -1)
+    6:  newslota(0, s3, s4, s5)
+    7:  load(s4, "revive")
+    8:  loadint(s5, 0)
+    9:  newslota(0, s3, s4, s5)
+    10:  load(s4, "ex_f")
+    11:  loadint(s5, 0)
+    12:  newslota(0, s3, s4, s5)
+    13:  load(s4, "ex_f_max")
+    14:  loadint(s5, 320)
+    15:  newslota(0, s3, s4, s5)
+    16:  load(s4, "ex_b")
+    17:  loadint(s5, 0)
+    18:  newslota(0, s3, s4, s5)
+    19:  load(s4, "ex_b_max")
+    20:  loadint(s5, 320)
+    21:  newslota(0, s3, s4, s5)
+    22:  load(s4, "bg_alpha")
+    23:  loadfloat(s5, 0)
+    24:  newslota(0, s3, s4, s5)
+    25:  newslot(s2, s0, s2, s3)
+    26:  line(-, 15)
+    27:  line(-, 18)
+    28:  load(s2, "Mamizou_BottomDraw")
+    29:  closure(s3, 0)
+    30:  newslot(s2, s0, s2, s3)
+    31:  line(-, 44)
+    32:  load(s2, "MamizouBottomDraw")
+    33:  loadnulls(s3, 1)
+    34:  closure(s3, 1)
+    35:  newslot(s2, s0, s2, s3)
+    36:  line(-, 93)
+    37:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Mamizou_BottomDraw"
+        nliterals: 6
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 8
+        ndefaultparams: 0
+        ninstructions: 38
+        nfunctions: 1
+        Literals: [
+            0: "status"
+            1: "MamizouStatus"
+            2: "player_id"
+            3: "MamizouBottomDraw"
+            4: "Blit"
+            5: "bindenv"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "dummy_layer", pos: 1, start_op: 25, end_op: 35
+            1: name: "this", pos: 0, start_op: 0, end_op: 37
+          ]
+        Line Informations: [
+            0: line: 21, op: 1
+            1: line: 24, op: 7
+            2: line: 26, op: 14
+            3: line: 28, op: 17
+            4: line: 30, op: 24
+            5: line: 32, op: 25
+            6: line: 38, op: 32
+            7: line: 41, op: 36
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 21)
+            1:  getk(s1, "status", s0)
+            2:  getk(s2, "MamizouStatus", s0)
+            3:  instanceof(s1, s2, s1)
+            4:  not(s1, s1)
+            5:  jz(s1, 1)
+            6:  return(255, 0)
+            7:  line(-, 24)
+            8:  getk(s1, "status", s0)
+            9:  getk(s1, "player_id", s1)
+            10:  loadint(s2, 0)
+            11:  eq(s1, 2, s1, 0)
+            12:  jz(s1, 4)
+            13:  line(-, 26)
+            14:  prepcallk(s1, "MamizouBottomDraw", s0, s2)
+            15:  call(255, s1, s2, 1)
+            16:  jmp(-, 19)
+            17:  line(-, 28)
+            18:  getk(s1, "status", s0)
+            19:  getk(s1, "player_id", s1)
+            20:  loadint(s2, 1)
+            21:  eq(s1, 2, s1, 0)
+            22:  jz(s1, 13)
+            23:  line(-, 30)
+            24:  newobj(s1, 0, 0, 0)
+            25:  line(-, 32)
+            26:  load(s2, "Blit")
+            27:  closure(s3, 0)
+            28:  prepcallk(s3, "bindenv", s3, s4)
+            29:  move(s5, s0)
+            30:  call(3, s3, s4, 2)
+            31:  newslot(s255, s1, s2, s3)
+            32:  line(-, 38)
+            33:  prepcallk(s2, "MamizouBottomDraw", s0, s3)
+            34:  move(s4, s1)
+            35:  call(255, s2, s3, 2)
+            36:  line(-, 41)
+            37:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 4
+                nparameters: 10
+                noutervals: 0
+                nlocalvarinfos: 10
+                nlineinfos: 3
+                ndefaultparams: 0
+                ninstructions: 22
+                nfunctions: 0
+                Literals: [
+                    0: "bottom"
+                    1: "layer0"
+                    2: "Blit"
+                    3: "BlitScale"
+                  ]
+                Parameters: [
+                    0: "this"
+                    1: "_x"
+                    2: "_y"
+                    3: "_w"
+                    4: "_h"
+                    5: "_img"
+                    6: "_src_x"
+                    7: "_src_y"
+                    8: "_blend"
+                    9: "_alpha"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "_alpha", pos: 9, start_op: 0, end_op: 21
+                    1: name: "_blend", pos: 8, start_op: 0, end_op: 21
+                    2: name: "_src_y", pos: 7, start_op: 0, end_op: 21
+                    3: name: "_src_x", pos: 6, start_op: 0, end_op: 21
+                    4: name: "_img", pos: 5, start_op: 0, end_op: 21
+                    5: name: "_h", pos: 4, start_op: 0, end_op: 21
+                    6: name: "_w", pos: 3, start_op: 0, end_op: 21
+                    7: name: "_y", pos: 2, start_op: 0, end_op: 21
+                    8: name: "_x", pos: 1, start_op: 0, end_op: 21
+                    9: name: "this", pos: 0, start_op: 0, end_op: 21
+                  ]
+                Line Informations: [
+                    0: line: 34, op: 1
+                    1: line: 35, op: 11
+                    2: line: 36, op: 20
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 34)
+                    1:  getk(s10, "bottom", s0)
+                    2:  getk(s10, "layer0", s10)
+                    3:  prepcallk(s10, "Blit", s10, s11)
+                    4:  loadint(s12, 1280)
+                    5:  sub(s12, s1, s12)
+                    6:  dmove(s13, s2, s14, s3)
+                    7:  dmove(s15, s4, s16, s5)
+                    8:  dmove(s17, s6, s18, s7)
+                    9:  dmove(s19, s8, s20, s9)
+                    10:  call(255, s10, s11, 10)
+                    11:  line(-, 35)
+                    12:  getk(s10, "bottom", s0)
+                    13:  getk(s10, "layer0", s10)
+                    14:  prepcallk(s10, "BlitScale", s10, s11)
+                    15:  loadint(s12, -1)
+                    16:  loadint(s13, 1)
+                    17:  loadint(s14, 0)
+                    18:  loadint(s15, 0)
+                    19:  call(255, s10, s11, 5)
+                    20:  line(-, 36)
+                    21:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 21
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "MamizouBottomDraw"
+        nliterals: 21
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 5
+        nlineinfos: 23
+        ndefaultparams: 1
+        ninstructions: 226
+        nfunctions: 0
+        Literals: [
+            0: "bottom"
+            1: "layer0"
+            2: "status"
+            3: "raccoon"
+            4: "bg_alpha"
+            5: "spell_gauge_size"
+            6: "Blit"
+            7: "images"
+            8: "resource"
+            9: "mamizou_leaf_bg"
+            10: "BLEND_ADD"
+            11: "mamizou_leaf_black"
+            12: "BLEND_ALPHA"
+            13: "mamizou_leaf1"
+            14: "mamizou_leaf2"
+            15: "mamizou_leaf3"
+            16: "mamizou_leaf4"
+            17: "revive"
+            18: "mamizou_leaf_red"
+            19: "mamizou_charge"
+            20: "player_id"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_dst_layer"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "y", pos: 4, start_op: 59, end_op: 223
+            1: name: "x", pos: 3, start_op: 58, end_op: 223
+            2: name: "dst_layer", pos: 2, start_op: 7, end_op: 223
+            3: name: "_dst_layer", pos: 1, start_op: 0, end_op: 225
+            4: name: "this", pos: 0, start_op: 0, end_op: 225
+          ]
+        Line Informations: [
+            0: line: 46, op: 1
+            1: line: 48, op: 7
+            2: line: 50, op: 13
+            3: line: 51, op: 17
+            4: line: 53, op: 28
+            5: line: 54, op: 32
+            6: line: 56, op: 41
+            7: line: 59, op: 51
+            8: line: 60, op: 59
+            9: line: 62, op: 63
+            10: line: 63, op: 83
+            11: line: 65, op: 97
+            12: line: 67, op: 103
+            13: line: 70, op: 116
+            14: line: 72, op: 122
+            15: line: 75, op: 135
+            16: line: 77, op: 141
+            17: line: 80, op: 154
+            18: line: 82, op: 160
+            19: line: 85, op: 173
+            20: line: 87, op: 179
+            21: line: 88, op: 201
+            22: line: 91, op: 224
+          ]
+        Default Parameters: [
+            0: 3
+          ]
+        Instructions: [
+            0:  line(-, 46)
+            1:  jz(s1, 2)
+            2:  move(s2, s1)
+            3:  jmp(-, 3)
+            4:  getk(s3, "bottom", s0)
+            5:  getk(s3, "layer0", s3)
+            6:  move(s2, s3)
+            7:  line(-, 48)
+            8:  getk(s3, "status", s0)
+            9:  getk(s3, "raccoon", s3)
+            10:  loadint(s4, 4)
+            11:  jcmp(s4, 15, s3, CMP_L)
+            12:  line(-, 50)
+            13:  getk(s3, "status", s0)
+            14:  load(s4, "bg_alpha")
+            15:  loadfloat(s5, 0.02)
+            16:  comparith(s3, 196613, s4, 43)
+            17:  line(-, 51)
+            18:  getk(s3, "status", s0)
+            19:  getk(s3, "bg_alpha", s3)
+            20:  loadfloat(s4, 1)
+            21:  jcmp(s4, 4, s3, CMP_G)
+            22:  getk(s3, "status", s0)
+            23:  load(s4, "bg_alpha")
+            24:  loadfloat(s5, 1)
+            25:  set(s255, s3, s4, s5)
+            26:  jmp(-, 14)
+            27:  line(-, 53)
+            28:  getk(s3, "status", s0)
+            29:  load(s4, "bg_alpha")
+            30:  loadfloat(s5, 0.02)
+            31:  comparith(s3, 196613, s4, 45)
+            32:  line(-, 54)
+            33:  getk(s3, "status", s0)
+            34:  getk(s3, "bg_alpha", s3)
+            35:  loadfloat(s4, 0)
+            36:  jcmp(s4, 4, s3, CMP_L)
+            37:  getk(s3, "status", s0)
+            38:  load(s4, "bg_alpha")
+            39:  loadfloat(s5, 0)
+            40:  set(s255, s3, s4, s5)
+            41:  line(-, 56)
+            42:  getk(s3, "status", s0)
+            43:  load(s4, "bg_alpha")
+            44:  loadfloat(s5, 1)
+            45:  getk(s6, "status", s0)
+            46:  getk(s6, "raccoon", s6)
+            47:  loadfloat(s7, 4)
+            48:  div(s6, s7, s6)
+            49:  sub(s5, s6, s5)
+            50:  set(s255, s3, s4, s5)
+            51:  line(-, 59)
+            52:  loadint(s3, 305)
+            53:  loadint(s4, 300)
+            54:  getk(s5, "status", s0)
+            55:  getk(s5, "spell_gauge_size", s5)
+            56:  sub(s4, s5, s4)
+            57:  sub(s3, s4, s3)
+            58:  loadint(s4, 640)
+            59:  line(-, 60)
+            60:  loadint(s5, 195)
+            61:  jcmp(s5, 1, s3, CMP_L)
+            62:  loadint(s3, 195)
+            63:  line(-, 62)
+            64:  prepcallk(s5, "Blit", s2, s6)
+            65:  loadint(s7, 2)
+            66:  sub(s7, s7, s3)
+            67:  loadint(s8, 2)
+            68:  sub(s8, s8, s4)
+            69:  loadint(s9, 104)
+            70:  loadint(s10, 47)
+            71:  getk(s11, "status", s0)
+            72:  getk(s11, "images", s11)
+            73:  getk(s11, "resource", s11)
+            74:  getk(s11, "mamizou_leaf_bg", s11)
+            75:  loadint(s12, 0)
+            76:  loadint(s13, 0)
+            77:  getk(s14, "BLEND_ADD", s0)
+            78:  getk(s15, "status", s0)
+            79:  getk(s15, "bg_alpha", s15)
+            80:  loadfloat(s16, 1)
+            81:  mul(s15, s16, s15)
+            82:  call(255, s5, s6, 10)
+            83:  line(-, 63)
+            84:  prepcallk(s5, "Blit", s2, s6)
+            85:  dmove(s7, s3, s8, s4)
+            86:  loadint(s9, 100)
+            87:  loadint(s10, 43)
+            88:  getk(s11, "status", s0)
+            89:  getk(s11, "images", s11)
+            90:  getk(s11, "resource", s11)
+            91:  getk(s11, "mamizou_leaf_black", s11)
+            92:  loadint(s12, 0)
+            93:  loadint(s13, 0)
+            94:  getk(s14, "BLEND_ALPHA", s0)
+            95:  loadfloat(s15, 1)
+            96:  call(255, s5, s6, 10)
+            97:  line(-, 65)
+            98:  getk(s5, "status", s0)
+            99:  getk(s5, "raccoon", s5)
+            100:  loadint(s6, 1)
+            101:  jcmp(s6, 14, s5, CMP_GE)
+            102:  line(-, 67)
+            103:  prepcallk(s5, "Blit", s2, s6)
+            104:  dmove(s7, s3, s8, s4)
+            105:  loadint(s9, 100)
+            106:  loadint(s10, 43)
+            107:  getk(s11, "status", s0)
+            108:  getk(s11, "images", s11)
+            109:  getk(s11, "resource", s11)
+            110:  getk(s11, "mamizou_leaf1", s11)
+            111:  loadint(s12, 0)
+            112:  loadint(s13, 0)
+            113:  getk(s14, "BLEND_ALPHA", s0)
+            114:  loadfloat(s15, 1)
+            115:  call(255, s5, s6, 10)
+            116:  line(-, 70)
+            117:  getk(s5, "status", s0)
+            118:  getk(s5, "raccoon", s5)
+            119:  loadint(s6, 2)
+            120:  jcmp(s6, 14, s5, CMP_GE)
+            121:  line(-, 72)
+            122:  prepcallk(s5, "Blit", s2, s6)
+            123:  dmove(s7, s3, s8, s4)
+            124:  loadint(s9, 100)
+            125:  loadint(s10, 43)
+            126:  getk(s11, "status", s0)
+            127:  getk(s11, "images", s11)
+            128:  getk(s11, "resource", s11)
+            129:  getk(s11, "mamizou_leaf2", s11)
+            130:  loadint(s12, 0)
+            131:  loadint(s13, 0)
+            132:  getk(s14, "BLEND_ALPHA", s0)
+            133:  loadfloat(s15, 1)
+            134:  call(255, s5, s6, 10)
+            135:  line(-, 75)
+            136:  getk(s5, "status", s0)
+            137:  getk(s5, "raccoon", s5)
+            138:  loadint(s6, 3)
+            139:  jcmp(s6, 14, s5, CMP_GE)
+            140:  line(-, 77)
+            141:  prepcallk(s5, "Blit", s2, s6)
+            142:  dmove(s7, s3, s8, s4)
+            143:  loadint(s9, 100)
+            144:  loadint(s10, 43)
+            145:  getk(s11, "status", s0)
+            146:  getk(s11, "images", s11)
+            147:  getk(s11, "resource", s11)
+            148:  getk(s11, "mamizou_leaf3", s11)
+            149:  loadint(s12, 0)
+            150:  loadint(s13, 0)
+            151:  getk(s14, "BLEND_ALPHA", s0)
+            152:  loadfloat(s15, 1)
+            153:  call(255, s5, s6, 10)
+            154:  line(-, 80)
+            155:  getk(s5, "status", s0)
+            156:  getk(s5, "raccoon", s5)
+            157:  loadint(s6, 4)
+            158:  jcmp(s6, 14, s5, CMP_GE)
+            159:  line(-, 82)
+            160:  prepcallk(s5, "Blit", s2, s6)
+            161:  dmove(s7, s3, s8, s4)
+            162:  loadint(s9, 100)
+            163:  loadint(s10, 43)
+            164:  getk(s11, "status", s0)
+            165:  getk(s11, "images", s11)
+            166:  getk(s11, "resource", s11)
+            167:  getk(s11, "mamizou_leaf4", s11)
+            168:  loadint(s12, 0)
+            169:  loadint(s13, 0)
+            170:  getk(s14, "BLEND_ALPHA", s0)
+            171:  loadfloat(s15, 1)
+            172:  call(255, s5, s6, 10)
+            173:  line(-, 85)
+            174:  getk(s5, "status", s0)
+            175:  getk(s5, "raccoon", s5)
+            176:  loadint(s6, 0)
+            177:  jcmp(s6, 46, s5, CMP_LE)
+            178:  line(-, 87)
+            179:  prepcallk(s5, "Blit", s2, s6)
+            180:  loadint(s7, 100)
+            181:  getk(s8, "status", s0)
+            182:  getk(s8, "revive", s8)
+            183:  sub(s7, s8, s7)
+            184:  add(s7, s7, s3)
+            185:  move(s8, s4)
+            186:  getk(s9, "status", s0)
+            187:  getk(s9, "revive", s9)
+            188:  loadint(s10, 43)
+            189:  getk(s11, "status", s0)
+            190:  getk(s11, "images", s11)
+            191:  getk(s11, "resource", s11)
+            192:  getk(s11, "mamizou_leaf_red", s11)
+            193:  loadint(s12, 100)
+            194:  getk(s13, "status", s0)
+            195:  getk(s13, "revive", s13)
+            196:  sub(s12, s13, s12)
+            197:  loadint(s13, 0)
+            198:  getk(s14, "BLEND_ALPHA", s0)
+            199:  loadfloat(s15, 1)
+            200:  call(255, s5, s6, 10)
+            201:  line(-, 88)
+            202:  prepcallk(s5, "Blit", s2, s6)
+            203:  move(s7, s3)
+            204:  loadint(s8, 15)
+            205:  add(s8, s8, s4)
+            206:  loadint(s9, 96)
+            207:  loadint(s10, 20)
+            208:  getk(s11, "status", s0)
+            209:  getk(s11, "images", s11)
+            210:  getk(s11, "resource", s11)
+            211:  getk(s11, "mamizou_charge", s11)
+            212:  loadint(s12, 0)
+            213:  getk(s13, "status", s0)
+            214:  getk(s13, "player_id", s13)
+            215:  loadint(s14, 0)
+            216:  eq(s13, 14, s13, 0)
+            217:  jz(s13, 2)
+            218:  loadint(s13, 0)
+            219:  jmp(-, 1)
+            220:  loadint(s13, 20)
+            221:  getk(s14, "BLEND_ALPHA", s0)
+            222:  loadfloat(s15, 1)
+            223:  call(255, s5, s6, 10)
+            224:  line(-, 91)
+            225:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 17
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

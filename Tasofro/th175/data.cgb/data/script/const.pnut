@@ -1,0 +1,271 @@
+﻿const ENTITY_MASK_PLAYER = 1;
+const ENTITY_MASK_ENEMY = 2;
+const ENTITY_MASK_ENEMY_BULLET = 4;
+const ENTITY_MASK_PLAYER_BULLET = 8;
+const ENTITY_MASK_TERRAIN = 16;
+const ENTITY_MASK_FREE_ENEMY_BULLET = 32;//地形ヒットなし
+const ENTITY_MASK_FREE_PLAYER_BULLET = 64;//地形ヒットなし
+const ENTITY_MASK_PLAYER_CHECK = 128;//自陣オブジェクトへのヒットボックスチェック
+const ENTITY_MASK_ENEMY_CHECK = 256;//自陣オブジェクトへのヒットボックスチェック
+const ENTITY_MASK_TERRAIN_BOSS_FREE = 512;//enemyに該当するボスのみ無視する地形属性　足場になるがボスの行動を邪魔しない設定に
+const ENTITY_MASK_TERRAIN_PLAYER_FREE = 1024;//playerに該当するプレイヤーのみ無視する地形属性　敵の足場になるがプレイヤーは利用できない設定に
+const ENTITY_MASK_ITEM = 2048;
+
+const COLOR_BLUE = 0;
+const COLOR_GREEN = 1;
+const COLOR_ORANGE = 2;
+const COLOR_RED = 3;
+const COLOR_PURPLE = 4;
+const COLOR_GRAY = 5;
+
+const TILEMAP_TERRAIN_LAYER = 3;//地形判定命令のレイヤー指定数値
+
+const GRAVITY_VVY = 0.5;
+const WALL_DISTANCE = 16;
+const ATTACK_COOL = 6;//攻撃後のクールタイム時間共通値
+const ADD_WATER_FALL = 100;//水上落下での水チャージ量
+
+//time stop attribute
+const TIMESTOP_PLAYER = 1;
+const TIMESTOP_ENEMY = 2;
+const TIMESTOP_OBJECT = 4;
+const TIMESTOP_EFFECT = 8;
+const TIMESTOP_BACK = 16;
+
+//hit event mask
+const HM_HIT = 1;
+const HM_GROUND = 2;
+const HM_GRAZE = 4;
+
+const COLLISION_MASK_TERRAIN = 1;
+const COLLISION_MASK_ATTACK1 = 2;
+const COLLISION_MASK_ATTACK2 = 4;
+const COLLISION_MASK_ATTACK3 = 8;
+const COLLISION_MASK_HIT1 = 16;
+const COLLISION_MASK_HIT2 = 32;
+const COLLISION_MASK_HIT3 = 64;
+const COLLISION_MASK_ATTACK1_B = 128;
+const COLLISION_MASK_ATTACK2_B = 256;
+const COLLISION_MASK_ATTACK3_B = 512;
+const COLLISION_MASK_HIT1_B = 1024;
+const COLLISION_MASK_HIT2_B = 2048;
+const COLLISION_MASK_HIT3_B = 4096;
+const COLLISION_MASK_GRAZE = 8192;
+
+//hit terrain flag
+const TERRAIN_NONE = 0x0;
+const TERRAIN_PLAYER = 0x1;
+const TERRAIN_ENEMY = 0x2;
+const TERRAIN_SHOT = 0x4;
+const TERRAIN_ENEMYSHOT = 0x8;
+ 
+//Radian
+const PI = 3.141592;
+const PI2 = 6.283185307;
+const Rad2 = 0.034906584;
+const Rad3 = 0.052359876;
+const Rad4 = 0.069813168;
+const Rad5 = 0.08726646;
+const Rad6 = 0.104719752;
+const Rad7 = 0.122173044;
+const Rad8 = 0.139626336;
+const Rad9 = 0.157079628;
+const Rad10 = 0.17453292;
+const Rad12 = 0.209439504;
+const Rad15 = 0.26179938;
+const Rad18 = 0.31415926;
+const Rad20 = 0.34906584;
+const Rad25 = 0.4363323;
+const Rad30 = 0.52359876;
+const Rad36 = 0.62831851;
+const Rad40 = 0.69813168;
+const Rad45 = 0.78539814;
+const Rad50 = 0.8726646;
+const Rad60 = 1.04719752;
+const Rad70 = 1.22173044;
+const Rad72 = 1.25663706;
+const Rad75 = 1.3089969;
+const Rad80 = 1.39626336;
+const Rad90 = 1.570796;
+const Rad100 = 1.7453292
+const Rad105 = 1.83259566;
+const Rad120 = 2.09439476;
+const Rad135 = 2.35619442;
+const Rad150 = 2.61799352;
+const ToRad = 0.017453292;// degree to radian
+const ToAngle = 57.2957914331;//radian to degree
+
+//sin cos
+const SIN_0 = 0.0;
+const SIN_05 = 0.0087;
+const SIN_1 = 0.0175;
+const SIN_2 = 0.0349;
+const SIN_3 = 0.0523;
+const SIN_4 = 0.0698;
+const SIN_5 = 0.0872;
+const SIN_6 = 0.1045;
+const SIN_9 = 0.1564;
+const SIN_10 = 0.1736;
+const SIN_15 = 0.2588;
+const SIN_20 = 0.3420;
+const SIN_30 = 0.5;
+const SIN_40 = 0.6428;
+const SIN_45 = 0.7071;
+const SIN_50 = 0.7660;
+const SIN_60 = 0.8660;
+const SIN_75 = 0.9659;
+const SIN_90 = 1.0;
+const SIN_105 = 0.9659;
+const SIN_120 = 0.8660;
+
+const COS_0 = 1.0;
+const COS_05 = 0.9999;
+const COS_1 = 0.9998;
+const COS_2 = 0.9994;
+const COS_3 = 0.9986;
+const COS_4 = 0.9976;
+const COS_5 = 0.9962;
+const COS_6 = 0.9945;
+const COS_9 = 0.9877;
+const COS_10 = 0.9848;
+const COS_15 = 0.9659;
+const COS_20 = 0.9397;
+const COS_30 = 0.8660;
+const COS_40 = 0.7660;
+const COS_45 = 0.7071;
+const COS_50 = 0.6428;
+const COS_60 = 0.5;
+const COS_75 = 0.2588;
+const COS_90 = 0.0;
+const COS_105 = -0.2588;
+const COS_120 = -0.5;
+
+//cancel flag for "enable_cancel"
+const ENABLE_GRAZE = 1;
+const ENABLE_SKILL = 2;
+const ENABLE_SPELL = 4;
+const ENABLE_FREE_GRAZE = 8;
+
+const ENABLE_ALL = 15;
+
+// camera control
+const CAMERA_MODE_STAY = 0;
+const CAMERA_MODE_TARGET = 1;
+const CAMERA_MODE_KO = 2;
+const CAMERA_MODE_FOCUS = 4;
+
+// draw_effect命令でのmessage命令分岐タイプ
+const DR_ALPHA = 1;//アルファ減衰
+const DR_COUNT = 2;//時間消去
+const DR_SCALE = 3;//スケール消去
+const DR_SPLASH = 4;//拡散拡大
+const DR_WIND = 5;//渦表現スケール+αフェード
+const DR_SCALE_BEAM = 6;//スケール消去+等速移動
+const DR_SCALE_FALL = 7;//スケール消去+重力移動
+const DR_DROP = 8;//水滴挙動、速度に合わせて角度とスケール拡大調整
+const DR_CONVERSION = 9;//収束放射エフェクト、幅が0へ、長さが指定へ向けて収束
+const DR_SPLASH_FALL = 10;//スケール拡大+フェード消滅+重力移動
+const DR_BLAST = 11;//爆発動作　放射移動+拡大+減速+フェード
+
+// draw_effect命令でのテクスチャ指定タイプdraw texture
+const DT_PARTICLE_OIL = 1;		//石油飛沫
+const DT_DROP_OIL = 2;			//石油水滴
+const DT_SPLASH_WATER_A = 3;		//水 ベタフラッシュ
+const DT_PARTICLE_OIL_B = 4;		//石油粒子黒
+const DT_DROP_OIL_B = 5;		//石油水滴 黒
+const DT_PARTICLE_WATER = 6;		//水粒子
+const DT_DROP_WATER = 7;		//水滴
+const DT_PARTICLE_POISON = 54;		//毒粒子
+const DT_DROP_POISON = 55;		//毒滴
+const DT_PARTICLE_BLOOD = 8;		//血粒子
+const DT_DROP_BLOOD = 9;		//血滴
+const DT_SPLASH_OIL = 10;		//油飛沫 一方向
+const DT_SPLASH_OIL_B = 11;		//黒油飛沫 一方向
+const DT_SPLASH_POISON = 12;		//毒飛沫 一方向
+const DT_SPLASH_BLOOD = 13;		//血飛沫 一方向
+const DT_BLAST_WATER = 14;		//水飛沫 全方位拡散
+const DT_BLAST_OIL_B = 15;		//黒油飛沫 全方位拡散
+const DT_BLAST_OIL = 16;		//茶油飛沫 全方位拡散
+const DT_BLAST_POISON = 17;		//毒飛沫 全方位拡散
+const DT_BLAST_BLOOD = 18;		//血飛沫 全方位拡散
+const DT_MID_BUBBLE_WATER = 19;		//中泡弾 水
+const DT_MID_BUBBLE_OIL_B = 20;		//中泡弾 黒油
+const DT_MID_BUBBLE_OIL = 21;		//中泡弾 茶油
+const DT_MID_BUBBLE_POISON = 22;	//中泡弾 毒
+const DT_MID_BUBBLE_BLOOD = 23;		//中泡弾 血
+const DT_MID_BUBBLE_WATER2 = 24;	//中泡ハイライト 水
+const DT_MID_BUBBLE_OIL_B2 = 25;	//中泡ハイライト 黒油
+const DT_MID_BUBBLE_OIL2 = 26;		//中泡ハイライト 茶油
+const DT_MID_BUBBLE_POISON2 = 27;	//中泡ハイライト 毒
+const DT_MID_BUBBLE_BLOOD2 = 28;	//中泡ハイライト 血
+const DT_BIG_BUBBLE_WATER = 29;		//大泡弾 水
+const DT_BIG_BUBBLE_OIL_B = 30;		//大泡弾 黒油
+const DT_BIG_BUBBLE_OIL = 31;		//大泡弾 茶油
+const DT_BIG_BUBBLE_POISON = 32;	//大泡弾 毒
+const DT_BIG_BUBBLE_BLOOD = 33;		//大泡弾 血
+const DT_BIG_BUBBLE_WATER2 = 34;	//大泡ハイライト 水
+const DT_BIG_BUBBLE_OIL_B2 = 35;	//大泡ハイライト 黒油
+const DT_BIG_BUBBLE_OIL2 = 36;		//大泡ハイライト 茶油
+const DT_BIG_BUBBLE_POISON2 = 37;	//大泡ハイライト 毒
+const DT_BIG_BUBBLE_BLOOD2 = 38;	//大泡ハイライト 血
+const DT_MID_DROP_WATER = 39;		//水滴弾
+const DT_MID_DROP_OIL_B = 40;
+const DT_MID_DROP_OIL = 41;
+const DT_MID_DROP_POISON = 42;
+const DT_MID_DROP_BLOOD = 43;
+const DT_MINI_DROP_WATER = 44;		//小さい水滴弾
+const DT_MINI_DROP_OIL_B = 45;
+const DT_MINI_DROP_OIL = 46;
+const DT_MINI_DROP_POISON = 47;
+const DT_MINI_DROP_BLOOD = 48;
+const DT_ONMYO_RED = 50;		//陰陽玉　赤
+const DT_ONMYO_PURPLE  = 51;		//陰陽玉　紫
+const DT_ONMYO_YELLOW = 52;		//陰陽玉　黄
+const DT_ONMYO_BLUE = 53;		//陰陽玉　青
+//const DT_PARTICLE_POISON = 54;		//粒子　毒
+//const DT_DROP_POISON = 55;		//毒滴
+const DT_MINI_DROP_WATER = 56;		//小水敵弾
+const DT_MINI_DROP_OIL_B = 57;		//小油滴弾　黒
+const DT_MINI_DROP_OIL = 58;		//小油滴弾　茶
+const DT_MINI_DROP_POISON = 59;		//小毒滴弾
+const DT_MINI_DROP_BLOOD = 60;		//小血滴弾
+const DT_MID_BUBBLE_D_BLOOD = 61;		//暗血泡弾中
+const DT_MID_BUBBLE_D_BLOOD2 = 62;		//暗血泡弾中　ハイライト
+
+// story balloon emotion
+const EM_SUPRISE = 1;
+const EM_SILENT = 2;
+const EM_WORRY = 3;
+const EM_ANGRY = 4;
+const EM_RAIN = 5;//縦線おとし
+const EM_LAUGH = 6;//カラカラ笑い
+
+// stage water type
+const ST_WATER = 1;//水ステージ
+const ST_OIL = 2;//石油ステージ
+const ST_BLOOD = 4;//血ステージ
+
+//攻撃タイプ設定　tagの利用を想定
+const TG_SIDE = 1;
+const TG_UNDER = 2;
+const TG_UPPER = 4;
+const TG_SIDE_AIR = 8;
+const TG_UNDER_AIR = 16;
+const TG_UPPER_AIR = 32;
+const TG_SPELL = 64;//能動大技属性
+const TG_GRAZE = 128;//グレイズ関連俗世
+const TG_WATER = 256;//水消費攻撃属性
+const TG_COMBO = 512;//連携技フラグ
+
+//プレイヤー滞在環境
+const EV_NONE = 0;//環境特徴なし　通常状態
+const EV_WATER = 1;//水中属性
+const EV_OIL = 2;//石油属性
+const EV_BLOOD = 4;//血液属性
+
+//描画テクスチャ切り替えタイミング制御 (ms)
+const SWAP_MARGIN_MIN = 5;
+const SWAP_MARGIN_MIDDLE = 10;
+const SWAP_MARGIN_MAX = 16;
+
+print("const.pnut ...OK");

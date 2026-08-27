@@ -1,0 +1,228 @@
+## =======================================================================
+#Stage:5
+#Title:異変の兆し
+#Place:玄海雲
+#Weather:台風
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:yuyuko,160,0,0,8888FF
+Character:iku,120,20,1,FF8888
+
+#専用ステージ初期設定
+Action:iku,139
+
+#カメラ固定
+Action:yuyuko,4
+
+#フォーカス瞬間移動
+Action:yuyuko,11
+
+#自キャラ画面左待機
+Action:yuyuko,5
+
+#向き固定解除
+Action:yuyuko,152
+
+#天候初期化
+Action:iku,153
+
+Label:Start
+
+PlayBgm:data/bgm/ta02.ogg
+
+#背景暗雲設置
+Action:iku,134
+
+#フェードイン　黒
+Action:yuyuko,161
+
+Sleep:60
+
+#ステージタイトル表示
+Object:data/scenario/yuyuko/effect/StageTitle005.bmp,0,256,-32
+Sleep:60
+Object:data/scenario/effect/Stage5.bmp,1,256,352
+Sleep:300
+
+#雲中背景解除
+Action:iku,135
+Sleep:120
+
+#画面上から登場
+Action:yuyuko,6
+
+#登場終了検知
+Action:yuyuko,7
+
+Sleep:60
+
+Face:yuyuko,惑
+流石に雲の中は寒いわー\
+
+Face:yuyuko,余
+ここは一つ、頑張って快晴でも……\
+
+Face:yuyuko,
+Hide:1
+Sleep:60
+
+#衣玖黒塗りで画面上から登場
+Action:iku,130
+Sleep:90
+Face:iku,
+緋色の雲が出来はじめている\
+
+雲の動向に気を付けろ\
+
+#落雷+衣玖の姿が浮かび上がる
+Action:iku,131
+
+Face:iku,
+数十年ぶりに悲劇の再来か\
+
+Face:yuyuko,驚
+おや、貴方はもしや……\
+
+# 名前のテロップ
+#Name:美しき緋の衣　永江衣玖
+Object:data/scenario/iku/effect/Name.bmp,2,352,304
+
+Face:iku,驚
+そう、龍宮の使いです\
+
+Face:yuyuko,余
+あの蒲焼きや白焼きで有名な\
+
+#イベント　衣玖浮遊状態終了
+Action:iku,132
+
+Face:iku,汗
+きっと違いますがね\
+
+Face:yuyuko,惑
+何？
+地震でも起こるのかしら？\
+
+Face:iku,普
+まだ判りませんが要観察って処です\
+
+Face:yuyuko,普
+あらあら、しょうがないわねぇ
+家の補強でもしておきましょう\
+
+Face:iku,普
+貴方は何者です？\
+
+Face:yuyuko,余
+皆に涼しさを分けてまわる
+しがない亡霊なのです\
+
+Face:iku,驚
+亡霊？\
+
+PlayBgm:data/bgm/st04.ogg
+
+#0１２３４５６７８９０１２３４５６７８９０１２３
+Face:iku,余
+ははーん、この雲の上は天界があります
+天界まで自分で成仏に来たって訳ね？\
+
+Face:iku,決
+成仏にはいくつもの試練がありますが……
+貴方はそれを越えられる？\
+
+
+
+#戦闘開始処理
+Action:yuyuko,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:iku,驚
+まだまだね\
+
+Face:iku,余
+もっと非想の境地を見せないと
+天人にはなれないわ\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:iku,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:iku,200
+#攻撃側ニュートラル移行検知
+Action:yuyuko,202
+
+#Weather:天候クリア
+# 無天候へ
+Action:iku,133
+
+Face:yuyuko,嬉
+さて、と、次は天界ねー\
+
+Face:iku,負
+強いですねぇ
+貴方なら成仏しても大丈夫な気がします\
+
+Face:yuyuko,余
+あら残念
+まだ未練たらたらですわ\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+Sleep:30
+#画面上部へ移動
+Action:yuyuko,151
+
+Sleep:90
+
+#フェードアウト　白
+Action:yuyuko,162
+Sleep:60
+
+Stage:5,0
+
+End:
+
+
+
+
+
+## =======================================================================

@@ -1,0 +1,633 @@
+E:\GitWorkspace\thworks\release\tf\th155\dat\th155\data\actor\shion_boss_base.nut: 
+sourcename: ""
+name: "main"
+nliterals: 6
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 7
+ndefaultparams: 0
+ninstructions: 26
+nfunctions: 6
+Literals: [
+    0: "Update_Normal"
+    1: "Update_Input"
+    2: "PlayerhitAction_Boss"
+    3: "BossCall_Init"
+    4: "BossForceCall_Init"
+    5: "TeamSkillChain_Input"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 25
+    1: name: "this", pos: 0, start_op: 0, end_op: 25
+  ]
+Line Informations: [
+    0: line: 1, op: 0
+    1: line: 22, op: 4
+    2: line: 25, op: 8
+    3: line: 47, op: 12
+    4: line: 65, op: 16
+    5: line: 75, op: 20
+    6: line: 77, op: 24
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  line(-, 1)
+    1:  load(s2, "Update_Normal")
+    2:  closure(s3, 0)
+    3:  newslot(s2, s0, s2, s3)
+    4:  line(-, 22)
+    5:  load(s2, "Update_Input")
+    6:  closure(s3, 1)
+    7:  newslot(s2, s0, s2, s3)
+    8:  line(-, 25)
+    9:  load(s2, "PlayerhitAction_Boss")
+    10:  closure(s3, 2)
+    11:  newslot(s2, s0, s2, s3)
+    12:  line(-, 47)
+    13:  load(s2, "BossCall_Init")
+    14:  closure(s3, 3)
+    15:  newslot(s2, s0, s2, s3)
+    16:  line(-, 65)
+    17:  load(s2, "BossForceCall_Init")
+    18:  closure(s3, 4)
+    19:  newslot(s2, s0, s2, s3)
+    20:  line(-, 75)
+    21:  load(s2, "TeamSkillChain_Input")
+    22:  closure(s3, 5)
+    23:  newslot(s2, s0, s2, s3)
+    24:  line(-, 77)
+    25:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: ""
+        name: "Update_Normal"
+        nliterals: 8
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 12
+        ndefaultparams: 0
+        ninstructions: 48
+        nfunctions: 0
+        Literals: [
+            0: "MainLoopFirst"
+            1: "IsDamage"
+            2: "stateLabel"
+            3: "battle"
+            4: "state"
+            5: "boss_cpu"
+            6: "cpuState"
+            7: "MainLoop"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 47
+          ]
+        Line Informations: [
+            0: line: 2, op: 1
+            1: line: 4, op: 5
+            2: line: 5, op: 9
+            3: line: 6, op: 14
+            4: line: 8, op: 18
+            5: line: 10, op: 21
+            6: line: 11, op: 28
+            7: line: 12, op: 31
+            8: line: 15, op: 36
+            9: line: 19, op: 40
+            10: line: 20, op: 43
+            11: line: 21, op: 46
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 2)
+            1:  prepcallk(s1, "MainLoopFirst", s0, s2)
+            2:  call(1, s1, s2, 1)
+            3:  not(s1, s1)
+            4:  jz(s1, 16)
+            5:  line(-, 4)
+            6:  prepcallk(s1, "IsDamage", s0, s2)
+            7:  call(1, s1, s2, 1)
+            8:  jz(s1, 9)
+            9:  line(-, 5)
+            10:  getk(s1, "stateLabel", s0)
+            11:  jz(s1, 2)
+            12:  prepcallk(s1, "stateLabel", s0, s2)
+            13:  call(255, s1, s2, 1)
+            14:  line(-, 6)
+            15:  loadbool(s1, 1)
+            16:  return(1, 1)
+            17:  jmp(-, 3)
+            18:  line(-, 8)
+            19:  loadbool(s1, 0)
+            20:  return(1, 1)
+            21:  line(-, 10)
+            22:  loadroot(s1)
+            23:  getk(s1, "battle", s1)
+            24:  getk(s1, "state", s1)
+            25:  loadint(s2, 8)
+            26:  eq(s1, 2, s1, 0)
+            27:  jz(s1, 12)
+            28:  line(-, 11)
+            29:  getk(s1, "boss_cpu", s0)
+            30:  jz(s1, 4)
+            31:  line(-, 12)
+            32:  prepcallk(s1, "boss_cpu", s0, s2)
+            33:  call(255, s1, s2, 1)
+            34:  jmp(-, 5)
+            35:  line(-, 15)
+            36:  getk(s1, "cpuState", s0)
+            37:  jz(s1, 2)
+            38:  prepcallk(s1, "cpuState", s0, s2)
+            39:  call(255, s1, s2, 1)
+            40:  line(-, 19)
+            41:  prepcallk(s1, "MainLoop", s0, s2)
+            42:  call(255, s1, s2, 1)
+            43:  line(-, 20)
+            44:  loadbool(s1, 1)
+            45:  return(1, 1)
+            46:  line(-, 21)
+            47:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: ""
+        name: "Update_Input"
+        nliterals: 0
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 3
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 2
+          ]
+        Line Informations: [
+            0: line: 22, op: 0
+            1: line: 23, op: 1
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 22)
+            1:  line(-, 23)
+            2:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 1
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: ""
+        name: "PlayerhitAction_Boss"
+        nliterals: 13
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 13
+        ndefaultparams: 0
+        ninstructions: 58
+        nfunctions: 1
+        Literals: [
+            0: "KnockBackSetValue"
+            1: "event_getDamage"
+            2: "team"
+            3: "life"
+            4: "enableKO"
+            5: "atkType"
+            6: "shot_actor"
+            7: "Foreach"
+            8: "BuffReset"
+            9: "enableStandUp"
+            10: "event_defeat"
+            11: "koExp"
+            12: "DamageFinish"
+          ]
+        Parameters: [
+            0: "this"
+            1: "t_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "t_", pos: 1, start_op: 0, end_op: 57
+            1: name: "this", pos: 0, start_op: 0, end_op: 57
+          ]
+        Line Informations: [
+            0: line: 28, op: 1
+            1: line: 29, op: 1
+            2: line: 30, op: 5
+            3: line: 31, op: 8
+            4: line: 36, op: 16
+            5: line: 37, op: 30
+            6: line: 38, op: 35
+            7: line: 39, op: 38
+            8: line: 40, op: 42
+            9: line: 41, op: 47
+            10: line: 42, op: 50
+            11: line: 43, op: 54
+            12: line: 46, op: 56
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 28)
+            1:  line(-, 29)
+            2:  prepcallk(s2, "KnockBackSetValue", s0, s3)
+            3:  move(s4, s1)
+            4:  call(255, s2, s3, 2)
+            5:  line(-, 30)
+            6:  getk(s2, "event_getDamage", s0)
+            7:  jz(s2, 8)
+            8:  line(-, 31)
+            9:  prepcallk(s2, "event_getDamage", s0, s3)
+            10:  move(s4, s1)
+            11:  call(2, s2, s3, 2)
+            12:  jz(s2, 3)
+            13:  load(s2, "event_getDamage")
+            14:  loadnulls(s3, 1)
+            15:  set(s255, s0, s2, s3)
+            16:  line(-, 36)
+            17:  getk(s2, "team", s0)
+            18:  getk(s2, "life", s2)
+            19:  loadint(s3, 0)
+            20:  cmp(s2, s3, s2, CMP_LE)
+            21:  and(s2, 7, s2)
+            22:  getk(s3, "enableKO", s0)
+            23:  and(s3, 4, s3)
+            24:  getk(s4, "atkType", s1)
+            25:  loadint(s5, 0)
+            26:  ne(s4, 5, s4, 0)
+            27:  move(s3, s4)
+            28:  move(s2, s3)
+            29:  jz(s2, 26)
+            30:  line(-, 37)
+            31:  getk(s2, "shot_actor", s0)
+            32:  prepcallk(s2, "Foreach", s2, s3)
+            33:  closure(s4, 0)
+            34:  call(255, s2, s3, 2)
+            35:  line(-, 38)
+            36:  prepcallk(s2, "BuffReset", s0, s3)
+            37:  call(255, s2, s3, 1)
+            38:  line(-, 39)
+            39:  load(s2, "enableStandUp")
+            40:  loadbool(s3, 0)
+            41:  set(s255, s0, s2, s3)
+            42:  line(-, 40)
+            43:  getk(s2, "event_defeat", s0)
+            44:  jz(s2, 2)
+            45:  prepcallk(s2, "event_defeat", s0, s3)
+            46:  call(255, s2, s3, 1)
+            47:  line(-, 41)
+            48:  getk(s2, "koExp", s0)
+            49:  jz(s2, 6)
+            50:  line(-, 42)
+            51:  prepcallk(s2, "DamageFinish", s0, s3)
+            52:  move(s4, s1)
+            53:  call(255, s2, s3, 2)
+            54:  line(-, 43)
+            55:  return(255, 0)
+            56:  line(-, 46)
+            57:  return(255, 0)
+          ]
+        Functions: [
+            0: 
+                sourcename: ""
+                name: null
+                nliterals: 2
+                nparameters: 1
+                noutervals: 0
+                nlocalvarinfos: 1
+                nlineinfos: 1
+                ndefaultparams: 0
+                ninstructions: 9
+                nfunctions: 0
+                Literals: [
+                    0: "func"
+                    1: "call"
+                  ]
+                Parameters: [
+                    0: "this"
+                  ]
+                Outer Values: [  ]
+                Local variables informations: [
+                    0: name: "this", pos: 0, start_op: 0, end_op: 8
+                  ]
+                Line Informations: [
+                    0: line: 37, op: 0
+                  ]
+                Default Parameters: [  ]
+                Instructions: [
+                    0:  line(-, 37)
+                    1:  getk(s1, "func", s0)
+                    2:  loadint(s2, 0)
+                    3:  get(s1, s1, s2)
+                    4:  prepcallk(s1, "call", s1, s2)
+                    5:  move(s3, s0)
+                    6:  call(255, s1, s2, 2)
+                    7:  line(-, 37)
+                    8:  return(255, 0)
+                  ]
+                Functions: [  ]
+                stacksize: 4
+                bgenerator: 0
+                varparams: 0
+
+          ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: ""
+        name: "BossCall_Init"
+        nliterals: 18
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 15
+        ndefaultparams: 0
+        ninstructions: 77
+        nfunctions: 0
+        Literals: [
+            0: "Cancel_Check"
+            1: "LabelClear"
+            2: "invin"
+            3: "invinObject"
+            4: "invinGrab"
+            5: "SetSpeed_XY"
+            6: "count"
+            7: "battle"
+            8: "enableTimeCount"
+            9: "SetFreeObject"
+            10: "x"
+            11: "y"
+            12: "Boss_SetLife_Actor"
+            13: "CallBossCard"
+            14: "boss_spell"
+            15: "master_name"
+            16: "SpellUseFace"
+            17: "boss_spell_func"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 76
+          ]
+        Line Informations: [
+            0: line: 49, op: 1
+            1: line: 50, op: 8
+            2: line: 51, op: 11
+            3: line: 52, op: 15
+            4: line: 53, op: 19
+            5: line: 54, op: 23
+            6: line: 55, op: 28
+            7: line: 56, op: 32
+            8: line: 58, op: 38
+            9: line: 59, op: 46
+            10: line: 60, op: 47
+            11: line: 61, op: 57
+            12: line: 62, op: 67
+            13: line: 63, op: 72
+            14: line: 64, op: 75
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 49)
+            1:  prepcallk(s1, "Cancel_Check", s0, s2)
+            2:  loadint(s3, 10)
+            3:  call(1, s1, s2, 2)
+            4:  not(s1, s1)
+            5:  jz(s1, 2)
+            6:  loadbool(s1, 0)
+            7:  return(1, 1)
+            8:  line(-, 50)
+            9:  prepcallk(s1, "LabelClear", s0, s2)
+            10:  call(255, s1, s2, 1)
+            11:  line(-, 51)
+            12:  load(s1, "invin")
+            13:  loadint(s2, 6)
+            14:  set(s255, s0, s1, s2)
+            15:  line(-, 52)
+            16:  load(s1, "invinObject")
+            17:  loadint(s2, 6)
+            18:  set(s255, s0, s1, s2)
+            19:  line(-, 53)
+            20:  load(s1, "invinGrab")
+            21:  loadint(s2, 6)
+            22:  set(s255, s0, s1, s2)
+            23:  line(-, 54)
+            24:  prepcallk(s1, "SetSpeed_XY", s0, s2)
+            25:  loadfloat(s3, 0)
+            26:  loadfloat(s4, 0)
+            27:  call(255, s1, s2, 3)
+            28:  line(-, 55)
+            29:  load(s1, "count")
+            30:  loadint(s2, 0)
+            31:  set(s255, s0, s1, s2)
+            32:  line(-, 56)
+            33:  loadroot(s1)
+            34:  getk(s1, "battle", s1)
+            35:  load(s2, "enableTimeCount")
+            36:  loadbool(s3, 0)
+            37:  set(s255, s1, s2, s3)
+            38:  line(-, 58)
+            39:  prepcallk(s1, "SetFreeObject", s0, s2)
+            40:  getk(s3, "x", s0)
+            41:  getk(s4, "y", s0)
+            42:  loadfloat(s5, 1)
+            43:  getk(s6, "Boss_SetLife_Actor", s0)
+            44:  newobj(s7, 0, 0, 0)
+            45:  call(255, s1, s2, 6)
+            46:  line(-, 59)
+            47:  line(-, 60)
+            48:  prepcallk(s1, "CallBossCard", s0, s2)
+            49:  loadint(s3, 0)
+            50:  loadroot(s4)
+            51:  getk(s4, "battle", s4)
+            52:  getk(s4, "boss_spell", s4)
+            53:  loadint(s5, 0)
+            54:  get(s4, s4, s5)
+            55:  getk(s4, "master_name", s4)
+            56:  call(255, s1, s2, 3)
+            57:  line(-, 61)
+            58:  prepcallk(s1, "SetFreeObject", s0, s2)
+            59:  loadint(s3, 640)
+            60:  loadint(s4, 640)
+            61:  sub(s3, s4, s3)
+            62:  loadint(s4, 720)
+            63:  loadfloat(s5, -1)
+            64:  getk(s6, "SpellUseFace", s0)
+            65:  newobj(s7, 0, 0, 0)
+            66:  call(255, s1, s2, 6)
+            67:  line(-, 62)
+            68:  getk(s1, "boss_spell_func", s0)
+            69:  jz(s1, 2)
+            70:  prepcallk(s1, "boss_spell_func", s0, s2)
+            71:  call(255, s1, s2, 1)
+            72:  line(-, 63)
+            73:  loadbool(s1, 1)
+            74:  return(1, 1)
+            75:  line(-, 64)
+            76:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    4: 
+        sourcename: ""
+        name: "BossForceCall_Init"
+        nliterals: 11
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 7
+        ndefaultparams: 0
+        ninstructions: 44
+        nfunctions: 0
+        Literals: [
+            0: "battle"
+            1: "enableTimeCount"
+            2: "SetFreeObject"
+            3: "x"
+            4: "y"
+            5: "Boss_SetLife_Actor"
+            6: "CallBossCard"
+            7: "boss_spell"
+            8: "master_name"
+            9: "SpellUseFace"
+            10: "boss_spell_func"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 43
+          ]
+        Line Informations: [
+            0: line: 67, op: 1
+            1: line: 69, op: 6
+            2: line: 70, op: 14
+            3: line: 71, op: 24
+            4: line: 72, op: 34
+            5: line: 73, op: 39
+            6: line: 74, op: 42
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 67)
+            1:  loadroot(s1)
+            2:  getk(s1, "battle", s1)
+            3:  load(s2, "enableTimeCount")
+            4:  loadbool(s3, 0)
+            5:  set(s255, s1, s2, s3)
+            6:  line(-, 69)
+            7:  prepcallk(s1, "SetFreeObject", s0, s2)
+            8:  getk(s3, "x", s0)
+            9:  getk(s4, "y", s0)
+            10:  loadfloat(s5, 1)
+            11:  getk(s6, "Boss_SetLife_Actor", s0)
+            12:  newobj(s7, 0, 0, 0)
+            13:  call(255, s1, s2, 6)
+            14:  line(-, 70)
+            15:  prepcallk(s1, "CallBossCard", s0, s2)
+            16:  loadint(s3, 0)
+            17:  loadroot(s4)
+            18:  getk(s4, "battle", s4)
+            19:  getk(s4, "boss_spell", s4)
+            20:  loadint(s5, 0)
+            21:  get(s4, s4, s5)
+            22:  getk(s4, "master_name", s4)
+            23:  call(255, s1, s2, 3)
+            24:  line(-, 71)
+            25:  prepcallk(s1, "SetFreeObject", s0, s2)
+            26:  loadint(s3, 640)
+            27:  loadint(s4, 640)
+            28:  sub(s3, s4, s3)
+            29:  loadint(s4, 720)
+            30:  loadfloat(s5, -1)
+            31:  getk(s6, "SpellUseFace", s0)
+            32:  newobj(s7, 0, 0, 0)
+            33:  call(255, s1, s2, 6)
+            34:  line(-, 72)
+            35:  getk(s1, "boss_spell_func", s0)
+            36:  jz(s1, 2)
+            37:  prepcallk(s1, "boss_spell_func", s0, s2)
+            38:  call(255, s1, s2, 1)
+            39:  line(-, 73)
+            40:  loadbool(s1, 1)
+            41:  return(1, 1)
+            42:  line(-, 74)
+            43:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    5: 
+        sourcename: ""
+        name: "TeamSkillChain_Input"
+        nliterals: 0
+        nparameters: 2
+        noutervals: 0
+        nlocalvarinfos: 2
+        nlineinfos: 2
+        ndefaultparams: 0
+        ninstructions: 5
+        nfunctions: 0
+        Literals: [  ]
+        Parameters: [
+            0: "this"
+            1: "input_"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "input_", pos: 1, start_op: 0, end_op: 4
+            1: name: "this", pos: 0, start_op: 0, end_op: 4
+          ]
+        Line Informations: [
+            0: line: 76, op: 1
+            1: line: 77, op: 3
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  line(-, 76)
+            1:  loadbool(s2, 0)
+            2:  return(1, 2)
+            3:  line(-, 77)
+            4:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 3
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 4
+bgenerator: 0
+varparams: 1
+

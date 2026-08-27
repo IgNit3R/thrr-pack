@@ -1,0 +1,595 @@
+E:\GitWorkspace\thworks\release\tf\th175\dat\data.cga\data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut: 
+sourcename: "data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut"
+name: "main"
+nliterals: 6
+nparameters: 2
+noutervals: 0
+nlocalvarinfos: 2
+nlineinfos: 6
+ndefaultparams: 0
+ninstructions: 18
+nfunctions: 4
+Literals: [
+    0: "_exec"
+    1: "data/script/gameobject/common_shot/oil_drop.nut"
+    2: "message"
+    3: "update_suction"
+    4: "update_fall"
+    5: "update_fall_limit"
+  ]
+Parameters: [
+    0: "this"
+    1: "vargv"
+  ]
+Outer Values: [  ]
+Local variables informations: [
+    0: name: "vargv", pos: 1, start_op: 0, end_op: 17
+    1: name: "this", pos: 0, start_op: 0, end_op: 17
+  ]
+Line Informations: [
+    0: line: 3, op: 0
+    1: line: 30, op: 5
+    2: line: 48, op: 8
+    3: line: 71, op: 11
+    4: line: 93, op: 14
+    5: line: 111, op: 17
+  ]
+Default Parameters: [  ]
+Instructions: [
+    0:  loadroot(s2)
+    1:  prepcallk(s2, "_exec", s2, s3)
+    2:  load(s4, "data/script/gameobject/common_shot/oil_drop.nut")
+    3:  move(s5, s0)
+    4:  call(255, s2, s3, 3)
+    5:  load(s2, "message")
+    6:  closure(s3, 0)
+    7:  newslot(s2, s0, s2, s3)
+    8:  load(s2, "update_suction")
+    9:  closure(s3, 1)
+    10:  newslot(s2, s0, s2, s3)
+    11:  load(s2, "update_fall")
+    12:  closure(s3, 2)
+    13:  newslot(s2, s0, s2, s3)
+    14:  load(s2, "update_fall_limit")
+    15:  closure(s3, 3)
+    16:  newslot(s2, s0, s2, s3)
+    17:  return(255, 0)
+  ]
+Functions: [
+    0: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut"
+        name: "message"
+        nliterals: 13
+        nparameters: 3
+        noutervals: 0
+        nlocalvarinfos: 3
+        nlineinfos: 14
+        ndefaultparams: 0
+        ninstructions: 56
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "y"
+            2: "maskbits"
+            3: "count"
+            4: "state"
+            5: "update_suction"
+            6: "vx"
+            7: "obj"
+            8: "enemy"
+            9: "vy"
+            10: "g"
+            11: "angle"
+            12: "atan2"
+          ]
+        Parameters: [
+            0: "this"
+            1: "_id"
+            2: "_param"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "_param", pos: 2, start_op: 0, end_op: 55
+            1: name: "_id", pos: 1, start_op: 0, end_op: 55
+            2: name: "this", pos: 0, start_op: 0, end_op: 55
+          ]
+        Line Informations: [
+            0: line: 30, op: 0
+            1: line: 31, op: 0
+            2: line: 33, op: 3
+            3: line: 34, op: 7
+            4: line: 35, op: 11
+            5: line: 37, op: 16
+            6: line: 38, op: 19
+            7: line: 39, op: 22
+            8: line: 41, op: 25
+            9: line: 42, op: 34
+            10: line: 43, op: 45
+            11: line: 44, op: 48
+            12: line: 45, op: 54
+            13: line: 47, op: 55
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  loadint(s3, 4096)
+            1:  eq(s3, 3, s1, 0)
+            2:  jz(s3, 10)
+            3:  load(s3, "x")
+            4:  loadint(s4, 0)
+            5:  get(s4, s2, s4)
+            6:  comparith(s3, 4, s3, 43)
+            7:  load(s3, "y")
+            8:  loadint(s4, 1)
+            9:  get(s4, s2, s4)
+            10:  comparith(s3, 4, s3, 43)
+            11:  jmp(-, 43)
+            12:  jmp(-, 3)
+            13:  loadint(s3, 4121)
+            14:  eq(s3, 3, s1, 0)
+            15:  jz(s3, 39)
+            16:  load(s3, "maskbits")
+            17:  loadint(s4, 32)
+            18:  set(s255, s0, s3, s4)
+            19:  load(s3, "count")
+            20:  loadint(s4, 180)
+            21:  set(s255, s0, s3, s4)
+            22:  dload(s3, "state", s4, "update_suction")
+            23:  get(s4, s0, s4)
+            24:  set(s255, s0, s3, s4)
+            25:  dload(s3, "vx", s4, "obj")
+            26:  get(s4, s0, s4)
+            27:  getk(s4, "enemy", s4)
+            28:  getk(s4, "x", s4)
+            29:  getk(s5, "x", s0)
+            30:  sub(s4, s5, s4)
+            31:  loadfloat(s5, 0.00555)
+            32:  mul(s4, s5, s4)
+            33:  set(s255, s0, s3, s4)
+            34:  dload(s3, "vy", s4, "obj")
+            35:  get(s4, s0, s4)
+            36:  getk(s4, "enemy", s4)
+            37:  getk(s4, "y", s4)
+            38:  loadint(s5, 64)
+            39:  sub(s4, s5, s4)
+            40:  getk(s5, "y", s0)
+            41:  sub(s4, s5, s4)
+            42:  loadfloat(s5, 0.00555)
+            43:  mul(s4, s5, s4)
+            44:  set(s255, s0, s3, s4)
+            45:  load(s3, "g")
+            46:  loadfloat(s4, 0.01)
+            47:  set(s255, s0, s3, s4)
+            48:  dload(s3, "angle", s4, "atan2")
+            49:  prepcall(s4, s4, s0, s5)
+            50:  getk(s6, "vy", s0)
+            51:  getk(s7, "vx", s0)
+            52:  call(4, s4, s5, 3)
+            53:  set(s255, s0, s3, s4)
+            54:  jmp(-, 0)
+            55:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    1: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut"
+        name: "update_suction"
+        nliterals: 19
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 17
+        ndefaultparams: 0
+        ninstructions: 74
+        nfunctions: 0
+        Literals: [
+            0: "count"
+            1: "x"
+            2: "vx"
+            3: "y"
+            4: "vy"
+            5: "_vspace_commit"
+            6: "h_entity"
+            7: "scale"
+            8: "stage"
+            9: "draw"
+            10: "message"
+            11: "rand"
+            12: "kill_move"
+            13: "obj"
+            14: "enemy"
+            15: "motion"
+            16: "suction"
+            17: "state"
+            18: "update_fall"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 73
+          ]
+        Line Informations: [
+            0: line: 49, op: 0
+            1: line: 50, op: 0
+            2: line: 51, op: 2
+            3: line: 52, op: 5
+            4: line: 53, op: 8
+            5: line: 55, op: 12
+            6: line: 56, op: 15
+            7: line: 58, op: 21
+            8: line: 60, op: 24
+            9: line: 61, op: 55
+            10: line: 62, op: 57
+            11: line: 64, op: 58
+            12: line: 65, op: 63
+            13: line: 66, op: 66
+            14: line: 67, op: 69
+            15: line: 68, op: 72
+            16: line: 70, op: 73
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  load(s1, "count")
+            1:  pinc(s1, s0, s1, 255)
+            2:  dload(s1, "x", s2, "vx")
+            3:  get(s2, s0, s2)
+            4:  comparith(s1, 2, s1, 43)
+            5:  dload(s1, "y", s2, "vy")
+            6:  get(s2, s0, s2)
+            7:  comparith(s1, 2, s1, 43)
+            8:  loadroot(s1)
+            9:  prepcallk(s1, "_vspace_commit", s1, s2)
+            10:  getk(s3, "h_entity", s0)
+            11:  call(255, s1, s2, 2)
+            12:  load(s1, "scale")
+            13:  loadfloat(s2, 0.05)
+            14:  comparith(s1, 2, s1, 43)
+            15:  getk(s1, "scale", s0)
+            16:  loadfloat(s2, 1)
+            17:  jcmp(s2, 3, s1, CMP_G)
+            18:  load(s1, "scale")
+            19:  loadfloat(s2, 1)
+            20:  set(s255, s0, s1, s2)
+            21:  getk(s1, "count", s0)
+            22:  loadint(s2, 0)
+            23:  jcmp(s2, 34, s1, CMP_LE)
+            24:  getk(s1, "stage", s0)
+            25:  getk(s1, "draw", s1)
+            26:  prepcallk(s1, "message", s1, s2)
+            27:  loadint(s3, 8)
+            28:  newobj(s4, 9, 0, 1)
+            29:  getk(s5, "x", s0)
+            30:  appendarray(s4, 5, 0)
+            31:  getk(s5, "y", s0)
+            32:  appendarray(s4, 5, 0)
+            33:  loadfloat(s5, 1.5708)
+            34:  neg(s5, s5)
+            35:  appendarray(s4, 5, 0)
+            36:  appendarray(s4, 1065353216, 3)
+            37:  appendarray(s4, 2, 2)
+            38:  appendarray(s4, 1036831949, 3)
+            39:  loadint(s5, 6)
+            40:  prepcallk(s6, "rand", s0, s7)
+            41:  call(6, s6, s7, 1)
+            42:  loadint(s7, 13)
+            43:  mod(s6, s7, s6)
+            44:  sub(s5, s6, s5)
+            45:  appendarray(s4, 5, 0)
+            46:  loadint(s5, -6)
+            47:  prepcallk(s6, "rand", s0, s7)
+            48:  call(6, s6, s7, 1)
+            49:  loadint(s7, 6)
+            50:  mod(s6, s7, s6)
+            51:  add(s5, s6, s5)
+            52:  appendarray(s4, 5, 0)
+            53:  appendarray(s4, 1056964608, 3)
+            54:  call(255, s1, s2, 3)
+            55:  prepcallk(s1, "kill_move", s0, s2)
+            56:  call(255, s1, s2, 1)
+            57:  return(255, 0)
+            58:  getk(s1, "obj", s0)
+            59:  getk(s1, "enemy", s1)
+            60:  getk(s1, "motion", s1)
+            61:  ne(s1, 16, s1, 255)
+            62:  jz(s1, 10)
+            63:  load(s1, "vx")
+            64:  loadfloat(s2, 0.25)
+            65:  comparith(s1, 2, s1, 42)
+            66:  load(s1, "vy")
+            67:  loadfloat(s2, 0.25)
+            68:  comparith(s1, 2, s1, 42)
+            69:  dload(s1, "state", s2, "update_fall")
+            70:  get(s2, s0, s2)
+            71:  set(s255, s0, s1, s2)
+            72:  return(255, 0)
+            73:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 8
+        bgenerator: 0
+        varparams: 0
+
+    2: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut"
+        name: "update_fall"
+        nliterals: 17
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 16
+        ndefaultparams: 0
+        ninstructions: 79
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "vx"
+            2: "y"
+            3: "vy"
+            4: "_vspace_commit"
+            5: "h_entity"
+            6: "scale"
+            7: "g"
+            8: "angle"
+            9: "atan2"
+            10: "world"
+            11: "bottom"
+            12: "Create_Water"
+            13: "kill_move"
+            14: "left"
+            15: "right"
+            16: "top"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 78
+          ]
+        Line Informations: [
+            0: line: 72, op: 0
+            1: line: 73, op: 0
+            2: line: 74, op: 3
+            3: line: 75, op: 6
+            4: line: 77, op: 10
+            5: line: 78, op: 13
+            6: line: 80, op: 19
+            7: line: 81, op: 22
+            8: line: 82, op: 28
+            9: line: 83, op: 41
+            10: line: 84, op: 46
+            11: line: 85, op: 48
+            12: line: 87, op: 49
+            13: line: 89, op: 75
+            14: line: 90, op: 77
+            15: line: 92, op: 78
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  dload(s1, "x", s2, "vx")
+            1:  get(s2, s0, s2)
+            2:  comparith(s1, 2, s1, 43)
+            3:  dload(s1, "y", s2, "vy")
+            4:  get(s2, s0, s2)
+            5:  comparith(s1, 2, s1, 43)
+            6:  loadroot(s1)
+            7:  prepcallk(s1, "_vspace_commit", s1, s2)
+            8:  getk(s3, "h_entity", s0)
+            9:  call(255, s1, s2, 2)
+            10:  load(s1, "scale")
+            11:  loadfloat(s2, 0.05)
+            12:  comparith(s1, 2, s1, 43)
+            13:  getk(s1, "scale", s0)
+            14:  loadfloat(s2, 1)
+            15:  jcmp(s2, 3, s1, CMP_G)
+            16:  load(s1, "scale")
+            17:  loadfloat(s2, 1)
+            18:  set(s255, s0, s1, s2)
+            19:  dload(s1, "vy", s2, "g")
+            20:  get(s2, s0, s2)
+            21:  comparith(s1, 2, s1, 43)
+            22:  dload(s1, "angle", s2, "atan2")
+            23:  prepcall(s2, s2, s0, s3)
+            24:  getk(s4, "vy", s0)
+            25:  getk(s5, "vx", s0)
+            26:  call(2, s2, s3, 3)
+            27:  set(s255, s0, s1, s2)
+            28:  getk(s1, "y", s0)
+            29:  loadroot(s2)
+            30:  getk(s2, "world", s2)
+            31:  getk(s2, "bottom", s2)
+            32:  loadint(s3, 52)
+            33:  sub(s2, s3, s2)
+            34:  cmp(s1, s2, s1, CMP_G)
+            35:  and(s1, 4, s1)
+            36:  getk(s2, "vy", s0)
+            37:  loadfloat(s3, 0)
+            38:  cmp(s2, s3, s2, CMP_G)
+            39:  move(s1, s2)
+            40:  jz(s1, 8)
+            41:  prepcallk(s1, "Create_Water", s0, s2)
+            42:  getk(s3, "x", s0)
+            43:  getk(s4, "y", s0)
+            44:  loadint(s5, 1)
+            45:  call(255, s1, s2, 4)
+            46:  prepcallk(s1, "kill_move", s0, s2)
+            47:  call(255, s1, s2, 1)
+            48:  return(255, 0)
+            49:  getk(s1, "x", s0)
+            50:  loadroot(s2)
+            51:  getk(s2, "world", s2)
+            52:  getk(s2, "left", s2)
+            53:  loadint(s3, 128)
+            54:  sub(s2, s3, s2)
+            55:  cmp(s1, s2, s1, CMP_L)
+            56:  or(s1, 17, s1)
+            57:  getk(s2, "x", s0)
+            58:  loadroot(s3)
+            59:  getk(s3, "world", s3)
+            60:  getk(s3, "right", s3)
+            61:  loadint(s4, 128)
+            62:  add(s3, s4, s3)
+            63:  cmp(s2, s3, s2, CMP_G)
+            64:  or(s2, 8, s2)
+            65:  getk(s3, "y", s0)
+            66:  loadroot(s4)
+            67:  getk(s4, "world", s4)
+            68:  getk(s4, "top", s4)
+            69:  loadint(s5, 256)
+            70:  sub(s4, s5, s4)
+            71:  cmp(s3, s4, s3, CMP_L)
+            72:  move(s2, s3)
+            73:  move(s1, s2)
+            74:  jz(s1, 3)
+            75:  prepcallk(s1, "kill_move", s0, s2)
+            76:  call(255, s1, s2, 1)
+            77:  return(255, 0)
+            78:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 6
+        bgenerator: 0
+        varparams: 0
+
+    3: 
+        sourcename: "data\script\gameobject\toutetu\object\toutetu_suction_oildrop.nut"
+        name: "update_fall_limit"
+        nliterals: 17
+        nparameters: 1
+        noutervals: 0
+        nlocalvarinfos: 1
+        nlineinfos: 13
+        ndefaultparams: 0
+        ninstructions: 73
+        nfunctions: 0
+        Literals: [
+            0: "x"
+            1: "vx"
+            2: "y"
+            3: "vy"
+            4: "_vspace_commit"
+            5: "h_entity"
+            6: "scale"
+            7: "g"
+            8: "v_limit"
+            9: "angle"
+            10: "atan2"
+            11: "world"
+            12: "left"
+            13: "right"
+            14: "top"
+            15: "bottom"
+            16: "kill_move"
+          ]
+        Parameters: [
+            0: "this"
+          ]
+        Outer Values: [  ]
+        Local variables informations: [
+            0: name: "this", pos: 0, start_op: 0, end_op: 72
+          ]
+        Line Informations: [
+            0: line: 94, op: 0
+            1: line: 95, op: 0
+            2: line: 96, op: 3
+            3: line: 97, op: 6
+            4: line: 99, op: 10
+            5: line: 100, op: 13
+            6: line: 102, op: 19
+            7: line: 103, op: 22
+            8: line: 104, op: 28
+            9: line: 106, op: 34
+            10: line: 108, op: 69
+            11: line: 109, op: 71
+            12: line: 111, op: 72
+          ]
+        Default Parameters: [  ]
+        Instructions: [
+            0:  dload(s1, "x", s2, "vx")
+            1:  get(s2, s0, s2)
+            2:  comparith(s1, 2, s1, 43)
+            3:  dload(s1, "y", s2, "vy")
+            4:  get(s2, s0, s2)
+            5:  comparith(s1, 2, s1, 43)
+            6:  loadroot(s1)
+            7:  prepcallk(s1, "_vspace_commit", s1, s2)
+            8:  getk(s3, "h_entity", s0)
+            9:  call(255, s1, s2, 2)
+            10:  load(s1, "scale")
+            11:  loadfloat(s2, 0.05)
+            12:  comparith(s1, 2, s1, 43)
+            13:  getk(s1, "scale", s0)
+            14:  loadfloat(s2, 1)
+            15:  jcmp(s2, 3, s1, CMP_G)
+            16:  load(s1, "scale")
+            17:  loadfloat(s2, 1)
+            18:  set(s255, s0, s1, s2)
+            19:  dload(s1, "vy", s2, "g")
+            20:  get(s2, s0, s2)
+            21:  comparith(s1, 2, s1, 43)
+            22:  getk(s1, "vy", s0)
+            23:  getk(s2, "v_limit", s0)
+            24:  jcmp(s2, 3, s1, CMP_G)
+            25:  dload(s1, "vy", s2, "v_limit")
+            26:  get(s2, s0, s2)
+            27:  set(s255, s0, s1, s2)
+            28:  dload(s1, "angle", s2, "atan2")
+            29:  prepcall(s2, s2, s0, s3)
+            30:  getk(s4, "vy", s0)
+            31:  getk(s5, "vx", s0)
+            32:  call(2, s2, s3, 3)
+            33:  set(s255, s0, s1, s2)
+            34:  getk(s1, "x", s0)
+            35:  loadroot(s2)
+            36:  getk(s2, "world", s2)
+            37:  getk(s2, "left", s2)
+            38:  loadint(s3, 64)
+            39:  sub(s2, s3, s2)
+            40:  cmp(s1, s2, s1, CMP_L)
+            41:  or(s1, 26, s1)
+            42:  getk(s2, "x", s0)
+            43:  loadroot(s3)
+            44:  getk(s3, "world", s3)
+            45:  getk(s3, "right", s3)
+            46:  loadint(s4, 64)
+            47:  add(s3, s4, s3)
+            48:  cmp(s2, s3, s2, CMP_G)
+            49:  or(s2, 17, s2)
+            50:  getk(s3, "y", s0)
+            51:  loadroot(s4)
+            52:  getk(s4, "world", s4)
+            53:  getk(s4, "top", s4)
+            54:  loadint(s5, 64)
+            55:  sub(s4, s5, s4)
+            56:  cmp(s3, s4, s3, CMP_L)
+            57:  or(s3, 8, s3)
+            58:  getk(s4, "y", s0)
+            59:  loadroot(s5)
+            60:  getk(s5, "world", s5)
+            61:  getk(s5, "bottom", s5)
+            62:  loadint(s6, 64)
+            63:  add(s5, s6, s5)
+            64:  cmp(s4, s5, s4, CMP_G)
+            65:  move(s3, s4)
+            66:  move(s2, s3)
+            67:  move(s1, s2)
+            68:  jz(s1, 3)
+            69:  prepcallk(s1, "kill_move", s0, s2)
+            70:  call(255, s1, s2, 1)
+            71:  return(255, 0)
+            72:  return(255, 0)
+          ]
+        Functions: [  ]
+        stacksize: 7
+        bgenerator: 0
+        varparams: 0
+
+  ]
+stacksize: 6
+bgenerator: 0
+varparams: 1
+

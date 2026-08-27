@@ -1,0 +1,56 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/miko.csv"
+
+#フェイス画像
+,DefineObject,miko,-360,0,false
+,DefineObject,miko2,-360,0,true
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+
+
+#Label:Win
+
+# ＊ここは新聞にならずに会話シーンを入れてください
+#
+,ImageDef,miko2,神子_余1,0,0
+,Show,miko2,30,-64,0
+,ImageDef,miko,神子_必1,0,0
+,Show,miko,30,-64,0
+,SetFocus,miko
+勝負あった！\,b05x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,miko,神子_怒1,0,0
+私はその様な\n邪悪な術は使わぬ！\,a11x2,0,0
+
+,ClearBalloon,miko
+,ImageDef,miko,神子_決1,0,0
+姿を現せい\n偽者め！\,b05x2,0,0
+
+# --------------------------
+
+,Hide,miko2,30,-64,0,&
+,Hide,miko,30,-64,0
+,Sleep,30
+,Function,"GameStory_MobOut();"
+,Sleep,150
+
+# 二人の会話の絵が消える
+# 神子からモクモクと煙が出る
+#
+# それと同時に背景のキャラ達もドロンと狸に戻り
+# 一斉に霧散する
+# そこに残ったのは誰も居ない野原
+
+
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

@@ -1,0 +1,157 @@
+## =======================================================================
+#Stage:4
+#Title:気質の行方
+#Place:魔法の森
+#Weather:天気雨
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "royal blue"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+
+#０１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:youmu,160,0,0,8888FF
+Character:yukari,160,0,1,FF8888
+
+#カメラ固定
+Action:youmu,4
+
+#フォーカス瞬間移動
+#Action:youmu,11
+
+#向き固定解除
+Action:youmu,152
+
+Label:Start
+
+Sleep:30;
+
+#ステージタイトル表示
+Object:data/scenario/youmu/effect/StageTitle004.bmp,0,256,-32
+Sleep:60;
+Object:data/scenario/effect/Stage4.bmp,1,256,352
+Sleep:60;
+
+Face:yukari,普
+生き物が多いここなら
+その気の流れが良く見えるでしょう\
+
+Face:youmu,普
+えー……っと\
+
+Hide:1
+Sleep:60;
+Hide:0
+
+Face:youmu,汗
+よく判りません\
+
+Face:yukari,惑
+貴方は未熟過ぎる\
+
+Face:yukari,余
+もう少し判りやすく気を集めましょうか\
+
+
+#戦闘開始処理
+Action:youmu,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:yukari,普
+神社が壊されたわね\
+
+Face:yukari,余
+私もそろそろ怒って良い頃かもね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#天候初期化
+Action:yukari,113
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:yukari,200
+#攻撃側ニュートラル移行検知
+Action:youmu,202
+
+#自キャラ天候
+Action:youmu,103
+Sleep:60
+
+Face:youmu,普
+なるほど判りました！\
+
+Face:youmu,驚
+幽霊……気質は空に吸い込まれるように
+立ち上っているのですね！\
+
+Face:yukari,負
+幽霊だけではないわ\
+
+Face:youmu,普
+そう、幽霊だけじゃなくて……\
+
+Face:youmu,惑
+生きとし生けるもの全ての気質が
+緋色の雲となって……あっ！\
+
+Face:yukari,負
+ではいってらっしゃい\
+
+Face:youmu,嬉
+紫様のお陰で大切な事に気付きました
+有難うございます\
+
+#上空移行用上空退避
+Hide:1
+Sleep:30;
+Action:youmu,151
+
+Sleep:90;
+
+Face:yukari,余
+いえいえ、少し痛い目に遭ってくると良いわ
+勉強がてら\
+
+Hide:1
+Result:
+FadeBgm:2000,0
+
+#フェードアウト　黒
+Action:youmu,160
+Sleep:60;
+
+
+Stage:4,0
+
+End:
+
+
+
+
+
+## =======================================================================

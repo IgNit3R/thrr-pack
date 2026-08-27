@@ -1,0 +1,233 @@
+## =======================================================================
+#Stage:Final
+#Title:非想天
+#Place:有頂天
+#Weather:極光
+#
+# Hi-lock: (("\\#.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*Character.*$"              (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Action.*$"              (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Stage.*$"              (0 '((t (:foreground "sky blue"))) t))) 
+# Hi-lock: (("^[ \t]*Label.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Object.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Sleep.*$"            (0 '((t (:foreground "cornflower blue"))) t))) 
+# Hi-lock: (("^[ \t]*Face.*$"            (0 '((t (:foreground "medium spring green"))) t))) 
+# Hi-lock: (("^[ \t]*End.*$"            (0 '((t (:foreground "dark slate gray"))) t))) 
+# Hi-lock: (("^[ \t]*PlayBgm.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Hide.*$"            (0 '((t (:foreground "dark turquoise"))) t))) 
+# Hi-lock: (("^[ \t]*Font.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Window.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*Background.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+# Hi-lock: (("^[ \t]*CG.*$"            (0 '((t (:foreground "dim gray"))) t))) 
+#PlayBgm:data/bgm/ta00.ogg
+#0１２３４５６７８９０１２３４５６７８９０１２３
+
+Character:yuyuko,160,0,0,8888FF
+Character:tenshi,160,0,1,FF8888
+#敵画面外に待機
+Action:tenshi,100
+#カメラ初期位置固定
+Action:tenshi,130
+#自キャラ画面外待機
+Action:yuyuko,5
+
+#向き固定解除
+Action:yuyuko,152
+
+Label:Start
+
+Sleep:85;
+
+PlayBgm:data/bgm/ta07.ogg
+
+#フェードイン　白
+Action:yuyuko,163
+
+#カメラ下へ
+Action:tenshi,131
+#Sleep:60;
+
+#ステージタイトル表示
+Object:data/scenario/yuyuko/effect/StageTitle006.bmp,0,256,-32
+#画面上から落下して登場
+Action:yuyuko,6
+#Sleep:60;
+Object:data/scenario/effect/StageFinal.bmp,1,256,352
+Action:yuyuko,7
+Sleep:180;
+
+#sleep,60
+Face:yuyuko,普
+天界は冥界よりも広い\
+
+Face:yuyuko,惑
+天界といっても、いくつもの世界に別れています\
+
+Face:yuyuko,余
+ここは……<ruby ひそうてん>非想天</ruby>かしら？\
+
+Face:yuyuko,
+Hide:1
+
+#イベント　メッセージウィンドウ消去
+#イベント　カメラ上空へ
+Action:tenshi,132
+
+#イベント　地震
+Action:tenshi,133
+
+#sleep,180
+
+Face:tenshi,無
+天地の道は\
+
+Hide:1
+Sleep:30
+
+Action:tenshi,133
+#イベント　地震
+極まれば則ち<ruby かえ>反</ruby>り\
+
+Hide:1
+#sleep,60
+
+# 天子登場
+#イベント　大地震
+#イベント　カメラフォーカス元へ
+Action:tenshi,134
+#sleep,180
+
+<ruby み>盈</ruby>つれば則ち損ず！\
+
+
+#登場ポーズ終了指令
+Action:tenshi,139
+#sleep,30
+
+Face:tenshi,余
+夏の暑さも、時間が経てば涼しくなり
+そして冬になるのです\
+
+#Name:非想非非想天の娘　比那名居天子
+# 名前のテロップ
+Object:data/scenario/tenshi/effect/Name.bmp,2,352,304
+
+Face:tenshi,惑
+貴方は何故夏に雪を降らす？\
+
+Face:yuyuko,余
+同じ雪でも、夏の方が数倍魅力的だからです\
+
+Face:tenshi,余
+しかし、どうやって雪を？\
+
+Face:yuyuko,驚
+さあね
+人間、精進すれば何だって出来るって事ね\
+
+Face:yuyuko,普
+そう、心を澄ませ、何も考えずに自由に生きる
+いや\
+
+Face:yuyuko,余
+私は死んでいたわね\
+
+
+Face:tenshi,嬉
+あはははは
+降参降参、まさかそんなに早く見つかるなんてね\
+
+Face:tenshi,余
+そう、地上にもこんな奴がいたなんて\
+
+Face:yuyuko,驚
+？？
+何の話？\
+
+
+Face:tenshi,嬉
+貴方の目的は、私を倒して天気を元に戻す
+って事でしょ？\
+
+Face:yuyuko,怒
+いやいや、とんでもない
+まだ戻されても困るわ\
+
+PlayBgm:data/bgm/st05.ogg
+
+Face:tenshi,驚
+え？\
+
+Face:yuyuko,余
+折角の夏の雪
+もっと楽しんでからでも良いじゃない\
+
+
+Face:tenshi,驚
+何と……\
+
+Face:tenshi,汗
+もしかして馬鹿にされているのかしら？\
+
+Face:yuyuko,嬉
+いえいえそんな……有頂天の貴方にそんな事\
+
+Face:tenshi,普
+まあいいや\
+
+Face:tenshi,決
+お前は、これから起こるだろう地上の者どもとの
+戦いの前座を務めて貰う！\
+
+
+#戦闘開始処理
+Action:yuyuko,3
+
+End:
+
+# 戦闘開始
+
+# --------------------------------
+# 戦闘終了　負け
+Label:Lose
+
+Face:tenshi,普
+地上の奴らも思ったより強いのね\
+
+Face:tenshi,嬉
+こりゃあ気を引き締めないとね\
+
+End:
+
+# --------------------------------
+# 戦闘終了　コンテニュー処理
+Label:Continue
+
+#背景　有頂天へ
+Action:tenshi,180
+#天候解除
+Action:tenshi,153
+
+End:
+
+# --------------------------------
+# 戦闘終了　勝ち
+Label:Win
+
+#やられキャラ完全ダウン検知
+Action:tenshi,200
+#攻撃側ニュートラル移行検知
+Action:yuyuko,202
+
+Sleep:30
+Result:
+
+#イベント　勝利演出フェード
+
+End:
+
+
+
+
+
+## =======================================================================

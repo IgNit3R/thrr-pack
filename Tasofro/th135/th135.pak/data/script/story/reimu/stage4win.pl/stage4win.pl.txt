@@ -1,0 +1,82 @@
+#========================================================================
+#	Stage:3win
+#========================================================================
+
+:init
+:main_1
+,SetDefaultBalloon,0
+,LoadImageDef,"data/system/char_def/face/reimu.csv"
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+
+# -------------------------------------------------------
+# キャラクタ配置
+#     文法： ,DefineObject,<名前>,<表示X座標>,<表示Y座標>,<左右反転フラグ>
+# -------------------------------------------------------
+,DefineObject,reimu,-360,0,false
+,DefineObject,hijiri,-360,0,true
+
+# -------------------------------------------------------
+# キャラクタ画像変更
+#     文法： ,ImageFile,<名前>,<ファイルパス>,<表示オフセットX>,<表示オフセットY>,<吹き出し基準位置X>,<吹き出し基準位置Y>
+# -------------------------------------------------------
+
+,ImageDef,reimu,霊夢_嬉1,0,0
+,ImageDef,hijiri,聖_負1,20,0
+
+#,Function,"GameStory_PlayBGM(302);",# BGM再生開始
+
+,Return
+# -------------------------------------------------------
+# 本編
+# -------------------------------------------------------
+:main_1
+,GoSub,init				,# 初期化ルーチン呼び出し
+
+,Show,reimu,30,-64,0
+,Show,hijiri,30,-64,0	,#双方登場
+
+,SetFocus,reimu
+やった！\n勝った！\,b05x2
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_決1,0,0
+敵地でも勝つと\n一気に注目を浴びるわね！\,a11x2
+,ClearBalloon,reimu
+
+,SetFocus,hijiri,0,
+負けちゃった……か\nこれでは商売あがったりね,c11x2
+,WaitInput
+,ClearBalloon,hijiri
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_普2,0,0
+ところでさ,c05x2,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_惑1,0,0
+観客が乗り気だから\nついつい気分が良くなって\n戦っちゃうけど……\,a15x3
+,ClearBalloon,reimu
+
+,ImageDef,reimu,霊夢_汗1,0,0
+みんな好戦的で\n流石にちょっと異常かなー\nなんて\,c15x3
+,ClearBalloon,reimu
+
+,SetFocus,hijiri,0,
+そう？,a05x2
+,WaitInput
+,ClearBalloon,hijiri
+
+ここではよくある事だと\n思ってましたが\,a11x2
+,ClearBalloon,hijiri
+
+,SetFocus,reimu
+,ImageDef,reimu,霊夢_惑1,0,0
+本当はそうでも\n無いのよねー,c11x2,20,-30
+,WaitInput
+,ClearBalloon,reimu
+
+,Function,"::StopBGM(1500);"
+,Thread,"::story.NextStage();"
+
+,End

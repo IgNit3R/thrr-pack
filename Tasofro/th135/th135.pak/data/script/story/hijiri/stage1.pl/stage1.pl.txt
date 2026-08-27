@@ -1,0 +1,75 @@
+:init
+,SetDefaultBalloon,0,#メッセージに噴出し指定をつけない場合のデフォルト噴出しを設定
+
+#フェイス画像参照の定義
+,LoadImageDef,"data/system/char_def/face/hijiri.csv"
+,LoadImageDef,"data/system/char_def/face/futo.csv"
+
+#フェイス画像
+,DefineObject,hijiri,-360,0,false
+,DefineObject,futo,-360,0,true
+
+#肩書き
+,DefineObject,hijiri_label,50,360,false
+,DefineObject,futo_label,1120,360,false
+
+#肩書き画像の指定
+,ImageFile,hijiri_label,"data/system/char_def/name/name_03hijiri.png",0,0,0,0
+,ImageFile,futo_label,"data/system/char_def/name/name_05futo.png",0,0,0,0
+
+,Return
+#======================================================================================
+:main_1
+,GoSub,init
+,Sleep,60
+
+
+,Function,GameStory_TitleCall()
+,Sleep,120
+
+#Stage1 「挑戦者現る！」
+# 場所：命蓮寺
+
+#0１２３４５６７８９０１２３４
+,ImageDef,hijiri,聖_驚1,0,0
+,Show,hijiri,30,-64,0
+,ImageDef,futo,布都_必1,0,0
+,Show,futo,30,-64,0
+,SetFocus,futo
+頼もう！\,b05x2,0,0
+,ClearBalloon,futo
+
+# 名前テロップ
+# 霊長類を越えた阿闍梨　聖白蓮
+
+,ImageDef,futo,布都_普1,0,0
+寺の看板を賭けて\n尋常に勝負せい！,a11x2,0,0
+,Show,futo_label,20,0,-64
+,WaitInput
+,ClearBalloon,futo
+,Hide,futo_label,20,0,64
+
+,ImageDef,hijiri,聖_選1,0,0
+,SetFocus,hijiri
+いいでしょう\n看板は賭けませんが\,a11x2,0,0
+
+,ClearBalloon,hijiri
+,ImageDef,futo,布都_普3,0,0
+,SetFocus,futo
+逃げるつもりなのか？\,a11x2,0,0
+
+,ClearBalloon,futo
+,ImageDef,hijiri,聖_余1,0,0
+,SetFocus,hijiri
+貴方の看板は\n要らないからです\,c11x2,0,0
+
+,ClearBalloon,hijiri
+,Function,"StopBGM(2000);",# BGM停止
+,Hide,hijiri,30,-64,0,&
+,Hide,futo,30,-64,0
+
+,Function,"GameStory_PlayBattleBGM(105);",# 戦闘BGM再生開始
+
+,Function,"RoundStory_Ready();"
+
+,End
