@@ -1,0 +1,415 @@
+anim { "enemy.anm"; "boss25.anm"; }
+ecli { "default.ecl"; }
+
+void WaveSync();
+
+void BossInterval();
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void Boss25()
+{
+    ins_502(32);
+    ins_30("Boss25 Start");
+    ins_1006("Tenkyu Chimata");
+    ins_1024(26);
+    ins_307([-9895], 14);
+    ins_502(32);
+    ins_23(60);
+    ins_300("Boss25Boss", 0.0f, 0.0f, 100, 100, 0);
+    ins_1015([-9985], 16);
+    ins_520();
+    ins_525();
+    ins_616(640.0f);
+    unless ([-9896] == 0) goto Boss25_456 @ 0;
+    ins_518(1);
+    ins_519();
+Boss25_456:
+    ins_1();
+}
+
+void Boss25Boss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_502(3);
+    [-9947] = 1;
+    ins_400(0.0f, 128.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 6);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 3);
+    ins_23(101);
+    ins_302([-9895]);
+    ins_306(0, 5);
+    ins_503(3);
+    ins_502(64);
+    ins_511(17000);
+    unless ([-9897] == 0) goto Boss25Boss_552 @ 0;
+    ins_518(0);
+    ins_519();
+Boss25Boss_552:
+    ins_524(43);
++1: //1
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_302(1);
+    ins_303(1, 105);
+    ins_303(2, 114);
+    ins_302([-9895]);
+    ins_629(160.0f, 15732608);
+    @Boss25Boss1();
+    ins_1();
+}
+
+void Boss25Boss1()
+{
+    var A, B, C;
+    $A = 90;
+    ins_513();
+    ins_514(0, 7000, 4200, "Boss25BossCard1");
+    ins_521(0, "BossEscape");
+    ins_527(0, 7000.0f, -24448);
+    ins_527(1, 4000.0f, -24448);
+    ins_1023(40);
+    ins_302([-9895]);
+    ins_306(0, 5);
+    ins_307(1, 75);
+    ins_516(54);
+    ins_23(60);
+    ins_307(1, 86);
+    ins_516(6);
+    [-9985] = 60;
+    [-9984] = 1;
+    goto Boss25Boss1_860 @ 0;
+Boss25Boss1_508:
+    ins_302([-9895]);
+    @Boss25Boss1_at(6, 0, 3.1415927f, -1.5707964f, -0.06981317f, -0.15009831f, 64.0f, 1.5707964f, 0.034906585f, 0.5f, 600, 2.0f) async;
+    @Boss25Boss1_at(4, 1, 0.0f, 1.5707964f, 0.08726646f, -0.11519173f, 64.0f, -1.5707964f, -0.034906585f, 0.5f, 600, 2.0f) async;
+    ins_23(600);
+    ins_412(100, 0, 0.6f);
+    ins_23(60);
+Boss25Boss1_860:
+    if (1) goto Boss25Boss1_508 @ 0;
+    return;
+}
+
+void Boss25Boss1_at(var A, var B, var C, var D, var E, var F, var G, var H, var I, var J, var K, var L)
+{
+    var M, N, O, P;
+    ins_600($B);
+    ins_607($B, 1);
+    ins_602($B, 11, $A);
+    ins_606($B, 1, 1);
+    ins_604($B, 0.0f, 0.34906584f);
+    ins_605($B, 1.0f, 1.0f);
+    ins_611($B, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($B, 0, -2147483648, 20, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($B, 0, 2097152, 60, -9999994, %L, -9999994.0f);
+    %E = %E * 1.2f;
+    %F = %F * 1.2f;
+    $O = -1;
+    $P = $K;
+    goto Boss25Boss1_at_1080 @ 0;
+Boss25Boss1_at_580:
+    $O = $O + 1;
+    ins_94(%M, %N, %D, %G, %H, %J);
+    %H = %H + %I;
+    ins_82(%H);
+    ins_603($B, %M, %N);
+    ins_604($B, %C, 0.0f);
+    ins_601($B);
+    %C = %C + %E;
+    %D = %D + %F;
+    ins_82(%C);
+    ins_82(%D);
+    ins_23(1);
+Boss25Boss1_at_1080:
+    if ($P--) goto Boss25Boss1_at_580 @ 0;
+    return;
+}
+
+void Boss25BossCard1()
+{
+    var A, B;
+    unless ([-9986] == 0) goto Boss25BossCard1_160 @ 0;
+    ins_615(640.0f);
+    goto Boss25BossCard1_180 @ 0;
+Boss25BossCard1_160:
+    ins_616(640.0f);
+Boss25BossCard1_180:
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto Boss25BossCard1_352 @ 0;
+    ins_615(640.0f);
+    goto Boss25BossCard1_372 @ 0;
+Boss25BossCard1_352:
+    ins_616(640.0f);
+Boss25BossCard1_372:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_514(0, 4000, 7800, "Boss25BossCard2");
+    ins_521(0, "BossEscape");
+    ins_1023(25);
+    ins_522(0, 7800, 0, "「正当なバレットマーケット」");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_502(12);
+    ins_302([-9895]);
+    ins_306(0, 5);
++120: //120
+    ins_0();
+    @Boss25BossCard1_at(0, 4) async;
+    @Boss25BossCard1_at2(1, 2) async;
+    goto Boss25BossCard1_1120 @ 120;
+Boss25BossCard1_1100:
+    ins_23(240);
+Boss25BossCard1_1120:
+    if (1) goto Boss25BossCard1_1100 @ 120;
+    goto Boss25BossCard1_1208 @ 120;
+Boss25BossCard1_1188:
+    ins_23(1000);
+Boss25BossCard1_1208:
+    if (1) goto Boss25BossCard1_1188 @ 120;
+    return;
+}
+
+void Boss25BossCard1_at(var A, var B)
+{
+    var C;
+    ins_600($A);
+    ins_607($A, 3);
+    ins_602($A, 5, $B);
+    ins_606($A, 12, 1);
+    ins_604($A, 0.0f, 0.18479957f);
+    ins_605($A, 3.2f, 1.0f);
+    ins_611($A, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 256, 300, 0, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 2097152, 60, -9999994, 0.2f, -9999994.0f);
+    ins_611($A, 0, -2147483648, 60, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 2097152, 240, -9999994, 2.0f, 5000000.0f);
+    $C = 10000;
+    goto Boss25BossCard1_at_596 @ 0;
+Boss25BossCard1_at_476:
+    ins_604($A, [-9998.0f], 0.0f);
+    ins_628($A, [-9965.0f], [-9964.0f]);
+    ins_627($A, -192.0f);
+    ins_601($A);
+    ins_23(180);
+Boss25BossCard1_at_596:
+    if ($C--) goto Boss25BossCard1_at_476 @ 0;
+    return;
+}
+
+void Boss25BossCard1_at2(var A, var B)
+{
+    var C;
+    ins_600($A);
+    ins_607($A, 3);
+    ins_602($A, 5, $B);
+    ins_606($A, 12, 1);
+    ins_604($A, 0.0f, 0.18479957f);
+    ins_605($A, 3.2f, 1.0f);
+    ins_611($A, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 256, 300, 0, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 2097152, 60, -9999994, 0.2f, -9999994.0f);
+    ins_611($A, 0, -2147483648, 60, -9999994, -9999994.0f, -9999994.0f);
+    ins_612($A, 0, 1073741824, 500, -9999994, -9999994, -9999994, 1.5f, 0.0f, 0.008f, -9999994.0f);
+    ins_611($A, 0, 2097152, 60, -9999994, 2.0f, -9999994.0f);
+    $C = 10000;
+    goto Boss25BossCard1_at2_628 @ 0;
+Boss25BossCard1_at2_536:
+    ins_604($A, [-9998.0f], 0.0f);
+    ins_627($A, -192.0f);
+    ins_601($A);
+    ins_23(180);
+Boss25BossCard1_at2_628:
+    if ($C--) goto Boss25BossCard1_at2_536 @ 0;
+    return;
+}
+
+void Boss25BossCard2()
+{
+    @BossInterval();
+    unless ([-9986] == 0) goto Boss25BossCard2_196 @ 0;
+    ins_615(640.0f);
+    goto Boss25BossCard2_216 @ 0;
+Boss25BossCard2_196:
+    ins_616(640.0f);
+Boss25BossCard2_216:
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto Boss25BossCard2_388 @ 0;
+    ins_615(640.0f);
+    goto Boss25BossCard2_408 @ 0;
+Boss25BossCard2_388:
+    ins_616(640.0f);
+Boss25BossCard2_408:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_514(0, 0, 9600, "BossDead");
+    ins_521(0, "BossEscape");
+    ins_1023(25);
+    ins_522(0, 9600, 0, "「闇市場のミシガンロール」");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_504(0.0f, 224.0f, 384.0f, 224.0f);
+    ins_502(12);
+    ins_302([-9895]);
+    ins_306(0, 5);
++60: //60
+    ins_0();
+    [-9985] = 60;
+    [-9984] = 1;
+    [-9981.0f] = 0.785398f;
+    goto Boss25BossCard2_2224 @ 60;
+Boss25BossCard2_1136:
+    ins_302([-9895]);
+    @BossCard5_at(4, 0, 1.5707964f, 1.5707964f, 0.10471976f, 0.2268928f, 100.0f, -1.5707964f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(6, 1, 2.4683943f, 2.4683943f, 0.10471976f, 0.2268928f, 100.0f, -0.6731984f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(8, 2, 3.365992f, 3.365992f, 0.10471976f, 0.2268928f, 100.0f, 0.22439948f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(10, 3, 4.26359f, 4.26359f, 0.10471976f, 0.2268928f, 100.0f, 1.1219974f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(13, 4, 5.161188f, 5.161188f, 0.10471976f, 0.2268928f, 100.0f, 2.0195954f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(14, 5, 6.058786f, 6.058786f, 0.10471976f, 0.2268928f, 100.0f, 2.9171932f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    @BossCard5_at(2, 6, 6.9563837f, 6.9563837f, 0.10471976f, 0.2268928f, 100.0f, 3.814791f, -0.034906585f, 0.5f, 100, 1.8f) async;
+    ins_23(400);
+    ins_412(100, 0, 0.6f);
+    ins_23(60);
+    [-9981.0f] = [-9981.0f] * _f(-1);
+Boss25BossCard2_2224:
+    if (1) goto Boss25BossCard2_1136 @ 60;
+    return;
+}
+
+void Boss25BossCard2_at()
+{
+    var A, B, C, D;
+    ins_600($A);
+    ins_607($A, 1);
+    ins_602($A, 12, 13);
+    ins_606($A, 8, 1);
+    ins_604($A, %C, 0.5235988f);
+    ins_605($A, 1.2f, 1.0f);
+    ins_611($A, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($A, 0, 8, 60, -9999994, 0.0f, %B);
+    ins_611($A, 0, 8, 120, -9999994, 0.0f, -%B);
+    ins_611($A, 0, 8, 60, -9999994, 0.0f, %B);
+    ins_611($A, 0, 65536, 1, -9999994, -9999994.0f, -9999994.0f);
+    $D = 30;
+    goto Boss25BossCard2_at_552 @ 0;
+Boss25BossCard2_at_512:
+    ins_601($A);
+    ins_23(3);
+Boss25BossCard2_at_552:
+    if ($D--) goto Boss25BossCard2_at_512 @ 0;
+    return;
+}
+
+void Boss25BossCard2_at2()
+{
+    var A, B, C, D;
+    ins_600($A);
+    ins_607($A, 3);
+    ins_602($A, 9, 2);
+    ins_606($A, 32, 1);
+    ins_604($A, [-9998.0f], 0.5235988f);
+    ins_605($A, 2.2f, 1.0f);
+    ins_611($A, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    %C = [-9998.0f];
+    $D = 5;
+    goto Boss25BossCard2_at2_484 @ 0;
+Boss25BossCard2_at2_340:
+    %C = %C + %B;
+    ins_604($A, %C, 0.0f);
+    ins_601($A);
+    ins_23(10);
+Boss25BossCard2_at2_484:
+    if ($D--) goto Boss25BossCard2_at2_340 @ 0;
+    return;
+}
+
+void Boss25test()
+{
+    ins_502(32);
+    ins_1013(0, 100, 115, 130, 145, 160, 175, 190, 205);
+    ins_1013(1, 110, 130, 150, 170, 190, 210, 230, 250);
+    ins_1013(4, 300, 400, 500, 600, 700, 800, 900, 1000);
+    ins_1013(5, 500, 650, 800, 950, 1100, 1250, 1400, 1550);
+    ins_1013(8, 2000, 2300, 2600, 2900, 3200, 3500, 3800, 4100);
+    ins_1013(9, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(12, 2500, 2900, 3300, 3700, 4100, 4500, 4900, 5300);
+    ins_1013(13, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(16, 1800, 1920, 2040, 2160, 2280, 2400, 2520, 2640);
+    ins_23(1);
+    ins_524(0);
+    [-9895] = 3;
+    ins_30("Boss25test Start");
+    ins_300("Boss25", 0.0f, 0.0f, 100, 100, 0);
+    @WaveSync();
+    ins_23(120);
+    unless ([-9896]) goto Boss25test_828 @ 0;
+    ins_1019();
+    goto Boss25test_844 @ 0;
+Boss25test_828:
+    ins_1017();
+Boss25test_844:
+    goto Boss25test_888 @ 0;
+Boss25test_868:
+    ins_23(1000);
+Boss25test_888:
+    if (1) goto Boss25test_868 @ 0;
+    ins_1002();
+    ins_1003();
+    ins_1();
+}
+
+void BossCard5_at(var A, var B, var C, var D, var E, var F, var G, var H, var I, var J, var K, var L)
+{
+    var M, N, O, P;
+    ins_600($B);
+    ins_607($B, 1);
+    ins_602($B, 11, $A);
+    ins_606($B, 1, 1);
+    ins_604($B, 0.0f, 0.34906584f);
+    ins_605($B, 1.0f, 1.0f);
+    ins_611($B, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_611($B, 0, 2097152, 60, -9999994, %L, -9999994.0f);
+    ins_612($B, 0, 16, 60, 1, 0, 0, [-9981.0f], 1.0f, 3.1415927f, -9999994.0f);
+    %C = %C + (%E * _f(2));
+    %D = %D + (%F * _f(2));
+    $O = -1;
+    $P = $K;
+    goto BossCard5_at_1168 @ 0;
+BossCard5_at_668:
+    $O = $O + 1;
+    ins_94(%M, %N, %D, %G, %H, %J);
+    %H = %H + %I;
+    ins_82(%H);
+    ins_603($B, %M, %N);
+    ins_604($B, %C, 0.0f);
+    ins_601($B);
+    %C = %C + %E;
+    %D = %D + %F;
+    ins_82(%C);
+    ins_82(%D);
+    ins_23(4);
+BossCard5_at_1168:
+    if ($P--) goto BossCard5_at_668 @ 0;
+    return;
+}

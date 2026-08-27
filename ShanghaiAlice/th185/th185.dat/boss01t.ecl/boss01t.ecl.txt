@@ -1,0 +1,321 @@
+anim { "enemy.anm"; "boss01t.anm"; }
+ecli { "default.ecl"; }
+
+void WaveSync();
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void Boss01t()
+{
+    ins_502(32);
+    ins_30("Boss01t Start");
+    ins_1006("Tutorial Boss");
+    ins_1024(1);
+    ins_502(32);
+    ins_23(60);
+    ins_300("Boss01tBoss", 0.0f, 0.0f, 100, 100, 0);
+    ins_1015([-9985], 16);
+    ins_520();
+    ins_525();
+    ins_616(640.0f);
+    ins_1();
+}
+
+void Boss01tBoss()
+{
+    ins_512(0);
+    ins_515(120);
+    ins_502(3);
+    [-9947] = 1;
+    ins_400(0.0f, 128.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 6);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 3);
+    ins_23(101);
+    ins_302([-9895]);
+    ins_306(0, 5);
+    ins_503(3);
+    ins_502(64);
+    ins_511(5900);
+    ins_303(0, 11);
+    unless ([-9897] == 0) goto Boss01tBoss_576 @ 0;
+    ins_518(2);
+    ins_519();
+Boss01tBoss_576:
+    ins_524(43);
++1: //1
+    ins_500(40.0f, 40.0f);
+    ins_501(48.0f, 48.0f);
+    ins_504(0.0f, 128.0f, 280.0f, 64.0f);
+    ins_302(1);
+    ins_303(1, 105);
+    ins_303(2, 114);
+    ins_302([-9895]);
+    ins_629(160.0f, 15732608);
+    @Boss01tBoss1();
+    ins_1();
+}
+
+void Boss01tBoss1()
+{
+    var A, B, C;
+    $A = 90;
+    ins_1023(30);
+    ins_513();
+    ins_514(0, 900, 4200, "Boss01tBossCard1");
+    ins_521(0, "BossEscape");
+    ins_527(0, 900.0f, -24448);
+    ins_540(0);
+    ins_302([-9895]);
+    ins_306(0, 5);
+    ins_307(1, 79);
+    ins_516(54);
+    ins_23(60);
+    ins_307(1, 96);
+    ins_516(6);
+    goto Boss01tBoss1_612 @ 0;
+Boss01tBoss1_424:
+    @Boss01tBoss1_at(1.5707964f, 1.0471976f, 0.022689281f);
+    ins_23(110);
+    @Boss01tBoss1_at([-9989.0f], -1.0471976f, -0.022689281f);
+    ins_412(60, 4, 0.7f);
+    ins_23(110);
+Boss01tBoss1_612:
+    if (1) goto Boss01tBoss1_424 @ 0;
+    return;
+}
+
+void Boss01tBoss1_at(var A, var B, var C)
+{
+    var D, E, F;
+    %D = 1.2f;
+    %E = 0.14f;
+    %F = 0.174533f;
+    ins_302([-9895]);
+    ins_313(0);
+    @Boss01tBoss1_at_et(%A, %B, %C, 4, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 6, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 8, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 11, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 13, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 14, %D);
+    %A = %A + %F;
+    %D = %D + %E;
+    ins_23(3);
+    @Boss01tBoss1_at_et(%A, %B, %C, 2, %D);
+    return;
+}
+
+void Boss01tBoss1_at_et(var A, var B, var C, var D, var E)
+{
+    ins_600(0);
+    ins_607(0, 3);
+    ins_602(0, 8, $D);
+    ins_606(0, 8, 1);
+    ins_604(0, %A, 0.6981317f);
+    ins_605(0, 2.5f, 1.0f);
+    ins_611(0, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_612(0, 0, 16, 30, 1, 0, 0, %B, 0.0f, 3.1415927f, -9999994.0f);
+    ins_611(0, 0, 8, 100, -9999994, %E / _f(100), %C);
+    ins_601(0);
+    return;
+}
+
+void Boss01tBossCard1()
+{
+    unless ([-9986] == 0) goto Boss01tBossCard1_160 @ 0;
+    ins_615(640.0f);
+    goto Boss01tBossCard1_180 @ 0;
+Boss01tBossCard1_160:
+    ins_616(640.0f);
+Boss01tBossCard1_180:
+    ins_513();
+    ins_21();
+    ins_525();
+    unless ([-9986] == 0) goto Boss01tBossCard1_352 @ 0;
+    ins_615(640.0f);
+    goto Boss01tBossCard1_372 @ 0;
+Boss01tBossCard1_352:
+    ins_616(640.0f);
+Boss01tBossCard1_372:
+    ins_523();
+    ins_632(0);
+    ins_545();
+    ins_516(27);
+    ins_404(0.0f, 0.0f);
+    ins_405(0, 0, 0.0f, 0.0f);
+    ins_401(0, 0, 0.0f, 0.0f);
+    [-9949] = 0;
+    [-9948] = 0;
+    [-9947] = 1;
+    ins_1023(100);
+    ins_514(0, 0, 4800, "BossDead");
+    ins_521(0, "BossEscape");
+    ins_522(0, 4800, 0, "èµïÑÅuíeñãñúóàÅv");
+    ins_401(60, 4, 0.0f, 128.0f);
+    ins_504(0.0f, 128.0f, 100.0f, 64.0f);
+    ins_316(0, 0);
+    ins_307(1, 73);
++90: //90
+    ins_0();
+    goto Boss01tBossCard1_1044 @ 90;
+Boss01tBossCard1_956:
+    ins_412(60, 4, 1.0f);
+    @Boss01tBossCard1_at();
+    ins_23(60);
+Boss01tBossCard1_1044:
+    if (1) goto Boss01tBossCard1_956 @ 90;
+    goto Boss01tBossCard1_1132 @ 90;
+Boss01tBossCard1_1112:
+    ins_23(1000);
+Boss01tBossCard1_1132:
+    if (1) goto Boss01tBossCard1_1112 @ 90;
+    return;
+}
+
+void Boss01tBossCard1_at()
+{
+    var A, B, C, D, E, F, G, H;
+    %A = [-9989.0f];
+    ins_600(0);
+    ins_607(0, 1);
+    ins_602(0, 6, 13);
+    ins_606(0, 1, 1);
+    ins_604(0, 1.5707964f, 0.6981317f);
+    ins_605(0, 3.0f, 3.0f);
+    ins_611(0, 0, 2, 2, -9999994, -9999994.0f, -9999994.0f);
+    $B = 3;
+    goto Boss01tBossCard1_at_420 @ 0;
+Boss01tBossCard1_at_340:
+    @Boss01tBossCard1_at_et(%A, 4);
+    ins_23(5);
+Boss01tBossCard1_at_420:
+    if ($B--) goto Boss01tBossCard1_at_340 @ 0;
+    $C = 3;
+    goto Boss01tBossCard1_at_608 @ 0;
+Boss01tBossCard1_at_528:
+    @Boss01tBossCard1_at_et(%A, 6);
+    ins_23(5);
+Boss01tBossCard1_at_608:
+    if ($C--) goto Boss01tBossCard1_at_528 @ 0;
+    $D = 3;
+    goto Boss01tBossCard1_at_796 @ 0;
+Boss01tBossCard1_at_716:
+    @Boss01tBossCard1_at_et(%A, 8);
+    ins_23(5);
+Boss01tBossCard1_at_796:
+    if ($D--) goto Boss01tBossCard1_at_716 @ 0;
+    $E = 3;
+    goto Boss01tBossCard1_at_984 @ 0;
+Boss01tBossCard1_at_904:
+    @Boss01tBossCard1_at_et(%A, 10);
+    ins_23(5);
+Boss01tBossCard1_at_984:
+    if ($E--) goto Boss01tBossCard1_at_904 @ 0;
+    $F = 3;
+    goto Boss01tBossCard1_at_1172 @ 0;
+Boss01tBossCard1_at_1092:
+    @Boss01tBossCard1_at_et(%A, 13);
+    ins_23(5);
+Boss01tBossCard1_at_1172:
+    if ($F--) goto Boss01tBossCard1_at_1092 @ 0;
+    $G = 3;
+    goto Boss01tBossCard1_at_1360 @ 0;
+Boss01tBossCard1_at_1280:
+    @Boss01tBossCard1_at_et(%A, 14);
+    ins_23(5);
+Boss01tBossCard1_at_1360:
+    if ($G--) goto Boss01tBossCard1_at_1280 @ 0;
+    $H = 3;
+    goto Boss01tBossCard1_at_1548 @ 0;
+Boss01tBossCard1_at_1468:
+    @Boss01tBossCard1_at_et(%A, 2);
+    ins_23(5);
+Boss01tBossCard1_at_1548:
+    if ($H--) goto Boss01tBossCard1_at_1468 @ 0;
+    return;
+}
+
+void Boss01tBossCard1_at2()
+{
+    var A, B, C, D, E;
+    %C = _f(100);
+    ins_23(60);
+    ins_600(1);
+    ins_607(1, 3);
+    ins_602(1, 4, 6);
+    ins_606(1, 1, 1);
+    ins_604(1, 1.5707964f, 0.034906585f);
+    ins_605(1, 1.0f, 0.8f);
+    ins_611(1, 0, 2, 1, -9999994, -9999994.0f, -9999994.0f);
+    ins_91(0, %C, 0, 600, 60.0f, 10.0f);
+    $E = 6000;
+    goto Boss01tBossCard1_at2_652 @ 0;
+Boss01tBossCard1_at2_400:
+    ins_81(%A, %B, [-9998.0f], [-9999.0f] * _f(128));
+    ins_603(1, %A, %B * 0.4f);
+    ins_601(1);
+    $D = _S(%C);
+    ins_23($D);
+Boss01tBossCard1_at2_652:
+    if ($E--) goto Boss01tBossCard1_at2_400 @ 0;
+    return;
+}
+
+void Boss01tBossCard1_at_et(var A, var B)
+{
+    ins_609(0, 1, 1, 4, 60, -9999994, 0.08f + ([-9987.0f] * 0.03f), %A + ([-9987.0f] * 0.5235988f));
+    ins_602(0, 7, $B);
+    ins_604(0, (([-9987.0f] * 0.5235988f) + %A) - 3.1415927f, 0.17453292f);
+    ins_601(0);
+    return;
+}
+
+void Boss01ttest()
+{
+    ins_502(32);
+    ins_1013(0, 100, 120, 140, 160, 180, 200, 220, 240);
+    ins_1013(1, 110, 140, 170, 200, 230, 260, 290, 320);
+    ins_1013(4, 300, 400, 500, 600, 700, 800, 900, 1000);
+    ins_1013(5, 500, 650, 800, 950, 1100, 1250, 1400, 1550);
+    ins_1013(8, 2000, 2300, 2600, 2900, 3200, 3500, 3800, 4100);
+    ins_1013(9, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(12, 2500, 2900, 3300, 3700, 4100, 4500, 4900, 5300);
+    ins_1013(13, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500);
+    ins_1013(16, 1800, 2040, 2280, 2520, 2760, 3000, 3240, 3480);
+    ins_23(1);
+    ins_524(0);
+    [-9895] = 3;
+    ins_30("Boss01ttest Start");
+    ins_300("Boss01t", 0.0f, 0.0f, 100, 100, 0);
+    @WaveSync();
+    ins_23(120);
+    unless ([-9896]) goto Boss01ttest_828 @ 0;
+    ins_1019();
+    goto Boss01ttest_844 @ 0;
+Boss01ttest_828:
+    ins_1017();
+Boss01ttest_844:
+    goto Boss01ttest_888 @ 0;
+Boss01ttest_868:
+    ins_23(1000);
+Boss01ttest_888:
+    if (1) goto Boss01ttest_868 @ 0;
+    ins_1002();
+    ins_1003();
+    ins_1();
+}
